@@ -6,6 +6,12 @@ let maplocalleader="\\"
 filetype indent plugin on
 syntax on
 
+" Load local overrides ~/.vim/vimrc.local
+let s:vimrc_local = $HOME . '/.vim/vimrc.local'
+if filereadable(s:vimrc_local)
+  execute 'source ' . s:vimrc_local
+endif
+
 " graceful degradation for plugins
 if exists('&loadplugins')
   if has('packages')
