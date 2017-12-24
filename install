@@ -1,0 +1,22 @@
+#!/bin/bash
+set -e
+
+VENV_SETUP=vendor/virtualenv/virtualenv.py
+VENV=python
+VENV_ACTIVATE=$VENV/bin/activate
+PIP=$VENV/bin/pip
+ANSIBLE=$VENV/bin/ansible-playbook
+
+python $VENV_SETUP $VENV &> /dev/stdout
+source $VENV_ACTIVATE
+$PIP install ansible &> /dev/stdout
+
+HOST_OS=$(uname)
+if [ "$HOST_OS" = 'Darwin' ]; then
+  $ANSIBLE -i inventory darwin.yml
+else
+  echo "Unknown host OS: $HOST_OS"
+  exit 1
+fi
+
+trap - EXIT

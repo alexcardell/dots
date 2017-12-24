@@ -1,0 +1,7 @@
+---
+- name: dotfiles | create symlinks
+  file: src={{ ansible_env.PWD }}/roles/dotfiles/files/{{ item }}
+        path=~/{{ item }}
+        state=link
+        force=yes
+  with_items: '{{shared_dotfiles}}'
