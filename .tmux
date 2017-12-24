@@ -12,9 +12,7 @@ tmux new-session -d -s $SESSION -n vim
 
 # 1. Editing
 tmux send-keys -t vim "vim -c CommandT" Enter
+tmux split-window -h
+tmux send-keys -t vim.2 "git status" Enter
 
-# 2. Shell
-tmux new-window -n zsh
-tmux send-keys -t zsh "git status" Enter
-
-tmux attach -t $SESSION:vim
+tmux attach -t $SESSION:vim.1
