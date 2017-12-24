@@ -1,0 +1,8 @@
+imap jk <Esc>
+
+let mapleader="\<Space>"
+let maplocalleader="\\"
+
+filetype indent plugin on
+syntax on
+
