@@ -6,6 +6,15 @@ let maplocalleader="\\"
 filetype indent plugin on
 syntax on
 
+if &loadplugins
+  if has('packages')
+     packloadall
+  else
+    source $HOME/.vim/pack/bundle/opt/vim-pathogen/autoload/pathogen.vim
+    call pathogen#infect('pack/bundle/start/{}')
+ endif
+endif
+
 " tmux split navigation
 let g:tmux_navigator_no_mappings = 1
 nnoremap <silent> <C-h> :TmuxNavigateLeft<CR>
