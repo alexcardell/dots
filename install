@@ -14,6 +14,8 @@ $PIP install ansible &> /dev/stdout
 HOST_OS=$(uname)
 if [ "$HOST_OS" = 'Darwin' ]; then
   $ANSIBLE -i inventory darwin.yml
+elif [ "$HOST_OS" = 'Linux' ]; then
+  $ANSIBLE -i inventory linux.yml
 else
   echo "Unknown host OS: $HOST_OS"
   exit 1
