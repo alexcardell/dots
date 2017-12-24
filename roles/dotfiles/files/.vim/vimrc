@@ -6,13 +6,14 @@ let maplocalleader="\\"
 filetype indent plugin on
 syntax on
 
-if &loadplugins
+" graceful degradation for plugins
+if exists('&loadplugins')
   if has('packages')
      packloadall
   else
     source $HOME/.vim/pack/bundle/opt/vim-pathogen/autoload/pathogen.vim
     call pathogen#infect('pack/bundle/start/{}')
- endif
+  endif
 endif
 
 " tmux split navigation
