@@ -10,7 +10,5 @@ plus a desire to have more and more of both system setups under version control.
 Stow won't cut it, so in comes Ansible.
 
 ### Dotfiles
-Primary workflow consists of:
-- Vim
-- Zsh
-- Tmux
+Primary workflow consists of Vim, Zsh, and Tmux. All currently under
+(re)construction.
