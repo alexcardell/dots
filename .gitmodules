@@ -13,3 +13,6 @@
 [submodule "roles/dotfiles/files/.vim/pack/bundle/start/command-t"]
 	path = roles/dotfiles/files/.vim/pack/bundle/start/command-t
 	url = https://github.com/wincent/command-t.git
+[submodule "roles/dotfiles/files/.vim/pack/bundle/start/ferret"]
+	path = roles/dotfiles/files/.vim/pack/bundle/start/ferret
+	url = https://github.com/wincent/ferret
