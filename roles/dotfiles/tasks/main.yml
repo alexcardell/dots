@@ -4,7 +4,7 @@
         path=~/{{ item }}
         state=link
         force=yes
-  with_items: '{{ shared_files }}'
+  with_items: '{{ shared_files + shared_templates }}'
 
 - import_tasks: darwin.yml
   when: ansible_os_family == "Darwin" and darwin_files is defined
