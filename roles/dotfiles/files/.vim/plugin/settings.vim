@@ -18,6 +18,8 @@ set highlight+=N:DiffText  " current line number highlight
 set highlight+=c:LineNr
 highlight clear Search
 highlight Search cterm=italic,bold,underline ctermfg=red
+highlight Comment cterm=italic
+highlight String cterm=italic
 
 """
 " Screen drawing
@@ -41,11 +43,9 @@ endif
 " Whitespace characters
 set list lcs=trail:-,nbsp:∅,tab:▷┅,extends:»,precedes:«
 
-" Folds
-set fillchars=vert:┃  " heavy vertical line (U+2503)
+set fillchars=vert:┃  " (U+2503) (for continuous vsplit break)
 set foldmethod=indent
 set foldlevelstart=99  " start unfolded
-
 set incsearch
 set autoread
 set switchbuf=usetab
@@ -55,7 +55,6 @@ set shiftwidth=2
 set shiftround
 set tabstop=2
 set textwidth=80
-
 
 """ General
 set confirm
