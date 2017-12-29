@@ -28,3 +28,9 @@
 [submodule "roles/dotfiles/files/.vim/pack/bundle/start/vim-jsx"]
 	path = roles/dotfiles/files/.vim/pack/bundle/start/vim-jsx
 	url = https://github.com/mxw/vim-jsx.git
+[submodule "roles/dotfiles/files/.vim/pack/bundle/start/nerdtree"]
+	path = roles/dotfiles/files/.vim/pack/bundle/start/nerdtree
+	url = https://github.com/scrooloose/nerdtree.git
+[submodule "roles/dotfiles/files/.vim/pack/bundle/start/nerdtree-git-plugin"]
+	path = roles/dotfiles/files/.vim/pack/bundle/start/nerdtree-git-plugin
+	url = https://github.com/Xuyuanp/nerdtree-git-plugin.git
