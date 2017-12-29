@@ -1,4 +1,8 @@
 ---
+- name: dotfiles | create .config
+  file: path=~/.config
+        state=is directory
+
 - name: dotfiles | create shared symlinks
   file: src={{ ansible_env.PWD }}/roles/dotfiles/files/{{ item }}
         path=~/{{ item }}
