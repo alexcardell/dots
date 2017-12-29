@@ -48,4 +48,5 @@ bindkey "\e[B" history-beginning-search-forward-end # down
 source ~/.zsh/tomorrow-night.sh
 source ~/.zsh/aliases
 source ~/.zsh/aliases.private
+source ~/.zsh/path
 source ~/.zsh/functions
