@@ -4,5 +4,8 @@ shared_files:
   - .tmux.conf
   - .gitignore
 
+shared_templates:
+  - .gitconfig
+
 archlinx_files:
   - .config/i3

@@ -1,0 +1,26 @@
+# {{ ansible_managed }}
+
+[user]
+{% if git_user_email != '' %}
+  name = {{ git_user_name }}
+{% endif %}
+{% if git_user_email != '' %}
+  email = {{ git_user_email }}
+{% endif %}
+
+[alias]
+  aa = add --all
+  alias = config --get-regexp ^alias\\.
+  amend = commit --amend -v
+  br = branch
+  ci = commit -v
+  co = checkout
+  lg = log --graph --oneline --decorate --all
+  ls = log --pretty=format:'%C(yellow)%h%Creset %s -- %C(bold italic magenta)<%cn>%Creset %C(blue)[%ad]%Creset %C(red)%d' --date=relative
+  st = status
+
+[color]
+  ui = auto
+
+[core]
+  excludesfile = ~/.gitignore
