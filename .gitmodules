@@ -46,3 +46,6 @@
 [submodule "roles/dotfiles/files/.vim/pack/bundle/start/vim-projectionist"]
 	path = roles/dotfiles/files/.vim/pack/bundle/start/vim-projectionist
 	url = https://github.com/tpope/vim-projectionist.git
+[submodule "roles/dotfiles/files/.vim/pack/bundle/start/vim-json"]
+	path = roles/dotfiles/files/.vim/pack/bundle/start/vim-json
+	url = https://github.com/elzr/vim-json.git
