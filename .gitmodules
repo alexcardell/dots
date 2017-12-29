@@ -34,3 +34,6 @@
 [submodule "roles/dotfiles/files/.vim/pack/bundle/start/nerdtree-git-plugin"]
 	path = roles/dotfiles/files/.vim/pack/bundle/start/nerdtree-git-plugin
 	url = https://github.com/Xuyuanp/nerdtree-git-plugin.git
+[submodule "roles/dotfiles/files/.vim/pack/bundle/start/vim-fugitive"]
+	path = roles/dotfiles/files/.vim/pack/bundle/start/vim-fugitive
+	url = https://github.com/tpope/vim-fugitive.git
