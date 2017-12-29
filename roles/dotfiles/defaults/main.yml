@@ -3,3 +3,6 @@ shared_files:
   - .vim
   - .tmux.conf
   - .gitignore
+
+archlinx_files:
+  - .config/i3
