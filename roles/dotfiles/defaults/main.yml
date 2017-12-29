@@ -1,4 +1,5 @@
 ---
 shared_dotfiles:
   - .vim
+  - .tmux.conf
   - .gitignore
