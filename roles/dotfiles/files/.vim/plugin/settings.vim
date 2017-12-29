@@ -16,6 +16,8 @@ set visualbell t_vb=
 set cursorline
 set highlight+=N:DiffText  " current line number highlight
 set highlight+=c:LineNr
+highlight clear Search
+highlight Search cterm=italic,bold,underline ctermfg=red
 
 """
 " Screen drawing
