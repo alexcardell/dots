@@ -1,0 +1,191 @@
+# i3 config
+set $mod Mod4
+
+set $wallpaper /home/alex/pictures/wallpapers/highway.png
+set $lockpaper /home/alex/pictures/wallpapers/highway_lock.png
+
+# .......
+# Fonts
+# .......
+font pango:Inconsolata 13
+
+# ...............
+# Key Bindings
+# ...............
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# start a terminal
+bindsym $mod+Return exec --no-startup-id urxvt
+# start a floating terminal
+bindsym $mod+Shift+Return exec --no-startup-id urxvt -geometry 80x24 -name "floating_urxvt"
+for_window[class="URxvt" instance="floating_urxvt$"] floating enable
+
+# kill focused window
+bindsym $mod+q kill
+
+# start dmenu (a program launcher)
+# bindsym $mod+d exec --no-startup-id dmenu_run -i -fn 'Inconsolata 8' -nb '#1d1f21'
+#### I prefer Rofi now
+bindsym $mod+d exec --no-startup-id rofi -show drun -lines 19 -font "Inconsolata 18"
+
+# change focus
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+# move focused window
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
+# split horizontal
+bindsym $mod+b split h
+# split vertical
+bindsym $mod+v split v
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# focus the parent container
+bindsym $mod+a focus parent
+# focus the child container
+bindsym $mod+z focus child
+
+set $w1 "1"
+set $w2 "2"
+set $w3 "3"
+set $w4 "4"
+set $w5 "5"
+set $w6 "6"
+set $w7 "7"
+set $w8 "8"
+set $w9 "9"
+set $w10 "10"
+
+# switch to workspace
+bindsym $mod+1 workspace $w1
+bindsym $mod+2 workspace $w2
+bindsym $mod+3 workspace $w3
+bindsym $mod+4 workspace $w4
+bindsym $mod+5 workspace $w5
+bindsym $mod+6 workspace $w6
+bindsym $mod+7 workspace $w7
+bindsym $mod+8 workspace $w8
+bindsym $mod+9 workspace $w9
+bindsym $mod+0 workspace $w10
+
+# switch focused workspace
+bindsym $mod+Left workspace prev
+bindsym $mod+Right workspace next
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace $w1
+bindsym $mod+Shift+2 move container to workspace $w2
+bindsym $mod+Shift+3 move container to workspace $w3
+bindsym $mod+Shift+4 move container to workspace $w4
+bindsym $mod+Shift+5 move container to workspace $w5
+bindsym $mod+Shift+6 move container to workspace $w6
+bindsym $mod+Shift+7 move container to workspace $w7
+bindsym $mod+Shift+8 move container to workspace $w8
+bindsym $mod+Shift+9 move container to workspace $w9
+bindsym $mod+Shift+0 move container to workspace $w10
+
+# reload the configuration file
+bindsym $mod+Shift+c reload
+# restart i3 inplace
+bindsym $mod+Shift+r restart
+# exit i3 (logs you out of your X session)
+bindsym $mod+Shift+e exec i3-msg exit
+
+
+# resize window (you can also use the mouse for that)
+mode "resize" {
+  # standard
+  bindsym h resize grow width 5 px or 5 ppt
+  bindsym j resize grow height 5 px or 5 ppt
+  bindsym k resize shrink height 5 px or 5 ppt
+  bindsym l resize shrink width 5 px or 5 ppt
+  # fine control
+  bindsym Shift+h resize grow width 1 px or 1 ppt
+  bindsym Shift+j resize grow height 1 px or 1 ppt
+  bindsym Shift+k resize shrink height 1 px or 1 ppt
+  bindsym Shift+l resize shrink width 1 px or 1 ppt
+  # back to normal: Enter or Escape
+  bindsym Return mode "default"
+  bindsym Escape mode "default"
+}
+
+bindsym $mod+r mode "resize"
+
+
+# ............
+# Theming
+# ...........
+set $bg-color            #1d1f21
+set $inactive-bg-color   #1d1f21
+set $text-color          #c5c8c6
+set $inactive-text-color #676E7D
+set $urgent-bg-color     #E53935
+
+# Borders
+for_window [class="^.*"] border pixel 0
+
+# Gaps
+gaps outer 0
+gaps inner 10
+
+# Bar
+bar {
+  font pango:Inconsolata, Font Awesome 14
+  status_command i3blocks -c ~/.config/i3/i3blocks/i3blocks.conf
+  colors {
+    background $bg-color
+    separator #757575
+    #                  border             background         text
+    focused_workspace  $bg-color          $bg-color          $text-color
+    inactive_workspace $inactive-bg-color $inactive-bg-color $inactive-text-color
+    urgent_workspace   $urgent-bg-color   $urgent-bg-color   $text-color
+  }
+}
+
+# ......................
+# Custom Key Bindings
+# ......................
+bindsym XF86AudioRaiseVolume exec amixer -q set Master 1dB+ unmute
+bindsym XF86AudioLowerVolume exec amixer -q set Master 1dB- unmute
+bindsym XF86AudioMute exec amixer -q set Master toggle
+bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
+
+bindsym XF86MonBrightnessUp exec xbacklight -inc 10
+bindsym XF86MonBrightnessDown exec xbacklight -dec 10
+
+bindsym --release Print exec scrot '%Y-%m-%d_%H:%M_$wx$h_screen.png' -e 'mv $f ~/pictures/screenshots'
+bindsym --release Shift+Print exec scrot -s '%Y-%m-%d_%H:%M_$wx$h_screen.png' -c 252525
+
+################
+# Execs
+
+# Wallpaper
+exec --no-startup-id feh --bg-scale $wallpaper -f
+# Lock screen on lid close
+exec --no-startup-id xss-lock -- i3lock -i $lockpaper -f
+# Manual lock key bind
+bindsym $mod+Control+l exec --no-startup-id i3lock -i $lockpaper -f
+
+# Clipboard manager
+exec --no-startup-id clipit
