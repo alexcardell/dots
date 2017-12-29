@@ -1,7 +1,12 @@
 ---
-- name: dotfiles | create symlinks
+- import_tasks: darwin.yml
+  when: ansible_os_family == "Darwin" and darwin_files is defined
+- import_tasks: arch.yml
+  when: ansible_os_family == "Archlinux" and archlinux_files is defined
+
+- name: dotfiles | create shared symlinks
   file: src={{ ansible_env.PWD }}/roles/dotfiles/files/{{ item }}
         path=~/{{ item }}
         state=link
         force=yes
-  with_items: '{{shared_dotfiles}}'
+  with_items: '{{ shared_files }}'
