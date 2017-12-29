@@ -1,7 +1,7 @@
 ---
 - import_tasks: darwin.yml
   when: ansible_os_family == "Darwin" and darwin_files is defined
-- import_tasks: arch.yml
+- import_tasks: archlinux.yml
   when: ansible_os_family == "Archlinux" and archlinux_files is defined
 
 - name: dotfiles | create shared symlinks
