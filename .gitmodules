@@ -43,3 +43,6 @@
 [submodule "roles/dotfiles/files/.vim/pack/bundle/start/vim-signature"]
 	path = roles/dotfiles/files/.vim/pack/bundle/start/vim-signature
 	url = https://github.com/kshenoy/vim-signature.git
+[submodule "roles/dotfiles/files/.vim/pack/bundle/start/vim-projectionist"]
+	path = roles/dotfiles/files/.vim/pack/bundle/start/vim-projectionist
+	url = https://github.com/tpope/vim-projectionist.git
