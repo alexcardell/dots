@@ -46,18 +46,18 @@ set list lcs=trail:-,nbsp:∅,tab:▷┅,extends:»,precedes:«
 set fillchars=vert:┃  " (U+2503) (for continuous vsplit break)
 set foldmethod=indent
 set foldlevelstart=99  " start unfolded
-set incsearch
-set autoread
-set switchbuf=usetab
-set smarttab
-set expandtab
-set shiftwidth=2
-set shiftround
-set tabstop=2
-set textwidth=80
+set incsearch  " show match as search is typed
+set autoread  " detect filesystem changes
+set switchbuf=usetab  " use open buffers and tabs
+set smarttab  " autoindent
+set expandtab  " expand tabs to spaces
+set shiftwidth=2  " spaces to use for autoindent
+set shiftround  " round up indentation width
+set tabstop=2  " tab width
+set textwidth=80  " hard wrap at 80
 
 """ General
-set confirm
+set confirm  " confirm save/quit
 set showcmd
 
 """
