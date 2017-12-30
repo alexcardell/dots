@@ -33,12 +33,13 @@ set virtualedit=block      " allow visual block to move through empty space
 " Line wrapping
 set whichwrap=b,s,<,>,[,],~
 if has('linebreak')
-  set showbreak=↘             " u-2198
+  set showbreak=↘               " u-2198
   set breakindent               " indent wrapped lines to match start
   if exists('&breakindentopt')
     set breakindentopt=shift:2  " indent wrapped lines even more
   endif
 endif
+set nowrap                      " don't bother soft wrapping globally
 
 " Whitespace characters
 set list lcs=trail:-,nbsp:∅,tab:▷┅,extends:»,precedes:«
