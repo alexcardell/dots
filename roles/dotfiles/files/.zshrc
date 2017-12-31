@@ -1,6 +1,8 @@
 bindkey -v
 bindkey -M viins 'jk' vi-cmd-mode
 
+autoload -U compinit && compinit
+
 autoload -U colors
 colors
 
@@ -41,7 +43,7 @@ zle -N history-beginning-search-backward-end history-search-end
 zle -N history-beginning-search-forward-end history-search-end
 bindkey "\e[A" history-beginning-search-backward-end # cursor up
 bindkey "\e[B" history-beginning-search-forward-end # down
-#
+
 #
 # Source
 #
