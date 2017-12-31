@@ -9,5 +9,8 @@ shared_files:
 shared_templates:
   - .gitconfig
 
-archlinx_files:
+archlinux_files:
   - .config/i3
+
+darwin_files:
+  - .ideavimrc
