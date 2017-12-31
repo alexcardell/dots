@@ -1,8 +1,10 @@
 ---
 shared_files:
-  - .vim
-  - .tmux.conf
   - .gitignore
+  - .profile
+  - .tmux.conf
+  - .vim
+  - .zsh
 
 shared_templates:
   - .gitconfig
