@@ -66,4 +66,5 @@ set ignorecase         " ignore case in searches
 set wildmenu
 set wildmode=longest:full,full
 set wildignore+=*.class
+set wildignore+=*.swp
 set wildignore+=**/node_modules/
