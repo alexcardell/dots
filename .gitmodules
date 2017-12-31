@@ -55,3 +55,6 @@
 [submodule "roles/dotfiles/files/.zsh/zsh-autosuggestions"]
 	path = roles/dotfiles/files/.zsh/zsh-autosuggestions
 	url = https://github.com/zsh-users/zsh-autosuggestions.git
+[submodule "roles/dotfiles/files/.vim/pack/bundle/start/terminus"]
+	path = roles/dotfiles/files/.vim/pack/bundle/start/terminus
+	url = https://github.com/wincent/terminus.git
