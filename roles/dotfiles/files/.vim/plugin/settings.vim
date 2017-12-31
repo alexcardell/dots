@@ -59,6 +59,7 @@ set textwidth=80       " hard wrap at 80
 """ General
 set confirm            " confirm save/quit
 set showcmd
+set ignorecase         " ignore case in searches
 
 """
 " Wild menu
