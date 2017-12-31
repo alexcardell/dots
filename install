@@ -2,7 +2,7 @@
 set -e
 
 VENV_SETUP=vendor/virtualenv/virtualenv.py
-VENV=python
+VENV=vendor/env
 VENV_ACTIVATE=$VENV/bin/activate
 PIP=$VENV/bin/pip
 ANSIBLE=$VENV/bin/ansible-playbook
