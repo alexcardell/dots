@@ -1,4 +1,5 @@
 let g:CommandTScanDotDirectories = 1
+let g:CommandTAlwaysShowDotFiles = 1
 
-nmap <unique> <Leader>h <Plug>(CommandTHelp)
-nmap <unique> <LocalLeader>h <Plug>(CommandTHistory)
+nnoremap <unique> <Leader>h <Plug>(CommandTHelp)
+nnoremap <unique> <LocalLeader>h <Plug>(CommandTHistory)
