@@ -52,3 +52,4 @@ source ~/.zsh/aliases
 source ~/.zsh/aliases.private
 source ~/.zsh/path
 source ~/.zsh/functions
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
