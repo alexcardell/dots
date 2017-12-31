@@ -67,4 +67,5 @@ set wildmenu
 set wildmode=longest:full,full
 set wildignore+=*.class
 set wildignore+=*.swp
+set wildignore+=*/.git/*
 set wildignore+=*/node_modules/*
