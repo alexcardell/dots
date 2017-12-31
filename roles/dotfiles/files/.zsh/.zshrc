@@ -52,4 +52,7 @@ source ~/.zsh/aliases
 source ~/.zsh/aliases.private
 source ~/.zsh/path
 source ~/.zsh/functions
+
+# Autosuggestions
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+bindkey "^P" autosuggest-accept
