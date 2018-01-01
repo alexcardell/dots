@@ -7,15 +7,24 @@ autoload -U colors
 colors
 
 export PS1=" %F{green}${SSH_TTY:+%n@%m}%f%B${SSH_TTY:+:}%b%F{blue}%1~%(?..%F{yellow}%B!%b%f)%F{red}%B%(!.#.$)%b%f "
-export SPROMPT="zsh: correct %F{red}'%R'%f to %F{red}'%r'%f [%B%Uy%u%bes, %B%Un%u%bo, %B%Ue%u%bdit, %B%Ua%u%bbort]? "
 
-function zle-line-int zle-keymap-select {
-  RPS1="${${KEYMAP/vicmd/--nml}/(main|viins)/--ins}"
-  RPS2=$RPS1
+# Use a line cursor for insert mode, block for normal
+function zle-keymap-select zle-line-init {
+  case $KEYMAP in
+    vicmd)      print -n -- "\E]50;CursorShape=0\C-G";; # block cursor
+    viins|main) print -n -- "\E]50;CursorShape=1\C-G";; # line cursor
+  esac
+
   zle reset-prompt
+  zle -R
+}
+# Always default to block on ending a command
+function zle-line-finish {
+    print -n -- "\E]50;CursorShape=0\C-G"  # block cursor
 }
 
-zle -N zle-line-int
+zle -N zle-line-init
+zle -N zle-line-finish
 zle -N zle-keymap-select
 
 #
