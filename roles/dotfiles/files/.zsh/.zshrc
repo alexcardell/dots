@@ -33,6 +33,12 @@ zle -N zle-keymap-select
 export HISTSIZE=10000
 export HISTFILE="$HOME/.zsh/history"
 export SAVEHIST=$HISTSIZE
+bindkey "^R" history-incremental-search-backward
+autoload history-search-end
+zle -N history-beginning-search-backward-end history-search-end
+zle -N history-beginning-search-forward-end history-search-end
+bindkey "\e[A" history-beginning-search-backward-end # cursor up
+bindkey "\e[B" history-beginning-search-forward-end # down
 
 #
 # Options
@@ -45,13 +51,6 @@ setopt pushdsilent
 setopt histignorealldups
 unsetopt beep
 
-# History
-bindkey "^R" history-incremental-search-backward
-autoload history-search-end
-zle -N history-beginning-search-backward-end history-search-end
-zle -N history-beginning-search-forward-end history-search-end
-bindkey "\e[A" history-beginning-search-backward-end # cursor up
-bindkey "\e[B" history-beginning-search-forward-end # down
 
 #
 # Source
