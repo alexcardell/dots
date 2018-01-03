@@ -37,7 +37,7 @@ set splitright             ""
 set whichwrap=b,s,<,>,[,],~
 if has('linebreak')
   set linebreak                 " wrap at word (if wrap on)
-  set showbreak=↘               " u-2198
+  set showbreak=↘↘↘             " u-2198
   set breakindent               " indent wrapped lines to match start
   if exists('&breakindentopt')
     set breakindentopt=shift:2  " indent wrapped lines even more
