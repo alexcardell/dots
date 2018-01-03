@@ -30,6 +30,9 @@ set laststatus=2           " always show statusline
 set number relativenumber  " set number and relnumber
 set virtualedit=block      " allow visual block to move through empty space
 
+set splitbelow             " Natural split splitting
+set splitright             ""
+
 " Line wrapping
 set whichwrap=b,s,<,>,[,],~
 if has('linebreak')
