@@ -58,6 +58,3 @@
 [submodule "roles/dotfiles/files/.vim/pack/bundle/start/terminus"]
 	path = roles/dotfiles/files/.vim/pack/bundle/start/terminus
 	url = https://github.com/wincent/terminus.git
-[submodule "roles/dotfiles/files/.vim/pack/bundle/opt/vim-javacomplete2"]
-	path = roles/dotfiles/files/.vim/pack/bundle/opt/vim-javacomplete2
-	url = https://github.com/artur-shaik/vim-javacomplete2.git
