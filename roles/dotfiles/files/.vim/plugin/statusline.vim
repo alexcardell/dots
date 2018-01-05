@@ -10,7 +10,7 @@ function! StatuslineGit()
 endfunction
 
 set statusline=
-set statusline+=%#PmenuSel#
+set statusline+=%#Error#
 set statusline+=\ 
 set statusline+=%{StatuslineGit()}
 set statusline+=%#LineNr#
