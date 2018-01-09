@@ -25,3 +25,4 @@
 
 [core]
   excludesfile = ~/.gitignore
+  pager = less -S --chop-long-lines
