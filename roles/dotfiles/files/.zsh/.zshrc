@@ -1,3 +1,6 @@
+OS=$(uname)
+OS=$OS:l
+
 bindkey -v
 bindkey -M viins "jk" vi-cmd-mode
 
@@ -64,11 +67,15 @@ unsetopt beep
 #
 # Source
 #
-source ~/.zsh/tomorrow-night.sh
-source ~/.zsh/aliases
-source ~/.zsh/aliases.private
-source ~/.zsh/path
-source ~/.zsh/functions
+source $ZDOTDIR/tomorrow-night.sh
+source $ZDOTDIR/aliases.zsh
+source $ZDOTDIR/path.zsh
+source $ZDOTDIR/functions.zsh
+
+# OS specific
+if [[ -e $ZDOTDIR/aliases.$OS ]]; then
+  source $ZDOTDIR/aliases.$OS
+fi
 
 # Autosuggestions
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh

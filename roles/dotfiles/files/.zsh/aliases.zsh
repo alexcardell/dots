@@ -1,12 +1,7 @@
 alias g='git'
 alias v='vim'
 alias cl='clear'
-
 alias dc='docker-compose'
 alias killtomcat='pkill -9 -f tomcat'
 alias cdp='cd $(git rev-parse --show-toplevel 2> /dev/null || echo -n ".")'
 alias py='python3'
-
-# Mac exclusives
-alias ls='gls --color=auto --group-directories-first'
-alias ll='gls --color=auto --group-directories-first -al'
