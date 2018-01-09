@@ -1,3 +1,21 @@
+set ignorecase
+set smartcase
+set incsearch
+
+imap jk <Esc>
+
+let mapleader = " "
+let maplocalleader = "\"
+
+map <leader>a :action FindInPath<CR>
+map <leader>t :action GotoFile<CR>
+map <leader>c :action GotoClass<CR>
+
+map <leader>bb :action ToggleLineBreakpoint<CR>
+map <leader>br :action ViewBreakpoints<CR>
+
+map <leader>n :set rnu!<CR>
+
 set rnu
 set nu
 set scrolloff=3
