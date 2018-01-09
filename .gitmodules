@@ -58,3 +58,6 @@
 [submodule "roles/dotfiles/files/.vim/pack/bundle/start/terminus"]
 	path = roles/dotfiles/files/.vim/pack/bundle/start/terminus
 	url = https://github.com/wincent/terminus.git
+[submodule "roles/dotfiles/files/.vim/pack/bundle/start/vim-commentary"]
+	path = roles/dotfiles/files/.vim/pack/bundle/start/vim-commentary
+	url = https://github.com/tpope/vim-commentary.git
