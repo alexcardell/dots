@@ -9,10 +9,14 @@ screencasts.)](https://www.youtube.com/channel/UCXPHFM88IlFn68OmLwtPmZA/feed)
 plus a desire to have more and more of both system setups under version control.
 Stow won't cut it, so in comes Ansible.
 
+---------------------------
+
 ### Roles
 #### Dotfiles
 Primary workflow consists of Vim, Zsh, and Tmux. All currently under
 (re)construction.
+
+---------------------------
 
 ### Usage
 Right now, only the dotfiles role is available. Future roles will include
