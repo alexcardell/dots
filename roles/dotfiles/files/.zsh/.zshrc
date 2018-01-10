@@ -9,15 +9,17 @@ autoload -U compinit && compinit
 autoload -U colors
 colors
 
+#--------
 # Prompt
-export PS1=" %F{green}${SSH_TTY:+%n@%m}%f%B${SSH_TTY:+:}%b%F{blue}%1~%(?..%F{yellow}%B!%b%f)%F{red}%B%(!.#.$)%b%f "
+#--------
+# see man zshexpn for explanations
+export PS1="%(?. .%F{yellow}%B!%b%f)%F{green}${SSH_TTY:+%n@%m}%f%B${SSH_TTY:+:}%b%F{blue}%1~%F{red}%B%(!.#.$)%b%f "
 
-
-#
+#---------
 # History
-#
+#---------
 export HISTSIZE=10000
-export HISTFILE="$HOME/.zsh/history"
+export HISTFILE="$ZDOTDIR/history"
 export SAVEHIST=$HISTSIZE
 bindkey "^R" history-incremental-search-backward
 autoload history-search-end
@@ -26,9 +28,9 @@ zle -N history-beginning-search-forward-end history-search-end
 bindkey "\e[A" history-beginning-search-backward-end # cursor up
 bindkey "\e[B" history-beginning-search-forward-end # down
 
-#
+#---------
 # Options
-#
+#---------
 setopt autocd
 setopt autoparamslash
 setopt autopushd
@@ -38,9 +40,9 @@ setopt histignorealldups
 unsetopt beep
 
 
-#
-# Source
-#
+#---------
+# Sources
+#---------
 source $ZDOTDIR/tomorrow-night.sh
 source $ZDOTDIR/aliases.zsh
 source $ZDOTDIR/path.zsh
@@ -51,6 +53,9 @@ if [[ -e $ZDOTDIR/aliases.$OS ]]; then
   source $ZDOTDIR/aliases.$OS
 fi
 
+#-------
+# Other
+#-------
 # Autosuggestions
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 bindkey "^P" autosuggest-accept
