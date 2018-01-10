@@ -1,5 +1,5 @@
 # Ansible managed personal system configuration
-## Some context
+### Some context
 - Pre-2017: Happily working exclusively on an Arch Linux system.
 Dotfiles managed through various means over the years, starting with no version
 control, to manual symlinks, to GNU Stow.
@@ -12,3 +12,11 @@ Stow won't cut it, so in comes Ansible.
 ### Dotfiles
 Primary workflow consists of Vim, Zsh, and Tmux. All currently under
 (re)construction.
+
+### Usage
+Right now, only the dotfiles role is available. Future roles will include
+installation of Homebrew and Pacaur packages.
+
+Clone this repo and call `git submodule update --init --recursive`
+to install submodule dependencies. Then call `./install` to set up a python
+virtualenv, install ansible and run the appropriate OS playbook.
