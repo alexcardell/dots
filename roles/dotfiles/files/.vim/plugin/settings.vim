@@ -20,6 +20,7 @@ highlight clear Search     " I don't like the default search highlight
 highlight Search cterm=italic,bold,underline ctermfg=red
 highlight Comment cterm=italic
 highlight String cterm=italic
+highlight EndOfBuffer ctermbg=18
 
 """
 " Screen drawing
