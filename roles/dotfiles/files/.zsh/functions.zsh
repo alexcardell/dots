@@ -9,15 +9,18 @@ function t() {
 }
 
 # Decide cursor shape escape sequence
-BLOCK="\E]50;CursorShape=0\C-G"
-LINE="\E]50;CursorShape=1\C-G"
-if [[ -n $TMUX ]]; then
-  BLOCK="\EPtmux;\E\E]50;CursorShape=0\x7\E\\"
-  LINE="\EPtmux;\E\E]50;CursorShape=1\x7\E\\"
-fi
+function set-cursor-sequence {
+  BLOCK="\E]50;CursorShape=0\C-G"
+  LINE="\E]50;CursorShape=1\C-G"
+  if [[ -n $TMUX ]]; then
+    BLOCK="\EPtmux;\E\E]50;CursorShape=0\x7\E\\"
+    LINE="\EPtmux;\E\E]50;CursorShape=1\x7\E\\"
+  fi
+}
 
+set-cursor-sequence
 # Use a line cursor for insert mode, block for normal
-function zle-keymap-select zle-line-init {
+function zle-keymap-select zle-line-init zle-line-finish {
   case $KEYMAP in
     vicmd)      print -n -- "$BLOCK";; # block cursor
     viins|main) print -n -- "$LINE";; # line cursor
