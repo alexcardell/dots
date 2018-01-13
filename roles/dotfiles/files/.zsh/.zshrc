@@ -47,7 +47,6 @@ source $ZDOTDIR/tomorrow-night.sh
 source $ZDOTDIR/aliases.zsh
 source $ZDOTDIR/path.zsh
 source $ZDOTDIR/functions.zsh
-
 # OS specific
 if [[ -e $ZDOTDIR/aliases.$OS ]]; then
   source $ZDOTDIR/aliases.$OS
@@ -59,3 +58,5 @@ fi
 # Autosuggestions
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 bindkey "^P" autosuggest-accept
+# Syntax highlighting
+source $ZDOTDIR/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zs

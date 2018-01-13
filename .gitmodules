@@ -64,3 +64,6 @@
 [submodule "roles/dotfiles/files/.vim/pack/bundle/start/neomake"]
 	path = roles/dotfiles/files/.vim/pack/bundle/start/neomake
 	url = https://github.com/neomake/neomake.git
+[submodule "roles/dotfiles/files/.zsh/fast-syntax-highlighting"]
+	path = roles/dotfiles/files/.zsh/fast-syntax-highlighting
+	url = https://github.com/zdharma/fast-syntax-highlighting.git
