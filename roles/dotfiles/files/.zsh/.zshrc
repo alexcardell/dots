@@ -12,7 +12,7 @@ colors
 #--------
 # Prompt
 #--------
-# see man zshexpn for explanations
+# see man zshexpn/zshmisc for explanations
 export PS1="%(?. .%F{yellow}%B!%b%f)%F{green}${SSH_TTY:+%n@%m}%f%B${SSH_TTY:+:}%b%F{blue}%1~%F{red}%B%(!.#.$)%b%f "
 
 #---------
@@ -59,4 +59,4 @@ fi
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 bindkey "^P" autosuggest-accept
 # Syntax highlighting
-source $ZDOTDIR/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zs
+source $ZDOTDIR/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
