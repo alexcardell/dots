@@ -8,6 +8,7 @@ shared_files:
 
 shared_templates:
   - .gitconfig
+  - .zshenv
 
 archlinux_files:
   - .config/i3
