@@ -2,13 +2,13 @@
 shared_files:
   - .gitignore
   - .profile
-  - .tmux.conf
   - .vim
   - .zsh
 
 shared_templates:
   - .gitconfig
   - .zshenv
+  - .tmux.conf
 
 archlinux_files:
   - .config/i3
