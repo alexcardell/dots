@@ -1,6 +1,5 @@
-# # {{ ansible_managed }}
+# {{ ansible_managed }}
 
-# Platform specific
 {% if ansible_os_family == 'Darwin' %}
 # java
 JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home
@@ -14,7 +13,7 @@ MYSQL=$MYSQL_HOME/bin
 PATH=$MYSQL:$PATH
 {% endif %}
 {% if ansible_os_family == 'Archlinux' %}
+EDITOR=vim
 {% endif %}
 
-# Common
 ZDOTDIR=$HOME/.zsh
