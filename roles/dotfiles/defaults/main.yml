@@ -1,11 +1,9 @@
 ---
-shared_files:
+common_files:
   - .gitignore
   - .profile
   - .vim
   - .zsh
-
-shared_templates:
   - .gitconfig
   - .zshenv
   - .tmux.conf

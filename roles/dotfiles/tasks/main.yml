@@ -1,30 +1,16 @@
 ---
-- name: dotfiles | create .config
-  file: path=~/.config
-        state=directory
-
-- name: dotfiles | create template out dir
-  file: path={{ ansible_env.PWD }}/roles/dotfiles/templates/out
-        state=directory
+- name: dotfiles | template files
+  template: src={{ ansible_env.PWD }}/roles/dotfiles/templates/{{ item }}
+        dest={{ ansible_env.PWD }}/roles/dotfiles/files/{{ item }}
+  with_fileglob:
+    - ../templates/**/*
 
 - name: dotfiles | symlink common files
   file: src={{ ansible_env.PWD }}/roles/dotfiles/files/{{ item }}
         path=~/{{ item }}
         state=link
         force=yes
-  with_items: '{{ shared_files }}'
-
-- name: dotfiles | template files
-  template: src={{ ansible_env.PWD }}/roles/dotfiles/templates/{{ item }}
-        dest={{ ansible_env.PWD }}/roles/dotfiles/templates/out/{{ item }}
-  with_items: '{{ shared_templates }}'
-
-- name: dotfiles | symlink template
-  file: src={{ ansible_env.PWD }}/roles/dotfiles/templates/out/{{ item }}
-        path=~/{{ item }}
-        state=link
-        force=yes
-  with_items: '{{ shared_templates }}'
+  with_items: '{{ common_files }}'
 
 - import_tasks: darwin.yml
   when: ansible_os_family == "Darwin" and darwin_files is defined
