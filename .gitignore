@@ -1,3 +1,8 @@
 .backup
 vendor/env
 *.private
+
+roles/dotfiles/vars/main.yml
+roles/dotfiles/templates/out
+roles/dotfiles/files/.zsh/history
+roles/dotfiles/files/.zsh/.zcompdump
