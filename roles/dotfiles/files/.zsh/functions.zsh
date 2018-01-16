@@ -10,11 +10,24 @@ function t() {
 
 # Decide cursor shape escape sequence
 function set-cursor-sequence {
-  BLOCK="\E]50;CursorShape=0\C-G"
-  LINE="\E]50;CursorShape=1\C-G"
+  case $(uname) in
+    "Darwin")
+      BLOCK="\E]50;CursorShape=0\C-G"
+      LINE="\E]50;CursorShape=1\C-G"
+      TMUXBLOCK="\EPtmux;\E\E]50;CursorShape=0\x7\E\\"
+      TMUXLINE="\EPtmux;\E\E]50;CursorShape=1\x7\E\\"
+      ;;
+    "Linux")
+      BLOCK="\033[2 q"
+      LINE="\033[6 q"
+      TMUXBLOCK="\033Ptmux;\033\033[2 q\x7\033\\"
+      TMUXLINE="\033Ptmux;\033\033[6 q\x7\033\\"
+      ;;
+  esac
+
   if [[ -n $TMUX ]]; then
-    BLOCK="\EPtmux;\E\E]50;CursorShape=0\x7\E\\"
-    LINE="\EPtmux;\E\E]50;CursorShape=1\x7\E\\"
+    BLOCK=$TMUXBLOCK
+    LINE=$TMUXLINE
   fi
 }
 
