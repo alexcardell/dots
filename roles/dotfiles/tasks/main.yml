@@ -2,8 +2,8 @@
 - name: dotfiles | template files
   template: src={{ ansible_env.PWD }}/roles/dotfiles/templates/{{ item }}
         dest={{ ansible_env.PWD }}/roles/dotfiles/files/{{ item }}
-  with_fileglob:
-    - ../templates/**/*
+        force=yes
+  with_items: '{{ templates }}'
 
 - name: dotfiles | symlink common files
   file: src={{ ansible_env.PWD }}/roles/dotfiles/files/{{ item }}

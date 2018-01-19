@@ -1,4 +1,9 @@
 ---
+templates:
+  - .zshenv
+  - .gitconfig
+  - .tmux.conf
+
 common_files:
   - .gitignore
   - .profile
