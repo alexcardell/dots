@@ -54,9 +54,14 @@ bindkey -M menuselect 'j' vi-down-line-or-history
 # Sources
 #---------
 source $ZDOTDIR/tomorrow-night.sh
-source $ZDOTDIR/aliases.zsh
 source $ZDOTDIR/path.zsh
 source $ZDOTDIR/functions.zsh
+# shared aliases
+source $ZDOTDIR/aliases.zsh
+# private
+if [[ -e $ZOTDIR/aliases.private ]]; then
+  source $ZDOTDIR/aliases.private
+fi
 # OS specific
 if [[ -e $ZDOTDIR/aliases.$OS ]]; then
   source $ZDOTDIR/aliases.$OS
