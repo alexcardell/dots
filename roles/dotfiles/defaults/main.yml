@@ -10,6 +10,9 @@ common_files:
 
 archlinux_files:
   - .config/i3
+  - .xinitrc
+  - .Xresources
+  - .Xresources.d
 
 darwin_files:
   - .ideavimrc
