@@ -1,6 +1,3 @@
-[submodule "vendor/virtualenv"]
-	path = vendor/virtualenv
-	url = https://github.com/pypa/virtualenv.git
 [submodule "roles/dotfiles/files/.vim/pack/bundle/opt/vim-pathogen"]
 	path = roles/dotfiles/files/.vim/pack/bundle/opt/vim-pathogen
 	url = https://github.com/tpope/vim-pathogen.git
@@ -70,3 +67,6 @@
 [submodule "roles/dotfiles/files/.vim/pack/bundle/start/vim-gitgutter"]
 	path = roles/dotfiles/files/.vim/pack/bundle/start/vim-gitgutter
 	url = https://github.com/airblade/vim-gitgutter.git
+[submodule "lib/virtualenv"]
+	path = lib/virtualenv
+	url = https://github.com/pypa/virtualenv.git

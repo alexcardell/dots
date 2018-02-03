@@ -1,5 +1,5 @@
 .backup
-vendor/env
+lib/env
 *.private
 
 roles/dotfiles/vars/main.yml
