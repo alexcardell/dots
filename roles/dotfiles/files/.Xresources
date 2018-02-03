@@ -1,0 +1,52 @@
+#include "/home/alex/.Xresources.d/base16-xresources/base16-tomorrow-night-256.Xresources"
+
+Xft.hinting: true
+Xft.antialias: true
+
+*.font:             xft:Inconsolata LGC Nerd Font:size=16
+*.boldFont:         xft:Inconsolata LGC Nerd Font:bold:size=16
+*.italicFont:       xft:Inconsolata LGC Nerd Font:italic:size=16
+*.boldItalicFont:   xft:Inconsolata LGC Nerd Font:bold:italic:size=16
+
+! Scrolling
+URxvt.scrollTtyOutput: false
+URxvt.scrollWithBuffer: true
+URxvt.scrollTtyKeypress: true
+URxvt.scrollBar:    false
+
+URxvt.termName: rxvt-unicode-256color
+
+!------------------------------------------------------------------------------
+! ROFI Color theme
+!------------------------------------------------------------------------------
+rofi.color-enabled: true
+rofi.terminal: urxvt
+rofi.fuzzy: true
+rofi.kb-cancel: Escape,Control+c
+rofi.hide-scrollbar: true
+rofi.fake-transparency: false
+
+! ! Property Name     BG       Border   Separator
+! rofi.color-window:  base00, base02, base01
+! 
+! ! Property Name     BG       FG       BG-alt   Head-BG  Head-FG
+! rofi.color-normal:  base00,  base05,  base00,  base09,  base01
+! rofi.color-active:  base00,  base0D,  base01,  base01,  base0D
+! rofi.color-urgent:  base0B,  base08,  base0B,  base01,  base08
+
+! ------------------------------------------------------------------------------
+! ROFI Color theme
+! WAL generated
+! User: alex
+! ------------------------------------------------------------------------------
+! "Color scheme for normal row" Set from: XResources
+rofi.color-normal:                   argb:FF020104, #E0EDF3, #020104, #952B79, #E0EDF3
+! "Color scheme for urgent row" Set from: XResources
+rofi.color-urgent:                   argb:FF020104, #E0EDF3, #020104, #47356C, #E0EDF3
+! "Color scheme for active row" Set from: XResources
+rofi.color-active:                   argb:FF020104, #E0EDF3, #020104, #952B79, #E0EDF3
+! "Color scheme window" Set from: XResources
+rofi.color-window:                   argb:FF020104, #020104, #952B79
+! "Separator style (none, dash, solid)" Set from: XResources
+rofi.separator-style:                solid
+rofi.show-icons: true
