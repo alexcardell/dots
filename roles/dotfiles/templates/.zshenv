@@ -16,4 +16,7 @@ PATH=$MYSQL:$PATH
 EDITOR=vim
 {% endif %}
 
+# use project specific node modules
+PATH=node_modules/.bin:$PATH
+
 ZDOTDIR=$HOME/.zsh
