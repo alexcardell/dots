@@ -13,7 +13,8 @@ MYSQL=$MYSQL_HOME/bin
 PATH=$MYSQL:$PATH
 {% endif %}
 {% if ansible_os_family == 'Archlinux' %}
-EDITOR=vim
+VISUAL=vim
+EDITOR="${VISUAL}"
 {% endif %}
 
 # use project specific node modules
