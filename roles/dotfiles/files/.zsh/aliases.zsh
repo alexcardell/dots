@@ -1,5 +1,6 @@
 alias g='git'
 alias v='vim'
+alias vi='vim'
 alias cl='clear'
 alias dc='docker-compose'
 alias killtomcat='pkill -9 -f tomcat'
