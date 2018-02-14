@@ -11,6 +11,6 @@ fi
 tmux new-session -d -s $SESSION -n vim
 
 # 1. Editing
-tmux send-keys -t vim "vim -c CommandT" Enter
+tmux send-keys -t vim "vim" Enter
 
 tmux attach -t $SESSION:vim.1
