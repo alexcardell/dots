@@ -60,12 +60,15 @@ source $ZDOTDIR/fzf.zsh
 # shared aliases
 source $ZDOTDIR/aliases.zsh
 # private
-if [[ -e $ZOTDIR/aliases.private ]]; then
-  source $ZDOTDIR/aliases.private
+if [[ -e $ZOTDIR/aliases.private.zsh ]]; then
+  source $ZDOTDIR/aliases.private.zsh
 fi
 # OS specific
-if [[ -e $ZDOTDIR/aliases.$OS ]]; then
-  source $ZDOTDIR/aliases.$OS
+if [[ -e $ZDOTDIR/aliases.$OS.zsh ]]; then
+  source $ZDOTDIR/aliases.$OS.zsh
+fi
+if [[ -e $ZDOTDIR/settings.$OS.zsh ]]; then
+  source $ZDOTDIR/settings.$OS.zsh
 fi
 
 #-------
