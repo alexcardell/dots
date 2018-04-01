@@ -13,7 +13,7 @@ colors
 # Prompt
 #--------
 # see man zshexpn/zshmisc for explanations
-export PS1="%(?. .%F{yellow}%B!%b%f)%F{green}${SSH_TTY:+%n@%m}%f%B${SSH_TTY:+:}%b%F{blue}%1~%F{red}%B%(!.#.$)%b%f "
+export PS1="%(?. .%F{yellow}%B!%b%f)%F{white}%1~ %B%F{red}>%f%b "
 
 #---------
 # History
