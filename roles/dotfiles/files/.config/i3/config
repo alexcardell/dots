@@ -190,5 +190,7 @@ exec --no-startup-id xss-lock -- i3lock -i $lockpaper -f
 # Manual lock key bind
 bindsym $mod+Control+l exec --no-startup-id i3lock -i $lockpaper -f
 
+exec --no-startup-id redshift
+
 # Clipboard manager
 exec --no-startup-id clipit
