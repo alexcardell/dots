@@ -67,6 +67,9 @@ fi
 if [[ -e $ZDOTDIR/aliases.$OS ]]; then
   source $ZDOTDIR/aliases.$OS
 fi
+if [[ -e /usr/local/bin/virtualenvwrapper.sh ]]; then
+  source /usr/local/bin/virtualenvwrapper.sh
+fi
 
 #-------
 # Other
