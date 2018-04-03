@@ -1,23 +1,24 @@
 ---
 templates:
-  - .zshenv
   - .gitconfig
   - .tmux.conf
+  - .zshenv
 
 common_files:
+  - .gitconfig
   - .gitignore
   - .profile
+  - .tmux.conf
   - .vim
   - .zsh
-  - .gitconfig
   - .zshenv
-  - .tmux.conf
 
 archlinux_files:
-  - .config/i3
-  - .xinitrc
   - .Xresources
   - .Xresources.d
+  - .config/i3
+  - .config/rofi
+  - .xinitrc
 
 darwin_files:
   - .ideavimrc

@@ -13,7 +13,7 @@ colors
 # Prompt
 #--------
 # see man zshexpn/zshmisc for explanations
-export PS1="%(?. .%F{yellow}%B!%b%f)%F{green}${SSH_TTY:+%n@%m}%f%B${SSH_TTY:+:}%b%F{blue}%1~%F{red}%B%(!.#.$)%b%f "
+export PS1="%(?. .%F{yellow}%B!%b%f)%F{white}%1~ %B%F{red}>%f%b "
 
 #---------
 # History
@@ -60,12 +60,15 @@ source $ZDOTDIR/fzf.zsh
 # shared aliases
 source $ZDOTDIR/aliases.zsh
 # private
-if [[ -e $ZOTDIR/aliases.private ]]; then
-  source $ZDOTDIR/aliases.private
+if [[ -e $ZOTDIR/aliases.private.zsh ]]; then
+  source $ZDOTDIR/aliases.private.zsh
 fi
 # OS specific
-if [[ -e $ZDOTDIR/aliases.$OS ]]; then
-  source $ZDOTDIR/aliases.$OS
+if [[ -e $ZDOTDIR/aliases.$OS.zsh ]]; then
+  source $ZDOTDIR/aliases.$OS.zsh
+fi
+if [[ -e $ZDOTDIR/settings.$OS.zsh ]]; then
+  source $ZDOTDIR/settings.$OS.zsh
 fi
 if [[ -e /usr/local/bin/virtualenvwrapper.sh ]]; then
   source /usr/local/bin/virtualenvwrapper.sh
