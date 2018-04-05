@@ -34,12 +34,12 @@ function set-cursor-sequence {
 set-cursor-sequence
 # Use a line cursor for insert mode, block for normal
 function zle-keymap-select zle-line-init zle-line-finish {
-  case $KEYMAP in
-    vicmd)      print -n -- "$BLOCK";; # block cursor
-    viins|main) print -n -- "$LINE";; # line cursor
-  esac
-  zle reset-prompt
-  zle -R
+case $KEYMAP in
+  vicmd)      print -n -- "$BLOCK";; # block cursor
+  viins|main) print -n -- "$LINE";; # line cursor
+esac
+zle reset-prompt
+zle -R
 }
 
 # Always default to block on ending a command
@@ -50,3 +50,33 @@ function zle-line-finish {
 zle -N zle-line-init
 zle -N zle-line-finish
 zle -N zle-keymap-select
+
+# Prompt
+function prompt#git_branch() {
+  git branch --no-color 2>/dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ \1/'
+}
+
+function prompt#git_status() {
+  local STATE="$(git status --porcelain 2>/dev/null)"
+  local OUTPUT=''
+  # ! unstaged changes are present
+  [[ -n $(egrep '^.[MD]' <<<"$STATE") ]] && OUTPUT="$OUTPUT%F{red}!%f"
+  # + changes are staged and ready to commit
+  [[ -n $(egrep '^[MADRC]' <<<"$STATE") ]] && OUTPUT="$OUTPUT%F{green}+%f"
+  # ? untracked files are present
+  [[ -n $(egrep '^\?\?' <<<"$STATE") ]] && OUTPUT="$OUTPUT%F{red}?%f"
+  # ✓ local commits need to be pushed to the remote
+  [[ -n $(git log --branches --not --remotes) ]] && OUTPUT="$OUTPUT%F{blue}✓%f"
+  echo $OUTPUT
+}
+
+function prompt#git() {
+  # get branch name
+  local GIT_BRANCH="%F{magenta}$(prompt#git_branch)%f"
+  # if empty we're not in a git repo
+  if [[ -n $GIT_BRANCH ]]; then
+    local GIT_STATE=$(prompt#git_status)
+    # combine branch and state info
+    echo -e "%F{white}(%f$GIT_BRANCH%F{white}|%f$GIT_STATE%F{white})%f"
+  fi
+}

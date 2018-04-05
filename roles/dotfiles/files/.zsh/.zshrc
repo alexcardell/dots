@@ -9,12 +9,6 @@ autoload -U compinit && compinit
 autoload -U colors
 colors
 
-#--------
-# Prompt
-#--------
-# see man zshexpn/zshmisc for explanations
-export PS1="%(?. .%F{yellow}%B!%b%f)%F{white}%1~ %B%F{red}>%f%b "
-
 #---------
 # History
 #---------
@@ -37,6 +31,7 @@ setopt autopushd
 setopt pushdignoredups
 setopt pushdsilent
 setopt histignorealldups
+setopt promptsubst
 unsetopt beep
 
 #------------
@@ -79,3 +74,10 @@ source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 bindkey "^P" autosuggest-accept
 # Syntax highlighting
 source $ZDOTDIR/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
+
+#--------
+# Prompt
+#--------
+# see man zshexpn/zshmisc for explanations
+PROMPT='%(?. .%F{yellow}%B!%b)%F{blue}%n %B%F{red}> %f%b'
+RPROMPT='%F{yellow}%1~ %F{magenta}$(prompt#git)%f'
