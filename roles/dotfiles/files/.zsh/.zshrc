@@ -13,7 +13,30 @@ colors
 # Prompt
 #--------
 # see man zshexpn/zshmisc for explanations
-export PS1="%(?. .%F{yellow}%B!%b%f)%F{white}%1~ %B%F{red}>%f%b "
+autoload -Uz vcs_info
+zstyle ':vcs_info:*' enable git
+zstyle ':vcs_info:*' stagedstr '+'
+zstyle ':vcs_info:*' unstagedstr '!'
+zstyle ':vcs_info:*' check-for-changes true
+
+zstyle ':vcs_info:*' actionformats '%F{5}[%F{2}%b%F{3}|%F{1}%a%F{5}]%f '
+zstyle ':vcs_info:*' formats \
+  '%F{5}[%F{2}%b%F{5}]%F{2}%c%F{red}%u %m%f'
+
+zstyle ':vcs_info:git*+set-message:*' hooks git-st
+function +vi-git-st() {
+  local ahead behind
+  local -a gitstatus
+  ahead=$(git rev-list ${hook_com[branch]}@{upstream}..HEAD 2>/dev/null | wc -l)
+  (( $ahead )) && gitstatus+=( "+${ahead}" )
+  behind=$(git rev-list HEAD..${hook_com[branch]}@{upstream} 2>/dev/null | wc -l)
+  (( $behind )) && gitstatus+=( "-${behind}" )
+  hook_com[misc]+="%F{blue}${(j:/:)gitstatus}%f"
+}
+
+precmd () { vcs_info }
+PROMPT='%(?. .%F{yellow}%B!%b)%F{blue}%n %B%F{red}> %f%b'
+RPROMPT='%F{3}%3~ ${vcs_info_msg_0_}%f'
 
 #---------
 # History
@@ -37,6 +60,7 @@ setopt autopushd
 setopt pushdignoredups
 setopt pushdsilent
 setopt histignorealldups
+setopt promptsubst
 unsetopt beep
 
 #------------

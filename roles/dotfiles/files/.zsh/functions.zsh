@@ -34,12 +34,12 @@ function set-cursor-sequence {
 set-cursor-sequence
 # Use a line cursor for insert mode, block for normal
 function zle-keymap-select zle-line-init zle-line-finish {
-  case $KEYMAP in
-    vicmd)      print -n -- "$BLOCK";; # block cursor
-    viins|main) print -n -- "$LINE";; # line cursor
-  esac
-  zle reset-prompt
-  zle -R
+case $KEYMAP in
+  vicmd)      print -n -- "$BLOCK";; # block cursor
+  viins|main) print -n -- "$LINE";; # line cursor
+esac
+zle reset-prompt
+zle -R
 }
 
 # Always default to block on ending a command
