@@ -7,7 +7,7 @@ VENV_ACTIVATE=$VENV/bin/activate
 PIP=$VENV/bin/pip
 ANSIBLE=$VENV/bin/ansible-playbook
 
-python $VENV_SETUP $VENV &> /dev/stdout
+python3 $VENV_SETUP $VENV &> /dev/stdout
 source $VENV_ACTIVATE
 $PIP install ansible &> /dev/stdout
 
