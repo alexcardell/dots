@@ -178,7 +178,7 @@ bindsym XF86MonBrightnessUp exec xbacklight -inc 10
 bindsym XF86MonBrightnessDown exec xbacklight -dec 10
 
 bindsym --release Print exec scrot '%Y-%m-%d_%H:%M_$wx$h_screen.png' -e 'mv $f ~/pictures/screenshots'
-bindsym --release Shift+Print exec scrot -s '%Y-%m-%d_%H:%M_$wx$h_screen.png' -c 252525
+bindsym --release Shift+Print exec scrot -s '%Y-%m-%d_%H:%M_$wx$h_screen.png' -e 'mv $f ~/pictures/screenshots'
 
 ################
 # Execs
