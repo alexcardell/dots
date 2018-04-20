@@ -35,7 +35,7 @@ function +vi-git-st() {
 }
 
 precmd () { vcs_info }
-PROMPT='%(?. .%F{yellow}%B!%b)%F{blue}%n %B%F{red}> %f%b'
+PROMPT='%(?. .%F{yellow}%B!%b)%F{blue}alex %B%F{red}> %f%b'
 RPROMPT='%F{3}%3~ ${vcs_info_msg_0_}%f'
 
 #---------
