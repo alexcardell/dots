@@ -10,4 +10,6 @@ alias py='python'
 alias pip='pip3'
 alias mvn='/usr/local/maven/bin/mvn'
 
+alias tat='tmux attach\; choose-tree -s'
+
 alias :q='exit'
