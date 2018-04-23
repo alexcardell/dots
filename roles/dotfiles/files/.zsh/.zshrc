@@ -27,9 +27,9 @@ zstyle ':vcs_info:git*+set-message:*' hooks git-st
 function +vi-git-st() {
   local ahead behind
   local -a gitstatus
-  ahead=$(git rev-list ${hook_com[branch]}@{upstream}..HEAD 2>/dev/null | wc -l)
+  ahead=$(git rev-list ${hook_com[branch]}@{upstream}..HEAD 2>/dev/null | wc -l | tr -d '[:space:]')
   (( $ahead )) && gitstatus+=( "+${ahead}" )
-  behind=$(git rev-list HEAD..${hook_com[branch]}@{upstream} 2>/dev/null | wc -l)
+  behind=$(git rev-list HEAD..${hook_com[branch]}@{upstream} 2>/dev/null | wc -l | tr -d '[:space:]')
   (( $behind )) && gitstatus+=( "-${behind}" )
   hook_com[misc]+="%F{blue}${(j:/:)gitstatus}%f"
 }
