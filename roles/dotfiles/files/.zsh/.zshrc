@@ -94,8 +94,15 @@ fi
 if [[ -e $ZDOTDIR/settings.$OS.zsh ]]; then
   source $ZDOTDIR/settings.$OS.zsh
 fi
+
+# virtualenvwrapper
 if [[ -e /usr/local/bin/virtualenvwrapper.sh ]]; then
   source /usr/local/bin/virtualenvwrapper.sh
+fi
+# NVM
+
+if [[ -e /usr/local/opt/nvm/nvm.sh ]]; then
+  source /usr/local/opt/nvm/nvm.sh
 fi
 
 #-------
