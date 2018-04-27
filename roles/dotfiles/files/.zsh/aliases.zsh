@@ -5,10 +5,7 @@ alias cl='clear'
 alias dc='docker-compose'
 alias killtomcat='pkill -9 -f tomcat'
 alias cdp='cd $(git rev-parse --show-toplevel 2> /dev/null || echo -n ".")'
-alias python='python3'
 alias py='python'
-alias pip='pip3'
-alias mvn='/usr/local/maven/bin/mvn'
 
 alias tat='tmux attach\; choose-tree -s'
 
