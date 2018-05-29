@@ -100,11 +100,6 @@ if [[ -e /usr/local/bin/virtualenvwrapper.sh ]]; then
   source /usr/local/bin/virtualenvwrapper.sh
 fi
 
-# NVM
-if [[ -e /usr/local/opt/nvm/nvm.sh ]]; then
-  source /usr/local/opt/nvm/nvm.sh
-fi
-
 #-------
 # Other
 #-------
