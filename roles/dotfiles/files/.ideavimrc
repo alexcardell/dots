@@ -1,6 +1,11 @@
 set ignorecase
 set smartcase
 set incsearch
+set rnu
+set nu
+set scrolloff=3
+set surround
+map <leader>n :set rnu!<CR>
 
 imap jk <Esc>
 
@@ -14,8 +19,3 @@ map <leader>c :action GotoClass<CR>
 map <leader>bb :action ToggleLineBreakpoint<CR>
 map <leader>br :action ViewBreakpoints<CR>
 
-map <leader>n :set rnu!<CR>
-
-set rnu
-set nu
-set scrolloff=3
