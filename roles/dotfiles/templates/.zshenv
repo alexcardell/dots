@@ -18,4 +18,6 @@ EDITOR="${VISUAL}"
 # use project specific node modules
 PATH=node_modules/.bin:$PATH
 
+NVM_DIR="$HOME/.nvm"
+
 ZDOTDIR=$HOME/.zsh
