@@ -52,3 +52,5 @@ Thumbs.db
 # tags
 tags
 tags.*
+
+.tmux
