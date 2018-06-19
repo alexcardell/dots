@@ -1,10 +1,4 @@
 ---
-- name: pacman | store package list
-  shell: echo $(cat {{role_path}}/files/pacman.txt)
-  register: packages
-- debug:
-    msg: "{{ packages }}"
-
 - name: pacman | upgrade
   pacman:
     upgrade: yes
