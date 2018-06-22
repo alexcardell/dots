@@ -1,6 +1,129 @@
 ---
-- name: pacman | store package list
-  shell: echo $(cat {{role_path}}/files/pacman.txt)
-  register: packages
-- debug:
-    msg: "{{ packages }}"
+- name: pacman | upgrade
+  pacman:
+    upgrade: yes
+
+- name: pacman | installing adobe-source-code-pro-fonts
+  pacman:
+    name: adobe-source-code-pro-fonts
+
+
+- name: pacman | installing arc-gtk-theme
+  pacman:
+    name: arc-gtk-theme
+
+- name: pacman | installing clipit
+  pacman:
+    name: clipit
+
+- name: pacman | installing feh
+  pacman:
+    name: feh
+
+- name: pacman | installing google-chrome
+  pacman:
+    name: google-chrome
+
+- name: pacman | installing htop
+  pacman:
+    name: htop
+
+- name: pacman | installing i3blocks
+  pacman:
+    name: i3blocks
+
+- name: pacman | installing lxappearance
+  pacman:
+    name: lxappearance
+
+- name: pacman | installing mpv
+  pacman:
+    name: mpv
+
+- name: pacman | installing mupdf
+  pacman:
+    name: mupdf
+
+- name: pacman | installing nerd-fonts-complete
+  pacman:
+    name: nerd-fonts-complete
+
+- name: pacman | installing pacaur
+  pacman:
+    name: pacaur
+
+- name: pacman | installing paper-icon-theme
+  pacman:
+    name: paper-icon-theme
+
+- name: pacman | installing private-internet-access-vpn
+  pacman:
+    name: private-internet-access-vpn
+
+- name: pacman | installing qbittorrent
+  pacman:
+    name: qbittorrent
+
+- name: pacman | installing ranger
+  pacman:
+    name: ranger
+
+- name: pacman | installing redshift
+  pacman:
+    name: redshift
+
+- name: pacman | installing ripgrep
+  pacman:
+    name: ripgrep
+
+- name: pacman | installing rofi
+  pacman:
+    name: rofi
+
+- name: pacman | installing screenfetch
+  pacman:
+    name: screenfetch
+
+- name: pacman | installing spotify
+  pacman:
+    name: spotify
+
+- name: pacman | installing tmux
+  pacman:
+    name: tmux
+
+- name: pacman | installing tor-browser-en
+  pacman:
+    name: tor-browser-en
+
+- name: pacman | installing ttf-font-awesome
+  pacman:
+    name: ttf-font-awesome
+
+- name: pacman | installing ttf-inconsolata
+  pacman:
+    name: ttf-inconsolata
+
+- name: pacman | installing ttf-roboto
+  pacman:
+    name: ttf-roboto
+
+- name: pacman | installing unzip
+  pacman:
+    name: unzip
+
+- name: pacman | installing vim
+  pacman:
+    name: vim
+
+- name: pacman | installing xss-lock
+  pacman:
+    name: xss-lock
+
+- name: pacman | installing yarn
+  pacman:
+    name: yarn
+
+- name: pacman | installing zsh
+  pacman:
+    name: zsh
