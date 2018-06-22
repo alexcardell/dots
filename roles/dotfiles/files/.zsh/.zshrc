@@ -42,7 +42,7 @@ RPROMPT='%F{3}%3~ ${vcs_info_msg_0_}%f'
 # History
 #---------
 export HISTSIZE=10000
-export HISTFILE="$ZDOTDIR/history"
+export HISTFILE="$ZDOTDIR/.zhistory"
 export SAVEHIST=$HISTSIZE
 bindkey "^R" history-incremental-search-backward
 autoload history-search-end
@@ -68,37 +68,21 @@ unsetopt beep
 #------------
 zstyle ':completion:*' menu select
 zmodload zsh/complist
-# use the vi navigation keys in menu completion
-bindkey -M menuselect 'h' vi-backward-char
-bindkey -M menuselect 'k' vi-up-line-or-history
-bindkey -M menuselect 'l' vi-forward-char
-bindkey -M menuselect 'j' vi-down-line-or-history
 
 #---------
-# Sources
+# Sourcing
 #---------
-source $ZDOTDIR/tomorrow-night.sh
-source $ZDOTDIR/path.zsh
-source $ZDOTDIR/functions.zsh
-source $ZDOTDIR/fzf.zsh
-# shared aliases
-source $ZDOTDIR/aliases.zsh
-# private
-if [[ -e $ZOTDIR/aliases.private.zsh ]]; then
-  source $ZDOTDIR/aliases.private.zsh
-fi
-# OS specific
-if [[ -e $ZDOTDIR/aliases.$OS.zsh ]]; then
-  source $ZDOTDIR/aliases.$OS.zsh
-fi
-if [[ -e $ZDOTDIR/settings.$OS.zsh ]]; then
-  source $ZDOTDIR/settings.$OS.zsh
-fi
+[ -f $ZDOTDIR/path.zsh ]           && . $ZDOTDIR/path.zsh
+[ -f $ZDOTDIR/functions.zsh ]      && . $ZDOTDIR/functions.zsh
+[ -f $ZDOTDIR/aliases.zsh ]        && . $ZDOTDIR/aliases.zsh
+[ -f $ZOTDIR/aliases.private.zsh ] && . $ZDOTDIR/aliases.private.zsh
+[ -f $ZDOTDIR/aliases.$OS.zsh ]    && . $ZDOTDIR/aliases.$OS.zsh
+[ -f $ZDOTDIR/settings.$OS.zsh ]   && . $ZDOTDIR/settings.$OS.zsh
 
-# virtualenvwrapper
-if [[ -e /usr/local/bin/virtualenvwrapper.sh ]]; then
-  source /usr/local/bin/virtualenvwrapper.sh
-fi
+[ -f $ZDOTDIR/tomorrow-night.sh ]  && . $ZDOTDIR/tomorrow-night.sh
+[ -f $ZDOTDIR/fzf.zsh ]            && . $ZDOTDIR/fzf.zsh
+[ -f /usr/local/bin/virtualenvwrapper.sh ] \
+    && . /usr/local/bin/virtualenvwrapper.sh
 
 #-------
 # Other
