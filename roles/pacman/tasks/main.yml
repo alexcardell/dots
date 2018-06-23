@@ -8,8 +8,10 @@
   with_items:
     - adobe-source-code-pro-fonts
     - arc-gtk-theme
+    - autojump
     - clipit
     - feh
+    - fzf
     - google-chrome
     - htop
     - i3blocks
