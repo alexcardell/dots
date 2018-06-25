@@ -10,10 +10,16 @@
     - arc-gtk-theme
     - autojump
     - clipit
+    - connman
+    - ctags
+    - docker
+    - drive
     - feh
     - fzf
     - google-chrome
     - htop
+    - i3-gaps
+    - i3-wm
     - i3blocks
     - lxappearance
     - mpv
@@ -28,14 +34,15 @@
     - ripgrep
     - rofi
     - screenfetch
+    - screenfetch
     - spotify
     - tmux
     - tor-browser-en
-    - ttf-font-awesome
-    - ttf-inconsolata
-    - ttf-roboto
     - unzip
     - vim
+    - which
+    - xclip
     - xss-lock
     - yarn
+    - zip
     - zsh
