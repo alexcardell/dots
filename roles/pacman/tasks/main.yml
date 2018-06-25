@@ -9,14 +9,11 @@
     - adobe-source-code-pro-fonts
     - arc-gtk-theme
     - autojump
-    - clipit
     - connman
     - ctags
     - docker
-    - drive
     - feh
     - fzf
-    - google-chrome
     - htop
     - i3-gaps
     - i3-wm
@@ -24,18 +21,13 @@
     - lxappearance
     - mpv
     - mupdf
-    - nerd-fonts-complete
-    - paper-icon-theme
-    - private-internet-access-vpn
     - qbittorrent
     - ranger
     - redshift
     - ripgrep
     - rofi
     - screenfetch
-    - spotify
     - tmux
-    - tor-browser-en
     - unzip
     - vim
     - which
@@ -44,3 +36,14 @@
     - yarn
     - zip
     - zsh
+
+    # Pacaur packages
+    # - clipit
+    # - drive
+    # - google-chrome
+    # - i3lock-fancy-git
+    # - nerd-fonts-complete
+    # - paper-icon-theme
+    # - private-internet-access-vpn
+    # - spotify
+    # - tor-browser-en
