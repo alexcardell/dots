@@ -2,9 +2,13 @@
 ##### Prepending commit messages with JIRA ticket numbers
 # Exit if not a standard commit
 case "$2" in
-  merge|template|squash)
+  merge|template|squash|commit)
     exit
 esac
+# Exit if amending
+if [ -n "$(head -n1 $1)"]; then
+  exit
+fi
 # Include any branches for which you wish to disable this script
 if [ -z "$BRANCHES_TO_SKIP" ]; then
   BRANCHES_TO_SKIP=(master develop)
