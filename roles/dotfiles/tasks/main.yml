@@ -1,11 +1,11 @@
 ---
-- name: dotfiles | template files
+- name: dotfiles template files
   template: src={{ ansible_env.PWD }}/roles/dotfiles/templates/{{ item }}
         dest={{ ansible_env.PWD }}/roles/dotfiles/files/{{ item }}
         force=yes
   with_items: '{{ templates }}'
 
-- name: dotfiles | symlink common files
+- name: dotfiles symlink common files
   file: src={{ ansible_env.PWD }}/roles/dotfiles/files/{{ item }}
         path=~/{{ item }}
         state=link

@@ -1,9 +1,9 @@
 ---
-- name: pacman | upgrade
+- name: upgrade
   pacman:
     upgrade: yes
 
-- name: pacman | installing packages
+- name: installing packages
   pacman: name={{ item }}
   with_items:
     - adobe-source-code-pro-fonts
@@ -37,13 +37,13 @@
     - zip
     - zsh
 
-    # Pacaur packages
-    # - clipit
-    # - drive
-    # - google-chrome
-    # - i3lock-fancy-git
-    # - nerd-fonts-complete
-    # - paper-icon-theme
-    # - private-internet-access-vpn
-    # - spotify
-    # - tor-browser-en
+# TODO: Pacaur packages
+# - clipit
+# - drive
+# - google-chrome
+# - i3lock-fancy-git
+# - nerd-fonts-complete
+# - paper-icon-theme
+# - private-internet-access-vpn
+# - spotify
+# - tor-browser-en
