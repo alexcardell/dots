@@ -1,11 +1,14 @@
 ---
 - name: upgrade
+  become: true
   pacman:
     upgrade: yes
 
 - name: installing packages
   pacman: name={{ item }}
+  become: true
   with_items:
+    - acpi
     - adobe-source-code-pro-fonts
     - arc-gtk-theme
     - autojump
@@ -27,11 +30,14 @@
     - ripgrep
     - rofi
     - screenfetch
+    - sudo
     - tmux
     - unzip
     - vim
     - which
     - xclip
+    - xorg-server
+    - xorg-xinit
     - xss-lock
     - yarn
     - zip

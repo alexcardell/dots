@@ -22,3 +22,6 @@ archlinux_files:
 
 darwin_files:
   - .ideavimrc
+
+git_user_name: '{{"baubler"}}'
+git_user_email: '{{"29524087+baubler@users.noreply.github.com"}}'

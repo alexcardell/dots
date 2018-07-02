@@ -15,7 +15,7 @@ HOST_OS=$(uname)
 if [ "$HOST_OS" = 'Darwin' ]; then
   $ANSIBLE -i inventory darwin.yml
 elif [ "$HOST_OS" = 'Linux' ]; then
-  $ANSIBLE -i inventory archlinux.yml
+  $ANSIBLE -i inventory arch.yml
 else
   echo "Unknown host OS: $HOST_OS"
   exit 1

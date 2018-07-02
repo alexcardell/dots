@@ -1,7 +1,7 @@
 # {{ ansible_managed }}
 
 [user]
-{% if git_user_email != '' %}
+{% if git_user_name != '' %}
   name = {{ git_user_name }}
 {% endif %}
 {% if git_user_email != '' %}
