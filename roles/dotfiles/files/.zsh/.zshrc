@@ -15,15 +15,15 @@ colors
 # see man zshexpn/zshmisc for explanations
 autoload -Uz vcs_info
 zstyle ':vcs_info:*' enable git
-zstyle ':vcs_info:*' stagedstr '+'
-zstyle ':vcs_info:*' unstagedstr '!'
+zstyle ':vcs_info:*' stagedstr '%F{green}●'
+zstyle ':vcs_info:*' unstagedstr '%F{red}●'
 zstyle ':vcs_info:*' check-for-changes true
-
-zstyle ':vcs_info:*' actionformats '%F{5}[%F{2}%b%F{3}|%F{1}%a%F{5}]%f '
+zstyle ':vcs_info:*' actionformats \
+  '%F{white}[%F{cyan}%b%F{grey}|%F{red}%a%F{grey}]%f'
 zstyle ':vcs_info:*' formats \
-  '%F{5}[%F{2}%b%F{5}]%F{2}%c%F{red}%u %m%f'
-
+  '%F{grey}[%F{cyan}%b%F{grey}]%F{green}%c%F{red}%u %m%f'
 zstyle ':vcs_info:git*+set-message:*' hooks git-st
+
 function +vi-git-st() {
   local ahead behind
   local -a gitstatus
@@ -36,7 +36,7 @@ function +vi-git-st() {
 
 precmd () { vcs_info }
 PROMPT='%(?. .%F{yellow}%B!%b)%F{blue}alex %B%F{red}> %f%b'
-RPROMPT='%F{3}%3~ ${vcs_info_msg_0_}%f'
+RPROMPT='%F{grey}%3~ ${vcs_info_msg_0_}%f'
 
 #---------
 # History
@@ -72,6 +72,7 @@ zmodload zsh/complist
 #---------
 # Sourcing
 #---------
+# mine
 [ -f $ZDOTDIR/path.zsh ]           && . $ZDOTDIR/path.zsh
 [ -f $ZDOTDIR/functions.zsh ]      && . $ZDOTDIR/functions.zsh
 [ -f $ZDOTDIR/aliases.zsh ]        && . $ZDOTDIR/aliases.zsh
@@ -79,6 +80,7 @@ zmodload zsh/complist
 [ -f $ZDOTDIR/aliases.$OS.zsh ]    && . $ZDOTDIR/aliases.$OS.zsh
 [ -f $ZDOTDIR/settings.$OS.zsh ]   && . $ZDOTDIR/settings.$OS.zsh
 
+# plugins
 [ -f $ZDOTDIR/tomorrow-night.sh ]  && . $ZDOTDIR/tomorrow-night.sh
 [ -f $ZDOTDIR/fzf.zsh ]            && . $ZDOTDIR/fzf.zsh
 [ -f /usr/local/etc/profile.d/autojump.sh ] \
