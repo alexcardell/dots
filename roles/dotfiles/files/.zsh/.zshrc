@@ -19,9 +19,9 @@ zstyle ':vcs_info:*' stagedstr '%F{green}●'
 zstyle ':vcs_info:*' unstagedstr '%F{red}●'
 zstyle ':vcs_info:*' check-for-changes true
 zstyle ':vcs_info:*' actionformats \
-  '%F{white}[%F{cyan}%b%F{grey}|%F{red}%a%F{grey}]%f'
+  '%c%u%F{white}[%F{cyan}%b%F{grey}|%F{red}%a%F{grey}]%f'
 zstyle ':vcs_info:*' formats \
-  '%F{grey}[%F{cyan}%b%F{grey}]%F{green}%c%F{red}%u %m%f'
+  '%c%u%F{grey}[%F{cyan}%b%F{grey}]%m%f'
 zstyle ':vcs_info:git*+set-message:*' hooks git-st
 
 function +vi-git-st() {
@@ -33,7 +33,7 @@ function +vi-git-st() {
   behind=$(git rev-list HEAD..${hook_com[branch]}@{upstream} 2>/dev/null \
     | wc -l | tr -d '[:space:]')
   (( $behind )) && gitstatus+=( "-${behind}" )
-  hook_com[misc]+="%F{blue}${(j:/:)gitstatus}%f"
+  hook_com[misc]+="%F{cyan}${(j:/:)gitstatus}%f"
 }
 
 precmd () { vcs_info }
