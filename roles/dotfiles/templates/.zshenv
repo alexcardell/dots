@@ -20,4 +20,6 @@ PATH=node_modules/.bin:$PATH
 
 NVM_DIR="$HOME/.nvm"
 
+GOPATH=$HOME/projects/go
+
 ZDOTDIR=$HOME/.zsh
