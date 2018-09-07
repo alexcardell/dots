@@ -5,6 +5,8 @@ let g:NERDTreeCascadeSingleChildDir = 1
 let g:NERDTreeCascadeOpenSingleChildDir = 1
 let g:NERDTreeMinimalUI = 1
 
+let NERDTreeIgnore = ['\.swp', '\.swo']
+
 " let g:NERDTreeMapJumpLastChild = '<Nop>'
 " let g:NERDTreeMapJumpFirstChild = '<Nop>'
 " let g:NERDTreeMapJumpNextSibling = 'J'
