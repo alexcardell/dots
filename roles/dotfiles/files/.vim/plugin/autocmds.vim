@@ -17,6 +17,6 @@ if has('autocmd')
     autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
     " clear trailing whitespace
-    autocmd BufWrite * call cardell#functions#zap()
+    autocmd BufWrite * call me#functions#zap()   
   augroup END
 endif
