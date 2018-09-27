@@ -19,3 +19,4 @@ map <leader>c :action GotoClass<CR>
 map <leader>bb :action ToggleLineBreakpoint<CR>
 map <leader>br :action ViewBreakpoints<CR>
 
+map <leader>r :action Refactorings.QuickListPopupAction<CR>
