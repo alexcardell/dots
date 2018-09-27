@@ -85,3 +85,6 @@
 [submodule "roles/dotfiles/files/.vim/pack/bundle/start/vim-reason-plus"]
 	path = roles/dotfiles/files/.vim/pack/bundle/start/vim-reason-plus
 	url = https://github.com/reasonml-editor/vim-reason-plus.git
+[submodule "roles/dotfiles/files/.vim/pack/bundle/start/MatchTagAlways"]
+	path = roles/dotfiles/files/.vim/pack/bundle/start/MatchTagAlways
+	url = https://github.com/Valloric/MatchTagAlways.git
