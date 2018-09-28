@@ -9,21 +9,22 @@ function! StatuslineGit()
   return strlen(l:branchname) > 0 ? ' '.l:branchname.' ' : ' '
 endfunction
 
+highlight User1 ctermfg=1 ctermbg=18
+
 set statusline=
 set statusline+=%#Error#
-set statusline+=\ 
+set statusline+=\ 
 set statusline+=%{StatuslineGit()}
+set statusline+=%#User1#
 set statusline+=%#LineNr#
 set statusline+=\ %f
 set statusline+=\ %m
 set statusline+=%=
 set statusline+=%#CursorColumn#
 set statusline+=\ %y
-set statusline+=\ %{&fileencoding?&fileencoding:&encoding}
-set statusline+=\[%{&fileformat}\]
+set statusline+=\ %{&fileencoding?&fileencoding:&encoding}[%{&fileformat}\]
 set statusline+=\ %p%%
 set statusline+=\ %l:%c
-set statusline+=\ 
 
 " Handy symbols
 " powerline left arrow  = 
