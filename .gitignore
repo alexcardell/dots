@@ -8,5 +8,6 @@ roles/dotfiles/files/.zsh/.zhistory
 roles/dotfiles/files/.zsh/.zcompdump
 
 roles/dotfiles/files/.zshenv
+roles/dotfiles/files/.zsh/.zprofile
 roles/dotfiles/files/.gitconfig
 roles/dotfiles/files/.tmux.conf

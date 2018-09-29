@@ -2,6 +2,7 @@
 templates:
   - .gitconfig
   - .tmux.conf
+  - .zsh/.zprofile
   - .zshenv
 
 common_files:
