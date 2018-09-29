@@ -70,7 +70,6 @@ set ignorecase         " ignore case in searches
 " Wild menu
 set wildmenu
 set wildmode=longest:full,full
-set wildignore+=*.class
-set wildignore+=*.swp
-set wildignore+=*/.git/*
-set wildignore+=*/node_modules/*
+set wildignore+=*.pyc,*.o,*.obj,*.svn,*.swp,*.swo,*.class,*.hg,*.DS_Store,*.min.*
+set wildignore+=*/.git
+set wildignore+=*/node_modules
