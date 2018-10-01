@@ -88,3 +88,6 @@
 [submodule "roles/dotfiles/files/.vim/pack/bundle/start/MatchTagAlways"]
 	path = roles/dotfiles/files/.vim/pack/bundle/start/MatchTagAlways
 	url = https://github.com/Valloric/MatchTagAlways.git
+[submodule "roles/dotfiles/files/.vim/pack/bundle/start/ultisnips"]
+	path = roles/dotfiles/files/.vim/pack/bundle/start/ultisnips
+	url = https://github.com/SirVer/ultisnips.git
