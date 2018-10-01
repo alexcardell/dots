@@ -87,8 +87,6 @@ zmodload zsh/complist
 [ -f $ZDOTDIR/fzf.zsh ]            && . $ZDOTDIR/fzf.zsh
 [ -f /usr/local/etc/profile.d/autojump.sh ] \
   && . /usr/local/etc/profile.d/autojump.sh
-[ -f /usr/local/bin/virtualenvwrapper.sh ] \
-  && . /usr/local/bin/virtualenvwrapper.sh
 
 #-------
 # Other
