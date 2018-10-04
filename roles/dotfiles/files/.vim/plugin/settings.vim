@@ -34,6 +34,14 @@ set virtualedit=block      " allow visual block to move through empty space
 set splitbelow             " Natural split splitting
 set splitright             ""
 
+if exists('$SUDO_USER')
+  set noswapfile                      " don't create root-owned files
+else
+  set directory=~/local/.vim/tmp/swap//
+  set directory+=~/.vim/tmp/swap//    " keep swap files out of the way
+  set directory+=.
+endif
+
 " Line wrapping
 set whichwrap=b,s,<,>,[,],~
 if has('linebreak')
