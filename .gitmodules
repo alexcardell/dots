@@ -76,9 +76,6 @@
 [submodule "roles/dotfiles/files/.vim/pack/bundle/start/vim-nerdtree-syntax-highlight"]
 	path = roles/dotfiles/files/.vim/pack/bundle/start/vim-nerdtree-syntax-highlight
 	url = https://github.com/tiagofumo/vim-nerdtree-syntax-highlight.git
-[submodule "roles/dotfiles/files/.vim/pack/bundle/start/vim-gutentags"]
-	path = roles/dotfiles/files/.vim/pack/bundle/start/vim-gutentags
-	url = https://github.com/ludovicchabant/vim-gutentags.git
 [submodule "roles/dotfiles/files/.vim/pack/bundle/start/ale"]
 	path = roles/dotfiles/files/.vim/pack/bundle/start/ale
 	url = https://github.com/w0rp/ale.git
