@@ -9,9 +9,10 @@
 {% endif %}
 
 [alias]
+  a = add
   aa = add --all
   alias = config --get-regexp ^alias\\.
-  amend = commit --amend -v
+  am = commit --amend -v
   br = branch
   ci = commit -v
   co = checkout
