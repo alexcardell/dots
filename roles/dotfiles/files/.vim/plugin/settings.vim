@@ -13,9 +13,12 @@ set visualbell t_vb=
 
 """
 " Highlighting
+if !has('nvim')
+  set highlight+=N:DiffText  " current line number highlight
+  set highlight+=c:LineNr    " same
+endif
+
 set cursorline             " highlight current line
-set highlight+=N:DiffText  " current line number highlight
-set highlight+=c:LineNr    " same
 highlight clear Search     " I don't like the default search highlight
 highlight Search cterm=italic,bold,underline ctermfg=red
 highlight Comment cterm=italic
