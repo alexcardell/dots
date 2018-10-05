@@ -6,6 +6,7 @@ templates:
   - .zshenv
 
 common_files:
+  - .config/nvim
   - .gitconfig
   - .gitignore
   - .profile
