@@ -3,7 +3,9 @@ if exists('$SUDO_USER')  " no root owned files
   set nobackup
   set nowritebackup
   set noundofile
-  set shada="NONE"
+  if has('nvim')
+    set shada="NONE"
+  endif
 else
   " keep backup files out of the way
   set backupdir=~/.local/share/nvim/backup//
@@ -15,6 +17,10 @@ else
     set undofile  " enable undo files
     set undolevels=100
   endif
+endif
+
+if !has('nvim')
+  set viminfo="NONE"
 endif
 
 imap jk <Esc>
