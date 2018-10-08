@@ -29,7 +29,6 @@ vim_tmp_dirs:
   - backup
   - swap
   - undo
-  - info
 
 vim_path: '{{ ansible_env.PWD }}/roles/dotfiles/files/.vim'
 command_t_path: '{{ vim_path }}/pack/bundle/start/command-t'

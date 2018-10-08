@@ -5,17 +5,12 @@ if exists('$SUDO_USER')  " no root owned files
   set noundofile
 else
   " keep backup files out of the way
-  set backupdir=~/local/.vim/tmp/backup//
-  set backupdir+=~/.vim/tmp/backup//
-
+  set backupdir=~/.local/share/nvim/backup//
   " keep swap files out of the way
-  set directory=~/local/.vim/tmp/swap//
-  set directory+=~/.vim/tmp/swap//
-
+  set directory=~/.local/share/nvim/swap//
   " keep undo files out of the way
   if has('persistent_undo')
-    set undodir=~/local/.vim/tmp/undo//
-    set undodir+=~/.vim/tmp/undo//
+    set undodir=~/.local/share/nvim/undo//
     set undofile  " enable undo files
     set undolevels=100
   endif

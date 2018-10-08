@@ -1,12 +1,7 @@
 ---
-- name: local share
-  file:
-    path: ~/local/share/nvim
-    state: directory
-
 - name: vim | set up tmp dirs
   file:
-    path: '{{ vim_path }}/tmp/{{ item }}'
+    path: '~/.local/share/nvim/{{ item }}'
     state: directory
   with_items: '{{ vim_tmp_dirs }}'
 
