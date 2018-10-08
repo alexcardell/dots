@@ -88,3 +88,9 @@
 [submodule "roles/dotfiles/files/.vim/pack/bundle/start/ultisnips"]
 	path = roles/dotfiles/files/.vim/pack/bundle/start/ultisnips
 	url = https://github.com/SirVer/ultisnips.git
+[submodule "roles/dotfiles/files/.vim/pack/bundle/start/--init"]
+	path = roles/dotfiles/files/.vim/pack/bundle/start/--init
+	url = https://github.com/autozimu/LanguageClient-neovim.git
+[submodule "roles/dotfiles/files/.vim/pack/bundle/start/LanguageClient-neovim"]
+	path = roles/dotfiles/files/.vim/pack/bundle/start/LanguageClient-neovim
+	url = https://github.com/autozimu/LanguageClient-neovim.git
