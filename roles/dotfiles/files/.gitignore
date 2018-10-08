@@ -17,9 +17,7 @@
 *.swp
 *.swo
 *.bak
-*~
 .idea/
-*.un~
 
 # Packages #
 ############
@@ -50,9 +48,25 @@
 ehthumbs.db
 Thumbs.db
 
-# tags
+# Vim
+# Swap
+[._]*.s[a-v][a-z]
+[._]*.sw[a-p]
+[._]s[a-rt-v][a-z]
+[._]ss[a-gi-z]
+[._]sw[a-p]
+
+# Session
+Session.vim
+
+# Temporary
+.netrwhist
+*~
+# Auto-generated tag files
 tags
 tags.*
+# Persistent undo
+[._]*.un~
 
 # tmux
 .tmux
