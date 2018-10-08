@@ -1,11 +1,30 @@
 ---
-- name: dotfiles template files
+- name: vim | set up tmp dirs
+  file:
+    path: "{{ vim_path }}/tmp/{{ item }}"
+    state: directory
+    mode: 0775
+  with_items: "{{ vim_tmp_dirs }}"
+
+- name: vim | configure Command-T
+  command:
+    ruby extconf.rb
+    creates={{ command_t_path }}/ruby/command-t/ext/command-t/Makefile
+    chdir={{ command_t_path }}/ruby/command-t/ext/command-t
+
+- name: vim | compile Command-T
+  command:
+    make
+    creates={{ command_t_path }}/ruby/command-t/ext/command-t/ext.bundle
+    chdir={{ command_t_path }}/ruby/command-t/ext/command-t
+
+- name: template files
   template: src={{ ansible_env.PWD }}/roles/dotfiles/templates/{{ item }}
         dest={{ ansible_env.PWD }}/roles/dotfiles/files/{{ item }}
         force=yes
   with_items: '{{ templates }}'
 
-- name: dotfiles symlink common files
+- name: symlink common files
   file: src={{ ansible_env.PWD }}/roles/dotfiles/files/{{ item }}
         path=~/{{ item }}
         state=link
@@ -14,9 +33,20 @@
   with_items: '{{ common_files }}'
 
 # os specific tasks
-- import_tasks: darwin.yml
+- name: create darwin symlinks
+  file: src={{ ansible_env.PWD }}/roles/dotfiles/files/{{ item }}
+        path=~/{{ item }}
+        state=link
+        force=yes
+        follow=false
+  with_items: '{{ darwin_files }}'
   when: ansible_os_family == "Darwin" and darwin_files is defined
-- import_tasks: archlinux.yml
-  when: ansible_os_family == "Archlinux" and archlinux_files is defined
 
-- import_tasks: vim.yml
+- name: create archlinux symlinks
+  file: src={{ ansible_env.PWD }}/roles/dotfiles/files/{{ item }}
+        path=~/{{ item }}
+        state=link
+        force=yes
+        follow=false
+  with_items: '{{ archlinux_files }}'
+  when: ansible_os_family == "Archlinux" and archlinux_files is defined
