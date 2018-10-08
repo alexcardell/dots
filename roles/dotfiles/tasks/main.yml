@@ -1,16 +1,4 @@
 ---
-- name: vim | configure Command-T
-  command:
-    ruby extconf.rb
-    creates={{ command_t_path }}/ruby/command-t/ext/command-t/Makefile
-    chdir={{ command_t_path }}/ruby/command-t/ext/command-t
-
-- name: vim | compile Command-T
-  command:
-    make
-    creates={{ command_t_path }}/ruby/command-t/ext/command-t/ext.bundle
-    chdir={{ command_t_path }}/ruby/command-t/ext/command-t
-
 - name: dotfiles template files
   template: src={{ ansible_env.PWD }}/roles/dotfiles/templates/{{ item }}
         dest={{ ansible_env.PWD }}/roles/dotfiles/files/{{ item }}
@@ -25,7 +13,10 @@
         follow=false
   with_items: '{{ common_files }}'
 
+# os specific tasks
 - import_tasks: darwin.yml
   when: ansible_os_family == "Darwin" and darwin_files is defined
 - import_tasks: archlinux.yml
   when: ansible_os_family == "Archlinux" and archlinux_files is defined
+
+- import_tasks: vim.yml

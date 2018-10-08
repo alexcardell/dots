@@ -1,0 +1,22 @@
+---
+- name: vim | set up ~local/.vim/tmp
+  file:
+    path: {{ vim_path }}/tmp/{{ items }}
+    state: direcotry
+    with_items:
+      - backup
+      - swap
+      - undo
+
+- name: vim | configure Command-T
+  command:
+    ruby extconf.rb
+    creates={{ command_t_path }}/ruby/command-t/ext/command-t/Makefile
+    chdir={{ command_t_path }}/ruby/command-t/ext/command-t
+
+- name: vim | compile Command-T
+  command:
+    make
+    creates={{ command_t_path }}/ruby/command-t/ext/command-t/ext.bundle
+    chdir={{ command_t_path }}/ruby/command-t/ext/command-t
+
