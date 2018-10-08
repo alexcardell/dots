@@ -1,3 +1,18 @@
+if exists('$SUDO_USER')
+  set nobackup
+  set nowritebackup
+
+  set noswapfile
+else
+  set backupdir=~/local/.vim/tmp/backup//
+  set backupdir+=~/.vim/tmp/backup//    " keep backup files out of the way
+  set backupdir+=.
+
+  set directory=~/local/.vim/tmp/swap//
+  set directory+=~/.vim/tmp/swap//     " keep swap files out of the way
+  set directory+=.
+endif
+
 imap jk <Esc>
 
 let mapleader="\<Space>"
