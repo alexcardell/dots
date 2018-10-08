@@ -1,22 +1,26 @@
 ---
+- name: local share
+  file:
+    path: ~/local/share/nvim
+    state: directory
+
 - name: vim | set up tmp dirs
   file:
-    path: "{{ vim_path }}/tmp/{{ item }}"
+    path: '{{ vim_path }}/tmp/{{ item }}'
     state: directory
-    mode: 0775
-  with_items: "{{ vim_tmp_dirs }}"
+  with_items: '{{ vim_tmp_dirs }}'
 
 - name: vim | configure Command-T
-  command:
-    ruby extconf.rb
-    creates={{ command_t_path }}/ruby/command-t/ext/command-t/Makefile
-    chdir={{ command_t_path }}/ruby/command-t/ext/command-t
+  command: ruby extconf.rb
+  args:
+    creates: '{{ command_t_path }}/ruby/command-t/ext/command-t/Makefile'
+    chdir: '{{ command_t_path }}/ruby/command-t/ext/command-t'
 
 - name: vim | compile Command-T
-  command:
-    make
-    creates={{ command_t_path }}/ruby/command-t/ext/command-t/ext.bundle
-    chdir={{ command_t_path }}/ruby/command-t/ext/command-t
+  command: make
+  args:
+    creates: '{{ command_t_path }}/ruby/command-t/ext/command-t/ext.bundle'
+    chdir: '{{ command_t_path }}/ruby/command-t/ext/command-t'
 
 - name: template files
   template: src={{ ansible_env.PWD }}/roles/dotfiles/templates/{{ item }}
