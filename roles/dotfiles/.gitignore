@@ -1,0 +1,10 @@
+vars/main.yml
+
+templates/out
+
+files/.zsh/.zhistory
+files/.zsh/.zcompdump
+files/.zshenv
+files/.zsh/.zprofile
+files/.gitconfig
+files/.tmux.conf
