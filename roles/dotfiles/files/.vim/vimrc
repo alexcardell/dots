@@ -1,28 +1,23 @@
-if exists('$SUDO_USER')
-  " swap
+if exists('$SUDO_USER')  " no root owned files
   set noswapfile
-
-  " backup
   set nobackup
   set nowritebackup
-
-  " undo
   set noundofile
-
 else
+  " keep backup files out of the way
   set backupdir=~/local/.vim/tmp/backup//
-  set backupdir+=~/.vim/tmp/backup//    " keep backup files out of the way
-  set backupdir+=.
+  set backupdir+=~/.vim/tmp/backup//
 
+  " keep swap files out of the way
   set directory=~/local/.vim/tmp/swap//
-  set directory+=~/.vim/tmp/swap//     " keep swap files out of the way
-  set directory+=.
+  set directory+=~/.vim/tmp/swap//
 
+  " keep undo files out of the way
   if has('persistent_undo')
     set undodir=~/local/.vim/tmp/undo//
-    set undodir+=~/.vim/tmp/undo//      " keep undo files out of the way
-    set undodir+=.
-    set undofile
+    set undodir+=~/.vim/tmp/undo//
+    set undofile  " enable undo files
+    set undolevels=100
   endif
 endif
 
