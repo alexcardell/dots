@@ -8,8 +8,7 @@ Symlinks config files to the correct places. Where possible the cross-platform
 differences are handled with internal logic (shell/vim if/elses),
 and where not possible it is solved by templating.
 
-Primary workflow consists of Vim, Zsh, and Tmux, and occasionally
-IntelliJ with IDEAvim.
+Primary workflow consists of Vim, Zsh, and Tmux.
 
 #### :construction: Pacman :construction:
 Installs packages from pacman.
