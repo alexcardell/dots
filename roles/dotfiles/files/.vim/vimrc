@@ -3,6 +3,7 @@ if exists('$SUDO_USER')  " no root owned files
   set nobackup
   set nowritebackup
   set noundofile
+  set shada="NONE"
 else
   " keep backup files out of the way
   set backupdir=~/.local/share/nvim/backup//
