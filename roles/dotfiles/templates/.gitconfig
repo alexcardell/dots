@@ -21,6 +21,7 @@
   ls = log -n 20 --pretty=format:'%C(yellow)%h%Creset %s -- %C(bold italic magenta)<%cn>%Creset %C(blue)[%ad]%Creset %C(red)%d' --date=relative
   root = rev-parse --show-toplevel
   st = status
+  sub = submodule
 
 [color]
   ui = auto
