@@ -1,12 +1,10 @@
 ---
-- name: vim | set up ~local/.vim/tmp
+- name: vim | set up tmp dirs
   file:
-    path: {{ vim_path }}/tmp/{{ items }}
-    state: direcotry
-    with_items:
-      - backup
-      - swap
-      - undo
+    path: "{{ vim_path }}/tmp/{{ item }}"
+    state: directory
+    mode: 0775
+  with_items: "{{ vim_tmp_dirs }}"
 
 - name: vim | configure Command-T
   command:
@@ -19,4 +17,3 @@
     make
     creates={{ command_t_path }}/ruby/command-t/ext/command-t/ext.bundle
     chdir={{ command_t_path }}/ruby/command-t/ext/command-t
-
