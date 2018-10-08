@@ -22,6 +22,7 @@
         path=~/{{ item }}
         state=link
         force=yes
+        follow=false
   with_items: '{{ common_files }}'
 
 - import_tasks: darwin.yml
