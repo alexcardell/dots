@@ -14,5 +14,9 @@ if has('autocmd')
 
     " clear trailing whitespace
     autocmd BufWrite * call me#functions#zap()
+
+    " register *.md as markdown filetype
+    autocmd BufNewFile,BufReadPost *.md set filetype=markdown
+
   augroup END
 endif
