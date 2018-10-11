@@ -1,11 +1,18 @@
-function t() {
-  emulate -L zsh
-  if [ -x .tmux ]; then
-    ./.tmux
-    return
+function t {
+  if [[ -n $1 ]]; then
+    project=$1
   else
-    tmux new-session
+    project=$(basename $(pwd))
   fi
+
+  if [[ -f ~/.tmuxinator/$project\.yml || ~/.tmuxinator/$project\.yaml ]];
+  then
+    tmuxinator start $project
+    return
+  fi
+
+  tmuxinator list
+
 }
 
 # Decide cursor shape escape sequence
