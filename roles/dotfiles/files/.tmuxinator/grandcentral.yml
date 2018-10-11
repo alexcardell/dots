@@ -1,0 +1,10 @@
+name: grandcentral
+root: ~/bg/rides/website/
+
+windows:
+  - edit: vim
+  - term: git status
+  - server:
+    panes:
+      - npm run build
+      - docker-compose up
