@@ -5,13 +5,13 @@ function t {
     project=$(basename $(pwd))
   fi
 
-  if [[ -f ~/.tmuxinator/$project\.yml || -f ~/.tmuxinator/$project\.yaml ]];
+  if [[ -f ~/.tmux/$project\.sh ]];
   then
-    tmuxinator start $project
+    ~/.tmux/$project\.sh
     return
   fi
 
-  tmuxinator list
+  tmux new-session
 
 }
 

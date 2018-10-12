@@ -1,6 +1,0 @@
-name: dots
-root: ~/dots
-
-windows:
-  - edit: vim
-  - term: git status
