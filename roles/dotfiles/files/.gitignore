@@ -19,11 +19,6 @@ tags.*
 # Persistent undo
 [._]*.un~
 
-# Tmux #
-########
-# force it for personal projects
-.tmux
-
 # Ansible #
 ###########
 *.retry
