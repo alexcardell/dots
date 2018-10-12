@@ -5,7 +5,7 @@ function t {
     project=$(basename $(pwd))
   fi
 
-  if [[ -f ~/.tmuxinator/$project\.yml || ~/.tmuxinator/$project\.yaml ]];
+  if [[ -f ~/.tmuxinator/$project\.yml || -f ~/.tmuxinator/$project\.yaml ]];
   then
     tmuxinator start $project
     return
