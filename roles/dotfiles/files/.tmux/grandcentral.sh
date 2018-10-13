@@ -8,8 +8,7 @@ if tmux has-session -t $name 2> /dev/null; then
   exit
 fi
 
-root=~/bg/rides/website
-cd $root
+cd ~/bg/rides/$name
 
 tmux new-session -d -s $name -n edit
 
