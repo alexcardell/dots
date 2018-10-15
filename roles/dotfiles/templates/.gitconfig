@@ -15,6 +15,7 @@
   amn = commit --amend
   br = branch
   ci = commit -v
+  cinov = commit -v --no-verify
   co = checkout
   cp = cherry-pick
   lg = log --graph --oneline --decorate --all
