@@ -1,12 +1,18 @@
-function t {
+function t() {
+  # tmux session startup function
   if [[ -n $1 ]]; then
     project=$1
   else
     project=$(basename $(pwd))
   fi
 
-  if [[ -f ~/.tmux/$project\.sh ]];
-  then
+  if [[ -n $TMUX ]]; then
+    tmux detach
+    t $project
+  fi
+
+
+  if [[ -f ~/.tmux/$project\.sh ]]; then
     ~/.tmux/$project\.sh
     return
   fi
@@ -15,8 +21,34 @@ function t {
 
 }
 
-# Decide cursor shape escape sequence
+function ask {
+  local prompt reply
+  prompt="y/n"
+
+  while true; do
+    # Ask the question (not using "read -p" as it uses stderr not stdout)
+    echo -n "$1 [$prompt] "
+
+    # Read the answer (use /dev/tty in case stdin is redirected from somewhere else)
+    read reply </dev/tty
+
+    # Default?
+    if [ -z "$reply" ]; then
+      reply="n"
+    fi
+
+    # Check if the reply is valid
+    case "$reply" in
+      Y*|y*) return 0 ;;
+      N*|n*) return 1 ;;
+    esac
+    return 0;
+
+  done
+}
+
 function set-cursor-sequence {
+  # Decide cursor shape escape sequence
   case $(uname) in
     "Darwin")
       BLOCK="\E]50;CursorShape=0\C-G"
