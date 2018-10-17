@@ -21,6 +21,36 @@ function t() {
 
 }
 
+function tmux2() {
+  local project tmuxFile session
+  # tmux session startup function
+  if [[ -n $1 ]]; then
+    project=$1
+  else
+    project=$(basename "${$(pwd)//[.]/_}")
+  fi
+
+  # follow symlinks for true project name
+  tmuxFile=~/.tmux/$project\.sh
+  project=$(echo $(test -L $tmuxFile && readlink $tmuxFile || echo $project) \
+    | sed 's/\.[^.]*$//')
+
+  session=$(tmux ls -F '#{session_name}' | grep $project)
+  if [[ -n $TMUX && -n $session ]]; then
+    tmux switch-client -t $session
+    return
+  fi
+  tmux attach -t $session
+
+  # if [[ -f $tmuxFile ]]; then
+  #   $tmuxFile
+  #   return
+  # fi
+
+  # tmux new-session
+}
+
+
 function ask {
   local prompt reply
   prompt="y/n"
