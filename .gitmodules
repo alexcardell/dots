@@ -91,6 +91,9 @@
 [submodule "roles/dotfiles/files/.vim/pack/bundle/start/LanguageClient-neovim"]
 	path = roles/dotfiles/files/.vim/pack/bundle/start/LanguageClient-neovim
 	url = https://github.com/autozimu/LanguageClient-neovim.git
-[submodule "roles/dotfiles/files/.vim/pack/bundle/start/neomake"]
-	path = roles/dotfiles/files/.vim/pack/bundle/start/neomake
-	url = https://github.com/neomake/neomake.git
+[submodule "roles/dotfiles/files/.vim/pack/bundle/start/ale"]
+	path = roles/dotfiles/files/.vim/pack/bundle/start/ale
+	url = https://github.com/w0rp/ale.git
+[submodule "roles/dotfiles/files/.vim/pack/bundle/opt/ale"]
+	path = roles/dotfiles/files/.vim/pack/bundle/opt/ale
+	url = https://github.com/w0rp/ale.git
