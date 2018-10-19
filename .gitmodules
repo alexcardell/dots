@@ -68,7 +68,7 @@
 	path = lib/virtualenv
 	url = https://github.com/pypa/virtualenv.git
 [submodule "roles/dotfiles/files/.vim/pack/bundle/opt/vim-prettier"]
-	path = roles/dotfiles/files/.vim/pack/bundle/start/vim-prettier
+	path = roles/dotfiles/files/.vim/pack/bundle/opt/vim-prettier
 	url = https://github.com/prettier/vim-prettier
 [submodule "roles/dotfiles/files/.vim/pack/bundle/start/vim-devicons"]
 	path = roles/dotfiles/files/.vim/pack/bundle/start/vim-devicons
