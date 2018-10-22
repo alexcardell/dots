@@ -78,7 +78,7 @@ zmodload zsh/complist
 [ -f $ZDOTDIR/path.zsh ]           && . $ZDOTDIR/path.zsh
 [ -f $ZDOTDIR/functions.zsh ]      && . $ZDOTDIR/functions.zsh
 [ -f $ZDOTDIR/aliases.zsh ]        && . $ZDOTDIR/aliases.zsh
-[ -f $ZOTDIR/aliases.private.zsh ] && . $ZDOTDIR/aliases.private.zsh
+[ -f $ZDOTDIR/aliases.private.zsh ] && . $ZDOTDIR/aliases.private.zsh
 [ -f $ZDOTDIR/aliases.$OS.zsh ]    && . $ZDOTDIR/aliases.$OS.zsh
 [ -f $ZDOTDIR/settings.$OS.zsh ]   && . $ZDOTDIR/settings.$OS.zsh
 
