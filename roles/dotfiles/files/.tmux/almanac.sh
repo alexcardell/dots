@@ -13,8 +13,7 @@ cd ~/projects/$name
 tmux new-session -d -s $name -n edit
 
 # 1. Editing
-tmux send-keys -t edit "vim" Enter
-tmux split-window -h
-tmux send-keys "git status" Enter
+tmux split-window -h -t $name:edit
+tmux send-keys -t $name:edit.2 "git status" Enter
 
 tmux attach -t $name:edit.1

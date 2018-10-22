@@ -23,15 +23,15 @@ tmux send-keys -t term "git status" Enter
 tmux new-window -n build
 tmux send-keys "npm run webpack --watch" Enter
 
-tmux split-window
-tmux send-keys "npm run sass:watch" Enter
+# tmux split-window
+# tmux send-keys "npm run sass:watch" Enter
 
-tmux split-window
-tmux send-keys "npm run postcss:watch" Enter
+# tmux split-window
+# tmux send-keys "npm run postcss:watch" Enter
 
 tmux split-window
 tmux send-keys "docker-compose up" Enter
 
-tmux select-layout tiled
+# tmux select-layout tiled
 
 tmux attach -t $name:edit.1
