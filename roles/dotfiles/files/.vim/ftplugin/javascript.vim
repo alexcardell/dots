@@ -1,4 +1,5 @@
 packadd vim-prettier
+packadd ale
 
 setlocal textwidth=100
 setlocal tabstop=4
