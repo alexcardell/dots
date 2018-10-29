@@ -1,4 +1,8 @@
-function t() {
+function killport {
+  pkill -P $(lsof -ntP -iTCP:9229)
+}
+
+function t {
   # tmux session startup function
   if [[ -n $1 ]]; then
     project=$1
@@ -11,7 +15,6 @@ function t() {
     t $project
   fi
 
-
   if [[ -f ~/.tmux/$project\.sh ]]; then
     ~/.tmux/$project\.sh
     return
@@ -21,7 +24,7 @@ function t() {
 
 }
 
-function tmux2() {
+function tmux2 {
   local project tmuxFile session
   # tmux session startup function
   if [[ -n $1 ]]; then
