@@ -25,6 +25,7 @@ archlinux_files:
 
 darwin_files:
   - .ideavimrc
+  - .prettierrc.js
 
 vim_tmp_dirs:
   - backup
