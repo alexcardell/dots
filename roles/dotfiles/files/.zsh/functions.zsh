@@ -4,15 +4,11 @@ function killport {
 
 function t {
   # tmux session startup function
+  local project
   if [[ -n $1 ]]; then
     project=$1
   else
     project=$(basename "${$(pwd)//[.]/_}")
-  fi
-
-  if [[ -n $TMUX ]]; then
-    tmux detach
-    t $project
   fi
 
   if [[ -f ~/.tmux/$project\.sh ]]; then
@@ -20,8 +16,7 @@ function t {
     return
   fi
 
-  tmux new-session
-
+  tmux new-session -s $project
 }
 
 function tmux2 {
