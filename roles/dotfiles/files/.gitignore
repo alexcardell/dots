@@ -96,3 +96,5 @@ Thumbs.db
 ########
 *.patch
 *.dif
+
+jsconfig.json
