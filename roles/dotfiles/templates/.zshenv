@@ -1,15 +1,12 @@
 # {{ ansible_managed }}
 
 {% if ansible_os_family == 'Darwin' %}
-# java
-JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home
-
-# mysql
-MYSQL_HOME=/usr/local/mysql
-MYSQL=$MYSQL_HOME/bin
-PATH=$MYSQL:$PATH
+# Darwin platform
+# ###############
 {% endif %}
 
+# Platform agnostic
+# #################
 VISUAL=vim
 EDITOR="${VISUAL}"
 
