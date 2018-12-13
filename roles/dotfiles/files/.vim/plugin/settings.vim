@@ -64,6 +64,10 @@ set shiftround         " round up indentation width
 set tabstop=2          " tab width
 set textwidth=80       " hard wrap at 80
 
+if has('nvim')
+  set inccommand=nosplit
+endif
+
 """ General
 set confirm            " confirm save/quit
 set showcmd
