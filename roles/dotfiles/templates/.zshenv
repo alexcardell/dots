@@ -7,7 +7,7 @@
 
 # Platform agnostic
 # #################
-VISUAL=vim
+VISUAL=nvim
 EDITOR="${VISUAL}"
 
 # use project specific node modules
