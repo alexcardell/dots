@@ -29,7 +29,7 @@
   ui = auto
 
 [core]
-  editor = vim
+  editor = nvim
   excludesfile = ~/.gitignore
   pager = less -S --chop-long-lines
 
