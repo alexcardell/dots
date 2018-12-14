@@ -1,6 +1,10 @@
 #!/bin/bash
 set -e
 
+if [ -n "$1" ]; then
+  ROLES="--tags $1"
+fi
+
 VENV_SETUP=lib/virtualenv/virtualenv.py
 VENV=lib/env
 VENV_ACTIVATE=$VENV/bin/activate
@@ -13,9 +17,9 @@ $PIP install ansible &> /dev/stdout
 
 HOST_OS=$(uname)
 if [ "$HOST_OS" = 'Darwin' ]; then
-  $ANSIBLE -i inventory darwin.yml
+  $ANSIBLE -i inventory darwin.yml $ROLES
 elif [ "$HOST_OS" = 'Linux' ]; then
-  $ANSIBLE -i inventory arch.yml
+  $ANSIBLE -i inventory arch.yml $ROLES
 else
   echo "Unknown host OS: $HOST_OS"
   exit 1
