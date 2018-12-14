@@ -1,15 +1,22 @@
 ---
-- name: Check Homebrew bin
+- name: Check Homebrew
   stat:
     path: /usr/local/bin/brew
   register: brew
 
 - name: Install Homebrew
-  command: ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  become: true
+  command: yes | ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
   when: not brew.stat.exists
 
 - name: Update Homebrew
   homebrew: update_homebrew=yes
 
-- name: Brew cleanup
+- name: brew cleanup
   command: brew cleanup
+
+- name: template brewfile
+  template: dest=~/.Brewfile src=Brewfile
+
+- name: brew install bundle
+  command: brew bundle --global

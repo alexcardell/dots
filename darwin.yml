@@ -1,5 +1,5 @@
 ---
 - hosts: localhost
   roles:
-    - dotfiles
-    - homebrew
+    - { role: dotfiles, tags: dotfiles }
+    - { role: homebrew, tags: homebrew }
