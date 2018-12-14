@@ -1,9 +1,15 @@
 ---
+- name: Check Homebrew bin
+  stat:
+    path: /usr/local/bin/brew
+  register: brew
+
 - name: Install Homebrew
   command: ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  when: not brew.stat.exists
 
-- name: update Homebrew
+- name: Update Homebrew
   homebrew: update_homebrew=yes
 
-- name: clean up old versions
+- name: Brew cleanup
   command: brew cleanup
