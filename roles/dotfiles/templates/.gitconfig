@@ -32,3 +32,14 @@
   editor = vim
   excludesfile = ~/.gitignore
   pager = less -S --chop-long-lines
+
+[merge]
+  tool = nvimdiff
+[mergetool]
+  prompt = true
+[mergetool "nvimdiff"]
+  cmd = nvim -f -c \"Gdiff\" \"$MERGED\"
+[difftool]
+  prompt = true
+[diff]
+  tool = nvimdiff
