@@ -75,16 +75,17 @@ zmodload zsh/complist
 # Sourcing
 #---------
 # mine
-[ -f $ZDOTDIR/path.zsh ]           && . $ZDOTDIR/path.zsh
-[ -f $ZDOTDIR/functions.zsh ]      && . $ZDOTDIR/functions.zsh
-[ -f $ZDOTDIR/aliases.zsh ]        && . $ZDOTDIR/aliases.zsh
+[ -f $ZDOTDIR/path.zsh ]            && . $ZDOTDIR/path.zsh
+[ -f $ZDOTDIR/functions.zsh ]       && . $ZDOTDIR/functions.zsh
+[ -f $ZDOTDIR/aliases.zsh ]         && . $ZDOTDIR/aliases.zsh
 [ -f $ZDOTDIR/aliases.private.zsh ] && . $ZDOTDIR/aliases.private.zsh
-[ -f $ZDOTDIR/aliases.$OS.zsh ]    && . $ZDOTDIR/aliases.$OS.zsh
-[ -f $ZDOTDIR/settings.$OS.zsh ]   && . $ZDOTDIR/settings.$OS.zsh
+[ -f $ZDOTDIR/aliases.$OS.zsh ]     && . $ZDOTDIR/aliases.$OS.zsh
+[ -f $ZDOTDIR/settings.$OS.zsh ]    && . $ZDOTDIR/settings.$OS.zsh
 
 # plugins
-[ -f $ZDOTDIR/tomorrow-night.sh ]  && . $ZDOTDIR/tomorrow-night.sh
-[ -f $ZDOTDIR/fzf.zsh ]            && . $ZDOTDIR/fzf.zsh
+[ -f $ZDOTDIR/tomorrow-night.sh ] && . $ZDOTDIR/tomorrow-night.sh
+[ -f $ZDOTDIR/fzf.zsh ]           && . $ZDOTDIR/fzf.zsh
+[ -f $NVM_DIR/nvm.sh ]            && . $NVM_DIR/nvm.sh
 [ -f /usr/local/etc/profile.d/autojump.sh ] \
   && . /usr/local/etc/profile.d/autojump.sh
 
