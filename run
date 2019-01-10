@@ -3,6 +3,8 @@ set -e
 
 if [ -n "$1" ]; then
   ROLES="--tags $1"
+else
+  ROLES="--tags dotfiles"  # sensible default
 fi
 
 VENV_SETUP=lib/virtualenv/virtualenv.py
