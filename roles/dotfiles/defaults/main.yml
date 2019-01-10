@@ -10,8 +10,9 @@ common_files:
   - .gitconfig
   - .gitignore
   - .profile
-  - .tmux.conf
+  - .ripgreprc
   - .tmux
+  - .tmux.conf
   - .vim
   - .zsh
   - .zshenv

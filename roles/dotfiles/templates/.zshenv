@@ -18,3 +18,5 @@ NVM_DIR="$HOME/.nvm"
 GOPATH=$HOME/projects/go
 
 ZDOTDIR=$HOME/.zsh
+
+RIPGREP_CONFIG_PATH=$HOME/.ripgreprc
