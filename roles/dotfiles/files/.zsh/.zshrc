@@ -83,23 +83,11 @@ zmodload zsh/complist
 [ -f $ZDOTDIR/settings.$OS.zsh ]    && . $ZDOTDIR/settings.$OS.zsh
 
 # plugins
-[ -f $ZDOTDIR/tomorrow-night.sh ]   && . $ZDOTDIR/tomorrow-night.sh
-[ -f $ZDOTDIR/fzf.zsh ]             && . $ZDOTDIR/fzf.zsh
+[ -f $ZDOTDIR/tomorrow-night.sh ] && . $ZDOTDIR/tomorrow-night.sh
+[ -f $ZDOTDIR/fzf.zsh ]           && . $ZDOTDIR/fzf.zsh
+[ -f $NVM_DIR/nvm.sh ]            && . $NVM_DIR/nvm.sh
 [ -f /usr/local/etc/profile.d/autojump.sh ] \
   && . /usr/local/etc/profile.d/autojump.sh
-
-# defer nvm until we need it because it's slow as heck
-if [ -s "$NVM_DIR/nvm.sh" ] && [ ! "$(type -f __init_nvm)" = function ]; then
-  [ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"
-  declare -a __node_commands=('nvm' 'node' 'npm' 'yarn' 'webpack')
-  function __init_nvm() {
-    for i in "${__node_commands[@]}"; do unalias $i; done
-    . "$NVM_DIR"/nvm.sh
-    unset __node_commands
-    unset -f __init_nvm
-  }
-  for i in "${__node_commands[@]}"; do alias $i='__init_nvm && '$i; done
-fi
 
 #-------
 # Other
