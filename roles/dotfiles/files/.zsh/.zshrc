@@ -89,6 +89,8 @@ zmodload zsh/complist
 [ -f /usr/local/etc/profile.d/autojump.sh ] \
   && . /usr/local/etc/profile.d/autojump.sh
 
+if [[ -z "$TMUX" ]]; then t alex; fi
+
 #-------
 # Other
 #-------
