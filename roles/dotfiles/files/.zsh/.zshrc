@@ -51,21 +51,21 @@ zmodload zsh/complist
 [ -f $ZDOTDIR/aliases.private.zsh ] && . $ZDOTDIR/aliases.private.zsh
 [ -f $ZDOTDIR/aliases.$OS.zsh ]     && . $ZDOTDIR/aliases.$OS.zsh
 [ -f $ZDOTDIR/settings.$OS.zsh ]    && . $ZDOTDIR/settings.$OS.zsh
+[ -f $ZDOTDIR/fzf.zsh ]             && . $ZDOTDIR/fzf.zsh
 
 # third party
-[ -f $ZDOTDIR/tomorrow-night.sh ] && . $ZDOTDIR/tomorrow-night.sh
-[ -f $ZDOTDIR/fzf.zsh ]           && . $ZDOTDIR/fzf.zsh
+[ -f $ZDOTDIR/lib/tomorrow-night.sh ] && . $ZDOTDIR/lib/tomorrow-night.sh
 [ -f $NVM_DIR/nvm.sh ]            && . $NVM_DIR/nvm.sh
+
 [ -f /usr/local/etc/profile.d/autojump.sh ] \
   && . /usr/local/etc/profile.d/autojump.sh
 
-if [[ -z "$TMUX" ]]; then t alex; fi
+[ -f $ZDOTDIR/lib/zsh-autosuggestions/zsh-autosuggestions.zsh ] \
+  && . $ZDOTDIR/lib/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-#-------
-# Other
-#-------
-# Autosuggestions
-source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+[ -f $ZDOTDIR/lib/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh ] \
+  && . $ZDOTDIR/lib/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 bindkey "^P" autosuggest-accept
-# Syntax highlighting
-source $ZDOTDIR/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
+
+# Start up in tmux
+if [[ -z "$TMUX" ]]; then t alex; fi
