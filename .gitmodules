@@ -94,3 +94,6 @@
 [submodule "roles/dotfiles/files/.vim/pack/bundle/opt/ale"]
 	path = roles/dotfiles/files/.vim/pack/bundle/opt/ale
 	url = https://github.com/w0rp/ale.git
+[submodule "roles/dotfiles/files/.vim/pack/bundle/start/vim-rhubarb"]
+	path = roles/dotfiles/files/.vim/pack/bundle/start/vim-rhubarb
+	url = https://github.com/tpope/vim-rhubarb.git
