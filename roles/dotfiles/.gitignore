@@ -9,3 +9,4 @@ files/.zsh/.zprofile
 files/.gitconfig
 files/.tmux.conf
 files/.zsh/aliases.private.zsh
+files/.vim/spell
