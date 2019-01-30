@@ -8,7 +8,7 @@ if tmux has-session -t $name 2> /dev/null; then
   exit
 fi
 
-cd ~/projects/$name
+cd ~/Code/$name
 
 tmux new-session -d -s $name -n edit
 
