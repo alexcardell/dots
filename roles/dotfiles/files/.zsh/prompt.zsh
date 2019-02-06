@@ -12,6 +12,7 @@ zstyle ':vcs_info:*' actionformats \
 zstyle ':vcs_info:*' formats \
   '%c%u%F{grey}[%F{cyan}%b%F{grey}]%m%f'
 zstyle ':vcs_info:git*+set-message:*' hooks git-st
+zstyle ':vcs_info:git*+set-message:*' hooks git-untracked
 
 function +vi-git-st() {
   local ahead behind
@@ -23,6 +24,12 @@ function +vi-git-st() {
     | wc -l | tr -d '[:space:]')
   (( $behind )) && gitstatus+=( "-${behind}" )
   hook_com[misc]+="%F{cyan}${(j:/:)gitstatus}%f"
+}
+
+function +vi-git-untracked() {
+  if [[ -n $(git ls-files --exclude-standard --others 2> /dev/null) ]]; then
+    hook_com[unstaged]+="%F{magenta}●%f"
+  fi
 }
 
 precmd () { vcs_info }
