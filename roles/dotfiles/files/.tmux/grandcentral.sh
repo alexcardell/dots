@@ -21,9 +21,6 @@ tmux send-keys -t term "git status" Enter
 
 # 3. Build
 tmux new-window -n build
-tmux send-keys "npm run build:watch" Enter
-
-tmux split-window
 tmux send-keys "docker-compose up -d" Enter
 
 tmux attach -t $name:edit.1
