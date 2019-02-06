@@ -29,6 +29,11 @@
 [color]
   ui = auto
 
+[color "status"]
+  added = green
+  changed = red
+  untracked = magenta
+
 [core]
   editor = nvim
   excludesfile = ~/.gitignore
