@@ -1,0 +1,40 @@
+#!/bin/bash
+
+# Exit if not a standard commit
+case "$2" in
+  merge|template|squash|commit)
+    exit
+    ;;
+esac
+
+exec < /dev/tty
+
+PS3='Please choose a commit label: '
+options=(
+"zsh"
+"vim"
+"git"
+"tmux"
+"ansible"
+"misc"
+"NONE"
+)
+
+COLUMNS=1
+select LABEL in "${options[@]}"
+
+do
+  case $LABEL in
+    "NONE")
+      opt=""
+      break
+      ;;
+    *)
+      break
+      ;;
+  esac
+done
+
+if [ -n $LABEL ]; then
+  sed -i.bak -e "1s/^/\[$LABEL\] /" $1
+fi
