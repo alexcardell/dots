@@ -5,51 +5,51 @@
     upgrade: yes
 
 - name: installing packages
-  pacman: name={{ item }}
   become: true
-  with_items:
-    - acpi
-    - adobe-source-code-pro-fonts
-    - arc-gtk-theme
-    - autojump
-    - connman
-    - ctags
-    - docker
-    - feh
-    - fzf
-    - htop
-    - i3-gaps
-    - i3-wm
-    - i3blocks
-    - lxappearance
-    - mpv
-    - mupdf
-    - qbittorrent
-    - ranger
-    - redshift
-    - ripgrep
-    - rofi
-    - screenfetch
-    - sudo
-    - tmux
-    - unzip
-    - vim
-    - which
-    - xclip
-    - xorg-server
-    - xorg-xinit
-    - xss-lock
-    - yarn
-    - zip
-    - zsh
+  pacman:
+    name:
+      - acpi
+      - adobe-source-code-pro-fonts
+      - arc-gtk-theme
+      - autojump
+      - connman
+      - ctags
+      - docker
+      - feh
+      - firefox-developer-edition
+      - fzf
+      - htop
+      - i3-gaps
+      - i3-wm
+      - i3blocks
+      - lxappearance
+      - mpv
+      - mupdf
+      - qbittorrent
+      - ranger
+      - redshift
+      - ripgrep
+      - rofi
+      - screenfetch
+      - sudo
+      - tmux
+      - unzip
+      - vim
+      - which
+      - xclip
+      - xorg-server
+      - xorg-xinit
+      - xss-lock
+      - yarn
+      - zip
+      - zsh
 
 # TODO: Pacaur packages
 # - clipit
 # - drive
-# - google-chrome
 # - i3lock-fancy-git
 # - nerd-fonts-complete
 # - paper-icon-theme
-# - private-internet-access-vpn
 # - spotify
 # - tor-browser-en
+# - nordvpn
