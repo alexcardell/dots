@@ -23,6 +23,9 @@ tags.*
 ###########
 *.retry
 
+# JavaScript #
+##############
+node_modules
 
 # Compiled source #
 ###################
