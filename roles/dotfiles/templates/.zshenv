@@ -1,22 +1,26 @@
 # {{ ansible_managed }}
 
 {% if ansible_os_family == 'Darwin' %}
-# Darwin platform
-# ###############
+{% endif %}
+
+{% if ansible_os_family == 'Archlinux' %}
 {% endif %}
 
 # Platform agnostic
 # #################
+# editors
 VISUAL=nvim
 EDITOR="${VISUAL}"
 
-# use project specific node modules
-PATH=node_modules/.bin:$PATH
-
+# node version manager
 NVM_DIR="$HOME/.nvm"
 
+# golang
 GOPATH=$HOME/projects/go
 
+# zsh
 ZDOTDIR=$HOME/.zsh
+REPORTTIME=1
 
+# ripgrep
 RIPGREP_CONFIG_PATH=$HOME/.ripgreprc
