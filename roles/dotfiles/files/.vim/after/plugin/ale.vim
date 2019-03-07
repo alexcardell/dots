@@ -1,5 +1,5 @@
 let g:ale_linters = {
-      \ 'javascript': ['eslint', 'tsserver']
+      \ 'javascript': ['eslint', 'flow-language-server']
       \}
 
 let g:ale_fixers = {
