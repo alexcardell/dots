@@ -12,9 +12,6 @@
 VISUAL=nvim
 EDITOR="${VISUAL}"
 
-# node version manager
-NVM_DIR="$HOME/.nvm"
-
 # golang
 GOPATH=$HOME/projects/go
 

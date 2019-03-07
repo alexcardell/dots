@@ -55,7 +55,6 @@ zmodload zsh/complist
 
 # third party
 [ -f $ZDOTDIR/lib/tomorrow-night.sh ] && . $ZDOTDIR/lib/tomorrow-night.sh
-[ -f $NVM_DIR/nvm.sh ]            && . $NVM_DIR/nvm.sh
 
 [ -f /usr/local/etc/profile.d/autojump.sh ] \
   && . /usr/local/etc/profile.d/autojump.sh

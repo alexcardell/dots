@@ -4,7 +4,6 @@ alias cl='clear'
 alias d='docker'
 alias dc='docker-compose'
 alias g='git'
-alias initnvm=". /usr/local/opt/nvm/nvm.sh"
 alias killtomcat='pkill -9 -f tomcat'
 alias py='python'
 alias tat='tmux attach\; choose-tree -Zs'
