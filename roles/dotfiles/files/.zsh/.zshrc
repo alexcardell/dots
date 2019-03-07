@@ -66,5 +66,8 @@ zmodload zsh/complist
   && . $ZDOTDIR/lib/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 bindkey "^P" autosuggest-accept
 
+# fnm
+eval "`fnm env --multi --use-on-cd`"
+
 # Start up in tmux
 if [[ -z "$TMUX" ]]; then t alex; fi

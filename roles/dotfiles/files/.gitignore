@@ -26,6 +26,7 @@ tags.*
 # JavaScript #
 ##############
 node_modules
+.nvmrc
 
 # Compiled source #
 ###################
