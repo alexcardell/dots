@@ -31,12 +31,6 @@
         follow=false
   with_items: '{{ common_files }}'
 
-# - name: install nvm
-#   shell: >
-#     curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
-#   args:
-#     creates: "{{ ansible_env.HOME }}/.nvm/nvm.sh"
-
 # os specific tasks
 - name: create darwin symlinks
   file: src={{ ansible_env.PWD }}/roles/dotfiles/files/{{ item }}
