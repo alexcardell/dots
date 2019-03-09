@@ -7,9 +7,6 @@
 [submodule "roles/dotfiles/files/.vim/pack/bundle/start/base16-vim"]
 	path = roles/dotfiles/files/.vim/pack/bundle/start/base16-vim
 	url = https://github.com/chriskempson/base16-vim.git
-[submodule "roles/dotfiles/files/.vim/pack/bundle/start/ferret"]
-	path = roles/dotfiles/files/.vim/pack/bundle/start/ferret
-	url = https://github.com/wincent/ferret
 [submodule "roles/dotfiles/files/.vim/pack/bundle/start/indentLine"]
 	path = roles/dotfiles/files/.vim/pack/bundle/start/indentLine
 	url = https://github.com/Yggdroot/indentLine.git
@@ -94,3 +91,6 @@
 [submodule "roles/dotfiles/files/.vim/pack/bundle/start/vim-rhubarb"]
 	path = roles/dotfiles/files/.vim/pack/bundle/start/vim-rhubarb
 	url = https://github.com/tpope/vim-rhubarb.git
+[submodule "roles/dotfiles/files/.vim/pack/bundle/start/fzf.vim"]
+	path = roles/dotfiles/files/.vim/pack/bundle/start/fzf.vim
+	url = https://github.com/junegunn/fzf.vim.git

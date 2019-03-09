@@ -46,3 +46,5 @@ if exists('&loadplugins')
     call pathogen#infect('pack/bundle/start/{}')
   endif
 endif
+
+set rtp+=/usr/local/opt/fzf
