@@ -9,3 +9,6 @@ nnoremap <leader>FL :Lines!<CR>
 
 nnoremap <leader>fh :Helptags<CR>
 nnoremap <leader>FL :Helptags!<CR>
+
+nnoremap <leader>fr :Rg<CR>
+nnoremap <leader>FR :Rg!<CR>

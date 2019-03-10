@@ -5,18 +5,6 @@
     state: directory
   with_items: '{{ vim_tmp_dirs }}'
 
-- name: vim | configure Command-T
-  command: ruby extconf.rb
-  args:
-    creates: '{{ command_t_path }}/ruby/command-t/ext/command-t/Makefile'
-    chdir: '{{ command_t_path }}/ruby/command-t/ext/command-t'
-
-- name: vim | compile Command-T
-  command: make
-  args:
-    creates: '{{ command_t_path }}/ruby/command-t/ext/command-t/ext.bundle'
-    chdir: '{{ command_t_path }}/ruby/command-t/ext/command-t'
-
 - name: template files
   template: src={{ ansible_env.PWD }}/roles/dotfiles/templates/{{ item }}
         dest={{ ansible_env.PWD }}/roles/dotfiles/files/{{ item }}
@@ -33,19 +21,19 @@
 
 # os specific tasks
 - name: create darwin symlinks
+  when: ansible_os_family == "Darwin" and darwin_files is defined
   file: src={{ ansible_env.PWD }}/roles/dotfiles/files/{{ item }}
         path=~/{{ item }}
         state=link
         force=yes
         follow=false
   with_items: '{{ darwin_files }}'
-  when: ansible_os_family == "Darwin" and darwin_files is defined
 
 - name: create archlinux symlinks
+  when: ansible_os_family == "Archlinux" and archlinux_files is defined
   file: src={{ ansible_env.PWD }}/roles/dotfiles/files/{{ item }}
         path=~/{{ item }}
         state=link
         force=yes
         follow=false
   with_items: '{{ archlinux_files }}'
-  when: ansible_os_family == "Archlinux" and archlinux_files is defined
