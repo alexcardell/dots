@@ -1,1 +1,11 @@
 --hidden
+--glob=!**/.git/*
+
+# JS
+--glob=!**/node_modules/*
+--glob=!**/yarn.lock
+--glob=!**/package-lock.json
+
+# ReasonML - esy
+--glob=!**/esy.lock/*
+--glob=!**/_esy/*

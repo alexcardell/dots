@@ -1,4 +1,4 @@
-export FZF_DEFAULT_COMMAND='rg --hidden -l ""'
+export FZF_DEFAULT_COMMAND='RIPGREP_CONFIG_PATH=~/.ripgreprc rg --files --follow'
 
 # Moving
 #--------
