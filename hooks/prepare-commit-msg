@@ -26,7 +26,7 @@ select LABEL in "${options[@]}"
 do
   case $LABEL in
     "NONE")
-      opt=""
+      LABEL=""
       break
       ;;
     *)
