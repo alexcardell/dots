@@ -51,7 +51,11 @@ zmodload zsh/complist
 [ -f $ZDOTDIR/aliases.private.zsh ] && . $ZDOTDIR/aliases.private.zsh
 [ -f $ZDOTDIR/aliases.$OS.zsh ]     && . $ZDOTDIR/aliases.$OS.zsh
 [ -f $ZDOTDIR/settings.$OS.zsh ]    && . $ZDOTDIR/settings.$OS.zsh
-[ -f $ZDOTDIR/fzf.zsh ]             && . $ZDOTDIR/fzf.zsh
+[ -f ~/.fzf/bin/fzf ] \
+  && [ -f ~/.fzf.zsh ] \
+  && [ -f $ZDOTDIR/fzf.zsh ] \
+  && . ~/.fzf.zsh \
+  && . $ZDOTDIR/fzf.zsh
 
 # third party
 [ -f $ZDOTDIR/lib/tomorrow-night.sh ] && . $ZDOTDIR/lib/tomorrow-night.sh

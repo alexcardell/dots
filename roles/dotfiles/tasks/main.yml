@@ -1,17 +1,28 @@
 ---
-- name: vim | set up tmp dirs
+- name: Clone fzf repo
+  git:
+    repo: https://github.com/junegunn/fzf
+    dest: ~/.fzf
+    update: no
+
+- name: Install fzf script
+  shell: "~/.fzf/install"
+  args:
+    creates: "~/.fzf/bin/fzf"
+
+- name: Set up temporary Vim directories
   file:
     path: '~/.local/share/nvim/{{ item }}'
     state: directory
   with_items: '{{ vim_tmp_dirs }}'
 
-- name: template files
+- name: Template dotfiles
   template: src={{ ansible_env.PWD }}/roles/dotfiles/templates/{{ item }}
         dest={{ ansible_env.PWD }}/roles/dotfiles/files/{{ item }}
         force=yes
   with_items: '{{ templates }}'
 
-- name: symlink common files
+- name: Create common dotfiles
   file: src={{ ansible_env.PWD }}/roles/dotfiles/files/{{ item }}
         path=~/{{ item }}
         state=link
