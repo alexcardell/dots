@@ -9,55 +9,22 @@ function! DisplayGitBranch()
   return strlen(l:branchname) > 0 ? ' '.l:branchname.' ' : ' '
 endfunction
 
-let g:currentmode={
-    \ 'n'      : 'N ',
-    \ 'no'     : 'N·Operator Pending ',
-    \ 'v'      : 'V ',
-    \ 'V'      : 'V·Line ',
-    \ '\<C-V>' : 'V·Block ',
-    \ 's'      : 'Select ',
-    \ 'S'      : 'S·Line ',
-    \ '\<C-S>' : 'S·Block ',
-    \ 'i'      : 'I ',
-    \ 'R'      : 'R ',
-    \ 'Rv'     : 'V·Replace ',
-    \ 'c'      : 'Command ',
-    \ 'cv'     : 'Vim Ex ',
-    \ 'ce'     : 'Ex ',
-    \ 'r'      : 'Prompt ',
-    \ 'rm'     : 'More ',
-    \ 'r?'     : 'Confirm ',
-    \ '!'      : 'Shell ',
-    \ 't'      : 'Terminal '
-    \}
+highlight ModeMsg ctermfg = 0
 
 " 1 red 2 green 3 yellow 4 blue 5 magenta 6 aqua
 " 18 dark grey
-highlight User1 ctermfg=18 ctermbg=red
-highlight User2 ctermfg=red ctermbg=18
-highlight ModeMsg ctermfg = 0
+highlight StatusLine ctermfg=18 ctermbg=grey
+highlight User2 ctermfg=grey ctermbg=18
 
-function! ModalColorChange()
-  if (mode() =~# '\v(n|no)')
-    exe 'hi! User1 ctermfg=18 ctermbg=red'
-    exe 'hi! User2 ctermfg=red ctermbg=18'
-  elseif (mode() =~# '\v(v|V)'
-        \ || g:currentmode[mode()] ==# 'V·Block'
-        \ || get(g:currentmode, mode(), '') ==# 't')
-    exe 'hi! User1 ctermfg=18 ctermbg=magenta'
-    exe 'hi! User2 ctermfg=magenta ctermbg=18'
-  elseif (mode() ==# 'i')
-    exe 'hi! User1 ctermfg=18 ctermbg=green'
-    exe 'hi! User2 ctermfg=green ctermbg=18'
-  endif
-  return ''
-endfunction
+au InsertEnter * highlight StatusLine ctermfg=18 ctermbg=green |
+      \ highlight User2 ctermfg=green ctermbg=18
+au InsertLeave * highlight StatusLine ctermfg=18 ctermbg=grey |
+      \ highlight User2 ctermfg=grey ctermbg=18
 
 " clear
 set statusline=
 " red bg
-set statusline+=%{ModalColorChange()}
-set statusline+=%#User1#
+set statusline+=%#StatusLine#
 " branch symbol
 set statusline+=\ 
 " get git branch
