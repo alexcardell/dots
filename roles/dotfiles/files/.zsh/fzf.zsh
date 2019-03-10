@@ -10,8 +10,8 @@ fd() {
     cd "$dir"
   }
 
-# cdf - cd into the directory of the selected file
-cdf() {
+# ff - cd into the directory of the selected file
+ff() {
   local file
   local dir
   file=$(fzf +m -q "$1") && dir=$(dirname "$file") && cd "$dir"
@@ -37,7 +37,7 @@ is_in_git_repo() {
 }
 
 fzf-down() {
-fzf --height 50% "$@" --border
+  fzf --height 50% "$@" --border
 }
 
 gf() {

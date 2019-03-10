@@ -47,4 +47,6 @@ if exists('&loadplugins')
   endif
 endif
 
-set rtp+=/usr/local/opt/fzf
+set rtp+=~/.fzf
+
+set completeopt-=preview

@@ -1,2 +1,6 @@
 **/.vim/pack/*
 lib/*
+**/.git/*
+.git/*
+.git/logs/HEAD
+**/node_modules/*
