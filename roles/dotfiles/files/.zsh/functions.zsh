@@ -8,7 +8,7 @@ function t {
   if [[ -n $1 ]]; then
     project=$1
   else
-    project=$(basename "${$(pwd)//[.]/_}")
+    project=$(basename "${$(pwd)//[.]/-}")
   fi
 
   if [[ -f ~/.tmux/$project\.sh ]]; then
