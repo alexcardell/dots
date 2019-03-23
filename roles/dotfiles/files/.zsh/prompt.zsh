@@ -25,6 +25,26 @@ function +vi-git-st() {
   hook_com[misc]+="%F{cyan}${(j:/:)gitstatus}%f"
 }
 
-precmd () { vcs_info }
+typeset -F SECONDS
+
+preexec() {
+  timer=${timer:-$SECONDS}
+}
+
+precmd() {
+  vcs_info
+  if [ $timer ]; then
+    timer_value=$(($SECONDS - $timer))
+    if (( $timer_value > 0.5 )); then
+      timer_show=$(printf "%.3fs" "$timer_value")
+    else
+      unset timer_show
+      unset timer_value
+    fi
+    unset timer
+  fi
+}
+
+# precmd () { vcs_info }
 PROMPT='%(?. .%F{yellow}%B!%b)%F{blue}alex %B%F{red}> %f%b'
-RPROMPT='%F{grey}%3~ ${vcs_info_msg_0_}%f'
+RPROMPT='%F{240}${timer_show} %F{grey}%3~ ${vcs_info_msg_0_}%f'

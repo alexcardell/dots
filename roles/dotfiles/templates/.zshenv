@@ -17,8 +17,6 @@ GOPATH=$HOME/projects/go
 
 # zsh
 ZDOTDIR=$HOME/.zsh
-REPORTTIME=1
-TIMEFMT="[%J %*E]"
 
 # ripgrep
 RIPGREP_CONFIG_PATH=$HOME/.ripgreprc
