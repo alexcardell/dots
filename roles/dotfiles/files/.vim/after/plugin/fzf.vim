@@ -10,16 +10,15 @@ if executable('rg')
 endif
 
 nnoremap <leader>fa :Files<CR>
-nnoremap <leader>FA :Files!<CR>
 
 nnoremap <leader>fb :Buffers<CR>
-nnoremap <leader>FB :Buffers!<CR>
 
 nnoremap <leader>fl :Lines<CR>
-nnoremap <leader>FL :Lines!<CR>
+
+nnoremap <leader>f/ :BLines<Space>
 
 nnoremap <leader>fh :Helptags<CR>
-nnoremap <leader>FL :Helptags!<CR>
 
 nnoremap <leader>fr :Rg<Space>
-nnoremap <leader>FR :Rg!<Space>
+
+nnoremap <leader>fs :Snippets<CR>
