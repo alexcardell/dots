@@ -3,6 +3,10 @@
      "reason": {
       "command": "reason-language-server.exe",
       "filetypes": ["reason"]
+     },
+     "scala": {
+      "command": "metals-vim",
+      "filetypes": ["scala"]
      }
   }
 }
