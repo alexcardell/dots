@@ -97,3 +97,6 @@
 [submodule "roles/dotfiles/files/.vim/pack/bundle/start/vim-scala"]
 	path = roles/dotfiles/files/.vim/pack/bundle/start/vim-scala
 	url = https://github.com/derekwyatt/vim-scala.git
+[submodule "roles/dotfiles/files/.vim/pack/bundle/start/vista.vim"]
+	path = roles/dotfiles/files/.vim/pack/bundle/start/vista.vim
+	url = https://github.com/liuchengxu/vista.vim.git
