@@ -18,5 +18,8 @@ if has('autocmd')
     " register *.md as markdown filetype
     autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 
+    " register sbt files as scala (for use with scala-metals)
+    autocmd BufNewFile,BufReadPost *.sbt set filetype=scala
+
   augroup END
 endif
