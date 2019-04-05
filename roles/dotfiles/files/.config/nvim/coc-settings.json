@@ -8,5 +8,6 @@
       "command": "metals-vim",
       "filetypes": ["scala"]
      }
-  }
+  },
+  "java.errors.incompleteClasspath.severity": "ignore"
 }
