@@ -8,7 +8,7 @@ if tmux has-session -t $name 2> /dev/null; then
   exit
 fi
 
-cd ~/Code/bg/grandcentral
+cd ~/Code/bg/archive/taxi/grandcentral
 
 tmux new-session -d -s $name -n edit
 
@@ -21,6 +21,6 @@ tmux send-keys -t term "git status" Enter
 
 # 3. Build
 tmux new-window -n build
-tmux send-keys "docker-compose up -d" Enter
+# tmux send-keys "docker-compose up -d"
 
 tmux attach -t $name:edit.1
