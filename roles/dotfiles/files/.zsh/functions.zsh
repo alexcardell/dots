@@ -4,11 +4,22 @@ function killport {
 
 function t {
   # tmux session startup function
-  local project
+  local project session
   if [[ -n $1 ]]; then
     project=$1
   else
     project=$(basename "${$(pwd)//[.]/-}")
+  fi
+
+  session=$(tmux ls -F '#{session_name}' | grep $project)
+
+  if [[ -n $session ]]; then
+    if [[ -n $TMUX ]]; then
+      tmux switch-client -t $session
+    else
+      tmux attach-session -t $session
+    fi
+    return
   fi
 
   if [[ -f ~/.tmux/$project\.sh ]]; then
