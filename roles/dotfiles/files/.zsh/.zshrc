@@ -74,8 +74,7 @@ bindkey "^P" autosuggest-accept
 eval "`fnm env --multi --use-on-cd`"
 
 # Start up in tmux
-# if [[ -z "$TMUX" ]];
-# then
-#   tmux attach-session -t alex || t alex
-# fi
-t alex
+if [[ -z "$TMUX" ]];
+then
+  t alex
+fi

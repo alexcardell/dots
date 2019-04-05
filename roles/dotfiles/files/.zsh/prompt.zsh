@@ -4,13 +4,14 @@
 # see man zshexpn/zshmisc for explanations
 autoload -Uz vcs_info
 zstyle ':vcs_info:*' enable git
-zstyle ':vcs_info:*' stagedstr '%F{green}●'
-zstyle ':vcs_info:*' unstagedstr '%F{red}●'
 zstyle ':vcs_info:*' check-for-changes true
+zstyle ':vcs_info:*' stagedstr '%F{green}●%f'
+zstyle ':vcs_info:*' unstagedstr '%F{red}●%f'
+zstyle ':vcs_info:git+set-message:*' hooks git-untracked
 zstyle ':vcs_info:*' actionformats \
-  '%c%u%F{white}[%F{cyan}%b%F{grey}|%F{red}%a%F{grey}]%f'
+  '%c%u[%b%|%a]'
 zstyle ':vcs_info:*' formats \
-  '%c%u%F{grey}[%F{cyan}%b%F{grey}]%m%f'
+  '%c%u[%b]%m'
 zstyle ':vcs_info:git*+set-message:*' hooks git-st
 
 function +vi-git-st() {
@@ -23,6 +24,13 @@ function +vi-git-st() {
     | wc -l | tr -d '[:space:]')
   (( $behind )) && gitstatus+=( "-${behind}" )
   hook_com[misc]+="%F{cyan}${(j:/:)gitstatus}%f"
+}
+
+function +vi-git-untracked() {
+  emulate -L zsh
+  if [[ -n $(git ls-files --exclude-standard --others 2> /dev/null) ]]; then
+    hook_com[unstaged]+="%F{blue}●%f"
+  fi
 }
 
 typeset -F SECONDS
