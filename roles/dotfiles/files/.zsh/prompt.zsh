@@ -9,9 +9,9 @@ zstyle ':vcs_info:*' stagedstr '%F{green}●%f'
 zstyle ':vcs_info:*' unstagedstr '%F{red}●%f'
 zstyle ':vcs_info:git+set-message:*' hooks git-untracked
 zstyle ':vcs_info:*' actionformats \
-  '%c%u[%b%|%a]'
+  '%c%u[%F{cyan}%b%f%|%a]'
 zstyle ':vcs_info:*' formats \
-  '%c%u[%b]%m'
+  '%c%u[%F{cyan}%b%f]%m'
 zstyle ':vcs_info:git*+set-message:*' hooks git-st
 
 function +vi-git-st() {
