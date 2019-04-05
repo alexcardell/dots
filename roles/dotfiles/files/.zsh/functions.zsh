@@ -8,11 +8,13 @@ function t {
   if [[ -n $1 ]]; then
     project=$1
   else
+    # fall back to directory name if no project name given
     project=$(basename "${$(pwd)//[.]/-}")
   fi
 
   session=$(tmux ls -F '#{session_name}' | grep $project)
 
+  # look for existing session and attach/switch
   if [[ -n $session ]]; then
     if [[ -n $TMUX ]]; then
       tmux switch-client -t $session
@@ -22,43 +24,15 @@ function t {
     return
   fi
 
+  # look for setup script
   if [[ -f ~/.tmux/$project\.sh ]]; then
     ~/.tmux/$project\.sh
     return
   fi
 
+  # if all else fails, start new default session
   tmux new-session -s $project
 }
-
-function tmux2 {
-  local project tmuxFile session
-  # tmux session startup function
-  if [[ -n $1 ]]; then
-    project=$1
-  else
-    project=$(basename "${$(pwd)//[.]/_}")
-  fi
-
-  # follow symlinks for true project name
-  tmuxFile=~/.tmux/$project\.sh
-  project=$(echo $(test -L $tmuxFile && readlink $tmuxFile || echo $project) \
-    | sed 's/\.[^.]*$//')
-
-  session=$(tmux ls -F '#{session_name}' | grep $project)
-  if [[ -n $TMUX && -n $session ]]; then
-    tmux switch-client -t $session
-    return
-  fi
-  tmux attach -t $session
-
-  # if [[ -f $tmuxFile ]]; then
-  #   $tmuxFile
-  #   return
-  # fi
-
-  # tmux new-session
-}
-
 
 function ask {
   local prompt reply
