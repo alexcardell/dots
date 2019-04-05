@@ -6,17 +6,21 @@
 {% if ansible_os_family == 'Archlinux' %}
 {% endif %}
 
-# Platform agnostic
-# #################
-# editors
+# Editor #
+###########
 VISUAL=nvim
 EDITOR="${VISUAL}"
 
+# Code #
+########
+CODEPATH=$HOME/Code
 # golang
-GOPATH=$HOME/projects/go
+GOPATH=$CODEPATH/go
 
 # zsh
 ZDOTDIR=$HOME/.zsh
 
+# Tools #
+#########
 # ripgrep
 RIPGREP_CONFIG_PATH=$HOME/.ripgreprc
