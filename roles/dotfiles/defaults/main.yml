@@ -1,27 +1,23 @@
 ---
-common_files:
+symlinks:
+  - .Xresources
+  - .Xresources.d
+  - .config/i3
   - .config/nvim
+  - .config/rofi
   - .gitconfig
   - .gitconfig.work
   - .gitignore
+  - .ideavimrc
+  - .prettierrc.js
   - .profile
   - .ripgreprc
   - .tmux
   - .tmux.conf
   - .vim
+  - .xinitrc
   - .zsh
   - .zshenv
-
-archlinux_files:
-  - .Xresources
-  - .Xresources.d
-  - .config/i3
-  - .config/rofi
-  - .xinitrc
-
-darwin_files:
-  - .ideavimrc
-  - .prettierrc.js
 
 vim_tmp_dirs:
   - backup
