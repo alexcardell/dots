@@ -12,7 +12,7 @@ function t {
     project=$(basename "${$(pwd)//[.]/-}")
   fi
 
-  session=$(tmux ls -F '#{session_name}' | grep $project)
+  session=$(tmux ls -F '#{session_name}' | grep "$project$")
 
   # look for existing session and attach/switch
   if [[ -n $session ]]; then
