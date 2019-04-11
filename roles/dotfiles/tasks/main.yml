@@ -30,10 +30,11 @@
 
 - name: Template dotfiles
   template:
-    src={{ ansible_env.PWD }}/roles/dotfiles/templates/{{ item }}
-    dest={{ ansible_env.PWD }}/roles/dotfiles/files/{{ item }}
+    src={{ item.src }}
+    dest={{ ansible_env.PWD }}/roles/dotfiles/files/{{ item.path }}
     force=yes
-  with_items: '{{ templates }}'
+  with_filetree: ../templates
+  when: item.state == 'file'
 
 - name: Create common dotfiles
   file:

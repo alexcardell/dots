@@ -1,11 +1,4 @@
 ---
-templates:
-  - .gitconfig
-  - .gitconfig.work
-  - .tmux.conf
-  - .zsh/.zprofile
-  - .zshenv
-
 common_files:
   - .config/nvim
   - .gitconfig
