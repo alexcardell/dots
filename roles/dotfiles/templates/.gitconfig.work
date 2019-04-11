@@ -1,0 +1,8 @@
+# {{ ansible_managed }}
+# vim: ft=gitconfig
+
+{% if work_git_user_name is defined and work_git_user_email is defined %}
+[user]
+  name = {{ work_git_user_name }}
+  email = {{ work_git_user_email }}
+{% endif %}

@@ -1,4 +1,4 @@
-vars/main.yml
+vars/work.yml
 
 templates/out
 
@@ -7,6 +7,7 @@ files/.zsh/.zcompdump
 files/.zshenv
 files/.zsh/.zprofile
 files/.gitconfig
+files/.gitconfig.work
 files/.tmux.conf
 files/.zsh/aliases.private.zsh
 files/.vim/spell

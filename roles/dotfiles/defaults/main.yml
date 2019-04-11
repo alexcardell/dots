@@ -1,6 +1,7 @@
 ---
 templates:
   - .gitconfig
+  - .gitconfig.work
   - .tmux.conf
   - .zsh/.zprofile
   - .zshenv
@@ -8,6 +9,7 @@ templates:
 common_files:
   - .config/nvim
   - .gitconfig
+  - .gitconfig.work
   - .gitignore
   - .profile
   - .ripgreprc

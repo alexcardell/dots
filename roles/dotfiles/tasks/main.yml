@@ -16,6 +16,10 @@
     state: directory
   with_items: '{{ vim_tmp_dirs }}'
 
+- name: Load work vars
+  include_vars: work.yml
+  ignore_errors: true
+
 - name: Template dotfiles
   template: src={{ ansible_env.PWD }}/roles/dotfiles/templates/{{ item }}
         dest={{ ansible_env.PWD }}/roles/dotfiles/files/{{ item }}
