@@ -32,7 +32,7 @@
 [color "status"]
   added = green
   changed = red
-  untracked = magenta
+  untracked = blue
 
 [core]
   editor = nvim
