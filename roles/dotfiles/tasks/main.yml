@@ -28,7 +28,7 @@
     ansible_os_family == 'Darwin'
     and ansible_hostname is match(work_hostname)
 
-- name: Template dotfiles
+- name: Setup template output directories
   file:
     dest={{ ansible_env.PWD }}/roles/dotfiles/files/{{ item.path }}
     state=directory
@@ -43,7 +43,7 @@
   with_filetree: ../templates
   when: item.state == 'file'
 
-- name: Create common dotfiles
+- name: Symlink dotfiles
   file:
     src={{ ansible_env.PWD }}/roles/dotfiles/files/{{ item }}
     path=~/{{ item }}
@@ -51,24 +51,3 @@
     force=yes
     follow=false
   with_items: '{{ symlinks }}'
-
-# os specific tasks
-# - name: Create Darwin symlinks
-#   when: ansible_os_family == "Darwin" and darwin_files is defined
-#   file:
-#     src={{ ansible_env.PWD }}/roles/dotfiles/files/{{ item }}
-#     path=~/{{ item }}
-#     state=link
-#     force=yes
-#     follow=false
-#   with_items: '{{ darwin_files }}'
-
-# - name: Create Archlinux symlinks
-#   when: ansible_os_family == "Archlinux" and archlinux_files is defined
-#   file:
-#     src={{ ansible_env.PWD }}/roles/dotfiles/files/{{ item }}
-#     path=~/{{ item }}
-#     state=link
-#     force=yes
-#     follow=false
-#   with_items: '{{ archlinux_files }}'
