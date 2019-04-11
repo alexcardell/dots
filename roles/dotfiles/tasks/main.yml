@@ -1,4 +1,10 @@
 ---
+- debug:
+    msg:
+      - "ansible_os_family: {{ ansible_os_family }}"
+      - "inventory_hostname: {{ inventory_hostname }}"
+      - "ansible_hostname: {{ ansible_hostname }}"
+
 - name: Clone fzf repo
   git:
     repo: https://github.com/junegunn/fzf
@@ -18,7 +24,7 @@
 
 - name: Load work vars
   include_vars: work.yml
-  ignore_errors: true
+  when: ansible_os_family == 'Darwin' and ansible_hostname is match(work_hostname)
 
 - name: Template dotfiles
   template: src={{ ansible_env.PWD }}/roles/dotfiles/templates/{{ item }}
@@ -35,7 +41,7 @@
   with_items: '{{ common_files }}'
 
 # os specific tasks
-- name: create darwin symlinks
+- name: Create Darwin symlinks
   when: ansible_os_family == "Darwin" and darwin_files is defined
   file: src={{ ansible_env.PWD }}/roles/dotfiles/files/{{ item }}
         path=~/{{ item }}
@@ -44,7 +50,7 @@
         follow=false
   with_items: '{{ darwin_files }}'
 
-- name: create archlinux symlinks
+- name: Create Archlinux symlinks
   when: ansible_os_family == "Archlinux" and archlinux_files is defined
   file: src={{ ansible_env.PWD }}/roles/dotfiles/files/{{ item }}
         path=~/{{ item }}

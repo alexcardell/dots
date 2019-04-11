@@ -40,3 +40,5 @@ command_t_path: '{{ vim_path }}/pack/bundle/start/command-t'
 
 git_user_name: '{{"baubler"}}'
 git_user_email: '{{"29524087+baubler@users.noreply.github.com"}}'
+
+work_hostname: 'C0.*L'
