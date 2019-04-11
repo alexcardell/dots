@@ -29,6 +29,13 @@
     and ansible_hostname is match(work_hostname)
 
 - name: Template dotfiles
+  file:
+    dest={{ ansible_env.PWD }}/roles/dotfiles/files/{{ item.path }}
+    state=directory
+  with_filetree: ../templates
+  when: item.state == 'directory'
+
+- name: Template dotfiles
   template:
     src={{ item.src }}
     dest={{ ansible_env.PWD }}/roles/dotfiles/files/{{ item.path }}
