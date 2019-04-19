@@ -7,9 +7,6 @@
 [submodule "roles/dotfiles/files/.vim/pack/bundle/start/base16-vim"]
 	path = roles/dotfiles/files/.vim/pack/bundle/start/base16-vim
 	url = https://github.com/chriskempson/base16-vim.git
-[submodule "roles/dotfiles/files/.vim/pack/bundle/start/indentLine"]
-	path = roles/dotfiles/files/.vim/pack/bundle/start/indentLine
-	url = https://github.com/Yggdroot/indentLine.git
 [submodule "roles/dotfiles/files/.vim/pack/bundle/start/loupe"]
 	path = roles/dotfiles/files/.vim/pack/bundle/start/loupe
 	url = https://github.com/wincent/loupe.git
@@ -22,12 +19,6 @@
 [submodule "roles/dotfiles/files/.vim/pack/bundle/start/nerdtree"]
 	path = roles/dotfiles/files/.vim/pack/bundle/start/nerdtree
 	url = https://github.com/scrooloose/nerdtree.git
-[submodule "roles/dotfiles/files/.vim/pack/bundle/start/nerdtree-git-plugin"]
-	path = roles/dotfiles/files/.vim/pack/bundle/start/nerdtree-git-plugin
-	url = https://github.com/Xuyuanp/nerdtree-git-plugin.git
-[submodule "roles/dotfiles/files/.vim/pack/bundle/start/vim-fugitive"]
-	path = roles/dotfiles/files/.vim/pack/bundle/start/vim-fugitive
-	url = https://github.com/tpope/vim-fugitive.git
 [submodule "roles/dotfiles/files/.vim/pack/bundle/start/vim-surround"]
 	path = roles/dotfiles/files/.vim/pack/bundle/start/vim-surround
 	url = https://github.com/tpope/vim-surround.git
@@ -46,9 +37,6 @@
 [submodule "roles/dotfiles/files/.zsh/zsh-autosuggestions"]
 	path = roles/dotfiles/files/.zsh/zsh-autosuggestions
 	url = https://github.com/zsh-users/zsh-autosuggestions.git
-[submodule "roles/dotfiles/files/.vim/pack/bundle/start/terminus"]
-	path = roles/dotfiles/files/.vim/pack/bundle/start/terminus
-	url = https://github.com/wincent/terminus.git
 [submodule "roles/dotfiles/files/.vim/pack/bundle/start/vim-commentary"]
 	path = roles/dotfiles/files/.vim/pack/bundle/start/vim-commentary
 	url = https://github.com/tpope/vim-commentary.git
@@ -64,18 +52,9 @@
 [submodule "roles/dotfiles/files/.vim/pack/bundle/opt/vim-prettier"]
 	path = roles/dotfiles/files/.vim/pack/bundle/opt/vim-prettier
 	url = https://github.com/prettier/vim-prettier
-[submodule "roles/dotfiles/files/.vim/pack/bundle/start/vim-devicons"]
-	path = roles/dotfiles/files/.vim/pack/bundle/start/vim-devicons
-	url = https://github.com/ryanoasis/vim-devicons.git
-[submodule "roles/dotfiles/files/.vim/pack/bundle/start/vim-nerdtree-syntax-highlight"]
-	path = roles/dotfiles/files/.vim/pack/bundle/start/vim-nerdtree-syntax-highlight
-	url = https://github.com/tiagofumo/vim-nerdtree-syntax-highlight.git
 [submodule "roles/dotfiles/files/.vim/pack/bundle/start/vim-reason-plus"]
 	path = roles/dotfiles/files/.vim/pack/bundle/start/vim-reason-plus
 	url = https://github.com/reasonml-editor/vim-reason-plus.git
-[submodule "roles/dotfiles/files/.vim/pack/bundle/start/MatchTagAlways"]
-	path = roles/dotfiles/files/.vim/pack/bundle/start/MatchTagAlways
-	url = https://github.com/Valloric/MatchTagAlways.git
 [submodule "roles/dotfiles/files/.vim/pack/bundle/start/ultisnips"]
 	path = roles/dotfiles/files/.vim/pack/bundle/start/ultisnips
 	url = https://github.com/SirVer/ultisnips.git
@@ -85,9 +64,6 @@
 [submodule "roles/dotfiles/files/.vim/pack/bundle/start/ale"]
 	path = roles/dotfiles/files/.vim/pack/bundle/start/ale
 	url = https://github.com/w0rp/ale.git
-[submodule "roles/dotfiles/files/.vim/pack/bundle/start/vim-rhubarb"]
-	path = roles/dotfiles/files/.vim/pack/bundle/start/vim-rhubarb
-	url = https://github.com/tpope/vim-rhubarb.git
 [submodule "roles/dotfiles/files/.vim/pack/bundle/start/fzf.vim"]
 	path = roles/dotfiles/files/.vim/pack/bundle/start/fzf.vim
 	url = https://github.com/junegunn/fzf.vim.git
