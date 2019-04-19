@@ -12,6 +12,7 @@ PATH=$PATH:/usr/local/bin
 PATH=node_modules/.bin:$PATH
 # fnm -- fast node version manager
 PATH=$PATH:$HOME/.fnm
+PATH=$PATH:$GOPATH/bin
 
 # Add defaults back
 PATH=$PATH:$DEFAULT_PATH

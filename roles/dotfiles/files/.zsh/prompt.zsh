@@ -8,7 +8,7 @@ zstyle ':vcs_info:*' check-for-changes true
 zstyle ':vcs_info:*' stagedstr '%F{green}●%f'
 zstyle ':vcs_info:*' unstagedstr '%F{red}●%f'
 zstyle ':vcs_info:*' actionformats \
-  '%c%u[%F{cyan}%b%f%|%a]'
+  '%c%u[%F{cyan}%b%f%|%F{red}%a%f]'
 zstyle ':vcs_info:*' formats \
   '%c%u[%F{cyan}%b%f]%m'
 zstyle ':vcs_info:git*+set-message:*' hooks git-st

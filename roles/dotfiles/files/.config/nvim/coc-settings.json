@@ -7,7 +7,12 @@
      "scala": {
       "command": "metals-vim",
       "filetypes": ["scala"]
-     }
+     },
+     "golang": {
+      "command": "gopls",
+      "filetypes": ["go"],
+      "rootPatterns": ["go.mod", ".vim/", ".git/", ".hg/"]
+    }
   },
   "java.errors.incompleteClasspath.severity": "ignore"
 }
