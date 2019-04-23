@@ -5,3 +5,8 @@ function! me#functions#zap() abort
     let l:number=l:number + 1
   endfor
 endfunction
+
+function! me#functions#helptags() abort
+  source $HOME/.vim/pack/bundle/opt/vim-pathogen/autoload/pathogen.vim
+  call pathogen#helptags()
+endfunction

@@ -33,6 +33,7 @@ set lazyredraw             " only update screen when macro finishes
 set laststatus=2           " always show statusline
 set number relativenumber  " set number and relnumber
 set virtualedit=block      " allow visual block to move through empty space
+set updatetime=400         " set time for floating window to appear
 
 set splitbelow             " Natural split splitting
 set splitright             ""

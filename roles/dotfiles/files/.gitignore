@@ -7,6 +7,9 @@
 [._]ss[a-gi-z]
 [._]sw[a-p]
 
+# Plugins
+.projections.json
+
 # Session
 Session.vim
 

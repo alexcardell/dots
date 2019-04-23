@@ -15,7 +15,7 @@ nnoremap <leader>fb :Buffers<CR>
 
 nnoremap <leader>fl :Lines<CR>
 
-nnoremap <leader>f/ :BLines<Space>
+nnoremap <leader>f/ :BLines<CR>
 
 nnoremap <leader>fh :Helptags<CR>
 
