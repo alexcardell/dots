@@ -1,3 +1,5 @@
+packadd vim-javascript
+packadd vim-jsx
 packadd vim-prettier
 packadd ale
 

@@ -11,10 +11,10 @@
 	path = roles/dotfiles/files/.vim/pack/bundle/start/loupe
 	url = https://github.com/wincent/loupe.git
 [submodule "roles/dotfiles/files/.vim/pack/bundle/start/vim-javascript"]
-	path = roles/dotfiles/files/.vim/pack/bundle/start/vim-javascript
+	path = roles/dotfiles/files/.vim/pack/bundle/opt/vim-javascript
 	url = https://github.com/pangloss/vim-javascript.git
 [submodule "roles/dotfiles/files/.vim/pack/bundle/start/vim-jsx"]
-	path = roles/dotfiles/files/.vim/pack/bundle/start/vim-jsx
+	path = roles/dotfiles/files/.vim/pack/bundle/opt/vim-jsx
 	url = https://github.com/mxw/vim-jsx.git
 [submodule "roles/dotfiles/files/.vim/pack/bundle/start/nerdtree"]
 	path = roles/dotfiles/files/.vim/pack/bundle/start/nerdtree
