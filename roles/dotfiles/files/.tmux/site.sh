@@ -9,7 +9,7 @@ if tmux has-session -t $name 2> /dev/null; then
   exit
 fi
 
-cd ~/Code/js/$name
+cd $CODEPATH/js/$name
 
 tmux new-session -d -s $sessionname -n edit
 

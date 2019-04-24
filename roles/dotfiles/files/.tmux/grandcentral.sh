@@ -8,7 +8,7 @@ if tmux has-session -t $name 2> /dev/null; then
   exit
 fi
 
-cd ~/Code/bg/archive/taxi/grandcentral
+cd $CODEPATH/work/taxi/grandcentral
 
 tmux new-session -d -s $name -n edit
 
