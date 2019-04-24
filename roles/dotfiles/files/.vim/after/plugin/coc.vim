@@ -7,13 +7,13 @@ nmap <silent> gr <Plug>(coc-references)
 " Use K for show documentation in preview window
 nnoremap <silent> gh :call <SID>show_documentation()<CR>
 
-inoremap <silent> <C-P> :call CocActionAsync('showSignatureHelp')
+inoremap <silent> <C-P> <C-O>:call CocActionAsync('showSignatureHelp')<CR>
 
 function! s:show_documentation()
   if &filetype == 'vim'
     execute 'h '.expand('<cword>')
   else
-    call CocAction('doHover')
+    call CocActionAsync('doHover')
   endif
 endfunction
 
