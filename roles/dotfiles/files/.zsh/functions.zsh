@@ -26,7 +26,7 @@ function t {
 
   # look for setup script
   if [[ -f ~/.tmux/$project\.sh ]]; then
-    ~/.tmux/$project\.sh
+    CODEPATH=$CODEPATH ~/.tmux/$project\.sh
     return
   fi
 
