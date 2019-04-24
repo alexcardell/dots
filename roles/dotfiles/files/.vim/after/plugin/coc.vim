@@ -21,6 +21,6 @@ endfunction
 nmap <leader>rn <Plug>(coc-rename)
 
 " Highlight symbol under cursor on CursorHold
-autocmd CursorHold * silent call CocActionAsync('doHover')
+" autocmd CursorHold * silent call CocActionAsync('doHover')
 
 hi CocUnderline cterm=underline,italic
