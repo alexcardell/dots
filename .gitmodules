@@ -11,10 +11,10 @@
 	path = roles/dotfiles/files/.vim/pack/bundle/start/loupe
 	url = https://github.com/wincent/loupe.git
 [submodule "roles/dotfiles/files/.vim/pack/bundle/start/vim-javascript"]
-	path = roles/dotfiles/files/.vim/pack/bundle/opt/vim-javascript
+	path = roles/dotfiles/files/.vim/pack/bundle/start/vim-javascript
 	url = https://github.com/pangloss/vim-javascript.git
 [submodule "roles/dotfiles/files/.vim/pack/bundle/start/vim-jsx"]
-	path = roles/dotfiles/files/.vim/pack/bundle/opt/vim-jsx
+	path = roles/dotfiles/files/.vim/pack/bundle/start/vim-jsx
 	url = https://github.com/mxw/vim-jsx.git
 [submodule "roles/dotfiles/files/.vim/pack/bundle/start/nerdtree"]
 	path = roles/dotfiles/files/.vim/pack/bundle/start/nerdtree
@@ -29,7 +29,7 @@
 	path = roles/dotfiles/files/.vim/pack/bundle/start/vim-projectionist
 	url = https://github.com/tpope/vim-projectionist.git
 [submodule "roles/dotfiles/files/.vim/pack/bundle/start/vim-json"]
-	path = roles/dotfiles/files/.vim/pack/bundle/opt/vim-json
+	path = roles/dotfiles/files/.vim/pack/bundle/start/vim-json
 	url = https://github.com/elzr/vim-json.git
 [submodule "roles/dotfiles/files/.vim/pack/bundle/start/vim-lion"]
 	path = roles/dotfiles/files/.vim/pack/bundle/start/vim-lion
@@ -53,7 +53,7 @@
 	path = roles/dotfiles/files/.vim/pack/bundle/opt/vim-prettier
 	url = https://github.com/prettier/vim-prettier
 [submodule "roles/dotfiles/files/.vim/pack/bundle/start/vim-reason-plus"]
-	path = roles/dotfiles/files/.vim/pack/bundle/opt/vim-reason-plus
+	path = roles/dotfiles/files/.vim/pack/bundle/start/vim-reason-plus
 	url = https://github.com/reasonml-editor/vim-reason-plus.git
 [submodule "roles/dotfiles/files/.vim/pack/bundle/start/ultisnips"]
 	path = roles/dotfiles/files/.vim/pack/bundle/start/ultisnips
@@ -71,7 +71,7 @@
 	path = roles/dotfiles/files/.vim/pack/bundle/start/coc.nvim
 	url = https://github.com/neoclide/coc.nvim.git
 [submodule "roles/dotfiles/files/.vim/pack/bundle/start/vim-scala"]
-	path = roles/dotfiles/files/.vim/pack/bundle/opt/vim-scala
+	path = roles/dotfiles/files/.vim/pack/bundle/start/vim-scala
 	url = https://github.com/derekwyatt/vim-scala.git
 [submodule "roles/dotfiles/files/.vim/pack/bundle/start/vista.vim"]
 	path = roles/dotfiles/files/.vim/pack/bundle/start/vista.vim
