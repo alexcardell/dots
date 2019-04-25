@@ -50,6 +50,10 @@ if has('linebreak')
 endif
 set nowrap                      " don't bother soft wrapping globally
 
+set diffopt+=vertical
+set diffopt+=iwhite
+set diffopt+=hiddenoff
+
 " Whitespace characters
 set list lcs=trail:-,nbsp:∅,tab:▷┅,extends:»,precedes:«
 set fillchars=vert:┃   " (U+2503) (for continuous vsplit break)
