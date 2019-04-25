@@ -16,12 +16,10 @@ au InsertLeave * highlight StatusLine ctermfg=18 ctermbg=grey |
 set statusline=
 " red bg
 set statusline+=%#StatusLine#
-" branch symbol
-set statusline+=\ 
-" get git branch
-set statusline+=%{fugitive#head()}
+" branch information
+set statusline+=\ \ %{fugitive#head()}
 " powerline symbol TODO: put unicode for this symbol in comment
-set statusline+=%#User2#
+set statusline+=\ %#User2#
 " text highlight
 set statusline+=%#CursorColumn#
 " file
