@@ -1,5 +1,3 @@
-export FZF_DEFAULT_COMMAND='RIPGREP_CONFIG_PATH=~/.ripgreprc rg --files --follow'
-
 # Moving
 #--------
 # fd - cd to selected directory
@@ -26,6 +24,19 @@ fo() {
   file=$(head -2 <<< "$out" | tail -1)
   if [ -n "$file" ]; then
     [ "$key" = ctrl-o ] && open "$file" || ${EDITOR:-vim} "$file"
+  fi
+}
+
+# Processes
+#-----------
+# fkill - kill process
+fkill() {
+  local pid
+  pid=$(ps -ef | sed 1d | fzf -m | awk '{print $2}')
+
+  if [ "x$pid" != "x" ]
+  then
+    echo $pid | xargs kill -${1:-9}
   fi
 }
 
@@ -98,16 +109,3 @@ done
 }
 bind-git-helper f b t r h
 unset -f bind-git-helper
-
-# Processes
-#-----------
-# fkill - kill process
-fkill() {
-  local pid
-  pid=$(ps -ef | sed 1d | fzf -m | awk '{print $2}')
-
-  if [ "x$pid" != "x" ]
-  then
-    echo $pid | xargs kill -${1:-9}
-  fi
-}

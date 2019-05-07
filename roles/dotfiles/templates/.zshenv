@@ -6,21 +6,25 @@
 {% if ansible_os_family == 'Archlinux' %}
 {% endif %}
 
+# zsh
+export ZDOTDIR=$HOME/.zsh
+
 # Editor #
 ###########
-VISUAL=nvim
-EDITOR="${VISUAL}"
+export VISUAL=nvim
+export EDITOR="${VISUAL}"
 
 # Code #
 ########
-CODEPATH=$HOME/Code
+export CODEPATH=$HOME/Code
 # golang
-GOPATH=$CODEPATH/go
-
-# zsh
-ZDOTDIR=$HOME/.zsh
+export GOPATH=$CODEPATH/go
 
 # Tools #
 #########
 # ripgrep
-RIPGREP_CONFIG_PATH=$HOME/.ripgreprc
+export RIPGREP_CONFIG_PATH=$HOME/.ripgreprc
+# fzf
+export FZF_DEFAULT_COMMAND='rg --files --follow'
+# Helm
+export TILLER_NAMESPACE=tiller
