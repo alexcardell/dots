@@ -49,6 +49,21 @@ precmd() {
   fi
 }
 
+_ZSH_PROMPTARROW='%B%F{red}> %f%b'
+function () {
+  local INTMUX=$([[ "$TERM" =~ "tmux" ]] && echo tmux)
+  if [ -n "$INTMUX" -a -n "$TMUX" ]; then
+    # In a a tmux session created in a non-root or root shell.
+    local LVL=$(($SHLVL - 1))
+  else
+    # Either in a root shell created inside a non-root tmux session,
+    # or not in a tmux session.
+    local LVL=$SHLVL
+  fi
+  # SSH='%F{green}${SSH_TTY:+%n@%m}%f%B${SSH_TTY:+:}%b%f'
+  _ZSH_PROMPTARROW=$(printf '%%F{red}%%B>%.0s%%b%%f' {1..$LVL})
+}
+
 # precmd () { vcs_info }
-PROMPT='%(?. .%F{yellow}%B!%b)%F{blue}alex %B%F{red}> %f%b'
+PROMPT='%(?. .%F{yellow}%B!%b)%F{blue}alex ${_ZSH_PROMPTARROW} '
 RPROMPT='%F{240}${timer_show} %F{grey}%3~ ${vcs_info_msg_0_}%f'
