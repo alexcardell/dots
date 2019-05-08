@@ -49,8 +49,16 @@ precmd() {
   fi
 }
 
-_ZSH_PROMPT_ICON='%B%F{red}%(2L.λ.>) %f%b'
+_ZSH_PROMPT_ICON='%B%F{red}%> %f%b'
+function () {
+  local INTMUX=$([[ "$TERM" =~ "tmux" ]] && echo tmux)
+  if [ -n "$INTMUX" -a -n "$TMUX" ]; then
+    LVL=$(($SHLVL - 1))
+  else
+    LVL=$SHLVL
+  fi
+  _ZSH_PROMPTARROW=$(printf '%%F{red}%%B>%.0s%%b%%f' {1..$LVL})
+}
 
-# precmd () { vcs_info }
-PROMPT='%(?. .%F{yellow}%B!%b)%F{blue}alex ${_ZSH_PROMPT_ICON}'
+PROMPT='%(?. .%F{yellow}%B!%b)%F{blue}alex ${_ZSH_PROMPTARROW} '
 RPROMPT='%F{240}${timer_show} %F{grey}%3~ ${vcs_info_msg_0_}%f'
