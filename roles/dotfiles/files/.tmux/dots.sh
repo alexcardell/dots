@@ -17,5 +17,3 @@ tmux send-keys -t edit "vim" Enter
 
 tmux new-window -n term
 tmux send-keys -t term "git status" Enter
-
-tmux attach -t $name:edit.1

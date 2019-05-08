@@ -30,5 +30,3 @@ tmux send-keys -t $sessionname:build.1 "yarn dev:js" Enter
 tmux send-keys -t $sessionname:build.2 "yarn sass --watch" Enter
 tmux send-keys -t $sessionname:build.3 "yarn dev:re" Enter
 tmux send-keys -t $sessionname:build.4 "yarn dev:server" Enter
-
-tmux attach -t $sessionname:edit.1

@@ -19,5 +19,3 @@ tmux new-window -n term
 tmux split-window -t term -v
 tmux send-keys -t term.1 "sbt" Enter
 tmux send-keys -t term.2 "git status" Enter
-
-tmux attach -t $name:edit.1
