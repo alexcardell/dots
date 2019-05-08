@@ -8,6 +8,9 @@
 
 # zsh
 export ZDOTDIR=$HOME/.zsh
+export HISTSIZE=10000
+export HISTFILE="$ZDOTDIR/.zhistory"
+export SAVEHIST=$HISTSIZE
 
 # Editor #
 ###########
