@@ -12,7 +12,7 @@ function t {
     project=$(basename "${$(pwd)//[.]/-}")
   fi
 
-  session=$(tmux ls -F '#{session_name}' 2>/dev/null | grep "$project$")
+  session=$(tmux ls -F '#{session_name}' | grep "$project$")
 
   # look for existing session and attach/switch
   if [[ -n $session ]]; then
@@ -26,7 +26,7 @@ function t {
 
   # look for setup script
   if [[ -f ~/.tmux/$project\.sh ]]; then
-    CODEPATH=$CODEPATH ~/.tmux/$project\.sh
+    ~/.tmux/$project\.sh
     return
   fi
 
