@@ -1,0 +1,14 @@
+session_name: dot44
+start_directory: $CODEPATH/work/cars/dot44
+windows:
+  - window_name: edit
+    panes:
+      - vim
+  - window_name: term
+    panes:
+      - sbt
+      - git status
+  - window_name: helm
+    start_directory: $CODEPATH/work/cars/dot44-helm
+    panes:
+      - git status

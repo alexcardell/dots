@@ -13,6 +13,7 @@ symlinks:
   - .profile
   - .ripgreprc
   - .tmux
+  - .tmuxp
   - .tmux.conf
   - .vim
   - .xinitrc
@@ -25,7 +26,6 @@ vim_tmp_dirs:
   - undo
 
 vim_path: '{{ ansible_env.PWD }}/roles/dotfiles/files/.vim'
-command_t_path: '{{ vim_path }}/pack/bundle/start/command-t'
 
 git_user_name: '{{"baubler"}}'
 git_user_email: '{{"29524087+baubler@users.noreply.github.com"}}'
