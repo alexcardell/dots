@@ -2,12 +2,16 @@ vars/work.yml
 
 templates/out
 
-files/.zsh/.zhistory
 files/.zsh/.zcompdump
-files/.zshenv
+files/.zsh/.zhistory
 files/.zsh/.zprofile
+files/.zsh/.zshrc
+files/.zsh/aliases.private.zsh
+files/.zshenv
+
 files/.gitconfig
 files/.gitconfig.work
+
 files/.tmux.conf
-files/.zsh/aliases.private.zsh
+
 files/.vim/spell
