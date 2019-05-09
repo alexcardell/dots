@@ -1,10 +1,27 @@
 # {{ ansible_managed }}
 
-{% if ansible_os_family == 'Darwin' %}
-{% endif %}
+# Path
+DEFAULT_PATH=$PATH
+unset PATH
 
-{% if ansible_os_family == 'Archlinux' %}
-{% endif %}
+PATH=$HOME/bin
+PATH=$PATH:$HOME/.local/bin
+PATH=$PATH:$HOME/.zsh/bin
+PATH=$PATH:/usr/local/sbin
+PATH=$PATH:/usr/local/bin
+
+### Custom ###
+# Use project specific node modules
+PATH=node_modules/.bin:$PATH
+# fnm -- fast node version manager
+PATH=$PATH:$HOME/.fnm
+PATH=$PATH:$GOPATH/bin
+
+# Add defaults back
+PATH=$PATH:$DEFAULT_PATH
+
+typeset -U PATH
+export PATH
 
 # zsh
 export ZDOTDIR=$HOME/.zsh
@@ -35,3 +52,11 @@ export TILLER_NAMESPACE=tiller
 # AWS
 export RW_AWS_ACCESS_KEY_ID=$(aws --profile default configure get aws_access_key_id)
 export RW_AWS_SECRET_ACCESS_KEY=$(aws --profile default configure get aws_secret_access_key)
+
+{% if ansible_os_family == 'Darwin' %}
+# Darwin
+{% endif %}
+{% if ansible_os_family == 'Archlinux' %}
+# Linux
+{% endif %}
+
