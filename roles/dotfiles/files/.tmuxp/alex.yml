@@ -1,0 +1,9 @@
+session_name: alex
+start_directory: ~/
+windows:
+  - window_name: edit
+    panes:
+      - vim
+  - window_name: term
+    panes:
+      -

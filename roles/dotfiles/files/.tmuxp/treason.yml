@@ -1,0 +1,11 @@
+session_name: treason
+start_directory: $CODEPATH/reason/treason
+windows:
+  - window_name: edit
+    panes:
+      - vim
+  - window_name: term
+    panes:
+      - git status
+      - shell_command:
+        - "esy build && esy test"
