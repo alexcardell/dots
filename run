@@ -2,28 +2,35 @@
 set -e
 
 if [ -n "$1" ]; then
-  ROLES="--tags $1"
+  roles="--tags $1"
 else
-  ROLES="--tags dotfiles"  # sensible default
+  roles="--tags dotfiles"  # sensible default
 fi
 
-VENV_SETUP=lib/virtualenv/virtualenv.py
-VENV=lib/env
-VENV_ACTIVATE=$VENV/bin/activate
-PIP=$VENV/bin/pip
-ANSIBLE=$VENV/bin/ansible-playbook
+type ansible-playbook
 
-python3 $VENV_SETUP $VENV &> /dev/stdout
-source $VENV_ACTIVATE
-$PIP install ansible &> /dev/stdout
+if [ $? -ne 0 ]; then
+  venv_setup=lib/virtualenv/virtualenv.py
+  venv=lib/env
+  venv_activate=$VENV/bin/activate
+  pip=$venv/bin/pip
 
-HOST_OS=$(uname)
-if [ "$HOST_OS" = 'Darwin' ]; then
-  $ANSIBLE -i inventory darwin.yml $ROLES
-elif [ "$HOST_OS" = 'Linux' ]; then
-  $ANSIBLE -i inventory arch.yml $ROLES
+  python3 $venv_setup $venv &> /dev/stdout
+  source $venv_activate
+  $pip install ansible &> /dev/stdout
+
+  ansible=$VENV/bin/ansible-playbook
 else
-  echo "Unknown host OS: $HOST_OS"
+  ansible=ansible-playbook
+fi
+
+host_os=$(uname)
+if [ "$host_os" = 'Darwin' ]; then
+  $ansible -i inventory darwin.yml $roles
+elif [ "$host_os" = 'Linux' ]; then
+  $ansible -i inventory arch.yml $roles
+else
+  echo "Unknown host OS: $host_os"
   exit 1
 fi
 
