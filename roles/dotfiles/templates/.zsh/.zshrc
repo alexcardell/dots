@@ -104,7 +104,9 @@ function () {
 PROMPT='%(?. .%F{yellow}%B!%b)%F{blue}alex ${_ZSH_PROMPTARROW} '
 RPROMPT='%F{240}${timer_show} %F{grey}%3~ ${vcs_info_msg_0_}%f'
 
+#-----------
 # Functions
+#-----------
 function killport {
   pkill -P $(lsof -ntP -iTCP:9229)
 }
@@ -214,16 +216,20 @@ zle -N zle-line-init
 zle -N zle-line-finish
 zle -N zle-keymap-select
 
+#---------
 # Aliases
+#---------
 alias :q='exit'
 alias cdp='cd $(git rev-parse --show-toplevel 2> /dev/null || echo -n ".")'
 alias cl='clear'
 alias d='docker'
 alias dc='docker-compose'
 alias g='git'
+alias h='helm'
+alias k='kubectl'
 alias kctl='kubectl'
-alias killtomcat='pkill -9 -f tomcat'
 alias py='python'
+alias r='ranger'
 alias t='tmuxp load'
 alias tat='tmux attach\; choose-tree -Zs'
 alias tm='tmux'
