@@ -1,10 +1,9 @@
-session_name: dot44
-start_directory: $CODEPATH/work/cars/dot44
+session_name: cv
+start_directory: $CODEPATH/misc/cv
 windows:
   - window_name: edit
     panes:
       - vim
   - window_name: term
     panes:
-      - sbt
       - git status
