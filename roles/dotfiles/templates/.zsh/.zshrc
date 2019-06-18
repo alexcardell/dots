@@ -8,8 +8,13 @@ bindkey -M viins "jk" vi-cmd-mode
 
 autoload -U compinit && compinit
 
-autoload -U colors
-colors
+autoload -U colors && colors
+
+autoload -U edit-command-line
+zle -N edit-command-line
+bindkey '^xx' edit-command-line
+bindkey '^x^x' edit-command-line
+bindkey -M vicmd 'gd' edit-command-line
 
 #---------
 # History
@@ -271,4 +276,4 @@ alias ll='ls --color=auto --group-directories-first -al'
 bindkey "^P" autosuggest-accept
 
 # fnm
-eval "`fnm env --multi --use-on-cd`"
+# eval "`fnm env --multi --use-on-cd`"
