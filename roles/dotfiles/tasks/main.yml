@@ -1,9 +1,16 @@
 ---
+- set_fact:
+    is_work: "{{
+        ansible_os_family == 'Darwin'
+        and ansible_hostname is match(work_hostname) | bool
+      }}"
+
 - debug:
     msg:
       - "ansible_os_family: {{ ansible_os_family }}"
       - "inventory_hostname: {{ inventory_hostname }}"
       - "ansible_hostname: {{ ansible_hostname }}"
+      - "is_work: {{ is_work }}"
 
 - name: Clone fzf repo
   git:
@@ -22,11 +29,10 @@
     state: directory
   with_items: '{{ vim_tmp_dirs }}'
 
+
 - name: Load work vars
   include_vars: work.yml
-  when:
-    ansible_os_family == 'Darwin'
-    and ansible_hostname is match(work_hostname)
+  when: is_work
 
 - name: Setup template output directories
   file:
