@@ -245,7 +245,7 @@ alias vim='nvim'
 {% if ansible_os_family == 'Darwin' %}
 # Darwin
 alias ls='gls --color=auto --group-directories-first'
-alias ll='gls --color=auto --group-directories-first -al'
+alias ll='gls --color=auto --group-directories-first -alh'
 alias pbc='pbcopy'
 alias pbp='pbpaste'
 {% endif %}
@@ -253,7 +253,7 @@ alias pbp='pbpaste'
 {% if ansible_os_family == 'Archlinux' %}
 # Linux
 alias ls='ls --color=auto --group-directories-first'
-alias ll='ls --color=auto --group-directories-first -al'
+alias ll='ls --color=auto --group-directories-first -alh'
 {% endif %}
 
 [ -f ~/.fzf/bin/fzf ] \
