@@ -175,24 +175,20 @@ function ask {
 }
 
 function set-cursor-sequence {
-  # Decide cursor shape escape sequence
-  # case $(uname) in
-  {% if ansible_os_family == 'Darwin' %}
-    # "Darwin")
+  # Cursor shape escape sequence
+  {% if darwin %}
+    # Darwin
     BLOCK="\E]50;CursorShape=0\C-G"
     LINE="\E]50;CursorShape=1\C-G"
     TMUXBLOCK="\EPtmux;\E\E]50;CursorShape=0\x7\E\\"
     TMUXLINE="\EPtmux;\E\E]50;CursorShape=1\x7\E\\"
-    # ;;
   {% endif %}
-  {% if ansible_os_family == 'Archlinux' %}
-    # "Linux")
-      BLOCK="\033[2 q"
-      LINE="\033[6 q"
-      TMUXBLOCK="\033Ptmux;\033\033[2 q\x7\033\\"
-      TMUXLINE="\033Ptmux;\033\033[6 q\x7\033\\"
-      # ;;
-  # esac
+  {% if arch %}
+    # Linux
+    BLOCK="\033[2 q"
+    LINE="\033[6 q"
+    TMUXBLOCK="\033Ptmux;\033\033[2 q\x7\033\\"
+    TMUXLINE="\033Ptmux;\033\033[6 q\x7\033\\"
   {% endif %}
 
   if [[ -n $TMUX ]]; then
@@ -242,7 +238,7 @@ alias v='nvim'
 alias vi='nvim'
 alias vim='nvim'
 
-{% if ansible_os_family == 'Darwin' %}
+{% if darwin %}
 # Darwin
 alias ls='gls --color=auto --group-directories-first'
 alias ll='gls --color=auto --group-directories-first -alh'
@@ -250,7 +246,7 @@ alias pbc='pbcopy'
 alias pbp='pbpaste'
 {% endif %}
 
-{% if ansible_os_family == 'Archlinux' %}
+{% if arch %}
 # Linux
 alias ls='ls --color=auto --group-directories-first'
 alias ll='ls --color=auto --group-directories-first -alh'

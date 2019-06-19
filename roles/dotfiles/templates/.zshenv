@@ -26,10 +26,10 @@ export FZF_DEFAULT_COMMAND='rg --files --follow'
 # Helm
 export TILLER_NAMESPACE=tiller
 
-{% if ansible_os_family == 'Darwin' %}
+{% if darwin %}
 # Darwin
 {% endif %}
-{% if ansible_os_family == 'Archlinux' %}
+{% if arch %}
 # Linux
 {% endif %}
 

@@ -8,7 +8,7 @@
   email = {{ git_user_email }}
 {% endif %}
 
-{% if ansible_os_family == 'Darwin' and work_git_user_name is defined %}
+{% if work %}
 [includeIf "gitdir:~/Code/work/cars/"]
   path = ~/.gitconfig.work
 {% endif %}

@@ -1,8 +1,12 @@
 ---
 - set_fact:
-    is_work: "{{
-        ansible_os_family == 'Darwin'
-        and ansible_hostname is match(work_hostname) | bool
+    arch: "{{ ansible_os_family == 'Archlinux' }}"
+    darwin: "{{ ansible_os_family == 'Darwin' }}"
+
+- set_fact:
+    work: "{{
+        darwin
+        and ansible_hostname is match(work_hostname)
       }}"
 
 - debug:
@@ -10,7 +14,9 @@
       - "ansible_os_family: {{ ansible_os_family }}"
       - "inventory_hostname: {{ inventory_hostname }}"
       - "ansible_hostname: {{ ansible_hostname }}"
-      - "is_work: {{ is_work }}"
+      - "arch: {{ arch }}"
+      - "work: {{ work }}"
+      - "darwin: {{ darwin }}"
 
 - name: Clone fzf repo
   git:
@@ -32,7 +38,7 @@
 
 - name: Load work vars
   include_vars: work.yml
-  when: is_work
+  when: work
 
 - name: Setup template output directories
   file:

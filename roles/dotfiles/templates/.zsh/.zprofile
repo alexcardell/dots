@@ -1,6 +1,6 @@
 # {{ ansible_managed }}
 
-{% if ansible_os_family == 'Archlinux' %}
+{% if arch %}
   setxkbmap gb # potentially needs moving to zshrc
   startx
 {% endif %}
