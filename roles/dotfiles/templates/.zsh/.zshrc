@@ -112,42 +112,6 @@ RPROMPT='%F{240}${timer_show} %F{grey}%3~ ${vcs_info_msg_0_}%f'
 #-----------
 # Functions
 #-----------
-function killport {
-  pkill -P $(lsof -ntP -iTCP:9229)
-}
-
-# function t {
-#   # tmux session startup function
-#   local project session
-#   if [[ -n $1 ]]; then
-#     project=$1
-#   else
-#     # fall back to directory name if no project name given
-#     project=$(basename "${$(pwd)//[.]/-}")
-#   fi
-
-#   session=$(tmux ls -F '#{session_name}' | grep "$project$")
-
-#   # look for existing session and attach/switch
-#   if [[ -n $session ]]; then
-#     if [[ -n $TMUX ]]; then
-#       tmux switch-client -t $session
-#     else
-#       tmux attach-session -t $session
-#     fi
-#     return
-#   fi
-
-#   # look for setup script
-#   if [[ -f ~/.tmux/$project\.sh ]]; then
-#     ~/.tmux/$project\.sh
-#     return
-#   fi
-
-#   # if all else fails, start new default session
-#   tmux new-session -s $project
-# }
-
 function set-cursor-sequence {
   # Cursor shape escape sequence
   {% if darwin %}
