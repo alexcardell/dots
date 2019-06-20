@@ -148,32 +148,6 @@ function killport {
 #   tmux new-session -s $project
 # }
 
-function ask {
-  local prompt reply
-  prompt="y/n"
-
-  while true; do
-    # Ask the question (not using "read -p" as it uses stderr not stdout)
-    echo -n "$1 [$prompt] "
-
-    # Read the answer (use /dev/tty in case stdin is redirected from somewhere else)
-    read reply </dev/tty
-
-    # Default?
-    if [ -z "$reply" ]; then
-      reply="n"
-    fi
-
-    # Check if the reply is valid
-    case "$reply" in
-      Y*|y*) return 0 ;;
-      N*|n*) return 1 ;;
-    esac
-    return 0;
-
-  done
-}
-
 function set-cursor-sequence {
   # Cursor shape escape sequence
   {% if darwin %}
@@ -266,10 +240,20 @@ alias ll='ls --color=auto --group-directories-first -alh'
 
 [ -f $ZDOTDIR/lib/zsh-autosuggestions/zsh-autosuggestions.zsh ] \
   && . $ZDOTDIR/lib/zsh-autosuggestions/zsh-autosuggestions.zsh
+bindkey "^P" autosuggest-accept
 
 [ -f $ZDOTDIR/lib/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh ] \
   && . $ZDOTDIR/lib/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
-bindkey "^P" autosuggest-accept
 
 # fnm
 # eval "`fnm env --multi --use-on-cd`"
+
+# Autoload custom functions
+fpath=("$ZDOTDIR/autoloaded" $fpath)
+autoloaded="${ZDOTDIR}/autoloaded"
+if [[ -d "${autoloaded}" ]]; then
+  for func in $autoloaded/*; do
+    autoload -Uz ${func:t}
+  done
+fi
+unset autoloaded
