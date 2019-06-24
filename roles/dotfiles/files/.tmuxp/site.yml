@@ -1,5 +1,5 @@
-session_name: treason
-start_directory: $CODEPATH/reason/treason
+session_name: site
+start_directory: $CODEPATH/js/alex.cardell.io
 windows:
   - window_name: edit
     panes:
@@ -7,4 +7,3 @@ windows:
   - window_name: term
     panes:
       - git status
-      - "esy build && esy test"
