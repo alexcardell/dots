@@ -1,7 +1,7 @@
 {
   "languageserver": {
      "reason": {
-      "command": "reason-language-server.exe",
+      "command": "reason-language-server",
       "filetypes": ["reason"]
      },
      "scala": {
