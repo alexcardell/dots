@@ -5,6 +5,7 @@ symlinks:
   - .config/i3
   - .config/nvim
   - .config/rofi
+  - .config/ranger/rc.conf
   - .gitconfig
   - .gitconfig.work
   - .gitignore
