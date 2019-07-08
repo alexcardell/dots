@@ -1,5 +1,5 @@
 #!/bin/bash
-set -ex
+set -e
 
 if [ -n "$1" ]; then
   roles="--tags $1"
@@ -33,5 +33,3 @@ else
   echo "Unknown host OS: $host_os"
   exit 1
 fi
-
-trap - EXIT
