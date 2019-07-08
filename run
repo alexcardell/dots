@@ -12,19 +12,19 @@ fi
 # if [ $? -eq 0 ]; then
 #   ansible=ansible-playbook
 # else
-venv_setup=lib/virtualenv/virtualenv.py
 venv=lib/env
-venv_activate=$venv/bin/activate
-pip=$venv/bin/pip
 
-python3 $venv_setup $venv &> /dev/stdout
-source $venv_activate
-$pip install ansible &> /dev/stdout
+python3 -m venv $venv
+
+source $venv/bin/activate
+
+$venv/bin/pip install ansible &> /dev/stdout
 
 ansible=$venv/bin/ansible-playbook
 # fi
 
 host_os=$(uname)
+
 if [ "$host_os" = 'Darwin' ]; then
   $ansible -i inventory darwin.yml $roles
 elif [ "$host_os" = 'Linux' ]; then
