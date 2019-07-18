@@ -1,3 +1,7 @@
+#########
+# Tools #
+#########
+
 # Vim #
 #######
 # Swap
@@ -24,25 +28,12 @@ tags.*
 
 # Language Servers #
 ####################
-.metals/
+.metals
+.bloop
 
 # Ansible #
 ###########
 *.retry
-
-# JavaScript #
-##############
-node_modules
-.nvmrc
-
-# Compiled source #
-###################
-*.com
-*.class
-*.dll
-*.exe
-*.o
-*.so
 
 # Backup files #
 ################
@@ -102,4 +93,25 @@ Thumbs.db
 *.patch
 *.dif
 
+#############
+# Languages #
+#############
+
+# Compiled source #
+###################
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
+# JavaScript #
+##############
+.nvmrc
 jsconfig.json
+node_modules
+
+# ReasonML #
+############
+_esy
