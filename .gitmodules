@@ -79,3 +79,6 @@
 [submodule "roles/dotfiles/files/.vim/pack/bundle/start/vim-repeat"]
 	path = roles/dotfiles/files/.vim/pack/bundle/start/vim-repeat
 	url = https://github.com/tpope/vim-repeat.git
+[submodule "roles/dotfiles/files/.vim/pack/bundle/start/goyo.vim"]
+	path = roles/dotfiles/files/.vim/pack/bundle/start/goyo.vim
+	url = https://github.com/junegunn/goyo.vim.git
