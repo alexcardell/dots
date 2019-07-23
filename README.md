@@ -4,7 +4,7 @@ Sets up a Python virtual environment then runs Ansible roles based on the curren
 
 Designed for MacOS Mojave and Arch Linux.
 
-### Roles
+## Roles
 #### Dotfiles
 Symlinks config files to the correct places. Where possible the cross-platform differences are handled with internal logic (shell/vim if/elses), and where not possible it is solved by templating.
 
@@ -16,13 +16,10 @@ Installs packages from [pacman](https://wiki.archlinux.org/index.php/pacman).
 #### Homebrew (MacOS)
 Installs packages from [homebrew](https://brew.sh/).
 
----------------------------
-
-### Dependencies
+## Dependencies
 - Python 3 -- Sets up the virtual environment. Ansible will be installed for you. 
 
----------------------------
-### Usage
+## Usage
 1. Clone this repo.
 1. `git submodule update --init --recursive` to install submodule dependencies (mostly vim plugins). 
 1. `./run`
