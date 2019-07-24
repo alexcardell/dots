@@ -17,17 +17,22 @@
     path: '{{ role_path }}/vendor'
     state: directory
 
-- name: Clone aurman
-  git:
-    repo: 'https://aur.archlinux.org/auracle-git.git'
-    dest: '{{ role_path }}/vendor/auracle-git'
-    update: no
-
 - name: Clone pacaur
   git:
-    repo: 'https://aur.archlinux.org/pacaur.git'
-    dest: '{{ role_path }}/vendor/pacaur'
+    repo: 'https://aur.archlinux.org/{{ item }}.git'
+    dest: '{{ role_path }}/vendor/{{ item }}'
     update: no
+  with_items:
+    - auracle-git
+    - pacaur
+
+- name: Set up pacaur
+  shell: 'yes | makepkg -si'
+  args:
+    chdir: '{{ role_path }}/vendor/{{ item }}'
+  with_items:
+    - auracle-git
+    - pacaur
 
 # - name: upgrade
 #   become: true
