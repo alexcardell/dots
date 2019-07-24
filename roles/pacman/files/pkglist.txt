@@ -69,6 +69,8 @@ pkgconf
 procps-ng
 psmisc
 python
+python-pip
+python2-pip
 qbittorrent
 ranger
 redshift

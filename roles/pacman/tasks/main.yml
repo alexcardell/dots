@@ -1,47 +1,77 @@
 ---
-- name: upgrade
-  become: true
-  pacman:
-    upgrade: yes
+- debug:
+    msg:
+      - "ansible_os_family: {{ ansible_os_family }}"
+      - "inventory_hostname: {{ inventory_hostname }}"
+      - "ansible_hostname: {{ ansible_hostname }}"
+      - "role_path: {{ role_path }}"
 
-- name: installing packages
+- name: Install git
   become: true
   pacman:
-    name:
-      - acpi
-      - adobe-source-code-pro-fonts
-      - arc-gtk-theme
-      - autojump
-      - connman
-      - docker
-      - feh
-      - firefox-developer-edition
-      - fzf
-      - htop
-      - i3-gaps
-      - i3-wm
-      - i3blocks
-      - lxappearance
-      - mpv
-      - mupdf
-      - qbittorrent
-      - ranger
-      - redshift
-      - ripgrep
-      - rofi
-      - screenfetch
-      - sudo
-      - tmux
-      - unzip
-      - vim
-      - which
-      - xclip
-      - xorg-server
-      - xorg-xinit
-      - xss-lock
-      - yarn
-      - zip
-      - zsh
+    name: git
+    state: present
+
+- name: Setup vendor directory
+  file:
+    path: '{{ role_path }}/vendor'
+    state: directory
+
+- name: Clone aurman
+  git:
+    repo: 'https://aur.archlinux.org/auracle-git.git'
+    dest: '{{ role_path }}/vendor/auracle-git'
+    update: no
+
+- name: Clone pacaur
+  git:
+    repo: 'https://aur.archlinux.org/pacaur.git'
+    dest: '{{ role_path }}/vendor/pacaur'
+    update: no
+
+# - name: upgrade
+#   become: true
+#   pacman:
+#     upgrade: yes
+
+# - name: installing packages
+#   become: true
+#   pacman:
+#     name:
+#       - acpi
+#       - adobe-source-code-pro-fonts
+#       - arc-gtk-theme
+#       - autojump
+#       - connman
+#       - docker
+#       - feh
+#       - firefox-developer-edition
+#       - fzf
+#       - htop
+#       - i3-gaps
+#       - i3-wm
+#       - i3blocks
+#       - lxappearance
+#       - mpv
+#       - mupdf
+#       - qbittorrent
+#       - ranger
+#       - redshift
+#       - ripgrep
+#       - rofi
+#       - screenfetch
+#       - sudo
+#       - tmux
+#       - unzip
+#       - vim
+#       - which
+#       - xclip
+#       - xorg-server
+#       - xorg-xinit
+#       - xss-lock
+#       - yarn
+#       - zip
+#       - zsh
 
 # TODO: Pacaur packages
 # - clipit
