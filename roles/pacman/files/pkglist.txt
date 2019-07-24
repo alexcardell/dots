@@ -1,5 +1,6 @@
 acpi
 adobe-source-code-pro-fonts
+ansible-aur-git
 arc-gtk-theme
 auracle-git
 autojump
