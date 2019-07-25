@@ -60,6 +60,7 @@ nano
 neovim
 nerd-fonts-source-code-pro
 netctl
+npm
 openssh
 pacaur
 pacman
