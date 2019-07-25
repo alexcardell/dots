@@ -90,6 +90,7 @@ systemd-sysvcompat
 tar
 texinfo
 tmux
+tmuxp
 ttf-font-awesome
 ttf-roboto
 unzip
