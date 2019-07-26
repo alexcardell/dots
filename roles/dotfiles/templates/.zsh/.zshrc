@@ -155,12 +155,19 @@ zle -N zle-line-init
 zle -N zle-line-finish
 zle -N zle-keymap-select
 
-# Enable text objects for ci", ca", di", etc
+# Enable text objects for ",',`,(),{},<>, etc
 autoload -U select-quoted
 zle -N select-quoted
+
+autoload -U select-bracketed
+zle -N select-bracketed
+
 for m in visual viopp; do
   for c in {a,i}{\',\",\`}; do
     bindkey -M $m $c select-quoted
+  done
+  for c in {a,i}${(s..)^:-'()[]{}<>'}; do
+    bindkey -M $m $c select-bracketed
   done
 done
 
