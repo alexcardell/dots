@@ -1,54 +1,47 @@
 ---
-- name: upgrade
-  become: true
-  pacman:
-    upgrade: yes
+- debug:
+    msg:
+      - "ansible_os_family: {{ ansible_os_family }}"
+      - "inventory_hostname: {{ inventory_hostname }}"
+      - "ansible_hostname: {{ ansible_hostname }}"
+      - "role_path: {{ role_path }}"
 
-- name: installing packages
-  become: true
-  pacman:
-    name:
-      - acpi
-      - adobe-source-code-pro-fonts
-      - arc-gtk-theme
-      - autojump
-      - connman
-      - docker
-      - feh
-      - firefox-developer-edition
-      - fzf
-      - htop
-      - i3-gaps
-      - i3-wm
-      - i3blocks
-      - lxappearance
-      - mpv
-      - mupdf
-      - qbittorrent
-      - ranger
-      - redshift
-      - ripgrep
-      - rofi
-      - screenfetch
-      - sudo
-      - tmux
-      - unzip
-      - vim
-      - which
-      - xclip
-      - xorg-server
-      - xorg-xinit
-      - xss-lock
-      - yarn
-      - zip
-      - zsh
+- name: Setup pacaur
+  block:
+  - name: Install git
+    become: true
+    pacman:
+      name: git
+      state: present
 
-# TODO: Pacaur packages
-# - clipit
-# - drive
-# - i3lock-fancy-git
-# - nerd-fonts-complete
-# - paper-icon-theme
-# - spotify
-# - tor-browser-en
-# - nordvpn
+  - name: Setup vendor directory
+    file:
+      path: '{{ role_path }}/vendor'
+      state: directory
+
+  - name: Clone pacaur
+    git:
+      repo: 'https://aur.archlinux.org/{{ item }}.git'
+      dest: '{{ role_path }}/vendor/{{ item }}'
+      update: no
+    with_items:
+      - auracle-git
+      - pacaur
+      - ansible-aur-git
+
+  - name: Set up pacaur
+    shell: 'yes | makepkg -si'
+    args:
+      chdir: '{{ role_path }}/vendor/{{ item }}'
+    with_items:
+      - auracle-git
+      - pacaur
+      - ansible-aur-git
+
+- name: Install packages
+  aur:
+    use: pacaur
+    upgrade: no
+    skip_installed: yes
+    name: '{{ item }}'
+  with_lines: 'cat {{ role_path }}/files/pkglist.txt'

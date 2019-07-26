@@ -1,4 +1,6 @@
 # i3 config
+exec "setxkbmap i3"
+
 set $mod Mod4
 
 set $wallpaper /home/alex/pictures/wallpapers/san_fran.png
@@ -194,3 +196,5 @@ exec --no-startup-id redshift
 
 # Clipboard manager
 exec --no-startup-id clipit
+
+exec "setxkbmap gb"
