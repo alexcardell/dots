@@ -9,6 +9,7 @@ bash
 binutils
 bison
 bzip2
+circleci-cli-bin
 connman
 coreutils
 cryptsetup
