@@ -1,4 +1,5 @@
 acpi
+acpilight
 adobe-source-code-pro-fonts
 alsa-utils
 ansible-aur-git
