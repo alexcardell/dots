@@ -5,7 +5,9 @@ let g:NERDTreeCascadeSingleChildDir = 1
 let g:NERDTreeCascadeOpenSingleChildDir = 1
 let g:NERDTreeMinimalUI = 1
 
-let g:NERDTreeRespectWildIgnore=1
+let g:NERDTreeRespectWildIgnore = 1
+
+let g:NERDTreeAutoDeleteBuffer = 1
 
 " let g:NERDTreeMapJumpLastChild = '<Nop>'
 " let g:NERDTreeMapJumpFirstChild = '<Nop>'

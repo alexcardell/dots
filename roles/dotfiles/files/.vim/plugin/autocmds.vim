@@ -21,5 +21,10 @@ if has('autocmd')
     " register sbt files as scala (for use with scala-metals)
     autocmd BufNewFile,BufReadPost *.sbt set filetype=scala
 
+    " disable status line
+    autocmd  FileType fzf set laststatus=0 noshowmode noruler
+      \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
+
+
   augroup END
 endif

@@ -1,5 +1,5 @@
 session_name: alex
-start_directory: ~/
+start_directory: $HOME
 windows:
   - window_name: term
     panes:

@@ -106,7 +106,7 @@ function () {
   _ZSH_PROMPTARROW=$(printf '%%F{red}%%B>%.0s%%b%%f' {1..$LVL})
 }
 
-PROMPT='%(?. .%F{yellow}%B!%b)%F{blue}alex ${_ZSH_PROMPTARROW} '
+PROMPT='%(?. .%F{yellow}%B!%b)%F{blue}alex ${_ZSH_PROMPTARROW} '
 RPROMPT='%F{240}${timer_show} %F{grey}%3~ ${vcs_info_msg_0_}%f'
 
 #-----------
@@ -154,6 +154,15 @@ function zle-line-finish {
 zle -N zle-line-init
 zle -N zle-line-finish
 zle -N zle-keymap-select
+
+# Enable text objects for ci", ca", di", etc
+autoload -U select-quoted
+zle -N select-quoted
+for m in visual viopp; do
+  for c in {a,i}{\',\",\`}; do
+    bindkey -M $m $c select-quoted
+  done
+done
 
 #---------
 # Aliases
