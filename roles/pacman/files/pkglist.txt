@@ -1,5 +1,6 @@
 acpi
 adobe-source-code-pro-fonts
+alsa-utils
 ansible-aur-git
 arc-gtk-theme
 auracle-git
