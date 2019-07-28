@@ -26,7 +26,7 @@ if has('autocmd')
       \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
 
     autocmd User GoyoEnter nested call me#functions#goyo_enter()
-    autocmd User GoyoLeave nested call me#functions#goyo_enter()
+    autocmd User GoyoLeave nested call me#functions#goyo_leave()
 
   augroup END
 endif
