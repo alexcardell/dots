@@ -74,6 +74,7 @@ pkgconf
 procps-ng
 psmisc
 python
+python-grip-git
 python-pip
 python2-pip
 qbittorrent
