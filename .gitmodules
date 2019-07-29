@@ -82,3 +82,6 @@
 [submodule "roles/dotfiles/files/.vim/pack/bundle/start/goyo.vim"]
 	path = roles/dotfiles/files/.vim/pack/bundle/start/goyo.vim
 	url = https://github.com/junegunn/goyo.vim.git
+[submodule "roles/dotfiles/files/.tmux/plugins/tpm"]
+	path = roles/dotfiles/files/.tmux/plugins/tpm
+	url = https://github.com/tmux-plugins/tpm

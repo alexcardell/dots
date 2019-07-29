@@ -35,14 +35,13 @@
     state: directory
   with_items: '{{ vim_tmp_dirs }}'
 
-
 - name: Load work vars
   include_vars: work.yml
   when: work
 
 - name: Setup template output directories
   file:
-    dest={{ ansible_env.PWD }}/roles/dotfiles/files/{{ item.path }}
+    dest={{ role_path }}/files/{{ item.path }}
     state=directory
   with_filetree: ../templates
   when: item.state == 'directory'
@@ -50,14 +49,14 @@
 - name: Template dotfiles
   template:
     src={{ item.src }}
-    dest={{ ansible_env.PWD }}/roles/dotfiles/files/{{ item.path }}
+    dest={{ role_path }}/files/{{ item.path }}
     force=yes
   with_filetree: ../templates
   when: item.state == 'file'
 
 - name: Symlink dotfiles
   file:
-    src={{ ansible_env.PWD }}/roles/dotfiles/files/{{ item }}
+    src={{ role_path}}/files/{{ item }}
     path=~/{{ item }}
     state=link
     force=yes
