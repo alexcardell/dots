@@ -43,6 +43,7 @@ PATH=$PATH:$HOME/.zsh/bin
 PATH=$PATH:/usr/local/sbin
 PATH=$PATH:/usr/local/bin
 PATH=$PATH:node_modules/.bin
+PATH=$PATH:$HOME/.yarn/bin
 # PATH=$PATH:$HOME/.fnm
 PATH=$PATH:$GOPATH/bin
 
