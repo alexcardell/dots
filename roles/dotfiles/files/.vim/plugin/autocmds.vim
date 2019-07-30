@@ -14,7 +14,7 @@ if has('autocmd')
       autocmd FocusLost,WinLeave * let &l:colorcolumn=join(range(1, 255), ',')
 
       " clear trailing whitespace
-      autocmd BufWrite * call me#functions#zap()
+      autocmd BufWrite * call me#fns#zap()
 
       " register *.md as markdown filetype
       autocmd BufNewFile,BufReadPost *.md set filetype=markdown
@@ -75,9 +75,9 @@ if has('autocmd')
       execute 'let &' . k . '=' . string(v)
     endfor
 
-    call me#functions#statusline()
+    call me#fns#statusline()
 
-    call me#functions#highlights()
+    call me#fns#highlights()
 
     if exists('$TMUX')
       silent !tmux set status on

@@ -20,7 +20,7 @@ endif
 
 set cursorline             " highlight current line
 
-call me#functions#highlights()
+call me#fns#highlights()
 
 """
 " Screen drawing
