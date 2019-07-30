@@ -19,17 +19,14 @@ if !has('nvim')
 endif
 
 set cursorline             " highlight current line
-highlight clear Search     " I don't like the default search highlight
-highlight Search cterm=italic,bold,underline ctermfg=red
-highlight Comment cterm=italic
-highlight String cterm=italic
-highlight EndOfBuffer ctermbg=18 ctermfg=18
+
+call me#functions#highlights()
 
 """
 " Screen drawing
 set scrolloff=3            " add a 3 line buffer to top/bottom of view
 set sidescrolloff=3        " same but for sides
-set lazyredraw             " only update screen when macro finishes
+" set lazyredraw             " only update screen when macro finishes
 set laststatus=2           " always show statusline
 set number relativenumber  " set number and relnumber
 set virtualedit=block      " allow visual block to move through empty space
