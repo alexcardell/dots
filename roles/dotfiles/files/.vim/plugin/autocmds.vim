@@ -50,12 +50,10 @@ if has('autocmd')
     augroup! AlexAutocmds
 
     let s:settings = {
-          \ 'showbreak': &showbreak,
           \ 'cursorline': &cursorline,
           \ 'showmode': &showmode,
           \ 'showcmd': &showcmd
           \ }
-    set showbreak=
     set nocursorline
     set noshowmode
     set noshowcmd
@@ -63,6 +61,7 @@ if has('autocmd')
     set statusline=\  " comment to ignore zap
 
     highlight clear EndOfBuffer
+    highlight NonText ctermfg=8
 
     if exists('$TMUX')
       silent !tmux set status off

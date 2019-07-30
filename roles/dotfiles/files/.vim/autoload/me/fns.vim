@@ -51,9 +51,9 @@ function! me#fns#highlights()
   highlight String cterm=italic
   highlight EndOfBuffer ctermbg=18 ctermfg=18
 
-  highlight ModeMsg ctermfg = 0
   " 1 red 2 green 3 yellow 4 blue 5 magenta 6 aqua
   " 18 dark grey
+  highlight ModeMsg ctermfg = 0
   highlight StatusLine ctermfg=18 ctermbg=grey
   highlight User2 ctermfg=grey ctermbg=18
 endfunction
