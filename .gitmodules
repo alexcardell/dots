@@ -85,3 +85,6 @@
 [submodule "roles/dotfiles/files/.tmux/plugins/tpm"]
 	path = roles/dotfiles/files/.tmux/plugins/tpm
 	url = https://github.com/tmux-plugins/tpm
+[submodule "roles/dotfiles/files/.vim/pack/bundle/start/vim-markdown"]
+	path = roles/dotfiles/files/.vim/pack/bundle/start/vim-markdown
+	url = https://github.com/plasticboy/vim-markdown.git

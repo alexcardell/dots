@@ -28,5 +28,9 @@ if has('autocmd')
     autocmd User GoyoEnter nested call me#functions#goyo_enter()
     autocmd User GoyoLeave nested call me#functions#goyo_leave()
 
+    " Allow comment highlights for json
+    " Bucklescript and Coc both allow comments in their json files
+    autocmd FileType json syntax match Comment +\/\/.\+$+
+
   augroup END
 endif
