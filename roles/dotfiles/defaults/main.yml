@@ -15,7 +15,6 @@ symlinks:
   - .ripgreprc
   - .tmux
   - .tmuxp
-  - .tmux.d/plugins/tpm
   - .tmux.conf
   - .vim
   - .xinitrc
