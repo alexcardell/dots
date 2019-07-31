@@ -26,6 +26,7 @@ filesystem
 findutils
 firefox-developer-edition
 flex
+fnm-bin
 fzf
 gawk
 gcc
