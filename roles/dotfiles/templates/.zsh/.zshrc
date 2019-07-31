@@ -215,8 +215,14 @@ alias ll='ls --color=auto --group-directories-first -alh'
 # third party
 [ -f $ZDOTDIR/lib/tomorrow-night.sh ] && . $ZDOTDIR/lib/tomorrow-night.sh
 
+{% if arch %}
+[ -f /usr/share/autojump/autojump.zsh ] \
+  && . /usr/share/autojump/autojump.zsh
+{% endif %}
+{% if darwin %}
 [ -f /usr/local/etc/profile.d/autojump.sh ] \
   && . /usr/local/etc/profile.d/autojump.sh
+{% endif %}
 
 [ -f $ZDOTDIR/lib/zsh-autosuggestions/zsh-autosuggestions.zsh ] \
   && . $ZDOTDIR/lib/zsh-autosuggestions/zsh-autosuggestions.zsh
