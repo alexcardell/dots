@@ -1,11 +1,12 @@
 ---
 symlinks:
+  - .Brewfile
   - .Xresources
   - .Xresources.d
   - .config/i3
   - .config/nvim
-  - .config/rofi
   - .config/ranger/rc.conf
+  - .config/rofi
   - .gitconfig
   - .gitconfig.work
   - .gitignore
@@ -14,9 +15,8 @@ symlinks:
   - .profile
   - .ripgreprc
   - .tmux
-  - .tmuxp
-  - .tmux.d/plugins/tpm
   - .tmux.conf
+  - .tmuxp
   - .vim
   - .xinitrc
   - .zsh
