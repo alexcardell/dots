@@ -51,6 +51,7 @@ if has('autocmd')
 
     let s:settings = {
           \ 'cursorline': &cursorline,
+          \ 'colorcolumn': &colorcolumn,
           \ 'showmode': &showmode,
           \ 'showcmd': &showcmd
           \ }
