@@ -31,7 +31,6 @@ fzf
 gawk
 gcc
 gcc-libs
-gdrive
 gettext
 git
 glibc
