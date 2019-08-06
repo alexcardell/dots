@@ -99,6 +99,7 @@ tmux
 tmuxp
 ttf-font-awesome
 ttf-roboto
+unclutter
 unzip
 usbutils
 util-linux
