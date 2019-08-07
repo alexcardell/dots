@@ -30,10 +30,12 @@ if has('autocmd')
       " Bucklescript and Coc both allow comments in their json files
       autocmd FileType json syntax match Comment +\/\/.\+$+
 
-     au InsertEnter * highlight StatusLine ctermfg=18 ctermbg=blue |
-           \ highlight User2 ctermfg=blue ctermbg=18
-     au InsertLeave * highlight StatusLine ctermfg=18 ctermbg=grey |
-           \ highlight User2 ctermfg=grey ctermbg=18
+      au InsertEnter * highlight StatusLine ctermfg=18 ctermbg=blue |
+            \ highlight User2 ctermfg=blue ctermbg=18
+      au InsertLeave * highlight StatusLine ctermfg=18 ctermbg=grey |
+            \ highlight User2 ctermfg=grey ctermbg=18
+
+      au FileType typescript set syntax=javascript
 
     augroup END
   endfunction
