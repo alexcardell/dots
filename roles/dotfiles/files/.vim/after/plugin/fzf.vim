@@ -9,9 +9,9 @@
 "     \   <bang>0)
 " endif
 
-nnoremap <localleader>/ :Files<CR>
+nnoremap <leader>fa :Files<CR>
 
-nnoremap <leader>/ :Rg<Space>
+nnoremap <localleader>/ :Rg<Space>
 
 nnoremap <leader>fb :Buffers<CR>
 
@@ -22,3 +22,9 @@ nnoremap <leader>f/ :BLines<CR>
 nnoremap <leader>fh :Helptags<CR>
 
 nnoremap <leader>fs :Snippets<CR>
+
+let g:fzf_action = {
+      \ 'ctrl-t': 'tab split',
+      \ 'ctrl-s': 'split',
+      \ 'ctrl-v': 'vsplit',
+      \ }
