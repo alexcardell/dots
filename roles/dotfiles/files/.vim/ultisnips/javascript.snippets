@@ -26,8 +26,8 @@ afterEach(() => {
 endsnippet
 
 snippet bef "beforeEach()" b
-beforeEach(() => {
-	${1}
+before${1:Each}(() => {
+	${0}
 });
 endsnippet
 
@@ -38,7 +38,11 @@ it('${1}', () => {
 endsnippet
 
 snippet ex "expect() assertion" b
-expect(${1})${2}.to${3}(${4});
+expect(actual).to${3:/*Match*/}(expected);
+endsnippet
+
+snippet exn "expect() assertion" b
+expect(actual).not.to${3:/*Match*/}(expected);
 endsnippet
 
 snippet test "test() block" b
