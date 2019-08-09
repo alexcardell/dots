@@ -1,3 +1,3 @@
 let g:vista_default_executive="coc"
 
-nnoremap gv :Vista<CR>
+nnoremap <leader>v :Vista<CR>

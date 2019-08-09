@@ -26,11 +26,11 @@ filesystem
 findutils
 firefox-developer-edition
 flex
+fnm-bin
 fzf
 gawk
 gcc
 gcc-libs
-gdrive
 gettext
 git
 glibc
@@ -98,6 +98,7 @@ tmux
 tmuxp
 ttf-font-awesome
 ttf-roboto
+unclutter
 unzip
 usbutils
 util-linux
