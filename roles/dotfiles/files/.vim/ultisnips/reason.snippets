@@ -1,14 +1,14 @@
-snippet "let" "let binding" br
-let ${1} = ${2};
+snippet let "let binding" b
+let ${1} = ${2}
 endsnippet
 
-snippet "lef" "let function" br
-let ${1:fn} = (${2}) => {
+snippet fn "let function"
+(${2}) => {
 	${3}
 };
 endsnippet
 
-snippet "swi" "pattern match" r
+snippet "swi(tch|tc|t)?" "pattern match" r
 switch (${1}) {
 | ${2}
 };

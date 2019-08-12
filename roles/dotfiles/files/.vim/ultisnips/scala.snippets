@@ -1,35 +1,35 @@
-snippet "if" "if" r
+snippet if "if"
 if (${1}) {
-	${0:${VISUAL:expression}}
+	${0:${VISUAL:?}}
 }
 endsnippet
 
-snippet "ifel" "if else" r
+snippet "if(el|e)" "if else" r
 if (${1}) {
-	${2:${VISUAL:expression}}
+	${2:${VISUAL:?}}
 } else {
-	${3:expression}
+	${3:?}
 }
 endsnippet
 
-snippet "for" "for comprehension" r
+snippet for "for comprehension"
 for {
-	${2:_} <- ${1:/* something */}
+	${2:_} <- ${1:?}
 } yield ${3:()}
 endsnippet
 
-snippet "def" "def" br
-def ${1:fn}(${2}): ${3:T} = {
-	${0:${VISUAL:expression}}
+snippet def "def" b
+def ${1:function}(${2}): ${3:T} = {
+	${0:${VISUAL:?}}
 }
 endsnippet
 
-snippet "arg" "argument" r
-${1:/*arg*/}: ${2:T}${3:, arg}
+snippet arg "argument"
+${1:?}: ${2:T}${3:, arg}
 endsnippet
 
-snippet "match" "match" r
-${1:/* exp */} match {
-	case ${2:value} => ${3:return}
+snippet "mat(ch|c)?" "match" r
+${1:?} match {
+	case ${2:?} => ${3:?}
 }
 endsnippet

@@ -1,33 +1,44 @@
-snippet "imp(o,or,ort)?" "import" br
-import ${1:module} from '${2:`!p snip.rv = t[1].lower()`}${3}';
+snippet "imp(ort|or|o)?" "import" br
+import ${1:module} from '${2:`!p snip.rv = t[1].lower()`}';
 endsnippet
 
-snippet "req(u|ui|uir|uire)?" "require" br
+snippet "req(uire|uir|ui|u)?" "require" br
 const ${1:ModuleName} = require('${2:`!p snip.rv = t[1].lower()`}');
 endsnippet
 
-snippet "cla(s|ss)?" "class" r
+snippet "cla(ss|s)?" "class" br
 class ${1} {
-	${2:${VISUAL:code}}
+	${0:${VISUAL}}
 }
+endsnippet
+
+snippet "con(st|s)?" "const" br
+const ${1} = ${0:0};
+endsnippet
+
+snippet fn "function" b
+const ${1:fn} = (${2}) => {
+	${0:${VISUAL:return;}}
+};
 endsnippet
 
 ########
 # Jest #
 ########
-snippet "desc?" "describe()" br
+snippet "des(cribe|crib|cri|cr|c)?" "describe()" br
 describe('${1:Test suite}', () => {
-	${2}
+	${0}
 });
 endsnippet
 
-snippet aft "after()" b
-afterEach(() => {
-	${1}
+snippet "aft(er|e)?" "afterEach" br
+after${1:Each}(() => {
+	${0}
 });
 endsnippet
 
-snippet bef "beforeEach()" b
+
+snippet "bef(ore|or|e)?" "before[Each]()" br
 before${1:Each}(() => {
 	${0}
 });
@@ -35,16 +46,16 @@ endsnippet
 
 snippet it "it() block" b
 it('${1:Does something}', () => {
-	const expected = ${2:/* expected */};
-	const actual = ${3:/* actual */};
+	const expected = ${2:0};
+	const actual = ${3:0};
 	${0}
 });
 endsnippet
 
 snippet test "test() block" b
 test('${1:Does something}', () => {
-	const expected = ${2:/* expected */};
-	const actual = ${3:/* actual */};
+	const expected = ${2:0};
+	const actual = ${3:0};
 	${0}
 });
 endsnippet
@@ -55,10 +66,4 @@ endsnippet
 
 snippet exn "expect() assertion" b
 expect(actual).not.to${3:Be}(expected);
-endsnippet
-
-snippet fn "function" b
-const ${1:fn} = (${2}) => {
-	${0:${VISUAL:\/* code *\/}}
-};
 endsnippet
