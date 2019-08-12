@@ -1,14 +1,14 @@
 snippet "if" "if" r
 if (${1}) {
-	${0:/* expression */}
+	${0:${VISUAL:expression}}
 }
 endsnippet
 
 snippet "ifel" "if else" r
 if (${1}) {
-	${2:/* expression */}
+	${2:${VISUAL:expression}}
 } else {
-	${3:/* expression */}
+	${3:expression}
 }
 endsnippet
 
@@ -20,7 +20,7 @@ endsnippet
 
 snippet "def" "def" br
 def ${1:fn}(${2}): ${3:T} = {
-	${0:/* expression */}
+	${0:${VISUAL:expression}}
 }
 endsnippet
 
@@ -30,6 +30,6 @@ endsnippet
 
 snippet "match" "match" r
 ${1:/* exp */} match {
-	case ${2:/* value */} => ${3:/* return */}
+	case ${2:value} => ${3:return}
 }
 endsnippet
