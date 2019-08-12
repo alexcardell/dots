@@ -1,4 +1,4 @@
-snippet let "let binding" b
+snippet "l(et|e)?" "let binding" br
 let ${1} = ${2}
 endsnippet
 
@@ -8,8 +8,8 @@ snippet fn "let function"
 };
 endsnippet
 
-snippet "swi(tch|tc|t)?" "pattern match" r
+snippet "sw(itch|itc|it|i)?" "pattern match" r
 switch (${1}) {
-| ${2}
+| ${2} => ${0}
 };
 endsnippet
