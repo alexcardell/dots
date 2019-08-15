@@ -7,11 +7,10 @@ if has('autocmd')
 
       if exists('+colorcolumn')
         autocmd BufEnter * let &l:colorcolumn='+' . join(range(0,254), ',+')
+        " Focus background of active window
+        autocmd BufEnter,FocusGained,VimEnter,WinEnter * let &l:colorcolumn='+' . join(range(0, 254), ',+')
+        autocmd FocusLost,WinLeave * let &l:colorcolumn=join(range(1, 255), ',')
       endif
-
-      " Focus background of active window
-      autocmd BufEnter,FocusGained,VimEnter,WinEnter * let &l:colorcolumn='+' . join(range(0, 254), ',+')
-      autocmd FocusLost,WinLeave * let &l:colorcolumn=join(range(1, 255), ',')
 
       " clear trailing whitespace
       autocmd BufWrite * call me#fns#zap()
@@ -53,13 +52,14 @@ if has('autocmd')
 
     let s:settings = {
           \ 'cursorline': &cursorline,
-          \ 'colorcolumn': &colorcolumn,
           \ 'showmode': &showmode,
           \ 'showcmd': &showcmd
           \ }
     set nocursorline
     set noshowmode
     set noshowcmd
+
+    let &colorcolumn=""
 
     set statusline=\  " comment to ignore zap
 
