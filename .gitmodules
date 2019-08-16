@@ -88,3 +88,6 @@
 [submodule "roles/dotfiles/files/.vim/pack/bundle/start/vim-markdown"]
 	path = roles/dotfiles/files/.vim/pack/bundle/start/vim-markdown
 	url = https://github.com/plasticboy/vim-markdown.git
+[submodule "roles/dotfiles/files/.vim/pack/bundle/start/limelight.vim"]
+	path = roles/dotfiles/files/.vim/pack/bundle/start/limelight.vim
+	url = https://github.com/junegunn/limelight.vim.git

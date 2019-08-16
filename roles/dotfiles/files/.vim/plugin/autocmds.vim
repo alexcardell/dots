@@ -66,6 +66,8 @@ if has('autocmd')
     highlight clear EndOfBuffer
     highlight NonText ctermfg=8
 
+    Limelight
+
     if exists('$TMUX')
       silent !tmux set status off
     endif
@@ -84,6 +86,8 @@ if has('autocmd')
     if exists('$TMUX')
       silent !tmux set status on
     endif
+
+    Limelight!
 
     call s:AlexAutocmds()
   endfunction
