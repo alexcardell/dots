@@ -42,7 +42,7 @@
   untracked = blue
 
 [core]
-  editor = nvim
+  editor = nvim -c Goyo
   excludesfile = ~/.gitignore
   pager = less -S --chop-long-lines
 
