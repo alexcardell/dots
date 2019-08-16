@@ -91,3 +91,6 @@
 [submodule "roles/dotfiles/files/.vim/pack/bundle/start/limelight.vim"]
 	path = roles/dotfiles/files/.vim/pack/bundle/start/limelight.vim
 	url = https://github.com/junegunn/limelight.vim.git
+[submodule "roles/dotfiles/files/.vim/pack/bundle/start/vim-rhubarb"]
+	path = roles/dotfiles/files/.vim/pack/bundle/start/vim-rhubarb
+	url = https://github.com/tpope/vim-rhubarb.git
