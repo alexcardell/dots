@@ -68,10 +68,6 @@ if has('autocmd')
 
     Limelight
 
-    if exists('$TMUX')
-      silent !tmux set status off
-    endif
-
   endfunction
 
   function! s:goyo_leave()
@@ -82,10 +78,6 @@ if has('autocmd')
     call me#fns#statusline()
 
     call me#fns#highlights()
-
-    if exists('$TMUX')
-      silent !tmux set status on
-    endif
 
     Limelight!
 
