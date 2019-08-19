@@ -6,10 +6,14 @@ if has('autocmd')
       autocmd InsertLeave * set nopaste
 
       if exists('+colorcolumn')
-        autocmd BufEnter * let &l:colorcolumn='+' . join(range(0,254), ',+')
+        autocmd BufEnter *
+              \ let &l:colorcolumn='+' . join(range(0,254), ',+')
+
         " Focus background of active window
-        autocmd BufEnter,FocusGained,VimEnter,WinEnter * let &l:colorcolumn='+' . join(range(0, 254), ',+')
-        autocmd FocusLost,WinLeave * let &l:colorcolumn=join(range(1, 255), ',')
+        autocmd BufEnter,FocusGained,VimEnter,WinEnter *
+              \ let &l:colorcolumn='+' . join(range(0, 254), ',+')
+        autocmd BufLeave,FocusLost,VimLeave,WinLeave *
+              \ let &l:colorcolumn=join(range(1, 255), ',')
       endif
 
       " clear trailing whitespace
