@@ -11,6 +11,9 @@ setlocal wrap
 setlocal wrapmargin=0
 setlocal spell
 
+setlocal complete+=kspell
+setlocal complete+=s
+
 nnoremap <buffer> j gj
 nnoremap <buffer> k gk
 nnoremap <buffer> $ g$
