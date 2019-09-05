@@ -5,15 +5,15 @@ Sets up a Python virtual environment then runs Ansible roles based on the curren
 Designed for MacOS Mojave and Arch Linux.
 
 ## Roles
-#### Dotfiles
+### Dotfiles
 Symlinks config files to the correct places. Where possible the cross-platform differences are handled with internal logic (shell/vim if/elses), and where not possible it is solved by templating.
 
 Primary workflow consists of Vim, Zsh, and Tmux.
 
-#### Pacman (Arch)
+### Pacman (Arch)
 Installs packages from [pacman](https://wiki.archlinux.org/index.php/pacman).
 
-#### Homebrew (MacOS)
+### Homebrew (MacOS)
 Installs packages from [homebrew](https://brew.sh/).
 
 ## Dependencies
