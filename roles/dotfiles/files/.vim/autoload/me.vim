@@ -1,4 +1,4 @@
-function! me#fns#zap() abort
+function! me#zap() abort
   let l:number=1
   for l:line in getline(1, '$')
     call setline(l:number, substitute(l:line, '\s\+$', '', ''))
@@ -6,12 +6,12 @@ function! me#fns#zap() abort
   endfor
 endfunction
 
-function! me#fns#helptags() abort
+function! me#helptags() abort
   source $HOME/.vim/pack/bundle/opt/vim-pathogen/autoload/pathogen.vim
   call pathogen#helptags()
 endfunction
 
-function! me#fns#statusline()
+function! me#statusline()
   " clear
   set statusline=
   " red bg
@@ -44,8 +44,8 @@ function! me#fns#statusline()
   " powerline right arrow = 
 endfunction
 
-function! me#fns#highlights()
-  highlight clear Search     " I don't like the default search highlight
+function! me#highlights()
+  highlight clear Search
   highlight Search cterm=italic,bold,underline ctermfg=red
   highlight Comment cterm=italic
   highlight String cterm=italic
@@ -56,4 +56,8 @@ function! me#fns#highlights()
   highlight ModeMsg ctermfg = 0
   highlight StatusLine ctermfg=18 ctermbg=grey
   highlight User2 ctermfg=grey ctermbg=18
+
+  if has('nvim')
+    highlight Pmenu ctermfg=7 ctermbg=19
+  endif
 endfunction

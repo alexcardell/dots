@@ -13,7 +13,7 @@ if has('autocmd')
       endif
 
       " clear trailing whitespace
-      autocmd BufWrite * call me#fns#zap()
+      autocmd BufWrite * call me#zap()
 
       " register *.md as markdown filetype
       autocmd BufNewFile,BufReadPost *.md set filetype=markdown
@@ -79,9 +79,9 @@ if has('autocmd')
       execute 'let &' . k . '=' . string(v)
     endfor
 
-    call me#fns#statusline()
+    call me#statusline()
 
-    call me#fns#highlights()
+    call me#highlights()
 
     if exists('$TMUX')
       silent !tmux set status on
