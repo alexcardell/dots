@@ -44,6 +44,7 @@ i3blocks
 inetutils
 iproute2
 iputils
+iw
 jfsutils
 lastpass-cli
 less
@@ -111,6 +112,7 @@ xfsprogs
 xorg-server
 xorg-xinit
 xss-lock
+xtitle
 yarn
 zip
 zsh

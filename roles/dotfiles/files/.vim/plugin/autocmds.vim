@@ -1,6 +1,6 @@
 if has('autocmd')
-  function! s:AlexAutocmds()
-    augroup AlexAutocmds
+  function! s:MyAutocmds()
+    augroup MyAutocmds
       autocmd!
 
       autocmd InsertLeave * set nopaste
@@ -38,16 +38,16 @@ if has('autocmd')
     augroup END
   endfunction
 
-  call s:AlexAutocmds()
+  call s:MyAutocmds()
 
   " Goyo
   let s:settings={}
 
   function! s:goyo_enter()
-    augroup AlexAutocmds
+    augroup MyAutocmds
       autocmd!
     augroup END
-    augroup! AlexAutocmds
+    augroup! MyAutocmds
 
     let s:settings = {
           \ 'cursorline': &cursorline,
@@ -88,7 +88,7 @@ if has('autocmd')
 
     call me#highlights()
 
-    call s:AlexAutocmds()
+    call s:MyAutocmds()
   endfunction
 
   autocmd! User GoyoEnter nested call <SID>goyo_enter()

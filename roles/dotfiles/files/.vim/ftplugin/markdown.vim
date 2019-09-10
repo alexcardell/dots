@@ -1,5 +1,4 @@
 if has('conceal')
-  let b:indentLine_ConcealOptionSet=1
   setlocal concealcursor=nc
 endif
 if has('linebreak')
@@ -10,9 +9,12 @@ setlocal nolist
 setlocal textwidth=0
 setlocal wrap
 setlocal wrapmargin=0
-" set spell
+setlocal spell
+
+setlocal complete+=kspell
+setlocal complete+=s
 
 nnoremap <buffer> j gj
 nnoremap <buffer> k gk
-" nnoremap <buffer> $ g$
-" nnoremap <buffer> ^ g^
+nnoremap <buffer> $ g$
+nnoremap <buffer> ^ g^
