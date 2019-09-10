@@ -3,4 +3,4 @@ start_directory: $HOME
 windows:
   - window_name: term
     panes:
-      -
+      - null
