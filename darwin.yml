@@ -1,5 +1,6 @@
 ---
 - hosts: localhost
   roles:
+    - { role: initialise, tags: initialise }
     - { role: homebrew, tags: homebrew }
     - { role: dotfiles, tags: dotfiles }

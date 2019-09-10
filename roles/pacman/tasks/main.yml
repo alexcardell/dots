@@ -1,10 +1,6 @@
 ---
-- debug:
-    msg:
-      - "ansible_os_family: {{ ansible_os_family }}"
-      - "inventory_hostname: {{ inventory_hostname }}"
-      - "ansible_hostname: {{ ansible_hostname }}"
-      - "role_path: {{ role_path }}"
+- include_role:
+    name: initialise
 
 - name: Setup pacaur
   block:

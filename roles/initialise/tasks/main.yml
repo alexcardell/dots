@@ -1,0 +1,19 @@
+---
+- set_fact:
+    arch: "{{ ansible_os_family == 'Archlinux' }}"
+    darwin: "{{ ansible_os_family == 'Darwin' }}"
+
+- set_fact:
+    work: "{{
+        darwin
+        and ansible_hostname is match(work_hostname)
+      }}"
+
+- debug:
+    msg:
+      - "ansible_os_family: {{ ansible_os_family }}"
+      - "inventory_hostname: {{ inventory_hostname }}"
+      - "ansible_hostname: {{ ansible_hostname }}"
+      - "arch: {{ arch }}"
+      - "work: {{ work }}"
+      - "darwin: {{ darwin }}"

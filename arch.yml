@@ -1,5 +1,6 @@
 ---
 - hosts: localhost
   roles:
+    - { role: initialise, tags: initialise }
     - { role: pacman, tags: pacman }
     - { role: dotfiles, tags: dotfiles }

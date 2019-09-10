@@ -1,4 +1,7 @@
 ---
+- include_role:
+    name: initialise
+
 - name: Check Homebrew
   stat:
     path: /usr/local/bin/brew
