@@ -6,10 +6,9 @@ if has('autocmd')
       autocmd InsertLeave * set nopaste
 
       if exists('+colorcolumn')
-        autocmd BufEnter * let &l:colorcolumn='+' . join(range(0,254), ',+')
         " Focus background of active window
-        autocmd BufEnter,FocusGained,VimEnter,WinEnter * let &l:colorcolumn='+' . join(range(0, 254), ',+')
-        autocmd FocusLost,WinLeave * let &l:colorcolumn=join(range(1, 255), ',')
+        autocmd BufEnter,FocusGained,VimEnter,WinEnter * call me#focus()
+        autocmd FocusLost,WinLeave * call me#blur()
       endif
 
       " clear trailing whitespace
@@ -75,6 +74,12 @@ if has('autocmd')
   endfunction
 
   function! s:goyo_leave()
+    if exists('$TMUX')
+      silent !tmux set status on
+    endif
+
+    Limelight!
+
     for [k, v] in items(s:settings)
       execute 'let &' . k . '=' . string(v)
     endfor
@@ -82,12 +87,6 @@ if has('autocmd')
     call me#statusline()
 
     call me#highlights()
-
-    if exists('$TMUX')
-      silent !tmux set status on
-    endif
-
-    Limelight!
 
     call s:AlexAutocmds()
   endfunction

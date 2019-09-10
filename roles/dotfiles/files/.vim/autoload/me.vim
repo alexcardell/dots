@@ -11,7 +11,7 @@ function! me#helptags() abort
   call pathogen#helptags()
 endfunction
 
-function! me#statusline()
+function! me#statusline() abort
   " clear
   set statusline=
   " red bg
@@ -44,7 +44,7 @@ function! me#statusline()
   " powerline right arrow = 
 endfunction
 
-function! me#highlights()
+function! me#highlights() abort
   highlight clear Search
   highlight Search cterm=italic,bold,underline ctermfg=red
   highlight Comment cterm=italic
@@ -59,5 +59,34 @@ function! me#highlights()
 
   if has('nvim')
     highlight Pmenu ctermfg=7 ctermbg=19
+  endif
+endfunction
+
+let g:FocusBlacklist = [
+      \ '',
+      \ 'fzf',
+      \ 'fugitiveblame',
+      \ 'nerdtree',
+      \ 'qf'
+      \ ]
+
+function! me#should_focus() abort
+  if index(g:FocusBlacklist, bufname(bufnr('%'))) != -1
+    return 0
+  endif
+  return index(g:FocusBlacklist, &filetype) == -1
+endfunction
+
+function! me#blur() abort
+  if me#should_focus()
+    let &l:colorcolumn=join(range(1, 255), ',')
+    ownsyntax off
+  endif
+endfunction
+
+function! me#focus() abort
+  if me#should_focus()
+    let &l:colorcolumn='+' . join(range(0,254), ',+')
+    ownsyntax on
   endif
 endfunction
