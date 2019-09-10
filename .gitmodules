@@ -97,3 +97,6 @@
 [submodule "roles/dotfiles/files/.vim/pack/bundle/start/fugitive-gitlab.vim"]
 	path = roles/dotfiles/files/.vim/pack/bundle/start/fugitive-gitlab.vim
 	url = https://github.com/shumphrey/fugitive-gitlab.vim
+[submodule "roles/dotfiles/files/.vim/pack/bundle/start/rust.vim"]
+	path = roles/dotfiles/files/.vim/pack/bundle/start/rust.vim
+	url = https://github.com/rust-lang/rust.vim
