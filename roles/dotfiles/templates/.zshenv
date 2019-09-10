@@ -46,6 +46,7 @@ PATH=$PATH:node_modules/.bin
 PATH=$PATH:$HOME/.yarn/bin
 # PATH=$PATH:$HOME/.fnm
 PATH=$PATH:$GOPATH/bin
+PATH=$PATH:$HOME/.cargo/bin
 
 # Add defaults back
 PATH=$PATH:$DEFAULT_PATH
