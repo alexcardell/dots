@@ -46,6 +46,7 @@ endfunction
 
 function! me#highlights() abort
   highlight clear Search
+  highlight Italic cterm=italic
   highlight Search cterm=italic,bold,underline ctermfg=red
   highlight Comment cterm=italic
   highlight String cterm=italic
