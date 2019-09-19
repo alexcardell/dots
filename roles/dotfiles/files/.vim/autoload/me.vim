@@ -57,6 +57,7 @@ function! me#highlights() abort
   highlight ModeMsg ctermfg = 0
   highlight StatusLine ctermfg=18 ctermbg=grey
   highlight User2 ctermfg=grey ctermbg=18
+  highlight User3 ctermfg=8
 
   if has('nvim')
     highlight Pmenu ctermfg=7 ctermbg=19
@@ -81,6 +82,7 @@ endfunction
 function! me#blur() abort
   if me#should_focus()
     let &l:colorcolumn=join(range(1, 255), ',')
+    set winhighlight=Normal:User3
     ownsyntax off
   endif
 endfunction
@@ -88,6 +90,7 @@ endfunction
 function! me#focus() abort
   if me#should_focus()
     let &l:colorcolumn='+' . join(range(0,254), ',+')
+    set winhighlight=
     ownsyntax on
   endif
 endfunction
