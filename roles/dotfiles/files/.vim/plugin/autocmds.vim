@@ -35,6 +35,8 @@ if has('autocmd')
 
       au FileType typescript set syntax=javascript
 
+      autocmd CursorHold * silent call CocActionAsync('highlight')
+
     augroup END
   endfunction
 
