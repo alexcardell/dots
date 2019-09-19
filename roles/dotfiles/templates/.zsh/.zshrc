@@ -14,7 +14,8 @@ autoload -U edit-command-line
 zle -N edit-command-line
 bindkey '^xx' edit-command-line
 bindkey '^x^x' edit-command-line
-bindkey -M vicmd 'gd' edit-command-line
+bindkey -M vicmd '^xx' edit-command-line
+bindkey -M vicmd '^x^x' edit-command-line
 
 #---------
 # History
