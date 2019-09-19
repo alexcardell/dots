@@ -1,2 +1,2 @@
-vnoremap <buffer> <leader>p :!scalafmt %<CR>
-nnoremap <buffer> <leader>p :!scalafmt %<CR>
+" vnoremap <buffer> <leader>p :!scalafmt %<CR>
+" nnoremap <buffer> <leader>p :!scalafmt %<CR>
