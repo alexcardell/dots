@@ -21,6 +21,7 @@ diffutils
 docker
 e2fsprogs
 fakeroot
+feh
 file
 filesystem
 findutils
@@ -41,6 +42,8 @@ gzip
 htop
 i3-gaps
 i3blocks
+i3lock
+imagemagick
 inetutils
 iproute2
 iputils
@@ -88,6 +91,7 @@ ruby
 rxvt-unicode
 s-nail
 screenfetch
+scrot
 sed
 shadow
 sudo
