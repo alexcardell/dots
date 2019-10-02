@@ -7,3 +7,12 @@ windows:
   - window_name: term
     panes:
       - git status
+  - window_name: build
+    layout: tiled
+    panes:
+      - shell_command:
+          - yarn dev:re
+        focus: true
+      - yarn dev:js
+      - yarn dev:server
+      - yarn dev:css
