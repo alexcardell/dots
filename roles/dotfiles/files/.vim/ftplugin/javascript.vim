@@ -1,4 +1,4 @@
-packadd vim-prettier
+" packadd vim-prettier
 
 setlocal tabstop=4
 setlocal softtabstop=4
