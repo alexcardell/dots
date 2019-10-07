@@ -52,12 +52,19 @@ function! me#highlights() abort
   highlight String cterm=italic
   highlight EndOfBuffer ctermbg=18 ctermfg=18
 
-  " 1 red 2 green 3 yellow 4 blue 5 magenta 6 aqua
-  " 18 dark grey
+  " Print colors:
+  " curl -s \
+  " gist.githubusercontent.com/HaleTom/89ffe32783f89f403bba96bd7bcd1263/raw/ \
+  " | bash
+
   highlight ModeMsg ctermfg = 0
   highlight StatusLine ctermfg=18 ctermbg=grey
   highlight User2 ctermfg=grey ctermbg=18
+  " faded
   highlight User3 ctermfg=8
+
+  " Set coc virtual text to be dark
+  highlight link CocCodeLens User3
 
   if has('nvim')
     highlight Pmenu ctermfg=7 ctermbg=19
