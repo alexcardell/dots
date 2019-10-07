@@ -100,3 +100,6 @@
 [submodule "roles/dotfiles/files/.vim/pack/bundle/start/rust.vim"]
 	path = roles/dotfiles/files/.vim/pack/bundle/start/rust.vim
 	url = https://github.com/rust-lang/rust.vim
+[submodule "roles/dotfiles/files/.vim/pack/bundle/start/vim-jsx-typescript"]
+	path = roles/dotfiles/files/.vim/pack/bundle/start/vim-jsx-typescript
+	url = https://github.com/peitalin/vim-jsx-typescript.git
