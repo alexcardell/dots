@@ -192,6 +192,7 @@ alias tm='tmux'
 alias v='nvim'
 alias vi='nvim'
 alias vim='nvim'
+alias y='yarn'
 
 {% if darwin %}
 # Darwin
