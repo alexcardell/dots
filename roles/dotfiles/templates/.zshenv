@@ -16,6 +16,8 @@ export EDITOR="${VISUAL}"
 export CODEPATH=$HOME/Code
 # golang
 export GOPATH=$CODEPATH/go
+# maven
+export M2_HOME=$HOME
 
 # Tools #
 #########
