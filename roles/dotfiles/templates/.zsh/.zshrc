@@ -233,6 +233,8 @@ bindkey "^P" autosuggest-accept
 [ -f $ZDOTDIR/lib/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh ] \
   && . $ZDOTDIR/lib/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 
+[ -s $HOME/.jabba/jabba.sh ] && . $HOME/.jabba/jabba.sh
+
 # fnm
 # eval "`fnm env --multi --use-on-cd`"
 
