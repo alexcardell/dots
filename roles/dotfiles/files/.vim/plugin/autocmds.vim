@@ -33,9 +33,9 @@ if has('autocmd')
       au InsertLeave * highlight StatusLine ctermfg=18 ctermbg=grey |
             \ highlight User2 ctermfg=grey ctermbg=18
 
-      au FileType typescript set syntax=javascript
+      au CursorHold * silent call CocActionAsync('highlight')
 
-      autocmd CursorHold * silent call CocActionAsync('highlight')
+      au BufEnter * if &buftype == 'terminal' | :startinsert | endif
 
     augroup END
   endfunction

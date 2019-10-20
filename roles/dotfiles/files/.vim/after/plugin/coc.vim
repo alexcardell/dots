@@ -18,3 +18,6 @@ function! s:show_documentation()
 endfunction
 
 hi CocUnderline cterm=underline,italic
+
+command! -nargs=0 JestCurrent :call CocAction('runCommand', 'jest.fileTest', ['%'])
+command! -nargs=0 Jest :call CocAction('runCommand', 'jest.projectTest')
