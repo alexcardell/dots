@@ -103,3 +103,9 @@
 [submodule "roles/dotfiles/files/.vim/pack/bundle/start/vim-jsx-typescript"]
 	path = roles/dotfiles/files/.vim/pack/bundle/start/vim-jsx-typescript
 	url = https://github.com/peitalin/vim-jsx-typescript.git
+[submodule "roles/dotfiles/files/.vim/pack/bundle/start/csv.vim"]
+	path = roles/dotfiles/files/.vim/pack/bundle/start/csv.vim
+	url = https://github.com/chrisbra/csv.vim.git
+[submodule "roles/dotfiles/files/.vim/pack/bundle/start/undotree"]
+	path = roles/dotfiles/files/.vim/pack/bundle/start/undotree
+	url = https://github.com/mbbill/undotree.git

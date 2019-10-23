@@ -1,6 +1,6 @@
 " Remap keys for gotos
 nnoremap <silent> gd :call CocActionAsync('jumpDefinition')<CR>
-nnoremap <silent> gt :call CocActionAsync('jumpTypeDefinition')<CR>
+nnoremap <silent> go :call CocActionAsync('jumpTypeDefinition')<CR>
 nnoremap <silent> gi :call CocActionAsync('jumpImplementation')<CR>
 nnoremap <silent> gr :call CocActionAsync('jumpReferences')<CR>
 nnoremap <silent> gh :call <SID>show_documentation()<CR>
