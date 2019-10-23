@@ -9,7 +9,6 @@ symlinks:
   - .config/rofi
   - .gitconfig
   - .gitconfig.work
-  - .gitignore
   - .ideavimrc
   - .prettierrc.js
   - .profile

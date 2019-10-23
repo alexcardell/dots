@@ -38,6 +38,14 @@
   with_filetree: ../templates
   when: item.state == 'file'
 
+- name: Symlink global gitignore
+  file:
+    src={{ role_path}}/files/.global-gitignore
+    path=~/.gitignore
+    state=link
+    force=yes
+    follow=false
+
 - name: Symlink dotfiles
   file:
     src={{ role_path}}/files/{{ item }}
