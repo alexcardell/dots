@@ -5,3 +5,4 @@
     - { role: pacman, tags: pacman }
     - { role: dotfiles, tags: dotfiles }
     - { role: vim, tags: vim }
+    - { role: code, tags: code }

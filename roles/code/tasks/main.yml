@@ -1,0 +1,12 @@
+---
+- name: Initialise
+  include_role:
+    name: initialise
+
+- name: Pull Git repos
+  with_items: '{{ repos }}'
+  git:
+    repo: 'git@github.com:alexcardell/{{ item }}'
+    dest: '{{ lookup("env", "CODEPATH") }}/{{ item }}'
+    force: no
+    update: no

@@ -5,3 +5,4 @@
     - { role: homebrew, tags: homebrew }
     - { role: dotfiles, tags: dotfiles }
     - { role: vim, tags: vim }
+    - { role: code, tags: code }
