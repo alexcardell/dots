@@ -13,3 +13,12 @@ switch (${1}) {
 | ${2} => ${0}
 };
 endsnippet
+
+snippet "test" "bs-jest test block"
+test("${1}", () => {
+	let expected = ${2:""};
+	let received = ${3:""};
+
+	expected(received) |> toBe(expected);
+});
+endsnippet
