@@ -1,5 +1,5 @@
 session_name: cv
-start_directory: $CODEPATH/misc/cv
+start_directory: $CODEPATH/cv
 windows:
   - window_name: edit
     panes:
