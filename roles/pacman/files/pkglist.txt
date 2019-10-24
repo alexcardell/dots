@@ -32,6 +32,7 @@ fzf
 gawk
 gcc
 gcc-libs
+gconf
 gettext
 git
 glibc
@@ -101,6 +102,7 @@ tar
 texinfo
 tmux
 tmuxp
+tree
 ttf-font-awesome
 ttf-roboto
 unclutter
