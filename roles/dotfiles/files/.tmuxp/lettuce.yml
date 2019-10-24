@@ -1,0 +1,18 @@
+session_name: lettuce
+start_directory: $CODEPATH/lettuce
+windows:
+  - window_name: edit
+    focus: true
+    panes:
+      - 'vim'
+  - window_name: term
+    panes:
+      - 'sleep 1 && tmux select-window -t 1'
+  - window_name: builds
+    start_directory: ui
+    layout: even-vertical
+    panes:
+      - 'yarn watch:re'
+      - 'yarn watch:css'
+      - 'yarn serve'
+      - null
