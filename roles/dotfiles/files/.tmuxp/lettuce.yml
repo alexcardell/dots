@@ -1,5 +1,5 @@
 session_name: lettuce
-start_directory: $CODEPATH/lettuce
+start_directory: $CODEPATH/misc/lettuce
 windows:
   - window_name: edit
     focus: true
