@@ -1,0 +1,9 @@
+extensions:
+  - coc-java
+  - coc-json
+  - coc-prettier
+  - coc-snippets
+  - coc-tsserver
+  - coc-vimlsp
+  - coc-yaml
+  - coc-svg

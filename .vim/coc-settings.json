@@ -1,0 +1,8 @@
+{
+  "yaml.schemas": {
+    "http://json.schemastore.org/ansible-stable-2.7": "/*.y*ml"
+  },
+  "yaml.format.enable": true,
+  "yaml.format.singleQuote": true,
+  "yaml.validate": false
+}
