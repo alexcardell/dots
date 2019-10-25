@@ -1,5 +1,5 @@
 session_name: dot44
-start_directory: $CODEPATH/work/cars/dot44
+start_directory: $CODEPATH/work/cars/dq/dot44
 windows:
   - window_name: edit
     panes:

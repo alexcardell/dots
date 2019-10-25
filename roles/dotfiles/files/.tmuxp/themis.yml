@@ -1,5 +1,5 @@
 session_name: themis
-start_directory: $CODEPATH/work/cars/themis
+start_directory: $CODEPATH/work/cars/qed/themis
 windows:
   - window_name: edit
     panes:
