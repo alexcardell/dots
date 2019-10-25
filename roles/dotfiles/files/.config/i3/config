@@ -3,8 +3,7 @@ exec "setxkbmap i3"
 
 set $mod Mod4
 
-set $wallpaper /home/alex/pictures/wallpapers/san_fran.png
-set $lockpaper /home/alex/pictures/wallpapers/san_fran.png
+set $wallpaper /home/alex/Pictures/wallpaper.png
 
 # .......
 # Fonts
@@ -27,8 +26,7 @@ for_window[class="URxvt" instance="floating_urxvt$"] floating enable
 bindsym $mod+q kill
 
 # start rofi
-bindsym $mod+space exec --no-startup-id rofi -show drun -lines 19 -font "Source Code Pro 18"
-bindsym $mod+Shift+space exec --no-startup-id rofi -show window -lines 19 -font "Source Code Pro 18"
+bindsym $mod+space exec --no-startup-id rofi -combi-modi window#drun -show combi -modi combi -lines 19 -font "Source Code Pro 18"
 
 # change focus
 bindsym $mod+h focus left
@@ -186,11 +184,11 @@ bindsym --release Shift+Print exec scrot -s '%Y-%m-%d_%H:%M_$wx$h_screen.png' -e
 # Execs
 
 # Wallpaper
-exec --no-startup-id feh --bg-scale $wallpaper -f
+exec --no-startup-id feh --bg-scale $wallpaper
 # Lock screen on lid close
-exec --no-startup-id xss-lock -- i3lock -i $lockpaper -f
+exec --no-startup-id xss-lock -- ~/.config/i3/lock.sh
 # Manual lock key bind
-bindsym $mod+Control+l exec --no-startup-id i3lock -i $lockpaper -f
+bindsym $mod+Control+l exec --no-startup-id ~/.config/i3/lock.sh
 
 exec --no-startup-id redshift
 

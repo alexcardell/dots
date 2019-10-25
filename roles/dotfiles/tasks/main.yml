@@ -9,48 +9,44 @@
     update: no
 
 - name: Install fzf script
-  shell: "~/.fzf/install"
+  shell: "~/.fzf/install --no-update-rc"
   args:
     creates: "~/.fzf/bin/fzf"
 
 - name: Set up temporary Vim directories
   file:
-    path: '~/.local/share/nvim/{{ item }}'
+    path: "~/.local/share/nvim/{{ item }}"
     state: directory
-  with_items: '{{ vim_tmp_dirs }}'
+  with_items: "{{ vim_tmp_dirs }}"
 
 - name: Load work vars
   include_vars: work.yml
   when: work
 
 - name: Setup template output directories
-  file:
-    dest={{ role_path }}/files/{{ item.path }}
+  file: dest={{ role_path }}/files/{{ item.path }}
     state=directory
   with_filetree: ../templates
   when: item.state == 'directory'
 
 - name: Template dotfiles
-  template:
-    src={{ item.src }}
+  template: src={{ item.src }}
     dest={{ role_path }}/files/{{ item.path }}
     force=yes
   with_filetree: ../templates
   when: item.state == 'file'
 
 - name: Symlink global gitignore
-  file:
-    src={{ role_path}}/files/.global-gitignore
+  file: src={{ role_path}}/files/.global-gitignore
     path=~/.gitignore
     state=link
     force=yes
     follow=false
 
 - name: Symlink dotfiles
-  file:
-    src={{ role_path}}/files/{{ item }}
+  file: src={{ role_path}}/files/{{ item }}
     path=~/{{ item }}
     state=link
     force=yes
     follow=false
-  with_items: '{{ symlinks }}'
+  with_items: "{{ symlinks }}"

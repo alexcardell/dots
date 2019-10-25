@@ -21,6 +21,7 @@ diffutils
 docker
 e2fsprogs
 fakeroot
+feh
 file
 filesystem
 findutils
@@ -31,6 +32,7 @@ fzf
 gawk
 gcc
 gcc-libs
+gconf
 gettext
 git
 glibc
@@ -41,6 +43,8 @@ gzip
 htop
 i3-gaps
 i3blocks
+i3lock
+imagemagick
 inetutils
 iproute2
 iputils
@@ -88,6 +92,7 @@ ruby
 rxvt-unicode
 s-nail
 screenfetch
+scrot
 sed
 shadow
 sudo
@@ -97,6 +102,7 @@ tar
 texinfo
 tmux
 tmuxp
+tree
 ttf-font-awesome
 ttf-roboto
 unclutter

@@ -24,7 +24,7 @@ rofi.terminal: urxvt
 rofi.fuzzy: true
 rofi.kb-cancel: Escape,Control+c
 rofi.hide-scrollbar: true
-rofi.fake-transparency: false
+rofi.fake-transparency: true
 
 ! ! Property Name     BG       Border   Separator
 ! rofi.color-window:  base00, base02, base01

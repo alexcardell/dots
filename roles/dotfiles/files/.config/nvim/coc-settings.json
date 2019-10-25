@@ -12,5 +12,7 @@
      }
   },
   "java.errors.incompleteClasspath.severity": "ignore",
-  "python.jediEnabled": false
+  "python.jediEnabled": false,
+  "prettier.formatterPriority": -1
+
 }

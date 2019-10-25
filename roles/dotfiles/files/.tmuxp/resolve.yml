@@ -1,5 +1,5 @@
 session_name: resolve
-start_directory: $CODEPATH/ml/resolve
+start_directory: $CODEPATH/resolve
 windows:
   - window_name: edit
     panes:
