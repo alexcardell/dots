@@ -4,5 +4,6 @@
   },
   "yaml.format.enable": true,
   "yaml.format.singleQuote": true,
-  "yaml.validate": false
+  "yaml.validate": false,
+  "prettier.formatterPriority": -1
 }
