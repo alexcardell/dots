@@ -9,7 +9,7 @@ windows:
     panes:
       - 'sleep 1 && tmux select-window -t 1'
   - window_name: builds
-    start_directory: ui
+    start_directory: packages/ui
     layout: even-vertical
     panes:
       - 'yarn watch:re'
