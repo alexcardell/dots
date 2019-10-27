@@ -109,3 +109,6 @@
 [submodule "roles/dotfiles/files/.vim/pack/bundle/start/undotree"]
 	path = roles/dotfiles/files/.vim/pack/bundle/start/undotree
 	url = https://github.com/mbbill/undotree.git
+[submodule "roles/dotfiles/files/.vim/pack/bundle/start/vim-devicons"]
+	path = roles/dotfiles/files/.vim/pack/bundle/start/vim-devicons
+	url = https://github.com/ryanoasis/vim-devicons.git
