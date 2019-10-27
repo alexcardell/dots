@@ -30,6 +30,8 @@ function! me#statusline() abort
   set statusline+=%=
   " faint text
   set statusline+=%#LineNr#
+  " coc
+  set statusline+=%{coc#status()}
   " filetype
   set statusline+=\ %y
   " encoding
