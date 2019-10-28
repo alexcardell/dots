@@ -28,7 +28,7 @@ Designed for MacOS Mojave and Arch Linux.
 
 See role description files.
 
-[dotfiles](./roles/dotfiles/description)
-[pacman](./roles/pacman/description)
-[homebrew](./roles/homebrew/description)
-[vim](./roles/vim/description)
+- :file_cabinet: [dotfiles](./roles/dotfiles/description)
+- :package:      [pacman](./roles/pacman/description)
+- :tea:          [homebrew](./roles/homebrew/description)
+- :computer:     [vim](./roles/vim/description)
