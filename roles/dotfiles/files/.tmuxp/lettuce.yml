@@ -12,7 +12,7 @@ windows:
     start_directory: packages/ui
     layout: even-vertical
     panes:
-      - 'yarn watch:re'
-      - 'yarn watch:css'
+      - 'yarn build:re -w'
+      - 'yarn build:css --watch'
       - 'yarn serve'
-      - null
+      - 'yarn test --watchAll'
