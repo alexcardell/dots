@@ -1,1 +1,7 @@
-Symlinks dotfiles to ~
+<!--  vim: set ft=markdown: -->
+
+# Dotfiles
+
+Templates dotfiles based on OS and symlinks to `~`.
+
+Primary work-flow consists of Vim, Zsh, and Tmux.

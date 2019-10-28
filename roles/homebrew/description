@@ -1,1 +1,7 @@
-Installs and updates core homebrew packages
+<!-- vim: set ft=markdown: -->
+
+# Homebrew
+
+Installs and updates core [homebrew](https://brew.sh/) packages.
+
+:construction: Not currently working due to Homebrew/brew#6533 (fixed, but unreleased)

@@ -4,15 +4,18 @@ windows:
   - window_name: edit
     focus: true
     panes:
-      - 'vim'
+      - 'vim -c NERDTree'
   - window_name: term
     panes:
       - 'sleep 1 && tmux select-window -t 1'
-  - window_name: builds
+  - window_name: ui
     start_directory: packages/ui
-    layout: even-vertical
+    layout: main-vertical
     panes:
-      - 'yarn build:re -w'
-      - 'yarn build:css --watch'
-      - 'yarn serve'
-      - 'yarn test --watchAll'
+      - 'yarn build:re'
+      - 'yarn build:css'
+      - 'yarn test'
+  - window_name: server
+    start_directory: packages/graphql
+    panes:
+      - 'esy test'
