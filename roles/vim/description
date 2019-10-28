@@ -1,0 +1,5 @@
+<!-- vim: set ft=markdown: -->
+
+# Vim
+
+Updates and installs my chosen extensions for the [CoC LSP client](https://github.com/neoclide/coc.nvim).
