@@ -30,5 +30,5 @@ See role description files.
 
 - :file_cabinet: [dotfiles](./roles/dotfiles/description)
 - :package:      [pacman](./roles/pacman/description)
-- :tea:          [homebrew](./roles/homebrew/description)
+- :coffee:          [homebrew](./roles/homebrew/description)
 - :computer:     [vim](./roles/vim/description)

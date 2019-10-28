@@ -1,0 +1,9 @@
+session_name: xp
+start_directory: $CODEPATH/work/cars/qed/experiment-api
+windows:
+  - window_name: edit
+    panes:
+      - vim
+  - window_name: term
+    panes:
+      - git status
