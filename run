@@ -26,10 +26,15 @@ ansible=$venv/bin/ansible-playbook
 host_os=$(uname)
 
 if [ "$host_os" = 'Darwin' ]; then
-  $ansible -i inventory darwin.yml $roles
+  cmd="$ansible -i inventory darwin.yml $roles"
 elif [ "$host_os" = 'Linux' ]; then
-  $ansible -i inventory arch.yml $roles
+  cmd="$ansible -i inventory arch.yml $roles"
 else
   echo "Unknown host OS: $host_os"
   exit 1
 fi
+
+echo "##############"
+echo "Running '$cmd'"
+echo "##############"
+$cmd
