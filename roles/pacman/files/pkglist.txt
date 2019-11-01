@@ -70,6 +70,7 @@ nerd-fonts-source-code-pro
 netctl
 npm
 openssh
+openvpn
 pacaur
 pacman
 patch
