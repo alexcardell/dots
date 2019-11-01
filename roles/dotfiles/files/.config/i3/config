@@ -3,7 +3,7 @@ exec "setxkbmap i3"
 
 set $mod Mod4
 
-set $wallpaper /home/alex/Pictures/wallpaper.png
+set $wallpaper /home/Code/dots/media/wallpaper.jpg
 
 # .......
 # Fonts
