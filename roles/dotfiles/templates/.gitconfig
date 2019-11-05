@@ -9,7 +9,7 @@
 {% endif %}
 
 {% if work %}
-[includeIf "gitdir:~/Code/work/cars/"]
+[includeIf "gitdir:~/Code/work/"]
   path = ~/.gitconfig.work
 {% endif %}
 

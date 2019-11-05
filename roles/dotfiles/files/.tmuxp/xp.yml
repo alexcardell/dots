@@ -1,5 +1,5 @@
 session_name: xp
-start_directory: $CODEPATH/work/cars/qed/experiment-api
+start_directory: $CODEPATH/work/xp
 windows:
   - window_name: edit
     panes:

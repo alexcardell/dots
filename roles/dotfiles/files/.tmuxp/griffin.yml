@@ -1,5 +1,5 @@
 session_name: griffin
-start_directory: $CODEPATH/work/cars/dq/griffin
+start_directory: $CODEPATH/work/griffin
 windows:
   - window_name: edit
     panes:
