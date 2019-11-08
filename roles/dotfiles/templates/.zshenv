@@ -39,23 +39,22 @@ export TILLER_NAMESPACE=tiller
 DEFAULT_PATH=$PATH
 unset PATH
 
-PATH=$HOME/.bin
-PATH=$PATH:$HOME/.local/bin
-PATH=$PATH:$HOME/.zsh/bin
 PATH=$PATH:/usr/local/sbin
 PATH=$PATH:/usr/local/bin
-PATH=$PATH:node_modules/.bin
-PATH=$PATH:$HOME/.yarn/bin
-# PATH=$PATH:$HOME/.fnm
 PATH=$PATH:$GOPATH/bin
 PATH=$PATH:$HOME/.cargo/bin
+PATH=$PATH:$HOME/.zsh/bin
+PATH=$PATH:$HOME/.yarn/bin
+PATH=$PATH:$HOME/.local/bin
+PATH=$PATH:$HOME/.bin
+PATH=$PATH:node_modules/.bin
 
 # Add defaults back
-PATH=$PATH:$DEFAULT_PATH
+PATH=$DEFAULT_PATH:$PATH
 
 typeset -U PATH
 export PATH
 
 # AWS
-export RW_AWS_ACCESS_KEY_ID=$(type aws &>/dev/null && aws --profile default configure get aws_access_key_id)
-export RW_AWS_SECRET_ACCESS_KEY=$(type aws &>/dev/null && aws --profile default configure get aws_secret_access_key)
+export AWS_ACCESS_KEY_ID=$(type aws &>/dev/null && aws --profile default configure get aws_access_key_id)
+export AWS_SECRET_ACCESS_KEY=$(type aws &>/dev/null && aws --profile default configure get aws_secret_access_key)
