@@ -1,9 +1,19 @@
 extensions:
+  - coc-css
+  - coc-docker
+  - coc-emoji
+  - coc-go
+  - coc-import-cost
   - coc-java
+  - coc-jest
   - coc-json
   - coc-prettier
+  - coc-python
+  - coc-rls
   - coc-snippets
+  - coc-svg
+  - coc-tailwindcss
   - coc-tsserver
+  - coc-ultisnips
   - coc-vimlsp
   - coc-yaml
-  - coc-svg
