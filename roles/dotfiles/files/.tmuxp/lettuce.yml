@@ -7,7 +7,7 @@ windows:
       - 'vim -c NERDTree'
   - window_name: term
     panes:
-      - 'sleep 1 && tmux select-window -t 1'
+      - 'git status'
   - window_name: ui
     start_directory: packages/ui
     layout: main-vertical
