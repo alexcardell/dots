@@ -3,7 +3,7 @@ start_directory: $CODEPATH/work/griffin
 windows:
   - window_name: edit
     panes:
-      - vim
+      - vim -c pwd
   - window_name: term
     panes:
       - git status

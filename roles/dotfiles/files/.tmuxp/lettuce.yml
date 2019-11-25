@@ -4,7 +4,7 @@ windows:
   - window_name: edit
     focus: true
     panes:
-      - 'vim -c NERDTree'
+      - 'vim -c NERDTree -c pwd'
   - window_name: term
     panes:
       - 'git status'
