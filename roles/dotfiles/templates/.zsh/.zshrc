@@ -104,6 +104,13 @@ function () {
   else
     LVL=$SHLVL
   fi
+
+  {% if arch %}
+  # Arch adds a level since we're
+  # starting Xserver from the tty
+  LVL=$(($LVL - 1))
+  {% endif %}
+
   _ZSH_PROMPTARROW=$(printf '%%F{red}%%B>%.0s%%b%%f' {1..$LVL})
 }
 
