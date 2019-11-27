@@ -1,4 +1,4 @@
-# vim ft=zsh
+# vim: ft=zsh:
 
 brew ${@}
 brew bundle dump --file=~/.Brewfile --force

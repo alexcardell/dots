@@ -1,0 +1,20 @@
+# {{ ansible_managed }}
+# vim: ft=zsh:
+
+local remote
+
+remote=$(git remote get-url ${1:-origin})
+
+# remote git@
+remote=${remote/git\@/https://}
+remote=${remote/\.com:/.com/}
+
+# remove .git suffix
+remote=${remote%\.git}
+
+# open url
+{% if arch %}
+xdg-open $remote
+{% elif darwin %}
+open $remote
+{% endif %}

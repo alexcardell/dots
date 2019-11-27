@@ -30,6 +30,7 @@
   m = merge
   p = pull
   root = rev-parse --show-toplevel
+  s = status -s
   st = status
   sub = submodule
 

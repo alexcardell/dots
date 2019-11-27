@@ -12,4 +12,5 @@ files/.zsh/.zhistory
 files/.zsh/.zprofile
 files/.zsh/.zshrc
 files/.zsh/aliases.private.zsh
+files/.zsh/autoloaded/gbrowse
 files/.zshenv
