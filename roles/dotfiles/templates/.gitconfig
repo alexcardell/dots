@@ -17,13 +17,13 @@
   a = add
   aa = add --all
   alias = config --get-regexp ^alias\\.
-  amn = "!echo 'use ca'"
+  amn = "!echo 'use ca'; exit 1"
   b = branch
-  br = "!echo 'use b'"
+  br = "!echo 'use b'; exit 1"
   ca = commit --amend -v
   cc = commit -v
   ccnv = commit -v --no-verify
-  ci = "!echo 'use cc'"
+  ci = "!echo 'use cc'; exit 1"
   co = checkout
   cp = cherry-pick
   d = diff
