@@ -41,12 +41,18 @@ unset PATH
 
 PATH=$PATH:/usr/local/sbin
 PATH=$PATH:/usr/local/bin
+PATH=$PATH:$HOME/.gem/ruby/2.6.0/bin
+# Go
 PATH=$PATH:$GOPATH/bin
+# Rust
 PATH=$PATH:$HOME/.cargo/bin
-PATH=$PATH:$HOME/.zsh/bin
+# Node
 PATH=$PATH:$HOME/.yarn/bin
-PATH=$PATH:$HOME/.local/bin
+# Zsh
+PATH=$PATH:$HOME/.zsh/bin
+# Manually installed executables
 PATH=$PATH:$HOME/.bin
+# Current directory node_modules
 PATH=$PATH:node_modules/.bin
 
 # Add defaults back
