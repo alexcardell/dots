@@ -103,6 +103,7 @@ systemd-sysvcompat
 tar
 texinfo
 texlive-core
+texlive-moderncv-git
 tmux
 tmuxp
 tree
