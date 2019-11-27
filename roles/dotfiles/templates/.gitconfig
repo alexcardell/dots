@@ -17,22 +17,26 @@
   a = add
   aa = add --all
   alias = config --get-regexp ^alias\\.
-  amn = commit --amend
-  br = branch
-  ci = commit -v
-  cinov = commit -v --no-verify
+  amn = "!echo 'use ca'"
+  b = branch
+  br = "!echo 'use b'"
+  ca = commit --amend -v
+  cc = commit -v
+  ccnv = commit -v --no-verify
+  ci = "!echo 'use cc'"
   co = checkout
   cp = cherry-pick
   d = diff
   f = fetch
   lg = log --graph --oneline --decorate --all
   ls = log -n 20 --pretty=format:'%C(yellow)%h%Creset %s -- %C(bold italic magenta)<%cn>%Creset %C(blue)[%ad]%Creset %C(red)%d' --date=relative
-  m = merge
   p = pull
+  r = restore
   root = rev-parse --show-toplevel
   s = status -s
   st = status
   sub = submodule
+  sw = switch
 
 [color]
   ui = auto
