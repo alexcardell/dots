@@ -34,11 +34,11 @@ rofi.fake-transparency: true
 ! rofi.color-active:  base00,  base0D,  base01,  base01,  base0D
 ! rofi.color-urgent:  base0B,  base08,  base0B,  base01,  base08
 
-! ------------------------------------------------------------------------------
+!------------------------------------------------------------------------------
 ! ROFI Color theme
 ! WAL generated
 ! User: alex
-! ------------------------------------------------------------------------------
+!------------------------------------------------------------------------------
 ! "Color scheme for normal row" Set from: XResources
 /* rofi.color-normal:                   argb:FF020104, #E0EDF3, #020104, #952B79, #E0EDF3 */
 /* ! "Color scheme for urgent row" Set from: XResources */

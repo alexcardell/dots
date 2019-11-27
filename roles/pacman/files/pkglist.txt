@@ -10,6 +10,7 @@ bash
 binutils
 bison
 bzip2
+chromium
 circleci-cli-bin
 connman
 coreutils
@@ -101,6 +102,7 @@ sysfsutils
 systemd-sysvcompat
 tar
 texinfo
+texlive-core
 tmux
 tmuxp
 tree
