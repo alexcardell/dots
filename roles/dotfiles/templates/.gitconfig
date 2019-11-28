@@ -33,7 +33,7 @@
   p = pull
   r = restore
   root = rev-parse --show-toplevel
-  s = status -s
+  s = status -sb
   st = status
   sub = submodule
   sw = switch
