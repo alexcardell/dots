@@ -9,7 +9,7 @@ setlocal nolist
 setlocal textwidth=0
 setlocal wrap
 setlocal wrapmargin=0
-setlocal spell
+setlocal spell spelllang=en_gb
 
 setlocal complete+=kspell
 setlocal complete+=s

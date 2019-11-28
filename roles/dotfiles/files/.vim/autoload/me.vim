@@ -47,6 +47,9 @@ function! me#statusline() abort
 endfunction
 
 function! me#highlights() abort
+
+  " Print colors:
+  " curl -s https://gist.githubusercontent.com/HaleTom/89ffe32783f89f403bba96bd7bcd1263/raw/ | bash
   highlight clear Search
   highlight Italic cterm=italic
   highlight Search cterm=italic,bold,underline ctermfg=red
@@ -54,10 +57,7 @@ function! me#highlights() abort
   highlight String cterm=italic
   highlight EndOfBuffer ctermbg=18 ctermfg=18
 
-  " Print colors:
-  " curl -s \
-  " gist.githubusercontent.com/HaleTom/89ffe32783f89f403bba96bd7bcd1263/raw/ \
-  " | bash
+  highlight SpellBad ctermfg=8 ctermbg=52
 
   highlight ModeMsg ctermfg = 0
   highlight StatusLine ctermfg=18 ctermbg=grey

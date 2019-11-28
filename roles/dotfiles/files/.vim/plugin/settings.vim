@@ -74,7 +74,6 @@ endif
 set confirm            " confirm save/quit
 set showcmd
 set ignorecase         " ignore case in searches
-set spelllang=en_gb
 
 """
 " Wild menu
