@@ -49,7 +49,9 @@ set nowrap                      " don't bother soft wrapping globally
 
 set diffopt+=vertical
 set diffopt+=iwhite
-set diffopt+=hiddenoff
+if (has('nvim'))
+  set diffopt+=hiddenoff
+endif
 
 " Whitespace characters
 set list lcs=trail:-,nbsp:∅,tab:▷┅,extends:»,precedes:«
@@ -74,6 +76,7 @@ endif
 set confirm            " confirm save/quit
 set showcmd
 set ignorecase         " ignore case in searches
+set spelllang=en_gb,en
 
 """
 " Wild menu

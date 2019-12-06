@@ -52,6 +52,7 @@ PATH=$PATH:$HOME/.yarn/bin
 PATH=$PATH:$HOME/.zsh/bin
 # Manually installed executables
 PATH=$PATH:$HOME/.bin
+PATH=$PATH:$HOME/.local/bin
 # Current directory node_modules
 PATH=$PATH:node_modules/.bin
 

@@ -82,6 +82,12 @@ let g:FocusBlacklist = [
       \ ]
 
 function! me#should_focus() abort
+  if !has('nvim')
+    return 0
+  endif
+  if !exists('+colorcolumn')
+    return 0
+  endif
   if index(g:FocusBlacklist, bufname(bufnr('%'))) != -1
     return 0
   endif
@@ -102,4 +108,8 @@ function! me#focus() abort
     set winhighlight=
     ownsyntax on
   endif
+endfunction
+
+function! me#plaintext() abort
+  setlocal spell
 endfunction
