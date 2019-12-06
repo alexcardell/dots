@@ -6,7 +6,7 @@ Designed for MacOS Mojave and Arch Linux.
 
 ## Dependencies
 
-- Python 3
+-   Python 3
 
     Sets up the virtual environment. Ansible will be installed for you.
 
@@ -28,7 +28,7 @@ Designed for MacOS Mojave and Arch Linux.
 
 See role description files.
 
-- :file_cabinet: [dotfiles](./roles/dotfiles/description)
-- :package:      [pacman](./roles/pacman/description)
-- :coffee:          [homebrew](./roles/homebrew/description)
-- :computer:     [vim](./roles/vim/description)
+-   :file_cabinet: [dotfiles](./roles/dotfiles/description)
+-   :package: [pacman](./roles/pacman/description)
+-   :coffee: [homebrew](./roles/homebrew/description)
+-   :computer: [vim](./roles/vim/description)
