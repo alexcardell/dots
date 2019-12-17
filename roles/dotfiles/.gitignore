@@ -7,6 +7,7 @@ files/.gitconfig
 files/.gitconfig.work
 files/.tmux.conf
 files/.vim/spell
+files/.zsh/.private.zshenv
 files/.zsh/.zcompdump
 files/.zsh/.zhistory
 files/.zsh/.zprofile

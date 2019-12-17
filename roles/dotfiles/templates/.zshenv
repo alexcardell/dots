@@ -65,3 +65,5 @@ export PATH
 # AWS
 export AWS_ACCESS_KEY_ID=$(type aws &>/dev/null && aws --profile default configure get aws_access_key_id)
 export AWS_SECRET_ACCESS_KEY=$(type aws &>/dev/null && aws --profile default configure get aws_secret_access_key)
+
+[[ -f ${ZSHENV}/.private.zshenv ]] && . ${ZSHENV}/.private.zshenv

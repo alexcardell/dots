@@ -1,0 +1,11 @@
+---
+- include_role:
+    name: initialise
+
+- name: Set defaults
+  osx_defaults:
+    domain: com.apple.screencapture
+    key: location
+    value: "/Users/{{ ansible_user_id }}/Pictures/Screenshots"
+    type: string
+    state: present

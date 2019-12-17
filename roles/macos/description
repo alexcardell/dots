@@ -1,0 +1,8 @@
+<!-- vim: set ft=markdown -->
+
+# macOS
+
+Configures settings specific to macOS.
+
+<!-- links -->
+<!-- https://docs.ansible.com/ansible/latest/modules/osx_defaults_module.html -->
