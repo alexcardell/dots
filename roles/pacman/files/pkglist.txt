@@ -41,6 +41,7 @@ go
 go-tools
 grep
 gzip
+haskell-ide-engine
 htop
 i3-gaps
 i3blocks
@@ -72,6 +73,7 @@ netctl
 npm
 openssh
 openvpn
+openvpn-nordvpn
 pacaur
 pacman
 patch
@@ -97,6 +99,7 @@ screenfetch
 scrot
 sed
 shadow
+stack
 sudo
 sysfsutils
 systemd-sysvcompat
@@ -115,12 +118,14 @@ usbutils
 util-linux
 vi
 vim
+w3m
 which
 wpa_supplicant
 xclip
 xfsprogs
 xorg-server
 xorg-xinit
+xorg-xinput
 xss-lock
 xtitle
 yarn
