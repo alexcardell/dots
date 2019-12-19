@@ -3,7 +3,7 @@ exec "setxkbmap i3"
 
 set $mod Mod4
 
-set $wallpaper /home/Code/dots/media/wallpaper.jpg
+set $wallpaper /home/alex/Code/dots/media/BLACK_VII_desktop-3.png
 
 # .......
 # Fonts
@@ -186,9 +186,9 @@ bindsym --release Shift+Print exec scrot -s '%Y-%m-%d_%H:%M_$wx$h_screen.png' -e
 # Wallpaper
 exec --no-startup-id feh --bg-scale $wallpaper
 # Lock screen on lid close
-exec --no-startup-id xss-lock -- ~/.config/i3/lock.sh
+exec --no-startup-id xss-lock -- ~/.config/i3/lock.sh $wallpaper
 # Manual lock key bind
-bindsym $mod+Control+l exec --no-startup-id ~/.config/i3/lock.sh
+bindsym $mod+Control+l exec --no-startup-id ~/.config/i3/lock.sh $wallpaper
 
 exec --no-startup-id redshift
 
