@@ -1,0 +1,4 @@
+# vim: ft=zsh:
+
+/usr/local/bin/brew ${@}
+/usr/local/bin/brew bundle dump --file=~/.Brewfile --force &
