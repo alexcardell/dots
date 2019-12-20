@@ -37,6 +37,9 @@
   st = status
   sub = submodule
   sw = switch
+  # Review helpers
+  files = "!f() { git diff --name-only $(git merge-base HEAD $1) $2; }; f"
+  stat = "!f() { git diff --stat $(git merge-base HEAD $1) $2; }; f"
 
 [color]
   ui = auto

@@ -113,3 +113,19 @@ endfunction
 function! me#plaintext() abort
   setlocal spell
 endfunction
+
+function! me#reviewqf(commit)
+    " Get the result of git show in a list
+    " let flist = system('git show --name-only ' . commit . ' | tail -n +7')
+    let flist = system('git diff --name-only $(git merge-base HEAD ' . a:commit . ')')
+    let flist = split(flist, '\n')
+
+    let list = []
+    for f in flist
+        let dic = {'filename': f, "lnum": 1}
+        call add(list, dic)
+    endfor
+
+    " Populate the qf list
+    call setqflist(list)
+endfunction
