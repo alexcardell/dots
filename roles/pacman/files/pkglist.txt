@@ -109,6 +109,8 @@ texlive-core
 texlive-moderncv-git
 tmux
 tmuxp
+tor
+tor-browser
 tree
 ttf-font-awesome
 ttf-roboto
