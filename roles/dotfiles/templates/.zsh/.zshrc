@@ -212,8 +212,9 @@ alias pbp='pbpaste'
 
 {% if arch %}
 # Linux
-alias ls='ls --color=auto --group-directories-first'
 alias ll='ls --color=auto --group-directories-first -alh'
+alias ls='ls --color=auto --group-directories-first'
+alias open='xdg-open'
 {% endif %}
 
 [ -f ~/.fzf/bin/fzf ] \
