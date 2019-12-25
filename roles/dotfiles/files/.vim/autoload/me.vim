@@ -11,6 +11,10 @@ function! me#helptags() abort
   call pathogen#helptags()
 endfunction
 
+function! me#nearestFunction() abort
+  return get(b:, 'vista_nearest_method_or_function', '')
+endfunction
+
 function! me#statusline() abort
   " clear
   set statusline=
@@ -30,6 +34,8 @@ function! me#statusline() abort
   set statusline+=%=
   " faint text
   set statusline+=%#LineNr#
+  " vista function
+  set statusline+=%{me#nearestFunction()}
   " coc
   set statusline+=%{coc#status()}
   " filetype
