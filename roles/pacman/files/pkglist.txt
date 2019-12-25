@@ -96,6 +96,7 @@ rofi
 ruby
 rxvt-unicode
 s-nail
+sbt
 screenfetch
 scrot
 sed
