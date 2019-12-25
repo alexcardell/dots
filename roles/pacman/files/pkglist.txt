@@ -76,6 +76,7 @@ openvpn
 openvpn-nordvpn
 pacaur
 pacman
+parted
 patch
 pciutils
 perl
