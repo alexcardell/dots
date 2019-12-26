@@ -6,6 +6,7 @@ symlinks:
   - .config/i3
   - .config/nvim
   - .config/ranger/rc.conf
+  - .config/ranger/commands.py
   - .config/rofi
   - .gitconfig
   - .gitconfig.work
