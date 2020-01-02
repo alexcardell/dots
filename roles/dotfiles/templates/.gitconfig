@@ -55,11 +55,13 @@
   pager = less -S --chop-long-lines
 
 [merge]
-  tool = nvimdiff
+  tool = nvimmerge
 [mergetool]
   prompt = true
 [mergetool "nvimdiff"]
   cmd = nvim -f -c \"Gvdiff\" \"$MERGED\"
+[mergetool "nvimmerge"]
+  cmd = nvim -f -c \"Gvdiffsplit!\" \"$MERGED\"
 [difftool]
   prompt = true
 [diff]
