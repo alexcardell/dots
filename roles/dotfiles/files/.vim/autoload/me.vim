@@ -15,6 +15,14 @@ function! me#nearestFunction() abort
   return get(b:, 'vista_nearest_method_or_function', '')
 endfunction
 
+function! me#spell() abort
+  setlocal spell spelllang=en_gb
+endfunction
+
+function! me#spelloff() abort
+  setlocal nospell
+endfunction
+
 function! me#statusline() abort
   " clear
   set statusline=
@@ -134,4 +142,5 @@ function! me#reviewqf(commit)
 
     " Populate the qf list
     call setqflist(list)
+    copen
 endfunction

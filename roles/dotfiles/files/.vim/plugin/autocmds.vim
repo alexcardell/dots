@@ -73,6 +73,8 @@ if has('autocmd')
       silent !tmux set status off
     endif
 
+    call me#spell()
+
   endfunction
 
   function! s:goyo_leave()
