@@ -1,5 +1,9 @@
 # {{ ansible_managed }}
 
+if [ "${PROFILE}" ]; then
+   zmodload zsh/zprof
+fi
+
 OS=$(uname)
 OS=$OS:l
 
@@ -208,6 +212,9 @@ alias ls='gls --color=auto --group-directories-first'
 alias ll='gls --color=auto --group-directories-first -alh'
 alias pbc='pbcopy'
 alias pbp='pbpaste'
+
+# source private work aliases
+[ -f $ZDOTDIR/.private.aliases.zsh ] && . $ZDOTDIR/.private.aliases.zsh
 {% endif %}
 
 {% if arch %}
@@ -256,3 +263,7 @@ if [[ -d "${autoloaded}" ]]; then
   done
 fi
 unset autoloaded
+
+if [ "${PROFILE}" ]; then
+    zprof
+fi
