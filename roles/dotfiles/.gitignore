@@ -7,11 +7,11 @@ files/.gitconfig
 files/.gitconfig.work
 files/.tmux.conf
 files/.vim/spell
+files/.zsh/.private.aliases.zsh
 files/.zsh/.private.zshenv
 files/.zsh/.zcompdump
 files/.zsh/.zhistory
 files/.zsh/.zprofile
 files/.zsh/.zshrc
-files/.zsh/aliases.private.zsh
 files/.zsh/autoloaded/gbrowse
 files/.zshenv
