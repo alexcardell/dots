@@ -5,14 +5,15 @@ symlinks:
   - .Xresources.d
   - .config/i3
   - .config/nvim
-  - .config/ranger/rc.conf
   - .config/ranger/commands.py
+  - .config/ranger/rc.conf
   - .config/rofi
   - .gitconfig
   - .gitconfig.work
   - .ideavimrc
   - .prettierrc.js
   - .profile
+  - .rgignore
   - .ripgreprc
   - .tmux
   - .tmux.conf
