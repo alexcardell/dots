@@ -1,3 +1,11 @@
+command! -bang -nargs=? -complete=dir Files
+        \ call fzf#vim#files(<q-args>, {
+        \ 'options': [
+        \ '--inline-info',
+        \ '--preview',
+        \ '~/.vim/pack/bundle/start/fzf.vim/bin/preview.sh {}'
+        \ ]}, <bang>0)
+
 nnoremap <leader>fa :Files<CR>
 
 nnoremap <localleader>/ :Rg<Space>
