@@ -8,5 +8,8 @@
   args:
     chdir: '~/.vim/pack/bundle/start/coc.nvim'
 
+- debug:
+    msg: '{{ " ".join(extensions) }}'
+
 - name: Setup LSP extensions
   shell: 'nvim -c "CocInstall -sync {{ " ".join(extensions) }} | qall"'

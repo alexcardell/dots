@@ -1,15 +1,6 @@
 {
     "codeLens.enable": true,
     "languageserver": {
-        "reason": {
-            "command": "reason-language-server",
-            "filetypes": ["reason"]
-        },
-        "scala": {
-            "command": "metals-vim",
-            "filetypes": ["scala", "sbt"],
-            "rootPatterns": ["build.sbt"]
-        },
         "haskell": {
             "command": "hie-wrapper",
             "rootPatterns": ["stack.yaml", "cabal.config", "package.yaml"],
