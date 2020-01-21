@@ -4,11 +4,18 @@ Sets up a Python virtual environment then runs Ansible roles based on the curren
 
 Designed for MacOS Mojave and Arch Linux.
 
+## Roles
+
+See role description files.
+
+-   :file_cabinet: [dotfiles](./roles/dotfiles/description)
+-   :package: [pacman](./roles/pacman/description)
+-   :coffee: [homebrew](./roles/homebrew/description)
+-   :computer: [vim](./roles/vim/description)
+
 ## Dependencies
 
--   Python 3
-
-    Sets up the virtual environment. Ansible will be installed for you.
+-   **Python 3:** Sets up the virtual environment. Ansible will be installed for you.
 
 ## Usage
 
@@ -22,13 +29,4 @@ Designed for MacOS Mojave and Arch Linux.
 
     With arguments, it will run all roles matching that tag, e.g. `./run homebrew` will run the homebrew role.
 
-    `./run all` will, unsurprisingly run all roles.
-
-## Roles
-
-See role description files.
-
--   :file_cabinet: [dotfiles](./roles/dotfiles/description)
--   :package: [pacman](./roles/pacman/description)
--   :coffee: [homebrew](./roles/homebrew/description)
--   :computer: [vim](./roles/vim/description)
+    `./run all` will, unsurprisingly run all roles for the current platform.
