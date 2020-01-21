@@ -14,6 +14,9 @@ if has('autocmd')
       " clear trailing whitespace
       autocmd BufWrite * call me#zap()
 
+      " set script as executable on save
+      autocmd BufWritePost * call me#set_executable_if_script(getline(1), expand("%:p"))
+
       " register *.md as markdown filetype
       autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 

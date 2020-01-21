@@ -144,3 +144,10 @@ function! me#reviewqf(commit)
     call setqflist(list)
     copen
 endfunction
+
+function! me#set_executable_if_script(line1, current_file)
+  if a:line1 =~ '^#!\(/usr\)*/bin/'
+    let chmod_command = "silent !chmod ugo+x " . a:current_file
+    execute chmod_command
+  endif
+endfunction
