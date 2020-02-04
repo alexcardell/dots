@@ -128,7 +128,7 @@ function! me#plaintext() abort
   setlocal spell
 endfunction
 
-function! me#reviewqf(commit)
+function! me#reviewqf(commit) abort
     " Get the result of git show in a list
     " let flist = system('git show --name-only ' . commit . ' | tail -n +7')
     let flist = system('git diff --name-only $(git merge-base HEAD ' . a:commit . ')')
@@ -145,9 +145,16 @@ function! me#reviewqf(commit)
     copen
 endfunction
 
-function! me#set_executable_if_script(line1, current_file)
+function! me#set_executable_if_script(line1, current_file) abort
   if a:line1 =~ '^#!\(/usr\)*/bin/'
     let chmod_command = "silent !chmod ugo+x " . a:current_file
     execute chmod_command
   endif
+endfunction
+
+function! me#empty_reg() abort
+  let regs=split('abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789/-"', '\zs')
+  for r in regs
+    call setreg(r, [])
+  endfor
 endfunction

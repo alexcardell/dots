@@ -16,6 +16,5 @@ extensions:
   - coc-svg
   - coc-tailwindcss
   - coc-tsserver
-  - coc-ultisnips
   - coc-vimlsp
   - coc-yaml
