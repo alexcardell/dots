@@ -72,18 +72,18 @@ if has('autocmd')
 
     Limelight
 
-    if exists('$TMUX')
-      silent !tmux set status off
-    endif
+    " if exists('$TMUX')
+    "   silent !tmux set status off
+    " endif
 
     call me#spell()
 
   endfunction
 
   function! s:goyo_leave()
-    if exists('$TMUX')
-      silent !tmux set status on
-    endif
+    " if exists('$TMUX')
+    "   silent !tmux set status on
+    " endif
 
     Limelight!
 
