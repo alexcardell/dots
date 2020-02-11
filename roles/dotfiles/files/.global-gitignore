@@ -31,8 +31,12 @@ tags.*
 
 # Language Servers #
 ####################
+# Scala
 .metals
+metals.sbt
 .bloop
+
+####################
 
 # Ansible #
 ###########
