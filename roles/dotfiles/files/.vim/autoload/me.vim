@@ -45,7 +45,7 @@ function! me#statusline() abort
   " vista function
   set statusline+=%{me#nearestFunction()}
   " coc
-  set statusline+=%{coc#status()}
+  set statusline+=%{coc#status()}%{get(b:,'coc_current_function','')}
   " filetype
   set statusline+=\ %y
   " encoding
@@ -157,4 +157,9 @@ function! me#empty_reg() abort
   for r in regs
     call setreg(r, [])
   endfor
+endfunction
+
+function! me#scratch(...) abort
+  let scratch_file = "scratch"
+  exe 'split /tmp/' . scratch_file
 endfunction
