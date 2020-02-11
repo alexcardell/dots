@@ -1,14 +1,24 @@
 " Remap keys for gotos
 nnoremap <silent> gd :call CocActionAsync('jumpDefinition')<CR>
 " nnoremap <silent> gd <Plug>(coc-definition)
-nnoremap <silent> go :call CocActionAsync('jumpTypeDefinition')<CR>
+
+nnoremap <silent> gy :call CocActionAsync('jumpTypeDefinition')<CR>
 " nnoremap <silent> go <Plug>(coc-type-definition)
+
 nnoremap <silent> gi :call CocActionAsync('jumpImplementation')<CR>
 " nnoremap <silent> gi <Plug>(coc-implementation)
+
 nnoremap <silent> gr :call CocActionAsync('jumpReferences')<CR>
 " nnoremap <silent> gr <Plug>(coc-references)
 
+" nnoremap <silent> ga :call CocActionAsync('codeLensAction')<CR>
+xnoremap ga <Plug>(coc-codeaction-selected)
+nnoremap ga <Plug>(coc-codeaction-selected)
+nnoremap gac <Plug>(coc-codeaction)
+" nnoremap <silent> gA :call CocActionAsync('codeAction')<CR>
+
 nnoremap <silent> gh :call <SID>show_documentation()<CR>
+
 nnoremap <silent> <localleader>r :call CocActionAsync('rename')<CR>
 " nnoremap <silent> <leader>r <Plug>(coc-refactor)
 
