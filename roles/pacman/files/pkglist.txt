@@ -5,11 +5,14 @@ alsa-utils
 ansible-aur-git
 arc-gtk-theme
 auracle-git
+autoconf
 autojump
+automake
 bash
 binutils
 bison
 bzip2
+calibre
 chromium
 circleci-cli-bin
 connman
@@ -20,7 +23,10 @@ device-mapper
 dhcpcd
 diffutils
 docker
+dropbox
+dropbox-cli
 e2fsprogs
+etckeeper
 fakeroot
 feh
 file
@@ -33,7 +39,6 @@ fzf
 gawk
 gcc
 gcc-libs
-gconf
 gettext
 git
 glibc
@@ -124,6 +129,7 @@ vi
 vim
 w3m
 which
+woeusb
 wpa_supplicant
 xclip
 xfsprogs
