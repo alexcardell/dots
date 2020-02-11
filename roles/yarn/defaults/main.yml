@@ -1,0 +1,9 @@
+---
+packages:
+  - bs-platform
+  - esy
+  - neovim
+  - pesy
+  - prettier
+  - reason-cli
+  - spago

@@ -41,3 +41,6 @@
     skip_installed: yes
     name: "{{ item }}"
   with_lines: "cat {{ role_path }}/files/pkglist.txt"
+
+- include_role:
+    name: yarn
