@@ -1,5 +1,6 @@
 {
     "codeLens.enable": true,
+    "diagnostic.displayByAle": true,
     "languageserver": {
         "haskell": {
             "command": "hie-wrapper",
