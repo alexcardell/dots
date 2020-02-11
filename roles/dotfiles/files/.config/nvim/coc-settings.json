@@ -16,6 +16,12 @@
                     "hlintOn": true
                 }
             }
+        },
+        "purescript": {
+            "command": "purescript-language-server",
+            "args": ["--stdio"],
+            "filetypes": ["purescript"],
+            "rootPatterns": ["psc-package.json", "spago.dhall"]
         }
     },
     "java.errors.incompleteClasspath.severity": "ignore",
