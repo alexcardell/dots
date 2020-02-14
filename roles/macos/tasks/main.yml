@@ -9,3 +9,7 @@
     value: "/Users/{{ ansible_user_id }}/Pictures/Screenshots"
     type: string
     state: present
+
+- name: Turn off security settings
+  command: spctl --master-disable
+  become: true
