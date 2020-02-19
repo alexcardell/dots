@@ -1,5 +1,5 @@
 session_name: themis
-start_directory: $CODEPATH/work/themis
+start_directory: $WORKPATH/themis
 windows:
   - window_name: edit
     panes:

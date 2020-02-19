@@ -3,7 +3,6 @@
 # zsh
 export ZDOTDIR=$HOME/.zsh
 export HISTSIZE=10000
-export HISTFILE="$ZDOTDIR/.zhistory"
 export SAVEHIST=$HISTSIZE
 
 # Editor #
@@ -29,10 +28,16 @@ export FZF_DEFAULT_COMMAND='rg --files --follow'
 export TILLER_NAMESPACE=tiller
 
 {% if darwin %}
-# Darwin
+# Darwin #
+##########
+{% if work %}
+## Work ##
+export WORKPATH=$HOME/Work
+{% endif %}
 {% endif %}
 {% if arch %}
-# Linux
+# Linux #
+#########
 {% endif %}
 
 # Path

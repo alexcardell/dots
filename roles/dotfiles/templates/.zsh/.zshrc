@@ -23,6 +23,8 @@ bindkey -M vicmd '^x^x' edit-command-line
 
 #---------
 # History
+#
+# Only used as a fallback for fzf
 #---------
 bindkey "^R" history-incremental-search-backward
 autoload history-search-end

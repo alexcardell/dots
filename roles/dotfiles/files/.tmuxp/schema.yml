@@ -1,5 +1,5 @@
-session_name: griffin
-start_directory: $WORKPATH/griffin
+session_name: schema
+start_directory: $WORKPATH/schema-validation
 windows:
   - window_name: edit
     panes:

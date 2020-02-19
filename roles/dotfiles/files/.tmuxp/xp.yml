@@ -1,5 +1,5 @@
 session_name: xp
-start_directory: $CODEPATH/work/xp
+start_directory: $WORKPATH/xp
 windows:
   - window_name: edit
     panes:

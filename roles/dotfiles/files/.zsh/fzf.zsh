@@ -3,16 +3,17 @@
 # fd - cd to selected directory
 fd() {
   local dir
-  dir=$(find ${1:-.} -path '*/\.*' -prune \
-    -o -type d -print 2> /dev/null | fzf +m) &&
-    cd "$dir"
-  }
+  dir=$(find ${1:-.} -path '*/\.*' -prune -o -type d -print 2> /dev/null | fzf --layout=reverse --height=40% +m)
+  cd "$dir"
+}
 
 # ff - cd into the directory of the selected file
 ff() {
   local file
   local dir
-  file=$(fzf +m -q "$1") && dir=$(dirname "$file") && cd "$dir"
+  file=$(fzf --layout=reverse --height=40% +m -q "$1")
+  dir=$(dirname "$file") \
+  cd "$dir"
 }
 
 # Opening files
