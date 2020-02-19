@@ -39,5 +39,4 @@ fi
 echo "##############"
 echo "Running '$cmd'"
 echo "##############"
-sudo echo 'something' 2&>/dev/null && \
-  $cmd
+$cmd
