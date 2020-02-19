@@ -1,8 +1,6 @@
 # {{ ansible_managed }}
 # vim: ft=gitconfig
 
-{% if work %}
 [user]
   name = {{ work_git_user_name }}
   email = {{ work_git_user_email }}
-{% endif %}

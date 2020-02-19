@@ -9,7 +9,7 @@ symlinks:
   - .config/ranger/rc.conf
   - .config/rofi
   - .gitconfig
-  - .gitconfig.work
+  - .work.gitconfig
   - .ideavimrc
   - .prettierrc.js
   - .profile

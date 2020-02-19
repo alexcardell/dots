@@ -9,8 +9,8 @@
 {% endif %}
 
 {% if work %}
-[includeIf "gitdir:~/Code/work/"]
-  path = ~/.gitconfig.work
+[includeIf "gitdir:~/Work/**"]
+  path = ~/.work.gitconfig
 {% endif %}
 
 [alias]
