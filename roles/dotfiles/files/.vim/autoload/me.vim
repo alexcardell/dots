@@ -43,9 +43,12 @@ function! me#statusline() abort
   " faint text
   set statusline+=%#LineNr#
   " vista function
-  set statusline+=%{me#nearestFunction()}
+  " set statusline+=%{me#nearestFunction()}
+  " word count
+  set statusline+=[%{me#wordcount()}]
   " coc
-  set statusline+=%{coc#status()}%{get(b:,'coc_current_function','')}
+  set statusline+=%{coc#status()}
+  " set statusline+=%{get(b:,'coc_current_function','')}
   " filetype
   set statusline+=\ %y
   " encoding
@@ -129,20 +132,20 @@ function! me#plaintext() abort
 endfunction
 
 function! me#reviewqf(commit) abort
-    " Get the result of git show in a list
-    " let flist = system('git show --name-only ' . commit . ' | tail -n +7')
-    let flist = system('git diff --name-only $(git merge-base HEAD ' . a:commit . ')')
-    let flist = split(flist, '\n')
+  " Get the result of git show in a list
+  " let flist = system('git show --name-only ' . commit . ' | tail -n +7')
+  let flist = system('git diff --name-only $(git merge-base HEAD ' . a:commit . ')')
+  let flist = split(flist, '\n')
 
-    let list = []
-    for f in flist
-        let dic = {'filename': f, "lnum": 1}
-        call add(list, dic)
-    endfor
+  let list = []
+  for f in flist
+    let dic = {'filename': f, "lnum": 1}
+    call add(list, dic)
+  endfor
 
-    " Populate the qf list
-    call setqflist(list)
-    copen
+  " Populate the qf list
+  call setqflist(list)
+  copen
 endfunction
 
 function! me#set_executable_if_script(line1, current_file) abort
@@ -162,4 +165,19 @@ endfunction
 function! me#scratch(...) abort
   let scratch_file = "scratch"
   exe 'split /tmp/' . scratch_file
+endfunction
+
+let g:word_count='0'
+function! me#wordcount() abort
+  return 'wc:' . g:word_count
+endfunction
+
+function! me#update_wordcount() abort
+  let lnum = 1
+  let n = 0
+  while lnum <= line('$')
+    let n = n + len(split(getline(lnum)))
+    let lnum = lnum + 1
+  endwhile
+  let g:word_count = n
 endfunction

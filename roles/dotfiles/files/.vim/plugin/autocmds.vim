@@ -1,35 +1,41 @@
 if has('autocmd')
   function! s:MyAutocmds()
     augroup MyAutocmds
-      autocmd!
+      au!
 
-      autocmd InsertLeave * set nopaste
+      au InsertLeave * set nopaste
 
       if exists('+colorcolumn')
         " Focus background of active window
-        autocmd BufEnter,FocusGained,VimEnter,WinEnter * call me#focus()
-        autocmd FocusLost,WinLeave * call me#blur()
+        au BufEnter,FocusGained,VimEnter,WinEnter * call me#focus()
+        au FocusLost,WinLeave * call me#blur()
       endif
 
       " clear trailing whitespace
-      autocmd BufWrite * call me#zap()
+      au BufWrite * call me#zap()
 
       " set script as executable on save
-      autocmd BufWritePost * call me#set_executable_if_script(getline(1), expand("%:p"))
+      au BufWritePost * call me#set_executable_if_script(getline(1), expand("%:p"))
 
       " register *.md as markdown filetype
-      autocmd BufNewFile,BufReadPost *.md set filetype=markdown
+      au BufNewFile,BufReadPost *.md set filetype=markdown
 
       " register sbt files as scala (for use with scala-metals)
-      autocmd BufNewFile,BufReadPost *.sbt set filetype=scala
+      au BufNewFile,BufReadPost *.sbt set filetype=scala
 
       " disable status line
-      autocmd  FileType fzf set laststatus=0 noshowmode noruler
-        \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
+      au  FileType fzf set laststatus=0 noshowmode noruler
+        \| au BufLeave <buffer> set laststatus=2 showmode ruler
+
+      " Enable spellchecking
+      au FileType markdown,text call me#spell()
+
+      " Update word count for statusline
+      au CursorHold,CursorHoldI * call me#update_wordcount()
 
       " Allow comment highlights for json
       " Bucklescript and Coc both allow comments in their json files
-      autocmd FileType json syntax match Comment +\/\/.\+$+
+      au FileType json syntax match jsonComment "//\.\+\$"
 
       au InsertEnter * highlight StatusLine ctermfg=18 ctermbg=blue |
             \ highlight User2 ctermfg=blue ctermbg=18
