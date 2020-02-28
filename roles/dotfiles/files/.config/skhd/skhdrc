@@ -6,7 +6,6 @@
 ########
 alt - 1 : open -a iterm
 alt - 2 : open -a 'firefox developer edition'
-alt - 3 : open -a slack
 
 #########
 # yabai #
