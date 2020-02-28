@@ -8,8 +8,9 @@ symlinks:
   - .config/ranger/commands.py
   - .config/ranger/rc.conf
   - .config/rofi
+  - .config/skhd
+  - .config/yabai
   - .gitconfig
-  - .work.gitconfig
   - .ideavimrc
   - .prettierrc.js
   - .profile
@@ -19,6 +20,7 @@ symlinks:
   - .tmux.conf
   - .tmuxp
   - .vim
+  - .work.gitconfig
   - .xinitrc
   - .zsh
   - .zshenv
