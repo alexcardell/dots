@@ -7,7 +7,7 @@ extensions:
   - coc-java
   - coc-jest
   - coc-json
-  # - coc-metals
+  - coc-metals
   - coc-prettier
   - coc-python
   - coc-reason
