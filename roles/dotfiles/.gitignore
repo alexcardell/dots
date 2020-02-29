@@ -4,7 +4,7 @@ templates/out
 
 files/.config/ranger/rc.conf
 files/.gitconfig
-files/.work.gitconfig
+files/.gitconfig.work
 files/.tmux.conf
 files/.vim/spell
 files/.zsh/.private.aliases.zsh

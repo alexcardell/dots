@@ -11,6 +11,7 @@ symlinks:
   - .config/skhd
   - .config/yabai
   - .gitconfig
+  - .gitconfig.work
   - .ideavimrc
   - .prettierrc.js
   - .profile
@@ -20,7 +21,6 @@ symlinks:
   - .tmux.conf
   - .tmuxp
   - .vim
-  - .work.gitconfig
   - .xinitrc
   - .zsh
   - .zshenv
