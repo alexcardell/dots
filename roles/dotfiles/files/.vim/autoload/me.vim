@@ -75,6 +75,9 @@ function! me#highlights() abort
   highlight EndOfBuffer ctermbg=18 ctermfg=18
 
   highlight SpellBad ctermfg=8 ctermbg=52
+  highlight SpellLocal ctermfg=0
+  highlight SpellCap ctermfg=0
+  highlight SpellRare ctermfg=0
 
   highlight ModeMsg ctermfg = 0
   highlight StatusLine ctermfg=18 ctermbg=grey
