@@ -69,6 +69,7 @@ make
 man-db
 man-pages
 mdadm
+mill
 mpv
 mupdf
 nano
@@ -85,6 +86,7 @@ parted
 patch
 pciutils
 perl
+picom
 pkgconf
 procps-ng
 psmisc

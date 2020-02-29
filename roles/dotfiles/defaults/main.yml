@@ -5,6 +5,7 @@ symlinks:
   - .Xresources.d
   - .config/i3
   - .config/nvim
+  - .config/picom
   - .config/ranger/commands.py
   - .config/ranger/rc.conf
   - .config/rofi
