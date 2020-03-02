@@ -9,5 +9,3 @@
       tags: [ dotfiles, dots, all]
     - role: vim
       tags: [ vim, dots, all ]
-    - role: code
-      tags: [ code, dots, all ]
