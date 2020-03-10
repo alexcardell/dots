@@ -11,7 +11,7 @@ yabai -m config status_bar_text_font         "SauceCodePro Nerd Font:Bold:12.0"
 yabai -m config status_bar_icon_font         "SauceCodePro Nerd Font:Regular:16.0"
 yabai -m config status_bar_background_color  0xff202020
 yabai -m config status_bar_foreground_color  0xffa8a8a8
-yabai -m config status_bar_space_icon_strip  '1 ' '2 ' '3 #' 4 5 6
+yabai -m config status_bar_space_icon_strip  '1 ' '2 ' '3 #' 4 5 '6 '
 yabai -m config status_bar_power_icon_strip   
 yabai -m config status_bar_space_icon        
 yabai -m config status_bar_clock_icon        
@@ -82,5 +82,5 @@ echo "yabai configuration loaded.."
 ####################
 # Battery:  uf240 |  uf241 |  uf242 |  uf243 |  uf244
 # Lightning:  uf0e7
-# Clock:  uf017
-# Terminal:  uf120 | Firefox:  uf269 | Slack:  uf198
+# Clock:  uf017 | Terminal:  uf120 | Firefox:  uf269 | Slack:  uf198
+# Spotify:  uf1bc
