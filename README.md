@@ -12,6 +12,8 @@ See role description files.
 -   :package: [pacman](./roles/pacman/description)
 -   :coffee: [homebrew](./roles/homebrew/description)
 -   :computer: [vim](./roles/vim/description)
+-   :keyboard: [code](./roles/code/description)
+-   :link: [yarn](./roles/yarn/description)
 
 ## Dependencies
 
