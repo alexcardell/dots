@@ -17,6 +17,8 @@ export CODEPATH=$HOME/Code
 export GOPATH=$CODEPATH/go
 # maven
 export M2_HOME=$HOME
+# Node
+export NODE_ENV=development
 
 # Tools #
 #########
