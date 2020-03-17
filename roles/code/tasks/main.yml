@@ -3,10 +3,25 @@
   include_role:
     name: initialise
 
-- name: Pull Git repos
+- name: Pull personal Git repos
+  when: not work
   with_items: '{{ repos }}'
   git:
     repo: 'git@github.com:alexcardell/{{ item }}'
     dest: '{{ lookup("env", "CODEPATH") }}/{{ item }}'
+    force: no
+    update: no
+
+- when: work
+  include_vars:
+    file: work.yml
+    name: workvars
+
+- name: Pull work Git repos
+  when: work
+  with_items: '{{ workvars.repos }}'
+  git:
+    repo: 'git@{{ workvars.work_git_host }}:{{ item }}'
+    dest: '{{ lookup("env", "WORKPATH") }}/{{ item | basename }}'
     force: no
     update: no
