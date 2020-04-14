@@ -1,5 +1,5 @@
 session_name: xp
-start_directory: $WORKPATH/xp
+start_directory: $WORKPATH/experiment-api
 windows:
   - window_name: edit
     panes:
