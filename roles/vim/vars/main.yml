@@ -11,7 +11,8 @@ extensions:
   - coc-prettier
   - coc-python
   - coc-reason
-  - coc-rls
+  # - coc-rls
+  - coc-rust-analyzer
   - coc-snippets
   - coc-svg
   - coc-tailwindcss
