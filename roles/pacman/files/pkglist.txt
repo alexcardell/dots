@@ -23,8 +23,6 @@ device-mapper
 dhcpcd
 diffutils
 docker
-dropbox
-dropbox-cli
 e2fsprogs
 etckeeper
 fakeroot
@@ -39,6 +37,7 @@ fzf
 gawk
 gcc
 gcc-libs
+gendesk
 gettext
 git
 glibc
@@ -131,8 +130,8 @@ vi
 vim
 w3m
 which
-woeusb
 wpa_supplicant
+wxgtk3
 xclip
 xfsprogs
 xorg-server

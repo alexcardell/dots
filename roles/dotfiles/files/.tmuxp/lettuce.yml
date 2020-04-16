@@ -1,5 +1,5 @@
 session_name: lettuce
-start_directory: $WORKPATH/lettuce
+start_directory: $CODEPATH/lettuce
 windows:
   - window_name: edit
     focus: true
@@ -8,14 +8,3 @@ windows:
   - window_name: term
     panes:
       - 'git status'
-  - window_name: ui
-    start_directory: packages/ui
-    layout: main-vertical
-    panes:
-      - 'yarn build:re'
-      - 'yarn build:css'
-      - 'yarn test'
-  - window_name: server
-    start_directory: packages/graphql
-    panes:
-      - 'esy test'

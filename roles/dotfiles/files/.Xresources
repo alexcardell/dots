@@ -3,10 +3,10 @@
 Xft.hinting: true
 Xft.antialias: true
 
-*.font:             xft:Sauce Code Pro Nerd Font:size=16
-*.boldFont:         xft:Sauce Code Pro Nerd Font:bold:size=16
-*.italicFont:       xft:Sauce Code Pro Nerd Font:italic:size=16
-*.boldItalicFont:   xft:Sauce Code Pro Nerd Font:bold:italic:size=16
+*.font:             xft:Sauce Code Pro Nerd Font:size=18
+*.boldFont:         xft:Sauce Code Pro Nerd Font:bold:size=18
+*.italicFont:       xft:Sauce Code Pro Nerd Font:italic:size=18
+*.boldItalicFont:   xft:Sauce Code Pro Nerd Font:bold:italic:size=18
 
 ! Scrolling
 URxvt.scrollTtyOutput: false
