@@ -1,0 +1,13 @@
+session_name: schema-demo
+start_directory: $WORKPATH/schema-validation-demo
+windows:
+  - window_name: edit
+    panes:
+      - vim -c pwd
+      - null
+  - window_name: kafka
+    panes:
+      - kafka-console-consumer --topic schema-validation-demo --bootstrap-server $kafka_lhr --property print.timestamp=true
+      - pq kafka schema-validation-demo-pb --msgtype com.booking.transport.data.demo.SchemaValidationDemo --brokers $kafka_lhr
+      - echo './build-node-protobufjs.sh proto src && node src/index.js'
+      - echo 'curl -L localhost:3000/run'
