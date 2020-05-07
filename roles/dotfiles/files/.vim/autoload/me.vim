@@ -87,6 +87,7 @@ function! me#highlights() abort
 
   " Set coc virtual text to be dark
   highlight link CocCodeLens User3
+  highlight link CocRustChainingHint CocCodeLens
 
   if has('nvim')
     highlight Pmenu ctermfg=7 ctermbg=19
