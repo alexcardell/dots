@@ -4,7 +4,7 @@
 fd() {
   local dir
   dir=$(find ${1:-.} -path '*/\.*' -prune -o -type d -print 2> /dev/null | fzf --layout=reverse --height=40% +m)
-  cd "$dir"
+  pushd "${dir}"
 }
 
 # ff - cd into the directory of the selected file
@@ -12,8 +12,9 @@ ff() {
   local file
   local dir
   file=$(fzf --layout=reverse --height=40% +m -q "$1")
-  dir=$(dirname "$file") \
-  cd "$dir"
+  dir=$(dirname ${file})
+  echo "${dir}"
+  pushd "${dir}"
 }
 
 # Opening files
@@ -108,5 +109,5 @@ for c in $@; do
   eval "bindkey '^g^$c' fzf-g$c-widget"
 done
 }
-bind-git-helper f b t r h
+bind-git-helper f b t 'r' h
 unset -f bind-git-helper
