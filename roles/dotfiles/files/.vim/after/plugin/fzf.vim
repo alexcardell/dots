@@ -20,8 +20,17 @@ nnoremap <leader>fh :Helptags<CR>
 
 nnoremap <leader>fs :Snippets<CR>
 
+function! s:yank_results(lines)
+  let joined_lines = join(a:lines, "\n")
+  if len(a:lines) > 1
+    let joined_lines .= "\n"
+  endif
+  let @+ = joined_lines
+endfunction
+
 let g:fzf_action = {
       \ 'ctrl-t': 'tab split',
       \ 'ctrl-s': 'split',
       \ 'ctrl-v': 'vsplit',
+      \ 'ctrl-y': function('s:yank_results'),
       \ }
