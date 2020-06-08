@@ -234,7 +234,7 @@ alias open='xdg-open'
   && . $ZDOTDIR/fzf.zsh
 
 # third party
-[ -f $ZDOTDIR/lib/tomorrow-night.sh ] && . $ZDOTDIR/lib/tomorrow-night.sh
+[ -f $ZDOTDIR/lib/theme.sh ] && . $ZDOTDIR/lib/theme.sh
 
 {% if arch %}
 [ -f /usr/share/autojump/autojump.zsh ] \

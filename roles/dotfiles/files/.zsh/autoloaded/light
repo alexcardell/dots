@@ -1,0 +1,2 @@
+ln -sf $ZDOTDIR/lib/tomorrow.sh $ZDOTDIR/lib/theme.sh
+[ -f $ZDOTDIR/lib/theme.sh ] && . $ZDOTDIR/lib/theme.sh
