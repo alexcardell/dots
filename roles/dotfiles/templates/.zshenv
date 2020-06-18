@@ -63,6 +63,15 @@ PATH=$PATH:$HOME/.local/bin
 # Current directory node_modules
 PATH=$PATH:node_modules/.bin
 
+{% if darwin %}
+# Darwin #
+##########
+{% if work %}
+## Work ##
+PATH=$PATH:/usr/local/Cellar/thrift/0.12.0/bin
+{% endif %}
+{% endif %}
+
 # Add defaults back
 PATH=$DEFAULT_PATH:$PATH
 
