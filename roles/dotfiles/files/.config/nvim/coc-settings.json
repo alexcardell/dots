@@ -1,24 +1,28 @@
 {
-    "codeLens.enable": true,
-    "diagnostic.displayByAle": true,
-    "languageserver": {
-        "haskell": {
-            "command": "hie-wrapper",
-            "rootPatterns": ["stack.yaml", "cabal.config", "package.yaml"],
-            "filetypes": ["hs", "lhs", "haskell"],
-            "initializationOptions": {
-                "languageServerHaskell": {
-                    "hlintOn": true
-                }
-            }
-        },
-        "purescript": {
-            "command": "purescript-language-server",
-            "args": ["--stdio"],
-            "filetypes": ["purescript"],
-            "rootPatterns": ["psc-package.json", "spago.dhall"]
+  "codeLens.enable": true,
+  "diagnostic.displayByAle": true,
+  "coc.preferences.formatOnSaveFiletypes": ["scala"],
+  "languageserver": {
+    "haskell": {
+      "command": "hie-wrapper",
+      "args": ["--lsp"],
+      "rootPatterns": ["*.cabal", "stack.yaml", "cabal.config", "package.yaml"],
+      "filetypes": ["hs", "lhs", "haskell"],
+      "initializationOptions": {
+        "haskell": {},
+        "languageServerHaskell": {
+          "hlintOn": true
         }
+      }
     },
-    "java.errors.incompleteClasspath.severity": "ignore",
-    "python.jediEnabled": false
+    "purescript": {
+      "command": "purescript-language-server",
+      "args": ["--stdio"],
+      "filetypes": ["purescript"],
+      "rootPatterns": ["psc-package.json", "spago.dhall"]
+    }
+  },
+  "java.errors.incompleteClasspath.severity": "ignore",
+  "python.jediEnabled": false,
+  "metals.statusBarEnabled": true
 }
