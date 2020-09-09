@@ -121,3 +121,6 @@
 [submodule "roles/dotfiles/files/.vim/pack/bundle/start/gv.vim"]
 	path = roles/dotfiles/files/.vim/pack/bundle/start/gv.vim
 	url = https://github.com/junegunn/gv.vim/
+[submodule "roles/dotfiles/files/.vim/pack/bundle/start/firenvim"]
+	path = roles/dotfiles/files/.vim/pack/bundle/start/firenvim
+	url = https://github.com/glacambre/firenvim.git
