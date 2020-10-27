@@ -46,6 +46,8 @@ if has('autocmd')
 
       au BufEnter * if &buftype == 'terminal' | :startinsert | endif
 
+      au VimEnter * let g:vimwiki_syntaxlocal_vars['markdown']['Link1'] = g:vimwiki_syntaxlocal_vars['default']['Link1']
+
     augroup END
   endfunction
 
