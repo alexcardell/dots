@@ -47,10 +47,12 @@ if has('linebreak')
 endif
 set nowrap                      " don't bother soft wrapping globally
 
-set diffopt+=vertical
-set diffopt+=iwhite
-if (has('nvim'))
-  set diffopt+=hiddenoff
+if has('diffopt')
+  set diffopt+=vertical
+  set diffopt+=iwhite
+  if (has('nvim'))
+    set diffopt+=hiddenoff
+  endif
 endif
 
 " Whitespace characters
