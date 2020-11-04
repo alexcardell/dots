@@ -6,6 +6,7 @@ symlinks:
   - .config/i3
   - .config/nvim
   - .config/picom
+  - .config/pulse/client.conf
   - .config/ranger/commands.py
   - .config/ranger/rc.conf
   - .config/rofi
