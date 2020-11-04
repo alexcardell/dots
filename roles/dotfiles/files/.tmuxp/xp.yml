@@ -1,9 +1,0 @@
-session_name: xp
-start_directory: $WORKPATH/experiment-api
-windows:
-  - window_name: edit
-    panes:
-      - vim -c pwd
-  - window_name: term
-    panes:
-      - git status

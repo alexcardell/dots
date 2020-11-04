@@ -1,5 +1,5 @@
-session_name: griffin
-start_directory: $WORKPATH/griffin
+session_name: wiki
+start_directory: $CODEPATH/wiki
 windows:
   - window_name: edit
     panes:
@@ -7,3 +7,4 @@ windows:
   - window_name: term
     panes:
       - git status
+

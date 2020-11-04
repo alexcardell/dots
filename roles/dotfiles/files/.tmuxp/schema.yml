@@ -1,9 +1,0 @@
-session_name: schema-validation
-start_directory: $WORKPATH/schema-validation
-windows:
-  - window_name: edit
-    panes:
-      - vim -c pwd
-  - window_name: term
-    panes:
-      - git status
