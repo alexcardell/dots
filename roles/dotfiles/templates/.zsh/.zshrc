@@ -255,7 +255,7 @@ bindkey "^P" autosuggest-accept
 [ -s $HOME/.jabba/jabba.sh ] && . $HOME/.jabba/jabba.sh
 
 # fnm
-eval "`fnm env --multi --use-on-cd`"
+eval "`fnm env --use-on-cd`"
 
 # Autoload custom functions
 fpath=("$ZDOTDIR/autoloaded" $fpath)
