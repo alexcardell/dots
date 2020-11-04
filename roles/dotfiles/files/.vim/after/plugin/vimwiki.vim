@@ -1,6 +1,6 @@
 let g:vimwiki_global_ext = 0
 let g:vimwiki_list = [{
-      \'path': $HOME . '/wiki',
+      \'path': $HOME . '/Wiki',
       \'syntax': 'markdown',
       \'ext': '.md',
       \'auto_toc': 1,
