@@ -1,5 +1,5 @@
 session_name: wiki
-start_directory: $CODEPATH/wiki
+start_directory: $HOME/Wiki
 windows:
   - window_name: edit
     panes:
