@@ -36,5 +36,6 @@ vim_path: "{{ ansible_env.PWD }}/roles/dotfiles/files/.vim"
 
 git_user_name: '{{"alexcardell"}}'
 git_user_email: '{{"29524087+alexcardell@users.noreply.github.com"}}'
+git_user_signingkey: 'ED579B846211BEE5'
 
 work_hostname: "C0.*L"

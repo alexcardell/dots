@@ -7,6 +7,9 @@
 {% if git_user_email != '' %}
   email = {{ git_user_email }}
 {% endif %}
+{% if git_user_signingkey != '' %}
+  signingkey = {{ git_user_signingkey}}
+{% endif %}
 
 {% if work %}
 [includeIf "gitdir:~/Work/**"]
@@ -49,6 +52,9 @@
   added = green
   changed = red
   untracked = blue
+
+[commit]
+  gpgsign = true
 
 [core]
   editor = nvim
