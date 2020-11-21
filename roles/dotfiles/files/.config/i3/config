@@ -152,7 +152,7 @@ gaps inner 10
 
 # Bar
 bar {
-  font pango:Inconsolata, Font Awesome 14
+  font pango:Inconsolata, Font Awesome 18
   status_command i3blocks -c ~/.config/i3/i3blocks/i3blocks.conf
   colors {
     background $bg-color
@@ -190,6 +190,13 @@ exec --no-startup-id xss-lock -- ~/.config/i3/lock.sh $wallpaper
 # Manual lock key bind
 bindsym $mod+Control+l exec --no-startup-id ~/.config/i3/lock.sh $wallpaper
 
+# pulse audio system tray icon
+exec --no-startup-id pasystray
+
+# connman tray
+exec --no-startup-id connman-gtk
+
+# redshift
 exec --no-startup-id redshift -t 6500K:4000K  # DAY:NIGHT, lower=warm
 
 # Clipboard manager
