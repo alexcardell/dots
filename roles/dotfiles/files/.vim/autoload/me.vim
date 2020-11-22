@@ -47,7 +47,7 @@ function! me#statusline() abort
   " word count
   set statusline+=[%{me#wordcount()}]
   " coc
-  set statusline+=%{coc#status()}
+  " set statusline+=%{coc#status()}
   " set statusline+=%{get(b:,'coc_current_function','')}
   " filetype
   set statusline+=\ %y

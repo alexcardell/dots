@@ -57,3 +57,10 @@ endif
 set rtp+=~/.fzf
 
 set completeopt-=preview
+
+let g:metals_server_version = '0.9.6'
+
+lua <<EOF
+vim.cmd('packadd nvim-lspconfig')
+require'lspconfig'.metals.setup{}
+EOF

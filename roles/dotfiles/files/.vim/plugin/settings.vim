@@ -79,6 +79,7 @@ set confirm            " confirm save/quit
 set showcmd
 set ignorecase         " ignore case in searches
 set spelllang=en_gb,en
+set signcolumn=yes     " always show signcolumn
 
 """
 " Wild menu

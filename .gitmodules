@@ -109,3 +109,6 @@
 [submodule "roles/dotfiles/files/.vim/pack/bundle/start/nvim-lspconfig"]
 	path = roles/dotfiles/files/.vim/pack/bundle/start/nvim-lspconfig
 	url = https://github.com/neovim/nvim-lspconfig
+[submodule "roles/dotfiles/files/.vim/pack/bundle/start/nvim-metals"]
+	path = roles/dotfiles/files/.vim/pack/bundle/start/nvim-metals
+	url = https://github.com/scalameta/nvim-metals

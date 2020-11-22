@@ -17,6 +17,7 @@ circleci-cli-bin
 clipit
 connman
 connman-gtk
+coursier
 ctags
 dhcpcd
 docker
@@ -57,7 +58,7 @@ mpv
 mupdf
 nano
 ncpamixer
-neovim
+neovim-nightly
 nerd-fonts-source-code-pro
 netctl
 npm

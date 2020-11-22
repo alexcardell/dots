@@ -42,11 +42,11 @@ if has('autocmd')
       au InsertLeave * highlight StatusLine ctermfg=18 ctermbg=grey |
             \ highlight User2 ctermfg=grey ctermbg=18
 
-      au CursorHold * silent call CocActionAsync('highlight')
+      " au CursorHold * silent call CocActionAsync('highlight')
 
       au BufEnter * if &buftype == 'terminal' | :startinsert | endif
 
-      au VimEnter * let g:vimwiki_syntaxlocal_vars['markdown']['Link1'] = g:vimwiki_syntaxlocal_vars['default']['Link1']
+      " au VimEnter * let g:vimwiki_syntaxlocal_vars['markdown']['Link1'] = g:vimwiki_syntaxlocal_vars['default']['Link1']
 
     augroup END
   endfunction
