@@ -106,3 +106,6 @@
 [submodule "roles/dotfiles/files/.vim/pack/bundle/start/vimwiki"]
 	path = roles/dotfiles/files/.vim/pack/bundle/start/vimwiki
 	url = https://github.com/vimwiki/vimwiki.git
+[submodule "roles/dotfiles/files/.vim/pack/bundle/start/nvim-lspconfig"]
+	path = roles/dotfiles/files/.vim/pack/bundle/start/nvim-lspconfig
+	url = https://github.com/neovim/nvim-lspconfig
