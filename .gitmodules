@@ -58,21 +58,12 @@
 [submodule "roles/dotfiles/files/.vim/pack/bundle/start/--init"]
 	path = roles/dotfiles/files/.vim/pack/bundle/start/--init
 	url = https://github.com/autozimu/LanguageClient-neovim.git
-[submodule "roles/dotfiles/files/.vim/pack/bundle/start/ale"]
-	path = roles/dotfiles/files/.vim/pack/bundle/start/ale
-	url = https://github.com/dense-analysis/ale.git
 [submodule "roles/dotfiles/files/.vim/pack/bundle/start/fzf.vim"]
 	path = roles/dotfiles/files/.vim/pack/bundle/start/fzf.vim
 	url = https://github.com/junegunn/fzf.vim.git
-[submodule "roles/dotfiles/files/.vim/pack/bundle/start/coc.nvim"]
-	path = roles/dotfiles/files/.vim/pack/bundle/start/coc.nvim
-	url = https://github.com/neoclide/coc.nvim.git
 [submodule "roles/dotfiles/files/.vim/pack/bundle/start/vim-scala"]
 	path = roles/dotfiles/files/.vim/pack/bundle/start/vim-scala
 	url = https://github.com/derekwyatt/vim-scala.git
-[submodule "roles/dotfiles/files/.vim/pack/bundle/start/vista.vim"]
-	path = roles/dotfiles/files/.vim/pack/bundle/start/vista.vim
-	url = https://github.com/liuchengxu/vista.vim.git
 [submodule "roles/dotfiles/files/.vim/pack/bundle/start/vim-fugitive"]
 	path = roles/dotfiles/files/.vim/pack/bundle/start/vim-fugitive
 	url = https://github.com/tpope/vim-fugitive.git
