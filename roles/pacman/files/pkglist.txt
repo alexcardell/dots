@@ -9,6 +9,7 @@ autoconf
 autojump
 automake
 base
+bind
 binutils
 bison
 calibre
@@ -17,7 +18,6 @@ circleci-cli-bin
 clipit
 connman
 connman-gtk
-coursier
 ctags
 dhcpcd
 docker
@@ -54,6 +54,7 @@ make
 man-db
 man-pages
 mill
+mkinitcpio-nfs-utils
 mpv
 mupdf
 nano
@@ -61,14 +62,20 @@ ncpamixer
 neovim-nightly
 nerd-fonts-source-code-pro
 netctl
+network-manager-applet
+networkmanager-openvpn
+nfs-utils
 npm
+openresolv
 openvpn
 openvpn-nordvpn
+openvpn-update-systemd-resolved
 pacaur
 pasystray
 patch
 picom
 pkgconf
+postman-bin
 protonvpn-cli-ng
 pulseaudio
 pulseaudio-alsa
@@ -89,6 +96,7 @@ s-nail
 sbt
 screenfetch
 scrot
+slack-desktop
 sudo
 texinfo
 texlive-core
