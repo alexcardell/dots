@@ -8,7 +8,7 @@ command! -bang -nargs=? -complete=dir Files
 
 nnoremap <leader>fa :Files<CR>
 
-nnoremap <localleader>/ :Rg<Space>
+nnoremap <leader>f/ :Rg<Space>
 
 nnoremap <leader>fb :Buffers<CR>
 
