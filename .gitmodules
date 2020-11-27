@@ -112,3 +112,6 @@
 [submodule "roles/dotfiles/files/.vim/pack/bundle/start/nvim-metals"]
 	path = roles/dotfiles/files/.vim/pack/bundle/start/nvim-metals
 	url = https://github.com/scalameta/nvim-metals
+[submodule "roles/dotfiles/files/.vim/pack/bundle/start/completion-nvim"]
+	path = roles/dotfiles/files/.vim/pack/bundle/start/completion-nvim
+	url = https://github.com/nvim-lua/completion-nvim.git

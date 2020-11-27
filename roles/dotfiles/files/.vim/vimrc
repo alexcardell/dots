@@ -56,11 +56,13 @@ endif
 
 set rtp+=~/.fzf
 
-set completeopt-=preview
+" set completeopt-=preview
+set completeopt=menuone,noinsert,noselect
 
 let g:metals_server_version = '0.9.6'
 
 lua <<EOF
 vim.cmd('packadd nvim-lspconfig')
-require'lspconfig'.metals.setup{}
+vim.cmd('packadd completion-nvim')
+require'lspconfig'.metals.setup{on_attach=require'completion'.on_attach}
 EOF
