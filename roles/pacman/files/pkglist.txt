@@ -34,6 +34,7 @@ git
 go
 go-tools
 haskell-ide-engine
+haskell-language-server-bin
 htop
 i3-gaps
 i3blocks
