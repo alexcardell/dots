@@ -56,8 +56,7 @@ endif
 
 set rtp+=~/.fzf
 
-" set completeopt-=preview
-set completeopt=menuone,noinsert,noselect
+set completeopt=menuone,noinsert,noselect,preview
 
 let g:metals_server_version = '0.9.6'
 
