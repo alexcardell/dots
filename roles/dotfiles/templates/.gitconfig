@@ -73,3 +73,6 @@
   prompt = true
 [diff]
   tool = nvimdiff
+
+[pull]
+  rebase = true
