@@ -15,3 +15,16 @@
 "       \     "alternate": "src/main/scala/{}(Spec|Test)?.scala"
 "       \   }
 "       \ }}
+
+"""""""""""""
+" Scala
+"{
+"  "src/main/scala/*.scala": {
+"    "type": "source",
+"    "alternate": "src/test/scala/{}Spec.scala"
+"  },
+"  "src/test/scala/*Spec.scala": {
+"    "type": "test",
+"    "alternate": "src/main/scala/{}.scala"
+"  }
+"}
