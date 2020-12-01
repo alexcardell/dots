@@ -6,7 +6,7 @@ nnoremap <silent> <localleader>l    <cmd>lua vim.lsp.diagnostic.set_loclist()<CR
 nnoremap <silent> <localleader>i    <cmd>lua vim.lsp.buf.implementation()<CR>
 nnoremap <silent> <localleader>r    <cmd>lua vim.lsp.buf.references()<CR>
 nnoremap <silent> <localleader>ws   <cmd>lua vim.lsp.buf.workspace_symbol()<CR>
-nnoremap <silent> <localleader>rn   <cmd>lua vim.lsp.buf.rename()<CR>
+nnoremap <silent> <localleader>R    <cmd>lua vim.lsp.buf.rename()<CR>
 nnoremap <silent> <localleader>ff   <cmd>lua vim.lsp.buf.formatting()<CR>
 nnoremap <silent> <localleader>ca   <cmd>lua vim.lsp.buf.code_action()<CR>
 
