@@ -30,8 +30,8 @@ function! me#statusline() abort
   set statusline+=%#StatusLine#
   " branch information
   set statusline+=\ \ %{fugitive#head()}
-  " powerline symbol TODO: put unicode for this symbol in comment
-  set statusline+=\ %#User2#
+  " powerline symbol
+  set statusline+=\ %#User2#
   " text highlight
   set statusline+=%#CursorColumn#
   " file
