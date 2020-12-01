@@ -9,6 +9,7 @@ autoconf
 autojump
 automake
 base
+bind
 binutils
 bison
 calibre
