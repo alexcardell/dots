@@ -115,3 +115,6 @@
 [submodule "roles/dotfiles/files/.vim/pack/bundle/start/completion-nvim"]
 	path = roles/dotfiles/files/.vim/pack/bundle/start/completion-nvim
 	url = https://github.com/nvim-lua/completion-nvim.git
+[submodule "roles/dotfiles/files/.vim/pack/bundle/start/nvim-dap"]
+	path = roles/dotfiles/files/.vim/pack/bundle/start/nvim-dap
+	url = https://github.com/mfussenegger/nvim-dap
