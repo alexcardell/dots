@@ -60,6 +60,10 @@ PATH=$PATH:$HOME/.zsh/bin
 # Manually installed executables
 PATH=$PATH:$HOME/.bin
 PATH=$PATH:$HOME/.local/bin
+
+## TEMP to get neovim from source
+PATH=$PATH:$HOME/Code/vendor/neovim/build/bin
+
 # Current directory node_modules
 PATH=$PATH:node_modules/.bin
 
