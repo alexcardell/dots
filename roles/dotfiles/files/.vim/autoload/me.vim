@@ -44,8 +44,10 @@ function! me#statusline() abort
   set statusline+=%#LineNr#
   " vista function
   " set statusline+=%{me#nearestFunction()}
+  " metals
+  set statusline+=%{metals#status()}
   " word count
-  set statusline+=[%{me#wordcount()}]
+  set statusline+=\ [%{me#wordcount()}]
   " coc
   " set statusline+=%{coc#status()}
   " set statusline+=%{get(b:,'coc_current_function','')}

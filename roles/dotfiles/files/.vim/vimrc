@@ -57,17 +57,3 @@ endif
 set rtp+=~/.fzf
 
 set completeopt=menuone,noinsert,noselect
-
-let g:metals_server_version = '0.9.6'
-
-lua <<EOF
-  local lsp = require'lspconfig'
-  local comp = require'completion'
-
-  lsp.dockerls.setup{on_attach=comp.on_attach} -- dockerfile
-  lsp.hls.setup{on_attach=comp.on_attach} -- haskell
-  lsp.jdtls.setup{on_attach=comp.on_attach} -- java
-  lsp.metals.setup{on_attach=comp.on_attach} -- scala
-  lsp.tsserver.setup{on_attach=comp.on_attach} -- typescript
-  lsp.vimls.setup{on_attach=comp.on_attach} -- vimscript
-EOF
