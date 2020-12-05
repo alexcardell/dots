@@ -4,6 +4,7 @@ adobe-source-code-pro-fonts
 alsa-utils
 ansible-aur-git
 arc-gtk-theme
+asciinema
 auracle-git
 autoconf
 autojump
@@ -14,7 +15,6 @@ binutils
 bison
 calibre
 chromium
-circleci-cli-bin
 clipit
 connman
 connman-gtk
@@ -32,9 +32,7 @@ fzf
 gcc
 gendesk
 git
-go
 go-tools
-haskell-ide-engine
 haskell-language-server-bin
 htop
 i3-gaps
@@ -56,12 +54,10 @@ m4
 make
 man-db
 man-pages
-mill
 mpv
 mupdf
 nano
 ncpamixer
-neovim-git
 nerd-fonts-source-code-pro
 netctl
 networkmanager-openvpn
