@@ -1,5 +1,4 @@
 let g:metals_server_version = '0.9.7'
-let g:metals_decoration_color = 'WarningMsg'
 
 lua <<EOF
 
