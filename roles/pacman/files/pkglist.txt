@@ -2,17 +2,18 @@ acpi
 acpilight
 adobe-source-code-pro-fonts
 alsa-utils
+android-file-transfer
 ansible-aur-git
 arc-gtk-theme
 asciinema
 auracle-git
 autoconf
-autojump
 automake
 base
 bind
 binutils
 bison
+bitwarden
 calibre
 chromium
 clipit
@@ -22,6 +23,8 @@ ctags
 dhcpcd
 docker
 docker-compose
+element-desktop
+elinks
 etckeeper
 fakeroot
 feh
@@ -35,6 +38,7 @@ git
 go-tools
 haskell-language-server-bin
 htop
+hub
 i3-gaps
 i3blocks
 i3blocks-contrib-git
@@ -46,6 +50,7 @@ jfsutils
 lastpass
 lastpass-cli
 libtool
+links
 linux
 linux-firmware
 logrotate
@@ -72,13 +77,13 @@ perl-json-parse
 picom
 pkgconf
 postman-bin
-protonvpn-cli-ng
+protonvpn-linux-gui
 pulseaudio
 pulseaudio-alsa
-python
 python-grip-git
 python-pip
 python2-pip
+python38
 qbittorrent
 ranger
 redshift
@@ -92,6 +97,7 @@ s-nail
 sbt
 screenfetch
 scrot
+signal-desktop
 slack-desktop
 sudo
 texinfo
@@ -104,6 +110,7 @@ tree
 ttf-roboto
 unclutter
 usbutils
+veracrypt
 vi
 vim
 vlc
@@ -117,5 +124,6 @@ xorg-xinput
 xss-lock
 xtitle
 yarn
+zeal
 zip
 zsh
