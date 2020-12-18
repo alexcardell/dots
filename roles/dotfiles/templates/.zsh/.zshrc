@@ -225,6 +225,10 @@ alias pbp='pbpaste'
 alias ll='ls --color=auto --group-directories-first -alh'
 alias ls='ls --color=auto --group-directories-first'
 alias open='xdg-open'
+
+alias vpnon='systemctl start openvpn-client@work.service'
+alias vpnoff='systemctl stop openvpn-client@work.service'
+alias vpns='systemctl status openvpn-client@work.service'
 {% endif %}
 
 [ -f ~/.fzf/bin/fzf ] \
@@ -237,12 +241,12 @@ alias open='xdg-open'
 [ -f $ZDOTDIR/lib/theme.sh ] && . $ZDOTDIR/lib/theme.sh
 
 {% if arch %}
-[ -f /usr/share/autojump/autojump.zsh ] \
-  && . /usr/share/autojump/autojump.zsh
+# [ -f /usr/share/autojump/autojump.zsh ] \
+#   && . /usr/share/autojump/autojump.zsh
 {% endif %}
 {% if darwin %}
-[ -f /usr/local/etc/profile.d/autojump.sh ] \
-  && . /usr/local/etc/profile.d/autojump.sh
+# [ -f /usr/local/etc/profile.d/autojump.sh ] \
+#   && . /usr/local/etc/profile.d/autojump.sh
 {% endif %}
 
 [ -f $ZDOTDIR/lib/zsh-autosuggestions/zsh-autosuggestions.zsh ] \
