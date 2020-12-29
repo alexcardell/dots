@@ -118,3 +118,6 @@
 [submodule "roles/dotfiles/files/.vim/pack/bundle/start/nvim-dap"]
 	path = roles/dotfiles/files/.vim/pack/bundle/start/nvim-dap
 	url = https://github.com/mfussenegger/nvim-dap
+[submodule "roles/dotfiles/files/.vim/pack/bundle/start/editorconfig-vim"]
+	path = roles/dotfiles/files/.vim/pack/bundle/start/editorconfig-vim
+	url = https://github.com/editorconfig/editorconfig-vim.git
