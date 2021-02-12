@@ -7,6 +7,7 @@ ansible-aur-git
 arc-gtk-theme
 asciinema
 auracle-git
+authy
 autoconf
 automake
 base
@@ -15,18 +16,18 @@ binutils
 bison
 bitwarden
 calibre
-chromium
 clipit
 connman
 connman-gtk
+coursier
 ctags
 dhcpcd
 docker
 docker-compose
 element-desktop
-elinks
 etckeeper
 fakeroot
+fd
 feh
 firefox-developer-edition
 flex
@@ -35,8 +36,11 @@ fzf
 gcc
 gendesk
 git
+go-jira-bin
 go-tools
+google-chrome
 haskell-language-server-bin
+hledger
 htop
 hub
 i3-gaps
@@ -50,7 +54,6 @@ jfsutils
 lastpass
 lastpass-cli
 libtool
-links
 linux
 linux-firmware
 logrotate
@@ -63,6 +66,7 @@ mpv
 mupdf
 nano
 ncpamixer
+neovim-nightly-bin
 nerd-fonts-source-code-pro
 netctl
 networkmanager-openvpn
@@ -80,12 +84,11 @@ postman-bin
 protonvpn-linux-gui
 pulseaudio
 pulseaudio-alsa
-python-grip-git
-python-pip
-python2-pip
-python38
+python
 qbittorrent
+qutebrowser
 ranger
+reason-language-server
 redshift
 refind
 reiserfsprogs
@@ -99,6 +102,8 @@ screenfetch
 scrot
 signal-desktop
 slack-desktop
+squashfs-tools
+stack
 sudo
 texinfo
 texlive-core
@@ -126,4 +131,5 @@ xtitle
 yarn
 zeal
 zip
+zsa-wally-cli
 zsh
