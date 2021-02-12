@@ -30,9 +30,6 @@ if has('autocmd')
       " Enable spellchecking
       au FileType markdown,text call me#spell()
 
-      " Update word count for statusline
-      au CursorHold,CursorHoldI * call me#update_wordcount()
-
       " Allow comment highlights for json
       " Bucklescript and Coc both allow comments in their json files
       au FileType json syntax match jsonComment "//\.\+\$"

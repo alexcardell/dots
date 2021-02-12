@@ -46,11 +46,6 @@ function! me#statusline() abort
   " set statusline+=%{me#nearestFunction()}
   " metals
   set statusline+=%{metals#status()}
-  " word count
-  set statusline+=\ [%{me#wordcount()}]
-  " coc
-  " set statusline+=%{coc#status()}
-  " set statusline+=%{get(b:,'coc_current_function','')}
   " filetype
   set statusline+=\ %y
   " encoding
@@ -171,19 +166,4 @@ endfunction
 function! me#scratch(...) abort
   let scratch_file = "scratch"
   exe 'split /tmp/' . scratch_file
-endfunction
-
-let g:word_count='0'
-function! me#wordcount() abort
-  return 'wc:' . g:word_count
-endfunction
-
-function! me#update_wordcount() abort
-  let lnum = 1
-  let n = 0
-  while lnum <= line('$')
-    let n = n + len(split(getline(lnum)))
-    let lnum = lnum + 1
-  endwhile
-  let g:word_count = n
 endfunction
