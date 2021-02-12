@@ -4,51 +4,13 @@ lua <<EOF
 
 local lsp    = require'lspconfig'
 local comp   = require'completion'
-local metals = require'metals'
-local setup = require'metals.setup'
-local M      = {}
-
-M.on_attach = function()
-    comp.on_attach()
-    setup.auto_commands()
-  end
-
-lsp.metals.setup{
-  on_attach    = M.on_attach;
-  init_options = {
-    -- If you set this, make sure to have the `metals#status()` function
-    -- in your statusline, or you won't see any status messages
-    statusBarProvider            = "on";
-    inputBoxProvider             = true;
-    quickPickProvider            = true;
-    executeClientCommandProvider = true;
-    decorationProvider           = true;
-    didFocusProvider             = true;
-    debuggingProvider            = true;
-  };
-
-  handlers = {
-    ["textDocument/hover"]          = metals['textDocument/hover'];
-    ["metals/status"]               = metals['metals/status'];
-    ["metals/inputBox"]             = metals['metals/inputBox'];
-    ["metals/quickPick"]            = metals['metals/quickPick'];
-    ["metals/executeClientCommand"] = metals["metals/executeClientCommand"];
-    ["metals/publishDecorations"]   = metals["metals/publishDecorations"];
-    ["metals/didFocusTextDocument"] = metals["metals/didFocusTextDocument"];
-  };
-
-  settings = {
-    showImplicitArguments = true;
-    showInferredType = true;
-    superMethodLensesEnabled = true;
-  };
-}
 
 lsp.dockerls.setup{on_attach=comp.on_attach}
 lsp.hls.setup{on_attach=comp.on_attach}
 lsp.jdtls.setup{on_attach=comp.on_attach}
 lsp.tsserver.setup{on_attach=comp.on_attach}
 lsp.vimls.setup{on_attach=comp.on_attach}
+lsp.reasonls.setup{on_attach=comp.on_attach}
 
 EOF
 

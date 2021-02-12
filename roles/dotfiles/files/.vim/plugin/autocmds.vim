@@ -48,6 +48,7 @@ if has('autocmd')
 
       " au VimEnter * let g:vimwiki_syntaxlocal_vars['markdown']['Link1'] = g:vimwiki_syntaxlocal_vars['default']['Link1']
 
+      au FileType scala,sbt lua require("metals").initialize_or_attach(require("metals_config"))
     augroup END
   endfunction
 
