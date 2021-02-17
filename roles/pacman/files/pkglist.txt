@@ -9,6 +9,7 @@ asciinema
 auracle-git
 authy
 autoconf
+autojump
 automake
 base
 bind
@@ -131,5 +132,6 @@ xtitle
 yarn
 zeal
 zip
+zsa-wally
 zsa-wally-cli
 zsh
