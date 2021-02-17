@@ -1,0 +1,7 @@
+# vim: ft=zsh:
+
+if [[ ${@[1]} == 'new' && -z ${@[2]} ]]; then
+  tmux new -s $(basename $(pwd))
+else
+  tmux ${@}
+fi
