@@ -241,12 +241,12 @@ alias vpns='systemctl status openvpn-client@work.service'
 [ -f $ZDOTDIR/lib/theme.sh ] && . $ZDOTDIR/lib/theme.sh
 
 {% if arch %}
-# [ -f /usr/share/autojump/autojump.zsh ] \
-#   && . /usr/share/autojump/autojump.zsh
+[ -f /usr/share/autojump/autojump.zsh ] \
+  && . /usr/share/autojump/autojump.zsh
 {% endif %}
 {% if darwin %}
-# [ -f /usr/local/etc/profile.d/autojump.sh ] \
-#   && . /usr/local/etc/profile.d/autojump.sh
+[ -f /usr/local/etc/profile.d/autojump.sh ] \
+  && . /usr/local/etc/profile.d/autojump.sh
 {% endif %}
 
 [ -f $ZDOTDIR/lib/zsh-autosuggestions/zsh-autosuggestions.zsh ] \
@@ -259,7 +259,7 @@ bindkey "^P" autosuggest-accept
 [ -s $HOME/.jabba/jabba.sh ] && . $HOME/.jabba/jabba.sh
 
 # fnm
-eval "`fnm env --use-on-cd`"
+eval "$(fnm env --use-on-cd)"
 
 # Autoload custom functions
 fpath=("$ZDOTDIR/autoloaded" $fpath)
