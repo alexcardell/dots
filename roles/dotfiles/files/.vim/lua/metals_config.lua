@@ -4,9 +4,9 @@ local metals = require'metals'
 
 M = metals.bare_config
 
-M.on_attach = function()
+M.on_attach = function(client, bufnr)
     comp.on_attach()
-    -- setup.auto_commands()
+    metals.setup_dap()
   end
 
 M.init_options = {
