@@ -50,3 +50,6 @@
     force=yes
     follow=false
   with_items: "{{ symlinks }}"
+
+- name: Install vim plugins
+  shell: 'nvim --headless +PlugInstall +qall'

@@ -7,6 +7,3 @@ let g:vimwiki_list = [{
       \'auto_toc': 1,
       \'auto_tags': 1,
       \}]
-
-
-call vimwiki#vars#init()

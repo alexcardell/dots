@@ -119,6 +119,7 @@ tmux
 tmuxp
 tor
 tree
+tree-sitter
 ttf-roboto
 unclutter
 usbutils

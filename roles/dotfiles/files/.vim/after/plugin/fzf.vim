@@ -3,7 +3,7 @@ command! -bang -nargs=? -complete=dir Files
         \ 'options': [
         \ '--inline-info',
         \ '--preview',
-        \ '~/.vim/pack/bundle/start/fzf.vim/bin/preview.sh {}'
+        \ '~/.vim/plug/fzf.vim/bin/preview.sh {}'
         \ ]}, <bang>0)
 
 nnoremap <leader>fa :Files<CR>

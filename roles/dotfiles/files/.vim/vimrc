@@ -39,21 +39,62 @@ if filereadable(s:vimrc_local)
   execute 'source ' . s:vimrc_local
 endif
 
-" graceful degradation for plugins
-if exists('&loadplugins')
-  if has('packages')
-     packloadall
-
-     if !has('nvim')
-       packadd markdown-preview.nvim
-     endif
-  else
-    source $HOME/.vim/pack/bundle/opt/vim-pathogen/autoload/pathogen.vim
-    call pathogen#infect('pack/bundle/start/{}')
-  endif
-
-endif
-
 set rtp+=~/.fzf
 
 set completeopt=menuone,noinsert,noselect
+
+call plug#begin('~/.vim/plug')
+
+" Basic editing
+Plug 'junegunn/fzf.vim'
+Plug 'kshenoy/vim-signature'
+Plug 'mbbill/undotree'
+Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTreeFind'] }
+Plug 'tommcdo/vim-lion'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-surround'
+Plug 'wincent/loupe'
+
+" VCS
+Plug 'airblade/vim-gitgutter'
+Plug 'shumphrey/fugitive-gitlab.vim'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rhubarb'
+
+" Appearance
+Plug 'chriskempson/base16-vim'
+Plug 'lukas-reineke/indent-blankline.nvim', { 'branch': 'lua' }
+
+" Syntax
+Plug 'editorconfig/editorconfig-vim'
+Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
+Plug 'derekwyatt/vim-scala', { 'for': 'scala' }
+Plug 'elzr/vim-json', { 'for': 'json' }
+Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
+Plug 'mxw/vim-jsx', { 'for': 'javascript.jsx' }
+Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
+Plug 'peitalin/vim-jsx-typescript', { 'for': 'typescript' }
+Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
+Plug 'reasonml-editor/vim-reason-plus', { 'for': 'reason' }
+Plug 'rust-lang/rust.vim', { 'for': 'rust' }
+
+" LSP/DAP
+Plug 'neovim/nvim-lspconfig'
+Plug 'nvim-lua/completion-nvim'
+Plug 'mfussenegger/nvim-dap'
+Plug 'theHamsta/nvim-dap-virtual-text'
+Plug 'scalameta/nvim-metals'
+Plug 'kosayoda/nvim-lightbulb'
+
+" Misc
+Plug 'SirVer/ultisnips'
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'junegunn/goyo.vim'
+Plug 'junegunn/limelight.vim'
+Plug 'ryanoasis/vim-devicons'
+Plug 'tpope/vim-projectionist'
+Plug 'vimwiki/vimwiki'
+" Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
+
+call plug#end()
