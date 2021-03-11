@@ -1,123 +1,15 @@
-[submodule "roles/dotfiles/files/.vim/pack/bundle/opt/vim-pathogen"]
-	path = roles/dotfiles/files/.vim/pack/bundle/opt/vim-pathogen
-	url = https://github.com/tpope/vim-pathogen.git
-[submodule "roles/dotfiles/files/.vim/pack/bundle/start/vim-tmux-navigator"]
-	path = roles/dotfiles/files/.vim/pack/bundle/start/vim-tmux-navigator
-	url = https://github.com/christoomey/vim-tmux-navigator.git
-[submodule "roles/dotfiles/files/.vim/pack/bundle/start/base16-vim"]
-	path = roles/dotfiles/files/.vim/pack/bundle/start/base16-vim
-	url = https://github.com/chriskempson/base16-vim.git
-[submodule "roles/dotfiles/files/.vim/pack/bundle/start/loupe"]
-	path = roles/dotfiles/files/.vim/pack/bundle/start/loupe
-	url = https://github.com/wincent/loupe.git
-[submodule "roles/dotfiles/files/.vim/pack/bundle/start/vim-javascript"]
-	path = roles/dotfiles/files/.vim/pack/bundle/start/vim-javascript
-	url = https://github.com/pangloss/vim-javascript.git
-[submodule "roles/dotfiles/files/.vim/pack/bundle/start/vim-jsx"]
-	path = roles/dotfiles/files/.vim/pack/bundle/start/vim-jsx
-	url = https://github.com/mxw/vim-jsx.git
-[submodule "roles/dotfiles/files/.vim/pack/bundle/start/nerdtree"]
-	path = roles/dotfiles/files/.vim/pack/bundle/start/nerdtree
-	url = https://github.com/scrooloose/nerdtree.git
-[submodule "roles/dotfiles/files/.vim/pack/bundle/start/vim-surround"]
-	path = roles/dotfiles/files/.vim/pack/bundle/start/vim-surround
-	url = https://github.com/tpope/vim-surround.git
-[submodule "roles/dotfiles/files/.vim/pack/bundle/start/vim-signature"]
-	path = roles/dotfiles/files/.vim/pack/bundle/start/vim-signature
-	url = https://github.com/kshenoy/vim-signature.git
-[submodule "roles/dotfiles/files/.vim/pack/bundle/start/vim-projectionist"]
-	path = roles/dotfiles/files/.vim/pack/bundle/start/vim-projectionist
-	url = https://github.com/tpope/vim-projectionist.git
-[submodule "roles/dotfiles/files/.vim/pack/bundle/start/vim-json"]
-	path = roles/dotfiles/files/.vim/pack/bundle/start/vim-json
-	url = https://github.com/elzr/vim-json.git
-[submodule "roles/dotfiles/files/.vim/pack/bundle/start/vim-lion"]
-	path = roles/dotfiles/files/.vim/pack/bundle/start/vim-lion
-	url = https://github.com/tommcdo/vim-lion.git
 [submodule "roles/dotfiles/files/.zsh/zsh-autosuggestions"]
 	path = roles/dotfiles/files/.zsh/zsh-autosuggestions
 	url = https://github.com/zsh-users/zsh-autosuggestions.git
-[submodule "roles/dotfiles/files/.vim/pack/bundle/start/vim-commentary"]
-	path = roles/dotfiles/files/.vim/pack/bundle/start/vim-commentary
-	url = https://github.com/tpope/vim-commentary.git
 [submodule "roles/dotfiles/files/.zsh/fast-syntax-highlighting"]
 	path = roles/dotfiles/files/.zsh/fast-syntax-highlighting
 	url = https://github.com/zdharma/fast-syntax-highlighting.git
-[submodule "roles/dotfiles/files/.vim/pack/bundle/start/vim-gitgutter"]
-	path = roles/dotfiles/files/.vim/pack/bundle/start/vim-gitgutter
-	url = https://github.com/airblade/vim-gitgutter.git
-[submodule "roles/dotfiles/files/.vim/pack/bundle/opt/vim-prettier"]
-	path = roles/dotfiles/files/.vim/pack/bundle/opt/vim-prettier
-	url = https://github.com/prettier/vim-prettier
-[submodule "roles/dotfiles/files/.vim/pack/bundle/start/vim-reason-plus"]
-	path = roles/dotfiles/files/.vim/pack/bundle/start/vim-reason-plus
-	url = https://github.com/reasonml-editor/vim-reason-plus.git
-[submodule "roles/dotfiles/files/.vim/pack/bundle/start/ultisnips"]
-	path = roles/dotfiles/files/.vim/pack/bundle/start/ultisnips
-	url = https://github.com/SirVer/ultisnips.git
 [submodule "roles/dotfiles/files/.vim/pack/bundle/start/--init"]
 	path = roles/dotfiles/files/.vim/pack/bundle/start/--init
 	url = https://github.com/autozimu/LanguageClient-neovim.git
-[submodule "roles/dotfiles/files/.vim/pack/bundle/start/fzf.vim"]
-	path = roles/dotfiles/files/.vim/pack/bundle/start/fzf.vim
-	url = https://github.com/junegunn/fzf.vim.git
-[submodule "roles/dotfiles/files/.vim/pack/bundle/start/vim-scala"]
-	path = roles/dotfiles/files/.vim/pack/bundle/start/vim-scala
-	url = https://github.com/derekwyatt/vim-scala.git
-[submodule "roles/dotfiles/files/.vim/pack/bundle/start/vim-fugitive"]
-	path = roles/dotfiles/files/.vim/pack/bundle/start/vim-fugitive
-	url = https://github.com/tpope/vim-fugitive.git
-[submodule "roles/dotfiles/files/.vim/pack/bundle/start/vim-repeat"]
-	path = roles/dotfiles/files/.vim/pack/bundle/start/vim-repeat
-	url = https://github.com/tpope/vim-repeat.git
-[submodule "roles/dotfiles/files/.vim/pack/bundle/start/goyo.vim"]
-	path = roles/dotfiles/files/.vim/pack/bundle/start/goyo.vim
-	url = https://github.com/junegunn/goyo.vim.git
 [submodule "roles/dotfiles/files/.tmux/plugins/tpm"]
 	path = roles/dotfiles/files/.tmux/plugins/tpm
 	url = https://github.com/tmux-plugins/tpm
 [submodule "roles/dotfiles/files/.vim/pack/bundle/start/vim-markdown"]
 	path = roles/dotfiles/files/.vim/pack/bundle/start/vim-markdown
 	url = https://github.com/plasticboy/vim-markdown.git
-[submodule "roles/dotfiles/files/.vim/pack/bundle/start/limelight.vim"]
-	path = roles/dotfiles/files/.vim/pack/bundle/start/limelight.vim
-	url = https://github.com/junegunn/limelight.vim.git
-[submodule "roles/dotfiles/files/.vim/pack/bundle/start/vim-rhubarb"]
-	path = roles/dotfiles/files/.vim/pack/bundle/start/vim-rhubarb
-	url = https://github.com/tpope/vim-rhubarb.git
-[submodule "roles/dotfiles/files/.vim/pack/bundle/start/fugitive-gitlab.vim"]
-	path = roles/dotfiles/files/.vim/pack/bundle/start/fugitive-gitlab.vim
-	url = https://github.com/shumphrey/fugitive-gitlab.vim
-[submodule "roles/dotfiles/files/.vim/pack/bundle/start/rust.vim"]
-	path = roles/dotfiles/files/.vim/pack/bundle/start/rust.vim
-	url = https://github.com/rust-lang/rust.vim
-[submodule "roles/dotfiles/files/.vim/pack/bundle/start/vim-jsx-typescript"]
-	path = roles/dotfiles/files/.vim/pack/bundle/start/vim-jsx-typescript
-	url = https://github.com/peitalin/vim-jsx-typescript.git
-[submodule "roles/dotfiles/files/.vim/pack/bundle/start/undotree"]
-	path = roles/dotfiles/files/.vim/pack/bundle/start/undotree
-	url = https://github.com/mbbill/undotree.git
-[submodule "roles/dotfiles/files/.vim/pack/bundle/start/vim-devicons"]
-	path = roles/dotfiles/files/.vim/pack/bundle/start/vim-devicons
-	url = https://github.com/ryanoasis/vim-devicons.git
-[submodule "roles/dotfiles/files/.vim/pack/bundle/start/typescript-vim"]
-	path = roles/dotfiles/files/.vim/pack/bundle/start/typescript-vim
-	url = https://github.com/leafgarland/typescript-vim.git
-[submodule "roles/dotfiles/files/.vim/pack/bundle/start/vimwiki"]
-	path = roles/dotfiles/files/.vim/pack/bundle/start/vimwiki
-	url = https://github.com/vimwiki/vimwiki.git
-[submodule "roles/dotfiles/files/.vim/pack/bundle/start/nvim-lspconfig"]
-	path = roles/dotfiles/files/.vim/pack/bundle/start/nvim-lspconfig
-	url = https://github.com/neovim/nvim-lspconfig
-[submodule "roles/dotfiles/files/.vim/pack/bundle/start/nvim-metals"]
-	path = roles/dotfiles/files/.vim/pack/bundle/start/nvim-metals
-	url = https://github.com/scalameta/nvim-metals
-[submodule "roles/dotfiles/files/.vim/pack/bundle/start/completion-nvim"]
-	path = roles/dotfiles/files/.vim/pack/bundle/start/completion-nvim
-	url = https://github.com/nvim-lua/completion-nvim.git
-[submodule "roles/dotfiles/files/.vim/pack/bundle/start/nvim-dap"]
-	path = roles/dotfiles/files/.vim/pack/bundle/start/nvim-dap
-	url = https://github.com/mfussenegger/nvim-dap
-[submodule "roles/dotfiles/files/.vim/pack/bundle/start/editorconfig-vim"]
-	path = roles/dotfiles/files/.vim/pack/bundle/start/editorconfig-vim
-	url = https://github.com/editorconfig/editorconfig-vim.git
