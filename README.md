@@ -3,16 +3,15 @@
 Sets up a Python virtual environment then runs Ansible roles based on the
 current operating system.
 
-Designed for MacOS Mojave and Arch Linux.
+Designed for macOS Mojave and Arch Linux.
 
 ## Roles
 
 See role description files.
 
-- :file_cabinet: [dotfiles](./roles/dotfiles/description)
+- :computer: [dotfiles](./roles/dotfiles/description)
 - :package: [pacman](./roles/pacman/description)
 - :coffee: [homebrew](./roles/homebrew/description)
-- :computer: [vim](./roles/vim/description)
 - :keyboard: [code](./roles/code/description)
 - :link: [yarn](./roles/yarn/description)
 

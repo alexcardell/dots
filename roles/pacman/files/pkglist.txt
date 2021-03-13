@@ -21,6 +21,7 @@ bitwarden
 bloop
 calibre
 clipit
+cmake
 connman
 connman-gtk
 coursier
@@ -72,7 +73,6 @@ mpv
 mupdf
 nano
 ncpamixer
-neovim-nightly-bin
 nerd-fonts-source-code-pro
 netctl
 networkmanager-openvpn

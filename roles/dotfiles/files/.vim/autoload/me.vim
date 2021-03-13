@@ -60,12 +60,11 @@ function! me#highlights() abort
   highlight ModeMsg ctermfg = 0
   highlight StatusLine ctermfg=18 ctermbg=grey
   highlight User2 ctermfg=grey ctermbg=18
-  " faded
-  highlight User3 ctermfg=8
 
-  " Set coc virtual text to be dark
-  highlight link CocCodeLens User3
-  highlight link CocRustChainingHint CocCodeLens
+  highlight User3 ctermfg=8
+  highlight User4 ctermfg=19
+
+  highlight LightBulbFloatWin ctermfg=3
 
   if has('nvim')
     highlight Pmenu ctermfg=7 ctermbg=19
