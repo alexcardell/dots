@@ -8,7 +8,7 @@ tnoremap <Esc> <C-\><C-n>
 " To simulate |i_CTRL-R| in terminal-mode:
 tnoremap <expr> <C-R> '<C-\><C-N>"'.nr2char(getchar()).'pi'
 
-" To use `ALT+{h,j,k,l}` to navigate windows from any mode:
+" To use `CTRL+{h,j,k,l}` to navigate windows from any mode:
 tnoremap <C-h> <C-\><C-N><C-w>h
 tnoremap <C-j> <C-\><C-N><C-w>j
 tnoremap <C-k> <C-\><C-N><C-w>k

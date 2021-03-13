@@ -38,6 +38,8 @@ if has('autocmd')
 
       au CursorHold,CursorHoldI * lua require("nvim-lightbulb").update_lightbulb(require("lightbulb_config"))
 
+      au FileType markdown call pencil#init()
+
     augroup END
   endfunction
 
@@ -70,19 +72,11 @@ if has('autocmd')
 
     Limelight
 
-    " if exists('$TMUX')
-    "   silent !tmux set status off
-    " endif
-
     call me#spell()
 
   endfunction
 
   function! s:goyo_leave()
-    " if exists('$TMUX')
-    "   silent !tmux set status on
-    " endif
-
     Limelight!
 
     for [k, v] in items(s:settings)

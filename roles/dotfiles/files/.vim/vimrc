@@ -57,10 +57,10 @@ Plug 'tpope/vim-surround'
 Plug 'wincent/loupe'
 
 " VCS
-Plug 'airblade/vim-gitgutter'
-Plug 'shumphrey/fugitive-gitlab.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
+Plug 'shumphrey/fugitive-gitlab.vim'
+Plug 'airblade/vim-gitgutter'
 
 " Appearance
 Plug 'chriskempson/base16-vim'
@@ -75,9 +75,9 @@ Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 Plug 'mxw/vim-jsx', { 'for': 'javascript.jsx' }
 Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
 Plug 'peitalin/vim-jsx-typescript', { 'for': 'typescript' }
-Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 Plug 'reasonml-editor/vim-reason-plus', { 'for': 'reason' }
 Plug 'rust-lang/rust.vim', { 'for': 'rust' }
+
 
 " LSP/DAP
 Plug 'neovim/nvim-lspconfig'
@@ -87,6 +87,7 @@ Plug 'theHamsta/nvim-dap-virtual-text'
 Plug 'scalameta/nvim-metals'
 Plug 'kosayoda/nvim-lightbulb'
 
+
 " Misc
 Plug 'SirVer/ultisnips'
 Plug 'christoomey/vim-tmux-navigator'
@@ -94,7 +95,8 @@ Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 Plug 'ryanoasis/vim-devicons'
 Plug 'tpope/vim-projectionist'
-Plug 'vimwiki/vimwiki'
+Plug 'reedes/vim-pencil', { 'for': 'markdown' }
+" Plug 'vimwiki/vimwiki'
 " Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
 
 call plug#end()

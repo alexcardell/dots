@@ -6,23 +6,6 @@ function! me#zap() abort
   endfor
 endfunction
 
-function! me#helptags() abort
-  source $HOME/.vim/pack/bundle/opt/vim-pathogen/autoload/pathogen.vim
-  call pathogen#helptags()
-endfunction
-
-function! me#nearestFunction() abort
-  return get(b:, 'vista_nearest_method_or_function', '')
-endfunction
-
-function! me#spell() abort
-  setlocal spell spelllang=en_gb
-endfunction
-
-function! me#spelloff() abort
-  setlocal nospell
-endfunction
-
 function! me#statusline() abort
   " clear
   set statusline=
@@ -42,8 +25,6 @@ function! me#statusline() abort
   set statusline+=%=
   " faint text
   set statusline+=%#LineNr#
-  " vista function
-  " set statusline+=%{me#nearestFunction()}
   " metals
   set statusline+=%{metals#status()}
   " filetype
