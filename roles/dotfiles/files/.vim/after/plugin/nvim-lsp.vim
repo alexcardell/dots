@@ -10,6 +10,32 @@ lsp.hls.setup{on_attach=comp.on_attach}
 lsp.jdtls.setup{on_attach=comp.on_attach}
 lsp.tsserver.setup{on_attach=comp.on_attach}
 lsp.vimls.setup{on_attach=comp.on_attach}
+
+-- Lua
+lsp.sumneko_lua.setup {
+  on_attach=comp.on_attach;
+  cmd = {
+    "/home/alex/Code/vendor/lua-language-server/bin/Linux/lua-language-server",
+    "-E",
+    "/home/alex/Code/vendor/lua-language-server/main.lua"
+  };
+  settings = {
+    Lua = {
+      runtime = {
+        version = 'LuaJIT', -- since using mainly for neovim
+        path = vim.split(package.path, ';')
+      },
+      diagnostics = {globals = {'vim', 'it'}},
+      workspace = {
+        -- Make the server aware of Neovim runtime files
+        library = {
+          [vim.fn.expand('$VIMRUNTIME/lua')] = true,
+          [vim.fn.expand('$VIMRUNTIME/lua/vim/lsp')] = true
+        }
+      }
+    }
+  }
+}
 -- lsp.reasonls.setup{on_attach=comp.on_attach}
 
 EOF

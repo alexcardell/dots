@@ -19,6 +19,7 @@ binutils
 bison
 bitwarden
 bloop
+bluez-utils
 calibre
 clipit
 cmake
@@ -28,6 +29,7 @@ coursier
 ctags
 cups
 dhcpcd
+discord
 docker
 docker-compose
 element-desktop
@@ -76,6 +78,7 @@ ncpamixer
 nerd-fonts-source-code-pro
 netctl
 networkmanager-openvpn
+ninja
 npm
 openvpn
 openvpn-nordvpn
@@ -91,6 +94,7 @@ postman-bin
 protonvpn-linux-gui
 pulseaudio
 pulseaudio-alsa
+pulseaudio-bluetooth
 python
 qbittorrent
 qutebrowser
@@ -120,6 +124,7 @@ tmuxp
 tor
 tree
 tree-sitter
+ttf-nerd-fonts-symbols-mono
 ttf-roboto
 unclutter
 usbutils
