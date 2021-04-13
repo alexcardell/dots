@@ -1,4 +1,4 @@
-let g:metals_server_version = '0.10.0+45-3ada84f5-SNAPSHOT'
+let g:metals_server_version = '0.10.1'
 
 lua <<EOF
 
