@@ -1,4 +1,4 @@
-let g:indent_blankline_enabled = v:true
+let g:indent_blankline_enabled = v:false
 let g:indent_blankline_char="┃"   " (U+2503 vertical line)
 let g:indent_blankline_char_highlight = 'User4'
 let g:indent_blankline_show_first_indent_level = v:false
