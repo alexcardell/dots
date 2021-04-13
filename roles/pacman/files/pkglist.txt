@@ -21,6 +21,7 @@ bitwarden
 bloop
 bluez-utils
 calibre
+chromium
 clipit
 cmake
 connman
@@ -78,7 +79,6 @@ ncpamixer
 nerd-fonts-source-code-pro
 netctl
 networkmanager-openvpn
-ninja
 npm
 openvpn
 openvpn-nordvpn
