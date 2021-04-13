@@ -4,6 +4,7 @@
 export ZDOTDIR=$HOME/.zsh
 export HISTSIZE=10000
 export SAVEHIST=$HISTSIZE
+export HISTFILE=$HOME/.zsh_history
 
 # Editor #
 ###########
