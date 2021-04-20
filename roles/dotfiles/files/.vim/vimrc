@@ -97,7 +97,12 @@ Plug 'tpope/vim-projectionist'
 
 " Prose
 Plug 'reedes/vim-pencil', { 'for': 'markdown' }
+Plug 'lervag/wiki.vim'
 " Plug 'vimwiki/vimwiki'
 " Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
 
 call plug#end()
+
+let g:wiki_root = '~/wiki'
+let g:wiki_filetypes = ['md']
+let g:wiki_link_target_type = 'wiki'
