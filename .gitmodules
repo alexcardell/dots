@@ -4,12 +4,6 @@
 [submodule "roles/dotfiles/files/.zsh/fast-syntax-highlighting"]
 	path = roles/dotfiles/files/.zsh/fast-syntax-highlighting
 	url = https://github.com/zdharma/fast-syntax-highlighting.git
-[submodule "roles/dotfiles/files/.vim/pack/bundle/start/--init"]
-	path = roles/dotfiles/files/.vim/pack/bundle/start/--init
-	url = https://github.com/autozimu/LanguageClient-neovim.git
 [submodule "roles/dotfiles/files/.tmux/plugins/tpm"]
 	path = roles/dotfiles/files/.tmux/plugins/tpm
 	url = https://github.com/tmux-plugins/tpm
-[submodule "roles/dotfiles/files/.vim/pack/bundle/start/vim-markdown"]
-	path = roles/dotfiles/files/.vim/pack/bundle/start/vim-markdown
-	url = https://github.com/plasticboy/vim-markdown.git
