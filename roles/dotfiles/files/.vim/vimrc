@@ -88,18 +88,18 @@ Plug 'scalameta/nvim-metals'
 Plug 'kosayoda/nvim-lightbulb'
 
 " Misc
-Plug 'SirVer/ultisnips'
+" Plug 'SirVer/ultisnips'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 Plug 'ryanoasis/vim-devicons'
 Plug 'tpope/vim-projectionist'
+" Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
 
 " Prose
-Plug 'reedes/vim-pencil', { 'for': 'markdown' }
 Plug 'lervag/wiki.vim'
-" Plug 'vimwiki/vimwiki'
-" Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
+Plug 'reedes/vim-pencil', { 'for': 'markdown' }
+Plug 'iamcco/markdown-preview.nvim', { 'for': 'markdown', 'do': 'cd app && yarn install' }
 
 call plug#end()
 
