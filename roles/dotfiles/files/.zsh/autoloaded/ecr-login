@@ -1,0 +1,13 @@
+#!/bin/zsh
+set -eu
+
+region="eu-west-1"
+
+echo 'getting account id'
+account=$(aws sts get-caller-identity | jq -r '.Account')
+
+echo "logging into region eu-west-1, account ${account}"
+
+aws ecr get-login-password --region $region | \
+  docker login --username AWS --password-stdin \
+  "$account.dkr.ecr.$region.amazonaws.com"
