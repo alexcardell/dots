@@ -18,6 +18,7 @@ bind
 binutils
 bison
 bitwarden
+bitwarden-rofi
 bloop
 bluez-utils
 calibre

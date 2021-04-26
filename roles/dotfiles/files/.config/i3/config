@@ -27,6 +27,7 @@ bindsym $mod+q kill
 
 # start rofi
 bindsym $mod+space exec --no-startup-id rofi -combi-modi window#drun -show combi -modi combi -lines 19 -font "Source Code Pro 18"
+bindsym $mod+Control+space exec --no-startup-id bwmenu
 
 # change focus
 bindsym $mod+h focus left

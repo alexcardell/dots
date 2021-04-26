@@ -1,0 +1,9 @@
+configuration {
+	font: "Sauce Code Pro 18";
+	show-icons: true;
+	terminal: "urxvt";
+	hide-scrollbar: true;
+	fake-transparency: true;
+	theme: "./custom-nord.rasi";
+	kb-cancel: "Escape,Control+c";
+}
