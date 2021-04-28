@@ -1,7 +1,5 @@
 [[ -f ~/.Xresources ]] && xrdb -merge -I$HOME ~/.Xresources
-xset -b && \
-  xset s 24000 && \
-  xset -dpms && \
-  unclutter && \
-  picom && \
+xset -b
+unclutter & \
+picom & \
   exec i3
