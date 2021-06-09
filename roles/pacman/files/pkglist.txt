@@ -30,6 +30,7 @@ connman-gtk
 coursier
 ctags
 cups
+darktable
 dhcpcd
 discord
 docker
@@ -50,6 +51,7 @@ github-cli
 go-jira-bin
 go-tools
 google-chrome
+gphoto2
 haskell-language-server-bin
 hledger
 hplip
@@ -76,6 +78,7 @@ man-pages
 mpv
 mupdf
 nano
+native-image-jdk11-bin
 ncpamixer
 nerd-fonts-source-code-pro
 netctl
@@ -112,12 +115,14 @@ s-nail
 sbt
 screenfetch
 scrot
+shellcheck-bin
 signal-desktop
 slack-desktop
 squashfs-tools
 stack
 sudo
 texinfo
+texlab
 texlive-core
 texlive-moderncv-git
 tmux
@@ -130,6 +135,7 @@ ttf-nerd-fonts-symbols
 ttf-roboto
 unclutter
 usbutils
+vale-bin
 veracrypt
 vi
 vim
