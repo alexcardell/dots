@@ -1,6 +1,12 @@
 " toggle last buffer
 nnoremap <Leader><Leader> <C-^>
 
+" quickfix navigation
+nnoremap gn <cmd>cnext<cr>
+nnoremap gp <cmd>cprevious<cr>
+nnoremap g0 <cmd>cfirst<cr>
+nnoremap g9 <cmd>clast<cr>
+
 if has('nvim')
 " To map <Esc> to exit terminal-mode:
 tnoremap <Esc> <C-\><C-n>
