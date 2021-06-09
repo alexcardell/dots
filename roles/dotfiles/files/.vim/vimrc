@@ -110,6 +110,6 @@ Plug 'iamcco/markdown-preview.nvim', { 'for': 'markdown', 'do': 'cd app && yarn 
 
 call plug#end()
 
-let g:wiki_root = '~/wiki'
+let g:wiki_root = '~/Wiki'
 let g:wiki_filetypes = ['md']
 let g:wiki_link_target_type = 'wiki'
