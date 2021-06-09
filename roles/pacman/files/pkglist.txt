@@ -64,6 +64,7 @@ imagemagick
 inetutils
 iw
 jfsutils
+languagetool
 lastpass
 lastpass-cli
 libtool

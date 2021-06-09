@@ -109,7 +109,7 @@ function! me#focus() abort
 endfunction
 
 function! me#plaintext() abort
-  setlocal spell
+  setlocal spell spelllang=en_gb
 endfunction
 
 function! me#reviewqf(commit) abort
