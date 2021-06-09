@@ -121,6 +121,7 @@ slack-desktop
 squashfs-tools
 stack
 sudo
+tectonic-bin
 texinfo
 texlab
 texlive-core

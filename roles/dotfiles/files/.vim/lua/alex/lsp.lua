@@ -1,74 +1,67 @@
+local lsp    = require'lspconfig'
 local comp   = require'completion'
-local metals = require'metals'
 
-local M = {}
+-- Default on_attach
+-- Could actually be function(client, bufnr) but currently unused
+local on_attach = function()
+  comp.on_attach()
+end
 
-M.metals = metals.bare_config
+--------------------
+-- nvim-lspconfig --
+--------------------
 
-M.metals.on_attach = function(client, bufnr)
-    comp.on_attach()
-    metals.setup_dap()
-  end
+-- Dockerfile
+lsp.dockerls.setup{on_attach=on_attach}
 
-M.metals.init_options = {
-     -- If you set this, make sure to have the `metals#status()` function
-     -- in your statusline, or you won't see any status messages
-     statusBarProvider            = "on";
-     inputBoxProvider             = true;
-     quickPickProvider            = true;
-     executeClientCommandProvider = true;
-     decorationProvider           = true;
-     didFocusProvider             = true;
-     debuggingProvider            = true;
-   };
+-- Haskell
+lsp.hls.setup{on_attach=on_attach}
 
-   M.handlers = {
-     ["textDocument/hover"]          = metals['textDocument/hover'];
-     ["metals/status"]               = metals['metals/status'];
-     ["metals/inputBox"]             = metals['metals/inputBox'];
-     ["metals/quickPick"]            = metals['metals/quickPick'];
-     ["metals/executeClientCommand"] = metals["metals/executeClientCommand"];
-     ["metals/publishDecorations"]   = metals["metals/publishDecorations"];
-     ["metals/didFocusTextDocument"] = metals["metals/didFocusTextDocument"];
-   };
+-- Java
+lsp.jdtls.setup{on_attach=on_attach}
 
-M.metals.settings = {
-     showImplicitArguments = true;
-     showInferredType = true;
-     superMethodLensesEnabled = true;
-   };
+-- Typescript
+lsp.tsserver.setup{on_attach=on_attach}
 
-M.lightbulb = {
-    sign = {
-        enabled = false,
-        -- Priority of the gutter sign
-        priority = 10,
-    },
-    float = {
-        enabled = true,
-        -- Text to show in the popup float
-        text = "",
-        -- Available keys for window options:
-        -- - height     of floating window
-        -- - width      of floating window
-        -- - wrap_at    character to wrap at for computing height
-        -- - max_width  maximal width of floating window
-        -- - max_height maximal height of floating window
-        -- - pad_left   number of columns to pad contents at left
-        -- - pad_right  number of columns to pad contents at right
-        -- - pad_top    number of lines to pad contents at top
-        -- - pad_bottom number of lines to pad contents at bottom
-        -- - offset_x   x-axis offset of the floating window
-        -- - offset_y   y-axis offset of the floating window
-        -- - anchor     corner of float to place at the cursor (NW, NE, SW, SE)
-        -- - winblend   transparency of the window (0-100)
-        win_opts = { },
-    },
-    virtual_text = {
-        enabled = false,
-        -- Text to show at virtual text
-        text = "",
-    }
+-- vimscript
+lsp.vimls.setup{on_attach=on_attach}
+
+-- TeX/LaTeX
+lsp.texlab.setup{on_attach=on_attach}
+
+-- Rescript/ReasonML
+lsp.rescriptls.setup {
+  on_attach = on_attach;
+  cmd = {
+    "node",
+    "/home/alex/.vim/plug/vim-rescript/server/out/server.js",
+    "--stdio"
+  };
+  filetypes = {"rescript", "reason"};
 }
 
-return M
+-- Lua
+lsp.sumneko_lua.setup {
+  on_attach=on_attach;
+  cmd = {
+    "/home/alex/Code/vendor/lua-language-server/bin/Linux/lua-language-server",
+    "-E",
+    "/home/alex/Code/vendor/lua-language-server/main.lua"
+  };
+  settings = {
+    Lua = {
+      runtime = {
+        version = 'LuaJIT', -- since using mainly for neovim
+        path = vim.split(package.path, ';')
+      },
+      diagnostics = {globals = {'vim', 'it'}},
+      workspace = {
+        -- Make the server aware of Neovim runtime files
+        library = {
+          [vim.fn.expand('$VIMRUNTIME/lua')] = true,
+          [vim.fn.expand('$VIMRUNTIME/lua/vim/lsp')] = true
+        }
+      }
+    }
+  }
+}

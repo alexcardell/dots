@@ -34,13 +34,12 @@ if has('autocmd')
       " register sbt files as scala
       au BufNewFile,BufReadPost *.sbt set filetype=scala
 
-      au FileType scala,sbt lua require("metals").initialize_or_attach(require("alex.lsp").metals)
+      au FileType scala,sbt lua require("metals").initialize_or_attach(require("alex.metals").metals)
 
-      au CursorHold,CursorHoldI * lua require("nvim-lightbulb").update_lightbulb(require("alex.lsp").lightbulb)
+      au CursorHold,CursorHoldI * lua require("nvim-lightbulb").update_lightbulb(require("alex.lightbulb").lightbulb)
 
       " load nvim-lint
       au BufWritePost *.md lua require('alex.lint').try_lint()
-
 
       au FileType markdown call pencil#init()
 
@@ -75,8 +74,6 @@ if has('autocmd')
     highlight NonText ctermfg=8
 
     Limelight
-
-    call me#spell()
 
   endfunction
 
