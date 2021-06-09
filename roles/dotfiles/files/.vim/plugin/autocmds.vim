@@ -34,9 +34,13 @@ if has('autocmd')
       " register sbt files as scala
       au BufNewFile,BufReadPost *.sbt set filetype=scala
 
-      au FileType scala,sbt lua require("metals").initialize_or_attach(require("metals_config"))
+      au FileType scala,sbt lua require("metals").initialize_or_attach(require("alex.lsp").metals)
 
-      au CursorHold,CursorHoldI * lua require("nvim-lightbulb").update_lightbulb(require("lightbulb_config"))
+      au CursorHold,CursorHoldI * lua require("nvim-lightbulb").update_lightbulb(require("alex.lsp").lightbulb)
+
+      " load nvim-lint
+      au BufWritePost *.md lua require('alex.lint').try_lint()
+
 
       au FileType markdown call pencil#init()
 

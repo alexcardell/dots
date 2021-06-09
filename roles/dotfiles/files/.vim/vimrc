@@ -78,14 +78,18 @@ Plug 'peitalin/vim-jsx-typescript', { 'for': 'typescript' }
 Plug 'reasonml-editor/vim-reason-plus', { 'for': 'reason' }
 Plug 'rust-lang/rust.vim', { 'for': 'rust' }
 
-
-" LSP/DAP
+" LSP
 Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-lua/completion-nvim'
-Plug 'mfussenegger/nvim-dap'
-Plug 'theHamsta/nvim-dap-virtual-text'
 Plug 'scalameta/nvim-metals'
 Plug 'kosayoda/nvim-lightbulb'
+
+" Linting
+Plug 'mfussenegger/nvim-lint'
+
+" DAP
+Plug 'mfussenegger/nvim-dap'
+Plug 'theHamsta/nvim-dap-virtual-text'
 
 " Misc
 " Plug 'SirVer/ultisnips'

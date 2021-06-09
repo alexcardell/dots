@@ -125,7 +125,8 @@ tmuxp
 tor
 tree
 tree-sitter
-ttf-nerd-fonts-symbols-mono
+ttf-font-awesome-4
+ttf-nerd-fonts-symbols
 ttf-roboto
 unclutter
 usbutils
