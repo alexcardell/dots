@@ -77,6 +77,7 @@ Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
 Plug 'peitalin/vim-jsx-typescript', { 'for': 'typescript' }
 Plug 'reasonml-editor/vim-reason-plus', { 'for': 'reason' }
 Plug 'rust-lang/rust.vim', { 'for': 'rust' }
+Plug 'rescript-lang/vim-rescript'
 
 " LSP
 Plug 'neovim/nvim-lspconfig'

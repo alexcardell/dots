@@ -11,6 +11,17 @@ lsp.jdtls.setup{on_attach=comp.on_attach}
 lsp.tsserver.setup{on_attach=comp.on_attach}
 lsp.vimls.setup{on_attach=comp.on_attach}
 
+-- rescript
+lsp.rescriptls.setup {
+  on_attach = comp.on_attach;
+  cmd = {
+    "node",
+    "/home/alex/.vim/plug/vim-rescript/server/out/server.js",
+    "--stdio"
+  };
+  filetypes = {"rescript", "reason"};
+}
+
 -- Lua
 lsp.sumneko_lua.setup {
   on_attach=comp.on_attach;
@@ -36,7 +47,6 @@ lsp.sumneko_lua.setup {
     }
   }
 }
--- lsp.reasonls.setup{on_attach=comp.on_attach}
 
 EOF
 
