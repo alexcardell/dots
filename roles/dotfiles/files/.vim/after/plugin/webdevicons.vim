@@ -1,1 +1,1 @@
-let g:WebDevIconsUnicodeDecorateFileNodesPatternSymbols['.*\.rei\?$'] = 'ƛ'
+" let g:WebDevIconsUnicodeDecorateFileNodesPatternSymbols['.*\.rei\?$'] = 'ƛ'

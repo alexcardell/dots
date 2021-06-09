@@ -100,6 +100,8 @@ Plug 'junegunn/limelight.vim'
 Plug 'ryanoasis/vim-devicons'
 Plug 'tpope/vim-projectionist'
 " Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
+Plug 'kyazdani42/nvim-web-devicons'
+Plug 'folke/trouble.nvim'
 
 " Prose
 Plug 'lervag/wiki.vim'
