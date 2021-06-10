@@ -27,7 +27,16 @@ lsp.tsserver.setup{on_attach=on_attach}
 lsp.vimls.setup{on_attach=on_attach}
 
 -- TeX/LaTeX
-lsp.texlab.setup{on_attach=on_attach}
+lsp.texlab.setup{
+  on_attach=on_attach;
+  settings = {
+    build = {
+      executable = "tectonic";
+      args = { "%f", "--synctex", "--keep-logs", "--keep-intermediates"};
+      isContinuous = false;
+    };
+  };
+}
 
 -- Rescript/ReasonML
 lsp.rescriptls.setup {
