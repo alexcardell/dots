@@ -89,6 +89,7 @@ openvpn
 openvpn-nordvpn
 openvpn-update-systemd-resolved
 pacaur
+pacutils
 pasystray
 patch
 perl-json-parse
@@ -96,6 +97,7 @@ pgcli
 picom
 pkgconf
 postman-bin
+powerline-fonts
 protonvpn-linux-gui
 pulseaudio
 pulseaudio-alsa
