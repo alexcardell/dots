@@ -97,7 +97,7 @@ require('lspkind').init({
     symbol_map = {
       Text = '',
       Method = 'ƒ',
-      Function = '',
+      Function = 'ﬦ',
       Constructor = '',
       Variable = '',
       Class = '',
@@ -106,7 +106,7 @@ require('lspkind').init({
       Property = '',
       Unit = '',
       Value = '',
-      Enum = '了',
+      Enum = '謹',
       Keyword = '',
       Snippet = '﬌',
       Color = '',

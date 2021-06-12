@@ -63,7 +63,7 @@ Plug 'shumphrey/fugitive-gitlab.vim'
 Plug 'airblade/vim-gitgutter'
 
 " Appearance
-Plug 'chriskempson/base16-vim'
+Plug 'alexcardell/base16-vim'
 Plug 'lukas-reineke/indent-blankline.nvim', { 'branch': 'lua' }
 
 " Syntax
@@ -101,7 +101,7 @@ Plug 'theHamsta/nvim-dap-virtual-text'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
-" Plug 'ryanoasis/vim-devicons'
+Plug 'ryanoasis/vim-devicons'
 Plug 'tpope/vim-projectionist'
 " Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
 
