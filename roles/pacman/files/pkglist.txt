@@ -64,6 +64,7 @@ imagemagick
 inetutils
 iw
 jfsutils
+kitty
 languagetool
 lastpass
 lastpass-cli
@@ -113,7 +114,6 @@ reiserfsprogs
 ripgrep
 rofi
 ruby
-rxvt-unicode
 s-nail
 sbt
 screenfetch

@@ -17,10 +17,10 @@ font pango:Source Code Pro 13
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec --no-startup-id urxvt
+bindsym $mod+Return exec --no-startup-id kitty
 # start a floating terminal
-bindsym $mod+Shift+Return exec --no-startup-id urxvt -geometry 80x24 -name "floating_urxvt"
-for_window[class="URxvt" instance="floating_urxvt$"] floating enable
+bindsym $mod+Shift+Return exec --no-startup-id kitty -geometry 80x24 -name "floating_kitty"
+for_window[class="kitty" instance="floating_kitty$"] floating enable
 
 # kill focused window
 bindsym $mod+q kill
