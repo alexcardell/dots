@@ -49,12 +49,15 @@ call plug#begin('~/.vim/plug')
 Plug 'junegunn/fzf.vim'
 Plug 'kshenoy/vim-signature'
 Plug 'mbbill/undotree'
-Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTreeFind'] }
 Plug 'tommcdo/vim-lion'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'wincent/loupe'
+
+" Navigation
+" Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTreeFind'] }
+Plug 'kyazdani42/nvim-tree.lua', { 'on': [ 'NvimTreeToggle', 'NvimTreeFindFile' ] }
 
 " VCS
 Plug 'tpope/vim-fugitive'
@@ -101,7 +104,7 @@ Plug 'theHamsta/nvim-dap-virtual-text'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
-Plug 'ryanoasis/vim-devicons'
+" Plug 'ryanoasis/vim-devicons'
 Plug 'tpope/vim-projectionist'
 " Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
 
