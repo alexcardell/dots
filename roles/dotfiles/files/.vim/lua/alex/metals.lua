@@ -36,6 +36,7 @@ M.metals.settings = {
      showImplicitArguments = true;
      showInferredType = true;
      superMethodLensesEnabled = true;
+     showImplicitConversionsAndClasses = true;
    };
 
 return M

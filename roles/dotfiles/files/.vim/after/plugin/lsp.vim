@@ -1,4 +1,4 @@
-let g:metals_server_version = '0.10.3'
+let g:metals_server_version = '0.10.4'
 
 lua require('alex.lsp')
 
