@@ -6,6 +6,8 @@ nnoremap gn <cmd>cnext<cr>
 nnoremap gp <cmd>cprevious<cr>
 nnoremap g0 <cmd>cfirst<cr>
 nnoremap g9 <cmd>clast<cr>
+nnoremap g- <cmd>colder<cr>
+nnoremap g= <cmd>cnewer<cr>
 
 if has('nvim')
 " To map <Esc> to exit terminal-mode:
