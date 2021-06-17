@@ -41,7 +41,7 @@ if has('autocmd')
       " au BufEnter,CursorHold,CursorHoldI,InsertLeave * lua vim.lsp.codelens.refresh()
 
       " load nvim-lint
-      au BufWritePost *.md lua require('alex.lint').try_lint()
+      au BufEnter,CursorHold,CursorHoldI,InsertLeave *.md lua require('alex.lint').try_lint()
 
       au FileType markdown call pencil#init()
 
