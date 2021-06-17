@@ -19,8 +19,9 @@ floating_modifier $mod
 # start a terminal
 bindsym $mod+Return exec --no-startup-id kitty
 # start a floating terminal
-bindsym $mod+Shift+Return exec --no-startup-id kitty -geometry 80x24 -name "floating_kitty"
-for_window[class="kitty" instance="floating_kitty$"] floating enable
+bindsym $mod+Shift+Return exec --no-startup-id kitty --class="floating_kitty"
+for_window[class="floating_kitty"] floating enable
+for_window[class="floating_kitty"] resize set 1200 720
 
 # kill focused window
 bindsym $mod+q kill
