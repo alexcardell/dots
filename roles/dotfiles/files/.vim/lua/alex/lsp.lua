@@ -11,6 +11,9 @@ end
 -- nvim-lspconfig --
 --------------------
 
+-- Angular
+lsp.angularls.setup{on_attach=on_attach}
+
 -- Dockerfile
 lsp.dockerls.setup{on_attach=on_attach}
 
