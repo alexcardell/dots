@@ -122,3 +122,23 @@ require('lspkind').init(
   --  },
   --}
 )
+
+-------------------
+-- lsp_signature --
+-------------------
+-- require('lsp_signature').on_attach({
+--   bind = true,
+--   floating_window = true, -- show hint in a floating window, set to false for virtual text only mode
+--   fix_pos = false,  -- set to true, the floating window will not auto-close until finish all parameters
+--   hint_enable = true, -- virtual hint enable
+--   hint_prefix = "a",  -- Panda for parameter
+--   hint_scheme = "String",
+--   use_lspsaga = false,  -- set to true if you want to use lspsaga popup
+--   hi_parameter = "Search", -- how your parameter will be highlight
+--   max_height = 12,
+--   max_width = 120,
+--   handler_opts = {
+--     border = "single"   -- double, single, shadow, none
+--   },
+--   extra_trigger_chars = {"(", ","}
+-- })

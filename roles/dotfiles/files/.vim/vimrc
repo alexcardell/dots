@@ -92,11 +92,13 @@ Plug 'nvim-telescope/telescope.nvim'
 Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-lua/completion-nvim'
 Plug 'scalameta/nvim-metals'
-"" LSP visuals
+
+" LSP visuals
 Plug 'kosayoda/nvim-lightbulb'
 Plug 'onsails/lspkind-nvim'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'folke/trouble.nvim'
+Plug 'ray-x/lsp_signature.nvim'
 
 " Linting
 Plug 'mfussenegger/nvim-lint'
