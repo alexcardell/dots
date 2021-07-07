@@ -154,6 +154,8 @@ gaps inner 10
 
 # Bar
 bar {
+  # switching to nvidia GPU seemed to make this enormous,
+  # 13 is reasonable when I'm using that again
   font pango:Inconsolata, Font Awesome 18
   status_command i3blocks -c ~/.config/i3/i3blocks/i3blocks.conf
   colors {

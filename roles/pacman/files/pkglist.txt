@@ -86,6 +86,7 @@ nerd-fonts-source-code-pro
 netctl
 networkmanager-openvpn
 npm
+nvidia
 openvpn
 openvpn-nordvpn
 openvpn-update-systemd-resolved
