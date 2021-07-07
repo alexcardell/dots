@@ -82,6 +82,7 @@ mupdf
 nano
 native-image-jdk11-bin
 ncpamixer
+neovim
 nerd-fonts-source-code-pro
 netctl
 networkmanager-openvpn
