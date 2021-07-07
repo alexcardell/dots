@@ -38,7 +38,7 @@ if has('autocmd')
 
       au CursorHold,CursorHoldI * lua require("nvim-lightbulb").update_lightbulb(require("alex.lightbulb").lightbulb)
 
-      " au BufEnter,CursorHold,CursorHoldI,InsertLeave * lua vim.lsp.codelens.refresh()
+      au BufEnter,CursorHold,CursorHoldI,InsertLeave * lua vim.lsp.codelens.refresh()
 
       " load nvim-lint
       au BufEnter,CursorHold,CursorHoldI,InsertLeave *.md lua require('alex.lint').try_lint()

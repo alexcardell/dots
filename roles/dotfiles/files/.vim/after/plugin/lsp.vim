@@ -13,10 +13,11 @@ nnoremap <silent> <localleader>R   <cmd>lua vim.lsp.buf.rename()<CR>
 nnoremap <silent> <localleader>s   <cmd>lua vim.lsp.buf.workspace_symbol()<CR>
 nnoremap <silent> <localleader>f   <cmd>lua vim.lsp.buf.formatting()<CR>
 nnoremap <silent> <localleader>c   <cmd>lua vim.lsp.buf.code_action()<CR>
+nnoremap <silent> <localleader>c   <cmd>lua vim.lsp.codelens.run()<CR>
 
 " Delegate diagnostics to Trouble
-nnoremap <silent> <localleader>l   <cmd>Trouble lsp_document_diagnostics<CR>
-nnoremap <silent> <localleader>x   <cmd>Trouble lsp_workspace_diagnostics<CR>
+nnoremap <silent> <localleader>xl  <cmd>Trouble lsp_document_diagnostics<CR>
+nnoremap <silent> <localleader>xx  <cmd>Trouble lsp_workspace_diagnostics<CR>
 
 nnoremap <silent> <localleader>r   <cmd>lua vim.lsp.buf.references()<CR>
 nnoremap <silent> <localleader>T   <cmd>Trouble quickfix<CR>
