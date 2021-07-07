@@ -69,7 +69,7 @@ Plug 'airblade/vim-gitgutter'
 
 " Appearance
 Plug 'alexcardell/base16-vim'
-Plug 'lukas-reineke/indent-blankline.nvim', { 'branch': 'lua' }
+Plug 'lukas-reineke/indent-blankline.nvim'
 
 " Syntax
 Plug 'editorconfig/editorconfig-vim'

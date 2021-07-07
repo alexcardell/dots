@@ -61,10 +61,14 @@ function! me#highlights() abort
   highlight StatusLine ctermfg=18 ctermbg=grey
   highlight User2 ctermfg=grey ctermbg=18
 
+  " user groups
   highlight User3 ctermfg=8
   highlight User4 ctermfg=19
 
+  " plugins
   highlight LightBulbFloatWin ctermfg=3
+  highlight link IndentBlankLineChar User4
+
 
   if has('nvim')
     highlight Pmenu ctermfg=7 ctermbg=19
