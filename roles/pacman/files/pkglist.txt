@@ -150,6 +150,7 @@ w3m
 wpa_supplicant
 wxgtk3
 xclip
+xdotool
 xorg-server
 xorg-xinit
 xorg-xinput
