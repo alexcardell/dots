@@ -36,7 +36,7 @@ if has('autocmd')
 
       au FileType scala,sbt lua require("metals").initialize_or_attach(require("alex.metals").metals)
 
-      au CursorHold,CursorHoldI * lua require("nvim-lightbulb").update_lightbulb(require("alex.lightbulb").lightbulb)
+      " au CursorHold,CursorHoldI * lua require("nvim-lightbulb").update_lightbulb(require("alex.lightbulb").lightbulb)
 
       au BufEnter,CursorHold,CursorHoldI,InsertLeave * lua vim.lsp.codelens.refresh()
 
