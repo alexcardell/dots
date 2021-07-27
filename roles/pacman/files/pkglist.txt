@@ -71,6 +71,7 @@ lastpass-cli
 libtool
 linux
 linux-firmware
+linux-headers
 logrotate
 lxappearance
 m4
@@ -141,6 +142,7 @@ ttf-nerd-fonts-symbols
 ttf-roboto
 unclutter
 usbutils
+v4l2loopback-dkms
 vale-bin
 veracrypt
 vi
