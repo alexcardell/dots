@@ -1,13 +1,14 @@
+local comp   = require'completion'
 local metals = require'metals'
 
 local M = {}
 
 M.metals = metals.bare_config
 
-M.metals.on_attach = function()
+M.metals.on_attach = function(client, bufnr)
+    comp.on_attach()
     metals.setup_dap()
-    -- require('lsp_signature').on_attach(require'alex.signature')
-end
+  end
 
 M.metals.init_options = {
      -- If you set this, make sure to have the `metals#status()` function
