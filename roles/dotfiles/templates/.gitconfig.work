@@ -5,6 +5,9 @@
 [user]
   name = {{ work_git_user_name }}
   email = {{ work_git_user_email }}
+  {% if work_git_user_signingkey %}
+  signingkey = {{ work_git_user_signingkey }}
+  {% endif %}
 {% else %}
 # Work user name of email was not defined
 {% endif %}

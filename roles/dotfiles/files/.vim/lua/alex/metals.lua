@@ -20,16 +20,16 @@ M.metals.on_attach = function(client, bufnr)
 end
 
 M.metals.init_options = {
-     -- If you set this, make sure to have the `metals#status()` function
-     -- in your statusline, or you won't see any status messages
-     statusBarProvider            = "on";
-     inputBoxProvider             = true;
-     quickPickProvider            = true;
-     executeClientCommandProvider = true;
-     decorationProvider           = true;
-     didFocusProvider             = true;
-     debuggingProvider            = true;
-   };
+  -- If you set this, make sure to have the `metals#status()` function
+  -- in your statusline, or you won't see any status messages
+  statusBarProvider            = "on";
+  inputBoxProvider             = true;
+  quickPickProvider            = true;
+  executeClientCommandProvider = true;
+  decorationProvider           = true;
+  didFocusProvider             = true;
+  debuggingProvider            = true;
+};
 
 M.metals.settings = {
     showImplicitArguments = true;

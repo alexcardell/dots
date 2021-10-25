@@ -38,6 +38,7 @@ tags.*
 metals.sbt
 .bloop
 target/
+*.worksheet.scala
 
 ####################
 

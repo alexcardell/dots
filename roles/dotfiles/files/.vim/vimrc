@@ -139,4 +139,5 @@ let g:wiki_root = '~/Wiki'
 let g:wiki_filetypes = ['md']
 let g:wiki_link_target_type = 'wiki'
 
+" temp
 lua require('nvim-tree').setup()

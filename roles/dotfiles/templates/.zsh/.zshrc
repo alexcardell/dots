@@ -242,8 +242,8 @@ alias vpns='systemctl status openvpn-client@work.service'
   && . /usr/share/autojump/autojump.zsh
 {% endif %}
 {% if darwin %}
-[ -f /usr/local/etc/profile.d/autojump.sh ] \
-  && . /usr/local/etc/profile.d/autojump.sh
+[ -f /opt/homebrew/etc/profile.d/autojump.sh ] \
+  && . /opt/homebrew/etc/profile.d/autojump.sh
 {% endif %}
 
 [ -f $ZDOTDIR/lib/zsh-autosuggestions/zsh-autosuggestions.zsh ] \
@@ -254,6 +254,8 @@ bindkey "^P" autosuggest-accept
   && . $ZDOTDIR/lib/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 
 [ -s $HOME/.jabba/jabba.sh ] && . $HOME/.jabba/jabba.sh
+
+[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
 # fnm
 eval "$(fnm env --use-on-cd)"

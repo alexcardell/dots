@@ -13,11 +13,9 @@ export EDITOR="${VISUAL}"
 
 # Code #
 ########
-export CODEPATH=$HOME/Code
+export CODEPATH=$HOME/code
 # golang
 export GOPATH=$CODEPATH/go
-# maven
-export M2_HOME=$HOME
 # Node
 export NODE_ENV=development
 
@@ -29,6 +27,10 @@ export RIPGREP_CONFIG_PATH=$HOME/.ripgreprc
 export FZF_DEFAULT_COMMAND='rg --files --follow'
 # Helm
 export TILLER_NAMESPACE=tiller
+# sdkman
+export SDKMAN_DIR="$HOME/.sdkman"
+# maven
+export M2_HOME=$HOME
 
 {% if darwin %}
 # Darwin #
@@ -71,10 +73,9 @@ PATH=$PATH:node_modules/.bin
 {% if darwin %}
 # Darwin #
 ##########
+PATH=$PATH:/opt/homebrew/sbin
+PATH=$PATH:/opt/homebrew/bin
 {% if work %}
-## Work ##
-# TODO evaluate if this is necessary
-PATH=$PATH:/usr/local/Cellar/thrift/0.12.0/bin
 {% endif %}
 {% endif %}
 
