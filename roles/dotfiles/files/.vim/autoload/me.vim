@@ -26,7 +26,7 @@ function! me#statusline() abort
   " faint text
   set statusline+=%#LineNr#
   " metals
-  set statusline+=%{metals#status()}
+  " set statusline+=%{metals#status()}
   " filetype
   set statusline+=\ %y
   " encoding
