@@ -59,7 +59,7 @@ Plug 'tpope/vim-surround'
 Plug 'wincent/loupe'
 
 " Navigation
-Plug 'kyazdani42/nvim-tree.lua', { 'on': [ 'NvimTreeToggle', 'NvimTreeFindFile' ] }
+Plug 'kyazdani42/nvim-tree.lua'
 
 " VCS
 Plug 'tpope/vim-fugitive'
@@ -126,3 +126,5 @@ call plug#end()
 let g:wiki_root = '~/Wiki'
 let g:wiki_filetypes = ['md']
 let g:wiki_link_target_type = 'wiki'
+
+lua require('nvim-tree').setup()
