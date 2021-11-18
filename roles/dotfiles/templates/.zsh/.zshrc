@@ -236,9 +236,6 @@ alias vpns='systemctl status openvpn-client@work.service'
   && . ~/.fzf.zsh \
   && . $ZDOTDIR/fzf.zsh
 
-# third party
-[ -f $ZDOTDIR/lib/theme.sh ] && . $ZDOTDIR/lib/theme.sh
-
 {% if arch %}
 [ -f /usr/share/autojump/autojump.zsh ] \
   && . /usr/share/autojump/autojump.zsh

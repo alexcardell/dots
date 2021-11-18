@@ -1,5 +1,4 @@
-let base16colorspace=256
-color base16-tomorrow
+colorscheme base16-tomorrow-night
 
 set mouse=a                     " enable mouse
 set autoindent                  " indent like line above
@@ -32,6 +31,8 @@ set updatetime=400         " set time for floating window to appear
 
 set splitbelow             " Natural split splitting
 set splitright             ""
+
+set colorcolumn=81
 
 " Line wrapping
 set whichwrap=b,s,<,>,[,],~

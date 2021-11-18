@@ -4,7 +4,7 @@ symlinks:
   - .Xresources
   - .Xresources.d
   - .config/i3
-  - .config/kitty/kitty.conf
+  - .config/kitty
   - .config/nvim
   - .config/picom
   - .config/pulse/client.conf

@@ -5,11 +5,14 @@ if has('autocmd')
 
       au InsertLeave * set nopaste
 
-      if exists('+colorcolumn')
-        " Focus background of active window
-        au BufEnter,FocusGained,VimEnter,WinEnter * call me#focus()
-        au FocusLost,WinLeave * call me#blur()
-      endif
+      " if exists('+colorcolumn')
+      "   " Focus background of active window
+      "   au BufEnter,FocusGained,VimEnter,WinEnter * call me#focus()
+      "   au FocusLost,WinLeave * call me#blur()
+      " endif
+
+      " lsp format on save
+      " autocmd BufWritePre *.rs lua vim.lsp.buf.formatting_sync(nil, 1000)
 
       " clear trailing whitespace
       au BufWrite * call me#zap()
