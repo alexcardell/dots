@@ -1,13 +1,24 @@
-local lsp    = require'lspconfig'
-local comp   = require'completion'
+local lsp_config    = require('lspconfig')
+local completion = require('alex/completion')
+
+local signature = require('lsp_signature')
+local signature_config = require('alex/signature').config()
+
+completion.setup()
+
+local capabilities = completion.capabilities();
+
+lsp_config.util.default_config = vim.tbl_extend("force", lsp_config.util.default_config, {
+  capabilities = capabilities,
+})
 
 -- Default on_attach
 -- Could actually be function(client, bufnr) but currently unused
 local on_attach = function()
-  comp.on_attach()
+  signature.on_attach(signature_config)
 end
 
-local border = "single";
+local border = "single"
 
 local handlers =  {
   ["textDocument/hover"] =  vim.lsp.with(vim.lsp.handlers.hover, {border = border});
@@ -19,43 +30,43 @@ local handlers =  {
 --------------------
 
 -- Angular
-lsp.angularls.setup {
+lsp_config.angularls.setup {
   on_attach = on_attach;
   handlers = handlers;
 }
 
 -- Dockerfile
-lsp.dockerls.setup{
+lsp_config.dockerls.setup{
   on_attach = on_attach;
   handlers = handlers;
 }
 
 -- Haskell
-lsp.hls.setup{
+lsp_config.hls.setup{
   on_attach = on_attach;
   handlers = handlers;
 }
 
 -- Java
-lsp.jdtls.setup{
+lsp_config.jdtls.setup{
   on_attach = on_attach;
   handlers = handlers;
 }
 
 -- Typescript
-lsp.tsserver.setup{
+lsp_config.tsserver.setup{
   on_attach = on_attach;
   handlers = handlers;
 }
 
 -- vimscript
-lsp.vimls.setup{
+lsp_config.vimls.setup{
   on_attach = on_attach;
   handlers = handlers;
 }
 
 -- TeX/LaTeX
-lsp.texlab.setup{
+lsp_config.texlab.setup{
   on_attach=on_attach;
   handlers = handlers;
   settings = {
@@ -68,7 +79,7 @@ lsp.texlab.setup{
 }
 
 -- Rescript/ReasonML
-lsp.rescriptls.setup {
+lsp_config.rescriptls.setup {
   on_attach = on_attach;
   handlers = handlers;
   cmd = {
@@ -80,7 +91,7 @@ lsp.rescriptls.setup {
 }
 
 -- Lua
-lsp.sumneko_lua.setup {
+lsp_config.sumneko_lua.setup {
   on_attach=on_attach;
   handlers = handlers;
   cmd = {
@@ -109,7 +120,7 @@ lsp.sumneko_lua.setup {
 ---------------------
 -- lspkind symbols --
 ---------------------
-require('lspkind').init(
+-- require('lspkind').init()
   --{
   --  -- enables text annotations
   --  --
@@ -149,24 +160,4 @@ require('lspkind').init(
   --    Struct = ''
   --  },
   --}
-)
 
--------------------
--- lsp_signature --
--------------------
--- require('lsp_signature').on_attach({
---   bind = true,
---   floating_window = true, -- show hint in a floating window, set to false for virtual text only mode
---   fix_pos = false,  -- set to true, the floating window will not auto-close until finish all parameters
---   hint_enable = true, -- virtual hint enable
---   hint_prefix = "a",  -- Panda for parameter
---   hint_scheme = "String",
---   use_lspsaga = false,  -- set to true if you want to use lspsaga popup
---   hi_parameter = "Search", -- how your parameter will be highlight
---   max_height = 12,
---   max_width = 120,
---   handler_opts = {
---     border = "single"   -- double, single, shadow, none
---   },
---   extra_trigger_chars = {"(", ","}
--- })

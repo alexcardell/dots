@@ -1,14 +1,21 @@
-local comp   = require'completion'
 local metals = require'metals'
+
+local signature = require('lsp_signature')
+local signature_config = require('alex/signature').config()
+
+local completion = require('alex/completion')
+completion.setup()
+
+local capabilities = completion.capabilities();
 
 local M = {}
 
 M.metals = metals.bare_config()
 
 M.metals.on_attach = function(client, bufnr)
-    comp.on_attach()
-    metals.setup_dap()
-  end
+  signature.on_attach(signature_config)
+  metals.setup_dap()
+end
 
 M.metals.init_options = {
      -- If you set this, make sure to have the `metals#status()` function
@@ -22,21 +29,20 @@ M.metals.init_options = {
      debuggingProvider            = true;
    };
 
-M.handlers = {
-  ["textDocument/hover"]          = metals['textDocument/hover'];
-  ["metals/status"]               = metals['metals/status'];
-  ["metals/inputBox"]             = metals['metals/inputBox'];
-  ["metals/quickPick"]            = metals['metals/quickPick'];
-  ["metals/executeClientCommand"] = metals["metals/executeClientCommand"];
-  ["metals/publishDecorations"]   = metals["metals/publishDecorations"];
-  ["metals/didFocusTextDocument"] = metals["metals/didFocusTextDocument"];
+M.metals.settings = {
+    showImplicitArguments = true;
+    showInferredType = true;
 };
 
-M.metals.settings = {
-     showImplicitArguments = true;
-     showInferredType = true;
-     superMethodLensesEnabled = true;
-     showImplicitConversionsAndClasses = true;
-   };
+M.metals.capabilities = capabilities;
+
+local border = "single"
+
+local handlers =  {
+  ["textDocument/hover"] =  vim.lsp.with(vim.lsp.handlers.hover, {border = border});
+  ["textDocument/signatureHelp"] =  vim.lsp.with(vim.lsp.handlers.signature_help, {border = border });
+}
+
+M.metals.handlers = handlers
 
 return M
