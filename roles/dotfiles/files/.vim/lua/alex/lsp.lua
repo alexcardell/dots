@@ -7,31 +7,57 @@ local on_attach = function()
   comp.on_attach()
 end
 
+local border = "single";
+
+local handlers =  {
+  ["textDocument/hover"] =  vim.lsp.with(vim.lsp.handlers.hover, {border = border});
+  ["textDocument/signatureHelp"] =  vim.lsp.with(vim.lsp.handlers.signature_help, {border = border });
+}
+
 --------------------
 -- nvim-lspconfig --
 --------------------
 
 -- Angular
-lsp.angularls.setup{on_attach=on_attach}
+lsp.angularls.setup {
+  on_attach = on_attach;
+  handlers = handlers;
+}
 
 -- Dockerfile
-lsp.dockerls.setup{on_attach=on_attach}
+lsp.dockerls.setup{
+  on_attach = on_attach;
+  handlers = handlers;
+}
 
 -- Haskell
-lsp.hls.setup{on_attach=on_attach}
+lsp.hls.setup{
+  on_attach = on_attach;
+  handlers = handlers;
+}
 
 -- Java
-lsp.jdtls.setup{on_attach=on_attach}
+lsp.jdtls.setup{
+  on_attach = on_attach;
+  handlers = handlers;
+}
 
 -- Typescript
-lsp.tsserver.setup{on_attach=on_attach}
+lsp.tsserver.setup{
+  on_attach = on_attach;
+  handlers = handlers;
+}
 
 -- vimscript
-lsp.vimls.setup{on_attach=on_attach}
+lsp.vimls.setup{
+  on_attach = on_attach;
+  handlers = handlers;
+}
 
 -- TeX/LaTeX
 lsp.texlab.setup{
   on_attach=on_attach;
+  handlers = handlers;
   settings = {
     build = {
       executable = "tectonic";
@@ -44,6 +70,7 @@ lsp.texlab.setup{
 -- Rescript/ReasonML
 lsp.rescriptls.setup {
   on_attach = on_attach;
+  handlers = handlers;
   cmd = {
     "node",
     "/home/alex/.vim/plug/vim-rescript/server/out/server.js",
@@ -55,6 +82,7 @@ lsp.rescriptls.setup {
 -- Lua
 lsp.sumneko_lua.setup {
   on_attach=on_attach;
+  handlers = handlers;
   cmd = {
     "/home/alex/Code/vendor/lua-language-server/bin/Linux/lua-language-server",
     "-E",
