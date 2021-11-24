@@ -97,6 +97,7 @@ pacaur
 pacutils
 pasystray
 patch
+peek
 perl-json-parse
 pgcli
 picom
