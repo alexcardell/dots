@@ -8,21 +8,21 @@ dap.configurations.scala = {
       request = 'launch',
       name = 'Run',
       console = 'integratedTerminal',
-      metalsRunType = 'run'
+      metals = { runType = 'run' }
   },
   {
       type = 'scala',
       request = 'launch',
       name = 'Test File',
       console = 'integratedTerminal',
-      metalsRunType = 'testFile'
+      metals = { runType = 'testFile' }
   },
   {
       type = 'scala',
       request = 'launch',
       name = 'Test Target',
       console = 'integratedTerminal',
-      metalsRunType = 'testTarget'
+      metals = { runType = 'testTarget' }
   }
 }
 
