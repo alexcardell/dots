@@ -2,8 +2,10 @@ let g:metals_server_version = '0.10.9'
 
 lua require('alex.lsp')
 
+nnoremap <silent> gd   <cmd>lua vim.lsp.buf.definition()<CR>
 nnoremap <silent> <localleader>d   <cmd>lua vim.lsp.buf.definition()<CR>
 nnoremap <silent> <localleader>t   <cmd>lua vim.lsp.buf.type_definition()<CR>
+nnoremap <silent> K   <cmd>lua vim.lsp.buf.hover()<CR>
 nnoremap <silent> <localleader>h   <cmd>lua vim.lsp.buf.hover()<CR>
 nnoremap <silent> <localleader>H   <cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>
 nnoremap <silent> <localleader>]   <cmd>lua vim.lsp.diagnostic.goto_next()<CR>
