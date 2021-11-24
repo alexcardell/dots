@@ -6,6 +6,12 @@ function! me#zap() abort
   endfor
 endfunction
 
+let g:metals_status = 0
+function! me#metals_status()
+  if exists(g:metals_status) | return g:metals_status | else | return '' | endif
+endfunction
+
+
 function! me#statusline() abort
   " clear
   set statusline=
@@ -26,7 +32,7 @@ function! me#statusline() abort
   " faint text
   set statusline+=%#LineNr#
   " metals
-  " set statusline+=%{metals#status()}
+  set statusline+=%{me#metals_status()}
   " filetype
   set statusline+=\ %y
   " encoding

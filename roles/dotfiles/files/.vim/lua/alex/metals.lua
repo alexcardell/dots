@@ -13,7 +13,7 @@ M.metals.on_attach = function(client, bufnr)
 M.metals.init_options = {
      -- If you set this, make sure to have the `metals#status()` function
      -- in your statusline, or you won't see any status messages
-     statusBarProvider            = "off";
+     statusBarProvider            = "on";
      inputBoxProvider             = true;
      quickPickProvider            = true;
      executeClientCommandProvider = true;
@@ -22,15 +22,15 @@ M.metals.init_options = {
      debuggingProvider            = true;
    };
 
-   M.handlers = {
-     ["textDocument/hover"]          = metals['textDocument/hover'];
-     ["metals/status"]               = metals['metals/status'];
-     ["metals/inputBox"]             = metals['metals/inputBox'];
-     ["metals/quickPick"]            = metals['metals/quickPick'];
-     ["metals/executeClientCommand"] = metals["metals/executeClientCommand"];
-     ["metals/publishDecorations"]   = metals["metals/publishDecorations"];
-     ["metals/didFocusTextDocument"] = metals["metals/didFocusTextDocument"];
-   };
+M.handlers = {
+  ["textDocument/hover"]          = metals['textDocument/hover'];
+  ["metals/status"]               = metals['metals/status'];
+  ["metals/inputBox"]             = metals['metals/inputBox'];
+  ["metals/quickPick"]            = metals['metals/quickPick'];
+  ["metals/executeClientCommand"] = metals["metals/executeClientCommand"];
+  ["metals/publishDecorations"]   = metals["metals/publishDecorations"];
+  ["metals/didFocusTextDocument"] = metals["metals/didFocusTextDocument"];
+};
 
 M.metals.settings = {
      showImplicitArguments = true;
