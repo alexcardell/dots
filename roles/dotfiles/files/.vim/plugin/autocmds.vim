@@ -18,19 +18,14 @@ if has('autocmd')
       au BufWrite * call me#zap()
 
       " set script as executable on save
-      au BufWritePost * call me#set_executable_if_script(getline(1), expand("%:p"))
+      au BufWritePost *.sh,*.zsh call me#set_executable_if_script(getline(1), expand("%:p"))
 
       " register *.md as markdown filetype
       au BufNewFile,BufReadPost *.md set filetype=markdown
 
       " disable status line
-      au  FileType fzf set laststatus=0 noshowmode noruler
-        \| au BufLeave <buffer> set laststatus=2 showmode ruler
-
-      au InsertEnter * highlight StatusLine ctermfg=18 ctermbg=blue |
-            \ highlight User2 ctermfg=blue ctermbg=18
-      au InsertLeave * highlight StatusLine ctermfg=18 ctermbg=grey |
-            \ highlight User2 ctermfg=grey ctermbg=18
+      " au  FileType fzf set laststatus=0 noshowmode noruler
+      "   \| au BufLeave <buffer> set laststatus=2 showmode ruler
 
       au BufEnter * if &buftype == 'terminal' | :startinsert | endif
 
@@ -41,10 +36,10 @@ if has('autocmd')
 
       " au CursorHold,CursorHoldI * lua require("nvim-lightbulb").update_lightbulb(require("alex.lightbulb").lightbulb)
 
-      au BufEnter,CursorHold,CursorHoldI,InsertLeave * lua vim.lsp.codelens.refresh()
+      " au BufEnter,CursorHold,CursorHoldI,InsertLeave * lua vim.lsp.codelens.refresh()
 
       " load nvim-lint
-      au BufEnter,CursorHold,CursorHoldI,InsertLeave *.md lua require('alex.lint').try_lint()
+      " au BufEnter,CursorHold,CursorHoldI,InsertLeave *.md lua require('alex.lint').try_lint()
 
       au FileType markdown call pencil#init()
 
