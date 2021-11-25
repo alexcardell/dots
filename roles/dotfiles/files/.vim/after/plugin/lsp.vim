@@ -17,12 +17,10 @@ nnoremap <silent> <localleader>f   <cmd>lua vim.lsp.buf.formatting()<CR>
 nnoremap <silent> <localleader>c   <cmd>lua vim.lsp.buf.code_action()<CR>
 nnoremap <silent> <localleader>l   <cmd>lua vim.lsp.codelens.run()<CR>
 
-" Delegate diagnostics to Trouble
-nnoremap <silent> <localleader>xl  <cmd>Trouble lsp_document_diagnostics<CR>
-nnoremap <silent> <localleader>xx  <cmd>Trouble lsp_workspace_diagnostics<CR>
+nnoremap <silent> <localleader>x  <cmd>lua require('diaglist').open_all_diagnostics()<cr>
+nnoremap <silent> <localleader>X  <cmd>lua require('diaglist').open_buffer_diagnostics()<cr>
 
 nnoremap <silent> <localleader>r   <cmd>lua vim.lsp.buf.references()<CR>
-nnoremap <silent> <localleader>T   <cmd>Trouble quickfix<CR>
 
 " Here is an example of how to use telescope as an alternative to the default references
 " nnoremap <silent> <leader>s <cmd>lua require'telescope.builtin'.lsp_references{}<CR>

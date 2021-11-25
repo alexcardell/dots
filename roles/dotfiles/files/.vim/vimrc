@@ -106,7 +106,7 @@ Plug 'scalameta/nvim-metals'
 Plug 'kosayoda/nvim-lightbulb'
 Plug 'onsails/lspkind-nvim'
 Plug 'kyazdani42/nvim-web-devicons'
-Plug 'folke/trouble.nvim'
+Plug 'onsails/diaglist.nvim'
 Plug 'ray-x/lsp_signature.nvim'
 
 " Linting
@@ -121,7 +121,6 @@ Plug 'theHamsta/nvim-dap-virtual-text'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
-" Plug 'ryanoasis/vim-devicons'
 Plug 'tpope/vim-projectionist'
 " Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
 Plug 'wakatime/vim-wakatime'

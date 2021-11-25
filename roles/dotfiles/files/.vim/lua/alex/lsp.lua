@@ -4,6 +4,10 @@ local completion = require('alex/completion')
 local signature = require('lsp_signature')
 local signature_config = require('alex/signature').config()
 
+-- Disabled since it immediately clears out quickfix results (e.g. from fzf)
+-- local diaglist = require('diaglist')
+-- diaglist.init()
+
 completion.setup()
 
 local capabilities = completion.capabilities();
@@ -11,6 +15,8 @@ local capabilities = completion.capabilities();
 lsp_config.util.default_config = vim.tbl_extend("force", lsp_config.util.default_config, {
   capabilities = capabilities,
 })
+
+
 
 -- Default on_attach
 -- Could actually be function(client, bufnr) but currently unused
