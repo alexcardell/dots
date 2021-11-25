@@ -1,3 +1,5 @@
+vim.g['metals_server_version'] = '0.10.9'
+
 local metals = require'metals'
 
 local signature = require('lsp_signature')
