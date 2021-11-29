@@ -35,7 +35,7 @@ export TILLER_NAMESPACE=tiller
 ##########
 {% if work %}
 ## Work ##
-export WORKPATH=$HOME/Work
+export WORKPATH=$HOME/itv
 {% endif %}
 {% endif %}
 {% if arch %}
@@ -73,6 +73,7 @@ PATH=$PATH:node_modules/.bin
 ##########
 {% if work %}
 ## Work ##
+# TODO evaluate if this is necessary
 PATH=$PATH:/usr/local/Cellar/thrift/0.12.0/bin
 {% endif %}
 {% endif %}

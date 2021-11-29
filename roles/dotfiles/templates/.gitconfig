@@ -12,7 +12,7 @@
 {% endif %}
 
 {% if work %}
-[includeIf "gitdir:~/Work/**"]
+[includeIf "gitdir:~/itv/**"]
   path = ~/.gitconfig.work
 {% endif %}
 
