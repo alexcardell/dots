@@ -126,7 +126,9 @@ Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 Plug 'tpope/vim-projectionist'
 " Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
-Plug 'wakatime/vim-wakatime'
+
+" Temp disabled
+" Plug 'wakatime/vim-wakatime'
 
 " Prose
 Plug 'lervag/wiki.vim'
