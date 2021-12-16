@@ -211,8 +211,8 @@ alias y='yarn'
 
 {% if darwin %}
 # Darwin
-alias ls='gls --color=auto --group-directories-first'
-alias ll='gls --color=auto --group-directories-first -alh'
+alias ls='ls --color=auto --group-directories-first'
+alias ll='ls -alh'
 alias pbc='pbcopy'
 alias pbp='pbpaste'
 
@@ -257,8 +257,8 @@ bindkey "^P" autosuggest-accept
 
 [ -s "$HOME/.sdkman/bin/sdkman-init.sh" ] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
-# fnm
-eval "$(fnm env --use-on-cd)"
+# fnm -- TODO evaluate if I still want fnm if I'm switching to nix
+# eval "$(fnm env --use-on-cd)"
 
 # Autoload custom functions
 fpath=("$ZDOTDIR/autoloaded" $fpath)

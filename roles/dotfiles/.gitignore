@@ -16,3 +16,4 @@ files/.zsh/.zprofile
 files/.zsh/.zshrc
 files/.zsh/autoloaded/gbrowse
 files/.zshenv
+files/.zsh/.zsh_sessions
