@@ -1,6 +1,8 @@
 ---
 - hosts: localhost
   roles:
+    - role: initialise
+      tags: [ initialise ]
     - role: macos
       tags: [ macos, all]
     - role: homebrew

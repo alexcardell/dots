@@ -1,6 +1,8 @@
 ---
 - hosts: localhost
   roles:
+    - role: initialise
+      tags: [ initialise ]
     - role: pacman
       tags: [ pacman, all ]
     - role: dotfiles

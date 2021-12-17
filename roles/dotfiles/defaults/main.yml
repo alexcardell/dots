@@ -39,4 +39,4 @@ git_user_name: '{{"alexcardell"}}'
 git_user_email: '{{"29524087+alexcardell@users.noreply.github.com"}}'
 git_user_signingkey: 'ED579B846211BEE5'
 
-work_hostname: "C[A-Z0-9]*"
+work_hostname: "(C|R)[A-Z0-9]*"
