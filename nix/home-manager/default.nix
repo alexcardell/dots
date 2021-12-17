@@ -22,6 +22,7 @@
     jq
     metals
     neovim
+    nerdfonts
     nix
     nixfmt
     openssh
