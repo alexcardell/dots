@@ -16,6 +16,7 @@
     fzf
     gh
     git
+    git-crypt
     gnupg
     jdk11
     jq
@@ -28,9 +29,9 @@
     ranger
     ripgrep
     rnix-lsp
-    tmux
     sbt
     sumneko-lua-language-server
+    tmux
   ];
 }
 
