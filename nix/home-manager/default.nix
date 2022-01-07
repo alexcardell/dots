@@ -6,11 +6,14 @@
   home.packages = with pkgs; [
     ammonite
     autojump
+    aws-vault
     awscli2
     bat
     bitwarden-cli
     coreutils-full
+    coursier
     curl
+    dasht
     element-desktop
     fd
     fzf
@@ -18,8 +21,9 @@
     git
     git-crypt
     gnupg
-    jdk11
+    jdk
     jq
+    # unstable.kitty
     metals
     neovim
     nerdfonts
