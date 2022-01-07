@@ -242,8 +242,8 @@ alias vpns='systemctl status openvpn-client@work.service'
   && . /usr/share/autojump/autojump.zsh
 {% endif %}
 {% if darwin %}
-[ -f /opt/homebrew/etc/profile.d/autojump.sh ] \
-  && . /opt/homebrew/etc/profile.d/autojump.sh
+[ -f $HOME/.nix-profile/share/autojump/autojump.zsh ] \
+  && . $HOME/.nix-profile/share/autojump/autojump.zsh
 {% endif %}
 
 [ -f $ZDOTDIR/lib/zsh-autosuggestions/zsh-autosuggestions.zsh ] \
