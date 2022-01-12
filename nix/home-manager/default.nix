@@ -4,6 +4,7 @@
   home.stateVersion = "22.05";
 
   home.packages = with pkgs; [
+    # unstable.kitty
     ammonite
     autojump
     aws-vault
@@ -23,7 +24,6 @@
     gnupg
     jdk
     jq
-    # unstable.kitty
     metals
     neovim
     nerdfonts
@@ -37,6 +37,7 @@
     sbt
     sumneko-lua-language-server
     tmux
+    zk
   ];
 }
 
