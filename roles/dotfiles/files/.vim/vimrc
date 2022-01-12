@@ -106,12 +106,13 @@ Plug 'hrsh7th/cmp-cmdline'
 Plug 'dcampos/nvim-snippy'
 Plug 'dcampos/cmp-snippy'
 
-" LSP visuals
+" LSP customisation
 Plug 'kosayoda/nvim-lightbulb'
 Plug 'onsails/lspkind-nvim'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'onsails/diaglist.nvim'
 Plug 'ray-x/lsp_signature.nvim'
+Plug 'simrat39/symbols-outline.nvim'
 
 " Linting
 Plug 'mfussenegger/nvim-lint'
