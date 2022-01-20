@@ -67,7 +67,7 @@ Plug 'mfussenegger/nvim-ts-hint-textobject'
 
 " LSP
 Plug 'neovim/nvim-lspconfig'
-Plug 'nvim-lua/completion-nvim'
+" Plug 'nvim-lua/completion-nvim'
 Plug 'scalameta/nvim-metals'
 
 " VCS
@@ -92,6 +92,7 @@ Plug 'peitalin/vim-jsx-typescript', { 'for': 'typescript' }
 Plug 'reasonml-editor/vim-reason-plus', { 'for': 'reason' }
 Plug 'rust-lang/rust.vim', { 'for': 'rust' }
 Plug 'rescript-lang/vim-rescript'
+Plug 'LnL7/vim-nix'
 
 " Telescope
 Plug 'nvim-lua/popup.nvim'
@@ -133,15 +134,17 @@ Plug 'tpope/vim-projectionist'
 " Plug 'wakatime/vim-wakatime'
 
 " Prose
-Plug 'lervag/wiki.vim'
+" Plug 'lervag/wiki.vim'
 Plug 'reedes/vim-pencil', { 'for': 'markdown' }
 Plug 'iamcco/markdown-preview.nvim', { 'for': 'markdown', 'do': 'cd app && yarn install' }
+Plug 'mickael-menu/zk-nvim'
 
 call plug#end()
 
-let g:wiki_root = '~/Wiki'
-let g:wiki_filetypes = ['md']
-let g:wiki_link_target_type = 'wiki'
+" let g:wiki_root = '~/Wiki'
+" let g:wiki_filetypes = ['md']
+" let g:wiki_link_target_type = 'wiki'
 
-" temp
 lua require('nvim-tree').setup()
+
+lua require('zk').setup({ picker = 'fzf' })

@@ -32,12 +32,16 @@ export SDKMAN_DIR="$HOME/.sdkman"
 # maven
 export M2_HOME=$HOME
 
+
 {% if darwin %}
 # Darwin #
 ##########
 {% if work %}
 ## Work ##
 export WORKPATH=$HOME/itv
+export ZK_NOTEBOOK_DIR=$WORKPATH/notes
+# for docker-compose overriding via service.xyz.platform: "${DOCKER_IMAGE_PLATFORM}"
+export DOCKER_IMAGE_PLATFORM=linux/arm64
 {% endif %}
 {% endif %}
 {% if arch %}

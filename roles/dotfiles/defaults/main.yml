@@ -1,5 +1,8 @@
 ---
 symlinks:
+  # - .config/pulse/client.conf
+  # - .config/ranger/commands.py
+  # - .config/ranger/rc.conf
   - .Brewfile
   - .Xresources
   - .Xresources.d
@@ -7,12 +10,10 @@ symlinks:
   - .config/kitty
   - .config/nvim
   - .config/picom
-  # - .config/pulse/client.conf
-  # - .config/ranger/commands.py
-  # - .config/ranger/rc.conf
   - .config/rofi
   - .config/skhd
   - .config/yabai
+  - .config/zk
   - .gitconfig
   - .gitconfig.work
   - .ideavimrc
