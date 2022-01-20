@@ -13,6 +13,7 @@ symlinks:
   - .config/rofi
   - .config/skhd
   - .config/yabai
+  - .config/zk
   - .gitconfig
   - .gitconfig.work
   - .ideavimrc
