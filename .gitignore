@@ -1,5 +1,1 @@
-.backup
-lib/env
-*.private
-
-!.vim/
+result
