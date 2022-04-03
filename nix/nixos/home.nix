@@ -9,12 +9,34 @@
       gnupg
       kitty
       neovim
-      tmux
       pinentry_qt
+      ripgrep
+      tmux
     ];
 
     # I don't think this does anything
-    programs.zsh.enable = true;
+    programs.zsh = {
+      enable = true;
+      # shellAliases = {
+      #   ll = "ls -alh";
+      #   ".." = "cd ..";
+      # };
+
+      sessionVariables = {
+        EDITOR="nvim";
+	ZVM_VI_ESCAPE_BINDKEY="jk";
+      };
+
+      initExtra = builtins.readFile ./home/.zshrc;
+
+      plugins = [
+        {
+	  name = "zsh-vi-mode";
+	  src = pkgs.zsh-vi-mode;
+	  file = "share/zsh-vi-mode/zsh-vi-mode.plugin.zsh";
+	}
+      ];
+    };
 
     programs.gpg.enable = true;
     services.gpg-agent = {

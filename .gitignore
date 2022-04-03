@@ -1,1 +1,8 @@
+.backup
+lib/env
+*.private
+
+!.vim/
+
+# nixos-rebuild output
 result
