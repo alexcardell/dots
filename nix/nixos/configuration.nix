@@ -56,13 +56,14 @@
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
-  # if autorun disabled, start with: systemctl start display-manager.service
-  services.xserver.autorun = true;
-  services.xserver.windowManager.i3.enable = true;
-
-  # Configure keymap in X11
+  services.xserver.autorun = true; # if autorun disabled, start with: systemctl start display-manager.service
   services.xserver.layout = "gb";
+  services.xserver.desktopManager.xfce.enable = true;
+  services.xserver.displayManager.sessionCommands = "xset -b";
+  services.xserver.windowManager.i3.enable = true;
   # services.xserver.xkbOptions = "eurosign:e";
+  # Enable touchpad support (enabled default in most desktopManager).
+  services.xserver.libinput.enable = true;
 
   # Enable CUPS to print documents.
   # services.printing.enable = true;
@@ -70,11 +71,6 @@
   # Enable sound.
   sound.enable = true;
   hardware.pulseaudio.enable = true;
-
-  # Enable touchpad support (enabled default in most desktopManager).
-  services.xserver.libinput.enable = true;
-
-  # programs.zsh.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.alex = {
