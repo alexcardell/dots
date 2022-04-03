@@ -15,7 +15,6 @@
       xclip
     ];
 
-    # I don't think this does anything
     programs.zsh = {
       enable = true;
       # shellAliases = {
@@ -44,4 +43,6 @@
       enable = true;
       pinentryFlavor = "qt";
     };
+
+    services.dunst.enable = true;
 }
