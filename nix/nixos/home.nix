@@ -1,5 +1,8 @@
  { pkgs, ... }: 
  {
+
+    services.dunst.enable = true;
+
     home.packages = with pkgs; [ 
       bitwarden
       firefox
@@ -39,10 +42,9 @@
     };
 
     programs.gpg.enable = true;
-    services.gpg-agent = {
-      enable = true;
-      pinentryFlavor = "qt";
-    };
-
-    services.dunst.enable = true;
+    # services.gpg-agent = {
+    #   enable = true;
+    #   pinentryFlavor = "qt";
+    #   enableSSHSupport = true;
+    # };
 }
