@@ -58,7 +58,6 @@
   services.xserver.enable = true;
   services.xserver.autorun = true; # if autorun disabled, start with: systemctl start display-manager.service
   services.xserver.layout = "gb";
-  services.xserver.desktopManager.xfce.enable = true;
   services.xserver.displayManager.sessionCommands = "xset -b";
   services.xserver.windowManager.i3.enable = true;
   # services.xserver.xkbOptions = "eurosign:e";
