@@ -11,7 +11,6 @@
       git-crypt
       gnupg
       kitty
-      neovim
       pinentry_qt
       ripgrep
       tmux
@@ -41,10 +40,40 @@
       ];
     };
 
+    # Do I need this if the agent is enabled in configuration.nix?
     programs.gpg.enable = true;
-    # services.gpg-agent = {
-    #   enable = true;
-    #   pinentryFlavor = "qt";
-    #   enableSSHSupport = true;
-    # };
+
+    programs.neovim = {
+      enable = true;
+      withNodeJs = true;
+      withRuby = true;
+      withPython3 = true;
+
+      package = pkgs.unstable.neovim-unwrapped;
+
+      extraPackages = with pkgs; [
+        rnix-lsp
+      ];
+
+      # see xdg.configFile.nvim lua directory
+      extraConfig = ''
+        lua require('init__')
+      '';
+
+      plugins = with pkgs.unstable.vimPlugins; [ 
+        cmp-nvim-lsp
+        cmp-nvim-lua
+        nvim-cmp
+        nvim-lspconfig
+        plenary-nvim
+        vim-nix
+        vim-repeat
+        vim-surround
+      ];
+    };
+
+    xdg.configFile.nvim = {
+      source = ./home/nvim;
+      recursive = true;
+    };
 }
