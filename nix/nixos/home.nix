@@ -12,6 +12,7 @@
       pinentry_qt
       ripgrep
       tmux
+      xclip
     ];
 
     # I don't think this does anything
