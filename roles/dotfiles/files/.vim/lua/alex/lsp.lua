@@ -35,12 +35,6 @@ local handlers =  {
 -- nvim-lspconfig --
 --------------------
 
--- Angular
-lsp_config.angularls.setup {
-  on_attach = on_attach;
-  handlers = handlers;
-}
-
 -- Dockerfile
 lsp_config.dockerls.setup{
   on_attach = on_attach;

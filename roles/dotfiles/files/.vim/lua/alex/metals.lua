@@ -1,4 +1,4 @@
-vim.g['metals_server_version'] = '0.10.9'
+vim.g['metals_server_version'] = '0.11.1'
 
 local metals = require'metals'
 
