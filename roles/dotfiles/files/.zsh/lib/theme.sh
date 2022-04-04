@@ -1,1 +1,1 @@
-/home/alex/.zsh/lib/tomorrow-night.sh
+/Users/alexcard/.zsh/lib/tomorrow-night.sh
