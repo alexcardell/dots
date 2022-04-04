@@ -4,13 +4,19 @@
   home.stateVersion = "22.05";
 
   home.packages = with pkgs; [
+    # jdk11
     # unstable.kitty
+    # zk
+    # openjdk8
+    # jdk8
+    # (jdk8.overrideAttrs (_: { postPatch = "rm man; ln -s ../zulu-8.jdk/Contents/Home/man man"; }))
     ammonite
     autojump
     aws-vault
     awscli2
     bat
     bitwarden-cli
+    cmake
     coreutils-full
     coursier
     curl
@@ -22,7 +28,6 @@
     git
     git-crypt
     gnupg
-    jdk
     jq
     metals
     neovim
@@ -37,7 +42,8 @@
     sbt
     sumneko-lua-language-server
     tmux
-    zk
   ];
-}
 
+  programs.java.enable = true;
+  programs.java.package = (pkgs.jdk8.overrideAttrs (_: { postPatch = "rm man; ln -s ../zulu-8.jdk/Contents/Home/man man"; }));
+}
