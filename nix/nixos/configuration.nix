@@ -6,7 +6,8 @@
 
 {
   imports =
-    [ # Include the results of the hardware scan.
+    [
+      # Include the results of the hardware scan.
       ./hardware-configuration.nix
     ];
 
@@ -23,15 +24,15 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   networking.hostName = "nixpad"; # Define your hostname.
-  networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-  networking.wireless.userControlled.enable = true;  # Enables wireless support via wpa_supplicant.
+  networking.wireless.enable = true; # Enables wireless support via wpa_supplicant.
+  networking.wireless.userControlled.enable = true; # Enables wireless support via wpa_supplicant.
   # Generate pskRaw with # wpa_passphrase SSID PSK
-   networking.wireless.networks = {
-     # "${builtins.readFile ./secrets/home-ssid}" = {
-     "BrooklandsNineNine" = {
-       pskRaw = builtins.readFile ./secrets/home-psk;
-     };
-   };
+  networking.wireless.networks = {
+    # "${builtins.readFile ./secrets/home-ssid}" = {
+    "BrooklandsNineNine" = {
+      pskRaw = builtins.readFile ./secrets/home-psk;
+    };
+  };
 
   # Set your time zone.
   time.timeZone = "Europe/London";
@@ -50,7 +51,7 @@
   # Select internationalisation properties.
   i18n.defaultLocale = "en_GB.UTF-8";
   console = {
-  #   font = "Lat2-Terminus16";
+    #   font = "Lat2-Terminus16";
     keyMap = "uk";
   };
 
