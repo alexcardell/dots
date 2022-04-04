@@ -7,13 +7,14 @@
 {% if git_user_email != '' %}
   email = {{ git_user_email }}
 {% endif %}
-{% if git_user_signingkey != '' %}
-  signingkey = {{ git_user_signingkey}}
-{% endif %}
 {% if work %}
-{% if work_git_user_signingkey != '' %}
-  signingkey = {{ work_git_user_signingkey}}
-{% endif %}
+  {% if work_git_user_signingkey != '' %}
+signingkey = {{ work_git_user_signingkey}}
+  {% endif %}
+{% else %}
+  {% if git_user_signingkey != '' %}
+signingkey = {{ git_user_signingkey}}
+  {% endif %}
 {% endif %}
 
 {% if work %}
@@ -63,7 +64,7 @@
   untracked = blue
 
 [commit]
-  gpgsign = false
+  gpgsign = true
   verbose = true
 
 [core]
