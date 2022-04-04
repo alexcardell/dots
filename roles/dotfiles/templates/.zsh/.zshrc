@@ -258,7 +258,7 @@ bindkey "^P" autosuggest-accept
 [ -s "$HOME/.sdkman/bin/sdkman-init.sh" ] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
 # fnm -- TODO evaluate if I still want fnm if I'm switching to nix
-# eval "$(fnm env --use-on-cd)"
+eval "$(fnm env --use-on-cd)"
 
 # Autoload custom functions
 fpath=("$ZDOTDIR/autoloaded" $fpath)
