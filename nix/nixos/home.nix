@@ -6,7 +6,7 @@
   home.packages = with pkgs; [
     bitwarden
     # firefox
-    fzf
+    # fzf
     git
     git-crypt
     gnupg
@@ -77,7 +77,10 @@
     recursive = true;
   };
 
-  programs.firefox = {
+  programs.firefox.enable = true;
+
+  programs.fzf = {
     enable = true;
+    enableZshIntegration = true;
   };
 }

@@ -2,6 +2,7 @@
 -- and is imported via home-manager 
 -- see nixos/home.nix
 
-vim.opt.hidden = true;
+vim.opt.hidden = true
 
+require('completion').setup()
 require('lsp')
