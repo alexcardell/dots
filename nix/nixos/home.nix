@@ -81,6 +81,7 @@
 
   programs.fzf = {
     enable = true;
-    enableZshIntegration = true;
+    # zsh-vi-mode breaks this so it's handled in zshrc
+    enableZshIntegration = false;
   };
 }
