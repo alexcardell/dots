@@ -13,7 +13,7 @@
     kitty
     pinentry_qt
     ripgrep
-    tmux
+    # tmux
     xclip
   ];
 
@@ -83,5 +83,12 @@
     enable = true;
     # zsh-vi-mode breaks this so it's handled in zshrc
     enableZshIntegration = false;
+  };
+
+  programs.tmux = {
+    enable = true;
+    tmuxp.enable = true;
+
+    extraConfig = builtins.readFile ./home/.tmux.conf;
   };
 }
