@@ -6,23 +6,17 @@
   home.packages = with pkgs; [
     bitwarden
     # firefox
-    # fzf
     git
     git-crypt
     gnupg
     kitty
     pinentry_qt
     ripgrep
-    # tmux
     xclip
   ];
 
   programs.zsh = {
     enable = true;
-    # shellAliases = {
-    #   ll = "ls -alh";
-    #   ".." = "cd ..";
-    # };
 
     sessionVariables = {
       EDITOR = "nvim";
@@ -91,4 +85,12 @@
 
     extraConfig = builtins.readFile ./home/.tmux.conf;
   };
+
+  programs.git = {
+    enable = true;
+
+    extraConfig = builtins.readFile ./home/.gitconfig;
+  };
+
+  home.file.".gitignore".source = ./home/.gitignore-global;
 }

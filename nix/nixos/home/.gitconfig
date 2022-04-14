@@ -1,0 +1,72 @@
+# import via home-manager
+# see home.nix
+
+[user]
+name = alexcardell
+email = 29524087+alexcardell@users.noreply.github.com
+signingkey = 3E9874E01861C2AA
+
+[includeIf "gitdir:~/itv/**"]
+  path = ~/.gitconfig.work
+
+[alias]
+  a = add
+  aa = add --all
+  alias = config --get-regexp ^alias\\.
+  b = branch
+  ca = commit --amend -v
+  cc = commit -v
+  ccnv = commit -v --no-verify
+  co = checkout
+  cp = cherry-pick
+  d = diff
+  f = fetch
+  lg = log --graph --oneline --decorate --all
+  ls = log -n 20 --pretty=format:'%C(yellow)%h%Creset %s -- %C(bold italic magenta)<%cn>%Creset %C(blue)[%ad]%Creset %C(red)%d' --date=relative
+  p = pull
+  r = restore
+  rs = restore --staged
+  root = rev-parse --show-toplevel
+  s = status -sb
+  st = status
+  sub = submodule
+  sw = switch
+  # Review helpers
+  files = "!f() { git diff --name-only $(git merge-base HEAD $1) $2; }; f"
+  stat = "!f() { git diff --stat $(git merge-base HEAD $1) $2; }; f"
+
+[color]
+  ui = auto
+
+[color "status"]
+  added = green
+  changed = red
+  untracked = blue
+
+[commit]
+  gpgsign = true
+  verbose = true
+
+[core]
+  editor = nvim
+  excludesfile = ~/.gitignore
+  pager = less -S --chop-long-lines
+
+[merge]
+  tool = nvimmerge
+[mergetool]
+  prompt = true
+[mergetool "nvimdiff"]
+  cmd = nvim -f -c \"Gvdiff\" \"$MERGED\"
+[mergetool "nvimmerge"]
+  cmd = nvim -f -c \"Gvdiffsplit!\" \"$MERGED\"
+[difftool]
+  prompt = true
+[diff]
+  tool = nvimdiff
+
+[pull]
+  rebase = true
+
+[push]
+  default = current
