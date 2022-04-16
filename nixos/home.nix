@@ -55,6 +55,7 @@
 
     extraPackages = with pkgs; [
       rnix-lsp
+      metals
     ];
 
     # see xdg.configFile.nvim lua directory
@@ -67,6 +68,7 @@
       cmp-nvim-lua
       nvim-cmp
       nvim-lspconfig
+      nvim-metals
       plenary-nvim
       vim-nix
       vim-repeat
