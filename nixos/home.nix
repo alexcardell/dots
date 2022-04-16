@@ -1,5 +1,15 @@
 { pkgs, ... }:
-{
+let 
+  neo-tree-nvim = pkgs.vimUtils.buildVimPluginFrom2Nix {
+    name = "neo-tree.nvim";
+    src = pkgs.fetchFromGitHub {
+      owner = "nvim-neo-tree";
+      repo = "neo-tree.nvim";
+      rev = "a1f5f4b15cec517d632e7335d20400cb3f410606";
+      hash = "sha256-Mxg+TNEwBMcEYVUiNxCjuiPtNnG+MSrcfn29YvXwboo";
+    };
+  };
+in {
 
   services.dunst.enable = true;
 
@@ -66,6 +76,8 @@
     plugins = with pkgs.unstable.vimPlugins; [
       cmp-nvim-lsp
       cmp-nvim-lua
+      neo-tree-nvim
+      nui-nvim
       nvim-cmp
       nvim-lspconfig
       nvim-metals
