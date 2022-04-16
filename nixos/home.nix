@@ -15,11 +15,11 @@ in {
 
   home.packages = with pkgs; [
     bitwarden
-    # firefox
     git
     git-crypt
     gnupg
     kitty
+    nerdfonts
     pinentry_qt
     ripgrep
     xclip
@@ -85,6 +85,9 @@ in {
       vim-nix
       vim-repeat
       vim-surround
+      telescope-nvim
+      telescope-fzf-writer-nvim
+      telescope-symbols-nvim
     ];
   };
 
@@ -92,6 +95,8 @@ in {
     source = ./home/nvim;
     recursive = true;
   };
+
+  xdg.configFile."kitty/kitty.conf".source = ./home/kitty.conf;
 
   programs.firefox.enable = true;
 
