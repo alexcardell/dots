@@ -1,6 +1,7 @@
 local lsp_config = require('lspconfig')
-local completion = require('completion')
 local metals = require('metals')
+
+local completion = require('alex/completion')
 
 local on_attach = function ()
   return
