@@ -1,5 +1,6 @@
 local cmp = require('cmp')
 local cmp_lsp = require('cmp_nvim_lsp')
+local snippy = require('snippy')
 
 local M = {}
 
@@ -8,12 +9,13 @@ M.setup = function()
     sources = {
       { name = 'nvim_lsp' },
       -- { name = 'buffer' },
+      { name = 'snippy' },
     },
-    -- snippet = {
-    --   expand = function(args)
-    --     snippy.expand_snippet(args.body)
-    --   end
-    -- },
+    snippet = {
+      expand = function(args)
+        snippy.expand_snippet(args.body)
+      end
+    },
     documentation = {
       border = 'single'
     },
@@ -23,9 +25,9 @@ M.setup = function()
     -- experminetal = {
     --   ghost_text = true,
     -- },
-    -- mapping = {
-    --   ['<CR>'] = cmp.mapping.confirm({select = true}),
-    -- }
+    mapping = {
+      ['<Tab>'] = cmp.mapping.confirm({select = true}),
+    }
   })
 
   -- TODO investigate

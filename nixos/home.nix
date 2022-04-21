@@ -9,6 +9,24 @@ let
       hash = "sha256-Mxg+TNEwBMcEYVUiNxCjuiPtNnG+MSrcfn29YvXwboo";
     };
   };
+  nvim-snippy = pkgs.vimUtils.buildVimPluginFrom2Nix  {
+    name = "nvim-snippy";
+    src = pkgs.fetchFromGitHub {
+      owner = "dcampos";
+      repo = "nvim-snippy";
+      rev = "11ed49b8cf527aee154fb583409b90fa270fc7f8";
+      hash = "sha256-XKlS2J0bqoaknrhICTynyTL9FDhW/UdHpYD/j5pE1UM=";
+    };
+  };
+  cmp-snippy = pkgs.vimUtils.buildVimPluginFrom2Nix {
+    name = "cmp-snippy";
+    src = pkgs.fetchFromGitHub {
+      owner = "dcampos";
+      repo = "cmp-snippy";
+      rev = "9af1635fe40385ffa3dabf322039cb5ae1fd7d35";
+      hash = "sha256-vseoNZtB8jPGAJD8zFJigwKn11rXsNy04ipg0fYM46k=";
+    };
+  };
 in {
 
   services.dunst.enable = true;
@@ -76,6 +94,8 @@ in {
     plugins = with pkgs.unstable.vimPlugins; [
       cmp-nvim-lsp
       cmp-nvim-lua
+      cmp-snippy
+      nvim-snippy
       neo-tree-nvim
       nui-nvim
       nvim-cmp
