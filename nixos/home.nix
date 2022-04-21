@@ -33,6 +33,7 @@ in {
 
   home.packages = with pkgs; [
     bitwarden
+    firefox
     git
     git-crypt
     gnupg
@@ -118,7 +119,7 @@ in {
 
   xdg.configFile."kitty/kitty.conf".source = ./home/kitty.conf;
 
-  programs.firefox.enable = true;
+  # programs.firefox.enable = true;
 
   programs.fzf = {
     enable = true;
