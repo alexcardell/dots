@@ -8,6 +8,8 @@ vim.g.maplocalleader = "\\"
 vim.g.hidden = true
 vim.opt_global.shortmess:remove("F") -- required by metals
 
+vim.api.nvim_set_keymap("i", "jk", "<Esc>", {})
+
 local completion = require('alex/completion')
 local lsp = require('alex/lsp')
 
