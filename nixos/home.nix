@@ -83,8 +83,9 @@ in {
     package = pkgs.unstable.neovim-unwrapped;
 
     extraPackages = with pkgs; [
-      rnix-lsp
       metals
+      rnix-lsp
+      sumneko-lua-language-server
     ];
 
     # see xdg.configFile.nvim lua directory
