@@ -35,7 +35,25 @@ vim.fn.sign_define( "DiagnosticSignHint", {text = "", texthl = "DiagnosticSig
 require('neo-tree').setup({
   use_default_mappings = false,
   window = {
-    mappings = {}
+    mappings = {
+      ["<space>"] = "toggle_node",
+      ["o"] = "open",
+      ["O"] = "open_with_window_picker",
+      ["-"] = "open_split",
+      ["|"] = "open_vsplit",
+      ["t"] = "open_tabnew",
+      ["a"] = "add",
+      ["A"] = "add_directory",
+      ["d"] = "delete",
+      ["r"] = "rename",
+      ["y"] = "copy_to_clipboard",
+      ["x"] = "cut_to_clipboard",
+      ["p"] = "paste_from_clipboard",
+      ["c"] = "copy", -- takes text input for destination
+      ["m"] = "move", -- takes text input for destination
+      ["q"] = "close_window",
+      ["R"] = "refresh",
+    }
   }
 })
 
