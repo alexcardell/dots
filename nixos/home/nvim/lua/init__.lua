@@ -13,6 +13,8 @@ local key = vim.api.nvim_set_keymap
 
 key("i", "jk", "<Esc>", {})
 
+require('alex/statusline').setup()
+
 -- LSP
 local completion = require('alex/completion')
 local lsp = require('alex/lsp')

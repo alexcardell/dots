@@ -120,6 +120,7 @@ in {
       nvim-snippy
       plug.cmp-nvim-lsp
       plug.cmp-nvim-lua
+      plug.lualine-nvim
       plug.nui-nvim
       plug.nvim-cmp
       plug.nvim-lspconfig
