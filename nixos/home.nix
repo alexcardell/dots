@@ -1,12 +1,21 @@
 { pkgs, ... }:
 let 
+  telescope-nvim = pkgs.vimUtils.buildVimPluginFrom2Nix {
+    name = "telescope.nvim";
+    src = pkgs.fetchFromGitHub {
+      owner = "nvim-telescope";
+      repo = "telescope.nvim";
+      rev = "92019d5053674676576b021904935d101b059fd5";
+      hash = "sha256-Ss3Ts2LbZm2WisGiTg1pELoySeN49ARqxfEAaaw0lA8=";
+    };
+  };
   neo-tree-nvim = pkgs.vimUtils.buildVimPluginFrom2Nix {
     name = "neo-tree.nvim";
     src = pkgs.fetchFromGitHub {
       owner = "nvim-neo-tree";
       repo = "neo-tree.nvim";
-      rev = "a1f5f4b15cec517d632e7335d20400cb3f410606";
-      hash = "sha256-Mxg+TNEwBMcEYVUiNxCjuiPtNnG+MSrcfn29YvXwboo";
+      rev = "44310cf6dd0e57b747f0946976d17e0106c9e611";
+      hash = "sha256-PHCzXBSzAojasmcFFdxjQwTLfcnfA6qQV2SWar9+aEI=";
     };
   };
   nvim-snippy = pkgs.vimUtils.buildVimPluginFrom2Nix  {
@@ -25,6 +34,15 @@ let
       repo = "cmp-snippy";
       rev = "9af1635fe40385ffa3dabf322039cb5ae1fd7d35";
       hash = "sha256-vseoNZtB8jPGAJD8zFJigwKn11rXsNy04ipg0fYM46k=";
+    };
+  };
+  navigator-nvim = pkgs.vimUtils.buildVimPluginFrom2Nix {
+    name = "navigator.nvim";
+    src = pkgs.fetchFromGitHub {
+      owner = "numToStr";
+      repo = "navigator.nvim";
+      rev = "52225923679ec866651bb0c2e0691374131ec939";
+      hash = "sha256-2xJEFvymWpnZpTqoQA6ViURFNoqcoqiAUGootZqO304=";
     };
   };
 in {
@@ -93,23 +111,27 @@ in {
       lua require('init__')
     '';
 
-    plugins = with pkgs.unstable.vimPlugins; [
-      cmp-nvim-lsp
-      cmp-nvim-lua
+    plugins = let 
+      plug = pkgs.unstable.vimPlugins;
+    in [
       cmp-snippy
-      nvim-snippy
+      navigator-nvim
       neo-tree-nvim
-      nui-nvim
-      nvim-cmp
-      nvim-lspconfig
-      nvim-metals
-      plenary-nvim
-      vim-nix
-      vim-repeat
-      vim-surround
+      nvim-snippy
+      plug.cmp-nvim-lsp
+      plug.cmp-nvim-lua
+      plug.nui-nvim
+      plug.nvim-cmp
+      plug.nvim-lspconfig
+      plug.nvim-metals
+      plug.nvim-web-devicons
+      plug.plenary-nvim
+      plug.telescope-fzf-writer-nvim
+      plug.telescope-symbols-nvim
+      plug.vim-nix
+      plug.vim-repeat
+      plug.vim-surround
       telescope-nvim
-      telescope-fzf-writer-nvim
-      telescope-symbols-nvim
     ];
   };
 
