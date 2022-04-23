@@ -55,6 +55,7 @@ in {
     git
     git-crypt
     gnupg
+    jq
     kitty
     nerdfonts
     pinentry_qt
