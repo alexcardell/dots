@@ -21,15 +21,19 @@ M.setup_lsp = function ()
       capabilities = capabilities,
     })
 
-    lsp_config.rnix.setup {
+    -- nix
+    lsp_config.rnix.setup({
       on_attach = on_attach,
       handlers = handlers,
-    }
+    })
 
+    -- lua
     local runtime_path = vim.split(package.path, ';')
     table.insert(runtime_path, "lua/?.lua")
     table.insert(runtime_path, "lua/?/init.lua")
-    lsp_config.sumneko_lua.setup {
+    lsp_config.sumneko_lua.setup({
+      on_attach = on_attach,
+      handlers = handlers,
       settings = {
         Lua = {
           runtime = {
@@ -52,12 +56,19 @@ M.setup_lsp = function ()
           },
         },
       },
-    }
+    })
+
+    -- typescript/javascript
+    lsp_config.tsserver.setup({
+      on_attach = on_attach,
+      handlers = handlers,
+    })
   end
 
 M.metals = metals.bare_config()
 
 M.metals.on_attach = on_attach
+M.metals.handlers = handlers
 
 M.metals.init_options = {
      statusBarProvider            = "off",
@@ -76,7 +87,5 @@ M.metals.settings = {
 }
 
 M.metals.capabilities = capabilities
-
-M.metals.handlers = handlers
 
 return M

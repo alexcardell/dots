@@ -105,6 +105,7 @@ in {
       metals
       rnix-lsp
       sumneko-lua-language-server
+      nodePackages.typescript-language-server
     ];
 
     # see xdg.configFile.nvim lua directory
