@@ -8,6 +8,19 @@ vim.g.hidden = true
 vim.opt_global.shortmess:remove("F") -- required by metals
 vim.opt.number = true
 vim.opt.relativenumber = true
+vim.opt.smarttab = true
+vim.opt.switchbuf = "usetab"
+vim.opt.shiftround = true
+vim.opt.shiftwidth = 2
+vim.opt.tabstop = 2
+vim.opt.inccommand = "nosplit"
+vim.opt.autoread = true
+vim.opt.incsearch = true
+vim.opt.confirm = true
+vim.opt.showcmd = true
+vim.opt.ignorecase = true
+vim.opt.signcolumn = "yes:2"
+vim.opt.expandtab = true
 
 local key = vim.api.nvim_set_keymap
 
@@ -39,6 +52,7 @@ key("n", "<localleader>R", "<cmd>lua vim.lsp.buf.rename()<cr>", {})
 key("n", "<localleader>r", "<cmd>lua vim.lsp.buf.references()<cr>", {})
 key("n", "<localleader>c", "<cmd>lua vim.lsp.buf.code_action()<cr>", {})
 key("n", "<localleader>l", "<cmd>lua vim.lsp.codelens.run()<cr>", {})
+key("n", "<localleader>f", "<cmd>lua vim.lsp.buf.formatting()<cr>", {})
 
 -- Telescope
 key("n", "<leader>fa", "<cmd>Telescope find_files hidden=true<cr>", {})
