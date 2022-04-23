@@ -41,7 +41,7 @@ key("n", "<localleader>c", "<cmd>lua vim.lsp.buf.code_action()<cr>", {})
 key("n", "<localleader>l", "<cmd>lua vim.lsp.codelens.run()<cr>", {})
 
 -- Telescope
-key("n", "<leader>fa", "<cmd>Telescope find_files<cr>", {})
+key("n", "<leader>fa", "<cmd>Telescope find_files hidden=true<cr>", {})
 key("n", "<leader>f/", "<cmd>Telescope live_grep<cr>", {})
 key("n", "<leader>fb", "<cmd>Telescope buffers<cr>", {})
 key("n", "<leader>fh", "<cmd>Telescope help_tags<cr>", {})
@@ -85,6 +85,21 @@ require('neo-tree').setup({
       ["m"] = "move", -- takes text input for destination
       ["q"] = "close_window",
       ["R"] = "refresh",
+    }
+  },
+  filesystem = {
+    window = {
+      mappings = {
+        ["H"] = "toggle_hidden",
+        ["/"] = "fuzzy_finder",
+        -- ["f"] = "filter_on_submit",
+        -- ["<C-x>"] = "clear_filter",
+        ["<bs>"] = "navigate_up",
+        -- ["."] = "set_root",
+      }
+    },
+    filtered_items = {
+      hide_dotfiles = false
     }
   }
 })
