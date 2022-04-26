@@ -50,6 +50,7 @@ in {
   services.dunst.enable = true;
 
   home.packages = with pkgs; [
+    brightnessctl
     bitwarden
     firefox
     git
