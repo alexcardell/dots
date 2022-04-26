@@ -1,23 +1,12 @@
-# if [ "${PROFILE}" ]; then
-#    zmodload zsh/zprof
-# fi
-# 
-# OS=$(uname)
-# OS=$OS:l
+if [ "${PROFILE}" ]; then
+   zmodload zsh/zprof
+fi
 
-# bindkey -v
-# bindkey -M viins "jk" vi-cmd-mode
+OS=$(uname)
+OS=$OS:l
 
 # autoload -U compinit && compinit
-
 # autoload -U colors && colors
-
-# autoload -U edit-command-line
-# zle -N edit-command-line
-# bindkey '^xx' edit-command-line
-# bindkey '^x^x' edit-command-line
-# bindkey -M vicmd '^xx' edit-command-line
-# bindkey -M vicmd '^x^x' edit-command-line
 
 #---------
 # History
@@ -123,68 +112,6 @@ function () {
 PROMPT='%(?. .%F{yellow}%B!%b)%F{blue}alex ${_ZSH_PROMPTARROW} '
 RPROMPT='%F{240}${timer_show} %F{grey}%3~ ${vcs_info_msg_0_}%f'
 
-#-----------
-# Functions
-#-----------
-# function set-cursor-sequence {
-#   # Cursor shape escape sequence
-#   {% if darwin %}
-#     # Darwin
-#     BLOCK="\E]50;CursorShape=0\C-G"
-#     LINE="\E]50;CursorShape=1\C-G"
-#     TMUXBLOCK="\EPtmux;\E\E]50;CursorShape=0\x7\E\\"
-#     TMUXLINE="\EPtmux;\E\E]50;CursorShape=1\x7\E\\"
-#   {% endif %}
-#   {% if arch %}
-#     # Linux
-#     BLOCK="\033[2 q"
-#     LINE="\033[6 q"
-#     TMUXBLOCK="\033Ptmux;\033\033[2 q\x7\033\\"
-#     TMUXLINE="\033Ptmux;\033\033[6 q\x7\033\\"
-#   {% endif %}
-# 
-#   if [[ -n $TMUX ]]; then
-#     BLOCK=$TMUXBLOCK
-#     LINE=$TMUXLINE
-#   fi
-# }
-# 
-# set-cursor-sequence
-# # Use a line cursor for insert mode, block for normal
-# function zle-keymap-select zle-line-init zle-line-finish {
-#   case $KEYMAP in
-#     vicmd)      print -n -- "$BLOCK";; # block cursor
-#     viins|main) print -n -- "$LINE";; # line cursor
-#   esac
-#   zle reset-prompt
-#   zle -R
-# }
-# 
-# # Always default to block on ending a command
-# function zle-line-finish {
-#   print -n -- "$BLOCK"
-# }
-# 
-# zle -N zle-line-init
-# zle -N zle-line-finish
-# zle -N zle-keymap-select
-
-# Enable text objects for ",',`,(),{},<>, etc
-# autoload -U select-quoted
-# zle -N select-quoted
-# 
-# autoload -U select-bracketed
-# zle -N select-bracketed
-# 
-# for m in visual viopp; do
-#   for c in {a,i}{\',\",\`}; do
-#     bindkey -M $m $c select-quoted
-#   done
-#   for c in {a,i}${(s..)^:-'()[]{}<>'}; do
-#     bindkey -M $m $c select-bracketed
-#   done
-# done
-
 #---------
 # Aliases
 #---------
@@ -192,71 +119,22 @@ alias :q='exit'
 alias cdp='cd $(git rev-parse --show-toplevel 2> /dev/null || echo -n ".")'
 alias cl='clear'
 alias d='docker'
-alias db='dropbox-cli'
 alias dc='docker-compose'
 alias g='git'
 alias gs='git s'
-alias h='helm'
-alias k='kubectl'
-alias kctl='kubectl'
 alias py='python'
 alias r='ranger'
-alias t='tmuxp load'
-alias tat='echo "Use new alias \`tms\`"'
+alias t='tmux'
+alias tm='tmux'
 alias tms='tmux attach\; choose-tree -Zs'
 alias v='nvim'
 alias vi='nvim'
 alias vim='nvim'
 alias y='yarn'
 
-# {% if darwin %}
-# # Darwin
-# alias ls='gls --color=auto --group-directories-first'
-# alias ll='gls --color=auto --group-directories-first -alh'
-# alias pbc='pbcopy'
-# alias pbp='pbpaste'
-# 
-# # source private work aliases
-# [ -f $ZDOTDIR/.private.aliases.zsh ] && . $ZDOTDIR/.private.aliases.zsh
-# {% endif %}
-# 
-# {% if arch %}
-# Linux
 alias ll='ls --color=auto --group-directories-first -alh'
 alias ls='ls --color=auto --group-directories-first'
 alias open='xdg-open'
-
-# alias vpnon='systemctl start openvpn-client@work.service'
-# alias vpnoff='systemctl stop openvpn-client@work.service'
-# alias vpns='systemctl status openvpn-client@work.service'
-# {% endif %}
-
-# [ -f ~/.fzf/bin/fzf ] \
-#   && [ -f ~/.fzf.zsh ] \
-#   && [ -f $ZDOTDIR/fzf.zsh ] \
-#   && . ~/.fzf.zsh \
-#   && . $ZDOTDIR/fzf.zsh
-# 
-# {% if arch %}
-# [ -f /usr/share/autojump/autojump.zsh ] \
-#   && . /usr/share/autojump/autojump.zsh
-# {% endif %}
-# {% if darwin %}
-# [ -f /usr/local/etc/profile.d/autojump.sh ] \
-#   && . /usr/local/etc/profile.d/autojump.sh
-# {% endif %}
-# 
-# [ -f $ZDOTDIR/lib/zsh-autosuggestions/zsh-autosuggestions.zsh ] \
-#   && . $ZDOTDIR/lib/zsh-autosuggestions/zsh-autosuggestions.zsh
-# bindkey "^P" autosuggest-accept
-# 
-# [ -f $ZDOTDIR/lib/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh ] \
-#   && . $ZDOTDIR/lib/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
-# 
-# [ -s $HOME/.jabba/jabba.sh ] && . $HOME/.jabba/jabba.sh
-
-# fnm
-# eval "$(fnm env --use-on-cd)"
 
 # load fzf integration 
 # zsh-vi-mode causes a clash with the home-manager
@@ -278,6 +156,6 @@ if [[ -d "${autoloaded}" ]]; then
 fi
 unset autoloaded
 
-# if [ "${PROFILE}" ]; then
-#     zprof
-# fi
+if [ "${PROFILE}" ]; then
+    zprof
+fi
