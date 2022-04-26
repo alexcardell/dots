@@ -79,6 +79,7 @@ in {
       ZVM_VI_ESCAPE_BINDKEY = "jk";
     };
 
+    envExtra = builtins.readFile ./home/.zshenv;
     initExtra = builtins.readFile ./home/.zshrc;
 
     plugins = [
