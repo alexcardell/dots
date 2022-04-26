@@ -31,6 +31,7 @@ M.setup_lsp = function ()
     local runtime_path = vim.split(package.path, ';')
     table.insert(runtime_path, "lua/?.lua")
     table.insert(runtime_path, "lua/?/init.lua")
+    table.insert(runtime_path, "lua/?/init__.lua")
     lsp_config.sumneko_lua.setup({
       on_attach = on_attach,
       handlers = handlers,
@@ -60,6 +61,12 @@ M.setup_lsp = function ()
 
     -- typescript/javascript
     lsp_config.tsserver.setup({
+      on_attach = on_attach,
+      handlers = handlers,
+    })
+
+    -- tailwindcss
+    lsp_config.tailwindcss.setup({
       on_attach = on_attach,
       handlers = handlers,
     })
