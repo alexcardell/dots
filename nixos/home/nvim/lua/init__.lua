@@ -119,3 +119,13 @@ require('neo-tree').setup({
 })
 
 key("n", "<leader>t", "<cmd>Neotree toggle reveal=true<cr>", {})
+
+-- colorscheme
+require('base16-colorscheme').with_config({
+  telescope = false,
+  indentblankline = false,
+  notify = false,
+  ts_rainbow = false,
+})
+
+vim.cmd([[ colorscheme base16-tomorrow-night ]])

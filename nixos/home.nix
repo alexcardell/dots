@@ -136,6 +136,7 @@ in {
       plug.vim-nix
       plug.vim-repeat
       plug.vim-surround
+      plug.nvim-base16
       telescope-nvim
     ];
   };
