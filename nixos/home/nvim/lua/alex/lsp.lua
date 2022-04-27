@@ -1,4 +1,5 @@
-local lsp_config = require('lspconfig')
+local lspconfig = require('lspconfig')
+local lspconfig_win = require('lspconfig.ui.windows')
 local metals = require('metals')
 
 local completion = require('alex/completion')
@@ -14,15 +15,23 @@ local handlers =  {
 
 local capabilities = completion.capabilities()
 
+-- make :LspInfo pretty
+local _default_ops = lspconfig_win.default_opts
+lspconfig_win.default_opts = function(options)
+  local opts = _default_ops(options)
+  opts.border = 'single'
+  return opts
+end
+
 local M = {}
 
 M.setup_lsp = function ()
-    lsp_config.util.default_config = vim.tbl_extend("force", lsp_config.util.default_config, {
+    lspconfig.util.default_config = vim.tbl_extend("force", lspconfig.util.default_config, {
       capabilities = capabilities,
     })
 
     -- nix
-    lsp_config.rnix.setup({
+    lspconfig.rnix.setup({
       on_attach = on_attach,
       handlers = handlers,
     })
@@ -32,7 +41,7 @@ M.setup_lsp = function ()
     table.insert(runtime_path, "lua/?.lua")
     table.insert(runtime_path, "lua/?/init.lua")
     table.insert(runtime_path, "lua/?/init__.lua")
-    lsp_config.sumneko_lua.setup({
+    lspconfig.sumneko_lua.setup({
       on_attach = on_attach,
       handlers = handlers,
       settings = {
@@ -60,13 +69,13 @@ M.setup_lsp = function ()
     })
 
     -- typescript/javascript
-    lsp_config.tsserver.setup({
+    lspconfig.tsserver.setup({
       on_attach = on_attach,
       handlers = handlers,
     })
 
     -- tailwindcss
-    lsp_config.tailwindcss.setup({
+    lspconfig.tailwindcss.setup({
       on_attach = on_attach,
       handlers = handlers,
     })
