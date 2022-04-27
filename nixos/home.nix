@@ -145,7 +145,10 @@ in {
     recursive = true;
   };
 
-  xdg.configFile."kitty/kitty.conf".source = ./home/kitty.conf;
+  xdg.configFile.kitty = {
+    source = ./home/kitty;
+    recursive = true;
+  };
 
   # programs.firefox.enable = true;
 
