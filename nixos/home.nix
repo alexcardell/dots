@@ -157,6 +157,11 @@ in {
     recursive = true;
   };
 
+  xdg.configfile.i3 = {
+    source = ./home/i3;
+    recursive = true;
+  };
+
   # programs.firefox.enable = true;
 
   programs.fzf = {
@@ -179,4 +184,5 @@ in {
   };
 
   home.file.".gitignore".source = ./home/git/.gitignore-global;
+
 }
