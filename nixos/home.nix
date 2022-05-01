@@ -92,6 +92,11 @@ in {
     ];
   };
 
+  programs.autojump = {
+    enable = true;
+    enableZshIntegration = true;
+  };
+
   # Do I need this if the agent is enabled in configuration.nix?
   programs.gpg.enable = true;
 
