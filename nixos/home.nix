@@ -169,14 +169,14 @@ in {
     enable = true;
     tmuxp.enable = true;
 
-    extraConfig = builtins.readFile ./home/.tmux.conf;
+    extraConfig = builtins.readFile ./home/tmux/.tmux.conf;
   };
 
   programs.git = {
     enable = true;
 
-    extraConfig = builtins.readFile ./home/.gitconfig;
+    extraConfig = builtins.readFile ./home/git/.gitconfig;
   };
 
-  home.file.".gitignore".source = ./home/.gitignore-global;
+  home.file.".gitignore".source = ./home/git/.gitignore-global;
 }
