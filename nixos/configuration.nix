@@ -5,7 +5,7 @@
 { config, pkgs, ... }:
 
 {
-  imports =
+ imports =
     [
       # Include the results of the hardware scan.
       ./hardware-configuration.nix
@@ -66,6 +66,7 @@
   # services.xserver.xkbOptions = "eurosign:e";
   # Enable touchpad support (enabled default in most desktopManager).
   services.xserver.libinput.enable = true;
+  services.xserver.libinput.touchpad.naturalScrolling = true;
 
   # Enable CUPS to print documents.
   # services.printing.enable = true;

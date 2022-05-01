@@ -50,8 +50,8 @@ in {
   services.dunst.enable = true;
 
   home.packages = with pkgs; [
-    brightnessctl
     bitwarden
+    brightnessctl
     firefox
     git
     git-crypt
@@ -60,6 +60,7 @@ in {
     kitty
     nerdfonts
     pinentry_qt
+    polybar
     ripgrep
     xclip
   ];
