@@ -157,12 +157,15 @@ in {
     recursive = true;
   };
 
-  xdg.configfile.i3 = {
+  xdg.configFile.i3 = {
     source = ./home/i3;
     recursive = true;
   };
 
-  # programs.firefox.enable = true;
+  xdg.configFile.polybar = {
+    source = ./home/polybar;
+    recursive = true;
+  };
 
   programs.fzf = {
     enable = true;
