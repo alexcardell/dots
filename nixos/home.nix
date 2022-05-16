@@ -130,8 +130,10 @@ in {
       nvim-snippy
       plug.cmp-nvim-lsp
       plug.cmp-nvim-lua
+      plug.fzf-lua
       plug.lualine-nvim
       plug.nui-nvim
+      plug.nvim-base16
       plug.nvim-cmp
       plug.nvim-lspconfig
       plug.nvim-metals
@@ -142,7 +144,6 @@ in {
       plug.vim-nix
       plug.vim-repeat
       plug.vim-surround
-      plug.nvim-base16
       telescope-nvim
     ];
   };
