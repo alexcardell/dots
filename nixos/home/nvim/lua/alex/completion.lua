@@ -16,8 +16,9 @@ M.setup = function()
         snippy.expand_snippet(args.body)
       end
     },
-    documentation = {
-      border = 'single'
+    window = {
+      completion = cmp.config.window.bordered(),
+      documentation = cmp.config.window.bordered()
     },
     -- formatting = {
     --   format = lspkind.cmp_format({with_text = true, maxwidth = 50})
@@ -25,9 +26,12 @@ M.setup = function()
     -- experminetal = {
     --   ghost_text = true,
     -- },
-    mapping = {
-      ['<Tab>'] = cmp.mapping.confirm({select = true}),
-    }
+    mapping = cmp.mapping.preset.insert({
+      ['<Tab>'] =  cmp.mapping.confirm({
+          select = true,
+          behavior = 'replace',
+        }),
+    }),
   })
 
   -- TODO investigate

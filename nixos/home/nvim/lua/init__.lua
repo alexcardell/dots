@@ -21,6 +21,7 @@ vim.opt.showcmd = true
 vim.opt.ignorecase = true
 vim.opt.signcolumn = "yes:2"
 vim.opt.expandtab = true
+vim.opt.completeopt = { "menu", "menuone", "noselect" }
 
 local key = vim.api.nvim_set_keymap
 
