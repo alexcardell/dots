@@ -20,6 +20,8 @@ nnoremap <leader>fh :Helptags<CR>
 
 nnoremap <leader>fs :Snippets<CR>
 
+nnoremap <leader>fn :ZkNotes<CR>
+
 function! s:yank_results(lines)
   let joined_lines = join(a:lines, "\n")
   if len(a:lines) > 1
