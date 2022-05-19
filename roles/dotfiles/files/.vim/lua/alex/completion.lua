@@ -28,7 +28,7 @@ M.setup = function()
       ghost_text = true,
     },
     mapping = {
-      ['<CR>'] = cmp.mapping.confirm({select = true}),
+      ['<Tab>'] = cmp.mapping.confirm({select = true, behavior = 'replace'}),
     }
   })
 
