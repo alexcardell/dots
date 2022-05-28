@@ -1,0 +1,14 @@
+configuration {
+	modi: [drun, window, ssh];
+	show-icons: true;
+	terminal: "kitty";
+	sidebar-mode: true;
+	matching: "fuzzy"; 
+	sorting: "fzf"; 
+	kb-mode-next: "Super+Tab,Super+space";
+	window-format: "{c}	{t}	{w}";
+	window-match-fields: "class"; // title?
+	drun-match-fields: "name"; //
+}
+
+@theme "theme"

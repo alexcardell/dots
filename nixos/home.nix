@@ -62,6 +62,7 @@ in {
     pinentry_qt
     polybar
     ripgrep
+    rofi
     xclip
   ];
 
@@ -165,6 +166,11 @@ in {
 
   xdg.configFile.polybar = {
     source = ./home/polybar;
+    recursive = true;
+  };
+
+  xdg.configFile.rofi = {
+    source = ./home/rofi;
     recursive = true;
   };
 
