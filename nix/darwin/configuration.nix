@@ -1,8 +1,13 @@
 { config, pkgs, ... }:
 
 {
+
+  # nix.extraOptions = ''
+  #   experimental-features = nix-command flakes
+  # '';
+
   # enable nix-darwin to manage home-manager
-  imports = [ <home-manager/nix-darwin> ];
+  # imports = [ <home-manager/nix-darwin> ];
 
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget
@@ -15,6 +20,7 @@
   # Auto upgrade nix package and the daemon service.
   services.nix-daemon.enable = true;
   # nix.package = pkgs.nix;
+  # nix.package = pkgs.nixUnstable;
 
   programs.zsh.enable = true;
 
@@ -30,5 +36,5 @@
     home = "/Users/alexcard";
   };
 
-  home-manager.users.alexcard = import ../home-manager;
+  # home-manager.users.alexcard = import ../home-manager;
 }

@@ -1,7 +1,7 @@
 { pkgs, config, ... }:
 
 {
-  home.stateVersion = "22.05";
+  home.stateVersion = "21.11";
 
   home.packages = with pkgs; [
     # jdk11
@@ -11,6 +11,7 @@
     # jdk8
     # (jdk8.overrideAttrs (_: { postPatch = "rm man; ln -s ../zulu-8.jdk/Contents/Home/man man"; }))
     ammonite
+    kitty
     autojump
     aws-vault
     awscli2
@@ -20,8 +21,8 @@
     coreutils-full
     coursier
     curl
-    dasht
-    element-desktop
+    # dasht
+    # element-desktop
     fd
     fzf
     gh
@@ -30,20 +31,23 @@
     gnupg
     jq
     metals
-    neovim
+    unstable.neovim
     nerdfonts
     nix
     nixfmt
     openssh
     python39Full
-    ranger
+    # ranger
     ripgrep
     rnix-lsp
     sbt
-    sumneko-lua-language-server
+    # sumneko-lua-language-server
     tmux
   ];
 
-  programs.java.enable = true;
-  programs.java.package = (pkgs.jdk8.overrideAttrs (_: { postPatch = "rm man; ln -s ../zulu-8.jdk/Contents/Home/man man"; }));
+  programs.java = {
+    enable = true;
+    # package = pkgs.jdk8;
+    # (pkgs.jdk8.overrideAttrs (_: { postPatch = "rm man; ln -s ../zulu-8.jdk/Contents/Home/man man"; }));
+  };
 }
