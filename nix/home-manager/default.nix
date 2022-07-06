@@ -10,8 +10,11 @@
     # openjdk8
     # jdk8
     # (jdk8.overrideAttrs (_: { postPatch = "rm man; ln -s ../zulu-8.jdk/Contents/Home/man man"; }))
+    # dasht
+    # element-desktop
+    # ranger
+    # sumneko-lua-language-server
     ammonite
-    kitty
     autojump
     aws-vault
     awscli2
@@ -21,8 +24,6 @@
     coreutils-full
     coursier
     curl
-    # dasht
-    # element-desktop
     fd
     fzf
     gh
@@ -30,24 +31,23 @@
     git-crypt
     gnupg
     jq
+    kitty
     metals
-    unstable.neovim
     nerdfonts
     nix
     nixfmt
     openssh
     python39Full
-    # ranger
     ripgrep
     rnix-lsp
     sbt
-    # sumneko-lua-language-server
     tmux
+    unstable.neovim
   ];
 
   programs.java = {
     enable = true;
-    # package = pkgs.jdk8;
+    package = pkgs.jdk8;
     # (pkgs.jdk8.overrideAttrs (_: { postPatch = "rm man; ln -s ../zulu-8.jdk/Contents/Home/man man"; }));
   };
 }
