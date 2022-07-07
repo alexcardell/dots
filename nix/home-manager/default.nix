@@ -4,8 +4,6 @@
   home.stateVersion = "21.11";
 
   home.packages = with pkgs; [
-    # jdk11
-    # unstable.kitty
     # zk
     # openjdk8
     # jdk8
@@ -31,7 +29,6 @@
     git-crypt
     gnupg
     jq
-    kitty
     metals
     nerdfonts
     nix
