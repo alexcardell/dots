@@ -132,9 +132,9 @@ alias vi='nvim'
 alias vim='nvim'
 alias y='yarn'
 
-alias ll='ls --color=auto --group-directories-first -alh'
-alias ls='ls --color=auto --group-directories-first'
-alias open='xdg-open'
+# alias ll='ls --color=auto --group-directories-first -alh'
+# alias ls='ls --color=auto --group-directories-first'
+# alias open='xdg-open'
 
 # load fzf integration 
 # zsh-vi-mode causes a clash with the home-manager

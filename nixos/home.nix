@@ -1,12 +1,12 @@
 { pkgs, ... }:
-let 
-  telescope-nvim = pkgs.vimUtils.buildVimPluginFrom2Nix {
-    name = "telescope.nvim";
+let
+  plenary-nvim = pkgs.vimUtils.buildVimPluginFrom2Nix {
+    name = "plenary.nvim";
     src = pkgs.fetchFromGitHub {
-      owner = "nvim-telescope";
-      repo = "telescope.nvim";
-      rev = "92019d5053674676576b021904935d101b059fd5";
-      hash = "sha256-Ss3Ts2LbZm2WisGiTg1pELoySeN49ARqxfEAaaw0lA8=";
+      owner = "nvim-lua";
+      repo = "plenary.nvim";
+      rev = "31807eef4ed574854b8a53ae40ea3292033a78ea";
+      hash = "sha256-G84JTsj06vwidfEyaNIUvLLaKM9HB5zNAexCDWbGfu4=";
     };
   };
   neo-tree-nvim = pkgs.vimUtils.buildVimPluginFrom2Nix {
@@ -14,17 +14,17 @@ let
     src = pkgs.fetchFromGitHub {
       owner = "nvim-neo-tree";
       repo = "neo-tree.nvim";
-      rev = "44310cf6dd0e57b747f0946976d17e0106c9e611";
-      hash = "sha256-PHCzXBSzAojasmcFFdxjQwTLfcnfA6qQV2SWar9+aEI=";
+      rev = "v2.34";
+      hash = "sha256-fXK6Mw0Xc17H13vtmKBBN9Bsy5ZFEc0qu29doNDMyfQ=";
     };
   };
-  nvim-snippy = pkgs.vimUtils.buildVimPluginFrom2Nix  {
+  nvim-snippy = pkgs.vimUtils.buildVimPluginFrom2Nix {
     name = "nvim-snippy";
     src = pkgs.fetchFromGitHub {
       owner = "dcampos";
       repo = "nvim-snippy";
-      rev = "11ed49b8cf527aee154fb583409b90fa270fc7f8";
-      hash = "sha256-XKlS2J0bqoaknrhICTynyTL9FDhW/UdHpYD/j5pE1UM=";
+      rev = "1860215584d4835d87f75896f07007b3b3c06df4";
+      hash = "sha256-Qprdlfd88nZKbVRqHRNFZfhiDgNnWcqR4MYIE5b79hw=";
     };
   };
   cmp-snippy = pkgs.vimUtils.buildVimPluginFrom2Nix {
@@ -41,30 +41,50 @@ let
     src = pkgs.fetchFromGitHub {
       owner = "numToStr";
       repo = "navigator.nvim";
-      rev = "52225923679ec866651bb0c2e0691374131ec939";
-      hash = "sha256-2xJEFvymWpnZpTqoQA6ViURFNoqcoqiAUGootZqO304=";
+      rev = "0c57f67a34eff7fd20785861926b7fe6bd76e2c2";
+      hash = "sha256-THPIzyuECJTjoCq2k99KCLxYGunlf9BYM8FpKHiBLrg=";
     };
   };
-in {
+  zk-nvim = pkgs.vimUtils.buildVimPluginFrom2Nix {
+    name = "zk-nvim";
+    src = pkgs.fetchFromGitHub {
+      owner = "mickael-menu";
+      repo = "zk-nvim";
+      rev = "73affbc95fba3655704e4993a8929675bc9942a1";
+      hash = "sha256-BQrF88hVSDc9zjCWcSSCnw1yhCfMu8zsMbilAI0Xh2c=";
+    };
+  };
+in
+{
 
-  services.dunst.enable = true;
+  # services.dunst.enable = true;
 
   home.packages = with pkgs; [
-    bitwarden
-    brightnessctl
-    firefox
+    # bitwarden
+    # brightnessctl
+    # firefox
+    # pinentry_qt
+    # polybar
+    # rofi
+    # xclip
+    gh
     git
     git-crypt
     gnupg
+    graalvm11-ce
     jq
     kitty
     nerdfonts
-    pinentry_qt
-    polybar
+    nodejs-14_x
     ripgrep
-    rofi
-    xclip
+    sbt
+    zk
   ];
+
+  home.sessionVariables = {
+    # workaround to allow kitty to run darwin-rebuild
+    TERMINFO_DIRS = "${pkgs.kitty.terminfo.outPath}/share/terminfo";
+  };
 
   programs.direnv = {
     enable = true;
@@ -113,7 +133,7 @@ in {
     extraPackages = with pkgs; [
       metals
       rnix-lsp
-      sumneko-lua-language-server
+      # sumneko-lua-language-server
       nodePackages.typescript-language-server
     ];
 
@@ -122,31 +142,35 @@ in {
       lua require('init__')
     '';
 
-    plugins = let 
-      plug = pkgs.unstable.vimPlugins;
-    in [
-      cmp-snippy
-      navigator-nvim
-      neo-tree-nvim
-      nvim-snippy
-      plug.cmp-nvim-lsp
-      plug.cmp-nvim-lua
-      plug.fzf-lua
-      plug.lualine-nvim
-      plug.nui-nvim
-      plug.nvim-base16
-      plug.nvim-cmp
-      plug.nvim-lspconfig
-      plug.nvim-metals
-      plug.nvim-web-devicons
-      plug.plenary-nvim
-      plug.telescope-fzf-writer-nvim
-      plug.telescope-symbols-nvim
-      plug.vim-nix
-      plug.vim-repeat
-      plug.vim-surround
-      telescope-nvim
-    ];
+    plugins =
+      let
+        plug = pkgs.unstable.vimPlugins;
+      in
+      [
+        cmp-snippy
+        navigator-nvim
+        neo-tree-nvim
+        nvim-snippy
+        plenary-nvim
+        zk-nvim
+        plug.cmp-nvim-lsp
+        plug.cmp-nvim-lua
+        plug.fzf-lua
+        plug.lualine-nvim
+        plug.nui-nvim
+        plug.nvim-base16
+        plug.nvim-cmp
+        plug.nvim-lspconfig
+        plug.nvim-metals
+        plug.nvim-web-devicons
+        plug.telescope-fzf-writer-nvim
+        plug.telescope-nvim
+        plug.telescope-symbols-nvim
+        plug.vim-commentary
+        plug.vim-nix
+        plug.vim-repeat
+        plug.vim-surround
+      ];
   };
 
   xdg.configFile.nvim = {
@@ -159,20 +183,20 @@ in {
     recursive = true;
   };
 
-  xdg.configFile.i3 = {
-    source = ./home/i3;
-    recursive = true;
-  };
+  # xdg.configFile.i3 = {
+  #   source = ./home/i3;
+  #   recursive = true;
+  # };
 
   xdg.configFile.polybar = {
     source = ./home/polybar;
     recursive = true;
   };
 
-  xdg.configFile.rofi = {
-    source = ./home/rofi;
-    recursive = true;
-  };
+  # xdg.configFile.rofi = {
+  #   source = ./home/rofi;
+  #   recursive = true;
+  # };
 
   programs.fzf = {
     enable = true;

@@ -74,11 +74,11 @@ M.setup_lsp = function ()
       handlers = handlers,
     })
 
-    -- tailwindcss
-    lspconfig.tailwindcss.setup({
-      on_attach = on_attach,
-      handlers = handlers,
-    })
+    -- -- tailwindcss
+    -- lspconfig.tailwindcss.setup({
+    --   on_attach = on_attach,
+    --   handlers = handlers,
+    -- })
   end
 
 M.metals = metals.bare_config()
