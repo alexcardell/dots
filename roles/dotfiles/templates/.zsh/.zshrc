@@ -257,6 +257,8 @@ bindkey "^P" autosuggest-accept
 
 [ -s "$HOME/.sdkman/bin/sdkman-init.sh" ] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
+source "/etc/profiles/per-user/alexcard/etc/profile.d/hm-session-vars.sh"
+
 # fnm -- TODO evaluate if I still want fnm if I'm switching to nix
 # eval "$(fnm env --use-on-cd)"
 
