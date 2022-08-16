@@ -31,7 +31,6 @@
         nix.extraOptions = ''
           experimental-features = nix-command flakes
         '';
-
         services.nix-daemon.enable = true;
       };
 
@@ -49,22 +48,30 @@
     in
     {
       nixosConfigurations = {
-        nixpad = let
-          system = "x86-64-linux";
-        in
+        nixbox =
+          let
+            system = "x86_64-linux";
+          in
           lib.nixosSystem {
+            inherit system;
+
             modules = [
               # make pkgs.unstable.package available
               ({ config, pkgs, ... }: {
                 nixpkgs.overlays = [ (overlay-unstable system) ];
               })
 
-              ./nixos/configuration.nix
+              ./nixos/hosts/nixbox/configuration.nix
 
-              home-manager.nixosModules.home-manager {
+              home-manager.nixosModules.home-manager
+              {
                 home-manager.useGlobalPkgs = true;
                 home-manager.useUserPackages = true;
-                home-manager.users.alex = import ./nixos/home.nix;
+                home-manager.users.alex = {
+                  imports = [
+                    ./nixos/home.nix
+                  ];
+                };
               }
             ];
           };
@@ -87,12 +94,14 @@
 
               ./nixos/hosts/darwin/configuration.nix
 
-              home-manager.darwinModule
+              home-manager.darwinModule.home-manager
               {
-                home-manager = {
-                  useGlobalPkgs = true;
-                  useUserPackages = true;
-                  users.alexcard = import ./nixos/home.nix;
+                useGlobalPkgs = true;
+                useUserPackages = true;
+                users.alexcard = {
+                  imports = [
+                    ./nixos/home.nix
+                  ];
                 };
               }
             ];

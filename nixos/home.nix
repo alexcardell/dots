@@ -60,15 +60,14 @@ in
   # services.dunst.enable = true;
 
   home.packages = with pkgs; [
-    # bitwarden
     # brightnessctl
     # firefox
+    # gh
+    # git
     # pinentry_qt
     # polybar
-    # rofi
     # xclip
-    gh
-    git
+    bitwarden
     git-crypt
     gnupg
     graalvm11-ce
@@ -76,7 +75,9 @@ in
     kitty
     nerdfonts
     nodejs-14_x
+    # pavucontrol ## nix shelling into this fixed my sound
     ripgrep
+    rofi
     sbt
     zk
   ];
@@ -173,6 +174,31 @@ in
       ];
   };
 
+  programs.git = {
+    enable = true;
+
+    extraConfig = builtins.readFile ./home/git/.gitconfig;
+  };
+
+  programs.tmux = {
+    enable = true;
+    tmuxp.enable = true;
+
+    extraConfig = builtins.readFile ./home/tmux/.tmux.conf;
+  };
+
+  programs.fzf = {
+    enable = true;
+    # zsh-vi-mode breaks this so it's handled in zshrc
+    enableZshIntegration = false;
+  };
+
+  programs.firefox.enable = true;
+
+  # programs.gh.enable = true;
+
+  programs.htop.enable = true;
+
   xdg.configFile.nvim = {
     source = ./home/nvim;
     recursive = true;
@@ -183,38 +209,19 @@ in
     recursive = true;
   };
 
-  # xdg.configFile.i3 = {
-  #   source = ./home/i3;
-  #   recursive = true;
-  # };
+  xdg.configFile.i3 = {
+    source = ./home/i3;
+    recursive = true;
+  };
 
   xdg.configFile.polybar = {
     source = ./home/polybar;
     recursive = true;
   };
 
-  # xdg.configFile.rofi = {
-  #   source = ./home/rofi;
-  #   recursive = true;
-  # };
-
-  programs.fzf = {
-    enable = true;
-    # zsh-vi-mode breaks this so it's handled in zshrc
-    enableZshIntegration = false;
-  };
-
-  programs.tmux = {
-    enable = true;
-    tmuxp.enable = true;
-
-    extraConfig = builtins.readFile ./home/tmux/.tmux.conf;
-  };
-
-  programs.git = {
-    enable = true;
-
-    extraConfig = builtins.readFile ./home/git/.gitconfig;
+  xdg.configFile.rofi = {
+    source = ./home/rofi;
+    recursive = true;
   };
 
   home.file.".gitignore".source = ./home/git/.gitignore-global;
