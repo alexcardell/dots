@@ -1,57 +1,77 @@
 { pkgs, ... }:
 let
-  plenary-nvim = pkgs.vimUtils.buildVimPluginFrom2Nix {
-    name = "plenary.nvim";
-    src = pkgs.fetchFromGitHub {
-      owner = "nvim-lua";
-      repo = "plenary.nvim";
-      rev = "31807eef4ed574854b8a53ae40ea3292033a78ea";
-      hash = "sha256-G84JTsj06vwidfEyaNIUvLLaKM9HB5zNAexCDWbGfu4=";
+  vimPlugingsGithub = {
+    plenary-nvim = pkgs.vimUtils.buildVimPluginFrom2Nix {
+      name = "plenary.nvim";
+      src = pkgs.fetchFromGitHub {
+        owner = "nvim-lua";
+        repo = "plenary.nvim";
+        rev = "31807eef4ed574854b8a53ae40ea3292033a78ea";
+        hash = "sha256-G84JTsj06vwidfEyaNIUvLLaKM9HB5zNAexCDWbGfu4=";
+      };
     };
-  };
-  neo-tree-nvim = pkgs.vimUtils.buildVimPluginFrom2Nix {
-    name = "neo-tree.nvim";
-    src = pkgs.fetchFromGitHub {
-      owner = "nvim-neo-tree";
-      repo = "neo-tree.nvim";
-      rev = "v2.34";
-      hash = "sha256-fXK6Mw0Xc17H13vtmKBBN9Bsy5ZFEc0qu29doNDMyfQ=";
+    neo-tree-nvim = pkgs.vimUtils.buildVimPluginFrom2Nix {
+      name = "neo-tree.nvim";
+      src = pkgs.fetchFromGitHub {
+        owner = "nvim-neo-tree";
+        repo = "neo-tree.nvim";
+        rev = "v2.34";
+        hash = "sha256-fXK6Mw0Xc17H13vtmKBBN9Bsy5ZFEc0qu29doNDMyfQ=";
+      };
     };
-  };
-  nvim-snippy = pkgs.vimUtils.buildVimPluginFrom2Nix {
-    name = "nvim-snippy";
-    src = pkgs.fetchFromGitHub {
-      owner = "dcampos";
-      repo = "nvim-snippy";
-      rev = "1860215584d4835d87f75896f07007b3b3c06df4";
-      hash = "sha256-Qprdlfd88nZKbVRqHRNFZfhiDgNnWcqR4MYIE5b79hw=";
+    nvim-snippy = pkgs.vimUtils.buildVimPluginFrom2Nix {
+      name = "nvim-snippy";
+      src = pkgs.fetchFromGitHub {
+        owner = "dcampos";
+        repo = "nvim-snippy";
+        rev = "1860215584d4835d87f75896f07007b3b3c06df4";
+        hash = "sha256-Qprdlfd88nZKbVRqHRNFZfhiDgNnWcqR4MYIE5b79hw=";
+      };
     };
-  };
-  cmp-snippy = pkgs.vimUtils.buildVimPluginFrom2Nix {
-    name = "cmp-snippy";
-    src = pkgs.fetchFromGitHub {
-      owner = "dcampos";
-      repo = "cmp-snippy";
-      rev = "9af1635fe40385ffa3dabf322039cb5ae1fd7d35";
-      hash = "sha256-vseoNZtB8jPGAJD8zFJigwKn11rXsNy04ipg0fYM46k=";
+    cmp-snippy = pkgs.vimUtils.buildVimPluginFrom2Nix {
+      name = "cmp-snippy";
+      src = pkgs.fetchFromGitHub {
+        owner = "dcampos";
+        repo = "cmp-snippy";
+        rev = "9af1635fe40385ffa3dabf322039cb5ae1fd7d35";
+        hash = "sha256-vseoNZtB8jPGAJD8zFJigwKn11rXsNy04ipg0fYM46k=";
+      };
     };
-  };
-  navigator-nvim = pkgs.vimUtils.buildVimPluginFrom2Nix {
-    name = "navigator.nvim";
-    src = pkgs.fetchFromGitHub {
-      owner = "numToStr";
-      repo = "navigator.nvim";
-      rev = "0c57f67a34eff7fd20785861926b7fe6bd76e2c2";
-      hash = "sha256-THPIzyuECJTjoCq2k99KCLxYGunlf9BYM8FpKHiBLrg=";
+    navigator-nvim = pkgs.vimUtils.buildVimPluginFrom2Nix {
+      name = "navigator.nvim";
+      src = pkgs.fetchFromGitHub {
+        owner = "numToStr";
+        repo = "navigator.nvim";
+        rev = "0c57f67a34eff7fd20785861926b7fe6bd76e2c2";
+        hash = "sha256-THPIzyuECJTjoCq2k99KCLxYGunlf9BYM8FpKHiBLrg=";
+      };
     };
-  };
-  zk-nvim = pkgs.vimUtils.buildVimPluginFrom2Nix {
-    name = "zk-nvim";
-    src = pkgs.fetchFromGitHub {
-      owner = "mickael-menu";
-      repo = "zk-nvim";
-      rev = "73affbc95fba3655704e4993a8929675bc9942a1";
-      hash = "sha256-BQrF88hVSDc9zjCWcSSCnw1yhCfMu8zsMbilAI0Xh2c=";
+    zk-nvim = pkgs.vimUtils.buildVimPluginFrom2Nix {
+      name = "zk-nvim";
+      src = pkgs.fetchFromGitHub {
+        owner = "mickael-menu";
+        repo = "zk-nvim";
+        rev = "73affbc95fba3655704e4993a8929675bc9942a1";
+        hash = "sha256-BQrF88hVSDc9zjCWcSSCnw1yhCfMu8zsMbilAI0Xh2c=";
+      };
+    };
+    gitsigns-nvim = pkgs.vimUtils.buildVimPluginFrom2Nix {
+      name = "gitsigns.nvim";
+      src = pkgs.fetchFromGitHub {
+        owner = "lewis6991";
+        repo = "gitsigns.nvim";
+        rev = "d7e0bcbe45bd9d5d106a7b2e11dc15917d272c7a";
+        hash = "sha256-kyiQoboYq4iNLOj1iKA2cfXQ9FFiRYdvf55bX5Xvj8A=";
+      };
+    };
+    tint-nvim = pkgs.vimUtils.buildVimPluginFrom2Nix {
+      name = "tint.nvim";
+      src = pkgs.fetchFromGitHub {
+        owner = "levouh";
+        repo = "tint.nvim";
+        rev = "819a173c21175f2ef57fa0ad0b57ac4eb8c5425d";
+        hash = "sha256-xqCrCMTemXpDTIrDU+UaNV8BzSUXn9j2VI5BRkjMLRg=";
+      };
     };
   };
 in
@@ -146,16 +166,21 @@ in
     plugins =
       let
         plug = pkgs.unstable.vimPlugins;
+        gh = vimPlugingsGithub;
       in
       [
-        cmp-snippy
-        navigator-nvim
-        neo-tree-nvim
-        nvim-snippy
-        plenary-nvim
-        zk-nvim
+        gh.cmp-snippy
+        gh.gitsigns-nvim
+        gh.navigator-nvim
+        gh.neo-tree-nvim
+        gh.nvim-snippy
+        gh.plenary-nvim
+        gh.tint-nvim
+        gh.zk-nvim
         plug.cmp-nvim-lsp
         plug.cmp-nvim-lua
+        plug.cmp_luasnip
+        plug.diaglist-nvim
         plug.fzf-lua
         plug.lualine-nvim
         plug.nui-nvim
