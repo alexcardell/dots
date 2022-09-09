@@ -54,6 +54,9 @@ key("n", "<localleader>r", "<cmd>lua vim.lsp.buf.references()<cr>", {})
 key("n", "<localleader>c", "<cmd>lua vim.lsp.buf.code_action()<cr>", {})
 key("n", "<localleader>l", "<cmd>lua vim.lsp.codelens.run()<cr>", {})
 key("n", "<localleader>f", "<cmd>lua vim.lsp.buf.formatting()<cr>", {})
+-- Diaglist
+key("n", "<localleader>x", "<cmd>lua require('diaglist').open_all_diagnostics()<cr>", {})
+key("n", "<localleader>X", "<cmd>lua require('diaglist').open_buffer_diagnostics()<cr>", {})
 
 -- Telescope
 key("n", "<leader>fa", "<cmd>Telescope find_files hidden=true<cr>", {})
@@ -73,10 +76,10 @@ key('n', "<C-j>", '<CMD>NavigatorDown<CR>', {})
 
 -- Tree
 vim.cmd([[ let g:neo_tree_remove_legacy_commands = 1 ]])
-vim.fn.sign_define( "DiagnosticSignError", {text = " ", texthl = "DiagnosticSignError"})
-vim.fn.sign_define( "DiagnosticSignWarn", {text = " ", texthl = "DiagnosticSignWarn"})
-vim.fn.sign_define( "DiagnosticSignInfo", {text = " ", texthl = "DiagnosticSignInfo"})
-vim.fn.sign_define( "DiagnosticSignHint", {text = "", texthl = "DiagnosticSignHint"})
+vim.fn.sign_define("DiagnosticSignError", {text = " ", texthl = "DiagnosticSignError"})
+vim.fn.sign_define("DiagnosticSignWarn", {text = " ", texthl = "DiagnosticSignWarn"})
+vim.fn.sign_define("DiagnosticSignInfo", {text = " ", texthl = "DiagnosticSignInfo"})
+vim.fn.sign_define("DiagnosticSignHint", {text = " ", texthl = "DiagnosticSignHint"})
 
 require('neo-tree').setup({
   use_default_mappings = false,

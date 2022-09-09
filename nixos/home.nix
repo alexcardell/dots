@@ -163,11 +163,13 @@ in
         neo-tree-nvim
         nvim-snippy
         plenary-nvim
-        zk-nvim
+        plug.cmp_luasnip
         plug.cmp-nvim-lsp
         plug.cmp-nvim-lua
+        plug.diaglist-nvim
         plug.fzf-lua
         plug.lualine-nvim
+        plug.luasnip
         plug.nui-nvim
         plug.nvim-base16
         plug.nvim-cmp
@@ -178,9 +180,13 @@ in
         plug.telescope-nvim
         plug.telescope-symbols-nvim
         plug.vim-commentary
+        plug.vim-fugitive
         plug.vim-nix
+        plug.vim-pencil
         plug.vim-repeat
+        plug.vim-rhubarb
         plug.vim-surround
+        zk-nvim
       ];
   };
 

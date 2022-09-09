@@ -1,3 +1,6 @@
+export WORKPATH=$HOME/itv
+export ZK_NOTEBOOK_DIR=$WORKPATH/notes
+
 DEFAULT_PATH=$PATH
 unset PATH
 
