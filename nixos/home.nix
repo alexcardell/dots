@@ -138,7 +138,7 @@ in
     withRuby = true;
     withPython3 = true;
 
-    package = pkgs.unstable.neovim-unwrapped;
+    package = pkgs.neovim-nightly;
 
     extraPackages = with pkgs; [
       metals

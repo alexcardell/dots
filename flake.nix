@@ -15,9 +15,11 @@
       url = "github:LnL7/nix-darwin";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    neovim-nightly.url = "github:nix-community/neovim-nightly-overlay";
   };
 
-  outputs = { nixpkgs, nixpkgs-unstable, home-manager, darwin, ... }:
+  outputs = { nixpkgs, nixpkgs-unstable, home-manager, darwin, neovim-nightly, ... }:
     let
       # system = "x86_64-linux";
 
@@ -80,7 +82,10 @@
 
             modules = [
               ({ config, pkgs, ... }: {
-                nixpkgs.overlays = [ (overlay-unstable system) ];
+                nixpkgs.overlays = [ 
+                  (overlay-unstable system) 
+                  neovim-nightly.overlay
+                ];
               })
 
               darwinConfiguration
