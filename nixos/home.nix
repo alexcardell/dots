@@ -76,6 +76,7 @@ in
     # polybar
     # rofi
     # xclip
+    aws-vault
     gh
     git
     git-crypt
