@@ -15,9 +15,11 @@
       url = "github:LnL7/nix-darwin";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    neovim-nightly.url = "github:nix-community/neovim-nightly-overlay";
   };
 
-  outputs = { nixpkgs, nixpkgs-unstable, home-manager, darwin, ... }:
+  outputs = { nixpkgs, nixpkgs-unstable, home-manager, darwin, neovim-nightly, ... }:
     let
       # system = "x86_64-linux";
 
@@ -43,6 +45,11 @@
         };
       };
 
+      sharedOverlays = system: [
+        (overlay-unstable system)
+        neovim-nightly.overlay
+      ];
+
       nixosConfiguration = hostname:
         let
           system = "x86_64-linux";
@@ -51,9 +58,8 @@
           inherit system;
 
           modules = [
-            # make pkgs.unstable.package available
             ({ config, pkgs, ... }: {
-              nixpkgs.overlays = [ (overlay-unstable system) ];
+              nixpkgs.overlays = sharedOverlays system;
             })
 
             ./nixos/hosts/nixbox/configuration.nix
@@ -91,7 +97,7 @@
 
             modules = [
               ({ config, pkgs, ... }: {
-                nixpkgs.overlays = [ (overlay-unstable system) ];
+                nixpkgs.overlays = sharedOverlays system;
               })
 
               darwinConfiguration
