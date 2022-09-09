@@ -54,6 +54,15 @@ let
       hash = "sha256-BQrF88hVSDc9zjCWcSSCnw1yhCfMu8zsMbilAI0Xh2c=";
     };
   };
+  gitsigns-nvim = pkgs.vimUtils.buildVimPluginFrom2Nix {
+    name = "gitsigns.nvim";
+    src = pkgs.fetchFromGitHub {
+      owner = "lewis6991";
+      repo = "gitsigns.nvim";
+      rev = "d7e0bcbe45bd9d5d106a7b2e11dc15917d272c7a";
+      hash = "sha256-kyiQoboYq4iNLOj1iKA2cfXQ9FFiRYdvf55bX5Xvj8A=";
+    };
+  };
 in
 {
 
@@ -147,7 +156,8 @@ in
         plug = pkgs.unstable.vimPlugins;
       in
       [
-        cmp-snippy
+        # cmp-snippy
+        gitsigns-nvim
         navigator-nvim
         neo-tree-nvim
         nvim-snippy

@@ -64,7 +64,6 @@ key("n", "<leader>fc", "<cmd>Telescope commands<cr>", {})
 key("n", "<leader>fm", "<cmd>Telescope marks<cr>", {})
 key("n", "<leader>fp", "<cmd>Telescope registers<cr>", {})
 
-
 -- tmux integration
 require('Navigator').setup()
 key('n', "<C-h>", '<CMD>NavigatorLeft<CR>', {})
@@ -131,4 +130,14 @@ require('base16-colorscheme').with_config({
 
 vim.cmd([[ colorscheme base16-tomorrow-night ]])
 
-require('zk').setup({ picker = 'telescope' })
+local zk = require('zk')
+local zk_cmds = require('zk.commands')
+
+zk.setup({ picker = 'telescope' })
+
+zk_cmds.add("ZkDaily", function(options)
+  options = vim.tbl_extend("force", { dir = "journal/daily" }, options or {})
+  zk.new(options)
+end)
+
+require('gitsigns').setup()
