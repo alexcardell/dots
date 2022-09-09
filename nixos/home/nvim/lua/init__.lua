@@ -144,3 +144,5 @@ zk_cmds.add("ZkDaily", function(options)
 end)
 
 require('gitsigns').setup()
+
+require('tint').setup()

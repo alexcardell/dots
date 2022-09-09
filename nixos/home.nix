@@ -63,6 +63,15 @@ let
       hash = "sha256-kyiQoboYq4iNLOj1iKA2cfXQ9FFiRYdvf55bX5Xvj8A=";
     };
   };
+  tint-nvim = pkgs.vimUtils.buildVimPluginFrom2Nix {
+    name = "tint.nvim";
+    src = pkgs.fetchFromGitHub {
+      owner = "levouh";
+      repo = "tint.nvim";
+      rev = "819a173c21175f2ef57fa0ad0b57ac4eb8c5425d";
+      hash = "sha256-xqCrCMTemXpDTIrDU+UaNV8BzSUXn9j2VI5BRkjMLRg=";
+    };
+  };
 in
 {
 
@@ -163,9 +172,9 @@ in
         neo-tree-nvim
         nvim-snippy
         plenary-nvim
-        plug.cmp_luasnip
         plug.cmp-nvim-lsp
         plug.cmp-nvim-lua
+        plug.cmp_luasnip
         plug.diaglist-nvim
         plug.fzf-lua
         plug.lualine-nvim
@@ -186,6 +195,7 @@ in
         plug.vim-repeat
         plug.vim-rhubarb
         plug.vim-surround
+        tint-nvim
         zk-nvim
       ];
   };
