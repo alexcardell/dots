@@ -86,6 +86,7 @@ in
     # rofi
     # xclip
     aws-vault
+    bitwarden-cli
     gh
     git
     git-crypt
