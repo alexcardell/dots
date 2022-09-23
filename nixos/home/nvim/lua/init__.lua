@@ -53,7 +53,7 @@ key("n", "<localleader>R", "<cmd>lua vim.lsp.buf.rename()<cr>", {})
 key("n", "<localleader>r", "<cmd>lua vim.lsp.buf.references()<cr>", {})
 key("n", "<localleader>c", "<cmd>lua vim.lsp.buf.code_action()<cr>", {})
 key("n", "<localleader>l", "<cmd>lua vim.lsp.codelens.run()<cr>", {})
-key("n", "<localleader>f", "<cmd>lua vim.lsp.buf.formatting()<cr>", {})
+key("n", "<localleader>f", "<cmd>lua vim.lsp.buf.format()<cr>", {})
 -- Diaglist
 key("n", "<localleader>x", "<cmd>lua require('diaglist').open_all_diagnostics()<cr>", {})
 key("n", "<localleader>X", "<cmd>lua require('diaglist').open_buffer_diagnostics()<cr>", {})
