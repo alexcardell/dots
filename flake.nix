@@ -43,38 +43,42 @@
         };
       };
 
-      lib = nixpkgs.lib;
+      nixosConfiguration = hostname:
+        let
+          system = "x86_64-linux";
+        in
+        nixpkgs.lib.nixosSystem {
+          inherit system;
+
+          modules = [
+            # make pkgs.unstable.package available
+            ({ config, pkgs, ... }: {
+              nixpkgs.overlays = [ (overlay-unstable system) ];
+            })
+
+            ./nixos/hosts/nixbox/configuration.nix
+
+            home-manager.nixosModules.home-manager
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.users.alex = {
+                imports = [
+                  ./nixos/systems/linux/home/default.nix
+                  (./nixos/hosts + "/${hostname}" + /home/default.nix)
+                  ./nixos/home.nix
+                ];
+              };
+            }
+          ];
+        };
 
     in
     {
       nixosConfigurations = {
-        nixbox =
-          let
-            system = "x86_64-linux";
-          in
-          lib.nixosSystem {
-            inherit system;
+        nixbox = nixosConfiguration "nixbox";
 
-            modules = [
-              # make pkgs.unstable.package available
-              ({ config, pkgs, ... }: {
-                nixpkgs.overlays = [ (overlay-unstable system) ];
-              })
-
-              ./nixos/hosts/nixbox/configuration.nix
-
-              home-manager.nixosModules.home-manager
-              {
-                home-manager.useGlobalPkgs = true;
-                home-manager.useUserPackages = true;
-                home-manager.users.alex = {
-                  imports = [
-                    ./nixos/home.nix
-                  ];
-                };
-              }
-            ];
-          };
+        nixpad = nixosConfiguration "nixpad";
       };
 
       darwinConfigurations = {
@@ -98,8 +102,11 @@
               {
                 useGlobalPkgs = true;
                 useUserPackages = true;
+
                 users.alexcard = {
                   imports = [
+                    ./nixos/systems/darwin/home/default.nix
+                    ./nixos/hosts/darwin/home/default.nix
                     ./nixos/home.nix
                   ];
                 };
