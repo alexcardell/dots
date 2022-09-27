@@ -102,19 +102,23 @@
 
               darwinConfiguration
 
+              ./nixos/systems/darwin/configuration.nix
+
               ./nixos/hosts/darwin/configuration.nix
 
-              home-manager.darwinModule.home-manager
+              home-manager.darwinModule
               {
-                useGlobalPkgs = true;
-                useUserPackages = true;
+                home-manager = {
+                  useGlobalPkgs = true;
+                  useUserPackages = true;
 
-                users.alexcard = {
-                  imports = [
-                    ./nixos/systems/darwin/home/default.nix
-                    ./nixos/hosts/darwin/home/default.nix
-                    ./nixos/home.nix
-                  ];
+                  users.alexcard = {
+                    imports = [
+                      ./nixos/systems/darwin/home/default.nix
+                      ./nixos/hosts/darwin/home/default.nix
+                      ./nixos/home.nix
+                    ];
+                  };
                 };
               }
             ];

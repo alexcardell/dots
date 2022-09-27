@@ -10,6 +10,15 @@ let
         hash = "sha256-G84JTsj06vwidfEyaNIUvLLaKM9HB5zNAexCDWbGfu4=";
       };
     };
+    nvim-cmp = pkgs.vimUtils.buildVimPluginFrom2Nix {
+      name = "nvim-cmp";
+      src = pkgs.fetchFromGitHub {
+        owner = "hrsh7th";
+        repo = "nvim-cmp";
+        rev = "2427d06b6508489547cd30b6e86b1c75df363411";
+        hash = "sha256-3YpEu/VlWO4yVf+tNqz0YbJZjOrbzWIxvUe3JliZepI=";
+      };
+    };
     neo-tree-nvim = pkgs.vimUtils.buildVimPluginFrom2Nix {
       name = "neo-tree.nvim";
       src = pkgs.fetchFromGitHub {
@@ -17,24 +26,6 @@ let
         repo = "neo-tree.nvim";
         rev = "v2.34";
         hash = "sha256-fXK6Mw0Xc17H13vtmKBBN9Bsy5ZFEc0qu29doNDMyfQ=";
-      };
-    };
-    nvim-snippy = pkgs.vimUtils.buildVimPluginFrom2Nix {
-      name = "nvim-snippy";
-      src = pkgs.fetchFromGitHub {
-        owner = "dcampos";
-        repo = "nvim-snippy";
-        rev = "1860215584d4835d87f75896f07007b3b3c06df4";
-        hash = "sha256-Qprdlfd88nZKbVRqHRNFZfhiDgNnWcqR4MYIE5b79hw=";
-      };
-    };
-    cmp-snippy = pkgs.vimUtils.buildVimPluginFrom2Nix {
-      name = "cmp-snippy";
-      src = pkgs.fetchFromGitHub {
-        owner = "dcampos";
-        repo = "cmp-snippy";
-        rev = "9af1635fe40385ffa3dabf322039cb5ae1fd7d35";
-        hash = "sha256-vseoNZtB8jPGAJD8zFJigwKn11rXsNy04ipg0fYM46k=";
       };
     };
     navigator-nvim = pkgs.vimUtils.buildVimPluginFrom2Nix {
@@ -81,13 +72,14 @@ in
 
   home.packages = with pkgs; [
     # brightnessctl
-    # firefox
     # gh
     # git
+    # pavucontrol ## nix shelling into this fixed my sound
     # pinentry_qt
     # polybar
     # xclip
-    bitwarden
+    # bitwarden
+    # firefox
     git-crypt
     gnupg
     graalvm11-ce
@@ -95,9 +87,8 @@ in
     kitty
     nerdfonts
     nodejs-14_x
-    # pavucontrol ## nix shelling into this fixed my sound
     ripgrep
-    rofi
+    # rofi
     sbt
     zk
   ];
@@ -169,11 +160,9 @@ in
         gh = vimPlugingsGithub;
       in
       [
-        gh.cmp-snippy
         gh.gitsigns-nvim
         gh.navigator-nvim
         gh.neo-tree-nvim
-        gh.nvim-snippy
         gh.plenary-nvim
         gh.tint-nvim
         gh.zk-nvim
@@ -183,9 +172,10 @@ in
         plug.diaglist-nvim
         plug.fzf-lua
         plug.lualine-nvim
+        plug.luasnip
         plug.nui-nvim
         plug.nvim-base16
-        plug.nvim-cmp
+        gh.nvim-cmp
         plug.nvim-lspconfig
         plug.nvim-metals
         plug.nvim-web-devicons
@@ -218,7 +208,7 @@ in
     enableZshIntegration = false;
   };
 
-  programs.firefox.enable = true;
+  # programs.firefox.enable = true;
 
   # programs.gh.enable = true;
 
