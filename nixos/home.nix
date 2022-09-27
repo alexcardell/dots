@@ -151,7 +151,7 @@ in
     package = pkgs.neovim-nightly;
 
     extraPackages = with pkgs; [
-      metals
+      unstable.metals
       rnix-lsp
       # sumneko-lua-language-server
       nodePackages.typescript-language-server
