@@ -80,9 +80,10 @@ in
     # xclip
     # bitwarden
     # firefox
+    entr
     git-crypt
     gnupg
-    graalvm11-ce
+    # graalvm11-ce
     jq
     kitty
     nerdfonts
@@ -92,6 +93,12 @@ in
     sbt
     zk
   ];
+
+
+  programs.java = {
+    enable = true;
+    package = pkgs.jdk8;
+  };
 
   home.sessionVariables = {
     # workaround to allow kitty to run darwin-rebuild
@@ -132,7 +139,9 @@ in
   };
 
   # Do I need this if the agent is enabled in configuration.nix?
-  programs.gpg.enable = true;
+  programs.gpg = {
+    enable = true;
+  };
 
   programs.neovim = {
     enable = true;
@@ -163,6 +172,7 @@ in
         gh.gitsigns-nvim
         gh.navigator-nvim
         gh.neo-tree-nvim
+        gh.nvim-cmp
         gh.plenary-nvim
         gh.tint-nvim
         gh.zk-nvim
@@ -175,16 +185,18 @@ in
         plug.luasnip
         plug.nui-nvim
         plug.nvim-base16
-        gh.nvim-cmp
         plug.nvim-lspconfig
         plug.nvim-metals
+        plug.nvim-treesitter
         plug.nvim-web-devicons
         plug.telescope-fzf-writer-nvim
         plug.telescope-nvim
         plug.telescope-symbols-nvim
         plug.vim-commentary
+        plug.vim-fugitive
         plug.vim-nix
         plug.vim-repeat
+        plug.vim-rhubarb
         plug.vim-surround
       ];
   };

@@ -55,6 +55,10 @@ key("n", "<localleader>c", "<cmd>lua vim.lsp.buf.code_action()<cr>", {})
 key("n", "<localleader>l", "<cmd>lua vim.lsp.codelens.run()<cr>", {})
 key("n", "<localleader>f", "<cmd>lua vim.lsp.buf.formatting()<cr>", {})
 
+-- Diaglist
+key("n", "<localleader>x", "<cmd>lua require('diaglist').open_all_diagnostics()<cr>", {})
+key("n", "<localleader>X", "<cmd>lua require('diaglist').open_buffer_diagnostics()<cr>", {})
+
 -- Telescope
 key("n", "<leader>fa", "<cmd>Telescope find_files hidden=true<cr>", {})
 key("n", "<leader>f/", "<cmd>Telescope live_grep<cr>", {})
@@ -63,6 +67,7 @@ key("n", "<leader>fh", "<cmd>Telescope help_tags<cr>", {})
 key("n", "<leader>fc", "<cmd>Telescope commands<cr>", {})
 key("n", "<leader>fm", "<cmd>Telescope marks<cr>", {})
 key("n", "<leader>fp", "<cmd>Telescope registers<cr>", {})
+key("n", "<leader>fx", "<cmd>Telescope diagnostics<cr>", {})
 
 
 -- tmux integration
@@ -142,5 +147,14 @@ zk_cmds.add("ZkDaily", function(options)
 end)
 
 require('gitsigns').setup()
+key("n", "<leader>hs", "<cmd>Gitsigns stage_hunk<cr>", {})
+key("n", "<leader>hu", "<cmd>Gitsigns undo_stage_hunk<CR>", {})
+key("n", "<leader>hr", "<cmd>Gitsigns reset_hunk<cr>", {})
+key("v", "<leader>hr", "<cmd>Gitsigns reset_hunk<cr>", {})
+key("n", "<leader>hp", "<cmd>Gitsigns preview_hunk<cr>", {})
+key("n", "]c", '&diff ? "]c" : "<cmd>Gitsigns next_hunk<cr>"', {expr=true})
+key("n", "[c", '&diff ? "[c" : "<cmd>Gitsigns prev_hunk<cr>"', {expr=true})
+key("o", "ih", ":<C-U>Gitsigns select_hunk<CR>", {})
+key("x", "ih", ":<C-U>Gitsigns select_hunk<CR>", {})
 
 require('tint').setup()

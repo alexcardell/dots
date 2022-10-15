@@ -4,7 +4,7 @@
 [user]
 name = alexcardell
 email = 29524087+alexcardell@users.noreply.github.com
-signingkey = 3E9874E01861C2AA
+signingkey = "E7B681278B22134A!"
 
 [includeIf "gitdir:~/itv/**"]
   path = ~/.gitconfig.work
