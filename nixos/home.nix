@@ -185,6 +185,7 @@ in
         plug.lualine-nvim
         plug.luasnip
         plug.nui-nvim
+        plug.nvim-autopairs
         plug.nvim-base16
         plug.nvim-dap
         plug.nvim-dap-virtual-text

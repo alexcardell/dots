@@ -160,3 +160,5 @@ key("o", "ih", ":<C-U>Gitsigns select_hunk<CR>", {})
 key("x", "ih", ":<C-U>Gitsigns select_hunk<CR>", {})
 
 require('tint').setup()
+
+require('nvim-autopairs').setup()
