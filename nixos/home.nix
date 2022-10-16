@@ -166,16 +166,16 @@ in
     plugins =
       let
         plug = pkgs.unstable.vimPlugins;
-        gh = vimPlugingsGithub;
+        pinned = vimPlugingsGithub;
       in
       [
-        gh.gitsigns-nvim
-        gh.navigator-nvim
-        gh.neo-tree-nvim
-        gh.nvim-cmp
-        gh.plenary-nvim
-        gh.tint-nvim
-        gh.zk-nvim
+        pinned.gitsigns-nvim
+        pinned.navigator-nvim
+        pinned.neo-tree-nvim
+        pinned.nvim-cmp
+        pinned.plenary-nvim
+        pinned.tint-nvim
+        pinned.zk-nvim
         plug.cmp-nvim-lsp
         plug.cmp-nvim-lua
         plug.cmp_luasnip
@@ -185,6 +185,8 @@ in
         plug.luasnip
         plug.nui-nvim
         plug.nvim-base16
+        plug.nvim-dap
+        plug.nvim-dap-virtual-text
         plug.nvim-lspconfig
         plug.nvim-metals
         plug.nvim-treesitter

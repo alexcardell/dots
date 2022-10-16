@@ -32,9 +32,11 @@ require('alex/statusline').setup()
 -- LSP
 local completion = require('alex/completion')
 local lsp = require('alex/lsp')
+local dap = require('alex/dap')
 
 completion.setup()
 lsp.setup_lsp()
+dap.setup()
 
 -- metals autocmd
 vim.cmd([[
