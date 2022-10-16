@@ -119,6 +119,7 @@ in
     sessionVariables = {
       EDITOR = "nvim";
       ZVM_VI_ESCAPE_BINDKEY = "jk";
+      ZDOTDIR = "\${HOME}/.zsh";
     };
 
     envExtra = builtins.readFile ./home/zsh/.zshenv;
@@ -131,6 +132,11 @@ in
         file = "share/zsh-vi-mode/zsh-vi-mode.plugin.zsh";
       }
     ];
+  };
+
+  home.file.".zsh" = {
+    source = ./home/zsh/.zsh;
+    recursive = true;
   };
 
   programs.autojump = {
