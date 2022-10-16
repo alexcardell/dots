@@ -192,6 +192,7 @@ in
         plug.nvim-lspconfig
         plug.nvim-metals
         plug.nvim-treesitter
+        plug.nvim-ts-autotag
         plug.nvim-web-devicons
         plug.telescope-fzf-writer-nvim
         plug.telescope-nvim

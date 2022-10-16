@@ -162,3 +162,9 @@ key("x", "ih", ":<C-U>Gitsigns select_hunk<CR>", {})
 require('tint').setup()
 
 require('nvim-autopairs').setup()
+
+require('nvim-treesitter.configs').setup({
+  autotag = {
+    enable = true,
+  }
+})
