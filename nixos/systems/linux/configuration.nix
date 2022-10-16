@@ -19,9 +19,14 @@
   networking.wireless.enable = true; # Enables wireless support via wpa_supplicant.
   networking.wireless.userControlled.enable = true; # Enables wireless support via wpa_supplicant.
   # Generate pskRaw with # wpa_passphrase SSID PSK
-  networking.wireless.networks = {
-    # "ssid".psk = "${builtins.readFile ./secrets/home-ssid}" 
-  };
+  networking.wireless.networks =
+    let
+      home-ssid = pkgs.lib.removeSuffix "\n" "${builtins.readFile ../../secrets/home-ssid}";
+      home-psk = pkgs.lib.removeSuffix "\n" "${builtins.readFile ../../secrets/home-psk}";
+    in
+    {
+      "${home-ssid}".pskRaw = home-psk;
+    };
 
   # Set your time zone.
   time.timeZone = "Europe/London";
