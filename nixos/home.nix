@@ -181,6 +181,7 @@ in
         plug.cmp_luasnip
         plug.diaglist-nvim
         plug.fzf-lua
+        plug.lspkind-nvim
         plug.lualine-nvim
         plug.luasnip
         plug.nui-nvim

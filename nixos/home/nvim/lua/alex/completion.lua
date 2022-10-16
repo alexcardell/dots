@@ -1,6 +1,7 @@
 local cmp = require('cmp')
 local cmp_lsp = require('cmp_nvim_lsp')
 local luasnip = require('luasnip')
+local lspkind = require('lspkind')
 
 local M = {}
 
@@ -20,12 +21,12 @@ M.setup = function()
       completion = cmp.config.window.bordered(),
       documentation = cmp.config.window.bordered()
     },
-    -- formatting = {
-    --   format = lspkind.cmp_format({with_text = true, maxwidth = 50})
-    -- },
-    -- experminetal = {
-    --   ghost_text = true,
-    -- },
+    formatting = {
+      format = lspkind.cmp_format({
+        mode = 'symbol', 
+        maxwidth = 50,
+      })
+    },
     mapping = cmp.mapping.preset.insert({
       ['<Tab>'] =  cmp.mapping.confirm({
           select = true,
