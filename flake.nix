@@ -53,17 +53,18 @@
       nixosConfiguration = hostname:
         let
           system = "x86_64-linux";
+          overlays = ({ config, pkgs, ... }: {
+            nixpkgs.overlays = sharedOverlays system;
+          });
+          host-configuration = (./nixos/hosts + "/${hostname}" + /configuration.nix);
+          host-home = (./nixos/hosts + "/${hostname}" + /home/default.nix);
         in
         nixpkgs.lib.nixosSystem {
           inherit system;
 
           modules = [
-            ({ config, pkgs, ... }: {
-              nixpkgs.overlays = sharedOverlays system;
-            })
-
-            ./nixos/hosts/nixbox/configuration.nix
-
+            overlays
+            host-configuration
             home-manager.nixosModules.home-manager
             {
               home-manager.useGlobalPkgs = true;
@@ -71,7 +72,7 @@
               home-manager.users.alex = {
                 imports = [
                   ./nixos/systems/linux/home/default.nix
-                  (./nixos/hosts + "/${hostname}" + /home/default.nix)
+                  host-home
                   ./nixos/home.nix
                 ];
               };

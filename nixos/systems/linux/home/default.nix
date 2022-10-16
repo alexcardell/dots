@@ -1,6 +1,6 @@
-{ ... }:
+{ config, pkgs, ... }:
 {
-  home.packages = [
+  home.packages = with pkgs; [
     bitwarden
     bitwarden-cli
     rofi
