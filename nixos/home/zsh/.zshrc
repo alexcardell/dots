@@ -144,8 +144,6 @@ function zvm_after_init() {
   [ -f "$(fzf-share)/key-bindings.zsh" ] &&  source "$(fzf-share)/key-bindings.zsh"
   [ -f "$(fzf-share)/completion.zsh" ] &&  source "$(fzf-share)/completion.zsh"
   # fi
-  ### zsh-vi-mode even breaks this somehow
-  [ -f "${ZDOTDIR}/fzf.zsh" ] && source "${ZDOTDIR}/fzf.zsh" 
 }
 
 # Autoload custom functions
