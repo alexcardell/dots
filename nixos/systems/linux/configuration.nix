@@ -23,9 +23,12 @@
     let
       home-ssid = pkgs.lib.removeSuffix "\n" "${builtins.readFile ../../secrets/home-ssid}";
       home-psk = pkgs.lib.removeSuffix "\n" "${builtins.readFile ../../secrets/home-psk}";
+      airbnb-ssid = pkgs.lib.removeSuffix "\n" "${builtins.readFile ../../secrets/airbnb-ssid}";
+      airbnb-psk = pkgs.lib.removeSuffix "\n" "${builtins.readFile ../../secrets/airbnb-psk}";
     in
     {
       "${home-ssid}".pskRaw = home-psk;
+      "${airbnb-ssid}".psk = airbnb-psk;
     };
 
   # Set your time zone.
