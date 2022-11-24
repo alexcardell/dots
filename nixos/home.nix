@@ -201,6 +201,7 @@ in
         plug.vim-commentary
         plug.vim-fugitive
         plug.vim-nix
+        plug.vim-pencil
         plug.vim-repeat
         plug.vim-rhubarb
         plug.vim-surround
