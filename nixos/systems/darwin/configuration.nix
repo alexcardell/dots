@@ -5,6 +5,7 @@
     enable = true;
     casks = [
       "firefox"
+      "inso"
     ];
   };
 }
