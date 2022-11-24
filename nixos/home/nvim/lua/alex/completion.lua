@@ -44,7 +44,7 @@ M.setup = function()
 end
 
 M.capabilities = function()
-  return cmp_lsp.update_capabilities(
+  return cmp_lsp.default_capabilities(
     vim.lsp.protocol.make_client_capabilities()
   );
 end

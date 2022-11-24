@@ -69,6 +69,7 @@ in
 {
 
   # services.dunst.enable = true;
+  home.stateVersion = "22.11";
 
   home.packages = with pkgs; [
     # brightnessctl
@@ -107,10 +108,7 @@ in
 
   programs.direnv = {
     enable = true;
-    nix-direnv = {
-      enable = true;
-      enableFlakes = true;
-    };
+    nix-direnv.enable = true;
   };
 
   programs.zsh = {
@@ -149,7 +147,7 @@ in
     withRuby = true;
     withPython3 = true;
 
-    package = pkgs.neovim-nightly;
+    # package = pkgs.neovim-nightly;
 
     extraPackages = with pkgs; [
       metals
