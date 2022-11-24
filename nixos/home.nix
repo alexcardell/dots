@@ -153,10 +153,10 @@ in
 
     extraPackages = with pkgs; [
       metals
-      rnix-lsp
-      # sumneko-lua-language-server
       nodePackages.typescript-language-server
+      rnix-lsp
       unstable.ltex-ls
+      unstable.sumneko-lua-language-server
     ];
 
     # see xdg.configFile.nvim lua directory
