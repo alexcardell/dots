@@ -204,6 +204,7 @@ in
         plug.vim-repeat
         plug.vim-rhubarb
         plug.vim-surround
+        plug.zen-mode-nvim
       ];
   };
 

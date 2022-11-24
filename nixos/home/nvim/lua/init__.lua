@@ -161,6 +161,8 @@ key("x", "ih", ":<C-U>Gitsigns select_hunk<CR>", {})
 
 require('tint').setup()
 
+require('zen-mode').setup()
+
 -- require('nvim-autopairs').setup()
 
 -- require('nvim-treesitter.configs').setup({
