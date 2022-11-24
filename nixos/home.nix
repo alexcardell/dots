@@ -156,6 +156,7 @@ in
       rnix-lsp
       # sumneko-lua-language-server
       nodePackages.typescript-language-server
+      unstable.ltex-ls
     ];
 
     # see xdg.configFile.nvim lua directory

@@ -36,6 +36,13 @@ M.setup_lsp = function ()
       handlers = handlers,
     })
 
+    -- ltex -- markdown/latex
+    lspconfig.ltex.setup({
+      on_attach = on_attach,
+      handlers = handlers,
+      filetypes = { 'markdown', 'tex' },
+    })
+
     -- lua
     local runtime_path = vim.split(package.path, ';')
     table.insert(runtime_path, "lua/?.lua")
