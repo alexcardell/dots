@@ -39,6 +39,9 @@ metals.sbt
 .bloop
 target/
 
+# Lua
+.luarc.json
+
 ####################
 
 # Ansible #
