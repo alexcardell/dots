@@ -180,6 +180,7 @@ in
         plug.cmp_luasnip
         plug.diaglist-nvim
         plug.fzf-lua
+        plug.lsp-inlayhints-nvim
         plug.lspkind-nvim
         plug.lualine-nvim
         plug.luasnip
