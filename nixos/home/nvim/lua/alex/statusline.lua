@@ -27,8 +27,13 @@ local bubbles_theme = {
   },
 }
 
+local function metals_status()
+  return vim.g["metals_status"] or ""
+end
+
 local M = {}
-M.setup = function ()
+
+M.setup = function()
   require('lualine').setup {
     options = {
       theme = bubbles_theme,
@@ -40,9 +45,9 @@ M.setup = function ()
         { 'mode', separator = { left = '' }, right_padding = 2 },
       },
       lualine_b = { 'filename', 'branch', 'diff' },
-      lualine_c = { },
-      lualine_x = { },
-      lualine_y = { 'diagnostics', 'filetype', 'progress' },
+      lualine_c = {},
+      lualine_x = {},
+      lualine_y = { metals_status, 'diagnostics', 'filetype', 'progress' },
       lualine_z = {
         { 'location', separator = { right = '' }, left_padding = 2 },
       },

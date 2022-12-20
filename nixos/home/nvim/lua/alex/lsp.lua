@@ -102,7 +102,7 @@ M.metals.on_attach = on_attach
 M.metals.handlers = handlers
 
 M.metals.init_options = {
-  statusBarProvider            = "off",
+  statusBarProvider            = "on",
   inputBoxProvider             = true,
   quickPickProvider            = true,
   executeClientCommandProvider = true,
