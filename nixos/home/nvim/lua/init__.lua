@@ -172,7 +172,7 @@ require('other-nvim').setup({
     },
     {
       pattern = "/src/test/scala/(.*)/(.*)Test.scala",
-      target = "/src/main/scala/%1/%.scala",
+      target = "/src/main/scala/%1/%2.scala",
       context = "main"
     }
   },
