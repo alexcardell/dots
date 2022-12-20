@@ -64,6 +64,15 @@ let
         hash = "sha256-xqCrCMTemXpDTIrDU+UaNV8BzSUXn9j2VI5BRkjMLRg=";
       };
     };
+    other-nvim = pkgs.vimUtils.buildVimPluginFrom2Nix {
+      name = "other.nvim";
+      src = pkgs.fetchFromGitHub {
+        owner = "rgroli";
+        repo = "other.nvim";
+        rev = "9afecea37c9b5ffed65a21de9e585d548de7778a";
+        hash = "sha256-df/L8ZOdjkviE6WRRe7uon82hlUb+yYDdtiN3pJ5OBs=";
+      };
+    };
   };
 in
 {
@@ -172,6 +181,7 @@ in
         pinned.navigator-nvim
         pinned.neo-tree-nvim
         pinned.nvim-cmp
+        pinned.other-nvim
         pinned.plenary-nvim
         pinned.tint-nvim
         pinned.zk-nvim

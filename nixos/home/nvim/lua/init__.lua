@@ -159,9 +159,24 @@ key("n", "[c", '&diff ? "[c" : "<cmd>Gitsigns prev_hunk<cr>"', {expr=true})
 key("o", "ih", ":<C-U>Gitsigns select_hunk<CR>", {})
 key("x", "ih", ":<C-U>Gitsigns select_hunk<CR>", {})
 
-require('tint').setup()
+require('tint').setup({})
 
 require('zen-mode').setup()
+
+require('other-nvim').setup({
+  mappings = {
+    {
+      pattern = "/src/main/scala/(.*)/(.*).scala",
+      target = "/src/test/scala/%1/%2Test.scala",
+      context = "test"
+    },
+    {
+      pattern = "/src/test/scala/(.*)/(.*)Test.scala",
+      target = "/src/main/scala/%1/%.scala",
+      context = "main"
+    }
+  },
+})
 
 -- require('nvim-autopairs').setup()
 
