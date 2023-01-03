@@ -177,6 +177,9 @@ require('other-nvim').setup({
     }
   },
 })
+key("n", "<leader>of", "<cmd>Other<cr>", {})
+key("n", "<leader>os", "<cmd>OtherSplit<cr>", {})
+key("n", "<leader>ov", "<cmd>OtherVSplit<cr>", {})
 
 -- require('nvim-autopairs').setup()
 
