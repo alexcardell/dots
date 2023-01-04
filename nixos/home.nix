@@ -90,20 +90,20 @@ in
     # xclip
     # bitwarden
     # firefox
+    # graalvm11-ce
+    # rofi
     entr
     git-crypt
     gnupg
-    # graalvm11-ce
     jq
     kitty
     nerdfonts
     nodejs-14_x
     ripgrep
-    # rofi
     sbt
+    scala-cli
     zk
   ];
-
 
   programs.java = {
     enable = true;
@@ -158,12 +158,12 @@ in
 
     # package = pkgs.neovim-nightly;
 
-    extraPackages = with pkgs; [
+    extraPackages = with pkgs.unstable; [
+      ltex-ls
       metals
       nodePackages.typescript-language-server
       rnix-lsp
-      unstable.ltex-ls
-      unstable.sumneko-lua-language-server
+      sumneko-lua-language-server
     ];
 
     # see xdg.configFile.nvim lua directory
