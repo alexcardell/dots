@@ -20,8 +20,6 @@
 
   outputs = { nixpkgs, nixpkgs-unstable, home-manager, darwin, ... }:
     let
-      # system = "x86_64-linux";
-
       pkgsForSystem = system: import nixpkgs {
         inherit system;
         config = { allowUnfree = true; };
@@ -54,6 +52,8 @@
           overlays = ({ config, pkgs, ... }: {
             nixpkgs.overlays = sharedOverlays system;
           });
+          os-configuration = (./nixos/systems/linux/configuration.nix);
+          os-home = ./nixos/systems/linux/home/default.nix;
           host-configuration = (./nixos/hosts + "/${hostname}" + /configuration.nix);
           host-home = (./nixos/hosts + "/${hostname}" + /home/default.nix);
         in
@@ -62,6 +62,7 @@
 
           modules = [
             overlays
+            os-configuration
             host-configuration
             home-manager.nixosModules.home-manager
             {
@@ -69,7 +70,7 @@
               home-manager.useUserPackages = true;
               home-manager.users.alex = {
                 imports = [
-                  ./nixos/systems/linux/home/default.nix
+                  os-home
                   host-home
                   ./nixos/home.nix
                 ];

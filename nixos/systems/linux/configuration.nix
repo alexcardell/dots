@@ -15,20 +15,15 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "nixpad"; # Define your hostname.
   networking.wireless.enable = true; # Enables wireless support via wpa_supplicant.
   networking.wireless.userControlled.enable = true; # Enables wireless support via wpa_supplicant.
-  # Generate pskRaw with # wpa_passphrase SSID PSK
   networking.wireless.networks =
     let
       home-ssid = pkgs.lib.removeSuffix "\n" "${builtins.readFile ../../secrets/home-ssid}";
       home-psk = pkgs.lib.removeSuffix "\n" "${builtins.readFile ../../secrets/home-psk}";
-      airbnb-ssid = pkgs.lib.removeSuffix "\n" "${builtins.readFile ../../secrets/airbnb-ssid}";
-      airbnb-psk = pkgs.lib.removeSuffix "\n" "${builtins.readFile ../../secrets/airbnb-psk}";
     in
     {
-      "${home-ssid}".pskRaw = home-psk;
-      "${airbnb-ssid}".psk = airbnb-psk;
+      "${home-ssid}".psk = home-psk;
     };
 
   # Set your time zone.

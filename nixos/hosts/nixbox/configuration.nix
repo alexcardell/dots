@@ -10,4 +10,6 @@
       # Include the results of the hardware scan.
       ./hardware-configuration.nix
     ];
+
+  networking.hostName = "nixbox"; # Define your hostname.
 }
