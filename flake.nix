@@ -54,7 +54,6 @@
           overlays = ({ config, pkgs, ... }: {
             nixpkgs.overlays = sharedOverlays system;
           });
-          system-configuration = (./nixos/systems/linux/configuration.nix);
           host-configuration = (./nixos/hosts + "/${hostname}" + /configuration.nix);
           host-home = (./nixos/hosts + "/${hostname}" + /home/default.nix);
         in
@@ -63,7 +62,6 @@
 
           modules = [
             overlays
-            system-configuration
             host-configuration
             home-manager.nixosModules.home-manager
             {
@@ -77,7 +75,6 @@
                 ];
               };
             }
-
           ];
         };
 
