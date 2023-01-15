@@ -16,10 +16,9 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    neovim-nightly.url = "github:nix-community/neovim-nightly-overlay";
   };
 
-  outputs = { nixpkgs, nixpkgs-unstable, home-manager, darwin, neovim-nightly, ... }:
+  outputs = { nixpkgs, nixpkgs-unstable, home-manager, darwin, ... }:
     let
       # system = "x86_64-linux";
 
@@ -47,7 +46,6 @@
 
       sharedOverlays = system: [
         (overlay-unstable system)
-        neovim-nightly.overlay
       ];
 
       nixosConfiguration = hostname:
