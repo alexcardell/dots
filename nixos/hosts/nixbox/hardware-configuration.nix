@@ -23,7 +23,11 @@
       fsType = "vfat";
     };
 
-  swapDevices = [ ];
+    swapDevices = [ 
+      {
+        device = "/dev/disk/by-uuid/13bbc4a2-12c4-467f-a58b-97cbe313dcab";
+      }
+    ];
 
   hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 
