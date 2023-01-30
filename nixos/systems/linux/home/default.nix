@@ -8,6 +8,7 @@
     protonvpn-cli_2
     qbittorrent
     rofi
+    unzip
     vlc
   ];
 
