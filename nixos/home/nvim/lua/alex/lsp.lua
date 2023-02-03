@@ -98,7 +98,11 @@ end
 
 M.metals = metals.bare_config()
 
-M.metals.on_attach = on_attach
+M.metals.on_attach = function(client, bufnr)
+  metals.setup_dap()
+  on_attach(client, bufnr)
+end
+
 M.metals.handlers = handlers
 
 M.metals.init_options = {
