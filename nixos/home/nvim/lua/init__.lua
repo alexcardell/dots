@@ -167,11 +167,21 @@ require('other-nvim').setup({
   mappings = {
     {
       pattern = "/src/main/scala/(.*)/(.*).scala",
+      target = "/src/it/scala/%1/%2Test.scala",
+      context = "it-test"
+    },
+    {
+      pattern = "/src/main/scala/(.*)/(.*).scala",
       target = "/src/test/scala/%1/%2Test.scala",
       context = "test"
     },
     {
       pattern = "/src/test/scala/(.*)/(.*)Test.scala",
+      target = "/src/main/scala/%1/%2.scala",
+      context = "main"
+    },
+    {
+      pattern = "/src/it/scala/(.*)/(.*)Test.scala",
       target = "/src/main/scala/%1/%2.scala",
       context = "main"
     }
