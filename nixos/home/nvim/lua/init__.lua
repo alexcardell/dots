@@ -4,22 +4,34 @@
 
 vim.g.mapleader = " " -- space
 vim.g.maplocalleader = "\\"
-vim.g.hidden = true
+
 vim.opt_global.shortmess:remove("F") -- required by metals
+
+-- buffer management
+vim.g.hidden = true
+vim.opt.switchbuf = "usetab"
+vim.opt.autoread = true
+
+-- visual
 vim.opt.number = true
 vim.opt.relativenumber = true
+vim.opt.signcolumn = "yes:2"
+
+-- commands
+vim.opt.showcmd = true
+vim.opt.wildmenu = true
+vim.opt.wildmode = { "longest:full", "full" }
+
+-- editing
 vim.opt.smarttab = true
-vim.opt.switchbuf = "usetab"
 vim.opt.shiftround = true
 vim.opt.shiftwidth = 2
 vim.opt.tabstop = 2
 vim.opt.inccommand = "nosplit"
-vim.opt.autoread = true
 vim.opt.incsearch = true
 vim.opt.confirm = true
-vim.opt.showcmd = true
 vim.opt.ignorecase = true
-vim.opt.signcolumn = "yes:2"
+vim.opt.smartcase = true
 vim.opt.expandtab = true
 vim.opt.completeopt = { "menu", "menuone", "noselect" }
 
@@ -73,7 +85,7 @@ key("n", "<leader>fx", "<cmd>Telescope diagnostics<cr>", {})
 
 
 -- tmux integration
-require('Navigator').setup()
+require('Navigator').setup({})
 key('n', "<C-h>", '<CMD>NavigatorLeft<CR>', {})
 key('n', "<C-l>", '<CMD>NavigatorRight<CR>', {})
 key('n', "<C-k>", '<CMD>NavigatorUp<CR>', {})
