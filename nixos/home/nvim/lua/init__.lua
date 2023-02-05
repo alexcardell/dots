@@ -39,14 +39,11 @@ local key = vim.api.nvim_set_keymap
 
 key("i", "jk", "<Esc>", {})
 
-require('alex/statusline').setup()
-
--- LSP
-
-
 require('alex/completion').setup()
 require('alex/lsp').setup_lsp()
 require('alex/dap').setup()
+require('alex/statusline').setup()
+require('alex/tree').setup()
 
 -- metals autocmd
 vim.cmd([[
@@ -95,48 +92,6 @@ vim.fn.sign_define( "DiagnosticSignError", {text = " ", texthl = "DiagnosticS
 vim.fn.sign_define( "DiagnosticSignWarn", {text = " ", texthl = "DiagnosticSignWarn"})
 vim.fn.sign_define( "DiagnosticSignInfo", {text = " ", texthl = "DiagnosticSignInfo"})
 vim.fn.sign_define( "DiagnosticSignHint", {text = "", texthl = "DiagnosticSignHint"})
-
-require('neo-tree').setup({
-  use_default_mappings = false,
-  window = {
-    mappings = {
-      ["<space>"] = "toggle_node",
-      ["o"] = "open",
-      ["O"] = "open_with_window_picker",
-      ["-"] = "open_split",
-      ["|"] = "open_vsplit",
-      ["t"] = "open_tabnew",
-      ["a"] = "add",
-      ["A"] = "add_directory",
-      ["d"] = "delete",
-      ["r"] = "rename",
-      ["y"] = "copy_to_clipboard",
-      ["x"] = "cut_to_clipboard",
-      ["p"] = "paste_from_clipboard",
-      ["c"] = "copy", -- takes text input for destination
-      ["m"] = "move", -- takes text input for destination
-      ["q"] = "close_window",
-      ["R"] = "refresh",
-    }
-  },
-  filesystem = {
-    window = {
-      mappings = {
-        ["H"] = "toggle_hidden",
-        ["/"] = "fuzzy_finder",
-        -- ["f"] = "filter_on_submit",
-        -- ["<C-x>"] = "clear_filter",
-        ["<bs>"] = "navigate_up",
-        -- ["."] = "set_root",
-      }
-    },
-    filtered_items = {
-      hide_dotfiles = false
-    }
-  }
-})
-
-key("n", "<leader>t", "<cmd>Neotree toggle reveal=true<cr>", {})
 
 -- colorscheme
 require('base16-colorscheme').with_config({
