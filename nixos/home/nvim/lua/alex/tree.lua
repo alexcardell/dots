@@ -3,47 +3,21 @@ local key = vim.api.nvim_set_keymap
 local M = {}
 
 M.setup = function()
-  require('neo-tree').setup({
-    use_default_mappings = false,
-    window = {
+
+  require("nvim-tree").setup({
+    view = {
       mappings = {
-        ["<space>"] = "toggle_node",
-        ["o"] = "open",
-        ["O"] = "open_with_window_picker",
-        ["-"] = "open_split",
-        ["|"] = "open_vsplit",
-        ["t"] = "open_tabnew",
-        ["a"] = "add",
-        ["A"] = "add_directory",
-        ["d"] = "delete",
-        ["r"] = "rename",
-        ["y"] = "copy_to_clipboard",
-        ["x"] = "cut_to_clipboard",
-        ["p"] = "paste_from_clipboard",
-        ["c"] = "copy", -- takes text input for destination
-        ["m"] = "move", -- takes text input for destination
-        ["q"] = "close_window",
-        ["R"] = "refresh",
-      }
-    },
-    filesystem = {
-      window = {
-        mappings = {
-          ["H"] = "toggle_hidden",
-          ["/"] = "fuzzy_finder",
-          -- ["f"] = "filter_on_submit",
-          -- ["<C-x>"] = "clear_filter",
-          ["<bs>"] = "navigate_up",
-          -- ["."] = "set_root",
+        custom_only = true,
+        list = {
+          { key = { "<CR>", "o", "<2-LeftMouse>" }, action = "edit" },
+          { key = "g?", action = "toggle_help" },
         }
-      },
-      filtered_items = {
-        hide_dotfiles = false
       }
     }
   })
 
-  key("n", "<leader>t", "<cmd>Neotree toggle reveal=true<cr>", {})
+  key("n", "<leader>t", "<cmd>NvimTreeToggle<cr>", {})
+  key("n", "<leader>T", "<cmd>NvimTreeFindFile<cr>", {})
 end
 
 return M

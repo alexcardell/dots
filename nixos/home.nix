@@ -19,15 +19,15 @@ let
         hash = "sha256-3YpEu/VlWO4yVf+tNqz0YbJZjOrbzWIxvUe3JliZepI=";
       };
     };
-    neo-tree-nvim = pkgs.vimUtils.buildVimPluginFrom2Nix {
-      name = "neo-tree.nvim";
-      src = pkgs.fetchFromGitHub {
-        owner = "nvim-neo-tree";
-        repo = "neo-tree.nvim";
-        rev = "v2.34";
-        hash = "sha256-fXK6Mw0Xc17H13vtmKBBN9Bsy5ZFEc0qu29doNDMyfQ=";
-      };
-    };
+    # neo-tree-nvim = pkgs.vimUtils.buildVimPluginFrom2Nix {
+    #   name = "neo-tree.nvim";
+    #   src = pkgs.fetchFromGitHub {
+    #     owner = "nvim-neo-tree";
+    #     repo = "neo-tree.nvim";
+    #     rev = "v2.34";
+    #     hash = "sha256-fXK6Mw0Xc17H13vtmKBBN9Bsy5ZFEc0qu29doNDMyfQ=";
+    #   };
+    # };
     navigator-nvim = pkgs.vimUtils.buildVimPluginFrom2Nix {
       name = "navigator.nvim";
       src = pkgs.fetchFromGitHub {
@@ -179,7 +179,6 @@ in
       [
         pinned.gitsigns-nvim
         pinned.navigator-nvim
-        pinned.neo-tree-nvim
         pinned.nvim-cmp
         pinned.other-nvim
         pinned.plenary-nvim
@@ -201,6 +200,7 @@ in
         plug.nvim-dap-virtual-text
         plug.nvim-lspconfig
         plug.nvim-metals
+        plug.nvim-tree-lua
         plug.nvim-treesitter
         plug.nvim-ts-autotag
         plug.nvim-web-devicons
