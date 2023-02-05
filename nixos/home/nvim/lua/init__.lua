@@ -33,7 +33,7 @@ vim.opt.confirm = true
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
 vim.opt.expandtab = true
-vim.opt.completeopt = { "menu", "menuone", "noselect" }
+vim.opt.completeopt = { "menu", "menuone", "noselect" } -- nvim-cmp
 
 local key = vim.api.nvim_set_keymap
 
@@ -42,13 +42,11 @@ key("i", "jk", "<Esc>", {})
 require('alex/statusline').setup()
 
 -- LSP
-local completion = require('alex/completion')
-local lsp = require('alex/lsp')
-local dap = require('alex/dap')
 
-completion.setup()
-lsp.setup_lsp()
-dap.setup()
+
+require('alex/completion').setup()
+require('alex/lsp').setup_lsp()
+require('alex/dap').setup()
 
 -- metals autocmd
 vim.cmd([[

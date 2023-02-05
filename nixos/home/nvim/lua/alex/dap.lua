@@ -2,7 +2,7 @@ local dap = require('dap')
 
 local M = {}
 
-M.setup = function() 
+M.setup = function()
   vim.g.dap_virtual_text = true
 
   dap.configurations.scala = {

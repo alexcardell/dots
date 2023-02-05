@@ -6,7 +6,7 @@ local inlay_hints = require('lsp-inlayhints')
 local completion = require('alex/completion')
 
 local on_attach = function(client, bufnr)
-  inlay_hints.on_attach(client, bufnr)
+  inlay_hints.on_attach(client, bufnr, true)
 end
 
 local border = "single"
@@ -19,12 +19,12 @@ local handlers = {
 local capabilities = completion.capabilities()
 
 -- make :LspInfo pretty
-local _default_ops = lspconfig_win.default_opts
-lspconfig_win.default_opts = function(options)
-  local opts = _default_ops(options)
-  opts.border = 'single'
-  return opts
-end
+-- local default_options = lspconfig_win.default_opts
+-- lspconfig_win.default_opts = function(options)
+--   local opts = default_options(options)
+--   opts.border = 'single'
+--   return opts
+-- end
 
 local M = {}
 
