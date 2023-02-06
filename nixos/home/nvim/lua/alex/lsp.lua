@@ -89,6 +89,12 @@ M.setup_lsp = function()
     handlers = handlers,
   })
 
+  -- terraform
+  lspconfig.terraformls.setup({
+    on_attach = on_attach,
+    handlers = handlers,
+  })
+
   -- -- tailwindcss
   -- lspconfig.tailwindcss.setup({
   --   on_attach = on_attach,

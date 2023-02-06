@@ -164,6 +164,7 @@ in
       nodePackages.typescript-language-server
       rnix-lsp
       sumneko-lua-language-server
+      terraform-ls
     ];
 
     # see xdg.configFile.nvim lua directory
