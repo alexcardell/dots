@@ -5,6 +5,10 @@ fi
 OS=$(uname)
 OS=$OS:l
 
+if [ -e ${ZDOTDIR} ]; then
+  ZDOTDIR="${HOME}/.zsh"
+fi
+
 # autoload -U compinit && compinit
 # autoload -U colors && colors
 
@@ -139,12 +143,14 @@ alias y='yarn'
 # load fzf integration 
 # zsh-vi-mode causes a clash with the home-manager
 # module, so load explicitly
-function zvm_after_init() {
+function zvm_after_init_commands() {
   # if [ -n "${commands[fzf-share]}" ]; then
-  [ -f "$(fzf-share)/key-bindings.zsh" ] &&  source "$(fzf-share)/key-bindings.zsh"
-  [ -f "$(fzf-share)/completion.zsh" ] &&  source "$(fzf-share)/completion.zsh"
+    [ -f "$(fzf-share)/key-bindings.zsh" ] &&  source "$(fzf-share)/key-bindings.zsh"
+    [ -f "$(fzf-share)/completion.zsh" ] &&  source "$(fzf-share)/completion.zsh"
+    [ -f "${ZDOTDIR}/lib/fzf-git.sh" ] && source "${ZDOTDIR}/lib/fzf-git.sh"
   # fi
 }
+
 
 # Autoload custom functions
 fpath=("$ZDOTDIR/autoloaded" $fpath)
@@ -155,6 +161,7 @@ if [[ -d "${autoloaded}" ]]; then
   done
 fi
 unset autoloaded
+
 
 if [ "${PROFILE}" ]; then
     zprof
