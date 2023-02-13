@@ -143,14 +143,13 @@ alias y='yarn'
 # load fzf integration 
 # zsh-vi-mode causes a clash with the home-manager
 # module, so load explicitly
-function zvm_after_init_commands() {
+function zvm_after_init() {
   # if [ -n "${commands[fzf-share]}" ]; then
     [ -f "$(fzf-share)/key-bindings.zsh" ] &&  source "$(fzf-share)/key-bindings.zsh"
     [ -f "$(fzf-share)/completion.zsh" ] &&  source "$(fzf-share)/completion.zsh"
-    [ -f "${ZDOTDIR}/lib/fzf-git.sh" ] && source "${ZDOTDIR}/lib/fzf-git.sh"
+    [ -f "${ZDOTDIR}/lib/fzf-git.zsh" ] && source "${ZDOTDIR}/lib/fzf-git.zsh"
   # fi
 }
-
 
 # Autoload custom functions
 fpath=("$ZDOTDIR/autoloaded" $fpath)

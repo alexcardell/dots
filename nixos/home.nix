@@ -131,6 +131,11 @@ in
     ];
   };
 
+  home.file.".zsh" = {
+    source = ./home/zsh/.zsh;
+    recursive = true;
+  };
+
   programs.autojump = {
     enable = true;
     enableZshIntegration = true;
@@ -193,7 +198,7 @@ in
         plug.nvim-lspconfig
         plug.nvim-metals
         plug.nvim-tree-lua
-        (plug.nvim-treesitter.withPlugins(plugins: pkgs.tree-sitter.allGrammars))
+        (plug.nvim-treesitter.withPlugins (plugins: pkgs.tree-sitter.allGrammars))
         plug.nvim-ts-autotag
         plug.nvim-web-devicons
         plug.telescope-fzf-writer-nvim
