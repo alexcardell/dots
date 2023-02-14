@@ -4,6 +4,7 @@
     aws-vault
     awscli2
     gh
+    hiera-eyaml
     terraform
     terragrunt
   ];
