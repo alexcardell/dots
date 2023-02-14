@@ -221,6 +221,8 @@ in
     extraConfig = builtins.readFile ./home/git/.gitconfig;
   };
 
+  home.file.".gitconfig.work".source = ./home/git/.gitconfig.work;
+
   programs.tmux = {
     enable = true;
     tmuxp.enable = true;
