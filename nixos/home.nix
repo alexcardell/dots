@@ -72,17 +72,6 @@ in
   home.stateVersion = "22.11";
 
   home.packages = with pkgs; [
-    # brightnessctl
-    # gh
-    # git
-    # pavucontrol ## nix shelling into this fixed my sound
-    # pinentry_qt
-    # polybar
-    # xclip
-    # bitwarden
-    # firefox
-    # graalvm11-ce
-    # rofi
     entr
     git-crypt
     gnupg
@@ -93,6 +82,7 @@ in
     ripgrep
     sbt
     scala-cli
+    xdg-ninja
     zk
   ];
 
