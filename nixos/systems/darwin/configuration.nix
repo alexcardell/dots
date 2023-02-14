@@ -7,5 +7,9 @@
       "firefox"
       "inso"
     ];
+    brews = [
+      "docker-credential-helper-ecr"
+      "whalebrew"
+    ];
   };
 }
