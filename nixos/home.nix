@@ -164,6 +164,7 @@ in
         pinned = vimPlugingsGithub;
       in
       [
+        (plug.nvim-treesitter.withPlugins (plugins: pkgs.tree-sitter.allGrammars))
         pinned.gitsigns-nvim
         pinned.navigator-nvim
         pinned.nvim-cmp
@@ -180,6 +181,7 @@ in
         plug.lspkind-nvim
         plug.lualine-nvim
         plug.luasnip
+        plug.markdown-preview-nvim
         plug.nui-nvim
         plug.nvim-autopairs
         plug.nvim-base16
@@ -188,7 +190,6 @@ in
         plug.nvim-lspconfig
         plug.nvim-metals
         plug.nvim-tree-lua
-        (plug.nvim-treesitter.withPlugins (plugins: pkgs.tree-sitter.allGrammars))
         plug.nvim-ts-autotag
         plug.nvim-web-devicons
         plug.telescope-fzf-writer-nvim
