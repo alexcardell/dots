@@ -77,6 +77,7 @@ key("n", "<leader>fc", "<cmd>Telescope commands<cr>", {})
 key("n", "<leader>fm", "<cmd>Telescope marks<cr>", {})
 key("n", "<leader>fp", "<cmd>Telescope registers<cr>", {})
 key("n", "<leader>fx", "<cmd>Telescope diagnostics<cr>", {})
+key("n", "<leader>fs", "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", {})
 
 
 -- tmux integration
