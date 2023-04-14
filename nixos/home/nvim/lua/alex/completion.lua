@@ -11,6 +11,7 @@ M.setup = function()
       { name = 'nvim_lsp' },
       -- { name = 'buffer' },
       { name = 'luasnip' },
+      { name = 'nvim_lsp_signature_help' },
     },
     snippet = {
       expand = function(args)

@@ -174,6 +174,8 @@ in
         pinned.zk-nvim
         plug.cmp-nvim-lsp
         plug.cmp-nvim-lua
+        plug.cmp-nvim-lsp-signature-help
+        # plug.cmp-nvim-lsp-document-symbol
         plug.cmp_luasnip
         plug.diaglist-nvim
         plug.fzf-lua
