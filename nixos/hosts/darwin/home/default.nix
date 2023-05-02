@@ -5,6 +5,7 @@
     awscli2
     gh
     hiera-eyaml
+    postgresql_13
     terraform
     terragrunt
   ];
