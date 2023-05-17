@@ -28,6 +28,7 @@ vim.opt.confirm = true
 vim.opt.cursorline = true
 vim.opt.expandtab = true
 vim.opt.ignorecase = true
+vim.opt.spelllang = "en_gb,en"
 vim.opt.inccommand = "nosplit"
 vim.opt.incsearch = true
 vim.opt.laststatus = 2
@@ -43,7 +44,17 @@ vim.opt.virtualedit = "block"
 
 local key = vim.api.nvim_set_keymap
 
+-- basic mappings
 key("i", "jk", "<Esc>", {})
+-- toggle last buffer
+key("n", "<leader><leader>", "<C-^>", {}) 
+-- quickfix navigation
+key("n", "gn", "<cmd>cnext<cr>", {})
+key("n", "gp", "<cmd>cprevious<cr>", {})
+key("n", "g1", "<cmd>cfirst<cr>", {})
+key("n", "g0", "<cmd>clast<cr>", {})
+key("n", "g<", "<cmd>colder<cr>", {})
+key("n", "g>", "<cmd>cnewer<cr>", {})
 
 require('alex/completion').setup()
 require('alex/lsp').setup_lsp()
