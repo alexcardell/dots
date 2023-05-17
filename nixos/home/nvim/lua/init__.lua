@@ -23,17 +23,23 @@ vim.opt.wildmenu = true
 vim.opt.wildmode = { "longest:full", "full" }
 
 -- editing
-vim.opt.smarttab = true
-vim.opt.shiftround = true
-vim.opt.shiftwidth = 2
-vim.opt.tabstop = 2
+vim.opt.completeopt = { "menu", "menuone", "noselect" } -- nvim-cmp
+vim.opt.confirm = true
+vim.opt.cursorline = true
+vim.opt.expandtab = true
+vim.opt.ignorecase = true
 vim.opt.inccommand = "nosplit"
 vim.opt.incsearch = true
-vim.opt.confirm = true
-vim.opt.ignorecase = true
+vim.opt.laststatus = 2
+vim.opt.scrolloff = 3
+vim.opt.shiftround = true
+vim.opt.shiftwidth = 2
+vim.opt.sidescrolloff = 3
 vim.opt.smartcase = true
-vim.opt.expandtab = true
-vim.opt.completeopt = { "menu", "menuone", "noselect" } -- nvim-cmp
+vim.opt.smarttab = true
+vim.opt.tabstop = 2
+vim.opt.textwidth = 80
+vim.opt.virtualedit = "block"
 
 local key = vim.api.nvim_set_keymap
 
