@@ -110,21 +110,20 @@ in
         pinned = vimPlugingsGithub;
       in
       [
-        (plug.nvim-treesitter.withPlugins (plugins: pkgs.tree-sitter.allGrammars))
-        plug.gitsigns-nvim
-        plug.Navigator-nvim
-        plug.nvim-cmp
-        pinned.other-nvim
-        plug.plenary-nvim
-        plug.tint-nvim
-        plug.zk-nvim
-        plug.cmp-nvim-lsp
-        plug.cmp-nvim-lua
-        plug.cmp-nvim-lsp-signature-help
         # plug.cmp-nvim-lsp-document-symbol
+        # plug.nvim-ts-autotag
+        (plug.nvim-treesitter.withPlugins (plugins: pkgs.tree-sitter.allGrammars))
+        pinned.other-nvim
+        plug.Navigator-nvim
+        # plug.aerial-nvim
+        plug.cmp-nvim-lsp
+        plug.cmp-nvim-lsp-signature-help
+        plug.cmp-nvim-lua
         plug.cmp_luasnip
         plug.diaglist-nvim
+        plug.diffview-nvim
         plug.fzf-lua
+        plug.gitsigns-nvim
         plug.lsp-inlayhints-nvim
         plug.lspkind-nvim
         plug.lualine-nvim
@@ -133,16 +132,19 @@ in
         plug.nui-nvim
         plug.nvim-autopairs
         plug.nvim-base16
+        plug.nvim-cmp
         plug.nvim-dap
         plug.nvim-dap-virtual-text
         plug.nvim-lspconfig
         plug.nvim-metals
         plug.nvim-tree-lua
-        # plug.nvim-ts-autotag
         plug.nvim-web-devicons
+        plug.plenary-nvim
+        plug.symbols-outline-nvim
         plug.telescope-fzf-writer-nvim
         plug.telescope-nvim
         plug.telescope-symbols-nvim
+        plug.tint-nvim
         plug.vim-commentary
         plug.vim-fugitive
         plug.vim-nix
@@ -151,7 +153,7 @@ in
         plug.vim-rhubarb
         plug.vim-surround
         plug.zen-mode-nvim
-        plug.diffview-nvim
+        plug.zk-nvim
       ];
   };
 

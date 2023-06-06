@@ -213,3 +213,9 @@ key("n", "<leader>ov", "<cmd>OtherVSplit<cr>", {})
 --     enable = true,
 --   }
 -- })
+
+-- require('aerial').setup()
+-- key("n", "<leader>os", "<cmd>AerialToggle<cr>", {})
+
+require("symbols-outline").setup()
+key("n", "<leader>o", "<cmd>SymbolsOutline<cr>", {})
