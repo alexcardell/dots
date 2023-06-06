@@ -117,10 +117,10 @@ vim.fn.sign_define("DiagnosticSignHint", { text = "", texthl = "DiagnosticSig
 
 -- colorscheme
 require('base16-colorscheme').with_config({
-    telescope = false,
-    indentblankline = false,
-    notify = false,
-    ts_rainbow = false,
+  telescope = false,
+  indentblankline = false,
+  notify = false,
+  ts_rainbow = false,
 })
 
 vim.cmd([[ colorscheme base16-tomorrow-night ]])
@@ -151,56 +151,56 @@ require('tint').setup({})
 require('zen-mode').setup()
 
 require('other-nvim').setup({
-    mappings = {
-        -- sbt src -> test
-        {
-            pattern = "/src/main/scala/(.*)/(.*).scala",
-            target = "/src/test/scala/%1/%2Test.scala",
-            context = "test"
-        },
-        -- sbt src -> it:test
-        {
-            pattern = "/src/main/scala/(.*)/(.*).scala",
-            target = "/src/it/scala/%1/%2Test.scala",
-            context = "it-test"
-        },
-        -- sbt test -> src
-        {
-            pattern = "/src/test/scala/(.*)/(.*)Test.scala",
-            target = "/src/main/scala/%1/%2.scala",
-            context = "main"
-        },
-        -- sbt it:test -> src
-        {
-            pattern = "/src/it/scala/(.*)/(.*)Test.scala",
-            target = "/src/main/scala/%1/%2.scala",
-            context = "main"
-        },
-        -- mill src -> test
-        {
-            pattern = "/src/(.*)/(.*).scala",
-            target = "/test/src/%1/%2Test.scala",
-            context = "test"
-        },
-        -- mill src -> it:test
-        {
-            pattern = "/src/(.*)/(.*).scala",
-            target = "/it/src/%1/%2Test.scala",
-            context = "test"
-        },
-        -- mill test -> src
-        {
-            pattern = "/test/src/(.*)/(.*)Test.scala",
-            target = "/src/%1/%2.scala",
-            context = "main"
-        },
-        -- mill it:test -> src
-        {
-            pattern = "/it/src/(.*)/(.*)Test.scala",
-            target = "/src/%1/%2.scala",
-            context = "main"
-        },
+  mappings = {
+    -- sbt src -> test
+    {
+      pattern = "/src/main/scala/(.*)/(.*).scala",
+      target = "/src/test/scala/%1/%2Test.scala",
+      context = "test"
     },
+    -- sbt src -> it:test
+    {
+      pattern = "/src/main/scala/(.*)/(.*).scala",
+      target = "/src/it/scala/%1/%2Test.scala",
+      context = "it-test"
+    },
+    -- sbt test -> src
+    {
+      pattern = "/src/test/scala/(.*)/(.*)Test.scala",
+      target = "/src/main/scala/%1/%2.scala",
+      context = "main"
+    },
+    -- sbt it:test -> src
+    {
+      pattern = "/src/it/scala/(.*)/(.*)Test.scala",
+      target = "/src/main/scala/%1/%2.scala",
+      context = "main"
+    },
+    -- mill src -> test
+    {
+      pattern = "/src/(.*)/(.*).scala",
+      target = "/test/src/%1/%2Test.scala",
+      context = "test"
+    },
+    -- mill src -> it:test
+    {
+      pattern = "/src/(.*)/(.*).scala",
+      target = "/it/src/%1/%2Test.scala",
+      context = "test"
+    },
+    -- mill test -> src
+    {
+      pattern = "/test/src/(.*)/(.*)Test.scala",
+      target = "/src/%1/%2.scala",
+      context = "main"
+    },
+    -- mill it:test -> src
+    {
+      pattern = "/it/src/(.*)/(.*)Test.scala",
+      target = "/src/%1/%2.scala",
+      context = "main"
+    },
+  },
 })
 key("n", "<leader>of", "<cmd>Other<cr>", {})
 key("n", "<leader>os", "<cmd>OtherSplit<cr>", {})
@@ -225,3 +225,19 @@ vim.cmd([[
     au FileType Outline setlocal signcolumn=no
   augroup end
 ]])
+
+require('edgy').setup({
+  left = {
+    {
+      title = "Files",
+      ft = "NvimTree",
+      pinned = true,
+    },
+    {
+      title = "Symbols",
+      ft = "Outline",
+      pinned = true,
+      open = "SymbolsOutline",
+    },
+  }
+})

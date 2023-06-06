@@ -10,6 +10,15 @@ let
         hash = "sha256-df/L8ZOdjkviE6WRRe7uon82hlUb+yYDdtiN3pJ5OBs=";
       };
     };
+    edgy-nvim = pkgs.vimUtils.buildVimPluginFrom2Nix {
+      name = "edgy.nvim";
+      src = pkgs.fetchFromGitHub {
+        owner = "folke";
+        repo = "edgy.nvim";
+        rev = "cd91faf24197fdf127cec599352efe458aa1abcc";
+        hash = "sha256-7jQvaaqb1j5sp2x3Q/Qk9dmUXE+BkvP4YG0UygoQeiw=";
+      };
+    };
   };
 in
 {
@@ -114,6 +123,7 @@ in
         # plug.nvim-ts-autotag
         (plug.nvim-treesitter.withPlugins (plugins: pkgs.tree-sitter.allGrammars))
         pinned.other-nvim
+        pinned.edgy-nvim
         plug.Navigator-nvim
         # plug.aerial-nvim
         plug.cmp-nvim-lsp
