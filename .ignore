@@ -4,3 +4,4 @@ lib/*
 .git/*
 .git/logs/HEAD
 **/node_modules/*
+result/

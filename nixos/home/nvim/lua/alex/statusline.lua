@@ -41,6 +41,10 @@ M.setup = function()
       theme = bubbles_theme,
       component_separators = '|',
       section_separators = { left = '', right = '' },
+      disabled_filetypes = {
+        winbar = { 'Outline', 'NvimTree' },
+        statusline = { 'Outline', 'NvimTree' },
+      }
       -- global_statusline = true
     },
     sections = {

@@ -48,6 +48,14 @@ M.setup = function()
 
   key("n", "<leader>t", "<cmd>NvimTreeToggle<cr>", {})
   key("n", "<leader>T", "<cmd>NvimTreeFindFileToggle<cr>", {})
+
+  vim.cmd([[
+    augroup NvimTreeSetup
+      au!
+      au FileType NvimTree setlocal signcolumn=no
+    augroup end
+  ]])
+
 end
 
 return M

@@ -219,3 +219,9 @@ key("n", "<leader>ov", "<cmd>OtherVSplit<cr>", {})
 
 require("symbols-outline").setup()
 key("n", "<leader>o", "<cmd>SymbolsOutline<cr>", {})
+vim.cmd([[
+  augroup symboloutlineau
+    au!
+    au FileType Outline setlocal signcolumn=no
+  augroup end
+]])
