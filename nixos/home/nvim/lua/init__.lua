@@ -49,7 +49,7 @@ local key = vim.api.nvim_set_keymap
 -- basic mappings
 key("i", "jk", "<Esc>", {})
 -- toggle last buffer
-key("n", "<leader><leader>", "<C-^>", {}) 
+key("n", "<leader><leader>", "<C-^>", {})
 -- quickfix navigation
 key("n", "gn", "<cmd>cnext<cr>", {})
 key("n", "gp", "<cmd>cprevious<cr>", {})

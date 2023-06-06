@@ -1,60 +1,6 @@
 { pkgs, ... }:
 let
   vimPlugingsGithub = {
-    plenary-nvim = pkgs.vimUtils.buildVimPluginFrom2Nix {
-      name = "plenary.nvim";
-      src = pkgs.fetchFromGitHub {
-        owner = "nvim-lua";
-        repo = "plenary.nvim";
-        rev = "31807eef4ed574854b8a53ae40ea3292033a78ea";
-        hash = "sha256-G84JTsj06vwidfEyaNIUvLLaKM9HB5zNAexCDWbGfu4=";
-      };
-    };
-    nvim-cmp = pkgs.vimUtils.buildVimPluginFrom2Nix {
-      name = "nvim-cmp";
-      src = pkgs.fetchFromGitHub {
-        owner = "hrsh7th";
-        repo = "nvim-cmp";
-        rev = "2427d06b6508489547cd30b6e86b1c75df363411";
-        hash = "sha256-3YpEu/VlWO4yVf+tNqz0YbJZjOrbzWIxvUe3JliZepI=";
-      };
-    };
-    navigator-nvim = pkgs.vimUtils.buildVimPluginFrom2Nix {
-      name = "navigator.nvim";
-      src = pkgs.fetchFromGitHub {
-        owner = "numToStr";
-        repo = "navigator.nvim";
-        rev = "0c57f67a34eff7fd20785861926b7fe6bd76e2c2";
-        hash = "sha256-THPIzyuECJTjoCq2k99KCLxYGunlf9BYM8FpKHiBLrg=";
-      };
-    };
-    zk-nvim = pkgs.vimUtils.buildVimPluginFrom2Nix {
-      name = "zk-nvim";
-      src = pkgs.fetchFromGitHub {
-        owner = "mickael-menu";
-        repo = "zk-nvim";
-        rev = "73affbc95fba3655704e4993a8929675bc9942a1";
-        hash = "sha256-BQrF88hVSDc9zjCWcSSCnw1yhCfMu8zsMbilAI0Xh2c=";
-      };
-    };
-    gitsigns-nvim = pkgs.vimUtils.buildVimPluginFrom2Nix {
-      name = "gitsigns.nvim";
-      src = pkgs.fetchFromGitHub {
-        owner = "lewis6991";
-        repo = "gitsigns.nvim";
-        rev = "d7e0bcbe45bd9d5d106a7b2e11dc15917d272c7a";
-        hash = "sha256-kyiQoboYq4iNLOj1iKA2cfXQ9FFiRYdvf55bX5Xvj8A=";
-      };
-    };
-    tint-nvim = pkgs.vimUtils.buildVimPluginFrom2Nix {
-      name = "tint.nvim";
-      src = pkgs.fetchFromGitHub {
-        owner = "levouh";
-        repo = "tint.nvim";
-        rev = "819a173c21175f2ef57fa0ad0b57ac4eb8c5425d";
-        hash = "sha256-xqCrCMTemXpDTIrDU+UaNV8BzSUXn9j2VI5BRkjMLRg=";
-      };
-    };
     other-nvim = pkgs.vimUtils.buildVimPluginFrom2Nix {
       name = "other.nvim";
       src = pkgs.fetchFromGitHub {
@@ -78,7 +24,7 @@ in
     jq
     kitty
     nerdfonts
-    nodejs-14_x
+    nodejs-18_x
     ripgrep
     sbt
     scala-cli
@@ -149,7 +95,7 @@ in
       metals
       nodePackages.typescript-language-server
       rnix-lsp
-      sumneko-lua-language-server
+      lua-language-server
       terraform-ls
     ];
 
@@ -165,13 +111,13 @@ in
       in
       [
         (plug.nvim-treesitter.withPlugins (plugins: pkgs.tree-sitter.allGrammars))
-        pinned.gitsigns-nvim
-        pinned.navigator-nvim
-        pinned.nvim-cmp
+        plug.gitsigns-nvim
+        plug.Navigator-nvim
+        plug.nvim-cmp
         pinned.other-nvim
-        pinned.plenary-nvim
-        pinned.tint-nvim
-        pinned.zk-nvim
+        plug.plenary-nvim
+        plug.tint-nvim
+        plug.zk-nvim
         plug.cmp-nvim-lsp
         plug.cmp-nvim-lua
         plug.cmp-nvim-lsp-signature-help
@@ -192,7 +138,7 @@ in
         plug.nvim-lspconfig
         plug.nvim-metals
         plug.nvim-tree-lua
-        plug.nvim-ts-autotag
+        # plug.nvim-ts-autotag
         plug.nvim-web-devicons
         plug.telescope-fzf-writer-nvim
         plug.telescope-nvim

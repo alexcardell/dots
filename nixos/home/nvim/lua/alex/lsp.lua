@@ -18,14 +18,6 @@ local handlers = {
 
 local capabilities = completion.capabilities()
 
--- make :LspInfo pretty
--- local default_options = lspconfig_win.default_opts
--- lspconfig_win.default_opts = function(options)
---   local opts = default_options(options)
---   opts.border = 'single'
---   return opts
--- end
-
 local M = {}
 
 M.setup_lsp = function()
@@ -52,11 +44,7 @@ M.setup_lsp = function()
   })
 
   -- lua
-  local runtime_path = vim.split(package.path, ';')
-  table.insert(runtime_path, "lua/?.lua")
-  table.insert(runtime_path, "lua/?/init.lua")
-  table.insert(runtime_path, "lua/?/init__.lua")
-  lspconfig.sumneko_lua.setup({
+  lspconfig.lua_ls.setup({
     on_attach = on_attach,
     handlers = handlers,
     settings = {
@@ -64,8 +52,6 @@ M.setup_lsp = function()
         runtime = {
           -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
           version = 'LuaJIT',
-          -- Setup your lua path
-          path = runtime_path,
         },
         diagnostics = {
           -- Get the language server to recognize the `vim` global
@@ -78,9 +64,9 @@ M.setup_lsp = function()
         -- Do not send telemetry data containing a randomized but unique identifier
         telemetry = {
           enable = false,
-        },
-      },
-    },
+        }
+      }
+    }
   })
 
   -- typescript/javascript
