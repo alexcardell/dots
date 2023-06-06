@@ -6,6 +6,8 @@ local inlay_hints = require('lsp-inlayhints')
 local completion = require('alex/completion')
 
 local on_attach = function(client, bufnr)
+  -- disable semantic tokens
+  client.server_capabilities.semanticTokensProvider = nil
   inlay_hints.on_attach(client, bufnr, true)
 end
 
