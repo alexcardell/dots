@@ -1,3 +1,5 @@
+local navic = require("nvim-navic")
+
 local colors = {
   blue   = '#80a0ff',
   cyan   = '#79dac8',
@@ -39,6 +41,7 @@ M.setup = function()
       theme = bubbles_theme,
       component_separators = '|',
       section_separators = { left = '', right = '' },
+      -- global_statusline = true
     },
     sections = {
       lualine_a = {
@@ -47,9 +50,9 @@ M.setup = function()
       lualine_b = { 'filename', 'branch', 'diff' },
       lualine_c = {},
       lualine_x = {},
-      lualine_y = { metals_status, 'diagnostics', 'searchcount', 'filetype', 'progress' },
+      lualine_y = { 'diagnostics', 'searchcount', 'filetype', 'progress', 'location' },
       lualine_z = {
-        { 'location', separator = { right = '' }, left_padding = 2 },
+        -- { 'location', separator = { right = '' }, left_padding = 2 },
       },
     },
     inactive_sections = {
@@ -60,7 +63,22 @@ M.setup = function()
       lualine_y = {},
       lualine_z = { 'location' },
     },
-    tabline = {},
+    winbar = {
+      lualine_a = {},
+      lualine_b = { 'navic' },
+      lualine_c = {},
+      lualine_x = {},
+      lualine_y = { metals_status },
+      lualine_z = {}
+    },
+    -- tabline = {
+    --   lualine_a = {},
+    --   lualine_b = { 'tabs' },
+    --   lualine_c = {},
+    --   lualine_x = {},
+    --   lualine_y = {},
+    --   lualine_z = {}
+    -- },
     extensions = {},
   }
 end

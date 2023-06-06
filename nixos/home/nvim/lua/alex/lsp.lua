@@ -1,14 +1,19 @@
 local lspconfig = require('lspconfig')
-local lspconfig_win = require('lspconfig.ui.windows')
 local metals = require('metals')
 local inlay_hints = require('lsp-inlayhints')
+local navic = require('nvim-navic')
 
 local completion = require('alex/completion')
 
 local on_attach = function(client, bufnr)
   -- disable semantic tokens
   client.server_capabilities.semanticTokensProvider = nil
+
   inlay_hints.on_attach(client, bufnr, true)
+
+  if client.server_capabilities.documentSymbolProvider then
+    navic.attach(client, bufnr)
+  end
 end
 
 local border = "single"

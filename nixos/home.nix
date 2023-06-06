@@ -137,6 +137,7 @@ in
         plug.nvim-dap-virtual-text
         plug.nvim-lspconfig
         plug.nvim-metals
+        plug.nvim-navic
         plug.nvim-tree-lua
         plug.nvim-web-devicons
         plug.plenary-nvim
