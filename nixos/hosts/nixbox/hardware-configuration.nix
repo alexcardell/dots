@@ -31,5 +31,5 @@
 
   hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 
-  hardware.video.hidpi.enable = lib.mkDefault true;
+  # hardware.video.hidpi.enable = lib.mkDefault true;
 }
