@@ -54,7 +54,7 @@ M.setup = function()
       lualine_b = { 'filename', 'branch', 'diff' },
       lualine_c = {},
       lualine_x = {},
-      lualine_y = { 'diagnostics', 'searchcount', 'filetype', 'progress', 'location' },
+      lualine_y = { 'searchcount', 'filetype', 'progress', 'location' },
       lualine_z = {
         -- { 'location', separator = { right = '' }, left_padding = 2 },
       },
@@ -68,11 +68,16 @@ M.setup = function()
       lualine_z = { 'location' },
     },
     winbar = {
-      lualine_a = {},
-      lualine_b = { 'navic' },
+      lualine_a = { },
+      lualine_b = { 
+        {
+          'navic',
+          draw_empty = true
+        },
+      },
       lualine_c = {},
       lualine_x = {},
-      lualine_y = { metals_status },
+      lualine_y = { metals_status, 'diagnostics' },
       lualine_z = {}
     },
     -- tabline = {
