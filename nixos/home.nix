@@ -121,7 +121,8 @@ in
       [
         # plug.cmp-nvim-lsp-document-symbol
         # plug.nvim-ts-autotag
-        (plug.nvim-treesitter.withPlugins (plugins: pkgs.tree-sitter.allGrammars))
+        # (plug.nvim-treesitter.withPlugins (plugins: pkgs.tree-sitter.allGrammars))
+        plug.nvim-treesitter
         pinned.other-nvim
         pinned.edgy-nvim
         plug.Navigator-nvim
