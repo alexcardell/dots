@@ -101,11 +101,12 @@ in
 
     extraPackages = with pkgs.unstable; [
       ltex-ls
+      lua-language-server
       metals
       nodePackages.typescript-language-server
       rnix-lsp
-      lua-language-server
       terraform-ls
+      wakatime
     ];
 
     # see xdg.configFile.nvim lua directory
@@ -166,6 +167,7 @@ in
         plug.vim-surround
         plug.zen-mode-nvim
         plug.zk-nvim
+        plug.vim-wakatime
       ];
   };
 
