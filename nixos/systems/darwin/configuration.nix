@@ -11,6 +11,7 @@
       "docker-credential-helper-ecr"
       "whalebrew"
       "tfenv"
+      "terragrunt"
     ];
   };
 }

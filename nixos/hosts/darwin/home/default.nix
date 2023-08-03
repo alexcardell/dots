@@ -6,7 +6,5 @@
     gh
     hiera-eyaml
     postgresql_13
-    terraform
-    terragrunt
   ];
 }
