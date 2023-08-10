@@ -116,6 +116,10 @@ function () {
 PROMPT='%(?. .%F{yellow}%B!%b)%F{blue}alex ${_ZSH_PROMPTARROW} '
 RPROMPT='%F{240}${timer_show} %F{grey}%3~ ${vcs_info_msg_0_}%f'
 
+load_tmuxp() {
+  tmuxp load default -s $(basename $(pwd))
+}
+
 #---------
 # Aliases
 #---------
@@ -128,7 +132,7 @@ alias g='git'
 alias gs='git s'
 alias py='python'
 alias r='ranger'
-alias t='tmux'
+alias t='load_tmuxp'
 alias tm='tmux'
 alias tms='tmux attach\; choose-tree -Zs'
 alias v='nvim'
