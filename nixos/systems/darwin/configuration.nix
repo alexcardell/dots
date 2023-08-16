@@ -8,10 +8,11 @@
       "inso"
     ];
     brews = [
+      "adr-tools"
       "docker-credential-helper-ecr"
+      # "terragrunt"
+      # "tfenv"
       "whalebrew"
-      "tfenv"
-      "terragrunt"
     ];
   };
 }
