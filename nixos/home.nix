@@ -1,24 +1,15 @@
 { pkgs, ... }:
 let
-  vimPlugingsGithub = {
-    other-nvim = pkgs.vimUtils.buildVimPluginFrom2Nix {
-      name = "other.nvim";
-      src = pkgs.fetchFromGitHub {
-        owner = "rgroli";
-        repo = "other.nvim";
-        rev = "9afecea37c9b5ffed65a21de9e585d548de7778a";
-        hash = "sha256-df/L8ZOdjkviE6WRRe7uon82hlUb+yYDdtiN3pJ5OBs=";
-      };
-    };
-    edgy-nvim = pkgs.vimUtils.buildVimPluginFrom2Nix {
-      name = "edgy.nvim";
-      src = pkgs.fetchFromGitHub {
-        owner = "folke";
-        repo = "edgy.nvim";
-        rev = "cd91faf24197fdf127cec599352efe458aa1abcc";
-        hash = "sha256-7jQvaaqb1j5sp2x3Q/Qk9dmUXE+BkvP4YG0UygoQeiw=";
-      };
-    };
+  vimPluginsGithub = {
+    # other-nvim = pkgs.vimUtils.buildVimPluginFrom2Nix {
+    #   name = "other.nvim";
+    #   src = pkgs.fetchFromGitHub {
+    #     owner = "rgroli";
+    #     repo = "other.nvim";
+    #     rev = "9afecea37c9b5ffed65a21de9e585d548de7778a";
+    #     hash = "sha256-df/L8ZOdjkviE6WRRe7uon82hlUb+yYDdtiN3pJ5OBs=";
+    #   };
+    # };
   };
 in
 {
@@ -117,23 +108,20 @@ in
     plugins =
       let
         plug = pkgs.unstable.vimPlugins;
-        pinned = vimPlugingsGithub;
+        pinned = vimPluginsGithub;
       in
       [
+        # (plug.nvim-treesitter.withPlugins (plugins: pkgs.tree-sitter.allGrammars))
         # plug.cmp-nvim-lsp-document-symbol
         # plug.nvim-ts-autotag
-        # (plug.nvim-treesitter.withPlugins (plugins: pkgs.tree-sitter.allGrammars))
-        plug.nvim-treesitter
-        pinned.other-nvim
-        pinned.edgy-nvim
         plug.Navigator-nvim
-        # plug.aerial-nvim
         plug.cmp-nvim-lsp
         plug.cmp-nvim-lsp-signature-help
         plug.cmp-nvim-lua
         plug.cmp_luasnip
         plug.diaglist-nvim
         plug.diffview-nvim
+        plug.edgy-nvim
         plug.fzf-lua
         plug.gitsigns-nvim
         plug.lsp-inlayhints-nvim
@@ -151,7 +139,9 @@ in
         plug.nvim-metals
         plug.nvim-navic
         plug.nvim-tree-lua
+        plug.nvim-treesitter
         plug.nvim-web-devicons
+        plug.other-nvim
         plug.plenary-nvim
         plug.symbols-outline-nvim
         plug.telescope-fzf-writer-nvim
@@ -165,9 +155,9 @@ in
         plug.vim-repeat
         plug.vim-rhubarb
         plug.vim-surround
+        plug.vim-wakatime
         plug.zen-mode-nvim
         plug.zk-nvim
-        plug.vim-wakatime
       ];
   };
 
