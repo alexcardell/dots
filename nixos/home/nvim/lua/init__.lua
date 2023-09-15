@@ -226,18 +226,18 @@ vim.cmd([[
   augroup end
 ]])
 
-require('edgy').setup({
-  left = {
-    {
-      title = "Files",
-      ft = "NvimTree",
-      pinned = true,
-    },
-    {
-      title = "Symbols",
-      ft = "Outline",
-      pinned = true,
-      open = "SymbolsOutline",
-    },
-  }
-})
+-- require('edgy').setup({
+--   left = {
+--     {
+--       title = "Files",
+--       ft = "NvimTree",
+--       pinned = true,
+--     },
+--     {
+--       title = "Symbols",
+--       ft = "Outline",
+--       pinned = true,
+--       open = "SymbolsOutline",
+--     },
+--   }
+-- })
