@@ -30,6 +30,8 @@ in
     scala-cli
     xdg-ninja
     zk
+    unstable.sloth
+    unixtools.watch
   ];
 
   programs.java = {
