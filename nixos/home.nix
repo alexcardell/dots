@@ -90,7 +90,7 @@ in
     withRuby = true;
     withPython3 = true;
 
-    # package = pkgs.neovim-nightly;
+    # package = pkgs.unstable.neovim;
 
     extraPackages = with pkgs.unstable; [
       ltex-ls
@@ -113,7 +113,12 @@ in
         pinned = vimPluginsGithub;
       in
       [
-        # (plug.nvim-treesitter.withPlugins (plugins: pkgs.tree-sitter.allGrammars))
+        (plug.nvim-treesitter.withPlugins (plugins: with plugins; [
+          # scala 
+          smithy
+          hcl
+          terraform
+        ]))
         # plug.cmp-nvim-lsp-document-symbol
         # plug.nvim-ts-autotag
         plug.Navigator-nvim
@@ -141,7 +146,6 @@ in
         plug.nvim-metals
         plug.nvim-navic
         plug.nvim-tree-lua
-        plug.nvim-treesitter
         plug.nvim-web-devicons
         plug.other-nvim
         plug.plenary-nvim
