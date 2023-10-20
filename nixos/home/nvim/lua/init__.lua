@@ -121,6 +121,8 @@ require('base16-colorscheme').with_config({
   indentblankline = false,
   notify = false,
   ts_rainbow = false,
+  illuminate = false,
+  cmp = false
 })
 
 vim.cmd([[ colorscheme base16-tomorrow-night ]])
@@ -208,11 +210,26 @@ key("n", "<leader>ov", "<cmd>OtherVSplit<cr>", {})
 
 -- require('nvim-autopairs').setup()
 
--- require('nvim-treesitter.configs').setup({
---   autotag = {
---     enable = true,
---   }
--- })
+require('nvim-treesitter.configs').setup({
+  ensure_installed = {},
+  sync_install = false,
+  auto_install = false,
+  ignore_install = {},
+  highlight = {
+    enable = true,
+    disable = {},
+    additional_vim_regex_highlighting = false,
+  },
+  incremental_selection = {
+    enable = false,
+  },
+  indent = {
+    enable = true
+  }
+  -- autotag = {
+  --   enable = true,
+  -- }
+})
 
 -- require('aerial').setup()
 -- key("n", "<leader>os", "<cmd>AerialToggle<cr>", {})
