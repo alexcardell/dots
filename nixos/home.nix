@@ -23,6 +23,7 @@ in
     gnupg
     jq
     kitty
+    git-filter-repo
     nerdfonts
     nodejs-18_x
     ripgrep
