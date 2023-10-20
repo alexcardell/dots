@@ -28,7 +28,7 @@ in
     nodejs-18_x
     ripgrep
     sbt
-    scala-cli
+    unstable.scala-cli
     xdg-ninja
     zk
     unstable.sloth
