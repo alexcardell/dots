@@ -1,9 +1,0 @@
-session_name: cv
-start_directory: $CODEPATH/cv
-windows:
-  - window_name: edit
-    panes:
-      - vim -c pwd
-  - window_name: term
-    panes:
-      - git status

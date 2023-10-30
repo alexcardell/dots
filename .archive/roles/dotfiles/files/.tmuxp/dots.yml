@@ -1,9 +1,0 @@
-session_name: dots
-start_directory: $CODEPATH/dots
-windows:
-  - window_name: edit
-    panes:
-      - vim -c pwd
-  - window_name: term
-    panes:
-      - git status

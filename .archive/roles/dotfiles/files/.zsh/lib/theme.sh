@@ -1,1 +1,0 @@
-/home/alex/.zsh/lib/tomorrow-night.sh

@@ -1,5 +1,0 @@
-rofi.show-icons: true
-rofi.theme: ./custom-nord.rasi
-rofi.terminal: urxvt
-rofi.fuzzy: true
-rofi.kb-cancel: Escape,Control+c

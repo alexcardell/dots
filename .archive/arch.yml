@@ -1,9 +1,0 @@
----
-- hosts: localhost
-  roles:
-    - role: pacman
-      tags: [ pacman, all ]
-    - role: dotfiles
-      tags: [ dotfiles, dots, all ]
-    - role: code
-      tags: [ code, dots, all ]
