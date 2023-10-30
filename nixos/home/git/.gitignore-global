@@ -266,4 +266,7 @@ dist
 # Stores VSCode versions used for testing VSCode extensions
 .vscode-test
 
+# Direnv
+.direnv
+
 # End of https://www.toptal.com/developers/gitignore/api/scala,java,node
