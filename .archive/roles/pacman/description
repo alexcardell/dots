@@ -1,7 +1,0 @@
-<!-- vim: set ft=markdown: -->
-
-# :package: Pacman
-
-Installs and updates [pacman](https://wiki.archlinux.org/index.php/pacman) packages.
-
-[`./files/pkglist.txt`](./files/pkglist.txt) is kept up to date via a pacman hook.

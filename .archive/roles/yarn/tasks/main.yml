@@ -1,9 +1,0 @@
----
-- include_role:
-    name: initialise
-
-- name: Install global Yarn packages
-  yarn:
-    name: '{{ item }}'
-    global: yes
-  with_items: '{{ packages }}'
