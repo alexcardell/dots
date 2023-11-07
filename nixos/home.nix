@@ -117,8 +117,10 @@ in
       [
         (plug.nvim-treesitter.withPlugins (plugins: with plugins; [
           # scala 
-          smithy
+          c
           hcl
+          lua
+          smithy
           terraform
         ]))
         # plug.cmp-nvim-lsp-document-symbol
@@ -139,6 +141,7 @@ in
         plug.luasnip
         plug.markdown-preview-nvim
         plug.nui-nvim
+        plug.none-ls-nvim
         plug.nvim-autopairs
         plug.nvim-base16
         plug.nvim-cmp

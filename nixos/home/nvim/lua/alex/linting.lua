@@ -1,16 +1,17 @@
-local M = {
-}
+local null_ls = require('null-ls')
+
+local M = {}
+
+local setup_null_ls = function()
+  null_ls.setup({
+    sources = {
+      null_ls.builtins.diagnostics.vale,
+    }
+  })
+end
 
 M.setup = function()
-    require('lint').linters_by_ft = {
-      markdown = { 'vale' }
-    }
-
-    vim.api.nvim_create_autocmd({ "BufWritePost" }, {
-      callback = function()
-        require("lint").try_lint()
-      end,
-    })
-  end
+  setup_null_ls()
+end
 
 return M
