@@ -20,19 +20,20 @@ in
   home.packages = with pkgs; [
     entr
     git-crypt
+    git-filter-repo
     gnupg
     jq
     kitty
-    git-filter-repo
     nerdfonts
     nodejs-18_x
     ripgrep
     sbt
+    unixtools.watch
     unstable.scala-cli
+    unstable.sloth
+    vale
     xdg-ninja
     zk
-    unstable.sloth
-    unixtools.watch
   ];
 
   programs.java = {
@@ -143,6 +144,7 @@ in
         plug.nvim-cmp
         plug.nvim-dap
         plug.nvim-dap-virtual-text
+        plug.nvim-lint
         plug.nvim-lspconfig
         plug.nvim-metals
         plug.nvim-navic
