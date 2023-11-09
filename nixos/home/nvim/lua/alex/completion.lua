@@ -1,5 +1,6 @@
 local cmp = require('cmp')
 local cmp_lsp = require('cmp_nvim_lsp')
+local cmp_git = require('cmp_git')
 local luasnip = require('luasnip')
 local lspkind = require('lspkind')
 
@@ -42,6 +43,8 @@ M.setup = function()
   --     { name = 'buffer' }
   --   }
   -- })
+
+  cmp_git.setup()
 end
 
 M.capabilities =

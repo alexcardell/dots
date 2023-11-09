@@ -131,6 +131,7 @@ in
         plug.cmp-nvim-lsp-signature-help
         plug.cmp-nvim-lua
         plug.cmp_luasnip
+        plug.cmp-git
         plug.diaglist-nvim
         plug.diffview-nvim
         plug.edgy-nvim
