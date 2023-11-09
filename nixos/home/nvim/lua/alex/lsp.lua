@@ -23,7 +23,7 @@ local handlers = {
   ["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = border }),
 }
 
-local capabilities = completion.capabilities()
+local capabilities = completion.capabilities
 
 local M = {}
 
