@@ -141,8 +141,8 @@ in
         plug.lualine-nvim
         plug.luasnip
         plug.markdown-preview-nvim
-        plug.nui-nvim
         plug.none-ls-nvim
+        plug.nui-nvim
         plug.nvim-autopairs
         plug.nvim-base16
         plug.nvim-cmp
@@ -161,6 +161,7 @@ in
         plug.telescope-nvim
         plug.telescope-symbols-nvim
         plug.tint-nvim
+        plug.todo-comments-nvim
         plug.vim-commentary
         plug.vim-fugitive
         plug.vim-nix

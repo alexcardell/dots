@@ -259,3 +259,5 @@ vim.cmd([[
 --     },
 --   }
 -- })
+
+require('todo-comments').setup()
