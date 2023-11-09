@@ -36,6 +36,9 @@ end
 local M = {}
 
 M.setup = function()
+  -- set default
+  vim.o.winbar = " "
+
   require('lualine').setup {
     options = {
       theme = bubbles_theme,
@@ -68,8 +71,8 @@ M.setup = function()
       lualine_z = { 'location' },
     },
     winbar = {
-      lualine_a = { },
-      lualine_b = { 
+      lualine_a = {},
+      lualine_b = {
         {
           'navic',
           draw_empty = true
