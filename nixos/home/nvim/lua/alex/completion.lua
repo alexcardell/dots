@@ -8,12 +8,18 @@ local M = {}
 
 M.setup = function()
   cmp.setup({
-    sources = {
-      { name = 'nvim_lsp' },
-      -- { name = 'buffer' },
-      { name = 'luasnip' },
-      { name = 'nvim_lsp_signature_help' },
-    },
+    sources = cmp.config.sources(
+    -- group 1
+      {
+        { name = 'nvim_lsp_signature_help' },
+        { name = 'nvim_lsp' },
+        { name = 'luasnip' },
+      },
+      -- group 2
+      {
+        { name = 'buffer' },
+      }
+    ),
     snippet = {
       expand = function(args)
         luasnip.lsp_expand(args.body)
@@ -35,6 +41,14 @@ M.setup = function()
         behavior = 'replace',
       }),
     }),
+  })
+
+  cmp.setup.filetype('gitcommit', {
+    sources = cmp.config.sources({
+      { name = 'git' },
+    }, {
+      { name = 'buffer' },
+    })
   })
 
   -- TODO investigate
