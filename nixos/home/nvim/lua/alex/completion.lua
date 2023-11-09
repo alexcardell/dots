@@ -29,10 +29,10 @@ M.setup = function()
       })
     },
     mapping = cmp.mapping.preset.insert({
-      ['<Tab>'] =  cmp.mapping.confirm({
-          select = true,
-          behavior = 'replace',
-        }),
+      ['<Tab>'] = cmp.mapping.confirm({
+        select = true,
+        behavior = 'replace',
+      }),
     }),
   })
 

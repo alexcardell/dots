@@ -28,9 +28,14 @@ local capabilities = completion.capabilities
 local M = {}
 
 M.setup_lsp = function()
-  lspconfig.util.default_config = vim.tbl_extend("force", lspconfig.util.default_config, {
-    capabilities = capabilities,
-  })
+  -- extend default capabilities 
+  lspconfig.util.default_config = vim.tbl_extend(
+    "force",
+    lspconfig.util.default_config,
+    {
+      capabilities = capabilities,
+    }
+  )
 
   -- nix
   lspconfig.rnix.setup({
