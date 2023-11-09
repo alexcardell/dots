@@ -29,6 +29,7 @@ in
     ripgrep
     sbt
     unixtools.watch
+    unstable.languagetool-rust
     unstable.scala-cli
     unstable.sloth
     vale
