@@ -4,18 +4,18 @@ local cmp_git = require('cmp_git')
 local luasnip = require('luasnip')
 local lspkind = require('lspkind')
 
+local compare = cmp.config.compare
+
 local M = {}
 
 M.setup = function()
   cmp.setup({
     sources = cmp.config.sources(
-    -- group 1
       {
-        { name = 'nvim_lsp_signature_help' },
         { name = 'nvim_lsp' },
+        { name = 'nvim_lsp_signature_help' },
         { name = 'luasnip' },
       },
-      -- group 2
       {
         { name = 'buffer' },
       }
@@ -31,7 +31,7 @@ M.setup = function()
     },
     formatting = {
       format = lspkind.cmp_format({
-        mode = 'symbol',
+        mode = 'symbol_text',
         maxwidth = 50,
       })
     },
@@ -41,6 +41,22 @@ M.setup = function()
         behavior = 'replace',
       }),
     }),
+    preselect = cmp.PreselectMode.None,
+    sorting = {
+      priority_weight = 2,
+      comparators = {
+        compare.offset,
+        compare.score,
+        compare.sort_text,
+        compare.recently_used,
+        compare.kind,
+        compare.length,
+        compare.order,
+      },
+    },
+    completion = {
+      completeopt = 'menu,menuone'
+    },
   })
 
   cmp.setup.filetype('gitcommit', {

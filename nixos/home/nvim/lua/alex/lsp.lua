@@ -14,6 +14,7 @@ local on_attach = function(client, bufnr)
   if client.server_capabilities.documentSymbolProvider then
     navic.attach(client, bufnr)
   end
+
 end
 
 local border = "single"
@@ -28,7 +29,7 @@ local capabilities = completion.capabilities
 local M = {}
 
 M.setup_lsp = function()
-  -- extend default capabilities 
+  -- extend default capabilities
   lspconfig.util.default_config = vim.tbl_extend(
     "force",
     lspconfig.util.default_config,
