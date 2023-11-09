@@ -7,8 +7,8 @@ local setup_null_ls = function()
   null_ls.setup({
     sources = {
       builtins.diagnostics.vale,
-      builtins.diagnostics.ltrs,
-      builtins.code_actions.ltrs,
+      -- builtins.diagnostics.ltrs,
+      -- builtins.code_actions.ltrs,
     }
   })
 end
