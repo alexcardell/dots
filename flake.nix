@@ -6,6 +6,8 @@
 
     nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
 
+    nur.url = "github:nix-community/nur";
+
     home-manager = {
       url = "github:nix-community/home-manager/release-23.05";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -18,7 +20,7 @@
 
   };
 
-  outputs = { nixpkgs, nixpkgs-unstable, home-manager, darwin, ... }:
+  outputs = { nixpkgs, nixpkgs-unstable, nur, home-manager, darwin, ... }:
     let
       pkgsForSystem = system: import nixpkgs {
         inherit system;
@@ -44,6 +46,7 @@
 
       sharedOverlays = system: [
         (overlay-unstable system)
+        nur.overlay
       ];
 
       nixosConfiguration = hostname:
