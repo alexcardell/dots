@@ -261,3 +261,13 @@ vim.cmd([[
 -- })
 
 require('todo-comments').setup()
+
+-- vim.cmd([[ highlight CustomIndentLine ctermfg=Black guifg=#282a2e ]])
+vim.cmd([[ highlight CustomIndentLine ctermfg=Black guifg=#373b41 ]])
+require('ibl').setup({
+  indent = {
+    char = '│',
+    -- char = '╎',
+    highlight = {'CustomIndentLine'}
+  }
+})

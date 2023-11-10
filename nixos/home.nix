@@ -127,16 +127,17 @@ in
         # plug.cmp-nvim-lsp-document-symbol
         # plug.nvim-ts-autotag
         plug.Navigator-nvim
+        plug.cmp-git
         plug.cmp-nvim-lsp
         plug.cmp-nvim-lsp-signature-help
         plug.cmp-nvim-lua
         plug.cmp_luasnip
-        plug.cmp-git
         plug.diaglist-nvim
         plug.diffview-nvim
         plug.edgy-nvim
         plug.fzf-lua
         plug.gitsigns-nvim
+        plug.indent-blankline-nvim
         plug.lsp-inlayhints-nvim
         plug.lspkind-nvim
         plug.lualine-nvim
