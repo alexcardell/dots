@@ -37,7 +37,7 @@ local M = {}
 
 M.setup = function()
   -- set default
-  vim.o.winbar = " "
+  -- vim.o.winbar = " "
 
   require('lualine').setup {
     options = {
@@ -45,8 +45,8 @@ M.setup = function()
       component_separators = '|',
       section_separators = { left = '', right = '' },
       disabled_filetypes = {
-        winbar = { 'Outline', 'NvimTree' },
-        statusline = { 'Outline', 'NvimTree' },
+        winbar = { 'Outline', 'NvimTree', 'qf' },
+        statusline = { },
       },
       globalstatus = true
     },
