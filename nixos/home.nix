@@ -114,18 +114,16 @@ in
       let
         plug = pkgs.unstable.vimPlugins;
         pinned = vimPluginsGithub;
-      in
-      [
-        (plug.nvim-treesitter.withPlugins (plugins: with plugins; [
+        treesitter = (plug.nvim-treesitter.withPlugins (plugins: with plugins; [
           # scala 
           c
           hcl
           lua
           smithy
           terraform
-        ]))
-        # plug.cmp-nvim-lsp-document-symbol
-        # plug.nvim-ts-autotag
+        ]));
+      in
+      [
         plug.Navigator-nvim
         plug.cmp-git
         plug.cmp-nvim-lsp
@@ -174,6 +172,7 @@ in
         plug.vim-wakatime
         plug.zen-mode-nvim
         plug.zk-nvim
+        treesitter
       ];
   };
 
