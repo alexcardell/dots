@@ -166,6 +166,7 @@ in
         plug.todo-comments-nvim
         plug.vim-commentary
         plug.vim-fugitive
+        plug.vim-illuminate
         plug.vim-nix
         plug.vim-pencil
         plug.vim-repeat
