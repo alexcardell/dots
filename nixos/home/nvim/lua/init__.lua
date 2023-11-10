@@ -275,3 +275,10 @@ require('ibl').setup({
 require('illuminate').configure({
   providers = { 'lsp' }
 })
+
+require('oatmeal').setup({
+  backend = "ollama",
+  model = "codellama:latest"
+})
+
+-- require('copilot').setup()

@@ -4,7 +4,7 @@
   homebrew = {
     enable = true;
     taps = [
-      "smithy-lang/tap"
+      "smithy-lang/tap" # smithy-cli
     ];
     casks = [
       "firefox"

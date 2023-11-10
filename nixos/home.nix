@@ -1,15 +1,15 @@
 { pkgs, ... }:
 let
   vimPluginsGithub = {
-    # other-nvim = pkgs.vimUtils.buildVimPluginFrom2Nix {
-    #   name = "other.nvim";
-    #   src = pkgs.fetchFromGitHub {
-    #     owner = "rgroli";
-    #     repo = "other.nvim";
-    #     rev = "9afecea37c9b5ffed65a21de9e585d548de7778a";
-    #     hash = "sha256-df/L8ZOdjkviE6WRRe7uon82hlUb+yYDdtiN3pJ5OBs=";
-    #   };
-    # };
+    oatmeal-nvim = pkgs.vimUtils.buildVimPluginFrom2Nix {
+      name = "oatmeal.nvim";
+      src = pkgs.fetchFromGitHub {
+        owner = "dustinblackman";
+        repo = "oatmeal.nvim";
+        rev = "74c1df535b397a0c29d904adc2a3c962198c7ab6";
+        hash = "sha256-kdB936CYYmBPynvZTGbEOCH0k30QTuGyqEbKB+nAWfY=";
+      };
+    };
   };
 in
 {
@@ -26,10 +26,12 @@ in
     kitty
     nerdfonts
     nodejs-18_x
+    # nur.repos.dustinblackman.oatmeal
     ripgrep
     sbt
     unixtools.watch
     unstable.languagetool-rust
+    unstable.ollama
     unstable.scala-cli
     unstable.sloth
     vale
@@ -124,6 +126,8 @@ in
         ]));
       in
       [
+        pinned.oatmeal-nvim
+        plug.copilot-lua
         plug.Navigator-nvim
         plug.cmp-buffer
         plug.cmp-git
