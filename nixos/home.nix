@@ -125,6 +125,7 @@ in
       in
       [
         plug.Navigator-nvim
+        plug.cmp-buffer
         plug.cmp-git
         plug.cmp-nvim-lsp
         plug.cmp-nvim-lsp-signature-help
