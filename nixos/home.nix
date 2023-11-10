@@ -130,6 +130,7 @@ in
         plug.cmp-nvim-lsp
         plug.cmp-nvim-lsp-signature-help
         plug.cmp-nvim-lua
+        plug.cmp-path
         plug.cmp_luasnip
         plug.diaglist-nvim
         plug.diffview-nvim
