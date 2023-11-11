@@ -95,7 +95,7 @@ in
     withRuby = true;
     withPython3 = true;
 
-    # package = pkgs.unstable.neovim;
+    package = pkgs.unstable.neovim-unwrapped;
 
     extraPackages = with pkgs.unstable; [
       ltex-ls
