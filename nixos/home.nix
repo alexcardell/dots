@@ -10,6 +10,16 @@ let
         hash = "sha256-kdB936CYYmBPynvZTGbEOCH0k30QTuGyqEbKB+nAWfY=";
       };
     };
+    # fork of symbols-outline-nvim
+    outline-nvim = pkgs.vimUtils.buildVimPluginFrom2Nix {
+      name = "outline.nvim";
+      src = pkgs.fetchFromGitHub {
+        owner = "hedyhli";
+        repo = "outline.nvim";
+        rev = "78ad5cb583c0ec0ea56c89e622bc16e45aaca934";
+        hash = "sha256-zskXfrbEryKyjHfbACvCkiAoVAk94uWa2KRDZlTSejQ=";
+      };
+    };
   };
 in
 {
@@ -127,6 +137,7 @@ in
       in
       [
         pinned.oatmeal-nvim
+        pinned.outline-nvim
         plug.copilot-lua
         plug.Navigator-nvim
         plug.cmp-buffer
@@ -162,7 +173,7 @@ in
         plug.nvim-web-devicons
         plug.other-nvim
         plug.plenary-nvim
-        plug.symbols-outline-nvim
+        # plug.symbols-outline-nvim
         plug.telescope-fzf-writer-nvim
         plug.telescope-nvim
         plug.telescope-symbols-nvim

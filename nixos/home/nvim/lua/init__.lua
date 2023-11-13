@@ -235,14 +235,21 @@ key("n", "<leader>ov", "<cmd>OtherVSplit<cr>", {})
 -- require('aerial').setup()
 -- key("n", "<leader>os", "<cmd>AerialToggle<cr>", {})
 
-require("symbols-outline").setup()
-key("n", "<leader>o", "<cmd>SymbolsOutline<cr>", {})
-vim.cmd([[
-  augroup symboloutlineau
-    au!
-    au FileType Outline setlocal signcolumn=no
-  augroup end
-]])
+-- require("symbols-outline").setup()
+-- key("n", "<leader>o", "<cmd>SymbolsOutline<cr>", {})
+-- vim.cmd([[
+--   augroup symboloutlineau
+--     au!
+--     au FileType Outline setlocal signcolumn=no
+--   augroup end
+-- ]])
+
+require('outline').setup({
+  symbols = {
+    icon_source = 'lspkind'
+  }
+})
+key("n", "<leader>ss", "<cmd>Outline<cr>", {})
 
 -- require('edgy').setup({
 --   left = {
