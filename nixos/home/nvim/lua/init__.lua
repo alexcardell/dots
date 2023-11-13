@@ -73,6 +73,12 @@ vim.cmd([[
   augroup end
 ]])
 
+require('telescope').setup({
+  defaults = {
+    path_display = { "truncate" }
+  }
+})
+
 key("n", "<localleader>d", "<cmd>lua vim.lsp.buf.definition()<cr>", {})
 key("n", "<localleader>t", "<cmd>lua vim.lsp.buf.type_definition()<cr>", {})
 key("n", "<localleader>h", "<cmd>lua vim.lsp.buf.hover()<cr>", {})
