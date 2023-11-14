@@ -39,7 +39,7 @@ M.setup_lsp = function()
   )
 
   -- nix
-  lspconfig.rnix.setup({
+  lspconfig.nixd.setup({
     on_attach = on_attach,
     handlers = handlers,
   })

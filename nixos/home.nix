@@ -111,8 +111,8 @@ in
       ltex-ls
       lua-language-server
       metals
+      nixd
       nodePackages.typescript-language-server
-      rnix-lsp
       terraform-ls
       wakatime
     ];
