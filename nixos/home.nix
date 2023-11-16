@@ -136,9 +136,9 @@ in
         ]));
       in
       [
+        # plug.symbols-outline-nvim
         pinned.oatmeal-nvim
         pinned.outline-nvim
-        plug.copilot-lua
         plug.Navigator-nvim
         plug.cmp-buffer
         plug.cmp-git
@@ -147,6 +147,8 @@ in
         plug.cmp-nvim-lua
         plug.cmp-path
         plug.cmp_luasnip
+        # plug.copilot-cmp
+        plug.copilot-lua
         plug.diaglist-nvim
         plug.diffview-nvim
         plug.edgy-nvim
@@ -173,7 +175,6 @@ in
         plug.nvim-web-devicons
         plug.other-nvim
         plug.plenary-nvim
-        # plug.symbols-outline-nvim
         plug.telescope-fzf-writer-nvim
         plug.telescope-nvim
         plug.telescope-symbols-nvim

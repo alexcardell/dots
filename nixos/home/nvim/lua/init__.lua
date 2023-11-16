@@ -299,3 +299,18 @@ vim.api.nvim_create_user_command(
   'DiffviewOpen origin/HEAD...HEAD --imply-local',
   {}
 )
+
+require('copilot').setup({
+  panel = { enabled = false },
+  suggestion = { 
+    enabled = true,
+    -- keymap = {
+    --   accept = "<C-'>",
+    --   accept_word = false,
+    --   accept_line = false,
+    --   next = "<C-]>",
+    --   prev = "<C-[>",
+    --   dismiss = "<C-#>",
+    -- },
+  }
+})
