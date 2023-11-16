@@ -294,4 +294,8 @@ require('oatmeal').setup({
   model = "codellama:latest"
 })
 
--- require('copilot').setup()
+vim.api.nvim_create_user_command(
+  'DiffReview',
+  'DiffviewOpen origin/HEAD...HEAD --imply-local',
+  {}
+)
