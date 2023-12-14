@@ -286,7 +286,8 @@ require('ibl').setup({
 })
 
 require('illuminate').configure({
-  providers = { 'lsp' }
+  providers = { 'lsp' },
+  delay = 400
 })
 
 require('oatmeal').setup({
@@ -302,7 +303,7 @@ vim.api.nvim_create_user_command(
 
 require('copilot').setup({
   panel = { enabled = false },
-  suggestion = { 
+  suggestion = {
     enabled = true,
     -- keymap = {
     --   accept = "<C-'>",
