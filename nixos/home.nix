@@ -44,6 +44,7 @@ in
     unstable.ollama
     unstable.scala-cli
     unstable.sloth
+    unstable.jira-cli-go
     vale
     xdg-ninja
     zk
