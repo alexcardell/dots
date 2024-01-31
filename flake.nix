@@ -75,7 +75,7 @@
                 imports = [
                   os-home
                   host-home
-                  ./nixos/home.nix
+                  ./nixos/home/default.nix
                 ];
               };
             }
@@ -119,7 +119,7 @@
                     imports = [
                       ./nixos/systems/darwin/home/default.nix
                       ./nixos/hosts/darwin/home/default.nix
-                      ./nixos/home.nix
+                      ./nixos/home/default.nix
                     ];
                   };
                 };

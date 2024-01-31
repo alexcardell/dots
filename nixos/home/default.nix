@@ -73,8 +73,8 @@ in
       ZVM_VI_ESCAPE_BINDKEY = "jk";
     };
 
-    envExtra = builtins.readFile ./home/zsh/.zshenv;
-    initExtra = builtins.readFile ./home/zsh/.zshrc;
+    envExtra = builtins.readFile ./zsh/.zshenv;
+    initExtra = builtins.readFile ./zsh/.zshrc;
 
     plugins = [
       {
@@ -86,7 +86,7 @@ in
   };
 
   home.file.".zsh" = {
-    source = ./home/zsh/.zsh;
+    source = ./zsh/.zsh;
     recursive = true;
   };
 
@@ -199,16 +199,16 @@ in
   programs.git = {
     enable = true;
 
-    extraConfig = builtins.readFile ./home/git/.gitconfig;
+    extraConfig = builtins.readFile ./git/.gitconfig;
   };
 
-  home.file.".gitconfig.work".source = ./home/git/.gitconfig.work;
+  home.file.".gitconfig.work".source = ./git/.gitconfig.work;
 
   programs.tmux = {
     enable = true;
     tmuxp.enable = true;
 
-    extraConfig = builtins.readFile ./home/tmux/.tmux.conf;
+    extraConfig = builtins.readFile ./tmux/.tmux.conf;
   };
 
   programs.fzf = {
@@ -224,30 +224,30 @@ in
   programs.htop.enable = true;
 
   xdg.configFile.nvim = {
-    source = ./home/nvim;
+    source = ./nvim;
     recursive = true;
   };
 
   xdg.configFile.kitty = {
-    source = ./home/kitty;
+    source = ./kitty;
     recursive = true;
   };
 
   xdg.configFile.i3 = {
-    source = ./home/i3;
+    source = ./i3;
     recursive = true;
   };
 
   xdg.configFile.polybar = {
-    source = ./home/polybar;
+    source = ./polybar;
     recursive = true;
   };
 
   xdg.configFile.rofi = {
-    source = ./home/rofi;
+    source = ./rofi;
     recursive = true;
   };
 
-  home.file.".gitignore".source = ./home/git/.gitignore-global;
+  home.file.".gitignore".source = ./git/.gitignore-global;
 
 }
