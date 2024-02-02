@@ -1,6 +1,15 @@
 { pkgs, ... }:
 let
   vimPluginsGithub = {
+    nvim-metals = pkgs.vimUtils.buildVimPluginFrom2Nix {
+      name = "nvim-metals";
+      src = pkgs.fetchFromGitHub {
+        owner = "scalameta";
+        repo = "nvim-metals";
+        rev = "d90ea43ded7ec651606b0a533ae9740083436e58";
+        hash = "sha256-j8Udb/0Kck268GMHT2uUmygbNmC5iiOOaZgo/LK8o+I=";
+      };
+    };
     oatmeal-nvim = pkgs.vimUtils.buildVimPluginFrom2Nix {
       name = "oatmeal.nvim";
       src = pkgs.fetchFromGitHub {
@@ -68,6 +77,7 @@ in
         # plug.symbols-outline-nvim
         pinned.oatmeal-nvim
         pinned.outline-nvim
+        pinned.nvim-metals
         plug.Navigator-nvim
         plug.cmp-buffer
         plug.cmp-git
@@ -98,7 +108,6 @@ in
         plug.nvim-dap-virtual-text
         plug.nvim-lint
         plug.nvim-lspconfig
-        plug.nvim-metals
         plug.nvim-navic
         plug.nvim-tree-lua
         plug.nvim-web-devicons
