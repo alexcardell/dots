@@ -10,6 +10,15 @@ let
         hash = "sha256-j8Udb/0Kck268GMHT2uUmygbNmC5iiOOaZgo/LK8o+I=";
       };
     };
+    # nvim-dbee = pkgs.vimUtils.buildVimPluginFrom2Nix {
+    #   name = "nvim-dbee";
+    #   src = pkgs.fetchFromGitHub {
+    #     owner = "kndndrj";
+    #     repo = "nvim-dbee";
+    #     rev = "77c72f6789bea19c9076e7006078ab07f763999c";
+    #     hash = "sha256-LZgfBFA5zQIfFjS1r5IBOu3CG5I4uFKvWx2Ar7hVtLQ=";
+    #   };
+    # };
     oatmeal-nvim = pkgs.vimUtils.buildVimPluginFrom2Nix {
       name = "oatmeal.nvim";
       src = pkgs.fetchFromGitHub {
@@ -74,10 +83,11 @@ in
         ]));
       in
       [
+        # plug.copilot-cmp
         # plug.symbols-outline-nvim
+        pinned.nvim-metals
         pinned.oatmeal-nvim
         pinned.outline-nvim
-        pinned.nvim-metals
         plug.Navigator-nvim
         plug.cmp-buffer
         plug.cmp-git
@@ -86,7 +96,6 @@ in
         plug.cmp-nvim-lua
         plug.cmp-path
         plug.cmp_luasnip
-        # plug.copilot-cmp
         plug.copilot-lua
         plug.diaglist-nvim
         plug.diffview-nvim
@@ -119,6 +128,9 @@ in
         plug.tint-nvim
         plug.todo-comments-nvim
         plug.vim-commentary
+        plug.vim-dadbod
+        plug.vim-dadbod-completion
+        plug.vim-dadbod-ui
         plug.vim-fugitive
         plug.vim-illuminate
         plug.vim-nix
