@@ -21,7 +21,7 @@ M.setup = function()
       }
     ),
     snippet = {
-        expand = function(args)
+      expand = function(args)
         luasnip.lsp_expand(args.body)
       end
     },
@@ -66,6 +66,15 @@ M.setup = function()
       { name = 'buffer' },
     })
   })
+
+  local sql_config = {
+    sources = cmp.config.sources({
+      { name = 'vim-dadbod-completion' },
+    })
+  };
+
+  cmp.setup.filetype('sql', sql_config)
+  cmp.setup.filetype('psql', sql_config)
 
   -- TODO investigate
   -- cmp.setup.cmdline('/', {
