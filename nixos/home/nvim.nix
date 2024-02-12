@@ -126,7 +126,8 @@ in
         plug.telescope-nvim
         plug.telescope-symbols-nvim
         plug.tint-nvim
-        plug.todo-comments-nvim
+        # plug.todo-comments-nvim
+        plug.twilight-nvim
         plug.vim-commentary
         plug.vim-dadbod
         plug.vim-dadbod-completion
