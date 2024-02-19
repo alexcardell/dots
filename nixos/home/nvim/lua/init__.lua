@@ -215,6 +215,8 @@ key("n", "<leader>of", "<cmd>Other<cr>", {})
 key("n", "<leader>os", "<cmd>OtherSplit<cr>", {})
 key("n", "<leader>ov", "<cmd>OtherVSplit<cr>", {})
 
+require('marks').setup()
+
 -- require('nvim-autopairs').setup()
 
 -- require('nvim-treesitter.configs').setup({

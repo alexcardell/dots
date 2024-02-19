@@ -108,6 +108,7 @@ in
         plug.lualine-nvim
         plug.luasnip
         plug.markdown-preview-nvim
+        plug.marks-nvim
         plug.none-ls-nvim
         plug.nui-nvim
         plug.nvim-autopairs
@@ -126,7 +127,6 @@ in
         plug.telescope-nvim
         plug.telescope-symbols-nvim
         plug.tint-nvim
-        # plug.todo-comments-nvim
         plug.twilight-nvim
         plug.vim-commentary
         plug.vim-dadbod
