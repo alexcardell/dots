@@ -19,4 +19,6 @@
       # "tfenv"
     ];
   };
+
+  # documentation.doc.enable = false;
 }

@@ -10,6 +10,15 @@ let
         hash = "sha256-j8Udb/0Kck268GMHT2uUmygbNmC5iiOOaZgo/LK8o+I=";
       };
     };
+    base16-nvim = pkgs.vimUtils.buildVimPluginFrom2Nix {
+      name = "base16-nvim";
+      src = pkgs.fetchFromGitHub {
+        owner = "RRethy";
+        repo = "base16-nvim";
+        rev = "3c6a56016cea7b892f1d5b9b5b4388c0f71985be";
+        hash = "sha256-l94LjAM2viB0jQv5FUlSmr4RF/9kd5qZUdov75U+x00=";
+      };
+    };
     # nvim-dbee = pkgs.vimUtils.buildVimPluginFrom2Nix {
     #   name = "nvim-dbee";
     #   src = pkgs.fetchFromGitHub {
@@ -88,6 +97,7 @@ in
         pinned.nvim-metals
         pinned.oatmeal-nvim
         pinned.outline-nvim
+        pinned.base16-nvim
         plug.Navigator-nvim
         plug.cmp-buffer
         plug.cmp-git
@@ -112,7 +122,7 @@ in
         plug.none-ls-nvim
         plug.nui-nvim
         plug.nvim-autopairs
-        plug.nvim-base16
+        # plug.base16-nvim
         plug.nvim-cmp
         plug.nvim-dap
         plug.nvim-dap-virtual-text

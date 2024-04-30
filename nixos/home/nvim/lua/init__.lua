@@ -129,7 +129,8 @@ require('base16-colorscheme').with_config({
   notify = false,
   ts_rainbow = false,
   illuminate = false,
-  cmp = false
+  cmp = false,
+  dapui = false,
 })
 
 vim.cmd([[ colorscheme base16-tomorrow-night ]])

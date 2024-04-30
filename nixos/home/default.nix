@@ -4,6 +4,10 @@
     ./nvim.nix
   ];
 
+  manual.html.enable = false;
+  manual.manpages.enable = false;
+  manual.json.enable = false;
+
   # services.dunst.enable = true;
   home.stateVersion = "22.11";
 
