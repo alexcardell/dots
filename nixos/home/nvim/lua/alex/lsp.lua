@@ -94,6 +94,12 @@ M.setup_lsp = function()
     handlers = handlers,
   })
 
+  -- smithy
+  lspconfig.smithy_ls.setup({
+    on_attach = on_attach,
+    handlers = handlers,
+  })
+
   -- -- tailwindcss
   -- lspconfig.tailwindcss.setup({
   --   on_attach = on_attach,
