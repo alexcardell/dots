@@ -5,6 +5,7 @@
     enable = true;
     taps = [
       "smithy-lang/tap" # smithy-cli
+      "flipt-io/brew"
     ];
     casks = [
       "firefox"
@@ -15,6 +16,7 @@
       "docker-credential-helper-ecr"
       "smithy-cli"
       "whalebrew"
+      "flipt"
       # "terragrunt"
       # "tfenv"
     ];
