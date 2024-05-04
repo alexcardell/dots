@@ -73,4 +73,4 @@ signingkey = "3E9874E01861C2AA"
   default = current
 
 [tag]
-  forceSignAnnotated = true
+  gpgsign = true
