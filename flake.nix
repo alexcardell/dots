@@ -18,9 +18,22 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    neovim-nightly-overlay = {
+      url = "github:nix-community/neovim-nightly-overlay";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
+    };
+
   };
 
-  outputs = { nixpkgs, nixpkgs-unstable, nur, home-manager, darwin, ... }:
+  outputs = { 
+    nixpkgs, 
+    nixpkgs-unstable,
+    nur,
+    home-manager,
+    darwin,
+    neovim-nightly-overlay, 
+    ... 
+  }:
     let
       pkgsForSystem = system: import nixpkgs {
         inherit system;
@@ -47,6 +60,7 @@
       sharedOverlays = system: [
         (overlay-unstable system)
         nur.overlay
+        neovim-nightly-overlay.overlay
       ];
 
       nixosConfiguration = hostname:
