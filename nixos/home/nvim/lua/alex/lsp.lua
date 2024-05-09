@@ -128,6 +128,7 @@ M.metals.init_options = {
 
 M.metals.settings = {
   showImplicitArguments = true,
+  showImplicitConversionsAndClasses = true,
   showInferredType = true,
   useGlobalExecutable = true, -- for nix
 }

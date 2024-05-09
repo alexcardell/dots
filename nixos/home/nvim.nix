@@ -6,8 +6,8 @@ let
       src = pkgs.fetchFromGitHub {
         owner = "scalameta";
         repo = "nvim-metals";
-        rev = "d90ea43ded7ec651606b0a533ae9740083436e58";
-        hash = "sha256-j8Udb/0Kck268GMHT2uUmygbNmC5iiOOaZgo/LK8o+I=";
+        rev = "c6268555d0b471262af78818f11a086ddf30688b";
+        hash = "sha256-r5s0eNMSxBnmu1LYs/+RrhNk356ikfCPA1FfiJcX+K8=";
       };
     };
     base16-nvim = pkgs.vimUtils.buildVimPluginFrom2Nix {
