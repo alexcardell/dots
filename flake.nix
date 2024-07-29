@@ -2,14 +2,14 @@
   description = "NixOS system configuration (alexcardell)";
 
   inputs = {
-    nixpkgs.url = "nixpkgs/nixos-23.11";
+    nixpkgs.url = "nixpkgs/nixos-24.05";
 
     nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
 
     nur.url = "github:nix-community/nur";
 
     home-manager = {
-      url = "github:nix-community/home-manager/release-23.11";
+      url = "github:nix-community/home-manager/release-24.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -35,11 +35,6 @@
     ... 
   }:
     let
-      pkgsForSystem = system: import nixpkgs {
-        inherit system;
-        config = { allowUnfree = true; };
-      };
-
       darwinConfiguration = { pkgs, ... }: {
         nix.package = pkgs.nixFlakes;
         nix.extraOptions = ''
@@ -60,16 +55,16 @@
       sharedOverlays = system: [
         (overlay-unstable system)
         nur.overlay
-        neovim-nightly-overlay.overlay
+        neovim-nightly-overlay.overlays.default
       ];
 
       nixosConfiguration = hostname:
         let
           system = "x86_64-linux";
-          overlays = ({ config, pkgs, ... }: {
+          overlays = ({ ... }: {
             nixpkgs.overlays = sharedOverlays system;
           });
-          os-configuration = (./nixos/systems/linux/configuration.nix);
+          os-configuration = ./nixos/systems/linux/configuration.nix;
           os-home = ./nixos/systems/linux/home/default.nix;
           host-configuration = (./nixos/hosts + "/${hostname}" + /configuration.nix);
           host-home = (./nixos/hosts + "/${hostname}" + /home/default.nix);
@@ -100,7 +95,6 @@
     {
       nixosConfigurations = {
         nixbox = nixosConfiguration "nixbox";
-
         nixpad = nixosConfiguration "nixpad";
       };
 
@@ -108,21 +102,18 @@
         "RJ4QHFPQRX" =
           let
             system = "aarch64-darwin";
+            overlays = ({ ... }: {
+              nixpkgs.overlays = sharedOverlays system;
+            });
           in
           darwin.lib.darwinSystem {
             inherit system;
 
             modules = [
-              ({ config, pkgs, ... }: {
-                nixpkgs.overlays = sharedOverlays system;
-              })
-
+              overlays
               darwinConfiguration
-
               ./nixos/systems/darwin/configuration.nix
-
               ./nixos/hosts/darwin/configuration.nix
-
               home-manager.darwinModule
               {
                 home-manager = {
