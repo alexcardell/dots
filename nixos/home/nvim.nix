@@ -19,25 +19,24 @@ let
         hash = "sha256-l94LjAM2viB0jQv5FUlSmr4RF/9kd5qZUdov75U+x00=";
       };
     };
-    # nvim-dbee = pkgs.vimUtils.buildVimPluginFrom2Nix {
-    #   name = "nvim-dbee";
-    #   src = pkgs.fetchFromGitHub {
-    #     owner = "kndndrj";
-    #     repo = "nvim-dbee";
-    #     rev = "77c72f6789bea19c9076e7006078ab07f763999c";
-    #     hash = "sha256-LZgfBFA5zQIfFjS1r5IBOu3CG5I4uFKvWx2Ar7hVtLQ=";
-    #   };
-    # };
-    oatmeal-nvim = pkgs.vimUtils.buildVimPluginFrom2Nix {
-      name = "oatmeal.nvim";
+    ogpt-nvim = pkgs.vimUtils.buildVimPluginFrom2Nix {
+      name = "ogpt.nvim";
       src = pkgs.fetchFromGitHub {
-        owner = "dustinblackman";
-        repo = "oatmeal.nvim";
-        rev = "74c1df535b397a0c29d904adc2a3c962198c7ab6";
-        hash = "sha256-kdB936CYYmBPynvZTGbEOCH0k30QTuGyqEbKB+nAWfY=";
+        owner = "huynle";
+        repo = "ogpt.nvim";
+        rev = "aad5dfbbbc6e90e12cb15b77d0dc15da83077b48";
+        hash = "sha256-l7lFP2hgvK1IBv27pIfvXo68/cXbq8jxtYz/9NUj9Zs=";
       };
     };
-    # fork of symbols-outline-nvim
+    hardtime-nvim = pkgs.vimUtils.buildVimPluginFrom2Nix {
+      name = "hardtime.nvim";
+      src = pkgs.fetchFromGitHub {
+        owner = "m4xshen";
+        repo = "hardtime.nvim";
+        rev = "91c6be1a54fa057002e21ae209a49436bd215355";
+        hash = "sha256-pLJShpbqmJbY3ThQuGmUfgsxijSADJrqpGYLE+KAcUQ=";
+      };
+    };
     outline-nvim = pkgs.vimUtils.buildVimPluginFrom2Nix {
       name = "outline.nvim";
       src = pkgs.fetchFromGitHub {
@@ -83,21 +82,26 @@ in
         plug = pkgs.unstable.vimPlugins;
         pinned = vimPluginsGithub;
         treesitter = (plug.nvim-treesitter.withPlugins (plugins: with plugins; [
-          # scala 
           c
           hcl
           lua
+          #scala 
           smithy
           terraform
+          vimdoc
         ]));
       in
       [
+        # plug.base16-nvim
         # plug.copilot-cmp
         # plug.symbols-outline-nvim
-        pinned.nvim-metals
-        pinned.oatmeal-nvim
-        pinned.outline-nvim
+        # plug.vim-commentary
         pinned.base16-nvim
+        pinned.nvim-metals
+        # pinned.oatmeal-nvim
+        pinned.outline-nvim
+        pinned.hardtime-nvim
+        pinned.ogpt-nvim
         plug.Navigator-nvim
         plug.cmp-buffer
         plug.cmp-git
@@ -122,7 +126,6 @@ in
         plug.none-ls-nvim
         plug.nui-nvim
         plug.nvim-autopairs
-        # plug.base16-nvim
         plug.nvim-cmp
         plug.nvim-dap
         plug.nvim-dap-virtual-text
@@ -138,7 +141,6 @@ in
         plug.telescope-symbols-nvim
         plug.tint-nvim
         plug.twilight-nvim
-        plug.vim-commentary
         plug.vim-dadbod
         plug.vim-dadbod-completion
         plug.vim-dadbod-ui

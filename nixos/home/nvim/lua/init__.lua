@@ -19,6 +19,8 @@ vim.opt.signcolumn = "yes:2"
 
 -- commands
 vim.opt.showcmd = true
+vim.opt.cmdheight = 1
+-- vim.opt.showmode = false
 vim.opt.wildmenu = true
 vim.opt.wildmode = { "longest:full", "full" }
 
@@ -218,40 +220,19 @@ key("n", "<leader>ov", "<cmd>OtherVSplit<cr>", {})
 
 require('marks').setup()
 
--- require('nvim-autopairs').setup()
-
--- require('nvim-treesitter.configs').setup({
---   ensure_installed = {},
---   sync_install = false,
---   auto_install = false,
---   ignore_install = {},
---   highlight = {
---     enable = true,
---     disable = {},
---     additional_vim_regex_highlighting = false,
---   },
---   incremental_selection = {
---     enable = false,
---   },
---   indent = {
---     enable = true
---   }
---   -- autotag = {
---   --   enable = true,
---   -- }
--- })
-
--- require('aerial').setup()
--- key("n", "<leader>os", "<cmd>AerialToggle<cr>", {})
-
--- require("symbols-outline").setup()
--- key("n", "<leader>o", "<cmd>SymbolsOutline<cr>", {})
--- vim.cmd([[
---   augroup symboloutlineau
---     au!
---     au FileType Outline setlocal signcolumn=no
---   augroup end
--- ]])
+require('nvim-treesitter.configs').setup({
+  sync_install = false,
+  auto_install = false,
+  highlight = {
+    enable = false,
+  },
+  incremental_selection = {
+    enable = false,
+  },
+  indent = {
+    enable = true
+  }
+})
 
 require('outline').setup({
   symbols = {
@@ -259,22 +240,6 @@ require('outline').setup({
   }
 })
 key("n", "<leader>ss", "<cmd>Outline<cr>", {})
-
--- require('edgy').setup({
---   left = {
---     {
---       title = "Files",
---       ft = "NvimTree",
---       pinned = true,
---     },
---     {
---       title = "Symbols",
---       ft = "Outline",
---       pinned = true,
---       open = "SymbolsOutline",
---     },
---   }
--- })
 
 -- vim.cmd([[ highlight CustomIndentLine ctermfg=Black guifg=#282a2e ]])
 vim.cmd([[ highlight CustomIndentLine ctermfg=Black guifg=#373b41 ]])
@@ -291,10 +256,10 @@ require('illuminate').configure({
   delay = 400
 })
 
-require('oatmeal').setup({
-  backend = "ollama",
-  model = "codellama:latest"
-})
+-- require('oatmeal').setup({
+--   backend = "ollama",
+--   model = "codellama:latest"
+-- })
 
 vim.api.nvim_create_user_command(
   'DiffReview',
@@ -302,17 +267,19 @@ vim.api.nvim_create_user_command(
   {}
 )
 
-require('copilot').setup({
-  panel = { enabled = false },
-  suggestion = {
-    enabled = true,
-    -- keymap = {
-    --   accept = "<C-'>",
-    --   accept_word = false,
-    --   accept_line = false,
-    --   next = "<C-]>",
-    --   prev = "<C-[>",
-    --   dismiss = "<C-#>",
-    -- },
-  }
-})
+-- require('copilot').setup({
+--   panel = { enabled = false },
+--   suggestion = {
+--     enabled = true,
+--     -- keymap = {
+--     --   accept = "<C-'>",
+--     --   accept_word = false,
+--     --   accept_line = false,
+--     --   next = "<C-]>",
+--     --   prev = "<C-[>",
+--     --   dismiss = "<C-#>",
+--     -- },
+--   }
+-- })
+
+require('hardtime').setup()
