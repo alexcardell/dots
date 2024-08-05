@@ -127,6 +127,9 @@ M.metals.init_options = {
 }
 
 M.metals.settings = {
+  autoImportBuild = "all",
+  defaultBspToBuildTool = true,
+  enableSemanticHighlighting = false,
   showImplicitArguments = true,
   showImplicitConversionsAndClasses = true,
   showInferredType = true,
