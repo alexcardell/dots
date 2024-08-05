@@ -29,6 +29,8 @@ local capabilities = completion.capabilities
 local M = {}
 
 M.setup_lsp = function()
+  vim.lsp.inlay_hint.enable()
+
   -- extend default capabilities
   lspconfig.util.default_config = vim.tbl_extend(
     "force",
