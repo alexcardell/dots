@@ -82,11 +82,10 @@ in
         plug = pkgs.unstable.vimPlugins;
         pinned = vimPluginsGithub;
         treesitter = (plug.nvim-treesitter.withPlugins (plugins: with plugins; [
-          # c
-          # hcl
-          # scala 
-          # smithy
-          # terraform
+          c
+          scala 
+          smithy
+          terraform
           lua
           vimdoc
         ]));
