@@ -6,7 +6,8 @@ vim.g.mapleader = " " -- space
 vim.g.maplocalleader = "\\"
 
 require('alex/options')
-require('alex/plugins/gitsigns').setup()
+require('alex/plugins/treesitter').setup()
 require('alex/plugins/telescope').setup()
+require('alex/plugins/gitsigns').setup()
 require('alex/plugins/navigator').setup()
 require('alex/keys')

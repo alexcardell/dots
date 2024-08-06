@@ -84,11 +84,11 @@ in
         treesitter = (plug.nvim-treesitter.withPlugins (plugins: with plugins; [
           # c
           # hcl
-          # lua
-          # #scala 
+          # scala 
           # smithy
           # terraform
-          # vimdoc
+          lua
+          vimdoc
         ]));
       in
       [
@@ -98,7 +98,6 @@ in
         # pinned.oatmeal-nvim
         # pinned.ogpt-nvim
         # pinned.outline-nvim
-        plug.Navigator-nvim
         # plug.base16-nvim
         # plug.cmp-buffer
         # plug.cmp-git
@@ -135,9 +134,6 @@ in
         # plug.plenary-nvim
         # plug.symbols-outline-nvim
         # plug.telescope-fzf-writer-nvim
-        plug.telescope-nvim
-        plug.telescope-ui-select-nvim
-	# TODO add with lsp
         # plug.telescope-symbols-nvim
         # plug.tint-nvim
         # plug.twilight-nvim
@@ -155,8 +151,11 @@ in
         # plug.vim-wakatime
         # plug.zen-mode-nvim
         # plug.zk-nvim
-        # treesitter
+        plug.Navigator-nvim
         plug.gitsigns-nvim
+        plug.telescope-nvim
+        plug.telescope-ui-select-nvim
+        treesitter
       ];
   };
 }
