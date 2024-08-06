@@ -25,3 +25,9 @@ key("n", "<leader>fr", "<cmd>Telescope registers<cr>", {})
 key("n", "<leader>fx", "<cmd>Telescope diagnostics<cr>", {})
 key("n", "<leader>fs", "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", {})
 -- key("n", "<localleader>mc", [[  lua require("telescope").extensions.metals.commands() ]], {})
+
+-- Navigator
+key('n', "<C-h>", '<cmd>NavigatorLeft<cr>', {})
+key('n', "<C-l>", '<cmd>NavigatorRight<cr>', {})
+key('n', "<C-k>", '<cmd>NavigatorUp<cr>', {})
+key('n', "<C-j>", '<cmd>NavigatorDown<cr>', {})

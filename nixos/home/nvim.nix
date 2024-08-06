@@ -98,7 +98,7 @@ in
         # pinned.oatmeal-nvim
         # pinned.ogpt-nvim
         # pinned.outline-nvim
-        # plug.Navigator-nvim
+        plug.Navigator-nvim
         # plug.base16-nvim
         # plug.cmp-buffer
         # plug.cmp-git
