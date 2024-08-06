@@ -151,12 +151,13 @@ in
         # plug.vim-wakatime
         # plug.zen-mode-nvim
         # plug.zk-nvim
+	plug.hardtime-nvim
         plug.Navigator-nvim
         plug.gitsigns-nvim
+        plug.nvim-autopairs
+        plug.nvim-ts-autotag
         plug.telescope-nvim
         plug.telescope-ui-select-nvim
-        plug.nvim-ts-autotag
-        plug.nvim-autopairs
         treesitter
       ];
   };
