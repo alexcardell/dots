@@ -1,3 +1,9 @@
+-- indentation
+vim.opt.shiftround = true
+vim.opt.shiftwidth = 2
+vim.opt.smarttab = true
+vim.opt.tabstop = 2
+
 -- enable line numbers
 vim.opt.number = true
 
