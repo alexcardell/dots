@@ -1,5 +1,7 @@
 local key = vim.keymap.set
 
+key("i", "jk", "<Esc>", {desc = 'Exit insert mode'})
+key("n", "<leader><leader>", "<C-^>", {desc = 'Toggle last buffer'})
 key('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
 
 -- gitsigns
