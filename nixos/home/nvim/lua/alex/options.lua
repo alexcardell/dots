@@ -3,6 +3,7 @@ vim.opt.shiftround = true
 vim.opt.shiftwidth = 2
 vim.opt.smarttab = true
 vim.opt.tabstop = 2
+vim.opt.expandtab = true
 
 -- enable line numbers
 vim.opt.number = true
