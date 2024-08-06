@@ -46,7 +46,7 @@ M.setup = function()
       section_separators = { left = '', right = '' },
       disabled_filetypes = {
         winbar = { 'Outline', 'NvimTree', 'qf' },
-        statusline = { },
+        statusline = {},
       },
       globalstatus = true
     },
@@ -54,7 +54,7 @@ M.setup = function()
       lualine_a = {
         { 'mode', separator = { left = '' }, right_padding = 2 },
       },
-      lualine_b = {'branch', 'diff' },
+      lualine_b = { 'branch', 'diff' },
       lualine_c = {},
       lualine_x = {},
       lualine_y = { 'searchcount', 'filetype', 'progress', 'location' },
@@ -73,10 +73,10 @@ M.setup = function()
     winbar = {
       lualine_a = {},
       lualine_b = {
-        -- {
-        --   'navic',
-        --   draw_empty = true
-        -- },
+        {
+          'navic',
+          draw_empty = true
+        },
       },
       lualine_c = {},
       lualine_x = {},
@@ -88,12 +88,12 @@ M.setup = function()
       lualine_z = { 'filename' }
     },
     tabline = {
-    --  lualine_a = {},
-    --  lualine_b = { 'navic' },
-    --  lualine_c = {},
-    --  lualine_x = {},
-    --  lualine_y = {},
-    --  lualine_z = {}
+      --  lualine_a = {},
+      --  lualine_b = { 'navic' },
+      --  lualine_c = {},
+      --  lualine_x = {},
+      --  lualine_y = {},
+      --  lualine_z = {}
     },
     extensions = {},
   }
