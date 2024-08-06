@@ -7,4 +7,5 @@ vim.g.maplocalleader = "\\"
 
 require('alex/options')
 require('alex/plugins/gitsigns').setup()
+require('alex/plugins/telescope').setup()
 require('alex/keys')

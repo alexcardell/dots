@@ -135,7 +135,9 @@ in
         # plug.plenary-nvim
         # plug.symbols-outline-nvim
         # plug.telescope-fzf-writer-nvim
-        # plug.telescope-nvim
+        plug.telescope-nvim
+        plug.telescope-ui-select-nvim
+	# TODO add with lsp
         # plug.telescope-symbols-nvim
         # plug.tint-nvim
         # plug.twilight-nvim
