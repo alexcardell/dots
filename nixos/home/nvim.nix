@@ -158,6 +158,7 @@ in
         plug.nvim-ts-autotag
         plug.telescope-nvim
         plug.telescope-ui-select-nvim
+        plug.nvim-treesitter-textobjects
         treesitter
       ];
   };
