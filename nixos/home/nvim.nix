@@ -155,6 +155,7 @@ in
         plug.gitsigns-nvim
         plug.telescope-nvim
         plug.telescope-ui-select-nvim
+	plug.nvim-ts-autotag
         treesitter
       ];
   };
