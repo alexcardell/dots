@@ -1,11 +1,15 @@
 local M = {}
 M.setup = function()
+  vim.opt.laststatus = 3
+  vim.opt.splitkeep = "screen"
+
   require('ogpt').setup({
     default_provider = "ollama",
-    edgy = true,         -- enable this!
+    edgy = true,           -- enable this!
     single_window = false, -- set this to true if you want only one OGPT window to appear at a time
     providers = {
       ollama = {
+        model = "llama3.1",
         api_host = os.getenv("OLLAMA_API_HOST") or "http://localhost:11434",
         api_key = os.getenv("OLLAMA_API_KEY") or "",
       }

@@ -66,6 +66,7 @@ require('alex/dap').setup()
 require('alex/linting').setup()
 require('alex/statusline').setup()
 require('alex/tree').setup()
+require('alex/llm').setup()
 
 -- metals autocmd
 vim.cmd([[
