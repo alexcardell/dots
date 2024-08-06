@@ -92,17 +92,14 @@ in
         ]));
       in
       [
-        # plug.base16-nvim
-        # plug.copilot-cmp
-        # plug.symbols-outline-nvim
-        # plug.vim-commentary
         # pinned.base16-nvim
+        # pinned.hardtime-nvim
         # pinned.nvim-metals
         # pinned.oatmeal-nvim
-        # pinned.outline-nvim
-        # pinned.hardtime-nvim
         # pinned.ogpt-nvim
+        # pinned.outline-nvim
         # plug.Navigator-nvim
+        # plug.base16-nvim
         # plug.cmp-buffer
         # plug.cmp-git
         # plug.cmp-nvim-lsp
@@ -110,12 +107,12 @@ in
         # plug.cmp-nvim-lua
         # plug.cmp-path
         # plug.cmp_luasnip
+        # plug.copilot-cmp
         # plug.copilot-lua
         # plug.diaglist-nvim
         # plug.diffview-nvim
         # plug.edgy-nvim
         # plug.fzf-lua
-        # plug.gitsigns-nvim
         # plug.indent-blankline-nvim
         # plug.lsp-inlayhints-nvim
         # plug.lspkind-nvim
@@ -136,11 +133,13 @@ in
         # plug.nvim-web-devicons
         # plug.other-nvim
         # plug.plenary-nvim
+        # plug.symbols-outline-nvim
         # plug.telescope-fzf-writer-nvim
         # plug.telescope-nvim
         # plug.telescope-symbols-nvim
         # plug.tint-nvim
         # plug.twilight-nvim
+        # plug.vim-commentary
         # plug.vim-dadbod
         # plug.vim-dadbod-completion
         # plug.vim-dadbod-ui
@@ -155,6 +154,7 @@ in
         # plug.zen-mode-nvim
         # plug.zk-nvim
         # treesitter
+        plug.gitsigns-nvim
       ];
   };
 }
