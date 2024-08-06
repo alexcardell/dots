@@ -151,7 +151,7 @@ in
         # plug.vim-wakatime
         # plug.zen-mode-nvim
         # plug.zk-nvim
-	plug.hardtime-nvim
+        plug.hardtime-nvim
         plug.Navigator-nvim
         plug.gitsigns-nvim
         plug.nvim-autopairs
