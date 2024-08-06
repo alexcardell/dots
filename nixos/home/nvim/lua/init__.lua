@@ -5,4 +5,4 @@
 vim.g.mapleader = " " -- space
 vim.g.maplocalleader = "\\"
 
-require('alex/settings')
+require('alex/options')

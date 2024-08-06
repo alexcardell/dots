@@ -82,13 +82,13 @@ in
         plug = pkgs.unstable.vimPlugins;
         pinned = vimPluginsGithub;
         treesitter = (plug.nvim-treesitter.withPlugins (plugins: with plugins; [
-          c
-          hcl
-          lua
-          #scala 
-          smithy
-          terraform
-          vimdoc
+          # c
+          # hcl
+          # lua
+          # #scala 
+          # smithy
+          # terraform
+          # vimdoc
         ]));
       in
       [
@@ -96,65 +96,65 @@ in
         # plug.copilot-cmp
         # plug.symbols-outline-nvim
         # plug.vim-commentary
-        pinned.base16-nvim
-        pinned.nvim-metals
+        # pinned.base16-nvim
+        # pinned.nvim-metals
         # pinned.oatmeal-nvim
-        pinned.outline-nvim
-        pinned.hardtime-nvim
-        pinned.ogpt-nvim
-        plug.Navigator-nvim
-        plug.cmp-buffer
-        plug.cmp-git
-        plug.cmp-nvim-lsp
-        plug.cmp-nvim-lsp-signature-help
-        plug.cmp-nvim-lua
-        plug.cmp-path
-        plug.cmp_luasnip
-        plug.copilot-lua
-        plug.diaglist-nvim
-        plug.diffview-nvim
-        plug.edgy-nvim
-        plug.fzf-lua
-        plug.gitsigns-nvim
-        plug.indent-blankline-nvim
-        plug.lsp-inlayhints-nvim
-        plug.lspkind-nvim
-        plug.lualine-nvim
-        plug.luasnip
-        plug.markdown-preview-nvim
-        plug.marks-nvim
-        plug.none-ls-nvim
-        plug.nui-nvim
-        plug.nvim-autopairs
-        plug.nvim-cmp
-        plug.nvim-dap
-        plug.nvim-dap-virtual-text
-        plug.nvim-lint
-        plug.nvim-lspconfig
-        plug.nvim-navic
-        plug.nvim-tree-lua
-        plug.nvim-web-devicons
-        plug.other-nvim
-        plug.plenary-nvim
-        plug.telescope-fzf-writer-nvim
-        plug.telescope-nvim
-        plug.telescope-symbols-nvim
-        plug.tint-nvim
-        plug.twilight-nvim
-        plug.vim-dadbod
-        plug.vim-dadbod-completion
-        plug.vim-dadbod-ui
-        plug.vim-fugitive
-        plug.vim-illuminate
-        plug.vim-nix
-        plug.vim-pencil
-        plug.vim-repeat
-        plug.vim-rhubarb
-        plug.vim-surround
+        # pinned.outline-nvim
+        # pinned.hardtime-nvim
+        # pinned.ogpt-nvim
+        # plug.Navigator-nvim
+        # plug.cmp-buffer
+        # plug.cmp-git
+        # plug.cmp-nvim-lsp
+        # plug.cmp-nvim-lsp-signature-help
+        # plug.cmp-nvim-lua
+        # plug.cmp-path
+        # plug.cmp_luasnip
+        # plug.copilot-lua
+        # plug.diaglist-nvim
+        # plug.diffview-nvim
+        # plug.edgy-nvim
+        # plug.fzf-lua
+        # plug.gitsigns-nvim
+        # plug.indent-blankline-nvim
+        # plug.lsp-inlayhints-nvim
+        # plug.lspkind-nvim
+        # plug.lualine-nvim
+        # plug.luasnip
+        # plug.markdown-preview-nvim
+        # plug.marks-nvim
+        # plug.none-ls-nvim
+        # plug.nui-nvim
+        # plug.nvim-autopairs
+        # plug.nvim-cmp
+        # plug.nvim-dap
+        # plug.nvim-dap-virtual-text
+        # plug.nvim-lint
+        # plug.nvim-lspconfig
+        # plug.nvim-navic
+        # plug.nvim-tree-lua
+        # plug.nvim-web-devicons
+        # plug.other-nvim
+        # plug.plenary-nvim
+        # plug.telescope-fzf-writer-nvim
+        # plug.telescope-nvim
+        # plug.telescope-symbols-nvim
+        # plug.tint-nvim
+        # plug.twilight-nvim
+        # plug.vim-dadbod
+        # plug.vim-dadbod-completion
+        # plug.vim-dadbod-ui
+        # plug.vim-fugitive
+        # plug.vim-illuminate
+        # plug.vim-nix
+        # plug.vim-pencil
+        # plug.vim-repeat
+        # plug.vim-rhubarb
+        # plug.vim-surround
         # plug.vim-wakatime
-        plug.zen-mode-nvim
-        plug.zk-nvim
-        treesitter
+        # plug.zen-mode-nvim
+        # plug.zk-nvim
+        # treesitter
       ];
   };
 }
