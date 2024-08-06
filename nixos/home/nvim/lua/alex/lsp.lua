@@ -29,6 +29,7 @@ local capabilities = completion.capabilities
 local M = {}
 
 M.setup_lsp = function()
+  vim.opt_global.shortmess:remove("F") -- required by metals
   vim.lsp.inlay_hint.enable()
 
   -- extend default capabilities
