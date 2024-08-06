@@ -18,7 +18,7 @@ vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
 -- enable signcolumn
-vim.opt.signcolumn = true
+vim.opt.signcolumn = 'yes'
 
 -- decrease update time / CursorHold time
 vim.opt.updatetime = 250

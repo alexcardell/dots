@@ -6,3 +6,5 @@ vim.g.mapleader = " " -- space
 vim.g.maplocalleader = "\\"
 
 require('alex/options')
+require('alex/keys')
+require('alex/plugins')
