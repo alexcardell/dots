@@ -12,12 +12,13 @@
       bitwarden
       bitwarden-cli
       brightnessctl
+      polybar'
       protonvpn-cli_2
       qbittorrent
       rofi
       unzip
       vlc
-      polybar'
+      xclip
     ];
 
   programs.firefox.enable = true;
