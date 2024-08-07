@@ -17,14 +17,14 @@
 
   networking.wireless.enable = true; # Enables wireless support via wpa_supplicant.
   networking.wireless.userControlled.enable = true; # Enables wireless support via wpa_supplicant.
-  networking.wireless.networks =
-    let
-      home-ssid = pkgs.lib.removeSuffix "\n" "${builtins.readFile ../../secrets/home-ssid}";
-      home-psk = pkgs.lib.removeSuffix "\n" "${builtins.readFile ../../secrets/home-psk}";
-    in
-    {
-      "${home-ssid}".psk = home-psk;
-    };
+  # networking.wireless.networks =
+  #   let
+  #     home-ssid = pkgs.lib.removeSuffix "\n" "${builtins.readFile ../../secrets/home-ssid}";
+  #     home-psk = pkgs.lib.removeSuffix "\n" "${builtins.readFile ../../secrets/home-psk}";
+  #   in
+  #   {
+  #     "${home-ssid}".psk = home-psk;
+  #   };
 
   # Set your time zone.
   time.timeZone = "Europe/London";
@@ -50,13 +50,13 @@
   # Enable the X11 windowing system.
   services.xserver.enable = true;
   services.xserver.autorun = true; # if autorun disabled, start with: systemctl start display-manager.service
-  services.xserver.layout = "gb";
+  services.xserver.xkb.layout = "gb";
   services.xserver.displayManager.sessionCommands = "xset -b";
   services.xserver.windowManager.i3.enable = true;
   # services.xserver.xkbOptions = "eurosign:e";
   # Enable touchpad support (enabled default in most desktopManager).
-  services.xserver.libinput.enable = true;
-  services.xserver.libinput.touchpad.naturalScrolling = true;
+  services.libinput.enable = true;
+  services.libinput.touchpad.naturalScrolling = true;
 
   # Enable CUPS to print documents.
   # services.printing.enable = true;
@@ -88,7 +88,7 @@
   programs.gnupg.agent = {
     enable = true;
     enableSSHSupport = true;
-    pinentryFlavor = "qt";
+    pinentryPackage = pkgs.pinentry-qt;
   };
 
   # List services that you want to enable:

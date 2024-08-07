@@ -18,10 +18,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    neovim-nightly-overlay = {
-      url = "github:nix-community/neovim-nightly-overlay";
-      inputs.nixpkgs.follows = "nixpkgs-unstable";
-    };
+    # neovim-nightly-overlay = {
+    #   url = "github:nix-community/neovim-nightly-overlay";
+    #   inputs.nixpkgs.follows = "nixpkgs-unstable";
+    # };
 
   };
 
@@ -31,7 +31,7 @@
     nur,
     home-manager,
     darwin,
-    neovim-nightly-overlay, 
+    # neovim-nightly-overlay, 
     ... 
   }:
     let
@@ -55,7 +55,7 @@
       sharedOverlays = system: [
         (overlay-unstable system)
         nur.overlay
-        neovim-nightly-overlay.overlays.default
+        # neovim-nightly-overlay.overlays.default
       ];
 
       nixosConfiguration = hostname:
