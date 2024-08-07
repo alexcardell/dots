@@ -69,7 +69,7 @@ in
       nixd
       nodePackages.typescript-language-server
       terraform-ls
-      wakatime
+      # wakatime
     ];
 
     # see xdg.configFile.nvim lua directory
@@ -151,7 +151,7 @@ in
         plug.vim-repeat
         plug.vim-rhubarb
         plug.vim-surround
-        plug.vim-wakatime
+        # plug.vim-wakatime
         plug.zen-mode-nvim
         plug.zk-nvim
         treesitter
