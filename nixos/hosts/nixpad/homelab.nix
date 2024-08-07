@@ -3,7 +3,7 @@
 
   imports =
     [ 
-      # ./homelab-compose.nix
+      ./homelab-compose.nix
     ];
 
   environment.systemPackages = with pkgs;[
