@@ -13,7 +13,8 @@
       bitwarden-cli
       brightnessctl
       polybar'
-      protonvpn-cli_2
+      protonvpn-cli
+      protonvpn-gui
       qbittorrent
       rofi
       unzip
