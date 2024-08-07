@@ -19,6 +19,7 @@
       unzip
       vlc
       xclip
+      unstable.veracrypt
     ];
 
   programs.firefox.enable = true;
