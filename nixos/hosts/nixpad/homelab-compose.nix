@@ -10,32 +10,35 @@
   virtualisation.oci-containers.backend = "docker";
 
   # Containers
-  virtualisation.oci-containers.containers."jellyfin" = {
-    image = "jellyfin/jellyfin";
-    environment = {
-      "PGID" = "1000";
-      "PUID" = "1000";
-    };
+  virtualisation.oci-containers.containers."homarr" = {
+    image = "ghcr.io/ajnart/homarr:latest";
     volumes = [
-      "/mnt/containers/jellyfin/config/:/config:rw"
-      "/mnt/media/Movies/:/mnt/media/Movies:rw"
-      "/mnt/media/Shows/:/mnt/media/Shows:rw"
+      "/home/alex/dots/nixos/hosts/nixpad/home/homarr/configs:/app/data/configs:rw"
+      "/home/alex/dots/nixos/hosts/nixpad/home/homarr/data:/data:rw"
+      "/home/alex/dots/nixos/hosts/nixpad/home/homarr/icons:/app/public/icons:rw"
     ];
     ports = [
-      "8096:8096/tcp"
+      "7575:7575/tcp"
     ];
     log-driver = "journald";
     extraOptions = [
-      "--network=host"
+      "--network-alias=homarr"
+      "--network=homelab_default"
     ];
   };
-  systemd.services."docker-jellyfin" = {
+  systemd.services."docker-homarr" = {
     serviceConfig = {
       Restart = lib.mkOverride 500 "always";
       RestartMaxDelaySec = lib.mkOverride 500 "1m";
       RestartSec = lib.mkOverride 500 "100ms";
       RestartSteps = lib.mkOverride 500 9;
     };
+    after = [
+      "docker-network-homelab_default.service"
+    ];
+    requires = [
+      "docker-network-homelab_default.service"
+    ];
     partOf = [
       "docker-compose-homelab-root.target"
     ];
@@ -43,72 +46,20 @@
       "docker-compose-homelab-root.target"
     ];
   };
-  virtualisation.oci-containers.containers."prowlarr" = {
-    image = "lscr.io/linuxserver/prowlarr:latest";
-    environment = {
-      "PGID" = "1000";
-      "PUID" = "1000";
-    };
-    volumes = [
-      "/mnt/containers/prowlarr/config/:/config:rw"
-    ];
-    ports = [
-      "9696:9696/tcp"
-    ];
-    dependsOn = [
-      "sonarr"
-    ];
-    log-driver = "journald";
-    extraOptions = [
-      "--network=host"
-    ];
-  };
-  systemd.services."docker-prowlarr" = {
+
+  # Networks
+  systemd.services."docker-network-homelab_default" = {
+    path = [ pkgs.docker ];
     serviceConfig = {
-      Restart = lib.mkOverride 500 "always";
-      RestartMaxDelaySec = lib.mkOverride 500 "1m";
-      RestartSec = lib.mkOverride 500 "100ms";
-      RestartSteps = lib.mkOverride 500 9;
+      Type = "oneshot";
+      RemainAfterExit = true;
+      ExecStop = "docker network rm -f homelab_default";
     };
-    partOf = [
-      "docker-compose-homelab-root.target"
-    ];
-    wantedBy = [
-      "docker-compose-homelab-root.target"
-    ];
-  };
-  virtualisation.oci-containers.containers."sonarr" = {
-    image = "lscr.io/linuxserver/sonarr:latest";
-    environment = {
-      "PGID" = "1000";
-      "PUID" = "1000";
-    };
-    volumes = [
-      "/mnt/containers/sonarr/config/:/config:rw"
-      "/mnt/media/Downloads:/mnt/media/Downloads:rw"
-      "/mnt/media/Shows:/mnt/media/Shows:rw"
-    ];
-    ports = [
-      "8989:8989/tcp"
-    ];
-    log-driver = "journald";
-    extraOptions = [
-      "--network=host"
-    ];
-  };
-  systemd.services."docker-sonarr" = {
-    serviceConfig = {
-      Restart = lib.mkOverride 500 "always";
-      RestartMaxDelaySec = lib.mkOverride 500 "1m";
-      RestartSec = lib.mkOverride 500 "100ms";
-      RestartSteps = lib.mkOverride 500 9;
-    };
-    partOf = [
-      "docker-compose-homelab-root.target"
-    ];
-    wantedBy = [
-      "docker-compose-homelab-root.target"
-    ];
+    script = ''
+      docker network inspect homelab_default || docker network create homelab_default
+    '';
+    partOf = [ "docker-compose-homelab-root.target" ];
+    wantedBy = [ "docker-compose-homelab-root.target" ];
   };
 
   # Root service
