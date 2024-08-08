@@ -12,3 +12,12 @@ services:
       - ./home/homarr/data:/data
     ports:
       - '7575:7575'
+    network_mode: 'host'
+  flaresolverr:
+    container_name: flaresolverr
+    image: flaresolverr/flaresolverr
+    restart: unless-stopped
+    ports:
+      - '8191:8191'
+    network_mode: 'host'
+

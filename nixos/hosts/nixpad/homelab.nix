@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, nixpkgs-unstable, ... }:
 {
 
   imports =
@@ -34,8 +34,18 @@
     openFirewall = true;
   };
 
+  services.readarr = {
+    enable = true;
+    openFirewall = true;
+  };
+
   services.prowlarr = {
     enable = true;
     openFirewall = false;
   };
+
+  # services.flaresolverr = {
+  #   enable = true;
+  #   openFirewall = false;
+  # };
 }
