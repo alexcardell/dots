@@ -1,5 +1,5 @@
 local M = {}
-M.setup = {
+M.setup = function() 
   require('nightfall').setup()
-}
+end
 return M
