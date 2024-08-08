@@ -10,24 +10,6 @@ let
         hash = "sha256-r5s0eNMSxBnmu1LYs/+RrhNk356ikfCPA1FfiJcX+K8=";
       };
     };
-    minimal-nvim = pkgs.vimUtils.buildVimPluginFrom2Nix {
-      name = "minimal-nvim";
-      src = pkgs.fetchFromGitHub {
-        owner = "2giosangmitom";
-        repo = "nightfall.nvim";
-        rev = "b9a11938d2d2d66bddda378985e483c9d88db1fc";
-        hash = "sha256-PX2j/eF8+sPfz7pHlhhBZ78cSOft64Uz29zqvjI6sPc=";
-      };
-    };
-    base16-nvim = pkgs.vimUtils.buildVimPluginFrom2Nix {
-      name = "base16-nvim";
-      src = pkgs.fetchFromGitHub {
-        owner = "RRethy";
-        repo = "base16-nvim";
-        rev = "3c6a56016cea7b892f1d5b9b5b4388c0f71985be";
-        hash = "sha256-l94LjAM2viB0jQv5FUlSmr4RF/9kd5qZUdov75U+x00=";
-      };
-    };
     ogpt-nvim = pkgs.vimUtils.buildVimPluginFrom2Nix {
       name = "ogpt.nvim";
       src = pkgs.fetchFromGitHub {
@@ -91,22 +73,13 @@ in
         plug = pkgs.unstable.vimPlugins;
         pinned = vimPluginsGithub;
         treesitter = plug.nvim-treesitter.withAllGrammars;
-        # treesitter = (plug.nvim-treesitter.withPlugins (plugins: with plugins; [
-        #   c
-        #   scala 
-        #   smithy
-        #   terraform
-        #   lua
-        #   vimdoc
-        # ]));
+        # treesitter = (plug.nvim-treesitter.withPlugins (plugins: with plugins; [ ])
       in
       [
-        # pinned.base16-nvim
         # pinned.hardtime-nvim
         # pinned.nvim-metals
         # pinned.oatmeal-nvim
         # pinned.outline-nvim
-        # plug.base16-nvim
         # plug.cmp-buffer
         # plug.cmp-git
         # plug.cmp-nvim-lsp
@@ -157,7 +130,6 @@ in
         # plug.vim-wakatime
         # plug.zen-mode-nvim
         # plug.zk-nvim
-        pinned.minimal-nvim
         pinned.ogpt-nvim
         plug.Navigator-nvim
         plug.edgy-nvim
