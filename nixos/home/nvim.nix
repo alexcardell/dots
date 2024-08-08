@@ -95,7 +95,6 @@ in
         # pinned.hardtime-nvim
         # pinned.nvim-metals
         # pinned.oatmeal-nvim
-        # pinned.ogpt-nvim
         # pinned.outline-nvim
         # plug.base16-nvim
         # plug.cmp-buffer
@@ -109,7 +108,6 @@ in
         # plug.copilot-lua
         # plug.diaglist-nvim
         # plug.diffview-nvim
-        # plug.edgy-nvim
         # plug.fzf-lua
         # plug.indent-blankline-nvim
         # plug.lsp-inlayhints-nvim
@@ -130,7 +128,6 @@ in
         # plug.nvim-tree-lua
         # plug.nvim-web-devicons
         # plug.other-nvim
-        # plug.plenary-nvim
         # plug.symbols-outline-nvim
         # plug.telescope-fzf-writer-nvim
         # plug.telescope-symbols-nvim
@@ -150,14 +147,18 @@ in
         # plug.vim-wakatime
         # plug.zen-mode-nvim
         # plug.zk-nvim
-        plug.hardtime-nvim
+        pinned.ogpt-nvim
         plug.Navigator-nvim
+        plug.edgy-nvim
         plug.gitsigns-nvim
+        plug.hardtime-nvim
+        plug.nui-nvim
         plug.nvim-autopairs
+        plug.nvim-treesitter-textobjects
         plug.nvim-ts-autotag
+        plug.plenary-nvim
         plug.telescope-nvim
         plug.telescope-ui-select-nvim
-        plug.nvim-treesitter-textobjects
         treesitter
       ];
   };
