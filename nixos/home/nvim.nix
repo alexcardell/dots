@@ -81,14 +81,15 @@ in
       let
         plug = pkgs.unstable.vimPlugins;
         pinned = vimPluginsGithub;
-        treesitter = (plug.nvim-treesitter.withPlugins (plugins: with plugins; [
-          c
-          scala 
-          smithy
-          terraform
-          lua
-          vimdoc
-        ]));
+        treesitter = plug.nvim-treesitter.withAllGrammars;
+        # treesitter = (plug.nvim-treesitter.withPlugins (plugins: with plugins; [
+        #   c
+        #   scala 
+        #   smithy
+        #   terraform
+        #   lua
+        #   vimdoc
+        # ]));
       in
       [
         # pinned.base16-nvim
