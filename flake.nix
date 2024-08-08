@@ -13,6 +13,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    # home-manager-unstable = {
+    #   url = "github:nix-community/home-manager/master";
+    #   inputs.nixpkgs.follows = "nixpkgs-unstable";
+    # };
+
     darwin = {
       url = "github:LnL7/nix-darwin";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -71,6 +76,9 @@
         in
         nixpkgs.lib.nixosSystem {
           inherit system;
+
+          # allow `nixpkgs-unstable` as an argument to a module
+          # specialArgs =  nixpkgs-unstable;
 
           modules = [
             overlays

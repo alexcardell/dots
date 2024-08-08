@@ -10,6 +10,30 @@
   virtualisation.oci-containers.backend = "docker";
 
   # Containers
+  virtualisation.oci-containers.containers."flaresolverr" = {
+    image = "flaresolverr/flaresolverr";
+    ports = [
+      "8191:8191/tcp"
+    ];
+    log-driver = "journald";
+    extraOptions = [
+      "--network=host"
+    ];
+  };
+  systemd.services."docker-flaresolverr" = {
+    serviceConfig = {
+      Restart = lib.mkOverride 500 "always";
+      RestartMaxDelaySec = lib.mkOverride 500 "1m";
+      RestartSec = lib.mkOverride 500 "100ms";
+      RestartSteps = lib.mkOverride 500 9;
+    };
+    partOf = [
+      "docker-compose-homelab-root.target"
+    ];
+    wantedBy = [
+      "docker-compose-homelab-root.target"
+    ];
+  };
   virtualisation.oci-containers.containers."homarr" = {
     image = "ghcr.io/ajnart/homarr:latest";
     volumes = [
@@ -22,8 +46,7 @@
     ];
     log-driver = "journald";
     extraOptions = [
-      "--network-alias=homarr"
-      "--network=homelab_default"
+      "--network=host"
     ];
   };
   systemd.services."docker-homarr" = {
@@ -33,33 +56,12 @@
       RestartSec = lib.mkOverride 500 "100ms";
       RestartSteps = lib.mkOverride 500 9;
     };
-    after = [
-      "docker-network-homelab_default.service"
-    ];
-    requires = [
-      "docker-network-homelab_default.service"
-    ];
     partOf = [
       "docker-compose-homelab-root.target"
     ];
     wantedBy = [
       "docker-compose-homelab-root.target"
     ];
-  };
-
-  # Networks
-  systemd.services."docker-network-homelab_default" = {
-    path = [ pkgs.docker ];
-    serviceConfig = {
-      Type = "oneshot";
-      RemainAfterExit = true;
-      ExecStop = "docker network rm -f homelab_default";
-    };
-    script = ''
-      docker network inspect homelab_default || docker network create homelab_default
-    '';
-    partOf = [ "docker-compose-homelab-root.target" ];
-    wantedBy = [ "docker-compose-homelab-root.target" ];
   };
 
   # Root service
