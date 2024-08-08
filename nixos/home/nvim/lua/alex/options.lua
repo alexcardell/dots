@@ -7,6 +7,7 @@ vim.opt.expandtab = true
 
 -- enable line numbers
 vim.opt.number = true
+vim.opt.relativenumber = true
 
 -- enable mouse
 vim.opt.mouse = 'a'
