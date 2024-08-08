@@ -6,8 +6,8 @@ let
       src = pkgs.fetchFromGitHub {
         owner = "scalameta";
         repo = "nvim-metals";
-        rev = "c6268555d0b471262af78818f11a086ddf30688b";
-        hash = "sha256-r5s0eNMSxBnmu1LYs/+RrhNk356ikfCPA1FfiJcX+K8=";
+        rev = "1b87e6bfa4174b5fbaee9ca7ec79d8eae8df7f18";
+        hash = "sha256-0000000000000000000000000000000000000000000=";
       };
     };
     ogpt-nvim = pkgs.vimUtils.buildVimPluginFrom2Nix {
@@ -17,24 +17,6 @@ let
         repo = "ogpt.nvim";
         rev = "aad5dfbbbc6e90e12cb15b77d0dc15da83077b48";
         hash = "sha256-l7lFP2hgvK1IBv27pIfvXo68/cXbq8jxtYz/9NUj9Zs=";
-      };
-    };
-    hardtime-nvim = pkgs.vimUtils.buildVimPluginFrom2Nix {
-      name = "hardtime.nvim";
-      src = pkgs.fetchFromGitHub {
-        owner = "m4xshen";
-        repo = "hardtime.nvim";
-        rev = "91c6be1a54fa057002e21ae209a49436bd215355";
-        hash = "sha256-pLJShpbqmJbY3ThQuGmUfgsxijSADJrqpGYLE+KAcUQ=";
-      };
-    };
-    outline-nvim = pkgs.vimUtils.buildVimPluginFrom2Nix {
-      name = "outline.nvim";
-      src = pkgs.fetchFromGitHub {
-        owner = "hedyhli";
-        repo = "outline.nvim";
-        rev = "78ad5cb583c0ec0ea56c89e622bc16e45aaca934";
-        hash = "sha256-zskXfrbEryKyjHfbACvCkiAoVAk94uWa2KRDZlTSejQ=";
       };
     };
   };
@@ -76,10 +58,6 @@ in
         # treesitter = (plug.nvim-treesitter.withPlugins (plugins: with plugins; [ ])
       in
       [
-        # pinned.hardtime-nvim
-        # pinned.nvim-metals
-        # pinned.oatmeal-nvim
-        # pinned.outline-nvim
         # plug.cmp-buffer
         # plug.cmp-git
         # plug.cmp-nvim-lsp
