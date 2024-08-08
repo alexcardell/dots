@@ -10,6 +10,15 @@ let
         hash = "sha256-r5s0eNMSxBnmu1LYs/+RrhNk356ikfCPA1FfiJcX+K8=";
       };
     };
+    minimal-nvim = pkgs.vimUtils.buildVimPluginFrom2Nix {
+      name = "minimal-nvim";
+      src = pkgs.fetchFromGitHub {
+        owner = "2giosangmitom";
+        repo = "nightfall.nvim";
+        rev = "b9a11938d2d2d66bddda378985e483c9d88db1fc";
+        hash = "sha256-PX2j/eF8+sPfz7pHlhhBZ78cSOft64Uz29zqvjI6sPc=";
+      };
+    };
     base16-nvim = pkgs.vimUtils.buildVimPluginFrom2Nix {
       name = "base16-nvim";
       src = pkgs.fetchFromGitHub {
@@ -148,6 +157,7 @@ in
         # plug.vim-wakatime
         # plug.zen-mode-nvim
         # plug.zk-nvim
+        pinned.minimal-nvim
         pinned.ogpt-nvim
         plug.Navigator-nvim
         plug.edgy-nvim
