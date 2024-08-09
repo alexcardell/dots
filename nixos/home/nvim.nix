@@ -115,8 +115,9 @@ in
         plug.hardtime-nvim
         plug.nui-nvim
         plug.nvim-autopairs
-        plug.nvim-treesitter-textobjects
+        plug.nvim-treesitter-textobjects # TODO add more textobjects
         plug.nvim-ts-autotag
+        plug.oil-nvim
         plug.plenary-nvim
         plug.telescope-nvim
         plug.telescope-ui-select-nvim
