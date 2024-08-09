@@ -5,9 +5,19 @@
 vim.g.mapleader = " " -- space
 vim.g.maplocalleader = "\\"
 
+-- settings
 require('alex/options')
+
+-- core plugins
 require('alex/plugins/treesitter').setup()
 require('alex/plugins/telescope').setup()
+
+-- aggregate components
+require('alex/components/lsp').setup()
+require('alex/components/llm').setup()
+require('alex/components/completion').setup()
+
+-- other plugins
 require('alex/plugins/gitsigns').setup()
 require('alex/plugins/navigator').setup()
 require('alex/plugins/oil').setup()

@@ -111,7 +111,7 @@ M.setup = function()
         },
       },
       {
-        title = "OGPt {{{instruction}}}",
+        title = "OGPT {{{instruction}}}",
         ft = "ogpt-instruction",
         size = { width = 80, height = 4 },
         wo = {
