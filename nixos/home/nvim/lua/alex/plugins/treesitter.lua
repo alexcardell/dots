@@ -10,14 +10,14 @@ M.setup = function()
       enable = true,
     }, 
     incremental_selection = {
-      -- enable = true,
-      -- keymaps = {
-      --   init_selection = "gnn", -- set to `false` to disable mapping
-      --   node_incremental = "grn",
-      --   scope_incremental = "grc",
-      --   node_decremental = "grm",
-      --   scope_decremental = "grm",
-      -- },
+      enable = true,
+      keymaps = {
+        init_selection = "<M-space>", -- set to `false` to disable mapping
+        node_incremental = "<M-space>",
+        scope_incremental = false,
+        node_decremental = "<BS>",
+        scope_decremental = false,
+      },
     },
     textobjects = {
       select = {
