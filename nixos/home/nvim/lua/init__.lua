@@ -22,6 +22,7 @@ require('alex/plugins/gitsigns').setup()
 require('alex/plugins/navigator').setup()
 require('alex/plugins/oil').setup()
 require('alex/plugins/hardtime').setup()
+require('alex/plugins/diffview')
 
 -- keymappings
 require('alex/keys')

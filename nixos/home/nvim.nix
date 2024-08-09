@@ -68,7 +68,6 @@ in
         # plug.copilot-cmp
         # plug.copilot-lua
         # plug.diaglist-nvim
-        # plug.diffview-nvim
         # plug.fzf-lua
         # plug.indent-blankline-nvim
         # plug.lsp-inlayhints-nvim
@@ -109,6 +108,7 @@ in
         # plug.zen-mode-nvim
         # plug.zk-nvim
         pinned.ogpt-nvim
+        plug.diffview-nvim
         plug.Navigator-nvim
         plug.edgy-nvim
         plug.gitsigns-nvim
