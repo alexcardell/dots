@@ -6,6 +6,12 @@ M.setup = function()
       disable_defaults = true,
     }
   })
+
+  vim.api.nvim_create_user_command(
+    'DiffReview',
+    'DiffviewOpen origin/HEAD...HEAD --imply-local',
+    {}
+  )
 end
 
 return M
