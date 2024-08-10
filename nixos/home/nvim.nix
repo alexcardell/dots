@@ -83,7 +83,6 @@ in
         # plug.nvim-dap
         # plug.nvim-dap-virtual-text
         # plug.nvim-lint
-        # plug.nvim-lspconfig
         # plug.nvim-navic
         # plug.nvim-tree-lua
         # plug.nvim-web-devicons
@@ -108,13 +107,14 @@ in
         # plug.zen-mode-nvim
         # plug.zk-nvim
         pinned.ogpt-nvim
-        plug.diffview-nvim
         plug.Navigator-nvim
+        plug.diffview-nvim
         plug.edgy-nvim
         plug.gitsigns-nvim
         plug.hardtime-nvim
         plug.nui-nvim
         plug.nvim-autopairs
+        plug.nvim-lspconfig
         plug.nvim-treesitter-textobjects # TODO add more textobjects
         plug.nvim-ts-autotag
         plug.oil-nvim
