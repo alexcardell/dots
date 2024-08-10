@@ -67,13 +67,12 @@ in
         # treesitter = (plug.nvim-treesitter.withPlugins (plugins: with plugins; [ ])
       in
       [
+        # pinned.ogpt-nvim
         # plug.cmp-buffer
         # plug.cmp-git
-        # plug.cmp-nvim-lsp
         # plug.cmp-nvim-lsp-signature-help
         # plug.cmp-nvim-lua
         # plug.cmp-path
-        # plug.cmp_luasnip
         # plug.copilot-cmp
         # plug.copilot-lua
         # plug.diaglist-nvim
@@ -82,13 +81,11 @@ in
         # plug.lsp-inlayhints-nvim
         # plug.lspkind-nvim
         # plug.lualine-nvim
-        # plug.luasnip
         # plug.markdown-preview-nvim
         # plug.marks-nvim
         # plug.none-ls-nvim
         # plug.nui-nvim
         # plug.nvim-autopairs
-        # plug.nvim-cmp
         # plug.nvim-dap
         # plug.nvim-dap-virtual-text
         # plug.nvim-lint
@@ -115,16 +112,19 @@ in
         # plug.vim-wakatime
         # plug.zen-mode-nvim
         # plug.zk-nvim
-        # pinned.ogpt-nvim
         pinned.gen-nvim
         plug.Navigator-nvim
+        plug.cmp-nvim-lsp
+        plug.cmp_luasnip
         plug.diffview-nvim
         plug.edgy-nvim
         plug.fidget-nvim
         plug.gitsigns-nvim
         plug.hardtime-nvim
+        plug.luasnip
         plug.nui-nvim
         plug.nvim-autopairs
+        plug.nvim-cmp
         plug.nvim-lspconfig
         plug.nvim-treesitter-textobjects # TODO add more textobjects
         plug.nvim-ts-autotag
