@@ -110,6 +110,7 @@ in
         plug.Navigator-nvim
         plug.diffview-nvim
         plug.edgy-nvim
+        plug.fidget-nvim
         plug.gitsigns-nvim
         plug.hardtime-nvim
         plug.nui-nvim

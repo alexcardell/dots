@@ -23,6 +23,7 @@ require('alex/plugins/navigator').setup()
 require('alex/plugins/oil').setup()
 require('alex/plugins/hardtime').setup()
 require('alex/plugins/diffview').setup()
+require('alex/plugins/fidget').setup()
 
 -- keymappings
 require('alex/keys')
