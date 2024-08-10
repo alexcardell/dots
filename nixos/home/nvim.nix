@@ -7,7 +7,7 @@ let
         owner = "scalameta";
         repo = "nvim-metals";
         rev = "1b87e6bfa4174b5fbaee9ca7ec79d8eae8df7f18";
-        hash = "sha256-0000000000000000000000000000000000000000000=";
+        hash = "sha256-VQOolBCVYZ1T71REjgD7X/+txd1awmdGgW154hc30Y8=";
       };
     };
     ogpt-nvim = pkgs.vimUtils.buildVimPluginFrom2Nix {
@@ -113,6 +113,7 @@ in
         # plug.zen-mode-nvim
         # plug.zk-nvim
         pinned.gen-nvim
+        pinned.nvim-metals
         plug.Navigator-nvim
         plug.cmp-nvim-lsp
         plug.cmp_luasnip
