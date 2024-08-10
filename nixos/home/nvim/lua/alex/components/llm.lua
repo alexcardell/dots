@@ -1,6 +1,6 @@
 local M = {}
 
-M.setup = function()
+local setup_ogpt = function()
   vim.opt.laststatus = 3
   vim.opt.splitkeep = 'screen'
 
@@ -128,6 +128,16 @@ M.setup = function()
       },
     },
   })
+end
+
+local setup_gen = function()
+  require('gen').setup({
+    model = "llama3.1"
+  })
+end
+
+M.setup = function()
+  setup_gen()
 end
 
 return M

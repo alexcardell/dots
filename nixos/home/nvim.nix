@@ -19,6 +19,15 @@ let
         hash = "sha256-l7lFP2hgvK1IBv27pIfvXo68/cXbq8jxtYz/9NUj9Zs=";
       };
     };
+    gen-nvim = pkgs.vimUtils.buildVimPluginFrom2Nix {
+      name = "gen.nvim";
+      src = pkgs.fetchFromGitHub {
+        owner = "David-Kunz";
+        repo = "gen.nvim";
+        rev = "c9a73d8c0d462333da6d2191806ff98f2884d706";
+        hash = "sha256-Yp7HrDMOyR929AfM7IjEz4dP3RhIx9kXZ1Z3zRr5yJg=";
+      };
+    };
   };
 in
 {
@@ -106,7 +115,8 @@ in
         # plug.vim-wakatime
         # plug.zen-mode-nvim
         # plug.zk-nvim
-        pinned.ogpt-nvim
+        # pinned.ogpt-nvim
+        pinned.gen-nvim
         plug.Navigator-nvim
         plug.diffview-nvim
         plug.edgy-nvim
