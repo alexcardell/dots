@@ -6,6 +6,8 @@ local M = {}
 local capabilities = require('alex/components/completion').capabilities
 
 M.setup = function()
+  vim.lsp.inlay_hint.enable()
+
   -- anything with standard empty configuration
   local standard_servers = {
     'ltex',
@@ -37,7 +39,7 @@ M.setup = function()
   metals.settings = {
     autoImportBuild = "all",
     defaultBspToBuildTool = true,
-    enableSemanticHighlighting = false,
+    enableSemanticHighlighting = true,
     showImplicitArguments = true,
     showImplicitConversionsAndClasses = true,
     showInferredType = true,

@@ -36,3 +36,17 @@ key("n", "<C-j>", "<cmd>NavigatorDown<cr>", {})
 
 -- Oil.nvim
 key("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
+
+-- LSP
+key("n", "<localleader>d", "<cmd>lua vim.lsp.buf.definition()<cr>", {})
+key("n", "<localleader>t", "<cmd>lua vim.lsp.buf.type_definition()<cr>", {})
+key("n", "<localleader>h", "<cmd>lua vim.lsp.buf.hover()<cr>", {})
+key("n", "<localleader>H", "<cmd>lua vim.diagnostic.open_float()<cr>", {})
+key("n", "<localleader>i", "<cmd>lua vim.lsp.buf.implementation()<cr>", {})
+key("n", "<localleader>R", "<cmd>lua vim.lsp.buf.rename()<cr>", {})
+key("n", "<localleader>r", "<cmd>lua vim.lsp.buf.references()<cr>", {})
+key("n", "<localleader>c", "<cmd>lua vim.lsp.buf.code_action()<cr>", {})
+key("n", "<localleader>l", "<cmd>lua vim.lsp.codelens.run()<cr>", {})
+key("n", "<localleader>f", "<cmd>lua vim.lsp.buf.format()<cr>", {})
+
+key("n", "<localleader>mb", "<cmd>MetalsImportBuild<cr>", {})
