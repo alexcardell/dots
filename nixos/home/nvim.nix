@@ -63,8 +63,17 @@ in
       let
         plug = pkgs.unstable.vimPlugins;
         pinned = vimPluginsGithub;
-        treesitter = plug.nvim-treesitter.withAllGrammars;
-        # treesitter = (plug.nvim-treesitter.withPlugins (plugins: with plugins; [ ])
+        # treesitter = plug.nvim-treesitter.withAllGrammars;
+        treesitter = plug.nvim-treesitter.withPlugins (plugins: with plugins; [ 
+          c
+          lua
+          nix
+          scala
+          smithy
+          terraform
+          vim
+          vimdoc
+        ]);
       in
       [
         # pinned.ogpt-nvim
@@ -133,6 +142,7 @@ in
         plug.plenary-nvim
         plug.telescope-nvim
         plug.telescope-ui-select-nvim
+        plug.base16-nvim
         treesitter
       ];
   };

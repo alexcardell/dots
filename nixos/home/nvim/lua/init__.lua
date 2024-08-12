@@ -24,6 +24,9 @@ require('alex/plugins/oil').setup()
 require('alex/plugins/hardtime').setup()
 require('alex/plugins/diffview').setup()
 require('alex/plugins/fidget').setup()
+require('alex/plugins/base16').setup()
 
 -- keymappings
 require('alex/keys')
+
+vim.cmd('colorscheme base16-tomorrow-night')
