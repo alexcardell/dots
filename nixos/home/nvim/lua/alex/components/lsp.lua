@@ -6,6 +6,16 @@ local M = {}
 local capabilities = require('alex/components/completion').capabilities
 
 M.setup = function()
+  local default_on_attach = function(client, bufnr)
+    -- disable semantic tokens
+    client.server_capabilities.semanticTokensProvider = nil
+
+    -- inlay_hints.on_attach(client, bufnr, true)
+
+    -- if client.server_capabilities.documentSymbolProvider then
+    --   navic.attach(client, bufnr)
+    -- end
+  end
   -- vim.lsp.inlay_hint.enable()
 
   -- anything with standard empty configuration
@@ -27,19 +37,21 @@ M.setup = function()
   )
 
   for _, server in ipairs(standard_servers) do
-    lspconfig[server].setup({})
+    lspconfig[server].setup({
+      on_attach = default_on_attach
+    })
   end
 
   local metals = metals_.bare_config()
 
   metals.init_options = {
-    statusBarProvider            = "off",
+    statusBarProvider = "off",
   }
 
   metals.settings = {
     autoImportBuild = "all",
     defaultBspToBuildTool = true,
-    enableSemanticHighlighting = true,
+    enableSemanticHighlighting = false,
     showImplicitArguments = true,
     showImplicitConversionsAndClasses = true,
     showInferredType = true,
@@ -48,16 +60,19 @@ M.setup = function()
 
   metals.capabilities = capabilities
 
+  metals.on_attach = default_on_attach
+
   vim.api.nvim_create_autocmd('Filetype', {
-    pattern = {"java", "scala", "sbt"},
+    pattern = { "java", "scala", "sbt" },
     desc = 'Initialize or attach metals',
-    group = vim.api.nvim_create_augroup('metals', { clear = true }),
+    group = vim.api.nvim_create_augroup(
+      'metals',
+      { clear = true }
+    ),
     callback = function()
       metals_.initialize_or_attach(metals)
     end,
   })
-
-
 end
 
 return M
