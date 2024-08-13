@@ -5,7 +5,10 @@ local M = {}
 M.setup = function()
   telescope.setup({
     defaults = {
-      path_display = { "truncate" }
+      path_display = { "truncate" },
+      preview = {
+        treesitter = true
+      },
     },
     extensions = {
       ['ui-select'] = {
