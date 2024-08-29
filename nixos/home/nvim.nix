@@ -120,7 +120,6 @@ in
         # plug.nvim-lint
         # plug.nvim-navic
         # plug.nvim-tree-lua
-        # plug.other-nvim
         # plug.symbols-outline-nvim
         # plug.telescope-fzf-writer-nvim
         # plug.telescope-symbols-nvim
@@ -140,11 +139,12 @@ in
         # plug.vim-wakatime
         # plug.zen-mode-nvim
         # plug.zk-nvim
-        pinned.gen-nvim
-        pinned.nvim-metals
         pinned.avante-nvim
         pinned.codecompanion-nvim
+        pinned.gen-nvim
+        pinned.nvim-metals
         plug.Navigator-nvim
+        plug.base16-nvim
         plug.cmp-nvim-lsp
         plug.cmp_luasnip
         plug.diffview-nvim
@@ -159,12 +159,12 @@ in
         plug.nvim-lspconfig
         plug.nvim-treesitter-textobjects # TODO add more textobjects
         plug.nvim-ts-autotag
+        plug.nvim-web-devicons
         plug.oil-nvim
+        plug.other-nvim
         plug.plenary-nvim
         plug.telescope-nvim
         plug.telescope-ui-select-nvim
-        plug.base16-nvim
-        plug.nvim-web-devicons
         treesitter
       ];
   };

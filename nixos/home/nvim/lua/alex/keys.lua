@@ -54,5 +54,10 @@ key("n", "<localleader>z", "<cmd>lua vim.diagnostic.setloclist()<cr>", {})
 key("n", "<localleader>mb", "<cmd>MetalsImportBuild<cr>", {})
 
 -- quickfix
-key("n", "gn", ":cnext<cr>", {desc = "Next quickfix item"})
-key("n", "gp", ":cprevious<cr>", {desc = "Previous quickfix item"})
+key("n", "gn", ":cnext<cr>", { desc = "Next quickfix item" })
+key("n", "gp", ":cprevious<cr>", { desc = "Previous quickfix item" })
+
+-- other-nvim
+key("n", "<leader>of", "<cmd>Other<cr>", {})
+key("n", "<leader>os", "<cmd>OtherSplit<cr>", {})
+key("n", "<leader>ov", "<cmd>OtherVSplit<cr>", {})
