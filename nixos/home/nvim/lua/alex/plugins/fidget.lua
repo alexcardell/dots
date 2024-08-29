@@ -6,7 +6,8 @@ M.setup = function()
       window = {
         winblend = 20,
         border = "rounded",
-        max_height = 3
+        max_height = 3,
+        align = "top"
       }
     }
   })
