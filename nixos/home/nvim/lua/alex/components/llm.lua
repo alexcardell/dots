@@ -136,8 +136,29 @@ local setup_gen = function()
   })
 end
 
+local setup_avante = function()
+  require('avante').setup({
+  })
+end
+
+local setup_codecompanion = function()
+  require('codecompanion').setup({
+    strategies = {
+      chat = {
+        adapter = "ollama",
+      },
+      inline = {
+        adapter = "ollama",
+      },
+      agent = {
+        adapter = "ollama",
+      },
+    },
+  })
+end
+
 M.setup = function()
-  setup_gen()
+  setup_codecompanion()
 end
 
 return M

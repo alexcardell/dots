@@ -28,6 +28,24 @@ let
         hash = "sha256-Yp7HrDMOyR929AfM7IjEz4dP3RhIx9kXZ1Z3zRr5yJg=";
       };
     };
+    avante-nvim = pkgs.vimUtils.buildVimPluginFrom2Nix {
+      name = "avante.nvim";
+      src = pkgs.fetchFromGitHub {
+        owner = "yetone";
+        repo = "avante.nvim";
+        rev = "f2580891997bd95e4f81d9b81cabdc792f995a11";
+        hash = "sha256-/TavErBrkmOpLhvpwuZ9qB+kxRbVu0Os0zfg1M+I8l8=";
+      };
+    };
+    codecompanion-nvim = pkgs.vimUtils.buildVimPluginFrom2Nix {
+      name = "codecompanion.nvim";
+      src = pkgs.fetchFromGitHub {
+        owner = "olimorris";
+        repo = "codecompanion.nvim";
+        rev = "ccfcc0d6bb2186069af032b032c9b160434993fb";
+        hash = "sha256-bH1cOwrgXoEGDhtpWYHEpCa9NcFEPkhy4FlLMgDBgJU=";
+      };
+    };
   };
 in
 {
@@ -66,6 +84,8 @@ in
         # treesitter = plug.nvim-treesitter.withAllGrammars;
         treesitter = plug.nvim-treesitter.withPlugins (plugins: with plugins; [ 
           c
+          yaml
+          json
           lua
           nix
           scala
@@ -100,7 +120,6 @@ in
         # plug.nvim-lint
         # plug.nvim-navic
         # plug.nvim-tree-lua
-        # plug.nvim-web-devicons
         # plug.other-nvim
         # plug.symbols-outline-nvim
         # plug.telescope-fzf-writer-nvim
@@ -123,6 +142,8 @@ in
         # plug.zk-nvim
         pinned.gen-nvim
         pinned.nvim-metals
+        pinned.avante-nvim
+        pinned.codecompanion-nvim
         plug.Navigator-nvim
         plug.cmp-nvim-lsp
         plug.cmp_luasnip
@@ -143,6 +164,7 @@ in
         plug.telescope-nvim
         plug.telescope-ui-select-nvim
         plug.base16-nvim
+        plug.nvim-web-devicons
         treesitter
       ];
   };
