@@ -54,5 +54,5 @@ key("n", "<localleader>z", "<cmd>lua vim.diagnostic.setloclist()<cr>", {})
 key("n", "<localleader>mb", "<cmd>MetalsImportBuild<cr>", {})
 
 -- quickfix
-key("n", "gn", ":cnext", {desc = "Next quickfix item"})
-key("n", "gn", ":cprevious", {desc = "Previous quickfix item"})
+key("n", "gn", ":cnext<cr>", {desc = "Next quickfix item"})
+key("n", "gp", ":cprevious<cr>", {desc = "Previous quickfix item"})
