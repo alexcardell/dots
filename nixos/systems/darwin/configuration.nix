@@ -10,6 +10,7 @@
     casks = [
       "firefox"
       "inso"
+      "malwarebytes"
     ];
     brews = [
       "adr-tools"
