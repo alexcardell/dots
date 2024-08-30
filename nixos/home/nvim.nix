@@ -140,10 +140,10 @@ in
         plug.nvim-autopairs
         plug.nvim-cmp
         plug.nvim-dap
-        plug.nvim-dap-virtual-text
         plug.nvim-dap-ui
-        plug.nvim-nio
+        plug.nvim-dap-virtual-text
         plug.nvim-lspconfig
+        plug.nvim-nio
         plug.nvim-treesitter-textobjects # TODO add more textobjects
         plug.nvim-treesitter.withAllGrammars
         plug.nvim-ts-autotag
@@ -151,6 +151,7 @@ in
         plug.oil-nvim
         plug.other-nvim
         plug.plenary-nvim
+        plug.telescope-dap-nvim
         plug.telescope-nvim
         plug.telescope-ui-select-nvim
         plug.tint-nvim

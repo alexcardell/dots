@@ -19,6 +19,7 @@ M.setup = function()
 
   -- load extensions
   pcall(telescope.load_extension, 'ui-select')
+  pcall(telescope.load_extension, 'dap')
 end
 
 return M
