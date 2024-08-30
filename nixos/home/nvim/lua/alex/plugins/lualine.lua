@@ -73,7 +73,6 @@ M.setup = function()
       lualine_x = { lsp_status },
       lualine_y = { 'searchcount', 'filetype', 'progress', 'location', 'diagnostics' },
       lualine_z = {
-        -- { 'location', separator = { right = '' }, left_padding = 2 },
       },
     },
     inactive_sections = {
