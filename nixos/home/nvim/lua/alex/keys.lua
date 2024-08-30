@@ -64,3 +64,8 @@ key("n", "gp", ":cprevious<cr>", { desc = "Previous quickfix item" })
 key("n", "<leader>of", "<cmd>Other<cr>")
 key("n", "<leader>os", "<cmd>OtherSplit<cr>")
 key("n", "<leader>ov", "<cmd>OtherVSplit<cr>")
+
+-- luasnip
+local luasnip = require('luasnip')
+key("i", "<C-j>", function() luasnip.jump(1) end, { desc = "Next luasnip tabstop", silent = true })
+key("i", "<C-k>", function() luasnip.jump(-1) end, { desc = "Previous luasnip tabstop", silent = true })
