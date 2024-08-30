@@ -31,4 +31,4 @@ require('alex/plugins/lualine').setup()
 -- keymappings
 require('alex/keys')
 
-vim.cmd('colorscheme base16-tomorrow-night')
+-- vim.cmd('colorscheme base16-tomorrow-night')
