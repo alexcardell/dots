@@ -103,7 +103,6 @@ in
         # plug.markdown-preview-nvim
         # plug.marks-nvim
         # plug.none-ls-nvim
-        # plug.nui-nvim
         # plug.nvim-autopairs
         # plug.nvim-dap
         # plug.nvim-dap-virtual-text
