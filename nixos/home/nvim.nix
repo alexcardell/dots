@@ -125,6 +125,7 @@ in
         pinned.render-markdown-nvim
         plug.Navigator-nvim
         plug.base16-nvim
+        plug.cmp-dap
         plug.cmp-nvim-lsp
         plug.cmp_luasnip
         plug.diffview-nvim

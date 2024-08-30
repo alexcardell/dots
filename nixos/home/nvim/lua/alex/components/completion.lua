@@ -18,8 +18,10 @@ M.setup = function()
       ['<C-b>'] = cmp.mapping.scroll_docs(-4),
       ['<C-f>'] = cmp.mapping.scroll_docs(4),
       ['<C-c>'] = cmp.mapping.abort(),
-      ['<C-Space>'] = cmp.mapping.complete(),                                   -- pop up completion window
-      ['<Tab>'] = cmp.mapping.confirm({ select = true, behavior = 'replace' }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+      -- pop up completion window
+      ['<C-Space>'] = cmp.mapping.complete(),
+      -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+      ['<Tab>'] = cmp.mapping.confirm({ select = true, behavior = 'replace' }),
     }),
     window = {
       completion = cmp.config.window.bordered(),
@@ -30,6 +32,14 @@ M.setup = function()
         mode = 'symbol_text',
         maxwidth = 50
       })
+    }
+  })
+
+  cmp.setup.filetype({
+    "dap-repl", "dapui_watches", "dapui_hover"
+  }, {
+    sources = {
+      "dap"
     }
   })
 end
