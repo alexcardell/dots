@@ -26,6 +26,7 @@ require('alex/plugins/other').setup()
 require('alex/plugins/hardtime').setup()
 require('alex/plugins/fidget').setup()
 require('alex/plugins/base16').setup()
+require('alex/plugins/lualine').setup()
 
 -- keymappings
 require('alex/keys')

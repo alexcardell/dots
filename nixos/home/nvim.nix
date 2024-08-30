@@ -99,7 +99,6 @@ in
         # plug.indent-blankline-nvim
         # plug.lsp-inlayhints-nvim
         # plug.lspkind-nvim
-        # plug.lualine-nvim
         # plug.markdown-preview-nvim
         # plug.marks-nvim
         # plug.none-ls-nvim
@@ -130,8 +129,8 @@ in
         # plug.zk-nvim
         pinned.avante-nvim
         pinned.codecompanion-nvim
-        pinned.render-markdown-nvim
         pinned.nvim-metals
+        pinned.render-markdown-nvim
         plug.Navigator-nvim
         plug.base16-nvim
         plug.cmp-nvim-lsp
@@ -141,6 +140,7 @@ in
         plug.fidget-nvim
         plug.gitsigns-nvim
         plug.hardtime-nvim
+        plug.lualine-nvim
         plug.luasnip
         plug.nui-nvim
         plug.nvim-autopairs
