@@ -77,6 +77,14 @@ local setup_metals = function()
 end
 
 M.setup = function()
+  vim.diagnostic.config({
+    virtual_text = true,
+    signs = true,
+    underline = false,
+    update_in_insert = false,
+    severity_sort = true,
+  })
+
   lspconfig.util.default_config = vim.tbl_extend(
     "force",
     lspconfig.util.default_config,
@@ -92,7 +100,6 @@ M.setup = function()
     'terraformls',
     'tsserver',
   }
-
 
   for _, server in ipairs(standard_servers) do
     setup_server(server)
