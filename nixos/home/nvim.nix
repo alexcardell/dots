@@ -37,6 +37,15 @@ let
         hash = "sha256-kWENpKZZhqUFYsJkJFts6J0Wc9hhRPV0G8X0TJY9GlU=";
       };
     };
+    lsp-progress-nvim = pkgs.vimUtils.buildVimPluginFrom2Nix {
+      name = "lsp-progress.nvim";
+      src = pkgs.fetchFromGitHub {
+        owner = "linrongbin16";
+        repo = "lsp-progress.nvim";
+        rev = "d5f4d28efe75ce636bfbe271eb45f39689765aab";
+        hash = "sha256-OafRT5AnxRTOh7MYofRFjti0+pobKQihymZs/kr5w0A=";
+      };
+    };
   };
 in
 {
@@ -129,6 +138,7 @@ in
         # plug.zk-nvim
         pinned.avante-nvim
         pinned.codecompanion-nvim
+        pinned.lsp-progress-nvim
         pinned.nvim-metals
         pinned.render-markdown-nvim
         plug.Navigator-nvim
