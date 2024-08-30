@@ -97,8 +97,6 @@ in
         # plug.marks-nvim
         # plug.none-ls-nvim
         # plug.nvim-autopairs
-        # plug.nvim-dap
-        # plug.nvim-dap-virtual-text
         # plug.nvim-lint
         # plug.nvim-navic
         # plug.nvim-tree-lua
@@ -141,6 +139,10 @@ in
         plug.nui-nvim
         plug.nvim-autopairs
         plug.nvim-cmp
+        plug.nvim-dap
+        plug.nvim-dap-virtual-text
+        plug.nvim-dap-ui
+        plug.nvim-nio
         plug.nvim-lspconfig
         plug.nvim-treesitter-textobjects # TODO add more textobjects
         plug.nvim-treesitter.withAllGrammars

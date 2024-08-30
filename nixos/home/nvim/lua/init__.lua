@@ -17,6 +17,7 @@ require('alex/plugins/base16').setup()
 require('alex/components/lsp').setup()
 require('alex/components/llm').setup()
 require('alex/components/completion').setup()
+require('alex/components/dap').setup()
 
 -- other plugins
 require('alex/plugins/gitsigns').setup()
