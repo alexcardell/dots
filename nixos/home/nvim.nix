@@ -118,7 +118,6 @@ in
         # plug.symbols-outline-nvim
         # plug.telescope-fzf-writer-nvim
         # plug.telescope-symbols-nvim
-        # plug.tint-nvim
         # plug.twilight-nvim
         # plug.vim-commentary
         # plug.vim-dadbod
@@ -164,6 +163,7 @@ in
         plug.plenary-nvim
         plug.telescope-nvim
         plug.telescope-ui-select-nvim
+        plug.tint-nvim
         treesitter
       ];
   };

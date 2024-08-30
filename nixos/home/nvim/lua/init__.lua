@@ -27,6 +27,7 @@ require('alex/plugins/other').setup()
 require('alex/plugins/hardtime').setup()
 require('alex/plugins/fidget').setup()
 require('alex/plugins/indent-blankline').setup()
+require('alex/plugins/tint').setup()
 
 require('alex/plugins/lualine').setup()
 
