@@ -81,19 +81,6 @@ in
       let
         plug = pkgs.unstable.vimPlugins;
         pinned = vimPluginsGithub;
-        # treesitter = plug.nvim-treesitter.withAllGrammars;
-        treesitter = plug.nvim-treesitter.withPlugins (plugins: with plugins; [ 
-          c
-          yaml
-          json
-          lua
-          nix
-          scala
-          smithy
-          terraform
-          vim
-          vimdoc
-        ]);
       in
       [
         # plug.cmp-buffer
@@ -156,6 +143,7 @@ in
         plug.nvim-cmp
         plug.nvim-lspconfig
         plug.nvim-treesitter-textobjects # TODO add more textobjects
+        plug.nvim-treesitter.withAllGrammars
         plug.nvim-ts-autotag
         plug.nvim-web-devicons
         plug.oil-nvim
@@ -164,7 +152,6 @@ in
         plug.telescope-nvim
         plug.telescope-ui-select-nvim
         plug.tint-nvim
-        treesitter
       ];
   };
 }
