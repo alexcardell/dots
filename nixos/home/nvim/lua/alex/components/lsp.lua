@@ -1,5 +1,5 @@
 local lspconfig = require('lspconfig')
-local metals_ = require('metals')
+local metals = require('metals')
 
 local M = {}
 
@@ -42,26 +42,32 @@ local setup_server = function(lsp, settings, handlers, on_attach)
 end
 
 local setup_metals = function()
-  local metals = metals_.bare_config()
+  local config = metals.bare_config()
 
-  metals.init_options = {
+  config.init_options = {
     statusBarProvider = "off",
+    debuggingProvider = true
   }
 
-  metals.settings = {
-    autoImportBuild = "all",
-    defaultBspToBuildTool = true,
-    enableSemanticHighlighting = false,
-    showImplicitArguments = true,
+  config.settings = {
+    autoImportBuild                   = "all",
+    defaultBspToBuildTool             = true,
+    enableSemanticHighlighting        = false,
+    showImplicitArguments             = true,
     showImplicitConversionsAndClasses = true,
-    showInferredType = true,
-    useGlobalExecutable = true, -- for nix
+    showInferredType                  = true,
+    useGlobalExecutable               = true, -- for nix
+    -- testUserInterface                 = "Test Explorer"
   }
 
-  metals.capabilities = capabilities
+  config.capabilities = capabilities
 
-  metals.on_attach = default_on_attach
-  metals.handlers = default_handlers
+  config.on_attach = function(client, bufnr)
+    metals.setup_dap()
+    default_on_attach(client, bufnr)
+  end
+
+  config.handlers = default_handlers
 
   vim.api.nvim_create_autocmd('Filetype', {
     pattern = { "java", "scala", "sbt" },
@@ -71,7 +77,7 @@ local setup_metals = function()
       { clear = true }
     ),
     callback = function()
-      metals_.initialize_or_attach(metals)
+      metals.initialize_or_attach(config)
     end,
   })
 end
