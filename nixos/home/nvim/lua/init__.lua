@@ -19,11 +19,11 @@ require('alex/components/completion').setup()
 
 -- other plugins
 require('alex/plugins/gitsigns').setup()
+require('alex/plugins/diffview').setup()
 require('alex/plugins/navigator').setup()
 require('alex/plugins/oil').setup()
 require('alex/plugins/other').setup()
 require('alex/plugins/hardtime').setup()
-require('alex/plugins/diffview').setup()
 require('alex/plugins/fidget').setup()
 require('alex/plugins/base16').setup()
 
