@@ -5,7 +5,7 @@ local M = {}
 
 local capabilities = require('alex/components/completion').capabilities
 
-local default_on_attach = function(client, bufnr)
+local default_on_attach = function(client, _)
   client.server_capabilities.semanticTokensProvider = nil
 end
 
