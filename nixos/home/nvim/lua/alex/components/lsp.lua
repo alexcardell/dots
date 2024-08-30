@@ -9,7 +9,7 @@ local default_on_attach = function(client, _)
   client.server_capabilities.semanticTokensProvider = nil
 end
 
-local border = "single"
+local border = "rounded"
 
 local default_handlers = {
   ["textDocument/hover"] = vim.lsp.with(
@@ -61,6 +61,7 @@ local setup_metals = function()
   metals.capabilities = capabilities
 
   metals.on_attach = default_on_attach
+  metals.handlers = default_handlers
 
   vim.api.nvim_create_autocmd('Filetype', {
     pattern = { "java", "scala", "sbt" },
