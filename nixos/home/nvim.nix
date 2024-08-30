@@ -10,31 +10,13 @@ let
         hash = "sha256-VQOolBCVYZ1T71REjgD7X/+txd1awmdGgW154hc30Y8=";
       };
     };
-    ogpt-nvim = pkgs.vimUtils.buildVimPluginFrom2Nix {
-      name = "ogpt.nvim";
-      src = pkgs.fetchFromGitHub {
-        owner = "huynle";
-        repo = "ogpt.nvim";
-        rev = "aad5dfbbbc6e90e12cb15b77d0dc15da83077b48";
-        hash = "sha256-l7lFP2hgvK1IBv27pIfvXo68/cXbq8jxtYz/9NUj9Zs=";
-      };
-    };
-    gen-nvim = pkgs.vimUtils.buildVimPluginFrom2Nix {
-      name = "gen.nvim";
-      src = pkgs.fetchFromGitHub {
-        owner = "David-Kunz";
-        repo = "gen.nvim";
-        rev = "c9a73d8c0d462333da6d2191806ff98f2884d706";
-        hash = "sha256-Yp7HrDMOyR929AfM7IjEz4dP3RhIx9kXZ1Z3zRr5yJg=";
-      };
-    };
     avante-nvim = pkgs.vimUtils.buildVimPluginFrom2Nix {
       name = "avante.nvim";
       src = pkgs.fetchFromGitHub {
         owner = "yetone";
         repo = "avante.nvim";
-        rev = "f2580891997bd95e4f81d9b81cabdc792f995a11";
-        hash = "sha256-/TavErBrkmOpLhvpwuZ9qB+kxRbVu0Os0zfg1M+I8l8=";
+        rev = "fc1bcda8220cb4b81648db86670e5428c7d477b0";
+        hash = "sha256-1i1M/sK4SfSWsGhmbVpgT5vgKVSryYi+rw41u5WTNU4=";
       };
     };
     codecompanion-nvim = pkgs.vimUtils.buildVimPluginFrom2Nix {
@@ -42,8 +24,17 @@ let
       src = pkgs.fetchFromGitHub {
         owner = "olimorris";
         repo = "codecompanion.nvim";
-        rev = "ccfcc0d6bb2186069af032b032c9b160434993fb";
-        hash = "sha256-bH1cOwrgXoEGDhtpWYHEpCa9NcFEPkhy4FlLMgDBgJU=";
+        rev = "abb1b8c6535e2a792b757ae7fb9253192735f5a8";
+        hash = "sha256-uaApGE6dl1G605QTBedGQijvQ4uHitXGKZ0EOu6zvCo=";
+      };
+    };
+    render-markdown-nvim = pkgs.vimUtils.buildVimPluginFrom2Nix {
+      name = "render-markdown.nvim";
+      src = pkgs.fetchFromGitHub {
+        owner = "MeanderingProgrammer";
+        repo = "render-markdown.nvim";
+        rev = "bc8213ddcd91d2045cc3813df861adb93fbf2d2d";
+        hash = "sha256-kWENpKZZhqUFYsJkJFts6J0Wc9hhRPV0G8X0TJY9GlU=";
       };
     };
   };
@@ -96,7 +87,6 @@ in
         ]);
       in
       [
-        # pinned.ogpt-nvim
         # plug.cmp-buffer
         # plug.cmp-git
         # plug.cmp-nvim-lsp-signature-help
@@ -141,7 +131,7 @@ in
         # plug.zk-nvim
         pinned.avante-nvim
         pinned.codecompanion-nvim
-        pinned.gen-nvim
+        pinned.render-markdown-nvim
         pinned.nvim-metals
         plug.Navigator-nvim
         plug.base16-nvim

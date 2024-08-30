@@ -1,148 +1,56 @@
 local M = {}
 
-local setup_ogpt = function()
-  vim.opt.laststatus = 3
-  vim.opt.splitkeep = 'screen'
-
-  require('ogpt').setup({
-    default_provider = "ollama",
-    edgy = true,
-    providers = {
-      ollama = {
-        enabled = true,
-        -- default to mistral for now, as llama3.1 chat doesn't seem happy
-        -- model = {
-        --   name = "llama3.1",
-        -- },
-        api_host = os.getenv("OLLAMA_API_HOST") or "http://localhost:11434",
-        api_key = os.getenv("OLLAMA_API_KEY") or "",
-      }
-    }
-  })
-
-  require('edgy').setup({
-    exit_when_last = false,
-    animate = {
-      enabled = false,
-    },
-    wo = {
-      winbar = true,
-      winfixwidth = true,
-      winfixheight = false,
-      winhighlight = "WinBar:EdgyWinBar,Normal:EdgyNormal",
-      spell = false,
-      signcolumn = "no",
-    },
-    keys = {
-      -- -- close window
-      ["q"] = function(win)
-        win:close()
-      end,
-      -- close sidebar
-      ["Q"] = function(win)
-        win.view.edgebar:close()
-      end,
-      -- increase width
-      ["<S-Right>"] = function(win)
-        win:resize("width", 3)
-      end,
-      -- decrease width
-      ["<S-Left>"] = function(win)
-        win:resize("width", -3)
-      end,
-      -- increase height
-      ["<S-Up>"] = function(win)
-        win:resize("height", 3)
-      end,
-      -- decrease height
-      ["<S-Down>"] = function(win)
-        win:resize("height", -3)
-      end,
-    },
-    right = {
-      {
-        title = "OGPT Popup",
-        ft = "ogpt-popup",
-        size = { width = 0.2 },
-        wo = {
-          wrap = true,
-        },
-      },
-      {
-        title = "OGPT Parameters",
-        ft = "ogpt-parameters-window",
-        size = { height = 6 },
-        wo = {
-          wrap = true,
-        },
-      },
-      {
-        title = "OGPT Template",
-        ft = "ogpt-template",
-        size = { height = 6 },
-      },
-      {
-        title = "OGPT Sessions",
-        ft = "ogpt-sessions",
-        size = { height = 6 },
-        wo = {
-          wrap = true,
-        },
-      },
-      {
-        title = "OGPT System Input",
-        ft = "ogpt-system-window",
-        size = { height = 6 },
-      },
-      {
-        title = "OGPT",
-        ft = "ogpt-window",
-        size = { height = 0.5 },
-        wo = {
-          wrap = true,
-        },
-      },
-      {
-        title = "OGPT {{{selection}}}",
-        ft = "ogpt-selection",
-        size = { width = 80, height = 4 },
-        wo = {
-          wrap = true,
-        },
-      },
-      {
-        title = "OGPT {{{instruction}}}",
-        ft = "ogpt-instruction",
-        size = { width = 80, height = 4 },
-        wo = {
-          wrap = true,
-        },
-      },
-      {
-        title = "OGPT Chat",
-        ft = "ogpt-input",
-        size = { width = 80, height = 4 },
-        wo = {
-          wrap = true,
-        },
-      },
-    },
-  })
-end
-
-local setup_gen = function()
-  require('gen').setup({
-    model = "llama3.1"
-  })
-end
+local ollama_model = "llama3.1:latest"
 
 local setup_avante = function()
+  require('render-markdown').setup({
+    file_types = { 'markdown', 'Avante' }
+  })
   require('avante').setup({
+    provider = "ollama", -- "claude"
+    windows = {
+      wrap = true,
+      sidebar_header = {
+        rounded = false
+      }
+    },
+    hints = { enabled = true },
+    vendors = {
+      ["ollama"] = {
+        ["local"] = true,
+        endpoint = "127.0.0.1:11434/v1",
+        model = ollama_model,
+        parse_curl_args = function(opts, code_opts)
+          return {
+            url = opts.endpoint .. "/chat/completions",
+            headers = {
+              ["Accept"] = "application/json",
+              ["Content-Type"] = "application/json",
+            },
+            body = {
+              model = opts.model,
+              -- you can make your own message, but this is very advanced
+              messages = require("avante.providers").copilot.parse_message(code_opts),
+              max_tokens = 2048,
+              stream = true,
+            },
+          }
+        end,
+        parse_response_data = function(data_stream, event_state, opts)
+          require("avante.providers").openai.parse_response(data_stream, event_state, opts)
+        end,
+      }
+    }
   })
 end
 
 local setup_codecompanion = function()
   require('codecompanion').setup({
+    adapters = {
+      ollama = require('codecompanion.adapters').extend("ollama", {
+        schema = { model = { default = ollama_model } }
+      })
+    },
     strategies = {
       chat = {
         adapter = "ollama",
@@ -159,6 +67,7 @@ end
 
 M.setup = function()
   setup_codecompanion()
+  setup_avante()
 end
 
 return M
