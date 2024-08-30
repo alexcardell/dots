@@ -1,7 +1,7 @@
 local M = {}
 
 local colours = {
-  base00 = '#000000',
+  black = '#000000',
   base01 = '#101112',
   base02 = '#373b41',
   base03 = '#969896',
@@ -9,21 +9,40 @@ local colours = {
   base05 = '#c5c8c6',
   base06 = '#e0e0e0',
   base07 = '#ffffff',
-  base08 = '#cc6666',
-  base09 = '#de935f',
-  base0A = '#f0c674',
-  base0B = '#b5bd68',
-  base0C = '#8abeb7',
-  base0D = '#81a2be',
-  base0E = '#b294bb',
-  base0F = '#a3685a'
+  red = '#cc6666',
+  orange = '#de935f',
+  yellow = '#f0c674',
+  lime = '#b5bd68',
+  cyan = '#8abeb7',
+  blue = '#81a2be',
+  violet = '#b294bb',
+  brown = '#a3685a'
+}
+
+local base16_colours = {
+  base00 = colours.black,
+  base01 = colours.base01,
+  base02 = colours.base02,
+  base03 = colours.base03,
+  base04 = colours.base04,
+  base05 = colours.base05,
+  base06 = colours.base06,
+  base07 = colours.base07,
+  base08 = colours.red,
+  base09 = colours.orange,
+  base0A = colours.yellow,
+  base0B = colours.lime,
+  base0C = colours.cyan,
+  base0D = colours.blue,
+  base0E = colours.violet,
+  base0F = colours.brown
 }
 
 M.colours = colours
 
 M.setup = function()
   require('base16-colorscheme').setup(
-    colours,
+    base16_colours,
     {
       telescope = false,
       indentblankline = false,

@@ -5,25 +5,25 @@ M.setup = function()
 
   dap.configurations.scala = {
     {
-        type = 'scala',
-        request = 'launch',
-        name = 'Run',
-        console = 'integratedTerminal',
-        metals = { runType = 'run' }
+      type = 'scala',
+      request = 'launch',
+      name = 'Run',
+      console = 'integratedTerminal',
+      metals = { runType = 'run' }
     },
     {
-        type = 'scala',
-        request = 'launch',
-        name = 'Test File',
-        console = 'integratedTerminal',
-        metals = { runType = 'testFile' }
+      type = 'scala',
+      request = 'launch',
+      name = 'Test File',
+      console = 'integratedTerminal',
+      metals = { runType = 'testFile' }
     },
     {
-        type = 'scala',
-        request = 'launch',
-        name = 'Test Target',
-        console = 'integratedTerminal',
-        metals = { runType = 'testTarget' }
+      type = 'scala',
+      request = 'launch',
+      name = 'Test Target',
+      console = 'integratedTerminal',
+      metals = { runType = 'testTarget' }
     }
   }
 
@@ -34,6 +34,17 @@ M.setup = function()
   })
 
   require('dapui').setup()
+
+  local colours = require('alex/plugins/base16').colours
+
+  vim.api.nvim_set_hl(0, 'CustomDapBreakpoint', { fg = colours.red })
+  vim.api.nvim_set_hl(0, 'CustomDapBreakpointRejected', { fg = colours.orange })
+
+  vim.fn.sign_define('DapBreakpoint', { text = '', texthl = 'CustomDapBreakpoint' })
+  vim.fn.sign_define('DapBreakpointCondition', { text = '', texthl = 'CustomDapBreakpoint' })
+  vim.fn.sign_define('DapLogPoint', { text = '', texthl = 'CustomDapBreakpoint' })
+  vim.fn.sign_define('DapBreakpointUnsupported', { text = '', texthl = 'CustomDapBreakpointRejected' })
+  vim.fn.sign_define('DapBreakpointStopped', { text = '', texthl = 'Comment' })
 end
 
 return M
