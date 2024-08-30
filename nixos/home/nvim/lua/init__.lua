@@ -11,6 +11,7 @@ require('alex/options')
 -- core plugins
 require('alex/plugins/treesitter').setup()
 require('alex/plugins/telescope').setup()
+require('alex/plugins/base16').setup()
 
 -- aggregate components
 require('alex/components/lsp').setup()
@@ -25,7 +26,7 @@ require('alex/plugins/oil').setup()
 require('alex/plugins/other').setup()
 require('alex/plugins/hardtime').setup()
 require('alex/plugins/fidget').setup()
-require('alex/plugins/base16').setup()
+require('alex/plugins/indent-blankline').setup()
 
 require('alex/plugins/lualine').setup()
 
