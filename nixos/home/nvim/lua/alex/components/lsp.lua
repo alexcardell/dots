@@ -6,16 +6,40 @@ local M = {}
 local capabilities = require('alex/components/completion').capabilities
 
 local default_on_attach = function(client, bufnr)
-  -- disable semantic tokens
   client.server_capabilities.semanticTokensProvider = nil
-
-  -- inlay_hints.on_attach(client, bufnr, true)
-
-  -- if client.server_capabilities.documentSymbolProvider then
-  --   navic.attach(client, bufnr)
-  -- end
 end
 
+local border = "single"
+
+local default_handlers = {
+  ["textDocument/hover"] = vim.lsp.with(
+    vim.lsp.handlers.hover,
+    { border = border }
+  ),
+  ["textDocument/signatureHelp"] = vim.lsp.with(
+    vim.lsp.handlers.signature_help,
+    { border = border }
+  ),
+}
+
+local setup_server = function(lsp, settings, handlers, on_attach)
+  handlers = handlers or default_handlers
+  on_attach = on_attach or default_on_attach
+
+  if settings then
+    lspconfig[lsp].setup({
+      on_attach = on_attach,
+      handlers = handlers,
+      settings = settings
+    })
+  else
+    lspconfig[lsp].setup({
+      on_attach = on_attach,
+      handlers = handlers,
+      settings = settings
+    })
+  end
+end
 
 local setup_metals = function()
   local metals = metals_.bare_config()
@@ -62,28 +86,36 @@ M.setup = function()
 
   -- anything with standard empty configuration
   local standard_servers = {
-    'lua_ls',
     'nixd',
     'smithy_ls',
     'terraformls',
     'tsserver',
   }
 
+
   for _, server in ipairs(standard_servers) do
-    lspconfig[server].setup({
-      on_attach = default_on_attach
-    })
+    setup_server(server)
   end
 
-  lspconfig.ltex.setup({
-    on_attach = default_on_attach,
-    filetypes = { 'markdown', 'tex' },
-    settings = {
-      ltex = {
-        language = "en-GB",
-        motherTongue = "en-GB"
-      },
+  setup_server("ltex", {
+    ltex = {
+      language = "en-GB",
+      motherTongue = "en-GB"
     },
+  })
+
+  setup_server("lua_ls", {
+    Lua = {
+      runtime = { version = 'LuaJIT', },
+      diagnostics = { globals = { 'vim' } },
+      workspace = {
+        -- Make the server aware of Neovim runtime files
+        library = vim.api.nvim_get_runtime_file("", true),
+      },
+      telemetry = {
+        enable = false,
+      }
+    }
   })
 
   setup_metals()
