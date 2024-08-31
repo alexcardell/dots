@@ -100,7 +100,6 @@ in
         # plug.nvim-lint
         # plug.nvim-navic
         # plug.nvim-tree-lua
-        # plug.symbols-outline-nvim
         # plug.telescope-fzf-writer-nvim
         # plug.telescope-symbols-nvim
         # plug.twilight-nvim
@@ -151,6 +150,7 @@ in
         plug.nvim-web-devicons
         plug.oil-nvim
         plug.other-nvim
+        plug.outline-nvim
         plug.plenary-nvim
         plug.telescope-dap-nvim
         plug.telescope-nvim
