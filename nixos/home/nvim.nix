@@ -81,18 +81,12 @@ in
       let
         plug = pkgs.unstable.vimPlugins;
         pinned = vimPluginsGithub;
-      in
-      [
+      in [
         # plug.cmp-buffer
         # plug.cmp-git
         # plug.cmp-nvim-lsp-signature-help
         # plug.cmp-nvim-lua
         # plug.cmp-path
-        # plug.copilot-cmp
-        # plug.copilot-lua
-        # plug.diaglist-nvim
-        # plug.fzf-lua
-        # plug.lsp-inlayhints-nvim
         # plug.markdown-preview-nvim
         # plug.marks-nvim
         # plug.none-ls-nvim
@@ -156,6 +150,7 @@ in
         plug.telescope-nvim
         plug.telescope-ui-select-nvim
         plug.tint-nvim
+        plug.undotree
       ];
   };
 }
