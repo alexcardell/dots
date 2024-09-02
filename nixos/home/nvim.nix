@@ -83,15 +83,10 @@ in
         pinned = vimPluginsGithub;
       in [
         # plug.cmp-nvim-lsp-signature-help
-        # plug.cmp-nvim-lua
         # plug.cmp-path
         # plug.markdown-preview-nvim
         # plug.marks-nvim
-        # plug.none-ls-nvim
-        # plug.nvim-autopairs
         # plug.nvim-lint
-        # plug.nvim-navic
-        # plug.nvim-tree-lua
         # plug.telescope-fzf-writer-nvim
         # plug.telescope-symbols-nvim
         # plug.twilight-nvim
@@ -116,6 +111,7 @@ in
         plug.cmp-dap
         plug.cmp-git
         plug.cmp-nvim-lsp
+        plug.cmp-nvim-lua
         plug.cmp_luasnip
         plug.diffview-nvim
         plug.edgy-nvim

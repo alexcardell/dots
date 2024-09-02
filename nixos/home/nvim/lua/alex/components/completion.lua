@@ -35,18 +35,31 @@ M.setup = function()
     }
   })
 
-
   cmp.setup.filetype('sql', {
     sources = cmp.config.sources({
-      { name = 'vim-dadbod-completion' },
+      { name = 'vim-dadbod-completion' }
+    }, {
+      { name = 'buffer' },
     })
   })
+
+  require('cmp_git').setup()
 
   cmp.setup.filetype('gitcommit', {
     sources = cmp.config.sources({
       { name = 'git' },
     }, {
       { name = 'buffer' },
+    })
+  })
+
+  cmp.setup.filetype('lua', {
+    sources = cmp.config.sources({
+      { name = 'nvim_lsp' },
+      { name = 'luasnip' },
+      { name = 'nvim_lua' }
+    }, {
+      { name = 'buffer' }
     })
   })
 
