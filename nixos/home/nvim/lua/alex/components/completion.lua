@@ -35,6 +35,13 @@ M.setup = function()
     }
   })
 
+
+  cmp.setup.filetype('sql', {
+    sources = cmp.config.sources({
+      { name = 'vim-dadbod-completion' },
+    })
+  })
+
   -- cmp.setup.filetype({
   --   "dap-repl", "dapui_watches", "dapui_hover"
   -- }, {

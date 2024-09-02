@@ -98,13 +98,9 @@ in
         # plug.telescope-symbols-nvim
         # plug.twilight-nvim
         # plug.vim-commentary
-        # plug.vim-dadbod
-        # plug.vim-dadbod-completion
-        # plug.vim-dadbod-ui
         # plug.vim-fugitive
         # plug.vim-illuminate
         # plug.vim-nix
-        # plug.vim-pencil
         # plug.vim-repeat
         # plug.vim-rhubarb
         # plug.vim-surround
@@ -152,6 +148,9 @@ in
         plug.telescope-ui-select-nvim
         plug.tint-nvim
         plug.undotree
+        plug.vim-dadbod
+        plug.vim-dadbod-completion
+        plug.vim-dadbod-ui
         plug.vim-pencil
       ];
   };
