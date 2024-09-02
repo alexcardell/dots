@@ -75,3 +75,12 @@ key("n", "<leader>o", "<cmd>Outline<cr>", { desc = "Toggle Outline" })
 
 -- undotree
 key("n", "<leader>o", "<cmd>UndotreeToggle<cr>", { desc = "Toggle Undotree" })
+
+-- dap
+key('n', '<F5>', function() require('dap').continue() end, { desc = "DAP: Continue" })
+key('n', '<F10>', function() require('dap').step_over() end, { desc = "DAP: Step over" })
+key('n', '<F11>', function() require('dap').step_into() end, { desc = "DAP: Step into" })
+key('n', '<F12>', function() require('dap').step_out() end, { desc = "DAP: Step out" })
+key('n', '<leader>db', function() require('dap').toggle_breakpoint() end, { desc = "DAP: Toggle breakpoint" })
+key('n', '<leader>dl', function() require('dap').run_last() end, { desc = "DAP: Run last" })
+key('n', '<leader>dd', function() require('dapui').toggle() end, { desc = "DAP: Toggle DAP UI" })
