@@ -71,10 +71,10 @@ key("i", "<C-j>", function() luasnip.jump(1) end, { desc = "Next luasnip tabstop
 key("i", "<C-k>", function() luasnip.jump(-1) end, { desc = "Previous luasnip tabstop", silent = true })
 
 -- outline
-key("n", "<leader>o", "<cmd>Outline<cr>", { desc = "Toggle Outline" })
+key("n", "<leader>O", "<cmd>Outline<cr>", { desc = "Toggle Outline" })
 
 -- undotree
-key("n", "<leader>o", "<cmd>UndotreeToggle<cr>", { desc = "Toggle Undotree" })
+key("n", "<leader>U", "<cmd>UndotreeToggle<cr>", { desc = "Toggle Undotree" })
 
 -- dap
 key('n', '<F5>', function() require('dap').continue() end, { desc = "DAP: Continue" })
