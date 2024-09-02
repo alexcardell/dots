@@ -82,8 +82,6 @@ in
         plug = pkgs.unstable.vimPlugins;
         pinned = vimPluginsGithub;
       in [
-        # plug.cmp-buffer
-        # plug.cmp-git
         # plug.cmp-nvim-lsp-signature-help
         # plug.cmp-nvim-lua
         # plug.cmp-path
@@ -114,7 +112,9 @@ in
         pinned.render-markdown-nvim
         plug.Navigator-nvim
         plug.base16-nvim
+        plug.cmp-buffer
         plug.cmp-dap
+        plug.cmp-git
         plug.cmp-nvim-lsp
         plug.cmp_luasnip
         plug.diffview-nvim

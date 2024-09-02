@@ -42,6 +42,14 @@ M.setup = function()
     })
   })
 
+  cmp.setup.filetype('gitcommit', {
+    sources = cmp.config.sources({
+      { name = 'git' },
+    }, {
+      { name = 'buffer' },
+    })
+  })
+
   -- cmp.setup.filetype({
   --   "dap-repl", "dapui_watches", "dapui_hover"
   -- }, {
