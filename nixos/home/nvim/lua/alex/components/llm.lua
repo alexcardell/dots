@@ -42,6 +42,12 @@ local setup_avante = function()
       }
     }
   })
+
+  local colours = require('alex/plugins/base16').colours
+
+  vim.api.nvim_set_hl(0, 'AvanteTitle', {link = 'Comment' })
+  vim.api.nvim_set_hl(0, 'AvanteSubtitle', {link = 'Comment' })
+  vim.api.nvim_set_hl(0, 'AvanteThirdTitle', {link = 'Comment' })
 end
 
 local setup_codecompanion = function()
