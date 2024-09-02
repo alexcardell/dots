@@ -1,7 +1,6 @@
 local M = {}
 
 M.setup = function()
-
   local colors = {
     blue   = '#80a0ff',
     cyan   = '#79dac8',
@@ -10,7 +9,7 @@ M.setup = function()
     red    = '#ff5189',
     violet = '#d183e8',
     grey   = '#303030',
-    grey2   = '#969896',
+    grey2  = '#969896',
   }
 
   local bubbles_theme = {
@@ -50,6 +49,11 @@ M.setup = function()
     return require('lsp-progress').progress() or ""
   end
 
+  -- local breadcrumb = function()
+  --   -- outline breadcrumb only updates when Outline is open
+  --   return require('outline').get_breadcrumb() or ""
+  -- end
+
   require('lualine').setup({
     options = {
       theme = bubbles_theme,
@@ -71,7 +75,13 @@ M.setup = function()
       },
       lualine_c = { 'filename' },
       lualine_x = { lsp_status },
-      lualine_y = { 'searchcount', 'filetype', 'progress', 'location', 'diagnostics' },
+      lualine_y = {
+        'searchcount',
+        'filetype',
+        'progress',
+        'location',
+        'diagnostics'
+      },
       lualine_z = {
       },
     },
@@ -83,6 +93,14 @@ M.setup = function()
       lualine_y = {},
       lualine_z = { 'location' },
     },
+    -- winbar = {
+    --   lualine_c = {
+    --     {
+    --       breadcrumb,
+    --       draw_empty = true
+    --     }
+    --   }
+    -- }
   })
 end
 
