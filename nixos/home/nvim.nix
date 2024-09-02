@@ -152,6 +152,7 @@ in
         plug.telescope-ui-select-nvim
         plug.tint-nvim
         plug.undotree
+        plug.vim-pencil
       ];
   };
 }
