@@ -20,9 +20,10 @@ require('alex/components/llm').setup()
 require('alex/components/completion').setup()
 
 -- other plugins
+require('alex/plugins/navigator').setup()
+require('alex/plugins/surround').setup()
 require('alex/plugins/gitsigns').setup()
 require('alex/plugins/diffview').setup()
-require('alex/plugins/navigator').setup()
 require('alex/plugins/oil').setup()
 require('alex/plugins/other').setup()
 require('alex/plugins/hardtime').setup()

@@ -138,6 +138,7 @@ in
         plug.nvim-dap-virtual-text
         plug.nvim-lspconfig
         plug.nvim-nio
+        plug.nvim-surround
         plug.nvim-treesitter-textobjects # TODO add more textobjects
         plug.nvim-treesitter.withAllGrammars
         plug.nvim-ts-autotag
