@@ -63,13 +63,13 @@ M.setup = function()
     })
   })
 
-  -- cmp.setup.filetype({
-  --   "dap-repl", "dapui_watches", "dapui_hover"
-  -- }, {
-  --   sources = {
-  --     "dap"
-  --   }
-  -- })
+  cmp.setup.filetype({
+    "dap-repl", "dapui_watches", "dapui_hover"
+  }, {
+    sources = cmp.config.sources({
+      { name = "dap" }
+    })
+  })
 end
 
 M.capabilities = require('cmp_nvim_lsp').default_capabilities()
