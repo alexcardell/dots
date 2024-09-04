@@ -15,12 +15,12 @@
     entr
     git-crypt
     git-filter-repo
+    git-standup
     gnupg
     jq
     kitty
     nerdfonts
     nodejs-18_x
-    # nur.repos.dustinblackman.oatmeal
     ripgrep
     sbt
     unixtools.watch
