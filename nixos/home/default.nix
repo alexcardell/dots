@@ -15,7 +15,7 @@
     entr
     git-crypt
     git-filter-repo
-    git-standup
+    git-extras
     gnupg
     jq
     kitty
