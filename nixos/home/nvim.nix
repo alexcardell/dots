@@ -106,6 +106,7 @@ in
         pinned.nvim-metals
         pinned.render-markdown-nvim
         plug.Navigator-nvim
+        plug.nvim-lint
         plug.base16-nvim
         plug.cmp-buffer
         plug.cmp-dap

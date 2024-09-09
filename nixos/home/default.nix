@@ -12,10 +12,11 @@
   home.stateVersion = "22.11";
 
   home.packages = with pkgs; [
+    actionlint
     entr
     git-crypt
-    git-filter-repo
     git-extras
+    git-filter-repo
     gnupg
     jq
     kitty
@@ -23,14 +24,16 @@
     nodejs-18_x
     ripgrep
     sbt
+    shellcheck
     unixtools.watch
+    unstable.jira-cli-go
     unstable.languagetool-rust
     unstable.ollama
     unstable.scala-cli
     unstable.sloth
-    unstable.jira-cli-go
     vale
     xdg-ninja
+    yamllint
     zk
   ];
 

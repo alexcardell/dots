@@ -20,6 +20,7 @@ require('alex/components/llm').setup()
 require('alex/components/completion').setup()
 
 -- other plugins
+require('alex/plugins/nvim-lint').setup()
 require('alex/plugins/navigator').setup()
 require('alex/plugins/surround').setup()
 require('alex/plugins/gitsigns').setup()
