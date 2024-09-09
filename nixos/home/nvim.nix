@@ -122,6 +122,7 @@ in
         plug.lspkind-nvim
         plug.lualine-nvim
         plug.luasnip
+        plug.neogit
         plug.nui-nvim
         plug.nvim-autopairs
         plug.nvim-cmp
