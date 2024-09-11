@@ -8,18 +8,20 @@
       "flipt-io/brew"
     ];
     casks = [
+      "alt-tab"
+      "discord"
       "firefox"
-      "inso"
       "malwarebytes"
+      "obsidian"
     ];
     brews = [
       "adr-tools"
       "docker-credential-helper-ecr"
+      "flipt"
       "smithy-cli"
       "whalebrew"
-      "flipt"
-      # "terragrunt"
-      # "tfenv"
+      "terragrunt"
+      "tfenv"
     ];
   };
 
