@@ -106,7 +106,6 @@ in
         pinned.nvim-metals
         pinned.render-markdown-nvim
         plug.Navigator-nvim
-        plug.nvim-lint
         plug.base16-nvim
         plug.cmp-buffer
         plug.cmp-dap
@@ -130,6 +129,7 @@ in
         plug.nvim-dap
         plug.nvim-dap-ui
         plug.nvim-dap-virtual-text
+        plug.nvim-lint
         plug.nvim-lspconfig
         plug.nvim-nio
         plug.nvim-surround
@@ -149,6 +149,7 @@ in
         plug.vim-dadbod
         plug.vim-dadbod-completion
         plug.vim-dadbod-ui
+        plug.vim-fugitive
         plug.vim-pencil
       ];
   };

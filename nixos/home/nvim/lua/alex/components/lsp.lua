@@ -104,7 +104,7 @@ M.setup = function()
     'nixd',
     'smithy_ls',
     'terraformls',
-    'tsserver',
+    'ts_ls',
   }
 
   for _, server in ipairs(standard_servers) do
