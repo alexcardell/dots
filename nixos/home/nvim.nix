@@ -151,6 +151,7 @@ in
         plug.vim-dadbod-ui
         plug.vim-fugitive
         plug.vim-pencil
+        plug.vim-rhubarb
       ];
   };
 }
