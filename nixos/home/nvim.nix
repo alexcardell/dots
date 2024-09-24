@@ -46,6 +46,15 @@ let
         hash = "sha256-OafRT5AnxRTOh7MYofRFjti0+pobKQihymZs/kr5w0A=";
       };
     };
+    quicker-nvim = pkgs.vimUtils.buildVimPluginFrom2Nix {
+      name = "quicker.nvim";
+      src = pkgs.fetchFromGitHub {
+        owner = "stevearc";
+        repo = "quicker.nvim";
+        rev = "183041a46d6c908eefb1c23ea02cce9c8f41256e";
+        hash = "sha256-vhDXkE33NkiCs8PUB2PIzljaL15V3Ac62FRgnEZs06M=";
+      };
+    };
   };
 in
 {
@@ -104,6 +113,7 @@ in
         pinned.codecompanion-nvim
         pinned.lsp-progress-nvim
         pinned.nvim-metals
+        pinned.quicker-nvim
         pinned.render-markdown-nvim
         plug.Navigator-nvim
         plug.base16-nvim
