@@ -7,7 +7,8 @@ M.setup = function()
     sh = { 'shellcheck' },
     zsh = { 'shellcheck' },
     bash = { 'shellcheck' },
-    yaml = { 'yamllint' }
+    yaml = { 'yamllint' },
+    ghaction = { 'yamllint', 'actionlint' }
   }
 
   vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost" }, {
