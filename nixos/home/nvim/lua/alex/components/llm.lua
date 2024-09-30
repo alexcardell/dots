@@ -1,6 +1,6 @@
 local M = {}
 
-local ollama_model = "llama3.1:latest"
+local ollama_model = "llama3.2:3b"
 
 local setup_avante = function()
   require('render-markdown').setup({
