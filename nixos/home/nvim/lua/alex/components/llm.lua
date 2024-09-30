@@ -73,7 +73,7 @@ end
 
 M.setup = function()
   setup_codecompanion()
-  setup_avante()
+  -- setup_avante()
 end
 
 return M
