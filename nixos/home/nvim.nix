@@ -15,8 +15,8 @@ let
       src = pkgs.fetchFromGitHub {
         owner = "yetone";
         repo = "avante.nvim";
-        rev = "fc1bcda8220cb4b81648db86670e5428c7d477b0";
-        hash = "sha256-1i1M/sK4SfSWsGhmbVpgT5vgKVSryYi+rw41u5WTNU4=";
+        rev = "f3ee77dd5b08fb617065031a80a2f9ef409e566d";
+        hash = "sha256-z5rLupch+iMeNIedYi0YpMyHtvvkZXfkh233IL1suSU=";
       };
     };
     codecompanion-nvim = pkgs.vimUtils.buildVimPluginFrom2Nix {
@@ -24,8 +24,8 @@ let
       src = pkgs.fetchFromGitHub {
         owner = "olimorris";
         repo = "codecompanion.nvim";
-        rev = "abb1b8c6535e2a792b757ae7fb9253192735f5a8";
-        hash = "sha256-uaApGE6dl1G605QTBedGQijvQ4uHitXGKZ0EOu6zvCo=";
+        rev = "4bec50da26b411e52accdabd358e7c00ff94d2d3";
+        hash = "sha256-DRdqpp0m3dq1ttmCMfJrvBfAbsbBTQ0Skw+kMonLmqc=";
       };
     };
     render-markdown-nvim = pkgs.vimUtils.buildVimPluginFrom2Nix {
