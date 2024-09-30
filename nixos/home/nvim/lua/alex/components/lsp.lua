@@ -83,6 +83,14 @@ local setup_metals = function()
 end
 
 M.setup = function()
+  vim.fn.sign_define('DiagnosticSignError', { text = '' })
+  vim.fn.sign_define('DiagnosticSignWarn', { text = '' })
+  vim.fn.sign_define('DiagnosticSignHint', { text = '' })
+  vim.fn.sign_define('DiagnosticSignInfo', { text = '' })
+  vim.fn.sign_define('DiagnosticSignOk', { text = '' })
+
+  
+
   vim.diagnostic.config({
     virtual_text = true,
     signs = true,
