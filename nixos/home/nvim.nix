@@ -24,8 +24,8 @@ let
       src = pkgs.fetchFromGitHub {
         owner = "olimorris";
         repo = "codecompanion.nvim";
-        rev = "4bec50da26b411e52accdabd358e7c00ff94d2d3";
-        hash = "sha256-DRdqpp0m3dq1ttmCMfJrvBfAbsbBTQ0Skw+kMonLmqc=";
+        rev = "0f3d150281ee99eafddd23540762f91898e9657a";
+        hash = "sha256-vd0xz8EpcZyYGiFGSY1Sy0Ey3W2xf6/eeQOXiHZrAJc=";
       };
     };
     render-markdown-nvim = pkgs.vimUtils.buildVimPluginFrom2Nix {
