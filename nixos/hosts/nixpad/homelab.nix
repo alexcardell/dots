@@ -7,7 +7,6 @@
     ];
 
   environment.systemPackages = with pkgs;[
-    # jellyfin
     jellycli
     jellyfin-web
     # jellyfin-ffmpeg
@@ -42,6 +41,11 @@
   services.prowlarr = {
     enable = true;
     openFirewall = false;
+  };
+
+  services.jellyseerr =  {
+    enable = true;
+    openFirewall = true;
   };
 
   # services.flaresolverr = {
