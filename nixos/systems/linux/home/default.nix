@@ -17,10 +17,11 @@
       protonvpn-gui
       qbittorrent
       rofi
+      unstable.veracrypt
       unzip
       vlc
+      wireguard-tools
       xclip
-      unstable.veracrypt
     ];
 
   programs.firefox.enable = true;
