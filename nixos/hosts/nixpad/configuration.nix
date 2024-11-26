@@ -5,7 +5,7 @@
 { config, pkgs, ... }:
 
 {
- imports =
+  imports =
     [
       # Include the results of the hardware scan.
       ./hardware-configuration.nix
@@ -17,4 +17,13 @@
     "1.1.1.1"
     "1.0.0.1"
   ];
+
+  hardware.pulseaudio.enable = false;
+
+  services.pipewire = {
+    enable = true;
+    audio.enable = true;
+    pulse.enable = true;
+    alsa.enable = true;
+  };
 }
