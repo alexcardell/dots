@@ -1,7 +1,7 @@
 { pkgs, ... }:
 let
   vimPluginsGithub = {
-    nvim-metals = pkgs.vimUtils.buildVimPluginFrom2Nix {
+    nvim-metals = pkgs.vimUtils.buildVimPlugin {
       name = "nvim-metals";
       src = pkgs.fetchFromGitHub {
         owner = "scalameta";
@@ -10,7 +10,7 @@ let
         hash = "sha256-VQOolBCVYZ1T71REjgD7X/+txd1awmdGgW154hc30Y8=";
       };
     };
-    avante-nvim = pkgs.vimUtils.buildVimPluginFrom2Nix {
+    avante-nvim = pkgs.vimUtils.buildVimPlugin {
       name = "avante.nvim";
       src = pkgs.fetchFromGitHub {
         owner = "yetone";
@@ -19,7 +19,7 @@ let
         hash = "sha256-z5rLupch+iMeNIedYi0YpMyHtvvkZXfkh233IL1suSU=";
       };
     };
-    codecompanion-nvim = pkgs.vimUtils.buildVimPluginFrom2Nix {
+    codecompanion-nvim = pkgs.vimUtils.buildVimPlugin {
       name = "codecompanion.nvim";
       src = pkgs.fetchFromGitHub {
         owner = "olimorris";
@@ -28,7 +28,7 @@ let
         hash = "sha256-vd0xz8EpcZyYGiFGSY1Sy0Ey3W2xf6/eeQOXiHZrAJc=";
       };
     };
-    render-markdown-nvim = pkgs.vimUtils.buildVimPluginFrom2Nix {
+    render-markdown-nvim = pkgs.vimUtils.buildVimPlugin {
       name = "render-markdown.nvim";
       src = pkgs.fetchFromGitHub {
         owner = "MeanderingProgrammer";
@@ -37,7 +37,7 @@ let
         hash = "sha256-kWENpKZZhqUFYsJkJFts6J0Wc9hhRPV0G8X0TJY9GlU=";
       };
     };
-    lsp-progress-nvim = pkgs.vimUtils.buildVimPluginFrom2Nix {
+    lsp-progress-nvim = pkgs.vimUtils.buildVimPlugin {
       name = "lsp-progress.nvim";
       src = pkgs.fetchFromGitHub {
         owner = "linrongbin16";
@@ -85,7 +85,6 @@ in
         # plug.cmp-nvim-lsp-signature-help
         # plug.cmp-path
         # plug.markdown-preview-nvim
-        # plug.marks-nvim
         # plug.nvim-lint
         # plug.telescope-fzf-writer-nvim
         # plug.telescope-symbols-nvim
@@ -122,6 +121,7 @@ in
         plug.lspkind-nvim
         plug.lualine-nvim
         plug.luasnip
+        plug.marks-nvim
         plug.neogit
         plug.nui-nvim
         plug.nvim-autopairs

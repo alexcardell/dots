@@ -2,14 +2,14 @@
   description = "NixOS system configuration (alexcardell)";
 
   inputs = {
-    nixpkgs.url = "nixpkgs/nixos-24.05";
+    nixpkgs.url = "nixpkgs/nixos-24.11";
 
     nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
 
     nur.url = "github:nix-community/nur";
 
     home-manager = {
-      url = "github:nix-community/home-manager/release-24.05";
+      url = "github:nix-community/home-manager/release-24.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -36,7 +36,7 @@
   }:
     let
       darwinConfiguration = { pkgs, ... }: {
-        nix.package = pkgs.nixFlakes;
+        nix.package = pkgs.nixVersions.stable;
         nix.extraOptions = ''
           experimental-features = nix-command flakes
         '';
