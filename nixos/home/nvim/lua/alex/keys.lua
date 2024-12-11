@@ -53,6 +53,8 @@ key("n", "<localleader>l", "<cmd>lua vim.lsp.codelens.run()<cr>")
 key("n", "<localleader>f", "<cmd>lua vim.lsp.buf.format()<cr>")
 key("n", "<localleader>x", "<cmd>lua vim.diagnostic.setqflist()<cr>")
 key("n", "<localleader>z", "<cmd>lua vim.diagnostic.setloclist()<cr>")
+key("n", "<localleader>]", "<cmd>lua vim.diagnostic.goto_next()<cr>")
+key("n", "<localleader>[", "<cmd>lua vim.diagnostic.goto_prev()<cr>")
 
 key("n", "<localleader>mb", "<cmd>MetalsImportBuild<cr>")
 
