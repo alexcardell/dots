@@ -15,7 +15,7 @@
       polybar'
       protonvpn-cli
       protonvpn-gui
-      qbittorrent
+      unstable.qbittorrent
       rofi
       unstable.veracrypt
       unzip
