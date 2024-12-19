@@ -9,7 +9,7 @@
   environment.systemPackages = with pkgs;[
     jellycli
     jellyfin-web
-    # jellyfin-ffmpeg
+    unstable.jellyfin-ffmpeg
     recyclarr
   ];
 
@@ -21,8 +21,10 @@
       STOP_CHARGE_THRESH_BAT0 = 80; 
     };
   };
+
   services.jellyfin = {
     enable = true;
+    package = pkgs.unstable.jellyfin;
     # user = "alex";
     openFirewall = true;
   };
@@ -49,7 +51,12 @@
 
   services.prowlarr = {
     enable = true;
-    openFirewall = false;
+    openFirewall = true;
+  };
+
+  services.bazarr = {
+    enable = true;
+    openFirewall = true;
   };
 
   services.jellyseerr =  {
