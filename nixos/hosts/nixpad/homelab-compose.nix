@@ -1,4 +1,4 @@
-# Auto-generated using compose2nix v0.2.2-pre.
+# Auto-generated using compose2nix v0.3.2-pre.
 { pkgs, lib, ... }:
 
 {
@@ -22,10 +22,10 @@
   };
   systemd.services."docker-flaresolverr" = {
     serviceConfig = {
-      Restart = lib.mkOverride 500 "always";
-      RestartMaxDelaySec = lib.mkOverride 500 "1m";
-      RestartSec = lib.mkOverride 500 "100ms";
-      RestartSteps = lib.mkOverride 500 9;
+      Restart = lib.mkOverride 90 "always";
+      RestartMaxDelaySec = lib.mkOverride 90 "1m";
+      RestartSec = lib.mkOverride 90 "100ms";
+      RestartSteps = lib.mkOverride 90 9;
     };
     partOf = [
       "docker-compose-homelab-root.target"
@@ -51,10 +51,38 @@
   };
   systemd.services."docker-homarr" = {
     serviceConfig = {
-      Restart = lib.mkOverride 500 "always";
-      RestartMaxDelaySec = lib.mkOverride 500 "1m";
-      RestartSec = lib.mkOverride 500 "100ms";
-      RestartSteps = lib.mkOverride 500 9;
+      Restart = lib.mkOverride 90 "always";
+      RestartMaxDelaySec = lib.mkOverride 90 "1m";
+      RestartSec = lib.mkOverride 90 "100ms";
+      RestartSteps = lib.mkOverride 90 9;
+    };
+    partOf = [
+      "docker-compose-homelab-root.target"
+    ];
+    wantedBy = [
+      "docker-compose-homelab-root.target"
+    ];
+  };
+  virtualisation.oci-containers.containers."home-assistant" = {
+    image = "ghcr.io/home-assistant/home-assistant:stable";
+    volumes = [
+      "/home/alex/dots/nixos/hosts/nixpad/home/home-assistant:/config:rw"
+    ];
+    ports = [
+      "8123:8123/tcp"
+    ];
+    log-driver = "journald";
+    extraOptions = [
+      "--device=/dev/ttyUSB0:/dev/ttyUSB0:rwm"
+      "--network=host"
+    ];
+  };
+  systemd.services."docker-home-assistant" = {
+    serviceConfig = {
+      Restart = lib.mkOverride 90 "always";
+      RestartMaxDelaySec = lib.mkOverride 90 "1m";
+      RestartSec = lib.mkOverride 90 "100ms";
+      RestartSteps = lib.mkOverride 90 9;
     };
     partOf = [
       "docker-compose-homelab-root.target"

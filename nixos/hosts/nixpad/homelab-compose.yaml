@@ -20,4 +20,15 @@ services:
     ports:
       - '8191:8191'
     network_mode: 'host'
+  home-assistant:
+    container_name: home-assistant
+    image: ghcr.io/home-assistant/home-assistant:stable
+    restart: unless-stopped
+    ports:
+      - '8123:8123'
+    network_mode: 'host'
+    volumes:
+      - './home/home-assistant:/config'
+    devices:
+      - '/dev/ttyUSB0:/dev/ttyUSB0'
 
