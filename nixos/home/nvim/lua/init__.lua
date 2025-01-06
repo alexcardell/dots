@@ -7,7 +7,7 @@ vim.g.maplocalleader = "\\"
 
 -- settings
 require('alex/options')
-require('alex/autocmds')
+require('alex/autocmds').setup()
 
 -- core plugins
 require('alex/plugins/treesitter').setup()
