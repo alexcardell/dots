@@ -106,12 +106,13 @@ in
         pinned.render-markdown-nvim
         plug.Navigator-nvim
         plug.base16-nvim
-        plug.cmp-buffer
-        plug.cmp-dap
-        plug.cmp-git
-        plug.cmp-nvim-lsp
-        plug.cmp-nvim-lua
-        plug.cmp_luasnip
+        plug.blink-cmp
+        # plug.cmp-buffer
+        # plug.cmp-dap
+        # plug.cmp-git
+        # plug.cmp-nvim-lsp
+        # plug.cmp-nvim-lua
+        # plug.cmp_luasnip
         plug.diffview-nvim
         plug.edgy-nvim
         plug.fidget-nvim
@@ -125,7 +126,7 @@ in
         plug.neogit
         plug.nui-nvim
         plug.nvim-autopairs
-        plug.nvim-cmp
+        # plug.nvim-cmp
         plug.nvim-dap
         plug.nvim-dap-ui
         plug.nvim-dap-virtual-text

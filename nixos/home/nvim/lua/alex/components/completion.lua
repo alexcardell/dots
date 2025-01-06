@@ -1,6 +1,21 @@
 local M = {}
 
-M.setup = function()
+M.setup_blink = function()
+  local blink = require('blink.cmp')
+
+  blink.setup({
+    keymap = { preset = 'super-tab' },
+    appearance = {
+      use_nvim_cmp_as_default = true,
+      nerd_font_variant = 'mono'
+    },
+    sources = {
+      default = { 'lsp', 'path', 'snippets', 'buffer' },
+    },
+  })
+end
+
+M.setup_cmp = function()
   local cmp = require('cmp')
   local lspkind = require('lspkind')
 
@@ -72,6 +87,9 @@ M.setup = function()
   })
 end
 
-M.capabilities = require('cmp_nvim_lsp').default_capabilities()
+M.capabilities = require('blink.cmp').get_lsp_capabilities()
+-- M.capabilities = require('cmp_nvim_lsp').default_capabilities()
+
+M.setup = M.setup_blink
 
 return M
