@@ -9,6 +9,17 @@ M.setup = function()
       preview = {
         treesitter = true
       },
+      vimgrep_arguments = {
+        -- all required except `--smart-case`
+        "rg",
+        "--color=never",
+        "--no-heading",
+        "--with-filename",
+        "--line-number",
+        "--column",
+        "--smart-case",
+        "--hidden"
+      }
     },
     extensions = {
       ['ui-select'] = {
