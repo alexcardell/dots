@@ -12,6 +12,7 @@ M.setup_blink = function()
     sources = {
       default = { 'lsp', 'path', 'snippets', 'buffer' },
     },
+    signature = { enabled = true},
   })
 end
 
