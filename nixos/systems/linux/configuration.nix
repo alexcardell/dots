@@ -3,7 +3,7 @@
 {
   # Enable flakes
   nix = {
-    package = pkgs.nixFlakes;
+    package = pkgs.nixVersions.stable;
     extraOptions = ''
       experimental-features = nix-command flakes
       keep-outputs = true
@@ -60,9 +60,6 @@
 
   # Enable CUPS to print documents.
   # services.printing.enable = true;
-
-  # Enable sound.
-  sound.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.alex = {
