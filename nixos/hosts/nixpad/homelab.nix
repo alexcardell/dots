@@ -1,4 +1,4 @@
-{ config, pkgs, nixpkgs-unstable, ... }:
+{ pkgs, ... }:
 {
 
   imports =
@@ -6,12 +6,28 @@
       ./homelab-compose.nix
     ];
 
+  # for sonarr with nixos-24.11
+  nixpkgs.config.permittedInsecurePackages = [
+    "aspnetcore-runtime-6.0.36"
+    "aspnetcore-runtime-wrapped-6.0.36"
+    "dotnet-sdk-6.0.428"
+    "dotnet-sdk-wrapped-6.0.428"
+  ];
+
   environment.systemPackages = with pkgs;[
+    chkrootkit
     jellycli
     jellyfin-web
-    unstable.jellyfin-ffmpeg
+    lynis
     recyclarr
+    unstable.jellyfin-ffmpeg
   ];
+
+  services.clamav = {
+    scanner.enable = true;
+    daemon.enable = true;
+    updater.enable = true;
+  };
 
   # power management
   services.tlp = {
