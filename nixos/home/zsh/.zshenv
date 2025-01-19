@@ -9,9 +9,9 @@ PATH=$PATH:$HOME/.local/bin
 PATH=$PATH:/opt/homebrew/bin
 
 # TODO package up anything here as nix flake
-PATH=$PATH:$HOME/.yarn/bin
+# PATH=$PATH:$HOME/.yarn/bin
 
-PATH=$PATH:node_modules/.bin
+# PATH=$PATH:node_modules/.bin
 
 PATH=$DEFAULT_PATH:$PATH
 
