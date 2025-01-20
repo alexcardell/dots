@@ -1,6 +1,7 @@
 #!/usr/bin/env sh
 
-killall -q polybar
+# killall -q polybar
+polybar-msg cmd quit
 
 echo "---" | tee -a /tmp/polybar1.log /tmp/polybar2.log
 polybar --config=~/.config/polybar/config.ini mybar \
