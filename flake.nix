@@ -14,20 +14,20 @@
     };
 
     darwin = {
-      url = "github:LnL7/nix-darwin";
+      url = "github:LnL7/nix-darwin/nix-darwin-24.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
   };
 
-  outputs = { 
-    nixpkgs, 
+  outputs = {
+    nixpkgs,
     nixpkgs-unstable,
     nur,
     home-manager,
     darwin,
-    # neovim-nightly-overlay, 
-    ... 
+    # neovim-nightly-overlay,
+    ...
   }:
     let
       darwinConfiguration = { pkgs, ... }: {
