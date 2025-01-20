@@ -9,7 +9,6 @@ if [ -e ${ZDOTDIR} ]; then
   ZDOTDIR="${HOME}/.zsh"
 fi
 
-# autoload -U compinit && compinit
 # autoload -U colors && colors
 
 #---------
@@ -41,6 +40,17 @@ unsetopt beep
 #------------
 # zstyle ':completion:*' menu select
 # zmodload zsh/complist
+autoload -U compinit && compinit
+
+COMPLETION_PATH="${ZDOTDIR}/completions"
+fpath=("${COMPLETION_PATH}" ${fpath})
+
+# aws just has to do things their own way
+aws_path=$(which aws_completer)
+
+if [[ -e "$aws_path" ]]; then
+  complete -C "$(which aws_completer)" aws
+fi
 
 #--------
 # Prompt
@@ -144,7 +154,7 @@ alias y='yarn'
 # alias ls='ls --color=auto --group-directories-first'
 # alias open='xdg-open'
 
-# load fzf integration 
+# load fzf integration
 # zsh-vi-mode causes a clash with the home-manager
 # module, so load explicitly
 function zvm_after_init() {
