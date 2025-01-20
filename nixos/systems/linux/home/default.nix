@@ -12,11 +12,12 @@
       bitwarden
       bitwarden-cli
       brightnessctl
+      busybox
       polybar'
       protonvpn-cli
       protonvpn-gui
-      unstable.qbittorrent
       rofi
+      unstable.qbittorrent
       unstable.veracrypt
       unzip
       vlc
