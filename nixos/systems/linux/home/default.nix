@@ -25,4 +25,6 @@
     ];
 
   programs.firefox.enable = true;
+
+  programs.cava.enable = true;
 }
