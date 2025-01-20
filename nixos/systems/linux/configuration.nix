@@ -94,6 +94,12 @@
 
   virtualisation.docker.enable = true;
 
+  services.clamav = {
+    scanner.enable = true;
+    daemon.enable = true;
+    updater.enable = true;
+  };
+
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
