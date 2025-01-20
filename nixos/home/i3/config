@@ -185,3 +185,4 @@ gaps inner 20
 smart_gaps on
 
 exec_always --no-startup-id ~/.config/polybar/launch.sh
+exec_always feh --bg-fill ~/dots/media/BLACK_VII_desktop-3.jpg

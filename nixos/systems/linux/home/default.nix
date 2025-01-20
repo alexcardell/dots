@@ -12,7 +12,10 @@
       bitwarden
       bitwarden-cli
       brightnessctl
-      busybox
+      cava
+      fastcompmgr
+      feh
+      killall
       polybar'
       protonvpn-cli
       protonvpn-gui
@@ -26,6 +29,4 @@
     ];
 
   programs.firefox.enable = true;
-
-  programs.cava.enable = true;
 }
