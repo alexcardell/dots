@@ -20,8 +20,8 @@
       "flipt"
       "smithy-cli"
       "whalebrew"
-      "terragrunt"
-      "tfenv"
+      # "terragrunt"
+      # "tfenv"
     ];
   };
 

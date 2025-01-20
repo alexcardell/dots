@@ -1,10 +1,12 @@
 { config, pkgs, ... }:
-{ 
+{
   home.packages = with pkgs; [
     aws-vault
     awscli2
     gh
     hiera-eyaml
-    postgresql_13
+    postgresql_16
+    tenv
+    # terragrunt
   ];
 }
