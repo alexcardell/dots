@@ -18,7 +18,7 @@ M.setup = function()
         "--line-number",
         "--column",
         "--smart-case",
-        "--hidden"
+        "--hidden",
         '--glob=!.git/*',  -- exclude .git directory
       }
     },
