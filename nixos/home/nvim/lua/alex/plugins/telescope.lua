@@ -19,6 +19,7 @@ M.setup = function()
         "--column",
         "--smart-case",
         "--hidden"
+        '--glob=!.git/*',  -- exclude .git directory
       }
     },
     extensions = {
