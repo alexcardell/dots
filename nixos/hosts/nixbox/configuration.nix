@@ -13,5 +13,5 @@
 
   networking.hostName = "nixbox"; # Define your hostname.
 
-  hardware.pulseaudio.enable = true;
+  hardware.pulseaudio.enable = false;
 }
