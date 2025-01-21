@@ -59,6 +59,13 @@
   services.libinput.enable = true;
   services.libinput.touchpad.naturalScrolling = true;
 
+  services.pipewire = {
+    enable = true;
+    audio.enable = true;
+    pulse.enable = true;
+    alsa.enable = true;
+  };
+
   # Enable CUPS to print documents.
   # services.printing.enable = true;
 

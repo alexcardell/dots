@@ -19,8 +19,6 @@
     "nvidia-persistenced"
   ];
 
-  hardware.pulseaudio.enable = false;
-
   hardware.graphics = {
     enable = true;
   };
