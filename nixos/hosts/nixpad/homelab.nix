@@ -4,6 +4,7 @@
   imports =
     [
       ./homelab-compose.nix
+      ./qbittorrent.nix
     ];
 
   # for sonarr with nixos-25.05
@@ -21,6 +22,7 @@
     lynis
     recyclarr
     unstable.jellyfin-ffmpeg
+    qbittorrent-nox
   ];
 
   # power management
