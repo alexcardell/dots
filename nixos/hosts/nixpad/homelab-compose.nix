@@ -67,6 +67,8 @@
     image = "ghcr.io/home-assistant/home-assistant:stable";
     volumes = [
       "/home/alex/dots/nixos/hosts/nixpad/home/home-assistant:/config:rw"
+      "/var/run/bluetooth:/var/run/bluetooth:rw"
+      "/var/run/dbus:/var/run/dbus:rw"
     ];
     ports = [
       "8123:8123/tcp"

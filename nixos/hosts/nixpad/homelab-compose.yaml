@@ -1,3 +1,4 @@
+---
 version: '3'
 name: 'homelab'
 services:
@@ -29,6 +30,7 @@ services:
     network_mode: 'host'
     volumes:
       - './home/home-assistant:/config'
+      - '/var/run/dbus:/var/run/dbus'
+      - '/var/run/bluetooth:/var/run/bluetooth'
     devices:
-      - '/dev/ttyUSB0:/dev/ttyUSB0'
-
+      - '/dev/ttyUSB0:/dev/ttyUSB0' # sonoff zigbee dongle

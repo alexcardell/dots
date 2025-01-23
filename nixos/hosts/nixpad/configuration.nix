@@ -17,4 +17,14 @@
     8123 # home-assistant
   ];
 
+  hardware.pulseaudio.enable = false;
+
+  hardware.bluetooth.enable = true;
+
+  services.pipewire = {
+    enable = true;
+    audio.enable = true;
+    pulse.enable = true;
+    alsa.enable = true;
+  };
 }
