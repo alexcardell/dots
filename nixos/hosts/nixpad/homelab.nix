@@ -76,6 +76,12 @@
     openFirewall = true;
   };
 
+  services.qbittorrent = {
+    enable = true;
+    port = 9009;
+    openFirewall = true;
+  };
+
   # services.flaresolverr = {
   #   enable = true;
   #   openFirewall = false;

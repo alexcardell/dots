@@ -27,4 +27,11 @@
     pulse.enable = true;
     alsa.enable = true;
   };
+
+  services.logind = {
+    extraConfig = ''
+      HandleLidSwitchExternalPower=ignore
+      HandleLidSwitchDocked=ignore
+    '';
+  };
 }
