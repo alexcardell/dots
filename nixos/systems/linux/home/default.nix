@@ -29,4 +29,11 @@
     ];
 
   programs.firefox.enable = true;
+
+  services.redshift = {
+    enable = true;
+    latitude = 53.480759;
+    longitude = -2.242631;
+    tray = true;
+  };
 }
