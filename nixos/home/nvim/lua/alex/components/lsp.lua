@@ -89,8 +89,6 @@ M.setup = function()
   vim.fn.sign_define('DiagnosticSignInfo', { text = '' })
   vim.fn.sign_define('DiagnosticSignOk', { text = '' })
 
-  
-
   vim.diagnostic.config({
     virtual_text = true,
     signs = true,
@@ -113,6 +111,8 @@ M.setup = function()
     'smithy_ls',
     'terraformls',
     'ts_ls',
+    'dockerls',
+    'docker_compose_language_service'
   }
 
   for _, server in ipairs(standard_servers) do
@@ -136,6 +136,14 @@ M.setup = function()
       },
       telemetry = {
         enable = false,
+      }
+    }
+  })
+
+  setup_server("yamlls", {
+    yaml = {
+      schemas = {
+        ["https://json.schemastore.org/github-workflow.json"] = "/.github/workflows/*"
       }
     }
   })

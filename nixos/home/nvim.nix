@@ -27,13 +27,15 @@ in
     package = pkgs.unstable.neovim-unwrapped;
 
     extraPackages = with pkgs.unstable; [
+      docker-compose-language-service
+      dockerfile-language-server-nodejs
       ltex-ls
       lua-language-server
       metals
       nixd
-      nodePackages.typescript-language-server
       terraform-ls
-      # wakatime
+      typescript-language-server
+      yaml-language-server
     ];
 
     # see xdg.configFile.nvim lua directory
