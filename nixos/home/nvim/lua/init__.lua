@@ -17,8 +17,8 @@ require('alex/plugins/base16').setup()
 -- aggregate components
 require('alex/components/lsp').setup()
 require('alex/components/dap').setup()
-require('alex/components/llm').setup()
 require('alex/components/completion').setup()
+require('alex/components/llm').setup()
 
 -- other plugins
 require('alex/plugins/nvim-lint').setup()

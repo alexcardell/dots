@@ -1,6 +1,6 @@
 local M = {}
 
-local ollama_model = "llama3.2:3b"
+local ollama_model = "deepseek-r1:8b"
 
 local setup_avante = function()
   require('render-markdown').setup({
@@ -45,17 +45,19 @@ local setup_avante = function()
 
   local colours = require('alex/plugins/base16').colours
 
-  vim.api.nvim_set_hl(0, 'AvanteTitle', {link = 'Comment' })
-  vim.api.nvim_set_hl(0, 'AvanteSubtitle', {link = 'Comment' })
-  vim.api.nvim_set_hl(0, 'AvanteThirdTitle', {link = 'Comment' })
+  vim.api.nvim_set_hl(0, 'AvanteTitle', { link = 'Comment' })
+  vim.api.nvim_set_hl(0, 'AvanteSubtitle', { link = 'Comment' })
+  vim.api.nvim_set_hl(0, 'AvanteThirdTitle', { link = 'Comment' })
 end
 
 local setup_codecompanion = function()
+  local ollama_adapter = require('codecompanion.adapters').extend("ollama", {
+    schema = { model = { default = ollama_model } }
+  })
+
   require('codecompanion').setup({
     adapters = {
-      ollama = require('codecompanion.adapters').extend("ollama", {
-        schema = { model = { default = ollama_model } }
-      })
+      ollama = ollama_adapter
     },
     strategies = {
       chat = {
