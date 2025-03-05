@@ -44,23 +44,25 @@
   services.sonarr = {
     enable = true;
     openFirewall = true;
+    package = pkgs.unstable.sonarr;
   };
 
   services.radarr = {
     enable = true;
     openFirewall = true;
+    package = pkgs.unstable.radarr;
   };
 
-  services.lidarr = {
-    enable = true;
-    openFirewall = true;
-  };
-
-  services.readarr = {
-    enable = true;
-    openFirewall = true;
-  };
-
+  # services.lidarr = {
+  #   enable = true;
+  #   openFirewall = true;
+  # };
+  #
+  # services.readarr = {
+  #   enable = true;
+  #   openFirewall = true;
+  # };
+  #
   services.prowlarr = {
     enable = true;
     openFirewall = true;
@@ -71,11 +73,11 @@
     openFirewall = true;
   };
 
-  services.jellyseerr =  {
-    enable = true;
-    openFirewall = true;
-  };
-
+  # services.jellyseerr =  {
+  #   enable = true;
+  #   openFirewall = true;
+  # };
+  #
   services.qbittorrent = {
     enable = true;
     port = 9009;
