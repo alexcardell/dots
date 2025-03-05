@@ -17,8 +17,8 @@
       feh
       killall
       polybar'
-      protonvpn-cli
-      protonvpn-gui
+      unstable.protonvpn-cli_2
+      unstable.protonvpn-gui
       rofi
       unstable.qbittorrent
       unstable.veracrypt
