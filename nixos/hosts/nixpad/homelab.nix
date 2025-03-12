@@ -66,18 +66,20 @@
   services.prowlarr = {
     enable = true;
     openFirewall = true;
+    package = pkgs.unstable.prowlarr;
   };
 
   services.bazarr = {
     enable = true;
     openFirewall = true;
+    package = pkgs.unstable.bazarr;
   };
 
   # services.jellyseerr =  {
   #   enable = true;
   #   openFirewall = true;
   # };
-  #
+
   services.qbittorrent = {
     enable = true;
     port = 9009;
