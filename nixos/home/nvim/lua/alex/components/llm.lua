@@ -61,13 +61,13 @@ local setup_codecompanion = function()
     },
     strategies = {
       chat = {
-        adapter = "ollama",
+        adapter = "copilot",
       },
       inline = {
-        adapter = "ollama",
+        adapter = "copilot",
       },
       agent = {
-        adapter = "ollama",
+        adapter = "copilot",
       },
     },
   })

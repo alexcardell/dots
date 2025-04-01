@@ -1,15 +1,15 @@
 { pkgs, ... }:
 let
   vimPluginsGithub = {
-    # nvim-metals = pkgs.vimUtils.buildVimPlugin {
-    #   name = "nvim-metals";
-    #   src = pkgs.fetchFromGitHub {
-    #     owner = "scalameta";
-    #     repo = "nvim-metals";
-    #     rev = "1b87e6bfa4174b5fbaee9ca7ec79d8eae8df7f18";
-    #     hash = "sha256-VQOolBCVYZ1T71REjgD7X/+txd1awmdGgW154hc30Y8=";
-    #   };
-    # };
+    codecompanion-nvim = pkgs.vimUtils.buildVimPlugin {
+      name = "codecompanion-nvim";
+      src = pkgs.fetchFromGitHub {
+        owner = "olimorris";
+        repo = "codecompanion.nvim";
+        rev = "c3add8138fe624b794d2226fb04c8540cea73aa7";
+        hash = "sha256-8dhdsiq/WDbPJv6eVHAwvOQpuVCgG3NoTaCsaltciZg=";
+      };
+    };
   };
 in
 {
@@ -72,11 +72,12 @@ in
         # plug.vim-wakatime
         # plug.zen-mode-nvim
         # plug.zk-nvim
+        pinned.codecompanion-nvim
         plug.Navigator-nvim
+        plug.copilot-vim
         plug.avante-nvim
         plug.base16-nvim
         plug.blink-cmp
-        plug.codecompanion-nvim
         plug.diffview-nvim
         plug.edgy-nvim
         plug.fidget-nvim
