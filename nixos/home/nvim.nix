@@ -57,7 +57,6 @@ in
         # plug.cmp-path
         # plug.cmp_luasnip
         # plug.markdown-preview-nvim
-        # plug.nvim-cmp
         # plug.nvim-lint
         # plug.telescope-fzf-writer-nvim
         # plug.telescope-symbols-nvim
