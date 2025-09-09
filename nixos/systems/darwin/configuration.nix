@@ -13,6 +13,7 @@
       "firefox"
       "malwarebytes"
       "obsidian"
+      "docker-desktop"
     ];
     brews = [
       "adr-tools"
