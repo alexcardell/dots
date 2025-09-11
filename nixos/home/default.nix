@@ -21,7 +21,7 @@
     jq
     kitty
     nerdfonts
-    nodejs-18_x
+    nodejs_22
     ripgrep
     sbt
     shellcheck
