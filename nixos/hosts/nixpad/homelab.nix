@@ -6,7 +6,7 @@
       ./homelab-compose.nix
     ];
 
-  # for sonarr with nixos-24.11
+  # for sonarr with nixos-25.05
   nixpkgs.config.permittedInsecurePackages = [
     "aspnetcore-runtime-6.0.36"
     "aspnetcore-runtime-wrapped-6.0.36"
