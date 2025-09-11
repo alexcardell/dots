@@ -6,7 +6,10 @@
 
     nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
 
-    nur.url = "github:nix-community/nur";
+    nur = {
+      url = "github:nix-community/nur";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     home-manager = {
       url = "github:nix-community/home-manager/release-25.05";
@@ -32,10 +35,10 @@
     let
       darwinConfiguration = { pkgs, ... }: {
         nix.package = pkgs.nixVersions.stable;
-        nix.extraOptions = ''
-          experimental-features = nix-command flakes
-        '';
-        services.nix-daemon.enable = true;
+        # nix.extraOptions = ''
+        #   experimental-features = nix-command flakes
+        # '';
+        # services.nix-daemon.enable = true;
       };
 
       overlay-unstable = system: final: prev: {
@@ -112,7 +115,7 @@
               darwinConfiguration
               ./nixos/systems/darwin/configuration.nix
               ./nixos/hosts/darwin/configuration.nix
-              home-manager.darwinModules
+              home-manager.darwinModules.home-manager
               {
                 home-manager = {
                   useGlobalPkgs = true;
