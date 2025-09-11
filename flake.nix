@@ -2,19 +2,22 @@
   description = "NixOS system configuration (alexcardell)";
 
   inputs = {
-    nixpkgs.url = "nixpkgs/nixos-24.11";
+    nixpkgs.url = "nixpkgs/nixos-25.05";
 
     nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
 
-    nur.url = "github:nix-community/nur";
+    nur = {
+      url = "github:nix-community/nur";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     home-manager = {
-      url = "github:nix-community/home-manager/release-24.11";
+      url = "github:nix-community/home-manager/release-25.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
     darwin = {
-      url = "github:LnL7/nix-darwin/nix-darwin-24.11";
+      url = "github:LnL7/nix-darwin/nix-darwin-25.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -32,10 +35,10 @@
     let
       darwinConfiguration = { pkgs, ... }: {
         nix.package = pkgs.nixVersions.stable;
-        nix.extraOptions = ''
-          experimental-features = nix-command flakes
-        '';
-        services.nix-daemon.enable = true;
+        # nix.extraOptions = ''
+        #   experimental-features = nix-command flakes
+        # '';
+        # services.nix-daemon.enable = true;
       };
 
       overlay-unstable = system: final: prev: {
@@ -112,7 +115,7 @@
               darwinConfiguration
               ./nixos/systems/darwin/configuration.nix
               ./nixos/hosts/darwin/configuration.nix
-              home-manager.darwinModule
+              home-manager.darwinModules.home-manager
               {
                 home-manager = {
                   useGlobalPkgs = true;

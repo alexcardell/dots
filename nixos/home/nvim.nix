@@ -1,15 +1,15 @@
 { pkgs, ... }:
 let
   vimPluginsGithub = {
-    codecompanion-nvim = pkgs.vimUtils.buildVimPlugin {
-      name = "codecompanion-nvim";
-      src = pkgs.fetchFromGitHub {
-        owner = "olimorris";
-        repo = "codecompanion.nvim";
-        rev = "c3add8138fe624b794d2226fb04c8540cea73aa7";
-        hash = "sha256-8dhdsiq/WDbPJv6eVHAwvOQpuVCgG3NoTaCsaltciZg=";
-      };
-    };
+    # codecompanion-nvim = pkgs.vimUtils.buildVimPlugin {
+    #   name = "codecompanion-nvim";
+    #   src = pkgs.fetchFromGitHub {
+    #     owner = "olimorris";
+    #     repo = "codecompanion.nvim";
+    #     rev = "c3add8138fe624b794d2226fb04c8540cea73aa7";
+    #     hash = "sha256-8dhdsiq/WDbPJv6eVHAwvOQpuVCgG3NoTaCsaltciZg=";
+    #   };
+    # };
   };
 in
 {
@@ -71,7 +71,8 @@ in
         # plug.vim-wakatime
         # plug.zen-mode-nvim
         # plug.zk-nvim
-        pinned.codecompanion-nvim
+        # pinned.codecompanion-nvim
+        plug.codecompanion-nvim
         plug.Navigator-nvim
         plug.copilot-vim
         plug.avante-nvim

@@ -43,7 +43,7 @@ local setup_avante = function()
     }
   })
 
-  local colours = require('alex/plugins/base16').colours
+  -- local colours = require('alex/plugins/base16').colours
 
   vim.api.nvim_set_hl(0, 'AvanteTitle', { link = 'Comment' })
   vim.api.nvim_set_hl(0, 'AvanteSubtitle', { link = 'Comment' })
@@ -57,7 +57,9 @@ local setup_codecompanion = function()
 
   require('codecompanion').setup({
     adapters = {
-      ollama = ollama_adapter
+      http = {
+        ollama = ollama_adapter
+      }
     },
     strategies = {
       chat = {

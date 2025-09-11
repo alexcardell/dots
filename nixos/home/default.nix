@@ -20,8 +20,8 @@
     gnupg
     jq
     kitty
-    nerdfonts
-    nodejs-18_x
+    nerd-fonts.sauce-code-pro
+    nodejs_22
     ripgrep
     sbt
     shellcheck
@@ -61,7 +61,7 @@
     };
 
     envExtra = builtins.readFile ./zsh/.zshenv;
-    initExtra = builtins.readFile ./zsh/.zshrc;
+    initContent = builtins.readFile ./zsh/.zshrc;
 
     plugins = [
       {
