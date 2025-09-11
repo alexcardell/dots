@@ -112,7 +112,7 @@
               darwinConfiguration
               ./nixos/systems/darwin/configuration.nix
               ./nixos/hosts/darwin/configuration.nix
-              home-manager.darwinModule
+              home-manager.darwinModules
               {
                 home-manager = {
                   useGlobalPkgs = true;
