@@ -65,3 +65,5 @@ vim.filetype.add({
     ['.*/.github/workflows/.*%.yaml'] = 'yaml.ghaction',
   },
 })
+
+vim.o.winborder = 'rounded'
