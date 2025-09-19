@@ -9,21 +9,21 @@ local default_on_attach = function(client, _)
   client.server_capabilities.semanticTokensProvider = nil
 end
 
-local border = "rounded"
+-- local border = "rounded"
 
-local default_handlers = {
-  ["textDocument/hover"] = vim.lsp.with(
-    vim.lsp.handlers.hover,
-    { border = border }
-  ),
-  ["textDocument/signatureHelp"] = vim.lsp.with(
-    vim.lsp.handlers.signature_help,
-    { border = border }
-  ),
-}
+-- local default_handlers = {
+--   ["textDocument/hover"] = vim.lsp.with(
+--     vim.lsp.handlers.hover,
+--     { border = border }
+--   ),
+--   ["textDocument/signatureHelp"] = vim.lsp.with(
+--     vim.lsp.handlers.signature_help,
+--     { border = border }
+--   ),
+-- }
 
 local setup_server = function(lsp, settings, handlers, on_attach)
-  handlers = handlers or default_handlers
+  handlers = handlers -- or default_handlers
   on_attach = on_attach or default_on_attach
 
   if settings then
@@ -67,7 +67,7 @@ local setup_metals = function()
     default_on_attach(client, bufnr)
   end
 
-  config.handlers = default_handlers
+  -- config.handlers = -- default_handlers
 
   vim.api.nvim_create_autocmd('Filetype', {
     pattern = { "java", "scala", "sbt" },
