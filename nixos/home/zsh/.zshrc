@@ -38,12 +38,18 @@ unsetopt beep
 #------------
 # Completion
 #------------
-# zstyle ':completion:*' menu select
-# zmodload zsh/complist
-autoload -U compinit && compinit
+zstyle ':completion:*' menu select
+zmodload zsh/complist
+
+# Homebrew completion path
+if [ -d /opt/homebrew/share/zsh/site-functions ]; then
+  fpath=(/opt/homebrew/share/zsh/site-functions "${fpath[@]}")
+fi
 
 COMPLETION_PATH="${ZDOTDIR}/completions"
-fpath=("${COMPLETION_PATH}" ${fpath})
+fpath=("${COMPLETION_PATH}" "${fpath[@]}")
+
+fpath=("$ZDOTDIR/autoloaded" "${fpath[@]}")
 
 # aws just has to do things their own way
 aws_path=$(which aws_completer)
@@ -51,6 +57,8 @@ aws_path=$(which aws_completer)
 if [[ -e "$aws_path" ]]; then
   complete -C "$(which aws_completer)" aws
 fi
+
+autoload -U compinit && compinit
 
 #--------
 # Prompt
@@ -166,7 +174,6 @@ function zvm_after_init() {
 }
 
 # Autoload custom functions
-fpath=("$ZDOTDIR/autoloaded" $fpath)
 autoloaded="${ZDOTDIR}/autoloaded"
 if [[ -d "${autoloaded}" ]]; then
   for func in $autoloaded/*; do
@@ -174,7 +181,6 @@ if [[ -d "${autoloaded}" ]]; then
   done
 fi
 unset autoloaded
-
 
 if [ "${PROFILE}" ]; then
     zprof
