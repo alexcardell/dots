@@ -67,3 +67,5 @@ vim.filetype.add({
 })
 
 vim.o.winborder = 'rounded'
+
+vim.opt.fillchars:append("diff:╱")
