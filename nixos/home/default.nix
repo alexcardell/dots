@@ -14,6 +14,7 @@
   home.packages = with pkgs; [
     actionlint
     entr
+    fd
     git-crypt
     git-extras
     git-filter-repo
