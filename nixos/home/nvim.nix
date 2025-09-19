@@ -46,38 +46,15 @@ in
     plugins =
       let
         plug = pkgs.unstable.vimPlugins;
-        pinned = vimPluginsGithub;
+        # pinned = vimPluginsGithub;
       in [
-        # plug.cmp-buffer
-        # plug.cmp-dap
-        # plug.cmp-git
-        # plug.cmp-nvim-lsp
-        # plug.cmp-nvim-lsp-signature-help
-        # plug.cmp-nvim-lua
-        # plug.cmp-path
-        # plug.cmp_luasnip
-        # plug.markdown-preview-nvim
-        # plug.nvim-lint
-        # plug.telescope-fzf-writer-nvim
-        # plug.telescope-symbols-nvim
-        # plug.twilight-nvim
-        # plug.vim-commentary
-        # plug.vim-fugitive
-        # plug.vim-illuminate
-        # plug.vim-nix
-        # plug.vim-repeat
-        # plug.vim-rhubarb
-        # plug.vim-surround
-        # plug.vim-wakatime
-        # plug.zen-mode-nvim
-        # plug.zk-nvim
-        # pinned.codecompanion-nvim
-        plug.codecompanion-nvim
         plug.Navigator-nvim
-        plug.copilot-vim
         plug.avante-nvim
         plug.base16-nvim
         plug.blink-cmp
+        plug.codecompanion-history-nvim
+        plug.codecompanion-nvim
+        plug.copilot-vim
         plug.diffview-nvim
         plug.edgy-nvim
         plug.fidget-nvim

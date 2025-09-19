@@ -72,6 +72,11 @@ local setup_codecompanion = function()
         adapter = "copilot",
       },
     },
+    extensions = {
+      history = {
+        enabled = true
+      }
+    }
   })
 end
 
