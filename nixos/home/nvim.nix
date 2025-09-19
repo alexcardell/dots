@@ -1,6 +1,6 @@
 { pkgs, ... }:
 let
-  vimPluginsGithub = {
+  # vimPluginsGithub = {
     # codecompanion-nvim = pkgs.vimUtils.buildVimPlugin {
     #   name = "codecompanion-nvim";
     #   src = pkgs.fetchFromGitHub {
@@ -10,7 +10,7 @@ let
     #     hash = "sha256-8dhdsiq/WDbPJv6eVHAwvOQpuVCgG3NoTaCsaltciZg=";
     #   };
     # };
-  };
+  # };
 in
 {
   xdg.configFile.nvim = {
@@ -91,6 +91,7 @@ in
         plug.telescope-ui-select-nvim
         plug.tint-nvim
         plug.undotree
+        plug.vectorcode-nvim
         plug.vim-dadbod
         plug.vim-dadbod-completion
         plug.vim-dadbod-ui

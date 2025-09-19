@@ -32,6 +32,7 @@
     unstable.ollama
     unstable.scala-cli
     unstable.sloth
+    unstable.vectorcode
     vale
     xdg-ninja
     yamllint
