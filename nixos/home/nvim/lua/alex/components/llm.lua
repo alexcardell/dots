@@ -75,12 +75,25 @@ local setup_codecompanion = function()
     extensions = {
       history = {
         enabled = true
+      },
+      mcphub = {
+        callback = "mcphub.extensions.codecompanion",
+        opts = {
+          make_vars = true,
+          make_slash_commands = true,
+          show_result_in_chat = true
+        }
       }
     }
   })
 end
 
+local setup_mcphub = function()
+  require('mcphub').setup({ port = 37373 })
+end
+
 M.setup = function()
+  setup_mcphub()
   setup_codecompanion()
   -- setup_avante()
 end
