@@ -1,4 +1,3 @@
-local lspconfig = require('lspconfig')
 local metals = require('metals')
 
 local M = {}
@@ -21,25 +20,6 @@ end
 --     { border = border }
 --   ),
 -- }
-
-local setup_server = function(lsp, settings, handlers, on_attach)
-  handlers = handlers -- or default_handlers
-  on_attach = on_attach or default_on_attach
-
-  if settings then
-    lspconfig[lsp].setup({
-      on_attach = on_attach,
-      handlers = handlers,
-      settings = settings
-    })
-  else
-    lspconfig[lsp].setup({
-      on_attach = on_attach,
-      handlers = handlers,
-      settings = settings
-    })
-  end
-end
 
 local setup_metals = function()
   local config = metals.bare_config()
@@ -83,27 +63,13 @@ local setup_metals = function()
 end
 
 M.setup = function()
-  vim.fn.sign_define('DiagnosticSignError', { text = '' })
-  vim.fn.sign_define('DiagnosticSignWarn', { text = '' })
-  vim.fn.sign_define('DiagnosticSignHint', { text = '' })
-  vim.fn.sign_define('DiagnosticSignInfo', { text = '' })
-  vim.fn.sign_define('DiagnosticSignOk', { text = '' })
-
-  vim.diagnostic.config({
-    virtual_text = true,
-    signs = true,
-    underline = false,
-    update_in_insert = false,
-    severity_sort = true,
-  })
-
-  lspconfig.util.default_config = vim.tbl_extend(
-    "force",
-    lspconfig.util.default_config,
-    {
-      capabilities = capabilities,
-    }
-  )
+  -- lspconfig.util.default_config = vim.tbl_extend(
+  --   "force",
+  --   lspconfig.util.default_config,
+  --   {
+  --     capabilities = capabilities,
+  --   }
+  -- )
 
   -- anything with standard empty configuration
   local standard_servers = {
@@ -116,17 +82,18 @@ M.setup = function()
   }
 
   for _, server in ipairs(standard_servers) do
-    setup_server(server)
+    vim.lsp.enable(server)
   end
 
-  setup_server("ltex", {
+  vim.lsp.config("ltex", {
     ltex = {
       language = "en-GB",
       motherTongue = "en-GB"
     },
   })
+  vim.lsp.enable("ltex")
 
-  setup_server("lua_ls", {
+  vim.lsp.config("lua_ls", {
     Lua = {
       runtime = { version = 'LuaJIT', },
       diagnostics = { globals = { 'vim' } },
@@ -139,14 +106,16 @@ M.setup = function()
       }
     }
   })
+  vim.lsp.enable("lua_ls")
 
-  setup_server("yamlls", {
+  vim.lsp.config("yamlls", {
     yaml = {
       schemas = {
         ["https://json.schemastore.org/github-workflow.json"] = "/.github/workflows/*"
       }
     }
   })
+  vim.lsp.enable("yamlls")
 
   setup_metals()
 end
