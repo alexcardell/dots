@@ -25,13 +25,6 @@ let
         rev = "c1fa2a84ea1aed687aaed60df65e347c280f4f22";
         hash = "sha256-+lalwWE02YlLlU5zSqBotI5YstDuXtF8k0e6b7lxnhU=";
       };
-      # dependencies = with pkgs.unstable.vimPlugins; [
-      #   plenary-nvim
-      #   lualine-nvim
-      # ];
-      # nvimSkipModules = [
-      #   "bundled_build"
-      # ];
     };
 
   };
