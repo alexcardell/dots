@@ -1,6 +1,7 @@
 { config, pkgs, ... }:
 {
-  home.packages = with pkgs;
+  home.packages =
+    with pkgs;
     let
       polybar' = polybar.override {
         i3Support = true;

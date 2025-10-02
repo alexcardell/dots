@@ -69,9 +69,12 @@
   users.users.alex = {
     isNormalUser = true;
     shell = pkgs.zsh;
-    extraGroups = [ "wheel" "docker" "dialout" ]; # Enable ‘sudo’ for the user.
+    extraGroups = [
+      "wheel"
+      "docker"
+      "dialout"
+    ]; # Enable ‘sudo’ for the user.
   };
-
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget

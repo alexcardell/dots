@@ -1,11 +1,10 @@
 { pkgs, ... }:
 {
 
-  imports =
-    [
-      ./homelab-compose.nix
-      ./qbittorrent.nix
-    ];
+  imports = [
+    ./homelab-compose.nix
+    ./qbittorrent.nix
+  ];
 
   # for sonarr with nixos-25.05
   nixpkgs.config.permittedInsecurePackages = [
@@ -15,7 +14,7 @@
     "dotnet-sdk-wrapped-6.0.428"
   ];
 
-  environment.systemPackages = with pkgs;[
+  environment.systemPackages = with pkgs; [
     chkrootkit
     jellycli
     jellyfin-web

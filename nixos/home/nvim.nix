@@ -36,10 +36,12 @@ let
       sha256 = "sha256-a2UI2hPJbnJglGbX7YCex2ON8+m14hoc3ApZu21PuCs=";
     };
     postPatch = ''
-      cp ${pkgs.fetchurl {
-        url = "https://raw.githubusercontent.com/ravitemer/mcp-hub/9c7670a4c341ed3cf738a6242c0fde1cea40bccf/package-lock.json";
-        sha256 = "sha256-721x+/2GeQfGKKVcWMKwIdW+HJoo55EvR1HYD8pIi0o=";
-      }} package-lock.json
+      cp ${
+        pkgs.fetchurl {
+          url = "https://raw.githubusercontent.com/ravitemer/mcp-hub/9c7670a4c341ed3cf738a6242c0fde1cea40bccf/package-lock.json";
+          sha256 = "sha256-721x+/2GeQfGKKVcWMKwIdW+HJoo55EvR1HYD8pIi0o=";
+        }
+      } package-lock.json
     '';
     npmDepsHash = "sha256-nyenuxsKRAL0PU/UPSJsz8ftHIF+LBTGdygTqxti38g=";
     dontNpmBuild = true;
@@ -81,7 +83,8 @@ in
       let
         plug = pkgs.unstable.vimPlugins;
         pinned = pinnedVimPlugins;
-      in [
+      in
+      [
         pinned.mcphub-nvim
         pinned.codecompanion-spinner-nvim
         plug.Navigator-nvim
