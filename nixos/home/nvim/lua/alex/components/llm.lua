@@ -83,7 +83,8 @@ local setup_codecompanion = function()
           make_slash_commands = true,
           show_result_in_chat = true
         }
-      }
+      },
+      spinner = {}
     }
   })
 end
