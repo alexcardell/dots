@@ -37,6 +37,7 @@ require('alex/plugins/tint').setup()
 require('alex/plugins/outline').setup()
 require('alex/plugins/marks').setup()
 require('alex/plugins/lualine').setup()
+require('alex/plugins/render-markdown').setup()
 
 -- keymappings
 require('alex/keys')
