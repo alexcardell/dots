@@ -23,23 +23,26 @@
 
   };
 
-  outputs = {
-    nixpkgs,
-    nixpkgs-unstable,
-    nur,
-    home-manager,
-    darwin,
-    # neovim-nightly-overlay,
-    ...
-  }:
+  outputs =
+    {
+      nixpkgs,
+      nixpkgs-unstable,
+      nur,
+      home-manager,
+      darwin,
+      # neovim-nightly-overlay,
+      ...
+    }:
     let
-      darwinConfiguration = { pkgs, ... }: {
-        nix.package = pkgs.nixVersions.stable;
-        # nix.extraOptions = ''
-        #   experimental-features = nix-command flakes
-        # '';
-        # services.nix-daemon.enable = true;
-      };
+      darwinConfiguration =
+        { pkgs, ... }:
+        {
+          nix.package = pkgs.nixVersions.stable;
+          # nix.extraOptions = ''
+          #   experimental-features = nix-command flakes
+          # '';
+          # services.nix-daemon.enable = true;
+        };
 
       overlay-unstable = system: final: prev: {
         # unstable = nixpkgs-unstable.legacyPackages.${prev.system};
@@ -56,12 +59,16 @@
         # neovim-nightly-overlay.overlays.default
       ];
 
-      nixosConfiguration = hostname:
+      nixosConfiguration =
+        hostname:
         let
           system = "x86_64-linux";
-          overlays = ({ ... }: {
-            nixpkgs.overlays = sharedOverlays system;
-          });
+          overlays = (
+            { ... }:
+            {
+              nixpkgs.overlays = sharedOverlays system;
+            }
+          );
           os-configuration = ./nixos/systems/linux/configuration.nix;
           os-home = ./nixos/systems/linux/home/default.nix;
           host-configuration = (./nixos/hosts + "/${hostname}" + /configuration.nix);
@@ -103,9 +110,12 @@
         "RJ4QHFPQRX" =
           let
             system = "aarch64-darwin";
-            overlays = ({ ... }: {
-              nixpkgs.overlays = sharedOverlays system;
-            });
+            overlays = (
+              { ... }:
+              {
+                nixpkgs.overlays = sharedOverlays system;
+              }
+            );
           in
           darwin.lib.darwinSystem {
             inherit system;
@@ -133,5 +143,7 @@
             ];
           };
       };
+
+      formatter.x86_64-linux = nixpkgs.legacyPackages."x86_64-linux".nixfmt-tree;
     };
 }

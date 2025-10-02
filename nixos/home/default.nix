@@ -101,7 +101,13 @@
     enable = true;
     tmuxp.enable = true;
 
-    extraConfig = builtins.readFile ./tmux/.tmux.conf;
+    extraConfig =
+      let
+        isDarwin = pkgs.stdenv.isDarwin;
+        commonConfig = builtins.readFile ./tmux/.tmux.conf;
+        darwinConfig = builtins.readFile ./tmux/.tmux.darwin.conf;
+      in
+      if isDarwin then darwinConfig + "\n" + commonConfig else commonConfig;
   };
 
   programs.fzf = {
