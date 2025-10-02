@@ -7,11 +7,16 @@
     ./homelab.nix
   ];
 
-  networking.hostName = "nixpad"; # Define your hostname.
+  networking.hostName = "nixpad";
+
+  networking.interfaces.enp0s31f6.useDHCP = true;
+  networking.interfaces.wlp4s0.useDHCP = true;
+
   # networking.nameservers = [
   #   "1.1.1.1"
   #   "1.0.0.1"
   # ];
+
   networking.firewall.allowedTCPPorts = [
     8123 # home-assistant
   ];

@@ -13,6 +13,9 @@
 
   networking.hostName = "nixbox"; # Define your hostname.
 
+  networking.interfaces.enp42s0.useDHCP = true;
+  networking.interfaces.wlp4s0.useDHCP = true;
+
   nixpkgs.config.allowUnfreePredicate =
     pkg:
     builtins.elem (lib.getName pkg) [
