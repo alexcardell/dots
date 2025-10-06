@@ -1,36 +1,50 @@
 ---
-version: '3'
-name: 'homelab'
+name: "homelab"
+
 services:
+  grafana:
+    container_name: grafana
+    image: grafana/grafana:latest
+    restart: unless-stopped
+    ports:
+      - "3333:3000"
+    environment:
+      - GF_SERVER_HTTP_PORT=3333
+    volumes:
+      - grafana_storage:/var/lib/grafana
+    network_mode: "host"
   homarr:
     container_name: homarr
     image: ghcr.io/ajnart/homarr:latest
     restart: unless-stopped
     volumes:
-      # - /var/run/docker.sock:/var/run/docker.sock # Optional, only if you want docker integration
+      - /var/run/docker.sock:/var/run/docker.sock
       - ./home/homarr/configs:/app/data/configs
       - ./home/homarr/icons:/app/public/icons
       - ./home/homarr/data:/data
     ports:
-      - '7575:7575'
-    network_mode: 'host'
+      - "7575:7575"
+    network_mode: "host"
   flaresolverr:
     container_name: flaresolverr
     image: flaresolverr/flaresolverr
     restart: unless-stopped
     ports:
-      - '8191:8191'
-    network_mode: 'host'
+      - "8191:8191"
+    network_mode: "host"
   home-assistant:
     container_name: home-assistant
     image: ghcr.io/home-assistant/home-assistant:stable
     restart: unless-stopped
     ports:
-      - '8123:8123'
-    network_mode: 'host'
+      - "8123:8123"
+    network_mode: "host"
     volumes:
-      - './home/home-assistant:/config'
-      - '/var/run/dbus:/var/run/dbus'
-      - '/var/run/bluetooth:/var/run/bluetooth'
+      - "./home/home-assistant:/config"
+      - "/var/run/dbus:/var/run/dbus"
+      - "/var/run/bluetooth:/var/run/bluetooth"
     devices:
-      - '/dev/ttyUSB0:/dev/ttyUSB0' # sonoff zigbee dongle
+      - "/dev/ttyUSB0:/dev/ttyUSB0" # sonoff zigbee dongle
+
+volumes:
+  grafana_storage: {}

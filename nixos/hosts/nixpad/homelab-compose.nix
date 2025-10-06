@@ -1,4 +1,4 @@
-# Auto-generated using compose2nix v0.3.2-pre.
+# Auto-generated using compose2nix v0.3.3-pre.
 { pkgs, lib, ... }:
 
 {
@@ -34,12 +34,49 @@
       "docker-compose-homelab-root.target"
     ];
   };
+  virtualisation.oci-containers.containers."grafana" = {
+    image = "grafana/grafana:latest";
+    environment = {
+      "GF_SERVER_HTTP_PORT" = "3333";
+    };
+    volumes = [
+      "homelab_grafana_storage:/var/lib/grafana:rw"
+    ];
+    ports = [
+      "3333:3000/tcp"
+    ];
+    log-driver = "journald";
+    extraOptions = [
+      "--network=host"
+    ];
+  };
+  systemd.services."docker-grafana" = {
+    serviceConfig = {
+      Restart = lib.mkOverride 90 "always";
+      RestartMaxDelaySec = lib.mkOverride 90 "1m";
+      RestartSec = lib.mkOverride 90 "100ms";
+      RestartSteps = lib.mkOverride 90 9;
+    };
+    after = [
+      "docker-volume-homelab_grafana_storage.service"
+    ];
+    requires = [
+      "docker-volume-homelab_grafana_storage.service"
+    ];
+    partOf = [
+      "docker-compose-homelab-root.target"
+    ];
+    wantedBy = [
+      "docker-compose-homelab-root.target"
+    ];
+  };
   virtualisation.oci-containers.containers."homarr" = {
     image = "ghcr.io/ajnart/homarr:latest";
     volumes = [
       "/home/alex/dots/nixos/hosts/nixpad/home/homarr/configs:/app/data/configs:rw"
       "/home/alex/dots/nixos/hosts/nixpad/home/homarr/data:/data:rw"
       "/home/alex/dots/nixos/hosts/nixpad/home/homarr/icons:/app/public/icons:rw"
+      "/var/run/docker.sock:/var/run/docker.sock:rw"
     ];
     ports = [
       "7575:7575/tcp"
@@ -92,6 +129,20 @@
     wantedBy = [
       "docker-compose-homelab-root.target"
     ];
+  };
+
+  # Volumes
+  systemd.services."docker-volume-homelab_grafana_storage" = {
+    path = [ pkgs.docker ];
+    serviceConfig = {
+      Type = "oneshot";
+      RemainAfterExit = true;
+    };
+    script = ''
+      docker volume inspect homelab_grafana_storage || docker volume create homelab_grafana_storage
+    '';
+    partOf = [ "docker-compose-homelab-root.target" ];
+    wantedBy = [ "docker-compose-homelab-root.target" ];
   };
 
   # Root service

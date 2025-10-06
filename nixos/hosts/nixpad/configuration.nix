@@ -19,6 +19,8 @@
 
   networking.firewall.allowedTCPPorts = [
     8123 # home-assistant
+    7575 # homarr
+    3333 # grafana
   ];
 
   hardware.pulseaudio.enable = false;
