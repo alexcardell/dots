@@ -84,7 +84,7 @@
   programs.gnupg.agent = {
     enable = true;
     enableSSHSupport = true;
-    pinentryPackage = pkgs.pinentry-qt;
+    pinentryPackage = pkgs.pinentry-tty;
   };
 
   # List services that you want to enable:

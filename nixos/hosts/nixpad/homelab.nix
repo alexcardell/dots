@@ -3,7 +3,6 @@
 
   imports = [
     ./homelab-compose.nix
-    ./qbittorrent.nix
   ];
 
   # for sonarr with nixos-25.05
@@ -21,7 +20,6 @@
     lynis
     recyclarr
     unstable.jellyfin-ffmpeg
-    qbittorrent-nox
   ];
 
   # power management
@@ -33,6 +31,7 @@
     };
   };
 
+  # port 8096
   services.jellyfin = {
     enable = true;
     package = pkgs.unstable.jellyfin;
@@ -40,53 +39,45 @@
     openFirewall = true;
   };
 
+  # port 8989
   services.sonarr = {
     enable = true;
     openFirewall = true;
     package = pkgs.unstable.sonarr;
   };
 
+  # port 7878
   services.radarr = {
     enable = true;
     openFirewall = true;
     package = pkgs.unstable.radarr;
   };
 
-  # services.lidarr = {
-  #   enable = true;
-  #   openFirewall = true;
-  # };
-  #
-  # services.readarr = {
-  #   enable = true;
-  #   openFirewall = true;
-  # };
-  #
+  # port 9696
   services.prowlarr = {
     enable = true;
     openFirewall = true;
     package = pkgs.unstable.prowlarr;
   };
 
+  # port 6767;
   services.bazarr = {
     enable = true;
     openFirewall = true;
     package = pkgs.unstable.bazarr;
   };
 
-  # services.jellyseerr =  {
-  #   enable = true;
-  #   openFirewall = true;
-  # };
+  services.jellyseerr =  {
+    enable = true;
+    port = 5055;
+    openFirewall = true;
+    package = pkgs.unstable.jellyseerr;
+  };
 
   services.qbittorrent = {
     enable = true;
-    port = 9009;
+    webuiPort = 9009;
     openFirewall = true;
+    package = pkgs.unstable.qbittorrent-nox;
   };
-
-  # services.flaresolverr = {
-  #   enable = true;
-  #   openFirewall = false;
-  # };
 }
