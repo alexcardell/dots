@@ -5,7 +5,7 @@ fi
 OS=$(uname)
 OS=$OS:l
 
-if [ -e ${ZDOTDIR} ]; then
+if [ -e "${ZDOTDIR}" ]; then
   ZDOTDIR="${HOME}/.zsh"
 fi
 
@@ -112,8 +112,10 @@ precmd() {
 }
 
 function () {
-  local INTMUX=$([[ "$TERM" =~ "tmux" ]] && echo tmux)
-  if [ -n "$INTMUX" -a -n "$TMUX" ]; then
+  # TODO determine if there is a need for this and $TMUX
+  # local TMUX_TERM=$([[ "$TERM" =~ "tmux" ]] && echo tmux)
+
+  if [ -n "${TMUX}" ]; then
     LVL=$(($SHLVL - 1))
   else
     LVL=$SHLVL
@@ -126,20 +128,21 @@ function () {
   # {% endif %}
 
   _ZSH_PROMPTARROW=$(printf '%%F{red}%%B>%.0s%%b%%f' {1..$LVL})
+
+  # italic start
+  local IT=$'\e[3m'
+  # italic end
+  local it=$'\e[0m'
+
+  if [ -n "${SSH_CONNECTION}" -a -z "${TMUX}" ]; then
+    _ZSH_PROMPT_SSH="%B%F{white}${IT}%n@%m${it}%f%b"
+  else
+    # rely on tmux ssh status
+    _ZSH_PROMPT_SSH=""
+  fi
+
+  _ZSH_PROMPT_USER="%F{blue}alex%f"
 }
-
-# italic start
-local IT=$'\e[3m'
-# italic end
-local it=$'\e[0m'
-
-if [[ -n "$SSH_CONNECTION" ]]; then
-  _ZSH_PROMPT_SSH="%B%F{white}${IT}%n@%m${it}%f%b"
-else
-  _ZSH_PROMPT_SSH=""
-fi
-
-_ZSH_PROMPT_USER="%F{blue}alex%f"
 
 PROMPT='%(?. .%F{yellow}%B!%b)${_ZSH_PROMPT_SSH} ${_ZSH_PROMPT_USER} ${_ZSH_PROMPTARROW} '
 RPROMPT='%F{240}${timer_show} %F{grey}%3~ ${vcs_info_msg_0_}%f'

@@ -110,6 +110,11 @@
       if isDarwin then darwinConfig + "\n" + commonConfig else commonConfig;
   };
 
+  xdg.configFile.tmux-scripts = {
+    source = ./tmux/scripts;
+    recursive = true;
+  };
+
   programs.fzf = {
     enable = true;
     # zsh-vi-mode breaks this so it's handled in zshrc
