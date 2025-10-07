@@ -22,6 +22,38 @@
     unstable.jellyfin-ffmpeg
   ];
 
+  # security.acme = {
+  #   acceptTerms = true;
+  #
+  #   certs = {
+  #     "cardell.io" = {
+  #       email = "acme.os1o9@slmail.me";
+  #     };
+  #   };
+  # };
+
+  services.nginx = {
+    enable = true;
+    recommendedTlsSettings = true;
+    recommendedProxySettings = true;
+    virtualHosts = {
+      "192.168.0.20" = {
+        forceSSL = false;
+        enableACME = false;
+        locations."/" = {
+          proxyPass = "http://127.0.0.1:7575";
+          extraConfig = ''
+            proxy_intercept_errors on;
+            error_page 502 = /502.html;
+          '';
+        };
+        locations."/502.html" = {
+          return = "502 'Backend Down'";
+        };
+      };
+    };
+  };
+
   # power management
   services.tlp = {
     enable = true;

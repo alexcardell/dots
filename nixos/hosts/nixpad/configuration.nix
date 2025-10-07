@@ -12,12 +12,9 @@
   networking.interfaces.enp0s31f6.useDHCP = true;
   networking.interfaces.wlp4s0.useDHCP = true;
 
-  # networking.nameservers = [
-  #   "1.1.1.1"
-  #   "1.0.0.1"
-  # ];
-
   networking.firewall.allowedTCPPorts = [
+    80   # nginx
+    443  # nginx
     8123 # home-assistant
     7575 # homarr
     3333 # grafana
