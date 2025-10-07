@@ -111,9 +111,6 @@ precmd() {
   fi
 }
 
-# _ZSH_PROMPT_ICON='%B%F{red}%> %f%b'
-# _ZSH_PROMPTARROW='>'
-
 function () {
   local INTMUX=$([[ "$TERM" =~ "tmux" ]] && echo tmux)
   if [ -n "$INTMUX" -a -n "$TMUX" ]; then
@@ -131,7 +128,20 @@ function () {
   _ZSH_PROMPTARROW=$(printf '%%F{red}%%B>%.0s%%b%%f' {1..$LVL})
 }
 
-PROMPT='%(?. .%F{yellow}%B!%b)%F{blue}alex ${_ZSH_PROMPTARROW} '
+# italic start
+local IT=$'\e[3m'
+# italic end
+local it=$'\e[0m'
+
+if [[ -n "$SSH_CONNECTION" ]]; then
+  _ZSH_PROMPT_SSH="%B%F{white}${IT}%n@%m${it}%f%b"
+else
+  _ZSH_PROMPT_SSH=""
+fi
+
+_ZSH_PROMPT_USER="%F{blue}alex%f"
+
+PROMPT='%(?. .%F{yellow}%B!%b)${_ZSH_PROMPT_SSH} ${_ZSH_PROMPT_USER} ${_ZSH_PROMPTARROW} '
 RPROMPT='%F{240}${timer_show} %F{grey}%3~ ${vcs_info_msg_0_}%f'
 
 load_tmuxp() {
