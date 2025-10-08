@@ -64,12 +64,11 @@
         hostname:
         let
           system = "x86_64-linux";
-          overlays = (
+          overlays =
             { ... }:
             {
               nixpkgs.overlays = sharedOverlays system;
-            }
-          );
+            };
           os-configuration = ./nixos/systems/linux/configuration.nix;
           os-home = ./nixos/systems/linux/home/default.nix;
           host-configuration = (./nixos/hosts + "/${hostname}" + /configuration.nix);
@@ -77,9 +76,6 @@
         in
         nixpkgs.lib.nixosSystem {
           inherit system;
-
-          # allow `nixpkgs-unstable` as an argument to a module
-          # specialArgs =  nixpkgs-unstable;
 
           modules = [
             overlays

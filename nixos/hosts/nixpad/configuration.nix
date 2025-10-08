@@ -13,8 +13,8 @@
   networking.interfaces.wlp4s0.useDHCP = true;
 
   networking.firewall.allowedTCPPorts = [
-    80   # nginx
-    443  # nginx
+    80 # nginx
+    443 # nginx
     8123 # home-assistant
     7575 # homarr
     3333 # grafana
