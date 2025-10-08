@@ -54,6 +54,27 @@
     };
   };
 
+  services.slskd = {
+    enable = true;
+    user = "slskd";
+    group = "slskd";
+    domain = null;
+    environmentFile = ./home/slskd/secrets/slskd.env;
+    settings = {
+      directories = {
+        downloads = "/mnt/media/soulseek/downloads";
+        incomplete = "/mnt/media/soulseek/incomplete";
+      };
+      shares = {
+        directories = [ ];
+      };
+      web = {
+        port = 5030;
+        https.disabled = true;
+      };
+    };
+  };
+
   # power management
   services.tlp = {
     enable = true;

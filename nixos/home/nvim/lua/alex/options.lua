@@ -1,3 +1,6 @@
+-- terminal settings
+vim.opt.termguicolors = true
+
 -- indentation
 vim.opt.shiftround = true
 vim.opt.shiftwidth = 2

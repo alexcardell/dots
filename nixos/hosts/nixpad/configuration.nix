@@ -18,6 +18,7 @@
     8123 # home-assistant
     7575 # homarr
     3333 # grafana
+    5030 # slskd
   ];
 
   hardware.pulseaudio.enable = false;
