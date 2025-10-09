@@ -51,9 +51,9 @@
 
   programs.steam = {
     enable = true;
-    package = pkgs.unstable.steam;
-    remotePlay.openFirewall = true;
-    dedicatedServer.openFirewall = true;
+    # package = pkgs.unstable.steam;
+    remotePlay.openFirewall = false;
+    dedicatedServer.openFirewall = false;
     localNetworkGameTransfers.openFirewall = true;
   };
 }
