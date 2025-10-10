@@ -38,6 +38,7 @@
         { pkgs, ... }:
         {
           nix.package = pkgs.nixVersions.stable;
+          nixpkgs.config.allowUnfree = true;
           # nix.extraOptions = ''
           #   experimental-features = nix-command flakes
           # '';
