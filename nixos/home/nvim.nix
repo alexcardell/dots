@@ -135,6 +135,7 @@ in
         plug.vim-dadbod
         plug.vim-dadbod-completion
         plug.vim-dadbod-ui
+        plug.vim-flog
         plug.vim-fugitive
         plug.vim-pencil
         plug.vim-rhubarb
