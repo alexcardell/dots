@@ -12,14 +12,13 @@
     ];
 
   home.packages = with pkgs; [
+    adr-tools
     aws-vault
     awscli2
     gh
     hiera-eyaml
     postgresql_16
     tenv
-    # terragrunt
-    todoist-electron
   ];
 
 }

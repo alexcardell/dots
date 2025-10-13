@@ -14,9 +14,9 @@
       "malwarebytes"
       "obsidian"
       "docker-desktop"
+      "todoist-app"
     ];
     brews = [
-      "adr-tools"
       "docker-credential-helper-ecr"
       "flipt"
       "smithy-cli"
