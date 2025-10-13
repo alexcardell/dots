@@ -85,8 +85,8 @@ in
         pinned = pinnedVimPlugins;
       in
       [
-        pinned.mcphub-nvim
         pinned.codecompanion-spinner-nvim
+        pinned.mcphub-nvim
         plug.Navigator-nvim
         plug.avante-nvim
         plug.base16-nvim
@@ -99,6 +99,7 @@ in
         plug.fidget-nvim
         plug.gitsigns-nvim
         plug.hardtime-nvim
+        plug.img-clip-nvim
         plug.indent-blankline-nvim
         plug.lsp-progress-nvim
         plug.lspkind-nvim
