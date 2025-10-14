@@ -4,4 +4,6 @@
     pavucontrol
     lxappearance
   ];
+
+  programs.lutris.enable = true;
 }
