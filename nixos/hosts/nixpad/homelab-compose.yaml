@@ -58,10 +58,10 @@ services:
       - HARDCOVER_TOKEN=your_hardcover_api_key_here
       - NETWORK_SHARE_MODE=false
     volumes:
-      - ./cwa/config:/config
-      - ./cwa/ingest:/cwa-book-ingest
-      - ./cwa/library:/calibre-library
-      - ./cwa/plugins:/config/.config/calibre/plugins
+      - ./home/cwa/config:/config
+      - ./home/cwa/ingest:/cwa-book-ingest
+      - ./home/cwa/library:/calibre-library
+      - ./home/cwa/plugins:/config/.config/calibre/plugins
     ports:
       - 8083:8083
     restart: unless-stopped

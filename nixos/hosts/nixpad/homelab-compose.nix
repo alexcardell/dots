@@ -1,4 +1,4 @@
-# Auto-generated using compose2nix v0.3.3-pre.
+# Auto-generated using compose2nix v0.3.1.
 { pkgs, lib, ... }:
 
 {
@@ -20,10 +20,10 @@
       "TZ" = "GB";
     };
     volumes = [
-      "/home/alex/dots/nixos/hosts/nixpad/cwa/config:/config:rw"
-      "/home/alex/dots/nixos/hosts/nixpad/cwa/ingest:/cwa-book-ingest:rw"
-      "/home/alex/dots/nixos/hosts/nixpad/cwa/library:/calibre-library:rw"
-      "/home/alex/dots/nixos/hosts/nixpad/cwa/plugins:/config/.config/calibre/plugins:rw"
+      "/home/alex/dots/nixos/hosts/nixpad/home/cwa/config:/config:rw"
+      "/home/alex/dots/nixos/hosts/nixpad/home/cwa/ingest:/cwa-book-ingest:rw"
+      "/home/alex/dots/nixos/hosts/nixpad/home/cwa/library:/calibre-library:rw"
+      "/home/alex/dots/nixos/hosts/nixpad/home/cwa/plugins:/config/.config/calibre/plugins:rw"
     ];
     ports = [
       "8083:8083/tcp"
