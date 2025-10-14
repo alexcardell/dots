@@ -13,6 +13,7 @@
 
   home.packages = with pkgs; [
     actionlint
+    compose2nix
     entr
     fd
     git-crypt
