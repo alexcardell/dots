@@ -19,6 +19,7 @@
     7575 # homarr
     3333 # grafana
     5030 # slskd
+    8083 # cwa
   ];
 
   hardware.pulseaudio.enable = false;

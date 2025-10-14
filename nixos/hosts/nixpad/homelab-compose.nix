@@ -30,8 +30,7 @@
     ];
     log-driver = "journald";
     extraOptions = [
-      "--network-alias=calibre-web-automated"
-      "--network=homelab_default"
+      "--network=host"
     ];
   };
   systemd.services."docker-calibre-web-automated" = {
@@ -41,12 +40,6 @@
       RestartSec = lib.mkOverride 90 "100ms";
       RestartSteps = lib.mkOverride 90 9;
     };
-    after = [
-      "docker-network-homelab_default.service"
-    ];
-    requires = [
-      "docker-network-homelab_default.service"
-    ];
     partOf = [
       "docker-compose-homelab-root.target"
     ];
@@ -173,21 +166,6 @@
     wantedBy = [
       "docker-compose-homelab-root.target"
     ];
-  };
-
-  # Networks
-  systemd.services."docker-network-homelab_default" = {
-    path = [ pkgs.docker ];
-    serviceConfig = {
-      Type = "oneshot";
-      RemainAfterExit = true;
-      ExecStop = "docker network rm -f homelab_default";
-    };
-    script = ''
-      docker network inspect homelab_default || docker network create homelab_default
-    '';
-    partOf = [ "docker-compose-homelab-root.target" ];
-    wantedBy = [ "docker-compose-homelab-root.target" ];
   };
 
   # Volumes
