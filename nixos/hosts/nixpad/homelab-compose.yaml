@@ -13,6 +13,7 @@ services:
     volumes:
       - grafana_storage:/var/lib/grafana
     network_mode: "host"
+
   homarr:
     container_name: homarr
     image: ghcr.io/ajnart/homarr:latest
@@ -25,6 +26,7 @@ services:
     ports:
       - "7575:7575"
     network_mode: "host"
+
   flaresolverr:
     container_name: flaresolverr
     image: flaresolverr/flaresolverr
@@ -44,7 +46,25 @@ services:
       - "/var/run/dbus:/var/run/dbus"
       - "/var/run/bluetooth:/var/run/bluetooth"
     devices:
-      - "/dev/ttyUSB0:/dev/ttyUSB0" # sonoff zigbee dongle
+      - "/dev/ttyUSB0:/dev/ttyUSB0"  # sonoff zigbee dongle
+
+  calibre-web-automated:
+    image: crocodilestick/calibre-web-automated:latest
+    container_name: calibre-web-automated
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=GB
+      - HARDCOVER_TOKEN=your_hardcover_api_key_here
+      - NETWORK_SHARE_MODE=false
+    volumes:
+      - ./cwa/config:/config
+      - ./cwa/ingest:/cwa-book-ingest
+      - ./cwa/library:/calibre-library
+      - ./cwa/plugins:/config/.config/calibre/plugins
+    ports:
+      - 8083:8083
+    restart: unless-stopped
 
 volumes:
   grafana_storage: {}

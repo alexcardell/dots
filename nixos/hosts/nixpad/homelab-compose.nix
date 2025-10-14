@@ -10,6 +10,50 @@
   virtualisation.oci-containers.backend = "docker";
 
   # Containers
+  virtualisation.oci-containers.containers."calibre-web-automated" = {
+    image = "crocodilestick/calibre-web-automated:latest";
+    environment = {
+      "HARDCOVER_TOKEN" = "your_hardcover_api_key_here";
+      "NETWORK_SHARE_MODE" = "false";
+      "PGID" = "1000";
+      "PUID" = "1000";
+      "TZ" = "GB";
+    };
+    volumes = [
+      "/home/alex/dots/nixos/hosts/nixpad/cwa/config:/config:rw"
+      "/home/alex/dots/nixos/hosts/nixpad/cwa/ingest:/cwa-book-ingest:rw"
+      "/home/alex/dots/nixos/hosts/nixpad/cwa/library:/calibre-library:rw"
+      "/home/alex/dots/nixos/hosts/nixpad/cwa/plugins:/config/.config/calibre/plugins:rw"
+    ];
+    ports = [
+      "8083:8083/tcp"
+    ];
+    log-driver = "journald";
+    extraOptions = [
+      "--network-alias=calibre-web-automated"
+      "--network=homelab_default"
+    ];
+  };
+  systemd.services."docker-calibre-web-automated" = {
+    serviceConfig = {
+      Restart = lib.mkOverride 90 "always";
+      RestartMaxDelaySec = lib.mkOverride 90 "1m";
+      RestartSec = lib.mkOverride 90 "100ms";
+      RestartSteps = lib.mkOverride 90 9;
+    };
+    after = [
+      "docker-network-homelab_default.service"
+    ];
+    requires = [
+      "docker-network-homelab_default.service"
+    ];
+    partOf = [
+      "docker-compose-homelab-root.target"
+    ];
+    wantedBy = [
+      "docker-compose-homelab-root.target"
+    ];
+  };
   virtualisation.oci-containers.containers."flaresolverr" = {
     image = "flaresolverr/flaresolverr";
     ports = [
@@ -129,6 +173,21 @@
     wantedBy = [
       "docker-compose-homelab-root.target"
     ];
+  };
+
+  # Networks
+  systemd.services."docker-network-homelab_default" = {
+    path = [ pkgs.docker ];
+    serviceConfig = {
+      Type = "oneshot";
+      RemainAfterExit = true;
+      ExecStop = "docker network rm -f homelab_default";
+    };
+    script = ''
+      docker network inspect homelab_default || docker network create homelab_default
+    '';
+    partOf = [ "docker-compose-homelab-root.target" ];
+    wantedBy = [ "docker-compose-homelab-root.target" ];
   };
 
   # Volumes
