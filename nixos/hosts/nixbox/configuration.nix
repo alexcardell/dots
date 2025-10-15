@@ -49,7 +49,7 @@
 
   services.xserver = {
     enable = true;
-    services.xserver.videoDrivers = [ "nvidia" ];
+    videoDrivers = [ "nvidia" ];
   };
 
   programs.steam = {
