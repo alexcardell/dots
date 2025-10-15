@@ -53,6 +53,12 @@
           "/home-assistant" = {
             proxyPass = "http://127.0.0.1:8123";
           };
+          "/slsk" = {
+            proxyPass = "http://127.0.0.1:5030";
+          };
+          "/qbittorrent" = {
+            proxyPass = "http://127.0.0.1:9009";
+          };
           "/502.html" = {
             return = "502 'Backend Down'";
           };
