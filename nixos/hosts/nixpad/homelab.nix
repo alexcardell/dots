@@ -40,16 +40,27 @@
       "192.168.0.20" = {
         forceSSL = false;
         enableACME = false;
-        locations."/" = {
-          proxyPass = "http://127.0.0.1:7575";
-          extraConfig = ''
-            proxy_intercept_errors on;
-            error_page 502 = /502.html;
-          '';
+        locations = {
+          "/" = {
+            proxyPass = "http://127.0.0.1:7575";
+          };
+          "/video" = {
+            proxyPass = "http://127.0.0.1:8096";
+          };
+          "/books" = {
+            proxyPass = "http://127.0.0.1:8083";
+          };
+          "/home-assistant" = {
+            proxyPass = "http://127.0.0.1:8123";
+          };
+          "/502.html" = {
+            return = "502 'Backend Down'";
+          };
         };
-        locations."/502.html" = {
-          return = "502 'Backend Down'";
-        };
+        extraConfig = ''
+          proxy_intercept_errors on;
+          error_page 502 = /502.html;
+        '';
       };
     };
   };
