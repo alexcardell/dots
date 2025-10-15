@@ -64,7 +64,7 @@ in
     extraPackages = with pkgs.unstable; [
       mcp-hub
       docker-compose-language-service
-      dockerfile-language-server-nodejs
+      dockerfile-language-server
       ltex-ls
       lua-language-server
       metals
