@@ -47,6 +47,49 @@
       "docker-compose-homelab-root.target"
     ];
   };
+  virtualisation.oci-containers.containers."calibre-web-automated-book-downloader" = {
+    image = "ghcr.io/calibrain/calibre-web-automated-book-downloader:latest";
+    environment = {
+      "AA_BASE_URL" = "https://annas-archive.li";
+      "APP_ENV" = "prod";
+      "BOOK_LANGUAGE" = "en";
+      "CWA_DB_PATH" = "/auth/app.db";
+      "DOWNLOAD_PROGRESS_UPDATE_INTERVAL" = "5";
+      "EXT_BYPASSER_URL" = "http://127.0.0.1:8191";
+      "FLASK_PORT" = "8084";
+      "GID" = "100";
+      "LOG_LEVEL" = "info";
+      "MAX_CONCURRENT_DOWNLOADS" = "3";
+      "TZ" = "Europe/London";
+      "UID" = "1000";
+      "USE_BOOK_TITLE" = "true";
+    };
+    volumes = [
+      "/home/alex/dots/nixos/hosts/nixpad/home/cwa/config/app.db:/auth/app.db:ro"
+      "/home/alex/dots/nixos/hosts/nixpad/home/cwa/ingest:/cwa-book-ingest:rw"
+    ];
+    ports = [
+      "8084:8084/tcp"
+    ];
+    log-driver = "journald";
+    extraOptions = [
+      "--network=host"
+    ];
+  };
+  systemd.services."docker-calibre-web-automated-book-downloader" = {
+    serviceConfig = {
+      Restart = lib.mkOverride 90 "always";
+      RestartMaxDelaySec = lib.mkOverride 90 "1m";
+      RestartSec = lib.mkOverride 90 "100ms";
+      RestartSteps = lib.mkOverride 90 9;
+    };
+    partOf = [
+      "docker-compose-homelab-root.target"
+    ];
+    wantedBy = [
+      "docker-compose-homelab-root.target"
+    ];
+  };
   virtualisation.oci-containers.containers."flaresolverr" = {
     image = "flaresolverr/flaresolverr";
     ports = [
@@ -80,7 +123,7 @@
       "homelab_grafana_storage:/var/lib/grafana:rw"
     ];
     ports = [
-      "3333:3000/tcp"
+      "3333:3333/tcp"
     ];
     log-driver = "journald";
     extraOptions = [

@@ -20,6 +20,7 @@
     3333 # grafana
     5030 # slskd
     8083 # cwa
+    8084 # cwa-book-downloader
   ];
 
   hardware.pulseaudio.enable = false;
