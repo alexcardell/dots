@@ -37,7 +37,6 @@
   };
 
   # Enable the X11 windowing system.
-  services.xserver.enable = true;
   services.xserver.autorun = true; # if autorun disabled, start with: systemctl start display-manager.service
   services.xserver.xkb.layout = "gb";
   services.xserver.displayManager.sessionCommands = "xset -b";

@@ -47,7 +47,10 @@
     package = config.boot.kernelPackages.nvidiaPackages.stable;
   };
 
-  services.xserver.videoDrivers = [ "nvidia" ];
+  services.xserver = {
+    enable = true;
+    services.xserver.videoDrivers = [ "nvidia" ];
+  };
 
   programs.steam = {
     enable = true;
