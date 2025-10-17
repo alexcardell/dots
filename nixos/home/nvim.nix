@@ -107,6 +107,7 @@ in
         plug.luasnip
         plug.marks-nvim
         plug.neogit
+        plug.neoscroll-nvim
         plug.nui-nvim
         plug.nvim-autopairs
         plug.nvim-dap
