@@ -38,7 +38,7 @@ require('alex/plugins/outline').setup()
 require('alex/plugins/marks').setup()
 require('alex/plugins/lualine').setup()
 require('alex/plugins/render-markdown').setup()
-require('alex/plugins/neoscroll').setup()
+-- require('alex/plugins/neoscroll').setup()
 
 -- keymappings
 require('alex/keys')
