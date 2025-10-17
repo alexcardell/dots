@@ -1,6 +1,6 @@
 local M = {}
 
-M.setup_blink = function()
+local setup_blink = function()
   local blink = require('blink.cmp')
   local luasnip = require('luasnip')
 
@@ -13,7 +13,7 @@ M.setup_blink = function()
     sources = {
       default = { 'lsp', 'path', 'snippets', 'buffer' },
     },
-    signature = { enabled = true},
+    signature = { enabled = true },
     snippets = {
       expand = function(snippet) luasnip.lsp_expand(snippet) end,
       active = function(filter)
@@ -29,6 +29,6 @@ end
 
 M.capabilities = require('blink.cmp').get_lsp_capabilities()
 
-M.setup = M.setup_blink
+M.setup = setup_blink
 
 return M
