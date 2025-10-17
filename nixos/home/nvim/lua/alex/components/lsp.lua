@@ -63,13 +63,20 @@ local setup_metals = function()
 end
 
 M.setup = function()
-  -- lspconfig.util.default_config = vim.tbl_extend(
-  --   "force",
-  --   lspconfig.util.default_config,
-  --   {
-  --     capabilities = capabilities,
-  --   }
-  -- )
+  -- disable semantic highlights
+  vim.api.nvim_create_autocmd("ColorScheme", {
+    -- pattern = { "java", "scala", "sbt" },
+    desc = "Disable all LSP semantic token highlights",
+    group = vim.api.nvim_create_augroup(
+      'DisableLspSemanticHighlights',
+      { clear = true }
+    ),
+    callback = function()
+      for _, group in ipairs(vim.fn.getcompletion("@lsp", "highlight")) do
+        vim.api.nvim_set_hl(0, group, {})
+      end
+    end,
+  })
 
   -- anything with standard empty configuration
   local standard_servers = {
