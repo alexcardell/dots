@@ -17,6 +17,7 @@
     awscli2
     gh
     hiera-eyaml
+    n8n
     pngpaste
     postgresql_16
     tenv
