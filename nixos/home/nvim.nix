@@ -62,11 +62,11 @@ in
     package = pkgs.unstable.neovim-unwrapped;
 
     extraPackages = with pkgs.unstable; [
-      mcp-hub
       docker-compose-language-service
       dockerfile-language-server
       ltex-ls
       lua-language-server
+      mcp-hub
       metals
       nixd
       terraform-ls

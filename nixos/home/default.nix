@@ -14,6 +14,7 @@
   home.packages = with pkgs; [
     actionlint
     compose2nix
+    coursier
     entr
     fd
     git-crypt
