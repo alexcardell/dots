@@ -18,7 +18,6 @@
     entr
     fd
     git-crypt
-    git-extras
     git-filter-repo
     gnupg
     jq
