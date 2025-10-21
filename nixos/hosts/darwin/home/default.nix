@@ -16,6 +16,7 @@
     aws-vault
     awscli2
     gh
+    gh-dash
     hiera-eyaml
     n8n
     pngpaste
