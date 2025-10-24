@@ -19,6 +19,7 @@
     devpod-desktop
     gh
     gh-dash
+    google-cloud-sdk
     hiera-eyaml
     n8n
     pngpaste
