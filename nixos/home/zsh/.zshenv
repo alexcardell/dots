@@ -13,7 +13,10 @@ PATH=$PATH:/opt/homebrew/bin
 
 # PATH=$PATH:node_modules/.bin
 
+PATH=$PATH:$HOME/.local/node/global/bin
+
 PATH=$DEFAULT_PATH:$PATH
 
 typeset -U PATH
 export PATH
+export NODE_PATH=$HOME/.local/node/global/lib/node_modules
