@@ -15,6 +15,8 @@
     adr-tools
     aws-vault
     awscli2
+    devpod
+    devpod-desktop
     gh
     gh-dash
     hiera-eyaml
