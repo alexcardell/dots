@@ -5,7 +5,7 @@ fi
 OS=$(uname)
 OS=$OS:l
 
-if [ -e "${ZDOTDIR}" ]; then
+if [ -z "${ZDOTDIR}" ]; then
   ZDOTDIR="${HOME}/.zsh"
 fi
 

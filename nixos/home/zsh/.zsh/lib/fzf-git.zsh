@@ -109,6 +109,7 @@ for c in $@; do
   eval "bindkey '^g^$c' fzf-g$c-widget"
 done
 }
+
 bindkey -r '^g'
-bind-git-helper f b t 'r' h
+bind-git-helper f b t r l
 unset -f bind-git-helper
