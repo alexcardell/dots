@@ -66,7 +66,6 @@ in
       dockerfile-language-server
       ltex-ls
       lua-language-server
-      mcp-hub
       metals
       nixd
       terraform-ls
