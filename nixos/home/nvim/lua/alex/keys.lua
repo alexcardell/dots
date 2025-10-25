@@ -88,3 +88,13 @@ key('n', '<F12>', function() require('dap').step_out() end, { desc = "DAP: Step 
 key('n', '<leader>db', function() require('dap').toggle_breakpoint() end, { desc = "DAP: Toggle breakpoint" })
 key('n', '<leader>dl', function() require('dap').run_last() end, { desc = "DAP: Run last" })
 key('n', '<leader>dd', function() require('dapui').toggle() end, { desc = "DAP: Toggle DAP UI" })
+
+key({ "n", "v" }, "<C-a>", "<cmd>CodeCompanionActions<cr>",
+  { noremap = true, silent = true, desc = "CodeCompanion: Open Actions Picker" })
+key({ "n", "v" }, "<leader>a", "<cmd>CodeCompanionChat Toggle<cr>",
+  { noremap = true, silent = true, desc = "CodeCompanion: Toggle Chat" })
+key("v", "ga", "<cmd>CodeCompanionChat Add<cr>",
+  { noremap = true, silent = true, desc = "CodeCompanion: Add highlighted content to chat buffer" })
+
+-- Expand 'cc' into 'CodeCompanion' in the command line
+vim.cmd([[cab cc CodeCompanion]])
