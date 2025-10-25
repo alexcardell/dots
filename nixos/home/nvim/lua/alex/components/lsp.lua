@@ -8,19 +8,6 @@ local default_on_attach = function(client, _)
   client.server_capabilities.semanticTokensProvider = nil
 end
 
--- local border = "rounded"
-
--- local default_handlers = {
---   ["textDocument/hover"] = vim.lsp.with(
---     vim.lsp.handlers.hover,
---     { border = border }
---   ),
---   ["textDocument/signatureHelp"] = vim.lsp.with(
---     vim.lsp.handlers.signature_help,
---     { border = border }
---   ),
--- }
-
 local setup_metals = function()
   local config = metals.bare_config()
 

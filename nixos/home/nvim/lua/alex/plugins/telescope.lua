@@ -32,6 +32,7 @@ M.setup = function()
   -- load extensions
   pcall(telescope.load_extension, 'ui-select')
   pcall(telescope.load_extension, 'dap')
+  pcall(telescope.load_extension, 'metals')
 end
 
 return M
