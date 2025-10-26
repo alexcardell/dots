@@ -10,8 +10,8 @@
     in
     [
       anki
-      bitwarden
-      bitwarden-cli
+      unstable.bitwarden
+      unstable.bitwarden-cli
       brightnessctl
       cava
       fastcompmgr
