@@ -6,3 +6,7 @@ lib/env
 
 # nixos-rebuild output
 result
+
+# homelab directory is its own flake (can be tracked or kept private)
+# Uncomment to exclude from git:
+# homelab/

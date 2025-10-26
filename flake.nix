@@ -100,7 +100,7 @@
     {
       nixosConfigurations = {
         nixbox = nixosConfiguration "nixbox";
-        nixpad = nixosConfiguration "nixpad";
+        # nixpad moved to private homelab repository
       };
 
       darwinConfigurations = {
@@ -139,6 +139,18 @@
               }
             ];
           };
+      };
+
+      # Export reusable modules for other flakes (e.g., private homelab repo)
+      nixosModules = {
+        # Base Linux system configuration
+        linuxSystem = ./nixos/systems/linux/configuration.nix;
+
+        # Base Linux home-manager configuration
+        linuxHome = ./nixos/systems/linux/home/default.nix;
+
+        # Common home-manager configuration (works on Linux & Darwin)
+        commonHome = ./nixos/home/default.nix;
       };
 
       formatter = {
