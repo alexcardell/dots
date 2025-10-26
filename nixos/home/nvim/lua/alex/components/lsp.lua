@@ -17,14 +17,19 @@ local setup_metals = function()
   }
 
   config.settings = {
-    autoImportBuild                   = "all",
-    defaultBspToBuildTool             = true,
-    enableSemanticHighlighting        = false,
-    showImplicitArguments             = true,
-    showImplicitConversionsAndClasses = true,
-    showInferredType                  = true,
-    useGlobalExecutable               = true, -- for nix
-    -- testUserInterface                 = "Test Explorer"
+    autoImportBuild            = "all",
+    defaultBspToBuildTool      = true,
+    enableSemanticHighlighting = false,
+    inlayHints                 = {
+      byNameParameters = { enable = true },
+      hintsInPatternMatch = { enable = true },
+      implicitArguments = { enable = true },
+      implicitConversions = { enable = false },
+      inferredTypes = { enable = true },
+      typeParameters = { enable = true },
+    },
+    useGlobalExecutable        = true, -- for nix
+    -- testUserInterface          = "Test Explorer"
   }
 
   config.capabilities = capabilities

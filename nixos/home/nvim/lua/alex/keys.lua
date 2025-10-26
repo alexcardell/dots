@@ -57,6 +57,11 @@ key("n", "<localleader>z", "<cmd>lua vim.diagnostic.setloclist({severity = vim.d
 key("n", "<localleader>Z", "<cmd>lua vim.diagnostic.setloclist()<cr>")
 key("n", "<localleader>]", "<cmd>lua vim.diagnostic.goto_next()<cr>")
 key("n", "<localleader>[", "<cmd>lua vim.diagnostic.goto_prev()<cr>")
+local toggle_inlay_hint = function()
+  local enabled = vim.lsp.inlay_hint.is_enabled()
+  vim.lsp.inlay_hint.enable(not enabled)
+end
+key("n", "<localleader>I", toggle_inlay_hint)
 
 key("n", "<localleader>mb", "<cmd>MetalsImportBuild<cr>")
 
