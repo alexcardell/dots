@@ -15,6 +15,7 @@
     adr-tools
     aws-vault
     awscli2
+    coreutils-prefixed
     devpod
     devpod-desktop
     gh
