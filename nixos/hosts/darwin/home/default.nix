@@ -18,7 +18,6 @@
     coreutils-prefixed
     devpod
     devpod-desktop
-    gh
     gh-dash
     google-cloud-sdk
     hiera-eyaml

@@ -17,6 +17,7 @@
     coursier
     entr
     fd
+    gh
     git-crypt
     git-filter-repo
     gnupg
