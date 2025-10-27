@@ -10,17 +10,19 @@
     in
     [
       anki
-      unstable.bitwarden
-      unstable.bitwarden-cli
       brightnessctl
       cava
       fastcompmgr
       feh
       killall
+      orchis-theme
       polybar'
+      rofi
+      themechanger
+      unstable.bitwarden
+      unstable.bitwarden-cli
       unstable.protonvpn-cli_2
       unstable.protonvpn-gui
-      rofi
       unstable.qbittorrent
       unstable.veracrypt
       unzip
