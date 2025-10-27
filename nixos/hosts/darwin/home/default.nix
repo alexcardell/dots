@@ -24,7 +24,6 @@
     n8n
     pngpaste
     postgresql_16
-    tenv
   ];
 
 }

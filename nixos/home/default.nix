@@ -28,6 +28,7 @@
     ripgrep
     sbt
     shellcheck
+    tenv
     unixtools.watch
     unstable.jira-cli-go
     unstable.languagetool-rust
