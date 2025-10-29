@@ -28,6 +28,7 @@
       "nvidia-x11"
       "nvidia-settings"
       "nvidia-persistenced"
+      "todoist-electron"
     ];
 
   hardware.graphics = {
