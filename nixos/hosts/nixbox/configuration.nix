@@ -29,6 +29,7 @@
       "nvidia-settings"
       "nvidia-persistenced"
       "todoist-electron"
+      "discord"
     ];
 
   hardware.graphics = {

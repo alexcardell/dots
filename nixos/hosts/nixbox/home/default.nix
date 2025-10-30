@@ -5,6 +5,7 @@
     lxappearance
     protonmail-desktop
     todoist-electron
+    discord
   ];
 
   programs.lutris.enable = true;
