@@ -29,6 +29,7 @@ local setup_metals = function()
       typeParameters = { enable = true },
     },
     useGlobalExecutable        = true, -- for nix
+    startMcpServer             = true
     -- testUserInterface          = "Test Explorer"
   }
 
