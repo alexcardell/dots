@@ -62,4 +62,23 @@
     dedicatedServer.openFirewall = false;
     localNetworkGameTransfers.openFirewall = true;
   };
+
+  # Enable USB wakeup for keyboard/mouse
+  systemd.services.usb-wakeup = {
+    description = "Enable USB wakeup for peripherals";
+    wantedBy = [ "multi-user.target" ];
+    after = [ "multi-user.target" ];
+    script = ''
+      # Enable wakeup for keyboard/mouse hub and its controller
+      echo enabled > /sys/bus/usb/devices/3-1/power/wakeup 2>/dev/null || true
+      echo enabled > /sys/bus/usb/devices/usb3/power/wakeup 2>/dev/null || true
+      # Individual devices (already enabled, but ensure they stay enabled)
+      echo enabled > /sys/bus/usb/devices/3-1.3/power/wakeup 2>/dev/null || true
+      echo enabled > /sys/bus/usb/devices/3-1.4/power/wakeup 2>/dev/null || true
+    '';
+    serviceConfig = {
+      Type = "oneshot";
+      RemainAfterExit = true;
+    };
+  };
 }
