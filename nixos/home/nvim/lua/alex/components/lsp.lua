@@ -78,7 +78,10 @@ M.setup = function()
     'terraformls',
     'ts_ls',
     'dockerls',
-    'docker_compose_language_service'
+    'docker_compose_language_service',
+    -- postgres-language-server
+    -- installed from github releases manually
+    -- 'postgres_lsp'
   }
 
   for _, server in ipairs(standard_servers) do
