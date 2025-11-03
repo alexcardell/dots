@@ -59,6 +59,7 @@ in
       lua-language-server
       metals
       nixd
+      postgres-language-server
       terraform-ls
       typescript-language-server
       yaml-language-server

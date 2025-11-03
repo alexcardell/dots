@@ -79,9 +79,7 @@ M.setup = function()
     'ts_ls',
     'dockerls',
     'docker_compose_language_service',
-    -- postgres-language-server
-    -- installed from github releases manually
-    -- 'postgres_lsp'
+    'postgres_lsp'
   }
 
   for _, server in ipairs(standard_servers) do
