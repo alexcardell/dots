@@ -151,8 +151,15 @@ function _zsh_venv_prompt() {
   fi
 }
 
+# AWS Vault indicator
+function _zsh_aws_vault_prompt() {
+  if [ -n "${AWS_VAULT}" ]; then
+    echo "%F{208}aws:${AWS_VAULT}%f "
+  fi
+}
+
 PROMPT='%(?. .%F{yellow}%B!%b)${_ZSH_PROMPT_SSH}$(_zsh_venv_prompt)${_ZSH_PROMPT_USER} ${_ZSH_PROMPTARROW} '
-RPROMPT='%F{240}${timer_show} %F{grey}%3~ ${vcs_info_msg_0_}%f'
+RPROMPT='$(_zsh_aws_vault_prompt)%F{240}${timer_show} %F{grey}%3~ ${vcs_info_msg_0_}%f'
 
 load_tmuxp() {
   tmuxp load default -s $(basename $(pwd))
