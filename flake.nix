@@ -34,7 +34,7 @@
       ...
     }:
     let
-      darwinConfiguration =
+      darwinPkgConfiguration =
         { pkgs, ... }:
         {
           nix.package = pkgs.nixVersions.stable;
@@ -96,16 +96,7 @@
           ];
         };
 
-    in
-    {
-      nixosConfigurations = {
-        nixbox = nixosConfiguration "nixbox";
-        # nixpad moved to private homelab repository
-      };
-
-      darwinConfigurations = {
-        "RJ4QHFPQRX" =
-          let
+        darwinConfiguration = let
             system = "aarch64-darwin";
             overlays = (
               { ... }:
@@ -119,7 +110,7 @@
 
             modules = [
               overlays
-              darwinConfiguration
+              darwinPkgConfiguration
               ./nixos/systems/darwin/configuration.nix
               ./nixos/hosts/darwin/configuration.nix
               home-manager.darwinModules.home-manager
@@ -139,6 +130,17 @@
               }
             ];
           };
+
+    in
+    {
+      nixosConfigurations = {
+        nixbox = nixosConfiguration "nixbox";
+        # nixpad moved to private homelab repository
+      };
+
+      darwinConfigurations = {
+        "RJ4QHFPQRX" = darwinConfiguration;
+        "GTQ4XXD4Q9" = darwinConfiguration;
       };
 
       # Export reusable modules for other flakes (e.g., private homelab repo)
