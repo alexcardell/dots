@@ -21,7 +21,6 @@
       themechanger
       unstable.bitwarden-desktop
       unstable.bitwarden-cli
-      unstable.protonvpn-cli_2
       unstable.protonvpn-gui
       unstable.qbittorrent
       unstable.veracrypt
