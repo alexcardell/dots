@@ -21,6 +21,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    nix-flatpak = {
+      url = "github:gmodena/nix-flatpak?ref=v0.6.0";
+    };
+
   };
 
   outputs =
@@ -30,6 +34,7 @@
       nur,
       home-manager,
       darwin,
+      nix-flatpak,
       # neovim-nightly-overlay,
       ...
     }:
@@ -87,6 +92,7 @@
               home-manager.useUserPackages = true;
               home-manager.users.alex = {
                 imports = [
+                  nix-flatpak.homeManagerModules.nix-flatpak
                   os-home
                   host-home
                   ./nixos/home/default.nix

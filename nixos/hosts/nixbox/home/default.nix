@@ -1,5 +1,7 @@
-{ config, pkgs, ... }:
+{ config, pkgs, flake-inputs, ... }:
 {
+  # imports = [ flake-inputs.flatpaks.homeManagerModules.nix-flatpak ];
+
   home.packages = with pkgs; [
     pavucontrol
     lxappearance
@@ -9,4 +11,8 @@
   ];
 
   programs.lutris.enable = true;
+
+  services.flatpak.packages = [
+    "org.mixxx.Mixxx"
+  ];
 }
