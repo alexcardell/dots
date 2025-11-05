@@ -19,7 +19,7 @@
       polybar'
       rofi
       themechanger
-      unstable.bitwarden
+      unstable.bitwarden-desktop
       unstable.bitwarden-cli
       unstable.protonvpn-cli_2
       unstable.protonvpn-gui
