@@ -15,6 +15,8 @@
     actionlint
     compose2nix
     coursier
+    bitwarden-cli
+    bitwarden-desktop
     entr
     fd
     gh
