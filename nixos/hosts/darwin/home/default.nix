@@ -25,6 +25,7 @@
     pngpaste
     postgresql_16
     raycast
+    slack
   ];
 
 }
