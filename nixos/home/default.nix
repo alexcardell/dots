@@ -117,6 +117,11 @@
       if isDarwin then darwinConfig + "\n" + commonConfig else commonConfig;
   };
 
+  xdg.configFile.tmuxp = {
+    source = ./tmux/tmuxp;
+    recursive = true;
+  };
+
   xdg.configFile.tmux-scripts = {
     source = ./tmux/scripts;
     recursive = true;

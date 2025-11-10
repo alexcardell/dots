@@ -1,0 +1,9 @@
+---
+session_name: default
+windows:
+  - window_name: edit
+    layout: tiled
+    panes:
+      - nvim
+  - window_name: shell
+    layout: tiled
