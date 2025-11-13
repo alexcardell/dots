@@ -11,17 +11,16 @@
     builtins.elem (lib.getName pkg) [
     ];
 
-  home.packages = with pkgs; [
+  home.packages = with pkgs.unstable; [
     adr-tools
     aws-vault
     awscli2
     coreutils-prefixed
     devpod
-    devpod-desktop
+    # devpod-desktop
     gh-dash
     google-cloud-sdk
     hiera-eyaml
-    n8n
     pngpaste
     postgresql_16
     raycast
