@@ -2,9 +2,9 @@
 
 {
 
-  # nix.extraOptions = ''
-  #   experimental-features = nix-command flakes
-  # '';
+  nix.extraOptions = ''
+    experimental-features = nix-command flakes
+  '';
 
   # enable nix-darwin to manage home-manager
   # imports = [ <home-manager/nix-darwin> ];
@@ -36,20 +36,20 @@
     home = "/Users/alexcard";
   };
 
-  services.karabiner-elements = {
-    enable = true;
-    # use older karabiner-elements version
-    # awaiting fix https://github.com/nix-darwin/nix-darwin/issues/1041
-    package = pkgs.karabiner-elements.overrideAttrs (old: {
-      version = "14.13.0";
-
-      src = pkgs.fetchurl {
-        inherit (old.src) url;
-        hash = "sha256-gmJwoht/Tfm5qMecmq1N6PSAIfWOqsvuHU8VDJY8bLw=";
-      };
-
-      dontFixup = true;
-    });
-  };
+  # services.karabiner-elements = {
+  #   enable = false;
+  #   # use older karabiner-elements version
+  #   # awaiting fix https://github.com/nix-darwin/nix-darwin/issues/1041
+  #   package = pkgs.karabiner-elements.overrideAttrs (old: {
+  #     version = "14.13.0";
+  #
+  #     src = pkgs.fetchurl {
+  #       inherit (old.src) url;
+  #       hash = "sha256-gmJwoht/Tfm5qMecmq1N6PSAIfWOqsvuHU8VDJY8bLw=";
+  #     };
+  #
+  #     dontFixup = true;
+  #   });
+  # };
 
 }
