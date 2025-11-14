@@ -18,9 +18,8 @@
       orchis-theme
       polybar'
       rofi
+      sops
       themechanger
-      unstable.bitwarden-desktop
-      unstable.bitwarden-cli
       unstable.protonvpn-gui
       unstable.qbittorrent
       unstable.veracrypt
