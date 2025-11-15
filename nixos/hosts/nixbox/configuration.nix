@@ -59,7 +59,7 @@
   programs.steam = {
     enable = true;
     # package = pkgs.unstable.steam;
-    remotePlay.openFirewall = false;
+    remotePlay.openFirewall = true;
     dedicatedServer.openFirewall = false;
     localNetworkGameTransfers.openFirewall = true;
   };
