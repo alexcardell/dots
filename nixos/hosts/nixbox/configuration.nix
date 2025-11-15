@@ -34,6 +34,7 @@
 
   hardware.graphics = {
     enable = true;
+    enable32Bit = true;
   };
 
   hardware.nvidia = {
@@ -62,6 +63,10 @@
     remotePlay.openFirewall = true;
     dedicatedServer.openFirewall = false;
     localNetworkGameTransfers.openFirewall = true;
+    gamescopeSession.enable = true;
+    extraCompatPackages = with pkgs; [
+      proton-ge-bin
+    ];
   };
 
   # Enable USB wakeup for keyboard/mouse
