@@ -47,12 +47,6 @@
   services.libinput.enable = true;
   services.libinput.touchpad.naturalScrolling = true;
 
-  services.picom = {
-    enable = true;
-    vSync = true;
-    backend = "glx";
-  };
-
   services.pipewire = {
     enable = true;
     audio.enable = true;

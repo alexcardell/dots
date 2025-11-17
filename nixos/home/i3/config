@@ -120,7 +120,7 @@ set $ws6 "6"
 set $ws7 "7"
 set $ws8 "8"
 set $ws9 "9"
-set $ws10 "10"
+set $ws10 "10: Steam"
 
 # switch to workspace
 bindsym $mod+1 workspace number $ws1
@@ -181,14 +181,23 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 gaps inner 20
-# Enabling “Smart Gaps” means no gaps will be shown when there is
+# Enabling "Smart Gaps" means no gaps will be shown when there is
 # precisely one window or split container on the workspace.
 smart_gaps on
+
+# Disable gaps on workspace 10 (Steam workspace)
+workspace $ws10 gaps inner 0
 
 default_border pixel 2
 default_floating_border pixel 2
 hide_edge_borders smart
-# for_window [class="^.*"]
+
+# Assign Steam to workspace 10
+assign [class="^[Ss]team$"] $ws10
+
+# Steam Big Picture mode - disable borders, gaps, and ensure fullscreen
+for_window [class="^Steam$" title="^Steam Big Picture Mode"] border none, fullscreen enable
+# for_window [class="^Steam$" title="^Steam$"] floating enable, border none
 
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 exec_always feh --bg-fill ~/dots/media/BLACK_VII_desktop-3.jpg

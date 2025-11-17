@@ -57,13 +57,18 @@
     videoDrivers = [ "nvidia" ];
   };
 
+  services.picom = {
+    enable = true;
+    vSync = true;
+    backend = "xrender";
+  };
+
   programs.steam = {
     enable = true;
     # package = pkgs.unstable.steam;
     remotePlay.openFirewall = true;
     dedicatedServer.openFirewall = false;
     localNetworkGameTransfers.openFirewall = true;
-    gamescopeSession.enable = true;
     extraCompatPackages = with pkgs; [
       proton-ge-bin
     ];
