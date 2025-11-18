@@ -15,6 +15,10 @@
 
   networking.hostName = "nixbox"; # Define your hostname.
 
+  networking.extraHosts = ''
+    192.168.0.20 nixpad
+  '';
+
   networking.interfaces.enp42s0.useDHCP = true;
   networking.interfaces.wlp4s0.useDHCP = true;
 
