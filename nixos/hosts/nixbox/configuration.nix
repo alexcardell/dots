@@ -11,6 +11,12 @@
     ./hardware-configuration.nix
   ];
 
+  nix.settings = {
+    secret-key-files = [
+      "/etc/nix/homelab-builder-nixbox-signing-key.sec"
+    ];
+  };
+
   boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
 
   networking.hostName = "nixbox"; # Define your hostname.
