@@ -13,6 +13,7 @@
 
   nix.settings = {
     secret-key-files = [
+      # TODO put in sops
       "/etc/nix/homelab-builder-nixbox-signing-key.sec"
     ];
   };
