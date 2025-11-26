@@ -8,6 +8,7 @@
     protonmail-desktop
     todoist-electron
     discord
+    unstable.vicinae
   ];
 
   programs.lutris.enable = true;
