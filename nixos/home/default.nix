@@ -13,10 +13,10 @@
 
   home.packages = with pkgs; [
     actionlint
-    compose2nix
-    coursier
     bitwarden-cli
     bitwarden-desktop
+    compose2nix
+    coursier
     entr
     fd
     gh
@@ -27,6 +27,7 @@
     kitty
     nerd-fonts.sauce-code-pro
     nodejs_22
+    nur.repos.forkprince.waterfox-bin
     ripgrep
     sbt
     shellcheck
