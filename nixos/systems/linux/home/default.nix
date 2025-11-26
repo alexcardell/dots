@@ -15,6 +15,7 @@
       fastcompmgr
       feh
       killall
+      nur.repos.forkprince.waterfox-bin
       orchis-theme
       polybar'
       rofi

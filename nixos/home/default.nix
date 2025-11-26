@@ -27,7 +27,6 @@
     kitty
     nerd-fonts.sauce-code-pro
     nodejs_22
-    nur.repos.forkprince.waterfox-bin
     ripgrep
     sbt
     shellcheck
