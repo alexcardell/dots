@@ -1,43 +1,4 @@
 { pkgs, ... }:
-let
-  pinnedVimPlugins = {
-    mcphub-nvim = pkgs.vimUtils.buildVimPlugin {
-      name = "mcphub.nvim";
-      src = pkgs.fetchFromGitHub {
-        owner = "ravitemer";
-        repo = "mcphub.nvim";
-        rev = "5e39057c4405bc7b83ef9fd38a37d18c9330e403";
-        hash = "sha256-qmvkQTKJ4Qt2SL+d9pGtmLAPVmCYAFnflf0e0BX1wYM=";
-      };
-      dependencies = with pkgs.unstable.vimPlugins; [
-        plenary-nvim
-        lualine-nvim
-      ];
-      nvimSkipModules = [
-        "bundled_build"
-      ];
-    };
-
-  };
-  mcp-hub = pkgs.buildNpmPackage {
-    pname = "mcp-hub";
-    version = "4.2.1"; # replace with version
-    src = pkgs.fetchurl {
-      url = "https://registry.npmjs.org/mcp-hub/-/mcp-hub-4.2.1.tgz";
-      sha256 = "sha256-a2UI2hPJbnJglGbX7YCex2ON8+m14hoc3ApZu21PuCs=";
-    };
-    postPatch = ''
-      cp ${
-        pkgs.fetchurl {
-          url = "https://raw.githubusercontent.com/ravitemer/mcp-hub/9c7670a4c341ed3cf738a6242c0fde1cea40bccf/package-lock.json";
-          sha256 = "sha256-721x+/2GeQfGKKVcWMKwIdW+HJoo55EvR1HYD8pIi0o=";
-        }
-      } package-lock.json
-    '';
-    npmDepsHash = "sha256-nyenuxsKRAL0PU/UPSJsz8ftHIF+LBTGdygTqxti38g=";
-    dontNpmBuild = true;
-  };
-in
 {
   xdg.configFile.nvim = {
     source = ./nvim;
@@ -73,10 +34,8 @@ in
     plugins =
       let
         plug = pkgs.unstable.vimPlugins;
-        pinned = pinnedVimPlugins;
       in
       [
-        pinned.mcphub-nvim
         plug.Navigator-nvim
         plug.avante-nvim
         plug.base16-nvim
