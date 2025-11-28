@@ -28,6 +28,8 @@
       vlc
       wireguard-tools
       xclip
+      wineWowPackages.stable
+      winetricks
     ];
 
   # programs.firefox.enable = true;
