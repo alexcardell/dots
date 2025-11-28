@@ -8,7 +8,6 @@
   manual.manpages.enable = false;
   manual.json.enable = false;
 
-  # services.dunst.enable = true;
   home.stateVersion = "22.11";
 
   home.packages = with pkgs; [
@@ -97,11 +96,11 @@
 
   programs.git = {
     enable = true;
-
-    extraConfig = builtins.readFile ./git/.gitconfig;
   };
 
+  home.file.".gitconfig".source = ./git/.gitconfig;
   home.file.".gitconfig.work".source = ./git/.gitconfig.work;
+  home.file.".gitignore".source = ./git/.gitignore-global;
 
   programs.tmux = {
     enable = true;
@@ -132,10 +131,6 @@
     enableZshIntegration = false;
   };
 
-  # programs.firefox.enable = true;
-
-  # programs.gh.enable = true;
-
   programs.htop.enable = true;
 
   xdg.configFile.kitty = {
@@ -157,7 +152,5 @@
     source = ./rofi;
     recursive = true;
   };
-
-  home.file.".gitignore".source = ./git/.gitignore-global;
 
 }
