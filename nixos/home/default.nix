@@ -96,6 +96,7 @@
 
   programs.git = {
     enable = true;
+    settings = {};
   };
 
   home.file.".gitconfig".source = ./git/.gitconfig;
