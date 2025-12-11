@@ -19,6 +19,7 @@
     entr
     fd
     gh
+    git
     git-crypt
     git-filter-repo
     gnupg
@@ -94,10 +95,10 @@
     enable = true;
   };
 
-  programs.git = {
-    enable = true;
-    settings = {};
-  };
+  # programs.git = {
+  #   enable = true;
+  #   settings = {};
+  # };
 
   home.file.".gitconfig".source = ./git/.gitconfig;
   home.file.".gitconfig.work".source = ./git/.gitconfig.work;
