@@ -4,7 +4,7 @@
 [user]
 name = alexcardell
 email = 29524087+alexcardell@users.noreply.github.com
-signingkey = "8A1359614FEE4405!"
+signingkey = "FEE555FE24F3A982!"
 
 # passes silently if this file isn't here
 [include]
@@ -18,7 +18,7 @@ signingkey = "8A1359614FEE4405!"
   ca = commit --amend -v
   cc = commit -v
   ccnv = commit -v --no-verify
-  cf = commit --fixup 
+  cf = commit --fixup
   co = checkout
   cp = cherry-pick
   d = diff
