@@ -1,14 +1,16 @@
 local M = {}
 
-M.setup = function()
+M.setup = function () end
+
+M.setup2 = function()
 
   require('nvim-treesitter.configs').setup({
     highlight = {
       enable = true,
-    }, 
+    },
     indent = {
       enable = true,
-    }, 
+    },
     incremental_selection = {
       enable = true,
       keymaps = {
