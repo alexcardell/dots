@@ -9,6 +9,7 @@
     todoist-electron
     discord
     unstable.vicinae
+    tor-browser
   ];
 
   programs.lutris.enable = true;

@@ -32,7 +32,7 @@
       winetricks
     ];
 
-  # programs.firefox.enable = true;
+  programs.firefox.enable = true;
 
   services.redshift = {
     enable = true;
