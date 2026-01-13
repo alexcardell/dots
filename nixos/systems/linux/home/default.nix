@@ -26,10 +26,10 @@
       unstable.veracrypt
       unzip
       vlc
-      wireguard-tools
-      xclip
       wineWowPackages.stable
       winetricks
+      wireguard-tools
+      xclip
     ];
 
   programs.firefox.enable = true;
