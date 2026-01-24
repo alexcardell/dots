@@ -21,6 +21,7 @@
       metals
       nixd
       postgres-language-server
+      rust-analyzer
       terraform-ls
       typescript-language-server
       yaml-language-server
@@ -43,7 +44,7 @@
         plug.codecompanion-history-nvim
         plug.codecompanion-nvim
         plug.codecompanion-spinner-nvim
-        plug.copilot-vim
+        # plug.copilot-vim
         plug.diffview-nvim
         plug.edgy-nvim
         plug.fidget-nvim

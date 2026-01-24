@@ -43,7 +43,7 @@ local setup_codecompanion = function()
 end
 
 M.setup = function()
-  setup_codecompanion()
+  -- setup_codecompanion()
   -- setup_avante()
 end
 

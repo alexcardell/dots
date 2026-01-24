@@ -79,7 +79,8 @@ M.setup = function()
     'ts_ls',
     'dockerls',
     'docker_compose_language_service',
-    'postgres_lsp'
+    'postgres_lsp',
+    'rust_analyzer'
   }
 
   for _, server in ipairs(standard_servers) do
