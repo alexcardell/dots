@@ -12,17 +12,18 @@
     ];
 
   home.packages = with pkgs.unstable; [
+    # devpod-desktop
     adr-tools
     aws-vault
     awscli2
     coreutils-prefixed
     devpod
-    # devpod-desktop
     gh-dash
     google-cloud-sdk
     hiera-eyaml
     pngpaste
     postgresql_16
+    postman
     raycast
     slack
   ];
