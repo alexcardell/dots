@@ -64,6 +64,7 @@
     extraGroups = [
       "wheel"
       "docker"
+      "podman"
       "dialout"
     ]; # Enable ‘sudo’ for the user.
   };
@@ -91,7 +92,12 @@
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
 
-  virtualisation.docker.enable = true;
+  # virtualisation.docker.enable = true;
+  virtualisation.podman = {
+    enable = true;
+    dockerCompat = true;
+    dockerSocket.enable = true;
+  };
 
   services.clamav = {
     scanner.enable = true;
