@@ -77,6 +77,7 @@
     neovim
     pavucontrol
     wpa_supplicant_gui
+    podman-compose
   ];
 
   programs.zsh.enable = true;
@@ -97,6 +98,7 @@
     enable = true;
     dockerCompat = true;
     dockerSocket.enable = true;
+    defaultNetwork.settings.dns_enabled = true;
   };
 
   services.clamav = {
