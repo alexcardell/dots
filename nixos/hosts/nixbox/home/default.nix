@@ -3,6 +3,7 @@
   # imports = [ flake-inputs.flatpaks.homeManagerModules.nix-flatpak ];
 
   home.packages = with pkgs; [
+    cameractrls-gtk3
     pavucontrol
     lxappearance
     protonmail-desktop
