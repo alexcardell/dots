@@ -161,6 +161,7 @@ M.setup = function()
 
   if is_mac then
     vim.lsp.config("snyk_ls", {
+      endpoint = 'https://api.eu.snyk.io',
       activateSnykOpenSource = 'true',
       activateSnykCode = 'true',
       activateSnykIac = 'true',
