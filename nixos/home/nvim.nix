@@ -71,6 +71,7 @@
         plug.nvim-surround
         plug.nvim-treesitter-textobjects # TODO add more textobjects
         plug.nvim-treesitter.withAllGrammars
+        plug.treesitter-modules-nvim
         plug.nvim-ts-autotag
         plug.nvim-web-devicons
         plug.oil-nvim

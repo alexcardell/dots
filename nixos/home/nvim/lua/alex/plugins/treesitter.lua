@@ -1,41 +1,37 @@
 local M = {}
 
-M.setup = function () end
+M.setup = function()
+  -- Treesitter highlight/indent now use native Neovim APIs (auto-enabled with parsers)
+  -- Parsers are managed via Nix in nvim.nix
 
-M.setup2 = function()
+  -- Textobjects (nvim-treesitter-textobjects plugin)
+  require('nvim-treesitter-textobjects').setup({
+    select = {
+      enable = true,
+      lookahead = true,
+      keymaps = {
+        ["aa"] = "@assignment.outer",
+        ["ia"] = "@assignment.inner",
+        ["al"] = "@assignment.lhs",
+        ["ar"] = "@assignment.rhs",
+        ["af"] = "@function.outer",
+        ["if"] = "@function.inner",
+        ["ac"] = "@class.outer",
+        ["ic"] = "@class.inner",
+        ["as"] = { query = "@scope", query_group = "locals" },
+      },
+    },
+  })
 
-  require('nvim-treesitter.configs').setup({
-    highlight = {
-      enable = true,
-    },
-    indent = {
-      enable = true,
-    },
+  -- Incremental selection (via treesitter-modules.nvim)
+  require('treesitter-modules').setup({
     incremental_selection = {
       enable = true,
       keymaps = {
-        init_selection = "<M-space>", -- set to `false` to disable mapping
+        init_selection = "<M-space>",
         node_incremental = "<M-space>",
         scope_incremental = false,
         node_decremental = "<BS>",
-        scope_decremental = false,
-      },
-    },
-    textobjects = {
-      select = {
-        enable = true,
-        lookahead = true,
-        keymaps = {
-          ["aa"] = "@assignment.outer",
-          ["ia"] = "@assignment.inner",
-          ["al"] = "@assignment.lhs",
-          ["ar"] = "@assignment.rhs",
-          ["af"] = "@function.outer",
-          ["if"] = "@function.inner",
-          ["ac"] = "@class.outer",
-          ["ic"] = "@class.inner",
-          ["as"] = { query = "@scope", query_group = "locals" },
-        },
       },
     },
   })
