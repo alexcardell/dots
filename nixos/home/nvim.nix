@@ -22,6 +22,7 @@
       nixd
       postgres-language-server
       rust-analyzer
+      snyk
       terraform-ls
       typescript-language-server
       yaml-language-server

@@ -69,7 +69,15 @@
       ZVM_VI_ESCAPE_BINDKEY = "jk";
     };
 
-    envExtra = builtins.readFile ./zsh/.zshenv;
+    envExtra =
+      let
+        isDarwin = pkgs.stdenv.isDarwin;
+        baseEnv = builtins.readFile ./zsh/.zshenv;
+        darwinEnv = ''
+          export SNYK_TOKEN="${builtins.readFile ../secrets/snyk-ls-token}"
+        '';
+      in
+      if isDarwin then baseEnv + "\n" + darwinEnv else baseEnv;
     initContent = builtins.readFile ./zsh/.zshrc;
 
     plugins = [

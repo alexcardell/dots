@@ -17,8 +17,8 @@ local setup_metals = function()
   }
 
   config.settings = {
-    serverVersion              = "2.0.0-M7",
-    serverProperties           = { "-Xmx4g" },
+    -- serverVersion              = "2.0.0-M7",
+    -- serverProperties           = { "-Xmx4g" },
     autoImportBuild            = "all",
     defaultBspToBuildTool      = true,
     enableSemanticHighlighting = false,
@@ -75,14 +75,14 @@ M.setup = function()
 
   -- anything with standard empty configuration
   local standard_servers = {
+    'docker_compose_language_service',
+    'dockerls',
     'nixd',
+    'postgres_lsp',
+    'rust_analyzer',
     'smithy_ls',
     'terraformls',
     'ts_ls',
-    'dockerls',
-    'docker_compose_language_service',
-    'postgres_lsp',
-    'rust_analyzer'
   }
 
   for _, server in ipairs(standard_servers) do
@@ -155,6 +155,25 @@ M.setup = function()
     }
   })
   vim.lsp.enable("yamlls")
+
+  -- if mac assume we're on the work machine
+  local is_mac = vim.fn.has("macunix") == 1
+
+  if is_mac then
+    vim.lsp.config("snyk_ls", {
+      activateSnykOpenSource = 'true',
+      activateSnykCode = 'true',
+      activateSnykIac = 'true',
+      init_options = {
+        trustedFolders = {
+          "/Users/alexcard/code",
+          "/Users/alexcard/itv",
+          "/home/alex/code"
+        }
+      }
+    })
+    vim.lsp.enable("snyk_ls")
+  end
 
   setup_metals()
 end
