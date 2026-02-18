@@ -30,6 +30,7 @@
     ripgrep
     sbt
     shellcheck
+    snyk
     tenv
     unixtools.watch
     unstable.jira-cli-go
