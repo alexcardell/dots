@@ -35,9 +35,23 @@
     plugins =
       let
         plug = pkgs.unstable.vimPlugins;
+        pinned = {
+          agentic-nvim = pkgs.unstable.vimUtils.buildVimPlugin {
+            pname = "agentic.nvim";
+            version = "2026-03-03";
+            nvimRequireCheck = [ "agentic" ];
+            src = pkgs.unstable.fetchFromGitHub {
+              owner = "carlos-algms";
+              repo = "agentic.nvim";
+              rev = "1f26e5ad9418b4df4a196fea3ff8aa0283e2c048";
+              hash = "sha256-V9rbJzeXA4E5W/1CrGjuDdZz/1gb9aHaq4gs6z8Tivc=";
+            };
+          };
+        };
       in
       [
         plug.Navigator-nvim
+        pinned.agentic-nvim
         plug.avante-nvim
         plug.base16-nvim
         plug.blink-cmp

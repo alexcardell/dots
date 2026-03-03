@@ -42,9 +42,13 @@ local setup_codecompanion = function()
   })
 end
 
+local setup_agentic = function()
+end
+
 M.setup = function()
   -- setup_codecompanion()
   -- setup_avante()
+  setup_agentic()
 end
 
 return M
