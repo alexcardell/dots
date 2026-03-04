@@ -14,6 +14,8 @@
     actionlint
     bitwarden-cli
     bitwarden-desktop
+    bruno
+    bruno-cli
     compose2nix
     coursier
     entr
