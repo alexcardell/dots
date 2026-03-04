@@ -8,6 +8,7 @@
     taps = [
       "smithy-lang/tap" # smithy-cli
       "flipt-io/brew"
+      "snyk/tap"
     ];
     casks = [
       "alt-tab"
@@ -19,6 +20,7 @@
       "todoist-app"
     ];
     brews = [
+      "snyk"
       "docker-credential-helper-ecr"
       "flipt"
       "smithy-cli"

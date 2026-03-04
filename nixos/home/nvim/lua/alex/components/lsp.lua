@@ -160,20 +160,22 @@ M.setup = function()
   local is_mac = vim.fn.has("macunix") == 1
 
   if is_mac then
-    vim.lsp.config("snyk_ls", {
-      endpoint = 'https://api.eu.snyk.io',
-      activateSnykOpenSource = 'true',
-      activateSnykCode = 'true',
-      activateSnykIac = 'true',
-      init_options = {
-        trustedFolders = {
-          "/Users/alexcard/code",
-          "/Users/alexcard/itv",
-          "/home/alex/code"
-        }
-      }
-    })
-    vim.lsp.enable("snyk_ls")
+    -- vim.lsp.config("snyk_ls", {
+    --   init_options = {
+    --     endpoint = 'https://api.eu.snyk.io',
+    --     activateSnykOpenSource = 'true',
+    --     activateSnykCode = 'true',
+    --     activateSnykIac = 'true',
+    --     token = os.getenv('SNYK_TOKEN') or '',
+    --     authenticationMethod = 'token',
+    --     organization = 'content-supply-and-distribution',
+    --     trustedFolders = {
+    --       "/Users/alexcard/code",
+    --       "/Users/alexcard/itv",
+    --     }
+    --   }
+    -- })
+    -- vim.lsp.enable("snyk_ls")
   end
 
   setup_metals()

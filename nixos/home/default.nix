@@ -32,7 +32,6 @@
     ripgrep
     sbt
     shellcheck
-    snyk
     tenv
     unixtools.watch
     unstable.jira-cli-go
@@ -76,7 +75,7 @@
         isDarwin = pkgs.stdenv.isDarwin;
         baseEnv = builtins.readFile ./zsh/.zshenv;
         darwinEnv = ''
-          export SNYK_TOKEN="${builtins.readFile ../secrets/snyk-ls-token}"
+          export SNYK_TOKEN="${pkgs.lib.removeSuffix "\n" (builtins.readFile ../secrets/snyk-ls-token)}"
         '';
       in
       if isDarwin then baseEnv + "\n" + darwinEnv else baseEnv;
