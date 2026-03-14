@@ -4,13 +4,14 @@
 
   home.packages = with pkgs; [
     cameractrls-gtk3
-    pavucontrol
+    discord
     lxappearance
+    pavucontrol
     protonmail-desktop
     todoist-electron
-    discord
-    unstable.vicinae
     tor-browser
+    unstable.eww
+    unstable.vicinae
   ];
 
   programs.lutris.enable = true;

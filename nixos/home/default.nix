@@ -165,4 +165,8 @@
     recursive = true;
   };
 
+  xdg.configFile.vicinae = {
+    source = ./vicinae;
+    recursive = true;
+  };
 }
