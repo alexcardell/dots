@@ -14,6 +14,7 @@
       cava
       fastcompmgr
       feh
+      flameshot
       killall
       nur.repos.bandithedoge.waterfox-bin
       orchis-theme
