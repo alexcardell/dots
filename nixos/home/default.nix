@@ -150,23 +150,4 @@
     recursive = true;
   };
 
-  xdg.configFile.i3 = {
-    source = ./i3;
-    recursive = true;
-  };
-
-  xdg.configFile.polybar = {
-    source = ./polybar;
-    recursive = true;
-  };
-
-  xdg.configFile.rofi = {
-    source = ./rofi;
-    recursive = true;
-  };
-
-  xdg.configFile.vicinae = {
-    source = ./vicinae;
-    recursive = true;
-  };
 }

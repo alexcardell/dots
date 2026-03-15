@@ -41,4 +41,25 @@
     longitude = -2.5158927;
     tray = true;
   };
+
+  xdg.configFile.i3 = {
+    source = ../../../home/i3;
+    recursive = true;
+  };
+
+  xdg.configFile.polybar = {
+    source = ../../../home/polybar;
+    recursive = true;
+  };
+
+  xdg.configFile.rofi = {
+    source = ../../../home/rofi;
+    recursive = true;
+  };
+
+  xdg.configFile.vicinae = {
+    source = ../../../home/vicinae;
+    recursive = true;
+  };
+
 }
