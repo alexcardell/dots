@@ -51,4 +51,8 @@
   #   });
   # };
 
+  nix.settings = {
+    ssl-cert-file = "/etc/ssl/certs/zscaler-root-ca.pem";
+  };
+
 }
