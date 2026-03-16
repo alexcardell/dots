@@ -6,6 +6,7 @@
     cameractrls-gtk3
     discord
     lxappearance
+    nautilus
     pavucontrol
     protonmail-desktop
     todoist-electron
