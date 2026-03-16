@@ -66,6 +66,16 @@
   services.xserver = {
     enable = true;
     videoDrivers = [ "nvidia" ];
+    displayManager.lightdm = {
+      background = ../../../media/BLACK_VII_desktop-3.jpg;
+      greeters.gtk = {
+        enable = true;
+        theme = {
+          package = pkgs.orchis-theme;
+          name = "Orchis-Purple-Dark";
+        };
+      };
+    };
   };
 
   services.picom = {
