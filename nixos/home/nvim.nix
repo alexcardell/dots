@@ -16,6 +16,8 @@
     extraPackages = with pkgs.unstable; [
       docker-compose-language-service
       dockerfile-language-server
+      jdt-language-server
+      kotlin-language-server
       ltex-ls
       lua-language-server
       metals
@@ -81,6 +83,7 @@
         plug.nvim-lint
         plug.nvim-lspconfig
         plug.nvim-metals
+        plug.nvim-jdtls
         plug.nvim-nio
         plug.nvim-surround
         plug.nvim-treesitter-textobjects # TODO add more textobjects

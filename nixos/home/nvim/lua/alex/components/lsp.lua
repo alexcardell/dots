@@ -163,9 +163,9 @@ M.setup = function()
     -- vim.lsp.config("snyk_ls", {
     --   init_options = {
     --     endpoint = 'https://api.eu.snyk.io',
-    --     activateSnykOpenSource = 'true',
-    --     activateSnykCode = 'true',
-    --     activateSnykIac = 'true',
+    --     activateSnykOpenSource = 'false',
+    --     activateSnykCode = 'false',
+    --     activateSnykIac = 'false',
     --     token = os.getenv('SNYK_TOKEN') or '',
     --     authenticationMethod = 'token',
     --     organization = 'content-supply-and-distribution',
@@ -177,6 +177,12 @@ M.setup = function()
     -- })
     -- vim.lsp.enable("snyk_ls")
   end
+
+  vim.lsp.config("jtdls", {})
+  vim.lsp.enable("jtdls")
+
+  vim.lsp.config("kotlin_language_server", {})
+  vim.lsp.enable("kotlin_language_server")
 
   setup_metals()
 end
