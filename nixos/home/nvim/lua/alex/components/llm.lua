@@ -43,6 +43,7 @@ local setup_codecompanion = function()
 end
 
 local setup_agentic = function()
+  require('agentic').setup({})
 end
 
 M.setup = function()

@@ -5,6 +5,9 @@ local setup_blink = function()
   local luasnip = require('luasnip')
 
   blink.setup({
+    enabled = function()
+      return not vim.tbl_contains({"AgenticInput"}, vim.bo.filetype)
+    end,
     keymap = { preset = 'super-tab' },
     appearance = {
       use_nvim_cmp_as_default = true,
