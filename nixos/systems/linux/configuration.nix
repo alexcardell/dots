@@ -72,12 +72,13 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    btrfs-progs
     git
     manix
     neovim
     pavucontrol
-    wpa_supplicant_gui
     podman-compose
+    wpa_supplicant_gui
   ];
 
   programs.zsh.enable = true;
