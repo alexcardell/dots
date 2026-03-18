@@ -15,6 +15,7 @@
       fastcompmgr
       feh
       flameshot
+      gparted
       killall
       nur.repos.bandithedoge.waterfox-bin
       orchis-theme
