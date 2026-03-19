@@ -21,10 +21,7 @@ PATH=$PATH:$HOME/.local/node/global/bin
 
 PATH=$DEFAULT_PATH:$PATH
 
-NODE_EXTRA_CA_CERTS=$HOME/zscaler-root-ca.pem
-
 typeset -U PATH
 export PATH
 export NODE_PATH
 export NPM_CONFIG_PREFIX
-export NODE_EXTRA_CA_CERTS

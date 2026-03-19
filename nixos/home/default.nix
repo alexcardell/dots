@@ -75,6 +75,7 @@
         isDarwin = pkgs.stdenv.isDarwin;
         baseEnv = builtins.readFile ./zsh/.zshenv;
         darwinEnv = ''
+          ${builtins.readFile ./zsh/.zshenv.darwin}
           export SNYK_TOKEN="${pkgs.lib.removeSuffix "\n" (builtins.readFile ../secrets/snyk-ls-token)}"
         '';
       in

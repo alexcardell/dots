@@ -1,5 +1,5 @@
 [user]
 #  signingkey = "064D16C7390F9868!"
 
-[http]
-  sslCAInfo = ~/zscaler-root-ca.pem
+# [http]
+#   sslCAInfo = /etc/ssl/certs/zscaler-root-ca.pem
