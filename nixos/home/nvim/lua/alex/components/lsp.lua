@@ -160,22 +160,24 @@ M.setup = function()
   local is_mac = vim.fn.has("macunix") == 1
 
   if is_mac then
-    -- vim.lsp.config("snyk_ls", {
-    --   init_options = {
-    --     endpoint = 'https://api.eu.snyk.io',
-    --     activateSnykOpenSource = 'false',
-    --     activateSnykCode = 'false',
-    --     activateSnykIac = 'false',
-    --     token = os.getenv('SNYK_TOKEN') or '',
-    --     authenticationMethod = 'token',
-    --     organization = 'content-supply-and-distribution',
-    --     trustedFolders = {
-    --       "/Users/alexcard/code",
-    --       "/Users/alexcard/itv",
-    --     }
-    --   }
-    -- })
-    -- vim.lsp.enable("snyk_ls")
+    if false then
+      vim.lsp.config("snyk_ls", {
+        init_options = {
+          endpoint = 'https://api.eu.snyk.io',
+          activateSnykOpenSource = 'false',
+          activateSnykCode = 'false',
+          activateSnykIac = 'false',
+          token = os.getenv('SNYK_TOKEN') or '',
+          authenticationMethod = 'token',
+          organization = 'content-supply-and-distribution',
+          trustedFolders = {
+            "/Users/alexcard/code",
+            "/Users/alexcard/itv",
+          }
+        }
+      })
+      vim.lsp.enable("snyk_ls")
+    end
   end
 
   vim.lsp.config("jtdls", {})
