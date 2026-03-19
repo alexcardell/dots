@@ -51,15 +51,16 @@
   #   });
   # };
 
-  system.activationScripts."ssl-ca-cert-fix".text = ''
-    if [ ! -f /etc/ssl/certs/zscaler-root-ca.pem ]; then
-      echo 'ssl-ca-cert-fix: generating new zscaler cert
-      security export -t certs -f pemseq -k /Library/Keychains/System.keychain -o /tmp/certs-system.pem
-      security export -t certs -f pemseq -k /System/Library/Keychains/SystemRootCertificates.keychain -o /tmp/certs-root.pem
-      cat /tmp/certs-root.pem /tmp/certs-system.pem > /tmp/ca_cert.pem
-      sudo mv /tmp/ca_cert.pem /etc/ssl/certs/zscaler-root-ca.pem
-    fi
-  '';
+  # TODO this would be good but doesn't seem to work, hit an SSL issue before script runs
+  # system.activationScripts.preActivation.text = ''
+  #   if [ ! -f /etc/ssl/certs/zscaler-root-ca.pem ]; then
+  #     echo 'ssl-ca-cert-fix: generating new zscaler cert
+  #     security export -t certs -f pemseq -k /Library/Keychains/System.keychain -o /tmp/certs-system.pem
+  #     security export -t certs -f pemseq -k /System/Library/Keychains/SystemRootCertificates.keychain -o /tmp/certs-root.pem
+  #     cat /tmp/certs-root.pem /tmp/certs-system.pem > /tmp/ca_cert.pem
+  #     sudo mv /tmp/ca_cert.pem /etc/ssl/certs/zscaler-root-ca.pem
+  #   fi
+  # '';
 
   nix.settings = {
     ssl-cert-file = "/etc/ssl/certs/zscaler-root-ca.pem";

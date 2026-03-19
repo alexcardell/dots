@@ -16,7 +16,7 @@ Personal configuration for NixOS / `nix-darwin` systems
 On MacOS, if using Zscaler:
 
 - Export Zscaler Root CA from Keychain
-- `sudo cp /some/path/zscaler-root-ca.pem /etc/ssl/certs/zscaler-root-ca.pem`
+    - `./scripts/zscaler-ssl-nix-fix.sh`
 - Try rebuild
 - If not working (see Darwin `configuration.nix` `nix.settings.ssl-cert-file`) continue
 - `sudo nvim /Library/LaunchDaemons/org.nixos.nix-daemon.plist`
