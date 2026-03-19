@@ -32,7 +32,7 @@ On MacOS, if using Zscaler:
             <string>/etc/ssl/certs/zscaler-root-ca.pem</string>
             <!-- ... -->
     ```
-- `sudo launchctl bootout 'system/org.nixos.nix-daemon.plist'`
+- `sudo launchctl bootout 'system/org.nixos.nix-daemon'`
 - `sudo launchctl bootstrap system /Library/LaunchDaemons/org.nixos.nix-daemon.plist`
 - verify with `sudo launchctl print 'system/org.nixos.nix-daemon'`
 - Rebuild
