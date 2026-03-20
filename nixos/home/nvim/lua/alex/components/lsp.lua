@@ -30,7 +30,7 @@ local setup_metals = function()
       inferredTypes = { enable = true },
       typeParameters = { enable = true },
     },
-    -- useGlobalExecutable        = true, -- for nix
+    useGlobalExecutable        = true, -- for nix
     startMcpServer             = true
     -- testUserInterface          = "Test Explorer"
   }

@@ -20,7 +20,8 @@
       kotlin-language-server
       ltex-ls
       lua-language-server
-      metals
+      # TODO use unstable when 1.6.7 is on nixpkgs
+      pkgs.metals
       nixd
       postgres-language-server
       rust-analyzer
