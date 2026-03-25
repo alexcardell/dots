@@ -84,6 +84,8 @@
     backend = "xrender";
   };
 
+  programs.gamemode.enable = true;
+
   programs.steam = {
     enable = true;
     # package = pkgs.unstable.steam;
@@ -91,7 +93,8 @@
     dedicatedServer.openFirewall = false;
     localNetworkGameTransfers.openFirewall = true;
     protontricks.enable = true;
-    extraCompatPackages = with pkgs; [
+    gamescopeSession.enable = true;
+    extraCompatPackages = with pkgs.unstable; [
       proton-ge-bin
     ];
   };
