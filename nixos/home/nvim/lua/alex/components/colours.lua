@@ -90,7 +90,7 @@ end
 
 M.setup = function()
   setup_base16()
-  setup_auto_dark_mode()
+  -- setup_auto_dark_mode()
 end
 
 return M

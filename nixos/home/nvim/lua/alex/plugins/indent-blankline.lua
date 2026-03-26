@@ -5,12 +5,10 @@ M.setup = function()
 
   local fg = colours.base02
 
-  vim.api.nvim_set_hl(0, 'CustomIndentLine', { fg = fg })
 
   require('ibl').setup({
     indent = {
       char = '│',
-      highlight = { 'CustomIndentLine' }
     },
     scope = { enabled = false }
   })
