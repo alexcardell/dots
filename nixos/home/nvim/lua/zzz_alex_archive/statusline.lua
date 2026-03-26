@@ -45,8 +45,8 @@ M.setup = function()
       component_separators = '|',
       section_separators = { left = '', right = '' },
       disabled_filetypes = {
-        winbar = { 'Outline', 'NvimTree', 'qf', 'AgenticChat', 'AgenticInput', 'AgenticCode', 'AgenticFiles' },
-        statusline = { 'AgenticChat', 'AgenticInput', 'AgenticCode', 'AgenticFiles' },
+        winbar = { 'Outline', 'NvimTree', 'qf', 'AgenticChat', 'AgenticInput', 'AgenticCode', 'AgenticFiles', 'AgenticDiagnostics' },
+        statusline = { 'AgenticChat', 'AgenticInput', 'AgenticCode', 'AgenticFiles', 'AgenticDiagnostics' },
       },
       globalstatus = true
     },

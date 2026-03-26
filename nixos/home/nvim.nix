@@ -46,8 +46,8 @@
             src = pkgs.unstable.fetchFromGitHub {
               owner = "carlos-algms";
               repo = "agentic.nvim";
-              rev = "1f26e5ad9418b4df4a196fea3ff8aa0283e2c048";
-              hash = "sha256-V9rbJzeXA4E5W/1CrGjuDdZz/1gb9aHaq4gs6z8Tivc=";
+              rev = "cfa49d9dc3d9712ed10a963706caa55cc0eb62aa";
+              hash = "sha256-QWb0kctWiwfhDKv3hUdhpmJwkS9nO9OQ8/NUmRBXgvA=";
             };
           };
         };
