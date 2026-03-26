@@ -25,6 +25,8 @@
       url = "github:gmodena/nix-flatpak?ref=v0.6.0";
     };
 
+    nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
+
   };
 
   outputs =
@@ -35,6 +37,7 @@
       home-manager,
       darwin,
       nix-flatpak,
+      nix-cachyos-kernel,
       # neovim-nightly-overlay,
       ...
     }:
@@ -72,7 +75,7 @@
           overlays =
             { ... }:
             {
-              nixpkgs.overlays = sharedOverlays system;
+              nixpkgs.overlays = sharedOverlays system ++ [ nix-cachyos-kernel.overlays.default ];
             };
           os-configuration = ./nixos/systems/linux/configuration.nix;
           os-home = ./nixos/systems/linux/home/default.nix;

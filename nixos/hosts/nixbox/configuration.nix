@@ -16,9 +16,18 @@
       # TODO put in sops
       "/etc/nix/homelab-builder-nixbox-signing-key.sec"
     ];
+    substituters = [
+      "https://cache.garnix.io"
+      "https://attic.xuyh0120.win/lantian"
+    ];
+    trusted-public-keys = [
+      "cache.garnix.io:CTFPyKSLcx5RMJKfLo5EEPUObbA78b0YQ2DTCJXqr9g="
+      "lantian:EeAUQ+W+6r7EtwnmYjeVwx5kOGEBpjlBfPlzGlTNvHc="
+    ];
   };
 
   boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
+  boot.kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-lts;
 
   networking.hostName = "nixbox"; # Define your hostname.
 
