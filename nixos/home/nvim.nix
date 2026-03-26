@@ -41,7 +41,7 @@
         pinned = {
           agentic-nvim = pkgs.unstable.vimUtils.buildVimPlugin {
             pname = "agentic.nvim";
-            version = "2026-03-03";
+            version = "cfa49d9dc";
             nvimRequireCheck = [ "agentic" ];
             src = pkgs.unstable.fetchFromGitHub {
               owner = "carlos-algms";
@@ -50,11 +50,22 @@
               hash = "sha256-QWb0kctWiwfhDKv3hUdhpmJwkS9nO9OQ8/NUmRBXgvA=";
             };
           };
+          auto-dark-mode-nvim = pkgs.unstable.vimUtils.buildVimPlugin {
+            pname = "auto-dark-mode.nvim";
+            version = "e300259ec";
+            src = pkgs.unstable.fetchFromGitHub {
+              owner = "f-person";
+              repo = "auto-dark-mode.nvim";
+              rev = "e300259ec777a40b4b9e3c8e6ade203e78d15881";
+              hash = "sha256-PhhOlq4byctWJ5rLe3cifImH56vR2+k3BZGDZdQvjng=";
+            };
+          };
         };
       in
       [
         plug.Navigator-nvim
         pinned.agentic-nvim
+        pinned.auto-dark-mode-nvim
         plug.avante-nvim
         plug.base16-nvim
         plug.blink-cmp

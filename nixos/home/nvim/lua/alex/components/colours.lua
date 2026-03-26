@@ -61,7 +61,7 @@ local base16_colours = dark_mode
 
 M.colours = colours
 
-M.setup = function()
+local setup_base16 = function()
   require('base16-colorscheme').setup(
     base16_colours,
     {
@@ -73,6 +73,24 @@ M.setup = function()
       illuminate = false,
       dapui = false,
     })
+end
+
+local setup_auto_dark_mode = function()
+  require('auto-dark-mode').setup({
+    set_dark_mode = function()
+      vim.api.nvim_set_option_value("background", "dark", {})
+      vim.cmd("colorscheme base16-tomorrow-night")
+    end,
+    set_light_mode = function()
+      vim.api.nvim_set_option_value("background", "light", {})
+      vim.cmd("colorscheme base16-tomorrow")
+    end
+  })
+end
+
+M.setup = function()
+  setup_base16()
+  setup_auto_dark_mode()
 end
 
 return M

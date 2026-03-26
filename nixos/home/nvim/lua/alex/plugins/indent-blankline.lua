@@ -1,7 +1,7 @@
 local M = {}
 
 M.setup = function()
-  local colours = require('alex/plugins/base16').colours
+  local colours = require('alex/components/colours').colours
 
   local fg = colours.base02
 

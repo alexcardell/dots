@@ -35,7 +35,7 @@ M.setup = function()
 
   require('dapui').setup()
 
-  local colours = require('alex/plugins/base16').colours
+  local colours = require('alex/components/colours').colours
 
   vim.api.nvim_set_hl(0, 'CustomDapBreakpoint', { fg = colours.red })
   vim.api.nvim_set_hl(0, 'CustomDapBreakpointRejected', { fg = colours.orange })

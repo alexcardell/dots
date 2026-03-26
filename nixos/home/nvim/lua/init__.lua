@@ -12,7 +12,6 @@ require('alex/autocmds').setup()
 -- core plugins
 require('alex/plugins/treesitter').setup()
 require('alex/plugins/telescope').setup()
-require('alex/plugins/base16').setup()
 
 -- aggregate components
 require('alex/components/diagnostics').setup()
@@ -20,6 +19,7 @@ require('alex/components/lsp').setup()
 require('alex/components/dap').setup()
 require('alex/components/completion').setup()
 require('alex/components/llm').setup()
+require('alex/components/colours').setup()
 
 -- other plugins
 require('alex/plugins/nvim-lint').setup()
