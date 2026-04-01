@@ -16,6 +16,7 @@
     adr-tools
     aws-vault
     awscli2
+    bashInteractive
     coreutils-prefixed
     devpod
     gh-dash
