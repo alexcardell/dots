@@ -44,6 +44,7 @@
     vale
     xdg-ninja
     yamllint
+    yq-go
     zk
   ];
 
