@@ -7,6 +7,10 @@ local setup_agentic = function()
     require('agentic').setup({
       provider = "copilot-acp"
     })
+  else
+    require('agentic').setup({
+      provider = "mistral-vibe-acp"
+    })
   end
 end
 

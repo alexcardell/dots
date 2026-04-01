@@ -7,6 +7,11 @@
         i3Support = true;
         pulseSupport = true;
       };
+      themeMode = pkgs.writeShellApplication {
+        name = "theme-mode";
+        runtimeInputs = [ pkgs.dconf ];
+        text = builtins.readFile ./scripts/theme-mode.sh;
+      };
     in
     [
       anki
@@ -32,9 +37,20 @@
       winetricks
       wireguard-tools
       xclip
+      themeMode
+      uv
     ];
 
   programs.firefox.enable = true;
+
+  gtk = {
+    enable = true;
+    theme = {
+      package = pkgs.orchis-theme;
+      name = "Orchis-Purple-Dark";
+    };
+    colorScheme = "dark";
+  };
 
   services.redshift = {
     enable = true;

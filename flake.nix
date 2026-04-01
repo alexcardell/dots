@@ -93,6 +93,7 @@
             {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
+              home-manager.backupFileExtension = "hm-backup";
               home-manager.users.alex = {
                 imports = [
                   nix-flatpak.homeManagerModules.nix-flatpak
@@ -127,6 +128,7 @@
                 home-manager = {
                   useGlobalPkgs = true;
                   useUserPackages = true;
+                  backupFileExtension = "hm-backup";
 
                   users.alexcard = {
                     imports = [

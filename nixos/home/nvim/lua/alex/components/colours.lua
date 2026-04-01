@@ -38,59 +38,55 @@ local dark_mode = {
   base0F = colours.brown
 }
 
-local light_mode = {
-  base00 = '#ffffff',
-  base01 = '#e0e0e0',
-  base02 = '#d6d6d6',
-  base03 = '#8e908c',
-  base04 = '#969896',
-  base05 = '#4d4d4c',
-  base06 = '#282a2e',
-  base07 = '#1d1f21',
-  base08 = '#c82829',
-  base09 = '#f5871f',
-  base0A = '#eab700',
-  base0B = '#718c00',
-  base0C = '#3e999f',
-  base0D = '#4271ae',
-  base0E = '#8959a8',
-  base0F = '#a3685a'
-}
-
-local base16_colours = dark_mode
-
 M.colours = colours
 
+local base16_config = {
+  telescope = false,
+  indentblankline = false,
+  notify = false,
+  ts_rainbow = false,
+  cmp = false,
+  illuminate = false,
+  dapui = false,
+}
+
 local setup_base16 = function()
-  require('base16-colorscheme').setup(
-    base16_colours,
-    {
-      telescope = false,
-      indentblankline = false,
-      notify = false,
-      ts_rainbow = false,
-      cmp = false,
-      illuminate = false,
-      dapui = false,
-    })
+  require('base16-colorscheme').with_config(base16_config)
+end
+
+local set_dark_mode = function()
+  vim.api.nvim_set_option_value("background", "dark", {})
+  require('base16-colorscheme').with_config(base16_config)
+  vim.cmd("colorscheme base16-tomorrow-night")
+end
+
+local set_extra_dark_mode = function()
+  vim.api.nvim_set_option_value("background", "dark", {})
+  require('base16-colorscheme').setup(dark_mode, base16_config)
+end
+
+local set_light_mode = function()
+  vim.api.nvim_set_option_value("background", "light", {})
+  require('base16-colorscheme').with_config(base16_config)
+  vim.cmd("colorscheme base16-tomorrow")
 end
 
 local setup_auto_dark_mode = function()
   require('auto-dark-mode').setup({
-    set_dark_mode = function()
-      vim.api.nvim_set_option_value("background", "dark", {})
-      vim.cmd("colorscheme base16-tomorrow-night")
-    end,
-    set_light_mode = function()
-      vim.api.nvim_set_option_value("background", "light", {})
-      vim.cmd("colorscheme base16-tomorrow")
-    end
+    update_interval = 2000,
+    set_dark_mode = set_dark_mode,
+    set_light_mode = set_light_mode,
+    fallback = "dark"
   })
 end
 
 M.setup = function()
-  setup_base16()
   -- setup_auto_dark_mode()
+  set_extra_dark_mode()
 end
+
+M.set_dark_mode = set_dark_mode
+M.set_light_mode = set_light_mode
+M.set_extra_dark_mode = set_extra_dark_mode
 
 return M

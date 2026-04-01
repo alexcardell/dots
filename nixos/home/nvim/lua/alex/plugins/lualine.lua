@@ -26,9 +26,9 @@ M.setup = function()
     command = { a = { fg = colors.black, bg = colors.violet } },
 
     inactive = {
-      a = { fg = colors.white, bg = colors.black },
-      b = { fg = colors.white, bg = colors.black },
-      c = { fg = colors.black, bg = colors.black },
+      a = { fg = colors.black, bg = colors.grey },
+      b = { fg = colors.black, bg = colors.grey },
+      c = { fg = colors.grey2, bg = colors.grey },
     },
   }
 
