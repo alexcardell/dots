@@ -49,6 +49,10 @@
       package = pkgs.orchis-theme;
       name = "Orchis-Purple-Dark";
     };
+    font = {
+      name = "Sans Regular";
+      size = 20;
+    };
     colorScheme = "dark";
   };
 
