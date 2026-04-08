@@ -55,17 +55,20 @@ local setup_base16 = function()
 end
 
 local set_dark_mode = function()
+  vim.cmd('hi clear')
   vim.api.nvim_set_option_value("background", "dark", {})
   require('base16-colorscheme').with_config(base16_config)
   vim.cmd("colorscheme base16-tomorrow-night")
 end
 
 local set_extra_dark_mode = function()
+  vim.cmd('hi clear')
   vim.api.nvim_set_option_value("background", "dark", {})
   require('base16-colorscheme').setup(dark_mode, base16_config)
 end
 
 local set_light_mode = function()
+  vim.cmd('hi clear')
   vim.api.nvim_set_option_value("background", "light", {})
   require('base16-colorscheme').with_config(base16_config)
   vim.cmd("colorscheme base16-tomorrow")
