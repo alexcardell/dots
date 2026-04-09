@@ -51,7 +51,7 @@
     };
     font = {
       name = "Sans Regular";
-      size = 20;
+      size = 16;
     };
     colorScheme = "dark";
   };
