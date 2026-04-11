@@ -17,7 +17,22 @@
 
   programs.lutris.enable = true;
 
-  services.flatpak.packages = [
-    "org.mixxx.Mixxx"
-  ];
+  services.flatpak = {
+    update.auto = {
+      enable = true;
+      onCalendar = "weekly";
+    };
+
+    packages = [
+      "org.mixxx.Mixxx"
+    ];
+
+    overrides = {
+      "org.mixxx.Mixxx".Context = {
+        filesystems = [
+          "/mnt/usb"
+        ];
+      };
+    };
+  };
 }
