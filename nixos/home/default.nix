@@ -25,6 +25,7 @@
     git-crypt
     git-filter-repo
     gnupg
+    jj
     jq
     kitty
     nerd-fonts.sauce-code-pro
