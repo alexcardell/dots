@@ -60,12 +60,23 @@
               hash = "sha256-PhhOlq4byctWJ5rLe3cifImH56vR2+k3BZGDZdQvjng=";
             };
           };
+          nvim-metals = pkgs.unstable.vimUtils.buildVimPlugin {
+            pname = "nvim-metals";
+            version = "e300259ec";
+            src = pkgs.unstable.fetchFromGitHub {
+              owner = "scalameta";
+              repo = "nvim-metals";
+              rev = "6970d6036218db6545f3c295d0106cc8de6d7161";
+              hash = "sha256-RY+UhnwIjWuMU9WOG4a1JvBiJ9RWZ2fUxFDnuzDR+jw=";
+            };
+          };
         };
       in
       [
         plug.Navigator-nvim
         pinned.agentic-nvim
         pinned.auto-dark-mode-nvim
+        pinned.nvim-metals
         plug.avante-nvim
         plug.base16-nvim
         plug.blink-cmp
@@ -94,7 +105,6 @@
         plug.nvim-dap-virtual-text
         plug.nvim-lint
         plug.nvim-lspconfig
-        plug.nvim-metals
         plug.nvim-jdtls
         plug.nvim-nio
         plug.nvim-surround

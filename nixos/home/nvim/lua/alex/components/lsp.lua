@@ -44,7 +44,7 @@ local setup_metals = function()
 
   -- config.handlers = -- default_handlers
 
-  vim.api.nvim_create_autocmd('Filetype', {
+  vim.api.nvim_create_autocmd('FileType', {
     pattern = { "java", "scala", "sbt" },
     desc = 'Initialize or attach metals',
     group = vim.api.nvim_create_augroup(

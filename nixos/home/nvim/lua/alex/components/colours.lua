@@ -77,7 +77,7 @@ end
 local setup_auto_dark_mode = function()
   require('auto-dark-mode').setup({
     update_interval = 2000,
-    set_dark_mode = set_dark_mode,
+    set_dark_mode = set_extra_dark_mode,
     set_light_mode = set_light_mode,
     fallback = "dark"
   })
