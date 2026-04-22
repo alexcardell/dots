@@ -28,7 +28,8 @@
       rofi
       sops
       themechanger
-      unstable.protonvpn-gui
+      unstable.proton-vpn
+      unstable.proton-vpn-cli
       unstable.qbittorrent
       unstable.veracrypt
       unzip
