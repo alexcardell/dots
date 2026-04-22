@@ -25,7 +25,7 @@
     pngpaste
     postgresql_16
     postman
-    pkgs.raycast
+    raycast
     slack
   ];
 
