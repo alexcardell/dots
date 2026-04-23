@@ -35,6 +35,24 @@
     192.168.0.20 nixpad
   '';
 
+  fileSystems."/mnt/music" = {
+    device = "//nixpad/music";
+    fsType = "cifs";
+    options = [
+      "guest"
+      "ro"
+      "x-systemd.automount"
+      "noauto"
+      "nofail"
+      "x-systemd.idle-timeout=5min"
+      "uid=1000"
+      "gid=100"
+      "file_mode=0444"
+      "dir_mode=0555"
+      "vers=3.0"
+    ];
+  };
+
   networking.interfaces.enp42s0.useDHCP = true;
   networking.interfaces.wlp4s0.useDHCP = true;
 
