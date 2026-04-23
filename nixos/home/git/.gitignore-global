@@ -270,3 +270,6 @@ dist
 .direnv
 
 # End of https://www.toptal.com/developers/gitignore/api/scala,java,node
+
+.worktrees
+.codex
