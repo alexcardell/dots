@@ -123,7 +123,6 @@
         plug.telescope-ui-select-nvim
         plug.tint-nvim
         plug.undotree
-        plug.vectorcode-nvim
         plug.vim-dadbod
         plug.vim-dadbod-completion
         plug.vim-dadbod-ui
