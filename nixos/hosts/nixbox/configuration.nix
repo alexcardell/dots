@@ -53,6 +53,37 @@
     ];
   };
 
+  fileSystems."/mnt/media" =
+    let
+      credentialsFile = "/run/secrets/nixpad-samba";
+    in
+    {
+      device = "//nixpad/media";
+      fsType = "cifs";
+      options = [
+        "credentials=${credentialsFile}"
+        "uid=1000"
+        "gid=100"
+        "vers=3.1.1"
+        "x-systemd.automount"
+        "noauto"
+      ];
+    };
+
+  system.activationScripts.nixpad-samba-credentials.text =
+    let
+      samba-pw = lib.removeSuffix "\n" (builtins.readFile ../../secrets/samba-pw);
+    in
+    ''
+      install -d -m 0755 /run/secrets
+      umask 077
+      {
+        printf '%s\n' ${lib.escapeShellArg "username=alex"}
+        printf '%s\n' ${lib.escapeShellArg "password=${samba-pw}"}
+      } > /run/secrets/nixpad-samba
+      chmod 0600 /run/secrets/nixpad-samba
+    '';
+
   networking.interfaces.enp42s0.useDHCP = true;
   networking.interfaces.wlp4s0.useDHCP = true;
 
