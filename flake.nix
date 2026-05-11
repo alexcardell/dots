@@ -62,6 +62,15 @@
         };
       };
 
+      overlay-nautilus-gstreamer = final: prev: {
+        nautilus = prev.nautilus.overrideAttrs (old: {
+          buildInputs = old.buildInputs ++ (with final.gst_all_1; [
+            gst-plugins-good
+            gst-plugins-bad
+          ]);
+        });
+      };
+
       sharedOverlays = system: [
         (overlay-unstable system)
         nur.overlays.default
@@ -75,7 +84,10 @@
           overlays =
             { ... }:
             {
-              nixpkgs.overlays = sharedOverlays system ++ [ nix-cachyos-kernel.overlays.default ];
+              nixpkgs.overlays = sharedOverlays system ++ [
+                overlay-nautilus-gstreamer
+                nix-cachyos-kernel.overlays.default
+              ];
             };
           os-configuration = ./nixos/systems/linux/configuration.nix;
           os-home = ./nixos/systems/linux/home/default.nix;
