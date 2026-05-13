@@ -20,8 +20,7 @@
       kotlin-language-server
       ltex-ls
       lua-language-server
-      # TODO use unstable when 1.6.7 is on nixpkgs
-      pkgs.metals
+      metals
       nixd
       postgres-language-server
       rust-analyzer
@@ -77,15 +76,9 @@
         pinned.agentic-nvim
         pinned.auto-dark-mode-nvim
         pinned.nvim-metals
-        plug.avante-nvim
         plug.base16-nvim
         plug.blink-cmp
-        plug.codecompanion-history-nvim
-        plug.codecompanion-nvim
-        plug.codecompanion-spinner-nvim
-        # plug.copilot-vim
         plug.diffview-nvim
-        plug.edgy-nvim
         plug.fidget-nvim
         plug.gitsigns-nvim
         plug.hardtime-nvim
