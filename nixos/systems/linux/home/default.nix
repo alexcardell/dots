@@ -17,6 +17,7 @@
       anki
       brightnessctl
       cava
+      dex
       fastcompmgr
       feh
       flameshot

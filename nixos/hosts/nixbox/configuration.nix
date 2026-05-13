@@ -136,6 +136,8 @@
     };
   };
 
+  # security.pam.services.lightdm.enableGnomeKeyring = true;
+
   services.picom = {
     enable = true;
     vSync = true;

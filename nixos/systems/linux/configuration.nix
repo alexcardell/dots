@@ -15,16 +15,32 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.wireless.enable = true; # Enables wireless support via wpa_supplicant.
-  networking.wireless.userControlled.enable = true; # Enables wireless support via wpa_supplicant.
-  networking.wireless.networks =
-    let
-      home-ssid = pkgs.lib.removeSuffix "\n" "${builtins.readFile ../../secrets/home-ssid}";
-      home-psk = pkgs.lib.removeSuffix "\n" "${builtins.readFile ../../secrets/home-psk}";
-    in
-    {
-      "${home-ssid}".psk = home-psk;
-    };
+  networking.networkmanager = {
+    enable = true;
+    ensureProfiles.profiles =
+      let
+        home-ssid = pkgs.lib.removeSuffix "\n" "${builtins.readFile ../../secrets/home-ssid}";
+        home-psk = pkgs.lib.removeSuffix "\n" "${builtins.readFile ../../secrets/home-psk}";
+      in
+      {
+        "${home-ssid}" = {
+          connection = {
+            id = home-ssid;
+            type = "wifi";
+          };
+          ipv4.method = "auto";
+          ipv6.method = "auto";
+          wifi = {
+            mode = "infrastructure";
+            ssid = home-ssid;
+          };
+          wifi-security = {
+            key-mgmt = "wpa-psk";
+            psk = home-psk;
+          };
+        };
+      };
+  };
 
   # Set your time zone.
   time.timeZone = "Europe/London";
@@ -66,6 +82,7 @@
       "docker"
       "podman"
       "dialout"
+      "networkmanager"
     ]; # Enable ‘sudo’ for the user.
   };
 
@@ -89,6 +106,8 @@
     enableSSHSupport = true;
     pinentryPackage = pkgs.pinentry-tty;
   };
+
+  services.gnome.gnome-keyring.enable = true;
 
   # List services that you want to enable:
 
