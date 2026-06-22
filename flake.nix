@@ -2,7 +2,7 @@
   description = "NixOS system configuration (alexcardell)";
 
   inputs = {
-    nixpkgs.url = "nixpkgs/nixos-25.11";
+    nixpkgs.url = "nixpkgs/nixos-26.05";
 
     nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
 
@@ -12,17 +12,17 @@
     };
 
     home-manager = {
-      url = "github:nix-community/home-manager/release-25.11";
+      url = "github:nix-community/home-manager/release-26.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
     darwin = {
-      url = "github:LnL7/nix-darwin/nix-darwin-25.11";
+      url = "github:LnL7/nix-darwin/nix-darwin-26.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
     nix-flatpak = {
-      url = "github:gmodena/nix-flatpak?ref=v0.6.0";
+      url = "github:gmodena/nix-flatpak?ref=v0.7.0";
     };
 
     nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";

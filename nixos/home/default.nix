@@ -13,8 +13,8 @@
   home.packages = with pkgs; [
     actionlint
     bitwarden-cli
-    bitwarden-desktop
-    bruno
+    # unstable.bitwarden-desktop
+    unstable.bruno
     bruno-cli
     compose2nix
     coursier

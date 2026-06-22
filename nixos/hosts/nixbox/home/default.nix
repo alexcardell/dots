@@ -8,8 +8,8 @@
     lxappearance
     nautilus
     pavucontrol
-    protonmail-desktop
-    todoist-electron
+    unstable.protonmail-desktop
+    unstable.todoist-electron
     tor-browser
     unstable.eww
     unstable.vicinae

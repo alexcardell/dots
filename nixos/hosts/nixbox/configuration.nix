@@ -97,6 +97,7 @@
       "nvidia-x11"
       "nvidia-settings"
       "nvidia-persistenced"
+      "nvidia-kernel-modules"
       "todoist-electron"
       "discord"
     ];
