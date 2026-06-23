@@ -1,5 +1,8 @@
-[user]
+# [user]
 #  signingkey = "064D16C7390F9868!"
 
 # [http]
 #   sslCAInfo = /etc/ssl/certs/zscaler-root-ca.pem
+
+[alias]
+  clw = "!f() { git clone git@github.com:ITV/$1; }; f"
