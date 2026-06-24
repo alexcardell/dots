@@ -10,3 +10,6 @@ result
 # homelab directory is its own flake (can be tracked or kept private)
 # Uncomment to exclude from git:
 # homelab/
+
+# Copilot sync test scratch dirs
+.copilot-sync-test.*
