@@ -18,16 +18,16 @@
     ];
     substituters = [
       "https://cache.garnix.io"
-      "https://attic.xuyh0120.win/lantian"
+      # "https://attic.xuyh0120.win/lantian"
     ];
     trusted-public-keys = [
       "cache.garnix.io:CTFPyKSLcx5RMJKfLo5EEPUObbA78b0YQ2DTCJXqr9g="
-      "lantian:EeAUQ+W+6r7EtwnmYjeVwx5kOGEBpjlBfPlzGlTNvHc="
+      # "lantian:EeAUQ+W+6r7EtwnmYjeVwx5kOGEBpjlBfPlzGlTNvHc="
     ];
   };
 
   boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
-  boot.kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-lts;
+  boot.kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-latest;
 
   networking.hostName = "nixbox"; # Define your hostname.
 
@@ -135,6 +135,10 @@
         };
       };
     };
+
+    # screenSection = ''
+    #   Option "MetaModes" "nvidia-auto-select +0+0 { ForceFullCompositionPipeline = On }"
+    # '';
   };
 
   # security.pam.services.lightdm.enableGnomeKeyring = true;
@@ -143,6 +147,9 @@
     enable = true;
     vSync = true;
     backend = "xrender";
+    settings = {
+      unredir-if-possible = true;
+    };
   };
 
   programs.gamemode.enable = true;

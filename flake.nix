@@ -86,7 +86,7 @@
             {
               nixpkgs.overlays = sharedOverlays system ++ [
                 overlay-nautilus-gstreamer
-                nix-cachyos-kernel.overlays.default
+                nix-cachyos-kernel.overlays.pinned
               ];
             };
           os-configuration = ./nixos/systems/linux/configuration.nix;
