@@ -3,6 +3,7 @@
   # imports = [ flake-inputs.flatpaks.homeManagerModules.nix-flatpak ];
 
   home.packages = with pkgs; [
+    yad
     cameractrls-gtk3
     discord
     lxappearance

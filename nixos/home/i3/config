@@ -207,6 +207,7 @@ assign [class="^[Ss]team$"] $ws10
 # Steam Big Picture mode - disable borders, gaps, and ensure fullscreen
 for_window [class="^Steam$" title="^Steam Big Picture Mode"] border none, fullscreen enable
 # for_window [class="^Steam$" title="^Steam$"] floating enable, border none
+for_window [title="^System Logout$"] floating enable, border none
 
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 exec_always --no-startup-id feh --bg-fill ~/dots/media/BLACK_VII_desktop-3.jpg
