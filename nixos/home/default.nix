@@ -11,10 +11,9 @@
   home.stateVersion = "22.11";
 
   home.packages = with pkgs; [
+    # unstable.bitwarden-desktop
     actionlint
     bitwarden-cli
-    # unstable.bitwarden-desktop
-    unstable.bruno
     bruno-cli
     compose2nix
     coursier
@@ -30,11 +29,13 @@
     kitty
     nerd-fonts.sauce-code-pro
     nodejs_22
+    pi-coding-agent
     ripgrep
     sbt
     shellcheck
     tenv
     unixtools.watch
+    unstable.bruno
     unstable.jira-cli-go
     unstable.languagetool-rust
     unstable.ollama
