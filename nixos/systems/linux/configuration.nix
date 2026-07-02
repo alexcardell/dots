@@ -53,12 +53,15 @@
   };
 
   # Enable the X11 windowing system.
-  services.xserver.autorun = true; # if autorun disabled, start with: systemctl start display-manager.service
-  services.xserver.xkb.layout = "gb";
-  services.xserver.displayManager.sessionCommands = "xset -b";
-  services.xserver.windowManager.i3 = {
-    enable = true;
-    package = pkgs.unstable.i3;
+  services.xserver = {
+    autorun = true; # if autorun disabled, start with: systemctl start display-manager.service
+    xkb.layout = "gb";
+    displayManager.sessionCommands = "xset -b";
+    windowManager.i3 = {
+      enable = true;
+      package = pkgs.unstable.i3;
+    };
+    exportConfiguration = true;
   };
   services.libinput.enable = true;
   services.libinput.touchpad.naturalScrolling = true;
