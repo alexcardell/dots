@@ -23,24 +23,25 @@
       flameshot
       gparted
       killall
+      networkmanagerapplet
       nur.repos.bandithedoge.waterfox-bin
       orchis-theme
       polybar'
       rofi
       sops
+      themeMode
       themechanger
       unstable.proton-vpn
       unstable.proton-vpn-cli
       unstable.qbittorrent
       unstable.veracrypt
       unzip
+      uv
       vlc
       wineWow64Packages.stable
       winetricks
       wireguard-tools
       xclip
-      themeMode
-      uv
     ];
 
   programs.firefox.enable = true;
