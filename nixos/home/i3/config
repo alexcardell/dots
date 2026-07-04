@@ -209,6 +209,18 @@ for_window [class="^Steam$" title="^Steam Big Picture Mode"] border none, fullsc
 # for_window [class="^Steam$" title="^Steam$"] floating enable, border none
 for_window [title="^System Logout$"] floating enable, border none
 
+# Steam Remote Play: when a game window activates (e.g. launched from Shield via
+# Steam Link), always grant it focus regardless of fullscreen state or workspace.
+# Without this, i3's default "smart" policy suppresses focus when a fullscreen
+# window (Big Picture) is present, leaving the game unfocused and unstreamed.
+# focus_on_window_activation focus
+
+# Move game windows to the Steam workspace and give them focus so Steam
+# Remote Play streams the game rather than Big Picture.
+# steam_app_* covers most Steam games; games with their own class are caught
+# by focus_on_window_activation above when they self-activate.
+for_window [class="steam_app_[0-9]+"] move to workspace $ws10, focus
+
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 exec_always --no-startup-id feh --bg-fill ~/dots/media/BLACK_VII_desktop-3.jpg
 exec_always --no-startup-id QT_SCALE_FACTOR=2 vicinae server --replace
