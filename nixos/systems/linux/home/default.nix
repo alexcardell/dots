@@ -59,6 +59,11 @@
     colorScheme = "dark";
   };
 
+  xdg.configFile."autostart/redshift-gtk.desktop".text = ''
+    [Desktop Entry]
+    Hidden=true
+  '';
+
   services.redshift = {
     enable = true;
     latitude = 51.480158;
