@@ -1,4 +1,9 @@
-{ config, pkgs, flake-inputs, ... }:
+{
+  config,
+  pkgs,
+  flake-inputs,
+  ...
+}:
 {
   # imports = [ flake-inputs.flatpaks.homeManagerModules.nix-flatpak ];
 
@@ -9,6 +14,7 @@
     lxappearance
     nautilus
     pavucontrol
+    nvtopPackages.nvidia
     unstable.protonmail-desktop
     unstable.todoist-electron
     tor-browser

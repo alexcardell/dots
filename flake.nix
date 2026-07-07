@@ -64,10 +64,12 @@
 
       overlay-nautilus-gstreamer = final: prev: {
         nautilus = prev.nautilus.overrideAttrs (old: {
-          buildInputs = old.buildInputs ++ (with final.gst_all_1; [
-            gst-plugins-good
-            gst-plugins-bad
-          ]);
+          buildInputs =
+            old.buildInputs
+            ++ (with final.gst_all_1; [
+              gst-plugins-good
+              gst-plugins-bad
+            ]);
         });
       };
 
@@ -118,41 +120,42 @@
           ];
         };
 
-        darwinConfiguration = let
-            system = "aarch64-darwin";
-            overlays = (
-              { ... }:
-              {
-                nixpkgs.overlays = sharedOverlays system;
-              }
-            );
-          in
-          darwin.lib.darwinSystem {
-            inherit system;
+      darwinConfiguration =
+        let
+          system = "aarch64-darwin";
+          overlays = (
+            { ... }:
+            {
+              nixpkgs.overlays = sharedOverlays system;
+            }
+          );
+        in
+        darwin.lib.darwinSystem {
+          inherit system;
 
-            modules = [
-              overlays
-              darwinPkgConfiguration
-              ./nixos/systems/darwin/configuration.nix
-              ./nixos/hosts/darwin/configuration.nix
-              home-manager.darwinModules.home-manager
-              {
-                home-manager = {
-                  useGlobalPkgs = true;
-                  useUserPackages = true;
-                  backupFileExtension = "hm-backup";
+          modules = [
+            overlays
+            darwinPkgConfiguration
+            ./nixos/systems/darwin/configuration.nix
+            ./nixos/hosts/darwin/configuration.nix
+            home-manager.darwinModules.home-manager
+            {
+              home-manager = {
+                useGlobalPkgs = true;
+                useUserPackages = true;
+                backupFileExtension = "hm-backup";
 
-                  users.alexcard = {
-                    imports = [
-                      ./nixos/systems/darwin/home/default.nix
-                      ./nixos/hosts/darwin/home/default.nix
-                      ./nixos/home/default.nix
-                    ];
-                  };
+                users.alexcard = {
+                  imports = [
+                    ./nixos/systems/darwin/home/default.nix
+                    ./nixos/hosts/darwin/home/default.nix
+                    ./nixos/home/default.nix
+                  ];
                 };
-              }
-            ];
-          };
+              };
+            }
+          ];
+        };
 
     in
     {

@@ -89,18 +89,19 @@
 
   nixpkgs.config.allowUnfreePredicate =
     pkg:
-    builtins.elem (lib.getName pkg) [
+    let
+      name = lib.getName pkg;
+    in
+    builtins.elem name [
       "steam"
-      "steam-original"
-      "steam-unwrapped"
-      "steam-run"
-      "nvidia-x11"
-      "nvidia-settings"
-      "nvidia-persistenced"
-      "nvidia-kernel-modules"
       "todoist-electron"
       "discord"
-    ];
+    ]
+    || lib.hasPrefix "steam-" name
+    || lib.hasPrefix "nvidia-" name
+    || lib.hasPrefix "cuda-" name
+    || lib.hasPrefix "cuda_" name
+    || lib.hasPrefix "lib" name;
 
   hardware.graphics = {
     enable = true;
