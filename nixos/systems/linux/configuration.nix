@@ -9,6 +9,12 @@
       keep-outputs = true
       keep-derivations = true
     '';
+
+    gc = {
+      automatic = true;
+      dates = "weekly";
+      options = "--delete-older-than 7d";
+    };
   };
 
   # Use the systemd-boot EFI boot loader.
@@ -144,4 +150,5 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "21.11"; # Did you read the comment?
+
 }
