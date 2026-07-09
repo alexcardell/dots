@@ -173,6 +173,13 @@
     ];
   };
 
+  services.sunshine = {
+    enable = true;
+    autoStart = false;
+    capSysAdmin = true;
+    openFirewall = true;
+  };
+
   # Enable USB wakeup for keyboard/mouse
   systemd.services.usb-wakeup = {
     description = "Enable USB wakeup for peripherals";
@@ -210,4 +217,5 @@
       "inode/directory" = [ "org.gnome.Nautilus.desktop" ];
     };
   };
+
 }
