@@ -21,6 +21,7 @@
     unstable.eww
     unstable.vicinae
     mangohud
+    lm_sensors
   ];
 
   programs.lutris.enable = true;
