@@ -7,6 +7,8 @@
 {
   # imports = [ flake-inputs.flatpaks.homeManagerModules.nix-flatpak ];
 
+  programs.nh.osFlake = "${config.home.homeDirectory}/dots";
+
   home.packages = with pkgs; [
     yad
     cameractrls-gtk3

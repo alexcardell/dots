@@ -11,6 +11,8 @@
     builtins.elem (lib.getName pkg) [
     ];
 
+  programs.nh.darwinFlake = "${config.home.homeDirectory}/dots";
+
   home.packages = with pkgs.unstable; [
     # devpod-desktop
     adr-tools

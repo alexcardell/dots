@@ -149,6 +149,8 @@
 
   programs.htop.enable = true;
 
+  programs.nh.enable = true;
+
   xdg.configFile.kitty = {
     source = ./kitty;
     recursive = true;
