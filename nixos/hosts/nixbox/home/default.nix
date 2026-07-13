@@ -20,6 +20,7 @@
     tor-browser
     unstable.eww
     unstable.vicinae
+    mangohud
   ];
 
   programs.lutris.enable = true;
