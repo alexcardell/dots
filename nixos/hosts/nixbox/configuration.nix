@@ -147,9 +147,13 @@
   services.picom = {
     enable = true;
     vSync = true;
-    backend = "xrender";
+    # Keep a synchronised compositor in the presentation path.  Unredirecting
+    # fullscreen windows lets games bypass Picom's VSync and tear under X11.
+    # NVIDIA's GLX backend also needs the X Sync fence for reliable ordering.
+    backend = "glx";
     settings = {
-      unredir-if-possible = true;
+      unredir-if-possible = false;
+      xrender-sync-fence = true;
     };
   };
 
@@ -157,7 +161,23 @@
 
   programs.gamescope = {
     enable = true;
-    capSysNice = true;
+    # Steam's bubblewrap sandbox refuses to start beneath a gamescope binary
+    # carrying file capabilities ("Unexpected capabilities but not setuid").
+    capSysNice = false;
+    # Native 1440p presentation at a fixed 60 Hz.  These are defaults, so a
+    # game's Steam launch options only need: gamescope -f -- %command%
+    args = [
+      "-w"
+      "2560"
+      "-h"
+      "1440"
+      "-W"
+      "2560"
+      "-H"
+      "1440"
+      "-r"
+      "60"
+    ];
   };
 
   programs.steam = {
