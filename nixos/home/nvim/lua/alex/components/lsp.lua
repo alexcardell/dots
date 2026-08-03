@@ -19,6 +19,7 @@ local setup_metals = function()
   config.settings = {
     -- serverVersion              = "2.0.0-M7",
     -- serverProperties           = { "-Xmx4g" },
+    useGlobalExecutable        = true, -- for nix
     autoImportBuild            = "all",
     defaultBspToBuildTool      = true,
     enableSemanticHighlighting = false,
@@ -30,8 +31,8 @@ local setup_metals = function()
       inferredTypes = { enable = true },
       typeParameters = { enable = true },
     },
-    useGlobalExecutable        = true, -- for nix
-    startMcpServer             = true
+    startMcpServer             = true,
+    scalafixLintEnabled = true
     -- testUserInterface          = "Test Explorer"
   }
 
