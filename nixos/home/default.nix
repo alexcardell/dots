@@ -1,4 +1,7 @@
 { pkgs, ... }:
+let
+  tmux-agent-status = pkgs.callPackage ./tmux/plugins/tmux-agent-status.nix { };
+in
 {
   imports = [
     ./nvim.nix
@@ -121,6 +124,15 @@
   programs.tmux = {
     enable = true;
     tmuxp.enable = true;
+
+    plugins = [
+      {
+        plugin = tmux-agent-status;
+        extraConfig = ''
+          set-environment -g TMUX_AGENT_STATUS_BASH "${pkgs.bashNonInteractive}/bin/bash"
+        '';
+      }
+    ];
 
     extraConfig =
       let
