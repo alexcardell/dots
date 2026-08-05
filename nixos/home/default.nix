@@ -1,6 +1,12 @@
 { pkgs, ... }:
 let
   tmux-agent-status = pkgs.callPackage ./tmux/plugins/tmux-agent-status.nix { };
+  tmux-agent-status-root = builtins.dirOf tmux-agent-status.rtp;
+  codex-agent-status-hook = event: {
+    type = "command";
+    command = "${pkgs.bashNonInteractive}/bin/bash ${tmux-agent-status-root}/hooks/codex-hook.sh ${event}";
+    timeout = 3;
+  };
 in
 {
   imports = [
@@ -121,6 +127,34 @@ in
   home.file.".gitconfig.work".source = ./git/.gitconfig.work;
   home.file.".gitignore".source = ./git/.gitignore-global;
 
+  home.file.".codex/hooks.json".text = builtins.toJSON {
+    description = "Report Codex lifecycle events to tmux-agent-status.";
+    hooks = {
+      SessionStart = [
+        {
+          matcher = "startup|resume";
+          hooks = [ (codex-agent-status-hook "SessionStart") ];
+        }
+      ];
+      UserPromptSubmit = [
+        {
+          hooks = [ (codex-agent-status-hook "UserPromptSubmit") ];
+        }
+      ];
+      PreToolUse = [
+        {
+          matcher = "Bash";
+          hooks = [ (codex-agent-status-hook "PreToolUse") ];
+        }
+      ];
+      Stop = [
+        {
+          hooks = [ (codex-agent-status-hook "Stop") ];
+        }
+      ];
+    };
+  };
+
   programs.tmux = {
     enable = true;
     tmuxp.enable = true;
@@ -130,6 +164,7 @@ in
         plugin = tmux-agent-status;
         extraConfig = ''
           set-environment -g TMUX_AGENT_STATUS_BASH "${pkgs.bashNonInteractive}/bin/bash"
+          set -g @agent-park-key "P"
         '';
       }
     ];
