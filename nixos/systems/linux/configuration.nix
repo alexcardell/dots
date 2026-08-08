@@ -106,6 +106,7 @@
     pavucontrol
     podman-compose
     wpa_supplicant_gui
+    xss-lock
   ];
 
   programs.zsh.enable = true;

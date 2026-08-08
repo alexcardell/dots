@@ -200,24 +200,13 @@
     openFirewall = true;
   };
 
-  # Enable USB wakeup for keyboard/mouse
-  systemd.services.usb-wakeup = {
-    description = "Enable USB wakeup for peripherals";
-    wantedBy = [ "multi-user.target" ];
-    after = [ "multi-user.target" ];
-    script = ''
-      # Enable wakeup for keyboard/mouse hub and its controller
-      echo enabled > /sys/bus/usb/devices/3-1/power/wakeup 2>/dev/null || true
-      echo enabled > /sys/bus/usb/devices/usb3/power/wakeup 2>/dev/null || true
-      # Individual devices (already enabled, but ensure they stay enabled)
-      echo enabled > /sys/bus/usb/devices/3-1.3/power/wakeup 2>/dev/null || true
-      echo enabled > /sys/bus/usb/devices/3-1.4/power/wakeup 2>/dev/null || true
-    '';
-    serviceConfig = {
-      Type = "oneshot";
-      RemainAfterExit = true;
-    };
-  };
+  # Let the keyboard/mouse USB path wake the machine.  Udev reapplies this
+  # whenever the USB switch reconnects it, avoiding unstable USB port paths.
+  services.udev.extraRules = ''
+    ACTION=="add", SUBSYSTEM=="usb", ATTR{idVendor}=="05e3", ATTR{idProduct}=="0610", ATTR{power/wakeup}="enabled"
+    ACTION=="add", SUBSYSTEM=="usb", ATTR{idVendor}=="04d9", ATTR{idProduct}=="0141", ATTR{power/wakeup}="enabled"
+    ACTION=="add", SUBSYSTEM=="usb", ATTR{idVendor}=="046d", ATTR{idProduct}=="c52b", ATTR{power/wakeup}="enabled"
+  '';
 
   services.flatpak.enable = true;
 
