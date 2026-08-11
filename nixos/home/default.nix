@@ -36,6 +36,7 @@ in
     jj
     jq
     kitty
+    mcp-nixos
     nerd-fonts.sauce-code-pro
     nodejs_22
     pi-coding-agent
