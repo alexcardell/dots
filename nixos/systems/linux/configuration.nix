@@ -4,16 +4,27 @@
   # Enable flakes
   nix = {
     package = pkgs.nixVersions.stable;
+
     extraOptions = ''
       experimental-features = nix-command flakes
-      keep-outputs = true
-      keep-derivations = true
     '';
+
+    settings = {
+      keep-outputs = false;
+      keep-derivations = false;
+      min-free = 10 * 1024 * 1024 * 1024;
+      max-free = 30 * 1024 * 1024 * 1024;
+    };
 
     gc = {
       automatic = true;
-      dates = "weekly";
+      dates = "daily";
       options = "--delete-older-than 7d";
+    };
+
+    optimise = {
+      automatic = true;
+      dates = [ "weekly" ];
     };
   };
 
