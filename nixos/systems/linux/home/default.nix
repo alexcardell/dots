@@ -37,9 +37,6 @@
       unstable.veracrypt
       unzip
       uv
-      vlc
-      wineWow64Packages.stable
-      winetricks
       wireguard-tools
       xclip
     ];
