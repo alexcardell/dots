@@ -6,11 +6,6 @@
 
     nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
 
-    nur = {
-      url = "github:nix-community/nur";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     home-manager = {
       url = "github:nix-community/home-manager/release-26.05";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -33,7 +28,6 @@
     {
       nixpkgs,
       nixpkgs-unstable,
-      nur,
       home-manager,
       darwin,
       nix-flatpak,
@@ -75,7 +69,6 @@
 
       sharedOverlays = system: [
         (overlay-unstable system)
-        nur.overlays.default
         # neovim-nightly-overlay.overlays.default
       ];
 

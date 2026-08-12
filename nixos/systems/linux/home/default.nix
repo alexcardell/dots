@@ -24,7 +24,6 @@
       gparted
       killall
       networkmanagerapplet
-      nur.repos.bandithedoge.waterfox-bin
       orchis-theme
       polybar'
       rofi
