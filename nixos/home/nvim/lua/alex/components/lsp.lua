@@ -84,6 +84,7 @@ M.setup = function()
     'smithy_ls',
     'terraformls',
     'ts_ls',
+    'zizmor'
   }
 
   for _, server in ipairs(standard_servers) do

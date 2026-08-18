@@ -27,6 +27,7 @@
       terraform-ls
       typescript-language-server
       yaml-language-server
+      zizmor
     ];
 
     # see xdg.configFile.nvim lua directory

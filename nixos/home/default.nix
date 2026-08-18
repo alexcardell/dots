@@ -57,6 +57,7 @@ in
     yamllint
     yq-go
     zk
+    zizmor
   ];
 
   programs.java = {
