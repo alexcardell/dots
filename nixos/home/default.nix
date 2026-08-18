@@ -40,6 +40,7 @@ in
     nerd-fonts.sauce-code-pro
     nodejs_22
     pi-coding-agent
+    pre-commit
     ripgrep
     sbt
     shellcheck
@@ -56,8 +57,8 @@ in
     xdg-ninja
     yamllint
     yq-go
-    zk
     zizmor
+    zk
   ];
 
   programs.java = {
