@@ -162,7 +162,7 @@ M.setup = function()
   local is_mac = vim.fn.has("macunix") == 1
 
   if is_mac then
-    if false then
+    if vim.env.NVIM_SNYK_LSP then
       vim.lsp.config("snyk_ls", {
         init_options = {
           endpoint = 'https://api.eu.snyk.io',
