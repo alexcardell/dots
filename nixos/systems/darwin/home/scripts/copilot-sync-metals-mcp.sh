@@ -34,17 +34,22 @@ while :; do
 done
 
 metals_file="${project_root}/.metals/mcp.json"
-copilot_dir="${HOME}/.copilot"
-copilot_file="${copilot_dir}/mcp-config.json"
+copilot_file="${project_root}/.mcp.json"
 repo_name="$(basename "$project_root")"
 server_name="metals-${repo_name}"
+exclude_file="$(git -C "$project_root" rev-parse --path-format=absolute --git-path info/exclude)"
 
 if ! url="$(jq -er '.servers | to_entries[0].value.url' "$metals_file" 2>/dev/null)"; then
   warn "skipping Metals MCP sync: ${metals_file} is malformed or has no server URL"
   exit 0
 fi
 
-mkdir -p "$copilot_dir"
+mkdir -p "$(dirname "$exclude_file")"
+if ! grep -Fqx '.mcp.json' "$exclude_file" 2>/dev/null; then
+  printf '.mcp.json\n' >> "$exclude_file"
+fi
+
+printf 'copilot-sync-metals-mcp: detected %s; syncing to %s\n' "$metals_file" "$copilot_file"
 
 if [[ -f "$copilot_file" ]]; then
   if ! jq empty "$copilot_file" >/dev/null 2>&1; then
@@ -59,7 +64,7 @@ else
 JSON
 fi
 
-tmp_file="${copilot_dir}/mcp-config.json.$$"
+tmp_file="${project_root}/.mcp.json.$$"
 rm -f "$tmp_file"
 trap 'rm -f "$tmp_file"' EXIT
 

@@ -35,6 +35,16 @@ setopt histignorealldups
 setopt promptsubst
 unsetopt beep
 
+autoload -Uz add-zsh-hook
+
+_sync_metals_mcp() {
+  (( $+commands[copilot-sync-metals-mcp.sh] )) || return
+  copilot-sync-metals-mcp.sh "$PWD"
+}
+
+add-zsh-hook chpwd _sync_metals_mcp
+_sync_metals_mcp
+
 #------------
 # Completion
 #------------
