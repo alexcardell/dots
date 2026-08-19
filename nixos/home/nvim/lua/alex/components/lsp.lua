@@ -10,6 +10,12 @@ end
 
 local setup_metals = function()
   local config = metals.bare_config()
+  config.cmd = {
+    "lspmux",
+    "client",
+    "--server-path",
+    vim.fn.exepath("metals"),
+  }
 
   config.init_options = {
     statusBarProvider = "off",

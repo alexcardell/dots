@@ -36,6 +36,7 @@ in
     jj
     jq
     kitty
+    lspmux
     mcp-nixos
     nerd-fonts.sauce-code-pro
     nodejs_22

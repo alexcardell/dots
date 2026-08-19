@@ -67,8 +67,11 @@
         });
       };
 
+      overlay-lspmux = import ./nixos/overlays/lspmux.nix;
+
       sharedOverlays = system: [
         (overlay-unstable system)
+        overlay-lspmux
         # neovim-nightly-overlay.overlays.default
       ];
 
