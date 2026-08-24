@@ -27,6 +27,10 @@
   boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
   boot.kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-latest;
 
+  # Permit the unprivileged local devbox runner to use hardware-accelerated
+  # KVM without granting it libvirt or root access.
+  users.users.alex.extraGroups = [ "kvm" ];
+
   networking.hostName = "nixbox"; # Define your hostname.
 
   networking.extraHosts = ''
