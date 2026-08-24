@@ -51,14 +51,15 @@ fpath=("${COMPLETION_PATH}" "${fpath[@]}")
 
 fpath=("$ZDOTDIR/autoloaded" "${fpath[@]}")
 
-# aws just has to do things their own way
-aws_path=$(which aws_completer)
-
-if [[ -e "$aws_path" ]]; then
-  complete -C "$(which aws_completer)" aws
-fi
-
 autoload -U compinit && compinit
+
+# AWS ships a Bash-style completer. Load Zsh's compatibility layer before
+# registering it so fresh login shells do not call an
+# undefined `complete` builtin.
+if (( $+commands[aws_completer] )); then
+  autoload -U bashcompinit && bashcompinit
+  complete -C "${commands[aws_completer]}" aws
+fi
 
 #--------
 # Prompt
