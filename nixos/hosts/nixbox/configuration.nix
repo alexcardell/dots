@@ -24,8 +24,14 @@
     ];
   };
 
-  boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
-  boot.kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-latest;
+  boot = {
+    binfmt.emulatedSystems = [ "aarch64-linux" ];
+    kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-latest;
+
+    # Load AMD KVM on every boot. The firmware must expose the CPU's SVM
+    # feature; when it does, udev creates /dev/kvm for the kvm group.
+    kernelModules = [ "kvm-amd" ];
+  };
 
   # Permit the unprivileged local devbox runner to use hardware-accelerated
   # KVM without granting it libvirt or root access.

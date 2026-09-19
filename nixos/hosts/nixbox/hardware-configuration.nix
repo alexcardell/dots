@@ -24,10 +24,7 @@
     "sd_mod"
   ];
   boot.initrd.kernelModules = [ ];
-  boot.kernelModules = [
-    "kvm-amd"
-    "k10temp"
-  ];
+  boot.kernelModules = [ "k10temp" ];
   boot.extraModulePackages = [ ];
 
   fileSystems."/" = {
