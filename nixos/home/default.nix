@@ -1,10 +1,10 @@
 { pkgs, ... }:
 let
-  tmux-agent-status = pkgs.callPackage ./tmux/plugins/tmux-agent-status.nix { };
-  tmux-agent-status-root = builtins.dirOf tmux-agent-status.rtp;
-  codex-agent-status-hook = event: {
+  tmux-agent-sidebar = pkgs.callPackage ./tmux/plugins/tmux-agent-sidebar.nix { };
+  tmux-agent-sidebar-root = builtins.dirOf tmux-agent-sidebar.rtp;
+  codex-agent-sidebar-hook = event: {
     type = "command";
-    command = "${pkgs.bashNonInteractive}/bin/bash ${tmux-agent-status-root}/hooks/codex-hook.sh ${event}";
+    command = "${pkgs.bashNonInteractive}/bin/bash ${tmux-agent-sidebar-root}/hook.sh codex ${event}";
     timeout = 3;
   };
 in
@@ -152,28 +152,27 @@ in
   home.file.".gitignore".source = ./git/.gitignore-global;
 
   home.file.".codex/hooks.json".text = builtins.toJSON {
-    description = "Report Codex lifecycle events to tmux-agent-status.";
+    description = "Report Codex lifecycle events to tmux-agent-sidebar.";
     hooks = {
       SessionStart = [
         {
           matcher = "startup|resume";
-          hooks = [ (codex-agent-status-hook "SessionStart") ];
+          hooks = [ (codex-agent-sidebar-hook "session-start") ];
         }
       ];
       UserPromptSubmit = [
         {
-          hooks = [ (codex-agent-status-hook "UserPromptSubmit") ];
+          hooks = [ (codex-agent-sidebar-hook "user-prompt-submit") ];
         }
       ];
-      PreToolUse = [
+      PostToolUse = [
         {
-          matcher = "Bash";
-          hooks = [ (codex-agent-status-hook "PreToolUse") ];
+          hooks = [ (codex-agent-sidebar-hook "activity-log") ];
         }
       ];
       Stop = [
         {
-          hooks = [ (codex-agent-status-hook "Stop") ];
+          hooks = [ (codex-agent-sidebar-hook "stop") ];
         }
       ];
     };
@@ -185,10 +184,9 @@ in
 
     plugins = [
       {
-        plugin = tmux-agent-status;
+        plugin = tmux-agent-sidebar;
         extraConfig = ''
-          set-environment -g TMUX_AGENT_STATUS_BASH "${pkgs.bashNonInteractive}/bin/bash"
-          set -g @agent-park-key "P"
+          set -g @sidebar_auto_create off
         '';
       }
     ];
