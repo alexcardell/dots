@@ -19,48 +19,68 @@ in
 
   home.stateVersion = "22.11";
 
-  home.packages = with pkgs; [
-    # unstable.bitwarden-desktop
-    actionlint
-    bitwarden-cli
-    bruno-cli
-    compose2nix
-    coursier
-    entr
-    fd
-    gh
-    git
-    git-crypt
-    git-filter-repo
-    gnupg
-    jj
-    jq
-    kitty
-    lspmux
-    mcp-nixos
-    nerd-fonts.sauce-code-pro
-    nodejs_22
-    pi-coding-agent
-    pre-commit
-    ripgrep
-    sbt
-    shellcheck
-    tenv
-    unixtools.watch
-    unstable.bruno
-    unstable.jira-cli-go
-    unstable.languagetool-rust
-    unstable.ollama
-    unstable.scala-cli
-    unstable.sloth
-    unstable.spr
-    vale
-    xdg-ninja
-    yamllint
-    yq-go
-    zizmor
-    zk
-  ];
+  home.packages =
+    with pkgs;
+    let
+      lsps = with unstable; [
+        docker-compose-language-service
+        dockerfile-language-server
+        jdt-language-server
+        kotlin-language-server
+        ltex-ls
+        lua-language-server
+        metals
+        nixd
+        postgres-language-server
+        rust-analyzer
+        terraform-ls
+        typescript-language-server
+        yaml-language-server
+      ];
+    in
+    lsps
+    ++ [
+      # unstable.bitwarden-desktop
+      actionlint
+      bitwarden-cli
+      bruno-cli
+      compose2nix
+      coursier
+      entr
+      fd
+      gh
+      git
+      git-crypt
+      git-filter-repo
+      gnupg
+      jj
+      jq
+      kitty
+      lspmux
+      mcp-nixos
+      nerd-fonts.sauce-code-pro
+      nodejs_22
+      pi-coding-agent
+      pre-commit
+      ripgrep
+      sbt
+      shellcheck
+      tenv
+      unixtools.watch
+      unstable.bruno
+      unstable.jira-cli-go
+      unstable.languagetool-rust
+      unstable.ollama
+      unstable.scala-cli
+      unstable.sloth
+      unstable.spr
+      vale
+      xdg-ninja
+      yamllint
+      yq-go
+      zizmor
+      zk
+    ];
 
   programs.java = {
     enable = true;
