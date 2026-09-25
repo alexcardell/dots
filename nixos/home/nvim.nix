@@ -27,7 +27,6 @@
       terraform-ls
       typescript-language-server
       yaml-language-server
-      zizmor
     ];
 
     # see xdg.configFile.nvim lua directory
@@ -62,12 +61,12 @@
           };
           nvim-metals = pkgs.unstable.vimUtils.buildVimPlugin {
             pname = "nvim-metals";
-            version = "e300259ec";
+            version = "432b87613";
             src = pkgs.unstable.fetchFromGitHub {
               owner = "scalameta";
               repo = "nvim-metals";
-              rev = "6970d6036218db6545f3c295d0106cc8de6d7161";
-              hash = "sha256-RY+UhnwIjWuMU9WOG4a1JvBiJ9RWZ2fUxFDnuzDR+jw=";
+              rev = "a4b20656b";
+              hash = "sha256-3Vqc82HfKRKw/4LrrpamInCY5uVT6dfuENhmMie0DQ8=";
             };
           };
         };

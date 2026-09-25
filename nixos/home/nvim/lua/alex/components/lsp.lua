@@ -26,7 +26,7 @@ local setup_metals = function()
     -- serverVersion              = "2.0.0-M7",
     -- serverProperties           = { "-Xmx4g" },
     useGlobalExecutable        = true, -- for nix
-    autoImportBuild            = "all",
+    automaticImportBuild       = "all",
     defaultBspToBuildTool      = true,
     enableSemanticHighlighting = false,
     inlayHints                 = {
@@ -38,7 +38,7 @@ local setup_metals = function()
       typeParameters = { enable = true },
     },
     startMcpServer             = true,
-    scalafixLintEnabled = true
+    scalafixLintEnabled        = true
     -- testUserInterface          = "Test Explorer"
   }
 
