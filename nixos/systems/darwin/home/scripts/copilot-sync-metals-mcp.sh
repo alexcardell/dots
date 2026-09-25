@@ -35,8 +35,9 @@ done
 
 metals_file="${project_root}/.metals/mcp.json"
 copilot_file="${project_root}/.mcp.json"
+lsp_file="${project_root}/.github/lsp.json"
 repo_name="$(basename "$project_root")"
-server_name="metals-${repo_name}"
+server_name="metals-$(printf '%s' "$repo_name" | LC_ALL=C tr -c 'A-Za-z0-9_-' '-')"
 exclude_file="$(git -C "$project_root" rev-parse --path-format=absolute --git-path info/exclude)"
 
 if ! url="$(jq -er '.servers | to_entries[0].value.url' "$metals_file" 2>/dev/null)"; then
@@ -45,9 +46,11 @@ if ! url="$(jq -er '.servers | to_entries[0].value.url' "$metals_file" 2>/dev/nu
 fi
 
 mkdir -p "$(dirname "$exclude_file")"
-if ! grep -Fqx '.mcp.json' "$exclude_file" 2>/dev/null; then
-  printf '.mcp.json\n' >> "$exclude_file"
-fi
+for local_config in '.mcp.json' '.github/lsp.json'; do
+  if ! grep -Fqx "$local_config" "$exclude_file" 2>/dev/null; then
+    printf '%s\n' "$local_config" >> "$exclude_file"
+  fi
+done
 
 printf 'copilot-sync-metals-mcp: detected %s; syncing to %s\n' "$metals_file" "$copilot_file"
 
@@ -64,9 +67,10 @@ else
 JSON
 fi
 
-tmp_file="${project_root}/.mcp.json.$$"
-rm -f "$tmp_file"
-trap 'rm -f "$tmp_file"' EXIT
+mcp_tmp_file="${copilot_file}.$$"
+lsp_tmp_file="${lsp_file}.$$"
+rm -f "$mcp_tmp_file" "$lsp_tmp_file"
+trap 'rm -f "$mcp_tmp_file" "$lsp_tmp_file"' EXIT
 
 jq \
   --arg name "$server_name" \
@@ -79,6 +83,54 @@ jq \
     tools: ["*"]
   }
   ' \
-  "$copilot_file" > "$tmp_file"
+  "$copilot_file" > "$mcp_tmp_file"
 
-mv "$tmp_file" "$copilot_file"
+mv "$mcp_tmp_file" "$copilot_file"
+
+if ! lspmux_command="$(command -v lspmux)"; then
+  warn "skipping Copilot LSP sync: lspmux is not available"
+  exit 0
+fi
+
+if ! metals_command="$(command -v metals)"; then
+  warn "skipping Copilot LSP sync: metals is not available"
+  exit 0
+fi
+
+mkdir -p "$(dirname "$lsp_file")"
+if [[ -f "$lsp_file" ]]; then
+  if ! jq empty "$lsp_file" >/dev/null 2>&1; then
+    warn "skipping Copilot LSP sync: malformed ${lsp_file}"
+    exit 0
+  fi
+else
+  cat > "$lsp_file" <<'JSON'
+{
+  "lspServers": {}
+}
+JSON
+fi
+
+printf 'copilot-sync-metals-mcp: syncing Metals LSP through lspmux to %s\n' "$lsp_file"
+
+jq \
+  --arg name "$server_name" \
+  --arg lspmux "$lspmux_command" \
+  --arg metals "$metals_command" \
+  '
+  .lspServers = (.lspServers // {}) |
+  .lspServers[$name] = {
+    command: $lspmux,
+    args: ["client", "--server-path", $metals],
+    fileExtensions: {
+      ".scala": "scala",
+      ".sc": "scala",
+      ".sbt": "scala",
+      ".java": "java"
+    },
+    initializationTimeoutMs: 300000
+  }
+  ' \
+  "$lsp_file" > "$lsp_tmp_file"
+
+mv "$lsp_tmp_file" "$lsp_file"
