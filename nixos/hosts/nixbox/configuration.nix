@@ -211,9 +211,15 @@
   # Let the keyboard/mouse USB path wake the machine.  Udev reapplies this
   # whenever the USB switch reconnects it, avoiding unstable USB port paths.
   services.udev.extraRules = ''
+    # USB Hub: Allow wakeup
     ACTION=="add", SUBSYSTEM=="usb", ATTR{idVendor}=="05e3", ATTR{idProduct}=="0610", ATTR{power/wakeup}="enabled"
     ACTION=="add", SUBSYSTEM=="usb", ATTR{idVendor}=="04d9", ATTR{idProduct}=="0141", ATTR{power/wakeup}="enabled"
     ACTION=="add", SUBSYSTEM=="usb", ATTR{idVendor}=="046d", ATTR{idProduct}=="c52b", ATTR{power/wakeup}="enabled"
+
+    # Ignore the DS4 touchpad as a desktop pointer; Steam Input can still use it.
+    # The name belongs to the parent input device, so match it with ATTRS.
+    ACTION=="add|change", SUBSYSTEM=="input", KERNEL=="event[0-9]*", ATTRS{name}=="Sony Computer Entertainment Wireless Controller Touchpad", ENV{LIBINPUT_IGNORE_DEVICE}="1"
+    ACTION=="add|change", SUBSYSTEM=="input", KERNEL=="event[0-9]*", ATTRS{name}=="Sony Interactive Entertainment Wireless Controller Touchpad", ENV{LIBINPUT_IGNORE_DEVICE}="1"
   '';
 
   services.flatpak.enable = true;
@@ -234,5 +240,4 @@
       "inode/directory" = [ "org.gnome.Nautilus.desktop" ];
     };
   };
-
 }
