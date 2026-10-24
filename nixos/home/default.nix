@@ -61,6 +61,7 @@ in
       nerd-fonts.sauce-code-pro
       nodejs_22
       pi-coding-agent
+      pi-coding-agent
       pre-commit
       ripgrep
       sbt
