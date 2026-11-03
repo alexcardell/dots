@@ -18,7 +18,7 @@
       dockerfile-language-server
       jdt-language-server
       kotlin-language-server
-      ltex-ls
+      ltex-ls-plus
       lua-language-server
       metals
       nixd

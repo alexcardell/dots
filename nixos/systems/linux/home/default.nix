@@ -41,6 +41,7 @@
     ];
 
   programs.firefox.enable = true;
+  programs.firefox.configPath = ".mozilla/firefox";
 
   gtk = {
     enable = true;
@@ -48,6 +49,7 @@
       package = pkgs.orchis-theme;
       name = "Orchis-Purple-Dark";
     };
+    gtk4.theme = config.gtk.theme;
     font = {
       name = "Sans Regular";
       size = 16;

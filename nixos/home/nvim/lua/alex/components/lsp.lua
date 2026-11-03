@@ -97,13 +97,15 @@ M.setup = function()
     vim.lsp.enable(server)
   end
 
-  vim.lsp.config("ltex", {
-    ltex = {
-      language = "en-GB",
-      motherTongue = "en-GB"
+  vim.lsp.config("ltex_plus", {
+    settings = {
+      ltex = {
+        language = "en-GB",
+        motherTongue = "en-GB"
+      },
     },
   })
-  vim.lsp.enable("ltex")
+  vim.lsp.enable("ltex_plus")
 
   vim.lsp.config("lua_ls", {
     on_init = function(client)

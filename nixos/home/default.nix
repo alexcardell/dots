@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 let
   tmux-agent-sidebar = pkgs.callPackage ./tmux/plugins/tmux-agent-sidebar.nix { };
   tmux-agent-sidebar-root = builtins.dirOf tmux-agent-sidebar.rtp;
@@ -27,7 +27,7 @@ in
         dockerfile-language-server
         jdt-language-server
         kotlin-language-server
-        ltex-ls
+        ltex-ls-plus
         lua-language-server
         metals
         nixd
@@ -60,8 +60,6 @@ in
       mcp-nixos
       nerd-fonts.sauce-code-pro
       nodejs_22
-      pi-coding-agent
-      pi-coding-agent
       pre-commit
       ripgrep
       sbt
@@ -72,6 +70,7 @@ in
       unstable.jira-cli-go
       unstable.languagetool-rust
       unstable.ollama
+      unstable.pi-coding-agent
       unstable.scala-cli
       unstable.sloth
       unstable.spr
@@ -101,6 +100,7 @@ in
 
   programs.zsh = {
     enable = true;
+    dotDir = config.home.homeDirectory;
 
     sessionVariables = {
       EDITOR = "nvim";
