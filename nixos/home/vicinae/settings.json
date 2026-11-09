@@ -1,3 +1,6 @@
 {
-    "$schema": "https://vicinae.com/schemas/config.json"
+   "$schema": "https://vicinae.com/schemas/config.json",
+   "global_shortcuts": {
+      "toggle": "super+SPACE"
+   }
 }
