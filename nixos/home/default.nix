@@ -62,6 +62,7 @@
       unstable.languagetool-rust
       unstable.ollama
       llm-agents.pi
+      llm-agents.pi-acp
       unstable.scala-cli
       unstable.sloth
       unstable.spr
