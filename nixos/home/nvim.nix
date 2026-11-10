@@ -40,32 +40,32 @@
         pinned = {
           agentic-nvim = pkgs.unstable.vimUtils.buildVimPlugin {
             pname = "agentic.nvim";
-            version = "cfa49d9dc";
+            version = "4750d6ce4";
             nvimRequireCheck = [ "agentic" ];
             src = pkgs.unstable.fetchFromGitHub {
               owner = "carlos-algms";
               repo = "agentic.nvim";
-              rev = "cfa49d9dc3d9712ed10a963706caa55cc0eb62aa";
-              hash = "sha256-QWb0kctWiwfhDKv3hUdhpmJwkS9nO9OQ8/NUmRBXgvA=";
+              rev = "4750d6ce4298b3018dd67f975a1457afbeeaa09f";
+              hash = "sha256-LfjVF0Elq0VQLxO3LQZKjt6IdsK2JvUlW8mw1EeA+Hk=";
             };
           };
           auto-dark-mode-nvim = pkgs.unstable.vimUtils.buildVimPlugin {
             pname = "auto-dark-mode.nvim";
-            version = "e300259ec";
+            version = "2b16a24c2";
             src = pkgs.unstable.fetchFromGitHub {
               owner = "f-person";
               repo = "auto-dark-mode.nvim";
-              rev = "e300259ec777a40b4b9e3c8e6ade203e78d15881";
-              hash = "sha256-PhhOlq4byctWJ5rLe3cifImH56vR2+k3BZGDZdQvjng=";
+              rev = "2b16a24c202892e61fca7df4d2d7c4c872a44165";
+              hash = "sha256-xBpdk0D2LauLJoktw/vQfvic07NsKaBDeL8KAl4KE7s=";
             };
           };
           nvim-metals = pkgs.unstable.vimUtils.buildVimPlugin {
             pname = "nvim-metals";
-            version = "432b87613";
+            version = "a4b20656b";
             src = pkgs.unstable.fetchFromGitHub {
               owner = "scalameta";
               repo = "nvim-metals";
-              rev = "a4b20656b";
+              rev = "a4b20656bf1014404dd63bf9fd5f22fcc50fee52";
               hash = "sha256-3Vqc82HfKRKw/4LrrpamInCY5uVT6dfuENhmMie0DQ8=";
             };
           };
