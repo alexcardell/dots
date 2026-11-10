@@ -6,6 +6,8 @@
 
     nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
 
+    llm-agents.url = "github:numtide/llm-agents.nix";
+
     home-manager = {
       url = "github:nix-community/home-manager/release-26.05";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -28,6 +30,7 @@
     {
       nixpkgs,
       nixpkgs-unstable,
+      llm-agents,
       home-manager,
       darwin,
       nix-flatpak,
@@ -71,6 +74,7 @@
 
       sharedOverlays = system: [
         (overlay-unstable system)
+        (final: prev: { llm-agents = llm-agents.packages.${system}; })
         overlay-lspmux
         # neovim-nightly-overlay.overlays.default
       ];

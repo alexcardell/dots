@@ -61,7 +61,7 @@
       unstable.jira-cli-go
       unstable.languagetool-rust
       unstable.ollama
-      unstable.pi-coding-agent
+      llm-agents.pi
       unstable.scala-cli
       unstable.sloth
       unstable.spr
