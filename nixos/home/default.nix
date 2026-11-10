@@ -37,6 +37,7 @@
       bruno-cli
       compose2nix
       coursier
+      docker-sbx
       entr
       fd
       gh
@@ -47,6 +48,8 @@
       jj
       jq
       kitty
+      llm-agents.pi
+      llm-agents.pi-acp
       lspmux
       mcp-nixos
       nerd-fonts.sauce-code-pro
@@ -61,8 +64,6 @@
       unstable.jira-cli-go
       unstable.languagetool-rust
       unstable.ollama
-      llm-agents.pi
-      llm-agents.pi-acp
       unstable.scala-cli
       unstable.sloth
       unstable.spr

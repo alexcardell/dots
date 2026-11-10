@@ -104,6 +104,7 @@
       "steam"
       "todoist-electron"
       "discord"
+      "docker-sbx"
     ]
     || lib.hasPrefix "steam-" name
     || lib.hasPrefix "nvidia-" name
