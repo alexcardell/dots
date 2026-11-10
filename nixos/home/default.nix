@@ -37,7 +37,6 @@
       bruno-cli
       compose2nix
       coursier
-      docker-sbx
       entr
       fd
       gh
@@ -62,6 +61,7 @@
       tenv
       unixtools.watch
       unstable.bruno
+      unstable.docker-sbx
       unstable.jira-cli-go
       unstable.languagetool-rust
       unstable.ollama
