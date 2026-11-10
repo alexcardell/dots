@@ -52,6 +52,7 @@
       llm-agents.pi-acp
       lspmux
       mcp-nixos
+      microsandbox
       nerd-fonts.sauce-code-pro
       nodejs_22
       pre-commit

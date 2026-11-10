@@ -74,7 +74,10 @@
 
       sharedOverlays = system: [
         (overlay-unstable system)
-        (final: prev: { llm-agents = llm-agents.packages.${system}; })
+        (final: prev: {
+          llm-agents = llm-agents.packages.${system};
+          microsandbox = final.callPackage ./nixos/pkgs/microsandbox { };
+        })
         overlay-lspmux
         # neovim-nightly-overlay.overlays.default
       ];
