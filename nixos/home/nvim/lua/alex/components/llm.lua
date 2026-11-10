@@ -9,7 +9,7 @@ local setup_agentic = function()
     })
   else
     require('agentic').setup({
-      provider = "mistral-vibe-acp"
+      provider = "pi-acp"
     })
   end
 end
