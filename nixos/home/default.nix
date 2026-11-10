@@ -1,13 +1,4 @@
 { config, pkgs, ... }:
-let
-  tmux-agent-sidebar = pkgs.callPackage ./tmux/plugins/tmux-agent-sidebar.nix { };
-  tmux-agent-sidebar-root = builtins.dirOf tmux-agent-sidebar.rtp;
-  codex-agent-sidebar-hook = event: {
-    type = "command";
-    command = "${pkgs.bashNonInteractive}/bin/bash ${tmux-agent-sidebar-root}/hook.sh codex ${event}";
-    timeout = 3;
-  };
-in
 {
   imports = [
     ./nvim.nix
@@ -152,45 +143,9 @@ in
   home.file.".gitconfig.work".source = ./git/.gitconfig.work;
   home.file.".gitignore".source = ./git/.gitignore-global;
 
-  home.file.".codex/hooks.json".text = builtins.toJSON {
-    description = "Report Codex lifecycle events to tmux-agent-sidebar.";
-    hooks = {
-      SessionStart = [
-        {
-          matcher = "startup|resume";
-          hooks = [ (codex-agent-sidebar-hook "session-start") ];
-        }
-      ];
-      UserPromptSubmit = [
-        {
-          hooks = [ (codex-agent-sidebar-hook "user-prompt-submit") ];
-        }
-      ];
-      PostToolUse = [
-        {
-          hooks = [ (codex-agent-sidebar-hook "activity-log") ];
-        }
-      ];
-      Stop = [
-        {
-          hooks = [ (codex-agent-sidebar-hook "stop") ];
-        }
-      ];
-    };
-  };
-
   programs.tmux = {
     enable = true;
     tmuxp.enable = true;
-
-    plugins = [
-      {
-        plugin = tmux-agent-sidebar;
-        extraConfig = ''
-          set -g @sidebar_auto_create off
-        '';
-      }
-    ];
 
     extraConfig =
       let

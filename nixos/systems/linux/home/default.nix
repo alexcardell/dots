@@ -1,5 +1,21 @@
 { config, pkgs, ... }:
+let
+  tmux-agent-sidebar = pkgs.callPackage ../../../home/tmux/plugins/tmux-agent-sidebar.nix { };
+in
 {
+  home.file.".codex/hooks.json".text = import ./codex-hooks.nix {
+    inherit pkgs tmux-agent-sidebar;
+  };
+
+  programs.tmux.plugins = [
+    {
+      plugin = tmux-agent-sidebar;
+      extraConfig = ''
+        set -g @sidebar_auto_create off
+      '';
+    }
+  ];
+
   home.packages =
     with pkgs;
     let
