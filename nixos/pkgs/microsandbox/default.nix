@@ -9,22 +9,22 @@
 let
   sources = {
     x86_64-linux = {
-      url = "https://github.com/superradcompany/microsandbox/releases/download/v0.4.6/microsandbox-linux-x86_64.tar.gz";
-      hash = "sha256-gCb8yykJBNJ8Y0v19hhdOPu+UVyUEoHkZ2fQ93Jvbac=";
+      url = "https://github.com/superradcompany/microsandbox/releases/download/v0.7.14/microsandbox-linux-x86_64.tar.gz";
+      hash = "sha256-NNSac4hoXw6iS/vuz2hkpEcYlZtXCH8ddIF3VnLblYU=";
     };
     aarch64-linux = {
-      url = "https://github.com/superradcompany/microsandbox/releases/download/v0.4.6/microsandbox-linux-aarch64.tar.gz";
-      hash = "sha256-5LFHqCfSlbGJVPMJQkjaNLSdf+8neguahElpUkHNRtM=";
+      url = "https://github.com/superradcompany/microsandbox/releases/download/v0.7.14/microsandbox-linux-aarch64.tar.gz";
+      hash = "sha256-oMVM0GvqTSpb0/wpEGP48vXgcyMtt49oYMUnki7HGQY=";
     };
     aarch64-darwin = {
-      url = "https://github.com/superradcompany/microsandbox/releases/download/v0.4.6/microsandbox-darwin-aarch64.tar.gz";
-      hash = "sha256-RmfFsU93f79q4sWw16FkLG1zbMbpufWBv+N7/gJd0d4=";
+      url = "https://github.com/superradcompany/microsandbox/releases/download/v0.7.14/microsandbox-darwin-aarch64.tar.gz";
+      hash = "sha256-nMK9KHTMGqmMsTlCmpSCgwseZLSCVaqfQKJbiXmiOp8=";
     };
   };
 in
 stdenv.mkDerivation {
   pname = "microsandbox";
-  version = "0.4.6";
+  version = "0.7.14";
   src = fetchurl (sources.${stdenv.hostPlatform.system} or (throw "microsandbox: unsupported platform ${stdenv.hostPlatform.system}"));
 
   nativeBuildInputs = if stdenv.isLinux then [ autoPatchelfHook ] else [ makeWrapper ];
@@ -37,8 +37,8 @@ stdenv.mkDerivation {
     mkdir -p "$out/bin" "$out/lib"
   '' + (if stdenv.isLinux then ''
     install -m755 msb "$out/bin/msb"
-    install -m644 libkrunfw.so.5.2.1 "$out/lib/"
-    ln -s libkrunfw.so.5.2.1 "$out/lib/libkrunfw.so.5"
+    install -m644 libkrunfw.so.5.6.1 "$out/lib/"
+    ln -s libkrunfw.so.5.6.1 "$out/lib/libkrunfw.so.5"
     ln -s libkrunfw.so.5 "$out/lib/libkrunfw.so"
   '' else ''
     install -Dm755 msb "$out/libexec/msb"
