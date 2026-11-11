@@ -27,6 +27,7 @@
   boot = {
     binfmt.emulatedSystems = [ "aarch64-linux" ];
     kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-latest;
+    kernelParams = [ "kvm_amd.avic=1" ];
 
     # Load AMD KVM on every boot. The firmware must expose the CPU's SVM
     # feature; when it does, udev creates /dev/kvm for the kvm group.
