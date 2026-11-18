@@ -18,6 +18,7 @@
     nautilus
     nvtopPackages.nvidia
     pavucontrol
+    snixembed
     tor-browser
     unstable.eww
     unstable.protonmail-desktop

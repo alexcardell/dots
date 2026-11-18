@@ -223,4 +223,6 @@ for_window [class="steam_app_[0-9]+"] move to workspace $ws10, focus
 
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 exec_always --no-startup-id feh --bg-fill ~/dots/media/BLACK_VII_desktop-3.jpg
-exec_always --no-startup-id QT_SCALE_FACTOR=2 vicinae server --replace
+# Start the tray bridge before Vicinae can claim the watcher. Other hosts can
+# use this config without snixembed. Run once per login to avoid duplicate bridges.
+exec --no-startup-id sh -c 'if command -v snixembed >/dev/null 2>&1; then snixembed --fork; fi; QT_SCALE_FACTOR=2 vicinae server --replace'

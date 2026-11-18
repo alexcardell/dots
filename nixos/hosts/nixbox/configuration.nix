@@ -9,7 +9,10 @@
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
+    ../../modules/pangolin-client.nix
   ];
+
+  services.pangolin-client.enable = true;
 
   nix.settings = {
     secret-key-files = [
