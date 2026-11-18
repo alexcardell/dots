@@ -61,7 +61,6 @@
       tenv
       unixtools.watch
       unstable.bruno
-      unstable.docker-sbx
       unstable.jira-cli-go
       unstable.languagetool-rust
       unstable.ollama
