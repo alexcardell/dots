@@ -77,6 +77,7 @@
         (final: prev: {
           llm-agents = llm-agents.packages.${system};
           microsandbox = final.callPackage ./nixos/pkgs/microsandbox { };
+          pangolin-client = final.callPackage ./nixos/pkgs/pangolin-client { };
         })
         overlay-lspmux
         # neovim-nightly-overlay.overlays.default
@@ -172,8 +173,13 @@
         "GTQ4XXD4Q9" = darwinConfiguration;
       };
 
+      packages = nixpkgs.lib.genAttrs [ "x86_64-linux" "aarch64-linux" ] (system: {
+        pangolin-client = nixpkgs.legacyPackages.${system}.callPackage ./nixos/pkgs/pangolin-client { };
+      });
+
       # Export reusable modules for other flakes (e.g., private homelab repo)
       nixosModules = {
+        pangolin-client = ./nixos/modules/pangolin-client.nix;
         # Base Linux system configuration
         linuxSystem = ./nixos/systems/linux/configuration.nix;
 
