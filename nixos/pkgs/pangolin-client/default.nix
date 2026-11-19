@@ -12,11 +12,11 @@ let
   sources = {
     x86_64-linux = {
       arch = "amd64";
-      hash = "sha256-A45GZW/sPvBSY7CgPOxZeJoNkPotpmrWSrPavyXz9ms=";
+      hash = "sha256-CvLaiaFyS5GrQ9nDyWkRx2l3sXO3Cl2mDhHb6UuAIxU=";
     };
     aarch64-linux = {
       arch = "arm64";
-      hash = "sha256-8L5bf+la0b9zD2v5L7ziNHnxGnLSKmB5BrPWq8zQOPo=";
+      hash = "sha256-fRzqlUPN3/4psotg3TknL3+E/hzLEuHK0VhKwawaPOk=";
     };
   };
   source =
@@ -25,7 +25,7 @@ let
 in
 stdenv.mkDerivation (finalAttrs: {
   pname = "pangolin-client";
-  version = "0.1.1";
+  version = "0.2.0";
 
   src = fetchurl {
     url = "https://github.com/fosrl/windows-linux/releases/download/linux-${finalAttrs.version}/pangolin-client-${source.arch}-${finalAttrs.version}.tar.gz";
