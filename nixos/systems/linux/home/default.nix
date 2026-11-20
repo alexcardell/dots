@@ -108,4 +108,8 @@ in
     recursive = true;
   };
 
+  xdg.configFile."pi/web-search.json" = {
+    source = ./pi/web-search.json;
+  };
+
 }
