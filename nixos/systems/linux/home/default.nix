@@ -40,6 +40,8 @@ in
       gparted
       killall
       llm-agents.codex
+      llm-agents.pi
+      llm-agents.pi-acp
       networkmanagerapplet
       orchis-theme
       polybar'

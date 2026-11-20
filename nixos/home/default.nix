@@ -47,8 +47,6 @@
       jj
       jq
       kitty
-      llm-agents.pi
-      llm-agents.pi-acp
       lspmux
       mcp-nixos
       microsandbox
