@@ -27,8 +27,10 @@ in
     systemd.services.pangolin-client = {
       description = "Pangolin client background service";
       documentation = [ "https://docs.pangolin.net" ];
-      wants = [ "network-online.target" ];
-      after = [ "network-online.target" ];
+      # The daemon's local IPC must be available at login, even while the
+      # network is still coming up. Tunnels connect once the UI attaches.
+      after = [ "network.target" ];
+      before = [ "display-manager.service" ];
       wantedBy = [ "multi-user.target" ];
       path = [
         # systemd also ships a resolvconf shim, which requires systemd-resolved.
@@ -38,6 +40,16 @@ in
         pkgs.nftables
         pkgs.iptables
       ];
+      postStart = ''
+        for attempt in {1..100}; do
+          if test -S /run/pangolin-client/manager.sock; then
+            exit 0
+          fi
+          sleep 0.1
+        done
+        echo "Pangolin daemon did not create its IPC socket" >&2
+        exit 1
+      '';
       serviceConfig = {
         Type = "simple";
         ExecStart = "${lib.getExe cfg.package} --daemon";
