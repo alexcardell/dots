@@ -121,6 +121,10 @@
     ];
   };
 
+  xdg.configFile."pi/agent/web-search.json" = {
+    source = ./pi/web-search.json;
+  };
+
   home.file.".zsh" = {
     source = ./zsh/.zsh;
     recursive = true;
