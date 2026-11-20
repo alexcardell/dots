@@ -2,6 +2,7 @@
 {
 
   imports = [
+    ../../modules/binary-caches.nix
     ./homebrew.nix
   ];
 

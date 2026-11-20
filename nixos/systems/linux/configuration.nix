@@ -1,6 +1,8 @@
 { config, pkgs, ... }:
 
 {
+  imports = [ ../../modules/binary-caches.nix ];
+
   # Enable flakes
   nix = {
     package = pkgs.nixVersions.stable;
