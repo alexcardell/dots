@@ -63,7 +63,7 @@
       unstable.bruno
       unstable.jira-cli-go
       unstable.languagetool-rust
-      unstable.ollama
+      unstable.ollama-cuda
       unstable.scala-cli
       unstable.sloth
       unstable.spr
