@@ -1,6 +1,7 @@
 { config, pkgs, ... }:
 {
   home.packages = with pkgs; [
+    llm-agents.copilot-cli
     sketchybar
     sketchybar-app-font
   ];
