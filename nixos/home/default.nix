@@ -47,7 +47,6 @@
       jj
       jq
       kitty
-      llm-agents.codex
       llm-agents.pi
       llm-agents.pi-acp
       lspmux
@@ -64,7 +63,6 @@
       unstable.bruno
       unstable.jira-cli-go
       unstable.languagetool-rust
-      unstable.ollama-cuda
       unstable.scala-cli
       unstable.sloth
       unstable.spr

@@ -21,6 +21,7 @@
     snixembed
     tor-browser
     unstable.eww
+    unstable.ollama-cuda
     unstable.protonmail-desktop
     unstable.todoist-electron
     unstable.vicinae

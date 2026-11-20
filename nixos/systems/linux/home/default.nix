@@ -39,6 +39,7 @@ in
       flameshot
       gparted
       killall
+      llm-agents.codex
       networkmanagerapplet
       orchis-theme
       polybar'
