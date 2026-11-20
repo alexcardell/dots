@@ -1,3 +1,7 @@
 {
-  "provider": "degoog"
+  "searchRouting": {
+    "providers": ["openai", "degoog"],
+    "useCurrentModel": true,
+    "fallbackOn": ["unsupported", "transient", "quota", "network", "invalid-response"]
+  }
 }

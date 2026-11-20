@@ -121,7 +121,7 @@
     ];
   };
 
-  xdg.configFile."pi/agent/web-search.json" = {
+  xdg.configFile."pi/web-search.json" = {
     source = ./pi/web-search.json;
   };
 
