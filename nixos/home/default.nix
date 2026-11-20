@@ -47,6 +47,7 @@
       jj
       jq
       kitty
+      llm-agents.codex
       llm-agents.pi
       llm-agents.pi-acp
       lspmux
